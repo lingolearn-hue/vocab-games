@@ -1,0 +1,33 @@
+{
+  "id": "es-en",
+  "language": "es",
+  "native": "en",
+  "keys": ["entry", "translation", "pos", "categories", "level"],
+  "entries": [
+    ["hola", ["hello", "hi"], "phrase", ["greetings"], "A1"],
+    ["gracias", ["thank you", "thanks"], "phrase", ["greetings"], "A1"],
+    ["manzana", ["apple"], "noun", ["food", "fruit"], "A1"],
+    ["agua", ["water"], "noun", ["food", "drinks"], "A1"],
+    ["libro", ["book"], "noun", ["objects", "education"], "A1"],
+    ["gato", ["cat"], "noun", ["animals"], "A1"],
+    ["perro", ["dog"], "noun", ["animals"], "A1"],
+    ["comer", ["to eat", "to consume"], "verb", ["actions", "food"], "A1"],
+    ["beber", ["to drink"], "verb", ["actions", "food"], "A1"],
+    ["grande", ["big", "large", "great"], "adj", ["size"], "A1"],
+    ["pequeño", ["small", "little"], "adj", ["size"], "A1"],
+    ["bueno", ["good", "well"], "adj", ["quality"], "A1"],
+    ["persona", ["person", "people"], "noun", ["people"], "A1"],
+    ["amigo", ["friend"], "noun", ["people", "social"], "A1"],
+    ["estudiante", ["student"], "noun", ["people", "education"], "A1"],
+    ["profesor", ["teacher"], "noun", ["people", "education"], "A2"],
+    ["trabajar", ["to work"], "verb", ["actions", "work"], "A2"],
+    ["estudiar", ["to study", "to learn"], "verb", ["actions", "education"], "A2"],
+    ["gustar", ["to like", "to please"], "verb", ["emotions"], "A2"],
+    ["bonito", ["beautiful", "pretty", "nice"], "adj", ["appearance"], "A2"],
+    ["feliz", ["happy", "glad"], "adj", ["emotions"], "A2"],
+    ["rápido", ["fast", "quick"], "adj", ["speed"], "A2"],
+    ["lento", ["slow"], "adj", ["speed"], "A2"],
+    ["comprar", ["to buy", "to purchase"], "verb", ["actions", "commerce"], "A2"],
+    ["dinero", ["money"], "noun", ["commerce"], "A2"]
+  ]
+}

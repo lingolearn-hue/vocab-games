@@ -1,0 +1,34 @@
+/*
+ * RubyText — reading annotation above main text.
+ * Uses native <ruby>/<rt> which browsers render above by default.
+ * The flex approach was causing rt to render below; reverted to native ruby.
+ */
+
+.ruby-wrap {
+  display: inline;
+}
+
+.ruby-plain {
+  line-height: 1.2;
+}
+
+ruby {
+  ruby-align: center;
+}
+
+.ruby-rt {
+  font-size: 0.42em;
+  color: #888;
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* Sizes — set on the wrapper span, inherited by ruby base text */
+.ruby-sm { font-size: 0.9rem;  line-height: 2.2; }
+.ruby-md { font-size: 1.4rem;  line-height: 2.4; }
+.ruby-lg { font-size: 2.2rem;  line-height: 2.6; }
+
+/* Dark contexts (race car tiles) */
+.ruby-dark .ruby-rt { color: #555; }

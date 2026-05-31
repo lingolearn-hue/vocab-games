@@ -1,0 +1,47 @@
+{
+  "id": "zh-en-reader",
+  "language": "zh",
+  "native": "en",
+  "passages": [
+    {
+      "id": "zh-p1",
+      "title": "我的朋友",
+      "titleTranslation": "My Friend",
+      "level": "HSK1",
+      "text": "我有一个好朋友。他是学生。他喜欢吃苹果和喝水。他很快乐。我们每天一起学习。",
+      "translation": "I have a good friend. He is a student. He likes to eat apples and drink water. He is very happy. We study together every day."
+    },
+    {
+      "id": "zh-p2",
+      "title": "我的猫",
+      "titleTranslation": "My Cat",
+      "level": "HSK1",
+      "text": "我有一只猫。她很小，很漂亮。她喜欢喝水，不喜欢吃书。我的狗也很好。猫和狗是好朋友。",
+      "translation": "I have a cat. She is very small and very beautiful. She likes to drink water but does not like to eat books. My dog is also very good. The cat and the dog are good friends."
+    },
+    {
+      "id": "zh-p3",
+      "title": "老师和学生",
+      "titleTranslation": "Teacher and Student",
+      "level": "HSK2",
+      "text": "王老师是我们的老师。她工作很努力，也很漂亮。学生们喜欢她。她教我们学习中文。我们每天学习新的汉字。学习很快乐。",
+      "translation": "Teacher Wang is our teacher. She works very hard and is also very beautiful. The students like her. She teaches us to study Chinese. We learn new Chinese characters every day. Studying is very enjoyable."
+    },
+    {
+      "id": "zh-p4",
+      "title": "去买东西",
+      "titleTranslation": "Going Shopping",
+      "level": "HSK2",
+      "text": "今天我和朋友一起去买东西。我们买了苹果、书和水。苹果很贵，书不贵。我的钱不多，但是够用。我们买完东西，很高兴地回家了。",
+      "translation": "Today I went shopping with my friend. We bought apples, books, and water. The apples were expensive; the books were not expensive. I did not have much money, but it was enough. After we finished shopping, we went home happily."
+    },
+    {
+      "id": "zh-p5",
+      "title": "医生的工作",
+      "titleTranslation": "A Doctor's Work",
+      "level": "HSK3",
+      "text": "我的父亲是医生。他每天工作很长时间。他说他的工作很重要，尽管很辛苦。他帮助很多人。人们都很尊重他。我长大以后也想成为医生。",
+      "translation": "My father is a doctor. He works very long hours every day. He says his work is very important, although it is very hard. He helps many people. People all respect him very much. When I grow up, I also want to become a doctor."
+    }
+  ]
+}

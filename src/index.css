@@ -1,0 +1,16 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #fafafa;
+  color: #111;
+  min-height: 100dvh;
+}
+
+button { font-family: inherit; }
+
+@media (prefers-color-scheme: dark) {
+  body { background: #111; color: #eee; }
+}
+[data-theme="dark"] body { background: #111; color: #eee; }
+[data-theme="light"] body { background: #fafafa; color: #111; }
