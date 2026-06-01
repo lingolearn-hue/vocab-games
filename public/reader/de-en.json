@@ -1,0 +1,47 @@
+{
+  "id": "de-en-reader",
+  "language": "de",
+  "native": "en",
+  "passages": [
+    {
+      "id": "de-p1",
+      "title": "Mein Freund",
+      "titleTranslation": "My Friend",
+      "level": "A1",
+      "text": "Ich habe einen guten Freund. Er heißt Max. Max ist Student. Er isst gern Äpfel und trinkt Wasser. Er ist sehr glücklich. Wir lernen jeden Tag zusammen.",
+      "translation": "I have a good friend. His name is Max. Max is a student. He likes to eat apples and drink water. He is very happy. We study together every day."
+    },
+    {
+      "id": "de-p2",
+      "title": "Die Katze und der Hund",
+      "titleTranslation": "The Cat and the Dog",
+      "level": "A1",
+      "text": "Ich habe eine Katze und einen Hund. Die Katze ist klein und schön. Der Hund ist groß und gut. Die Katze trinkt Wasser. Der Hund isst viel. Sie sind gute Freunde.",
+      "translation": "I have a cat and a dog. The cat is small and beautiful. The dog is big and good. The cat drinks water. The dog eats a lot. They are good friends."
+    },
+    {
+      "id": "de-p3",
+      "title": "Der Lehrer und die Studenten",
+      "titleTranslation": "The Teacher and the Students",
+      "level": "A2",
+      "text": "Der Lehrer Müller arbeitet viel. Er ist schön und gut. Die Studenten lernen gern mit ihm. Er erklärt die Sprache sehr gut. Wir lernen jeden Tag neue Wörter. Lernen macht Spaß.",
+      "translation": "Teacher Müller works a lot. He is nice and good. The students like to learn with him. He explains the language very well. We learn new words every day. Learning is fun."
+    },
+    {
+      "id": "de-p4",
+      "title": "Einkaufen gehen",
+      "titleTranslation": "Going Shopping",
+      "level": "A2",
+      "text": "Heute kaufe ich mit meinem Freund ein. Wir kaufen Äpfel, ein Buch und Wasser. Das Buch kostet nicht viel Geld. Ich habe nicht viel Geld, aber es reicht. Wir gehen glücklich nach Hause.",
+      "translation": "Today I go shopping with my friend. We buy apples, a book, and water. The book does not cost much money. I do not have much money, but it is enough. We go home happy."
+    },
+    {
+      "id": "de-p5",
+      "title": "Die Freiheit der Sprache",
+      "titleTranslation": "The Freedom of Language",
+      "level": "B1",
+      "text": "Sprachen lernen gibt uns Freiheit. Obwohl es schwer ist, lohnt es sich. Ein Arzt muss viele Sprachen verstehen. Die Wirtschaft braucht Menschen, die reisen und kommunizieren können. Wer eine neue Sprache lernt, entscheidet sich für eine bessere Zukunft.",
+      "translation": "Learning languages gives us freedom. Although it is difficult, it is worth it. A doctor must understand many languages. The economy needs people who can travel and communicate. Whoever learns a new language decides on a better future."
+    }
+  ]
+}

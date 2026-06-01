@@ -1,0 +1,35 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #fafafa;
+  color: #111;
+  min-height: 100dvh;
+}
+
+button { font-family: inherit; }
+
+@media (prefers-color-scheme: dark) {
+  body { background: #111; color: #eee; }
+}
+[data-theme="dark"] body { background: #111; color: #eee; }
+[data-theme="light"] body { background: #fafafa; color: #111; }
+
+/* Shared level-filter warning banner */
+.level-warning {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff8e0;
+  border-bottom: 1px solid #f0d070;
+  padding: 0.45rem 1rem;
+  font-size: 0.78rem;
+  color: #7a5a00;
+  flex-shrink: 0;
+}
+.level-warning strong { font-weight: 700; }
+
+@media (prefers-color-scheme: dark) {
+  .level-warning { background: #2d2510; border-color: #5c4a1a; color: #c9a227; }
+}
+[data-theme="dark"] .level-warning { background: #2d2510; border-color: #5c4a1a; color: #c9a227; }

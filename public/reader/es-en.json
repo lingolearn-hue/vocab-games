@@ -1,0 +1,39 @@
+{
+  "id": "es-en-reader",
+  "language": "es",
+  "native": "en",
+  "passages": [
+    {
+      "id": "es-p1",
+      "title": "Mi amigo",
+      "titleTranslation": "My Friend",
+      "level": "A1",
+      "text": "Tengo un buen amigo. Se llama Carlos. Carlos es estudiante. Le gusta comer manzanas y beber agua. Es muy feliz. Estudiamos juntos todos los días.",
+      "translation": "I have a good friend. His name is Carlos. Carlos is a student. He likes to eat apples and drink water. He is very happy. We study together every day."
+    },
+    {
+      "id": "es-p2",
+      "title": "Mi gato y mi perro",
+      "titleTranslation": "My Cat and My Dog",
+      "level": "A1",
+      "text": "Tengo un gato y un perro. El gato es pequeño y bonito. El perro es grande y bueno. El gato bebe agua. El perro come mucho. Son buenos amigos.",
+      "translation": "I have a cat and a dog. The cat is small and pretty. The dog is big and good. The cat drinks water. The dog eats a lot. They are good friends."
+    },
+    {
+      "id": "es-p3",
+      "title": "El profesor y los estudiantes",
+      "titleTranslation": "The Teacher and the Students",
+      "level": "A2",
+      "text": "La profesora García trabaja mucho. Es muy bonita y muy buena. A los estudiantes les gusta estudiar con ella. Ella enseña español. Aprendemos palabras nuevas todos los días. Estudiar es feliz.",
+      "translation": "Teacher García works a lot. She is very pretty and very good. The students like to study with her. She teaches Spanish. We learn new words every day. Studying is enjoyable."
+    },
+    {
+      "id": "es-p4",
+      "title": "Ir de compras",
+      "titleTranslation": "Going Shopping",
+      "level": "A2",
+      "text": "Hoy fui de compras con mi amigo. Compramos manzanas, un libro y agua. Las manzanas son rápidas de comer. No tengo mucho dinero, pero es suficiente. Volvemos a casa felices.",
+      "translation": "Today I went shopping with my friend. We bought apples, a book, and water. Apples are quick to eat. I don't have much money, but it is enough. We return home happy."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "language": "ja",
+  "native": "en",
+  "fixed": [
+    { "text": "I eat {apple/book/dog} every day.", "lang": "en" },
+    { "text": "She drinks {water/money/cat} in the morning.", "lang": "en" },
+    { "text": "He is a good {student/apple/water}.", "lang": "en" },
+    { "text": "My {friend/money/dog} works at a school.", "lang": "en" },
+    { "text": "わたしはまいにち{りんご/いぬ/ほん}をたべます。", "lang": "ja" },
+    { "text": "かのじょは{みず/おかね/ねこ}をのみます。", "lang": "ja" },
+    { "text": "この{ほん/みず/はやい}はいいです。", "lang": "ja" },
+    { "text": "わたしの{ともだち/りんご/おかね}はがっこうではたらいています。", "lang": "ja" }
+  ],
+  "generic": [
+    { "template": "I really like ___.", "lang": "en", "pos": "noun" },
+    { "template": "She has a ___.", "lang": "en", "pos": "noun" },
+    { "template": "He is very ___.", "lang": "en", "pos": "adj" },
+    { "template": "They want to ___ today.", "lang": "en", "pos": "verb" },
+    { "template": "We need more ___.", "lang": "en", "pos": "noun" },
+    { "template": "___がすきです。", "lang": "ja", "pos": "noun" },
+    { "template": "かれはとても___です。", "lang": "ja", "pos": "adj" },
+    { "template": "わたしは___たいです。", "lang": "ja", "pos": "verb" },
+    { "template": "これは___です。", "lang": "ja", "pos": "noun" }
+  ]
+}
