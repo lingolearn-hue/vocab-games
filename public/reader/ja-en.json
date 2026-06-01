@@ -1,0 +1,47 @@
+{
+  "id": "ja-en-reader",
+  "language": "ja",
+  "native": "en",
+  "passages": [
+    {
+      "id": "ja-p1",
+      "title": "ともだち",
+      "titleTranslation": "My Friend",
+      "level": "N5",
+      "text": "わたしにはともだちがいます。なまえはけんじです。けんじはがくせいです。りんごをたべるのがすきです。みずをのみます。とてもうれしいひとです。まいにちいっしょにべんきょうします。",
+      "translation": "I have a friend. His name is Kenji. Kenji is a student. He likes to eat apples. He drinks water. He is a very happy person. We study together every day."
+    },
+    {
+      "id": "ja-p2",
+      "title": "ねこといぬ",
+      "titleTranslation": "The Cat and the Dog",
+      "level": "N5",
+      "text": "わたしはねこといぬをかっています。ねこはちいさくてきれいです。いぬはおおきくていいです。ねこはみずをのみます。いぬはたくさんたべます。ふたりはともだちです。",
+      "translation": "I have a cat and a dog. The cat is small and beautiful. The dog is big and good. The cat drinks water. The dog eats a lot. The two of them are friends."
+    },
+    {
+      "id": "ja-p3",
+      "title": "せんせいとがくせい",
+      "titleTranslation": "Teacher and Student",
+      "level": "N4",
+      "text": "たなかせんせいはわたしたちのせんせいです。まいにちはたらいています。せんせいはきれいでいいひとです。がくせいたちはせんせいがすきです。にほんごをおしえてもらっています。まいにちあたらしいことばをべんきょうします。べんきょうはたのしいです。",
+      "translation": "Teacher Tanaka is our teacher. She works every day. The teacher is beautiful and a good person. The students like the teacher. We are taught Japanese. We study new words every day. Studying is fun."
+    },
+    {
+      "id": "ja-p4",
+      "title": "かいものをする",
+      "titleTranslation": "Going Shopping",
+      "level": "N4",
+      "text": "きょうはともだちといっしょにかいものをしました。りんごとほんとみずをかいました。りんごはたかかったです。ほんはやすかったです。おかねはあまりありませんでしたが、たりました。かいものをおえて、うれしくていえにかえりました。",
+      "translation": "Today I went shopping with my friend. We bought apples, a book, and water. The apples were expensive. The book was cheap. I didn't have much money, but it was enough. After finishing shopping, I returned home happily."
+    },
+    {
+      "id": "ja-p5",
+      "title": "医者のしごと",
+      "titleTranslation": "A Doctor's Work",
+      "level": "N3",
+      "text": "わたしのちちは医者です。まいにちながいじかんはたらいています。けれども、しごとがすきです。かれはたくさんのひとをたすけます。自由な時間はすくないですが、とても大切なしごとだとわかります。わたしもいつか医者になることを決めました。",
+      "translation": "My father is a doctor. He works long hours every day. However, he likes his work. He helps many people. He has little free time, but he understands it is very important work. I have also decided to become a doctor someday."
+    }
+  ]
+}

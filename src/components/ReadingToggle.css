@@ -1,0 +1,40 @@
+.reading-toggle {
+  background: none;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  color: #aaa;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.reading-toggle.active {
+  color: #4f7ef8;
+  border-color: #4f7ef8;
+  background: #eef2ff;
+}
+
+/* Dark context (RaceCar) */
+.reading-toggle-dark {
+  border-color: #333;
+  color: #555;
+}
+.reading-toggle-dark.active {
+  color: #4f7ef8;
+  border-color: #4f7ef8;
+  background: #0d1a3a;
+}
+
+@media (prefers-color-scheme: dark) {
+  .reading-toggle { border-color: #333; color: #555; }
+  .reading-toggle.active { color: #4f7ef8; border-color: #4f7ef8; background: #0d1a3a; }
+}
+[data-theme="dark"] .reading-toggle { border-color: #333; color: #555; }
+[data-theme="dark"] .reading-toggle.active { color: #4f7ef8; border-color: #4f7ef8; background: #0d1a3a; }

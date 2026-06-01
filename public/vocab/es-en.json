@@ -1,0 +1,33 @@
+{
+  "id": "es-en",
+  "language": "es",
+  "native": "en",
+  "keys": ["entry", "translation", "pos", "categories", "level", "gender", "measureWord"],
+  "entries": [
+    ["hola", ["hello", "hi"], "phrase", ["greetings"], "A1", null, null],
+    ["gracias", ["thank you", "thanks"], "phrase", ["greetings"], "A1", null, null],
+    ["manzana", ["apple"], "noun", ["food", "fruit"], "A1", "f", null],
+    ["agua", ["water"], "noun", ["food", "drinks"], "A1", "f", null],
+    ["libro", ["book"], "noun", ["objects", "education"], "A1", "m", null],
+    ["gato", ["cat"], "noun", ["animals"], "A1", "m", null],
+    ["perro", ["dog"], "noun", ["animals"], "A1", "m", null],
+    ["comer", ["to eat", "to consume"], "verb", ["actions", "food"], "A1", null, null],
+    ["beber", ["to drink"], "verb", ["actions", "food"], "A1", null, null],
+    ["grande", ["big", "large", "great"], "adj", ["size"], "A1", null, null],
+    ["pequeño", ["small", "little"], "adj", ["size"], "A1", null, null],
+    ["bueno", ["good", "well"], "adj", ["quality"], "A1", null, null],
+    ["persona", ["person", "people"], "noun", ["people"], "A1", "f", null],
+    ["amigo", ["friend"], "noun", ["people", "social"], "A1", "m", null],
+    ["estudiante", ["student"], "noun", ["people", "education"], "A1", "m", null],
+    ["profesor", ["teacher"], "noun", ["people", "education"], "A2", "m", null],
+    ["trabajar", ["to work"], "verb", ["actions", "work"], "A2", null, null],
+    ["estudiar", ["to study", "to learn"], "verb", ["actions", "education"], "A2", null, null],
+    ["gustar", ["to like", "to please"], "verb", ["emotions"], "A2", null, null],
+    ["bonito", ["beautiful", "pretty", "nice"], "adj", ["appearance"], "A2", null, null],
+    ["feliz", ["happy", "glad"], "adj", ["emotions"], "A2", null, null],
+    ["rápido", ["fast", "quick"], "adj", ["speed"], "A2", null, null],
+    ["lento", ["slow"], "adj", ["speed"], "A2", null, null],
+    ["comprar", ["to buy", "to purchase"], "verb", ["actions", "commerce"], "A2", null, null],
+    ["dinero", ["money"], "noun", ["commerce"], "A2", "m", null]
+  ]
+}
