@@ -64,7 +64,12 @@
 
 /* Items */
 .pm-item {
+<<<<<<< HEAD
   flex: 1;
+=======
+  flex: 0 0 auto;
+  min-height: 70px;
+>>>>>>> 8ad062d (Initial commit_4)
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,23 +81,38 @@
   cursor: pointer;
   text-align: center;
   transition: border-color 0.12s, background 0.12s, opacity 0.2s, transform 0.12s;
+<<<<<<< HEAD
   min-height: 0;
+=======
+>>>>>>> 8ad062d (Initial commit_4)
   overflow: hidden;
 }
 
 .pm-item:active { transform: scale(0.97); }
 
 .pm-label {
+<<<<<<< HEAD
   font-size: clamp(0.85rem, 3vw, 1.1rem);
   font-weight: 500;
   line-height: 1.2;
+=======
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  font-weight: 500;
+  line-height: 1.3;
+>>>>>>> 8ad062d (Initial commit_4)
   word-break: break-word;
 }
 
 .pm-sub {
+<<<<<<< HEAD
   font-size: clamp(0.65rem, 2.2vw, 0.78rem);
   color: #999;
   margin-top: 0.15rem;
+=======
+  font-size: clamp(0.85rem, 3vw, 1.1rem);
+  color: #999;
+  margin-top: 0.2rem;
+>>>>>>> 8ad062d (Initial commit_4)
 }
 
 /* States */

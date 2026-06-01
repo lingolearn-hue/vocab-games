@@ -178,6 +178,28 @@
   font-style: italic;
 }
 
+<<<<<<< HEAD
+=======
+.vb-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.vb-mnemonic-expanded {
+  font-size: 0.72rem;
+  color: #aaa;
+  font-style: italic;
+  line-height: 1.4;
+  padding: 0.3rem 0.6rem 0.5rem 1.4rem;
+  border-left: 2px solid #f0d070;
+  margin-left: 1.2rem;
+  margin-top: -0.2rem;
+}
+
+>>>>>>> 8ad062d (Initial commit_4)
 .vb-trans {
   font-size: 0.8rem;
   color: #666;

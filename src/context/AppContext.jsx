@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import { createContext, useContext, useEffect, useState, useCallback } from 'react'
 import { loadList, mergeLists, loadSentences } from '../engine/vocab'
 import { getAllScores, setScore, recordCorrect, recordWrong, recordMaster, resetToLearning } from '../engine/srs'
 import { loadSettings, saveSettings, applyDarkMode } from '../engine/settings'
+=======
+import { createContext, useContext, useEffect, useState, useCallback, useMemo } from 'react'
+import { loadList, mergeLists, loadSentences } from '../engine/vocab'
+import { getAllScores, setScore, recordCorrect, recordWrong, recordMaster, resetToLearning } from '../engine/srs'
+import { loadSettings, saveSettings, applyDarkMode, getGameLevels, filterByLevel } from '../engine/settings'
+>>>>>>> 8ad062d (Initial commit_4)
 import { seedMnemonics } from '../engine/mnemonics'
 
 const AVAILABLE_LISTS = [
@@ -51,6 +58,15 @@ export function AppProvider({ children }) {
     setSelectedIds(listsForLang.map(l => l.id))
   }, [loadedLists])
 
+<<<<<<< HEAD
+=======
+  // On mount: if a language was previously selected, load it
+  useEffect(() => {
+    const saved = localStorage.getItem('activeLanguage')
+    if (saved) setActiveLanguage(saved)
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
+>>>>>>> 8ad062d (Initial commit_4)
   const direction    = settings.direction
   const showReading  = settings.showReading
   const setDirection   = (v) => updateSettings(s => ({ ...s, direction: v }))
@@ -83,6 +99,23 @@ export function AppProvider({ children }) {
     setActiveEntries(mergeLists(selected))
   }, [selectedIds, loadedLists])
 
+<<<<<<< HEAD
+=======
+  // Helper used by each game to get level-filtered entries
+  // Returns { entries, isEmpty } — isEmpty signals the warning state
+  const getEntriesForGame = useCallback((game) => {
+    const levels  = getGameLevels(settings, game)
+    const filtered = filterByLevel(activeEntries, levels)
+    return { entries: filtered.length > 0 ? filtered : activeEntries, isEmpty: filtered.length === 0 && levels !== null }
+  }, [activeEntries, settings])
+
+  // Sorted unique levels present in the active entries
+  const availableLevels = useMemo(() => {
+    const set = new Set(activeEntries.map(e => e.level).filter(Boolean))
+    return [...set].sort()
+  }, [activeEntries])
+
+>>>>>>> 8ad062d (Initial commit_4)
   const refreshScores = useCallback(() => setScores(getAllScores()), [])
 
   const activeSentences = selectedIds.reduce((acc, id) => {
@@ -121,6 +154,10 @@ export function AppProvider({ children }) {
       scores, scoreActions,
       settings, updateSettings,
       activeLanguage, setActiveLanguage,
+<<<<<<< HEAD
+=======
+      getEntriesForGame, availableLevels,
+>>>>>>> 8ad062d (Initial commit_4)
     }}>
       {children}
     </AppContext.Provider>

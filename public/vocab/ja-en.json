@@ -2,6 +2,7 @@
   "id": "ja-en",
   "language": "ja",
   "native": "en",
+<<<<<<< HEAD
   "keys": ["entry", "reading", "translation", "pos", "categories", "level"],
   "entries": [
     ["こんにちは", "こんにちは", ["hello", "good afternoon"], "phrase", ["greetings"], "N5"],
@@ -40,5 +41,45 @@
     ["旅行する", "りょこうする", ["to travel"], "verb", ["actions", "travel"], "N2"],
     ["自由", "じゆう", ["freedom", "liberty"], "noun", ["society"], "N2"],
     ["決める", "きめる", ["to decide"], "verb", ["actions"], "N2"]
+=======
+  "keys": ["entry", "reading", "translation", "pos", "categories", "level", "gender", "measureWord"],
+  "entries": [
+    ["こんにちは", "こんにちは", ["hello", "good afternoon"], "phrase", ["greetings"], "N5", null, null],
+    ["ありがとう", "ありがとう", ["thank you", "thanks"], "phrase", ["greetings"], "N5", null, null],
+    ["はい", "はい", ["yes"], "adv", ["basics"], "N5", null, null],
+    ["いいえ", "いいえ", ["no"], "adv", ["basics"], "N5", null, null],
+    ["りんご", "りんご", ["apple"], "noun", ["food", "fruit"], "N5", null, "個"],
+    ["みず", "みず", ["water"], "noun", ["food", "drinks"], "N5", null, "杯"],
+    ["ほん", "ほん", ["book"], "noun", ["objects", "education"], "N5", null, "冊"],
+    ["ねこ", "ねこ", ["cat"], "noun", ["animals"], "N5", null, "匹"],
+    ["いぬ", "いぬ", ["dog"], "noun", ["animals"], "N5", null, "匹"],
+    ["たべる", "たべる", ["to eat"], "verb", ["actions", "food"], "N5", null, null],
+    ["のむ", "のむ", ["to drink"], "verb", ["actions", "food"], "N5", null, null],
+    ["おおきい", "おおきい", ["big", "large"], "adj", ["size"], "N5", null, null],
+    ["ちいさい", "ちいさい", ["small", "little"], "adj", ["size"], "N5", null, null],
+    ["いい", "いい", ["good", "fine"], "adj", ["quality"], "N5", null, null],
+    ["ひと", "ひと", ["person", "people"], "noun", ["people"], "N5", null, "人"],
+    ["ともだち", "ともだち", ["friend"], "noun", ["people", "social"], "N5", null, "人"],
+    ["がくせい", "がくせい", ["student"], "noun", ["people", "education"], "N5", null, "人"],
+    ["せんせい", "せんせい", ["teacher"], "noun", ["people", "education"], "N5", null, "人"],
+    ["はたらく", "はたらく", ["to work"], "verb", ["actions", "work"], "N4", null, null],
+    ["べんきょうする", "べんきょうする", ["to study"], "verb", ["actions", "education"], "N4", null, null],
+    ["すき", "すき", ["liked", "favourite", "to like"], "adj", ["emotions"], "N4", null, null],
+    ["きれい", "きれい", ["beautiful", "pretty", "clean"], "adj", ["appearance"], "N4", null, null],
+    ["うれしい", "うれしい", ["happy", "glad", "pleased"], "adj", ["emotions"], "N4", null, null],
+    ["はやい", "はやい", ["fast", "quick", "early"], "adj", ["speed"], "N4", null, null],
+    ["おそい", "おそい", ["slow", "late"], "adj", ["speed"], "N4", null, null],
+    ["かう", "かう", ["to buy", "to purchase"], "verb", ["actions", "commerce"], "N4", null, null],
+    ["おかね", "おかね", ["money"], "noun", ["commerce"], "N4", null, null],
+    ["医者", "いしゃ", ["doctor", "physician"], "noun", ["people", "health"], "N3", null, "人"],
+    ["経済", "けいざい", ["economy", "economics"], "noun", ["society"], "N3", null, null],
+    ["けれども", "けれども", ["although", "however", "but"], "conj", [], "N3", null, null],
+    ["わかる", "わかる", ["to understand"], "verb", ["actions", "communication"], "N3", null, null],
+    ["せつめいする", "せつめいする", ["to explain"], "verb", ["actions", "communication"], "N3", null, null],
+    ["言語", "げんご", ["language"], "noun", ["communication", "education"], "N2", null, null],
+    ["旅行する", "りょこうする", ["to travel"], "verb", ["actions", "travel"], "N2", null, null],
+    ["自由", "じゆう", ["freedom", "liberty"], "noun", ["society"], "N2", null, null],
+    ["決める", "きめる", ["to decide"], "verb", ["actions"], "N2", null, null]
+>>>>>>> 8ad062d (Initial commit_4)
   ]
 }

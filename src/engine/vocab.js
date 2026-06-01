@@ -2,8 +2,13 @@
 
 /**
  * Fetch a vocab JSON file and normalise entries into objects.
+<<<<<<< HEAD
  * Supports keys: entry, reading (optional), translation (array), 
  *               pos (optional), categories (optional), level (optional)
+=======
+ * Supports keys: entry, reading (optional), translation (array),
+ *               pos, categories, level, gender, measureWord (all optional)
+>>>>>>> 8ad062d (Initial commit_4)
  */
 export async function loadList(path) {
   const res = await fetch(path)
@@ -18,6 +23,11 @@ export async function loadList(path) {
     pos:         k.indexOf('pos'),
     categories:  k.indexOf('categories'),
     level:       k.indexOf('level'),
+<<<<<<< HEAD
+=======
+    gender:      k.indexOf('gender'),
+    measureWord: k.indexOf('measureWord'),
+>>>>>>> 8ad062d (Initial commit_4)
   }
 
   const entries = raw.entries.map((arr, i) => {
@@ -26,11 +36,19 @@ export async function loadList(path) {
       id:           `${raw.id}::${i}`,
       entry:        arr[idx.entry],
       reading:      idx.reading >= 0 ? arr[idx.reading] : null,
+<<<<<<< HEAD
       // translation is always stored as array; accept legacy string
+=======
+>>>>>>> 8ad062d (Initial commit_4)
       translation:  Array.isArray(translation) ? translation : [translation],
       pos:          idx.pos >= 0 ? arr[idx.pos] : null,
       categories:   idx.categories >= 0 ? arr[idx.categories] : [],
       level:        idx.level >= 0 ? arr[idx.level] : null,
+<<<<<<< HEAD
+=======
+      gender:       idx.gender >= 0 ? arr[idx.gender] : null,
+      measureWord:  idx.measureWord >= 0 ? arr[idx.measureWord] : null,
+>>>>>>> 8ad062d (Initial commit_4)
       listId:       raw.id,
     }
   })

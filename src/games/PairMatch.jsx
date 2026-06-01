@@ -9,7 +9,12 @@ function shuffle(arr) {
 }
 
 export default function PairMatch() {
+<<<<<<< HEAD
   const { activeEntries, direction, showReading, scoreActions, settings, setScreen } = useApp()
+=======
+  const { activeEntries: allEntries, direction, showReading, scoreActions, settings, setScreen, getEntriesForGame } = useApp()
+  const { entries: activeEntries, isEmpty: levelEmpty } = getEntriesForGame('pairmatch')
+>>>>>>> 8ad062d (Initial commit_4)
   const ROUND_SIZE = settings.pairmatch.roundSize
 
   const [leftItems,  setLeftItems]  = useState([])
@@ -120,6 +125,15 @@ export default function PairMatch() {
         </div>
       </div>
 
+<<<<<<< HEAD
+=======
+      {levelEmpty && (
+        <div className="level-warning">
+          ⚠ <strong>No entries at selected level</strong> — showing all levels instead. Change in Settings.
+        </div>
+      )}
+
+>>>>>>> 8ad062d (Initial commit_4)
       <div className="pm-board">
         <div className="pm-column">
           {leftItems.map(item => (

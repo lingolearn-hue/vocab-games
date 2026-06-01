@@ -252,7 +252,13 @@
   .st-row      { border-color: #1e1e1e; }
   .st-seg      { border-color: #333; }
   .st-seg-btn  { color: #888; border-color: #333; }
+<<<<<<< HEAD
   .st-toggle   { background: #2a2a2a; color: #666; }
+=======
+  .st-seg-btn.active { background: #4f7ef8; color: #fff; }
+  .st-toggle   { background: #2a2a2a; color: #666; }
+  .st-toggle.active { background: #4f7ef8; color: #fff; }
+>>>>>>> 8ad062d (Initial commit_4)
   .st-subsection { border-color: #252525; }
   .st-sublabel { color: #888; }
   .st-select   { background: #1e1e1e; border-color: #333; color: #ccc; }
@@ -270,7 +276,13 @@
 [data-theme="dark"] .st-row      { border-color: #1e1e1e; }
 [data-theme="dark"] .st-seg      { border-color: #333; }
 [data-theme="dark"] .st-seg-btn  { color: #888; border-color: #333; }
+<<<<<<< HEAD
 [data-theme="dark"] .st-toggle   { background: #2a2a2a; color: #666; }
+=======
+[data-theme="dark"] .st-seg-btn.active { background: #4f7ef8; color: #fff; }
+[data-theme="dark"] .st-toggle   { background: #2a2a2a; color: #666; }
+[data-theme="dark"] .st-toggle.active { background: #4f7ef8; color: #fff; }
+>>>>>>> 8ad062d (Initial commit_4)
 [data-theme="dark"] .st-subsection { border-color: #252525; }
 [data-theme="dark"] .st-sublabel { color: #888; }
 [data-theme="dark"] .st-select   { background: #1e1e1e; border-color: #333; color: #ccc; }
@@ -280,3 +292,77 @@
 [data-theme="dark"] .st-using-global { color: #555; }
 [data-theme="dark"] .st-danger-btn { background: #2d1a19; border-color: #5c2522; }
 [data-theme="dark"] .st-hint     { color: #555; }
+<<<<<<< HEAD
+=======
+
+/* Level picker */
+.st-level-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.st-level-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.st-level-chip {
+  padding: 0.3rem 0.65rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 20px;
+  background: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.st-level-chip.active {
+  background: #4f7ef8;
+  border-color: #4f7ef8;
+  color: #fff;
+}
+
+.st-level-chip.global {
+  opacity: 0.4;
+}
+
+.st-level-chip.global:hover {
+  opacity: 1;
+  border-color: #4f7ef8;
+  color: #4f7ef8;
+}
+
+.st-level-chip:hover:not(.active):not(.global) {
+  border-color: #4f7ef8;
+  color: #4f7ef8;
+}
+
+.st-level-all {
+  border-style: dashed;
+  color: #aaa;
+}
+
+.st-level-all:hover {
+  border-color: #888 !important;
+  color: #555 !important;
+}
+
+.st-using-global-label {
+  font-size: 0.72rem;
+  color: #bbb;
+  font-style: italic;
+}
+
+@media (prefers-color-scheme: dark) {
+  .st-level-chip { border-color: #333; color: #666; }
+  .st-level-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
+  .st-level-all { color: #555; }
+}
+[data-theme="dark"] .st-level-chip { border-color: #333; color: #666; }
+[data-theme="dark"] .st-level-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
+[data-theme="dark"] .st-level-all { color: #555; }
+>>>>>>> 8ad062d (Initial commit_4)

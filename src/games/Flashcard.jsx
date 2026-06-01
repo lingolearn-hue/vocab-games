@@ -13,7 +13,12 @@ const SWIPE_UP_THRESHOLD = -80
 const SWIPE_DOWN_THRESHOLD = 80
 
 export default function Flashcard() {
+<<<<<<< HEAD
   const { activeEntries, direction, showReading, scoreActions, scores, settings, setScreen, activeLanguage, loadedLists, selectedIds } = useApp()
+=======
+  const { activeEntries: allEntries, direction, showReading, scoreActions, scores, settings, setScreen, activeLanguage, loadedLists, selectedIds, getEntriesForGame } = useApp()
+  const { entries: activeEntries, isEmpty: levelEmpty } = getEntriesForGame('flashcard')
+>>>>>>> 8ad062d (Initial commit_4)
   const swipeSens = settings.flashcard.swipeSensitivity
 
   const language = useMemo(() => {
@@ -149,6 +154,7 @@ export default function Flashcard() {
     } else if (dy > SWIPE_DN_THRESH && Math.abs(dx) < Math.abs(dy)) {
       setDetailOpen(true)
       setDragOffset({ x: 0, y: 0 })
+<<<<<<< HEAD
     // Swipe left/right → unknown/known (requires reveal)
     } else if (Math.abs(dx) > SWIPE_THRESH) {
       if (!revealed) { setRevealed(true); setDragOffset({ x: 0, y: 0 }); return }
@@ -156,6 +162,14 @@ export default function Flashcard() {
     } else {
       // Tap — reveal
       if (!revealed) setRevealed(true)
+=======
+    // Swipe left/right → unknown/known (always allowed)
+    } else if (Math.abs(dx) > SWIPE_THRESH) {
+      advance(dx > 0 ? 'known' : 'unknown')
+    } else {
+      // Tap — toggle reveal
+      setRevealed(r => !r)
+>>>>>>> 8ad062d (Initial commit_4)
       setDragOffset({ x: 0, y: 0 })
     }
   }
@@ -168,11 +182,18 @@ export default function Flashcard() {
       if (e.key === 'Escape') { if (detailOpen) setDetailOpen(false); else setScreen('setup'); return }
 
       if (e.key === ' ' || e.key === 'Enter') {
+<<<<<<< HEAD
         if (!revealed) { setRevealed(true); return }
       }
       if (e.key === 'ArrowDown') { setDetailOpen(true); return }
       if (e.key === 'ArrowUp')    { advance('master'); return }  // master always allowed
       if (!revealed) return
+=======
+        setRevealed(r => !r); return
+      }
+      if (e.key === 'ArrowDown') { setDetailOpen(true); return }
+      if (e.key === 'ArrowUp')    { advance('master'); return }
+>>>>>>> 8ad062d (Initial commit_4)
       if (e.key === 'ArrowRight') advance('known')
       if (e.key === 'ArrowLeft')  advance('unknown')
     }
@@ -185,6 +206,7 @@ export default function Flashcard() {
   const prompt  = getPrompt(currentEntry)
   const answer  = getAnswer(currentEntry)
   const score   = scores[currentEntry.id]?.flashcard?.score ?? 0
+<<<<<<< HEAD
   const allTranslations = currentEntry.translation
 
   // Card transform
@@ -195,6 +217,19 @@ export default function Flashcard() {
   else if (isDragging.current || dragOffset.x !== 0 || dragOffset.y !== 0) {
     const rot = dragOffset.x * 0.08
     cardStyle = { transform: `translate(${dragOffset.x}px, ${dragOffset.y}px) rotate(${rot}deg)` }
+=======
+
+  // Card translate — pure horizontal or vertical only (no diagonal)
+  let cardStyle = {}
+  if (swipeDir === 'left')       cardStyle = { transform: 'translateX(-120vw)', transition: 'transform 0.3s ease' }
+  else if (swipeDir === 'right') cardStyle = { transform: 'translateX(120vw)',  transition: 'transform 0.3s ease' }
+  else if (swipeDir === 'up')    cardStyle = { transform: 'translateY(-120vh)', transition: 'transform 0.3s ease' }
+  else if (isDragging.current || dragOffset.x !== 0 || dragOffset.y !== 0) {
+    // Lock to dominant axis only
+    const ax = Math.abs(dragOffset.x), ay = Math.abs(dragOffset.y)
+    if (ax > ay) cardStyle = { transform: `translateX(${dragOffset.x}px)` }
+    else         cardStyle = { transform: `translateY(${dragOffset.y}px)` }
+>>>>>>> 8ad062d (Initial commit_4)
   }
 
   const knownOpacity   = Math.max(0, Math.min(1,  dragOffset.x / SWIPE_THRESH))
@@ -202,6 +237,7 @@ export default function Flashcard() {
   const masterOpacity  = Math.max(0, Math.min(1, -dragOffset.y / Math.abs(SWIPE_UP_THRESH)))
   const detailOpacity  = Math.max(0, Math.min(1,  dragOffset.y / SWIPE_DN_THRESH))
 
+<<<<<<< HEAD
   const savedMnemonic = getMnemonic(currentEntry.id)
   const mnemonicRecord = getAllMnemonics()[currentEntry.id]
   const isSeeded = mnemonicRecord?.seeded ?? false
@@ -209,6 +245,14 @@ export default function Flashcard() {
   return (
     <div className="fc-screen">
       {/* Header */}
+=======
+  const savedMnemonic  = getMnemonic(currentEntry.id)
+  const mnemonicRecord = getAllMnemonics()[currentEntry.id]
+  const isSeeded       = mnemonicRecord?.seeded ?? false
+
+  return (
+    <div className="fc-screen">
+>>>>>>> 8ad062d (Initial commit_4)
       <div className="fc-header">
         <button className="fc-back" onClick={() => setScreen('setup')}>← Back</button>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
@@ -217,8 +261,25 @@ export default function Flashcard() {
         </div>
       </div>
 
+<<<<<<< HEAD
       {/* Card area */}
       <div className="fc-stage">
+=======
+      {levelEmpty && (
+        <div className="level-warning">
+          ⚠ <strong>No entries at selected level</strong> — showing all levels instead. Change in Settings.
+        </div>
+      )}
+
+      {/* Card area */}
+      <div className="fc-stage">
+        {/* Swipe hints — outside 3D card, relative to stage */}
+        <div className="fc-hint fc-hint-known"   style={{ opacity: knownOpacity }}>✓ Known</div>
+        <div className="fc-hint fc-hint-unknown"  style={{ opacity: unknownOpacity }}>✗ Unknown</div>
+        <div className="fc-hint fc-hint-master"   style={{ opacity: masterOpacity }}>⭐ Master</div>
+        <div className="fc-hint fc-hint-detail"   style={{ opacity: detailOpacity }}>ℹ Detail</div>
+
+>>>>>>> 8ad062d (Initial commit_4)
         <div
           ref={cardRef}
           className={`fc-card ${revealed ? 'revealed' : ''}`}
@@ -227,6 +288,7 @@ export default function Flashcard() {
           onPointerMove={onPointerMove}
           onPointerUp={onPointerUp}
         >
+<<<<<<< HEAD
           {/* Swipe hint overlays */}
           <div className="fc-hint fc-hint-known"   style={{ opacity: knownOpacity }}>✓ Known</div>
           <div className="fc-hint fc-hint-unknown"  style={{ opacity: unknownOpacity }}>✗ Unknown</div>
@@ -239,12 +301,39 @@ export default function Flashcard() {
             </div>
 
             {revealed && (
+=======
+          {/* Front face — prompt */}
+          <div className="fc-card-flip">
+          <div className="fc-card-face fc-card-front">
+            <div className="fc-card-inner">
+              <div className="fc-prompt-side">
+                <RubyText text={prompt.main} reading={prompt.sub} visible={!!prompt.sub} size="lg" />
+              </div>
+            </div>
+            <div className="fc-score-dots">
+              {[1,2,3,4,5].map(i => (
+                <span key={i} className={`fc-dot ${i <= score ? 'filled' : ''}`} />
+              ))}
+            </div>
+            {savedMnemonic && masterOpacity > 0.05 && (
+              <div className="fc-mnemonic-peek" style={{ opacity: masterOpacity }}>💡 {savedMnemonic}</div>
+            )}
+          </div>
+
+          {/* Back face — answer */}
+          <div className="fc-card-face fc-card-back">
+            <div className="fc-card-inner">
+              <div className="fc-prompt-side">
+                <RubyText text={prompt.main} reading={prompt.sub} visible={!!prompt.sub} size="md" />
+              </div>
+>>>>>>> 8ad062d (Initial commit_4)
               <div className="fc-answer-side">
                 <div className="fc-divider" />
                 <RubyText
                   text={answer}
                   reading={direction === 'translation->entry' && showReading ? currentEntry.reading : null}
                   visible={showReading}
+<<<<<<< HEAD
                   size="md"
                 />
               </div>
@@ -288,6 +377,35 @@ export default function Flashcard() {
           {revealed
             ? '← Unknown · → Known · ↑ Master · ↓ Detail'
             : 'Space / Enter to reveal · ↓ Detail'}
+=======
+                  size="lg"
+                />
+              </div>
+            </div>
+            <div className="fc-score-dots">
+              {[1,2,3,4,5].map(i => (
+                <span key={i} className={`fc-dot ${i <= score ? 'filled' : ''}`} />
+              ))}
+            </div>
+          </div>
+          </div>  {/* end fc-card-flip */}
+        </div>
+      </div>
+
+      {/* Action buttons — always visible */}
+      {!animating && !detailOpen && (
+        <div className="fc-actions">
+          <button className="fc-btn fc-btn-unknown" onClick={() => advance('unknown')}>✗<span>Unknown</span></button>
+          <button className="fc-btn fc-btn-master"  onClick={() => advance('master')}>⭐<span>Master</span></button>
+          <button className="fc-btn fc-btn-known"   onClick={() => advance('known')}>✓<span>Known</span></button>
+        </div>
+      )}
+
+      {!detailOpen && (
+        <div className="fc-keyboard-hint">
+          <span className="fc-hint-tap">Tap · Space to {revealed ? 'hide' : 'reveal'}</span>
+          <span>← Unknown · → Known · ↑ Master · ↓ Detail</span>
+>>>>>>> 8ad062d (Initial commit_4)
         </div>
       )}
 

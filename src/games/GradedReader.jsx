@@ -4,6 +4,35 @@ import { buildLookup, tokenise, loadReaderPassages } from '../engine/reader'
 import { TextWithLookup } from '../components/TextWithLookup'
 import './GradedReader.css'
 
+<<<<<<< HEAD
+=======
+// Tags that get a display label; others shown as-is
+const TAG_LABELS = {
+  'fiction':     'Fiction',
+  'non-fiction': 'Non-fiction',
+  'biography':   'Biography',
+  'essay':       'Essay',
+  'beginner':    'Beginner',
+  'intermediate':'Intermediate',
+  'advanced':    'Advanced',
+}
+
+// Tag display order for the filter bar (priority groups)
+const TAG_GROUPS = [
+  { label: 'Type',  prefix: null,     tags: ['fiction','non-fiction','biography','essay'] },
+  { label: 'Level', prefix: null,     tags: ['beginner','intermediate','advanced'] },
+  { label: 'Topic', prefix: 'topic:', tags: null },
+  { label: 'Series',prefix: 'series:',tags: null },
+]
+
+function tagLabel(tag) {
+  if (TAG_LABELS[tag]) return TAG_LABELS[tag]
+  if (tag.startsWith('topic:'))  return tag.slice(6).replace(/-/g, ' ')
+  if (tag.startsWith('series:')) return tag.slice(7)
+  return tag
+}
+
+>>>>>>> 8ad062d (Initial commit_4)
 export default function GradedReader() {
   const { activeEntries, loadedLists, selectedIds, showReading, scores, setScreen, activeLanguage } = useApp()
 
@@ -14,6 +43,10 @@ export default function GradedReader() {
   const [mode,            setMode]            = useState('library')
   const [customPassage,   setCustomPassage]   = useState(null)
   const [showTranslation, setShowTranslation] = useState(false)
+<<<<<<< HEAD
+=======
+  const [activeTags,      setActiveTags]      = useState(new Set())
+>>>>>>> 8ad062d (Initial commit_4)
   const textAreaRef = useRef(null)
 
   const language = useMemo(() => {
@@ -31,6 +64,41 @@ export default function GradedReader() {
     })
   }, [activeLanguage])
 
+<<<<<<< HEAD
+=======
+  // Derive all available tags from passages, in group order
+  const availableTags = useMemo(() => {
+    const allTags = new Set(passages.flatMap(p => p.tags ?? []))
+    const ordered = []
+    for (const group of TAG_GROUPS) {
+      if (group.tags) {
+        group.tags.filter(t => allTags.has(t)).forEach(t => ordered.push(t))
+      } else {
+        // Dynamic prefix group
+        ;[...allTags].filter(t => t.startsWith(group.prefix)).sort().forEach(t => ordered.push(t))
+      }
+    }
+    return ordered
+  }, [passages])
+
+  // Filter passages by active tags (AND within a group prefix, OR across groups)
+  const filteredPassages = useMemo(() => {
+    if (activeTags.size === 0) return passages
+    return passages.filter(p => {
+      const ptags = new Set(p.tags ?? [])
+      return [...activeTags].every(t => ptags.has(t))
+    })
+  }, [passages, activeTags])
+
+  function toggleTag(tag) {
+    setActiveTags(prev => {
+      const next = new Set(prev)
+      next.has(tag) ? next.delete(tag) : next.add(tag)
+      return next
+    })
+  }
+
+>>>>>>> 8ad062d (Initial commit_4)
   function openPassage(p) {
     setActivePassage(p)
     setCustomPassage(null)
@@ -66,6 +134,7 @@ export default function GradedReader() {
                 {activeLanguage ? 'No passages available for this language yet.' : 'Select a language on the home screen first.'}
               </div>
             ) : (
+<<<<<<< HEAD
               <div className="gr-passage-list">
                 {passages.map(p => {
                   const passageSpans = tokenise(p.text, lookup, language)
@@ -83,6 +152,102 @@ export default function GradedReader() {
                   )
                 })}
               </div>
+=======
+              <>
+                {/* Tag filter bar */}
+                {availableTags.length > 0 && (
+                  <div className="gr-tag-bar">
+                    {availableTags.map(tag => (
+                      <button
+                        key={tag}
+                        className={`gr-tag-chip ${activeTags.has(tag) ? 'active' : ''}`}
+                        onClick={() => toggleTag(tag)}
+                      >
+                        {tagLabel(tag)}
+                      </button>
+                    ))}
+                    {activeTags.size > 0 && (
+                      <button className="gr-tag-clear" onClick={() => setActiveTags(new Set())}>✕ Clear</button>
+                    )}
+                  </div>
+                )}
+
+                {filteredPassages.length === 0 ? (
+                  <div className="gr-empty">No passages match the selected filters.</div>
+                ) : (
+                  <div className="gr-passage-list">
+                    {(() => {
+                      const seriesMap = {}
+                      const standalones = []
+                      filteredPassages.forEach(p => {
+                        if (p.series) {
+                          if (!seriesMap[p.series]) seriesMap[p.series] = []
+                          seriesMap[p.series].push(p)
+                        } else {
+                          standalones.push(p)
+                        }
+                      })
+
+                      const renderCard = (p) => {
+                        const passageSpans = tokenise(p.text, lookup, language)
+                        const matchedIds = [...new Set(passageSpans.filter(s => s.entry).map(s => s.entry.id))]
+                        const knownCount = matchedIds.filter(id => (scores[id]?.global ?? 'unseen') !== 'unseen').length
+                        return (
+                          <button key={p.id} className="gr-passage-card" onClick={() => openPassage(p)}>
+                            <div className="gr-passage-card-top">
+                              <span className="gr-passage-title">{p.title}</span>
+                              {p.level && <span className="gr-passage-level">{p.level}</span>}
+                            </div>
+                            {p.titleTranslation && <span className="gr-passage-subtitle">{p.titleTranslation}</span>}
+                            <div className="gr-passage-card-bottom">
+                              <span className="gr-passage-stats">{matchedIds.length} vocab · {knownCount} known</span>
+                              {p.tags && (
+                                <div className="gr-passage-tags">
+                                  {p.tags.filter(t => !t.startsWith('series:') && !['beginner','intermediate','advanced'].includes(t)).slice(0, 3).map(t => (
+                                    <span key={t} className="gr-passage-tag">{tagLabel(t)}</span>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          </button>
+                        )
+                      }
+
+                      return (
+                        <>
+                          {Object.entries(seriesMap).map(([seriesName, seriesPassages]) => (
+                            <div key={seriesName} className="gr-series">
+                              <div className="gr-series-header">
+                                <span className="gr-series-icon">📚</span>
+                                <span className="gr-series-name">{seriesName}</span>
+                                <span className="gr-series-count">{seriesPassages.length} level{seriesPassages.length !== 1 ? 's' : ''}</span>
+                              </div>
+                              <div className="gr-series-cards">
+                                {seriesPassages.map(renderCard)}
+                              </div>
+                            </div>
+                          ))}
+                          {standalones.length > 0 && (
+                            <div className="gr-series">
+                              {Object.keys(seriesMap).length > 0 && (
+                                <div className="gr-series-header">
+                                  <span className="gr-series-icon">📄</span>
+                                  <span className="gr-series-name">Standalone</span>
+                                  <span className="gr-series-count">{standalones.length}</span>
+                                </div>
+                              )}
+                              <div className="gr-series-cards">
+                                {standalones.map(renderCard)}
+                              </div>
+                            </div>
+                          )}
+                        </>
+                      )
+                    })()}
+                  </div>
+                )}
+              </>
+>>>>>>> 8ad062d (Initial commit_4)
             )}
           </div>
         ) : (

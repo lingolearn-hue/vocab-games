@@ -25,7 +25,12 @@ function makeTile(entry, isCorrect, lane, y) {
 }
 
 export default function RaceCar() {
+<<<<<<< HEAD
   const { activeEntries, direction, showReading, scoreActions, scores, settings, setScreen } = useApp()
+=======
+  const { activeEntries: allEntries, direction, showReading, scoreActions, scores, settings, setScreen, getEntriesForGame } = useApp()
+  const { entries: activeEntries, isEmpty: levelEmpty } = getEntriesForGame('racecar')
+>>>>>>> 8ad062d (Initial commit_4)
   const { defaultSpeed, boostEnabled } = settings.racecar
 
   // Game state
@@ -93,6 +98,7 @@ export default function RaceCar() {
     setTimeout(() => spawnTiles(entry), 50)
   }, [spawnTiles])
 
+<<<<<<< HEAD
   // Collision detection
   // Car box: bottom=175px, height=72px → top edge at screenHeight-175-72 = screenHeight-247
   const checkCollisions = useCallback(() => {
@@ -103,6 +109,33 @@ export default function RaceCar() {
     tilesRef.current.forEach(tile => {
       if (tile.lane !== carLaneRef.current) return
       if (tile.y + TILE_HEIGHT < carTop || tile.y > carBot) return
+=======
+  // Collision detection — based on actual tile and car pixel positions
+  const checkCollisions = useCallback(() => {
+    if (crashRef.current) return
+    const sh = screenHeight.current
+    // Car: bottom=100px, height=72px
+    const carBottom = sh - 100
+    const carTop    = carBottom - 72
+
+    tilesRef.current.forEach(tile => {
+      // Tile vertical overlap
+      if (tile.y + TILE_HEIGHT < carTop || tile.y > carBottom) return
+      // Tile horizontal overlap — use pixel positions
+      if (!lanesRef.current) {
+        // Fallback: lane-based check
+        if (tile.lane !== carLaneRef.current) return
+      } else {
+        const rect = lanesRef.current.getBoundingClientRect()
+        const laneW = rect.width / 3
+        const tilePxLeft  = tile.lane * laneW + 4
+        const tilePxRight = tilePxLeft + laneW - 8
+        const carPxX = carX !== null ? carX : (carLaneRef.current * laneW + laneW / 2)
+        const carLeft  = carPxX - 24
+        const carRight = carPxX + 24
+        if (carRight < tilePxLeft || carLeft > tilePxRight) return
+      }
+>>>>>>> 8ad062d (Initial commit_4)
       // Collision!
       if (tile.isCorrect) {
         const mult = getStreakMultiplier(streakRef.current)
@@ -198,6 +231,7 @@ export default function RaceCar() {
   }, [boostEnabled])
 
   // Touch / swipe controls
+<<<<<<< HEAD
   const touchStartRef = useRef(null)
   const swipeAreaRef  = useRef(null)
 
@@ -228,6 +262,45 @@ export default function RaceCar() {
     const isBoost = relY < rect.height * 0.45
     setBoosting(isBoost)
     boostRef.current = isBoost
+=======
+  const lanesRef      = useRef(null)
+  const [carX, setCarX] = useState(null) // pixel X within lanes, null = centered
+
+  function onPointerDown(e) {
+    lanesRef.current?.setPointerCapture(e.pointerId)
+    updateCarFromPointer(e.clientX, e.clientY)
+  }
+  function onPointerMove(e) {
+    if (!lanesRef.current) return
+    updateCarFromPointer(e.clientX, e.clientY)
+  }
+  function onPointerUp(e) {
+    lanesRef.current?.releasePointerCapture(e.pointerId)
+  }
+
+  function updateCarFromPointer(clientX, clientY) {
+    const el = lanesRef.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+
+    // Smooth X — clamp to lane area (with car half-width margin)
+    const CAR_HALF = 24
+    const relX = Math.max(CAR_HALF, Math.min(rect.width - CAR_HALF, clientX - rect.left))
+    setCarX(relX)
+    // Also update lane ref for collision (which lane the center is in)
+    const lane = Math.min(2, Math.max(0, Math.floor(((clientX - rect.left) / rect.width) * 3)))
+    carLaneRef.current = lane
+    setCarLane(lane)
+
+    // Speed: further up = faster. Bottom 20% = 0.5x, top 20% = 2x
+    if (!boostEnabled) return
+    const relY = (clientY - rect.top) / rect.height // 0=top, 1=bottom
+    const dynamicSpeed = 0.5 + (1 - relY) * 1.5  // 0.5 at bottom, 2.0 at top
+    setSpeedFactor(Math.max(0.5, Math.min(2.0, dynamicSpeed)))
+    speedRef.current = Math.max(0.5, Math.min(2.0, dynamicSpeed))
+    setBoosting(relY < 0.35)
+    boostRef.current = relY < 0.35
+>>>>>>> 8ad062d (Initial commit_4)
   }
 
   const laneWidth = 100 / LANE_COUNT
@@ -263,6 +336,14 @@ export default function RaceCar() {
         </div>
       </div>
 
+<<<<<<< HEAD
+=======
+      {levelEmpty && (
+        <div className="level-warning">
+          ⚠ <strong>No entries at selected level</strong> — showing all levels instead. Change in Settings.
+        </div>
+      )}
+>>>>>>> 8ad062d (Initial commit_4)
       {/* Prompt */}
       <div className="rc-prompt-area">
         <div className="rc-prompt">{promptText}</div>
@@ -272,7 +353,18 @@ export default function RaceCar() {
       </div>
 
       {/* Lane lines */}
+<<<<<<< HEAD
       <div className="rc-lanes">
+=======
+      <div
+        className="rc-lanes"
+        ref={lanesRef}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        style={{ cursor: 'none' }}
+      >
+>>>>>>> 8ad062d (Initial commit_4)
         {[0,1,2].map(i => (
           <div key={i} className="rc-lane-line" style={{ left: `${(i+1) * laneWidth}%` }} />
         ))}
@@ -308,10 +400,23 @@ export default function RaceCar() {
           )
         })}
 
+<<<<<<< HEAD
         {/* Car — box with speed lines */}
         <div
           className={`rc-car ${crash ? 'rc-car-crash' : ''}`}
           style={{ bottom: '175px', left: `calc(${carLane * laneWidth + laneWidth/2}% - 24px)` }}
+=======
+        {/* Car — smooth X positioning */}
+        <div
+          className={`rc-car ${crash ? 'rc-car-crash' : ''}`}
+          style={{
+            bottom: '100px',
+            left: carX !== null
+              ? `${carX - 24}px`
+              : `calc(${carLane * laneWidth + laneWidth/2}% - 24px)`,
+            transition: 'left 0.05s linear',
+          }}
+>>>>>>> 8ad062d (Initial commit_4)
         >
           <div className="rc-car-body" />
           <div className="rc-speedlines">
@@ -321,6 +426,7 @@ export default function RaceCar() {
           </div>
         </div>
 
+<<<<<<< HEAD
         {/* Swipe area */}
         <div
           ref={swipeAreaRef}
@@ -332,6 +438,9 @@ export default function RaceCar() {
         >
           {boosting && <span className="rc-boost-label">BOOST</span>}
         </div>
+=======
+        {boosting && <span className="rc-boost-label">BOOST ↑</span>}
+>>>>>>> 8ad062d (Initial commit_4)
       </div>
     </div>
   )

@@ -46,6 +46,22 @@
   flex-shrink: 0;
 }
 
+<<<<<<< HEAD
+=======
+.dl-trans-toggle {
+  background: none;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 7px;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #aaa;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.dl-trans-toggle.active { border-color: #4f7ef8; color: #4f7ef8; background: #eef2ff; }
+
+>>>>>>> 8ad062d (Initial commit_4)
 .dl-acc {
   font-size: 0.78rem;
   color: #aaa;

@@ -56,13 +56,21 @@
   justify-content: center;
   padding: 1rem 1.2rem;
   overflow: hidden;
+<<<<<<< HEAD
 }
 
 /* Card */
+=======
+  perspective: 1000px;
+}
+
+/* Card with 3D flip */
+>>>>>>> 8ad062d (Initial commit_4)
 .fc-card {
   position: relative;
   width: 100%;
   max-width: 360px;
+<<<<<<< HEAD
   min-height: 300px;
   background: #fff;
   border-radius: 20px;
@@ -71,6 +79,9 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 2rem 1.8rem 1.4rem;
+=======
+  height: 300px;
+>>>>>>> 8ad062d (Initial commit_4)
   cursor: grab;
   touch-action: none;
   will-change: transform;
@@ -78,6 +89,58 @@
 
 .fc-card:active { cursor: grabbing; }
 
+<<<<<<< HEAD
+=======
+/* Flip container inside card */
+.fc-card-flip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: none;
+}
+
+.fc-card.revealed .fc-card-flip {
+  animation: flipContainer 0.4s ease forwards;
+}
+
+.fc-card:not(.revealed) .fc-card-flip {
+  animation: unflipContainer 0.4s ease forwards;
+}
+
+@keyframes flipContainer {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(180deg); }
+}
+
+@keyframes unflipContainer {
+  from { transform: rotateY(180deg); }
+  to   { transform: rotateY(0deg); }
+}
+
+.fc-card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1.8rem 1.4rem;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.fc-card-front {
+  transform: rotateY(0deg);
+}
+
+.fc-card-back {
+  transform: rotateY(180deg);
+}
+
+>>>>>>> 8ad062d (Initial commit_4)
 /* Swipe hint overlays */
 .fc-hint {
   position: absolute;
@@ -240,9 +303,24 @@
 /* Keyboard hint */
 .fc-keyboard-hint {
   text-align: center;
+<<<<<<< HEAD
   font-size: 0.72rem;
   color: #ccc;
   padding: 0.4rem 1rem 1rem;
+=======
+  font-size: 0.68rem;
+  color: #ccc;
+  padding: 0.2rem 1rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  line-height: 1.5;
+}
+
+.fc-hint-tap {
+  color: #aaa;
+  font-size: 0.72rem;
+>>>>>>> 8ad062d (Initial commit_4)
 }
 
 .fc-empty {
@@ -312,7 +390,11 @@
   background: rgba(0,0,0,0.4);
   z-index: 100;
   display: flex;
+<<<<<<< HEAD
   align-items: flex-end;
+=======
+  align-items: flex-start;
+>>>>>>> 8ad062d (Initial commit_4)
   animation: fadeIn 0.15s ease;
 }
 
@@ -321,14 +403,27 @@
   max-width: 480px;
   margin: 0 auto;
   background: #fff;
+<<<<<<< HEAD
   border-radius: 20px 20px 0 0;
+=======
+  border-radius: 0 0 20px 20px;
+>>>>>>> 8ad062d (Initial commit_4)
   padding: 1.2rem 1.4rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   max-height: 80dvh;
   overflow-y: auto;
+<<<<<<< HEAD
   animation: slideUp 0.2s ease;
+=======
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-40px); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+>>>>>>> 8ad062d (Initial commit_4)
 }
 
 @keyframes slideUp {

@@ -1,13 +1,21 @@
 .setup {
   max-width: 480px;
   margin: 0 auto;
+<<<<<<< HEAD
   padding: 2rem 1rem 4rem;
 }
 
+=======
+  padding: 0 0 4rem;
+}
+
+/* ── Header ── */
+>>>>>>> 8ad062d (Initial commit_4)
 .setup-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+<<<<<<< HEAD
   margin-bottom: 1.8rem;
 }
 
@@ -16,6 +24,30 @@
   font-weight: 600;
 }
 
+=======
+  padding: 1rem 1.2rem 0.6rem;
+}
+
+/* Flag / language button */
+.lang-flag-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 0.35rem 0.7rem 0.35rem 0.5rem;
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s;
+}
+.lang-flag-btn:hover { border-color: #4f7ef8; background: #f5f7ff; }
+
+.lang-flag-icon  { font-size: 1.2rem; line-height: 1; }
+.lang-flag-label { font-size: 0.82rem; font-weight: 600; color: #333; }
+.lang-flag-arrow { font-size: 0.7rem; color: #aaa; }
+
+/* Nav icons */
+>>>>>>> 8ad062d (Initial commit_4)
 .setup-nav {
   display: flex;
   gap: 0.4rem;
@@ -34,6 +66,7 @@
   justify-content: center;
   transition: border-color 0.15s, background 0.15s;
 }
+<<<<<<< HEAD
 .setup-nav-btn:hover {
   border-color: #4f7ef8;
   background: #eef2ff;
@@ -157,21 +190,175 @@
 
 /* Game cards */
 .game-grid {
+=======
+.setup-nav-btn:hover { border-color: #4f7ef8; background: #eef2ff; }
+
+/* ── Language picker dropdown ── */
+.lang-picker {
+  margin: 0 1.2rem 0.6rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.lang-picker-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-bottom: 1px solid #f0f0f0;
+  background: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.1s;
+}
+.lang-picker-item:last-child { border-bottom: none; }
+.lang-picker-item:hover   { background: #f5f7ff; }
+.lang-picker-item.active  { background: #eef2ff; font-weight: 700; color: #4f7ef8; }
+
+/* ── Level filter ── */
+.level-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.5rem 1.2rem 0.2rem;
+}
+
+.level-chip {
+  padding: 0.3rem 0.7rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 20px;
+  background: #f5f5f5;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #aaa;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.level-chip.active {
+  background: #4f7ef8;
+  border-color: #4f7ef8;
+  color: #fff;
+}
+.level-chip:hover:not(.active) { border-color: #4f7ef8; color: #4f7ef8; background: #f0f4ff; }
+
+/* ── Stats bar ── */
+.stats-bar {
+  margin: 0 1.2rem 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  color: #888;
+  text-align: center;
+}
+
+/* ── Sections ── */
+.setup-section {
+  padding: 0.5rem 1.2rem 0;
+>>>>>>> 8ad062d (Initial commit_4)
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
+<<<<<<< HEAD
 .game-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 0.9rem 1rem;
   border: 2px solid #e0e0e0;
+=======
+/* ── Vocab Browser ── */
+.vocab-browser-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 2px solid #4f7ef8;
+  border-radius: 14px;
+  background: #eef2ff;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s, border-color 0.12s;
+}
+.vocab-browser-btn:hover:not(.disabled) { background: #e0e8ff; }
+.vocab-browser-btn.disabled { opacity: 0.4; cursor: default; border-color: #ddd; background: #f5f5f5; }
+
+.vocab-browser-icon  { font-size: 1.4rem; flex-shrink: 0; }
+.vocab-browser-label { font-size: 0.95rem; font-weight: 700; color: #3a5bd9; }
+.vocab-browser-desc  { font-size: 0.75rem; color: #7a9ae0; margin-top: 1px; }
+
+/* ── Group cards ── */
+.group-card {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: white;
+  transition: border-color 0.12s;
+}
+.group-card.open { border-color: #4f7ef8; }
+
+.group-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+}
+.group-header:hover { background: #fafafa; }
+
+.group-icon { font-size: 1.2rem; flex-shrink: 0; }
+
+.group-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.group-name { font-size: 0.95rem; font-weight: 700; color: #222; }
+.group-sub  { font-size: 0.72rem; color: #aaa; }
+
+.group-arrow {
+  font-size: 0.85rem;
+  color: #bbb;
+  transition: transform 0.15s;
+}
+
+/* ── Sub-game buttons ── */
+.group-body {
+  border-top: 1px solid #f0f0f0;
+  padding: 0.4rem 0.6rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  background: #fafbff;
+}
+
+.sub-game-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.7rem;
+  border: 1.5px solid transparent;
+>>>>>>> 8ad062d (Initial commit_4)
   border-radius: 10px;
   background: white;
   cursor: pointer;
   text-align: left;
+<<<<<<< HEAD
   transition: border-color 0.15s, background 0.15s;
 }
 
@@ -235,3 +422,72 @@
 [data-theme="dark"] .setup-section h2 { color: #666; }
 [data-theme="dark"] .setup-nav-btn { border-color: #333; }
 [data-theme="dark"] .setup-nav-btn:hover { background: #1a2340; border-color: #4f7ef8; }
+=======
+  transition: border-color 0.12s, background 0.12s;
+}
+.sub-game-btn:hover:not(.disabled) { border-color: #4f7ef8; background: #f0f4ff; }
+.sub-game-btn.disabled { opacity: 0.4; cursor: default; }
+
+.sub-game-label { font-size: 0.88rem; font-weight: 600; color: #222; }
+.sub-game-desc  { font-size: 0.72rem; color: #aaa; }
+
+/* ── Hint ── */
+.hint {
+  text-align: center;
+  font-size: 0.82rem;
+  color: #bbb;
+  padding: 1rem 1.2rem;
+}
+
+/* ── Dark mode ── */
+@media (prefers-color-scheme: dark) {
+  .lang-flag-btn    { border-color: #333; }
+  .lang-flag-btn:hover { background: #1a2340; border-color: #4f7ef8; }
+  .lang-flag-label  { color: #ccc; }
+  .setup-nav-btn    { border-color: #333; }
+  .setup-nav-btn:hover { background: #1a2340; border-color: #4f7ef8; }
+  .lang-picker      { background: #1e1e1e; border-color: #333; box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+  .lang-picker-item { border-color: #2a2a2a; color: #ccc; }
+  .lang-picker-item:hover  { background: #1a2340; }
+  .lang-picker-item.active { background: #1a2340; color: #4f7ef8; }
+  .stats-bar        { background: #1e1e1e; color: #666; }
+  .vocab-browser-btn { background: #0d1a3a; border-color: #4f7ef8; }
+  .vocab-browser-btn:hover:not(.disabled) { background: #1a2340; }
+  .vocab-browser-btn.disabled { background: #1a1a1a; border-color: #2a2a2a; }
+  .vocab-browser-label { color: #7fa4ff; }
+  .vocab-browser-desc  { color: #3a5a9a; }
+  .group-card       { background: #1e1e1e; border-color: #2a2a2a; }
+  .group-card.open  { border-color: #4f7ef8; }
+  .group-header:hover { background: #252525; }
+  .group-name       { color: #ddd; }
+  .group-body       { background: #181820; border-color: #2a2a2a; }
+  .sub-game-btn     { background: #1e1e1e; }
+  .sub-game-btn:hover:not(.disabled) { border-color: #4f7ef8; background: #1a2340; }
+  .sub-game-label   { color: #ddd; }
+}
+[data-theme="dark"] .lang-flag-btn    { border-color: #333; }
+[data-theme="dark"] .lang-flag-btn:hover { background: #1a2340; border-color: #4f7ef8; }
+[data-theme="dark"] .lang-flag-label  { color: #ccc; }
+[data-theme="dark"] .setup-nav-btn    { border-color: #333; }
+[data-theme="dark"] .setup-nav-btn:hover { background: #1a2340; border-color: #4f7ef8; }
+[data-theme="dark"] .lang-picker      { background: #1e1e1e; border-color: #333; }
+[data-theme="dark"] .lang-picker-item { border-color: #2a2a2a; color: #ccc; }
+[data-theme="dark"] .lang-picker-item:hover  { background: #1a2340; }
+[data-theme="dark"] .lang-picker-item.active { background: #1a2340; color: #4f7ef8; }
+[data-theme="dark"] .level-chip { background: #1e1e1e; border-color: #333; color: #555; }
+[data-theme="dark"] .level-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
+[data-theme="dark"] .stats-bar        { background: #1e1e1e; color: #666; }
+[data-theme="dark"] .vocab-browser-btn { background: #0d1a3a; border-color: #4f7ef8; }
+[data-theme="dark"] .vocab-browser-btn:hover:not(.disabled) { background: #1a2340; }
+[data-theme="dark"] .vocab-browser-btn.disabled { background: #1a1a1a; border-color: #2a2a2a; }
+[data-theme="dark"] .vocab-browser-label { color: #7fa4ff; }
+[data-theme="dark"] .vocab-browser-desc  { color: #3a5a9a; }
+[data-theme="dark"] .group-card       { background: #1e1e1e; border-color: #2a2a2a; }
+[data-theme="dark"] .group-card.open  { border-color: #4f7ef8; }
+[data-theme="dark"] .group-header:hover { background: #252525; }
+[data-theme="dark"] .group-name       { color: #ddd; }
+[data-theme="dark"] .group-body       { background: #181820; border-color: #2a2a2a; }
+[data-theme="dark"] .sub-game-btn     { background: #1e1e1e; }
+[data-theme="dark"] .sub-game-btn:hover:not(.disabled) { border-color: #4f7ef8; background: #1a2340; }
+[data-theme="dark"] .sub-game-label   { color: #ddd; }
+>>>>>>> 8ad062d (Initial commit_4)

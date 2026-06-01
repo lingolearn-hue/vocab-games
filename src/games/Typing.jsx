@@ -30,7 +30,12 @@ function isCorrect(input, entry, direction) {
 }
 
 export default function Typing() {
+<<<<<<< HEAD
   const { activeEntries, direction, showReading, scoreActions, scores, settings, setScreen } = useApp()
+=======
+  const { activeEntries: allEntries, direction, showReading, scoreActions, scores, settings, setScreen, getEntriesForGame } = useApp()
+  const { entries: activeEntries, isEmpty: levelEmpty } = getEntriesForGame('typing')
+>>>>>>> 8ad062d (Initial commit_4)
   const { requireCorrect, skipEnabled } = settings.typing
 
   const [entry,       setEntry]       = useState(null)
@@ -147,9 +152,14 @@ export default function Typing() {
   function onKeyDown(e) {
     if (e.key === 'Enter') { e.preventDefault(); submit() }
     if (e.key === 'Escape') {
+<<<<<<< HEAD
       if (mustRetype) return  // can't exit mid-retype
       if (skipEnabled) skip()
       else setScreen('setup')
+=======
+      if (mustRetype) return
+      skip()
+>>>>>>> 8ad062d (Initial commit_4)
     }
   }
 
@@ -185,6 +195,14 @@ export default function Typing() {
         </div>
       </div>
 
+<<<<<<< HEAD
+=======
+      {levelEmpty && (
+        <div className="level-warning">
+          ⚠ <strong>No entries at selected level</strong> — showing all levels instead. Change in Settings.
+        </div>
+      )}
+>>>>>>> 8ad062d (Initial commit_4)
       {/* Prompt card */}
       <div className="ty-card-area">
         <div className={`ty-card ${feedback || ''}`}>
@@ -271,6 +289,7 @@ export default function Typing() {
           </div>
         )}
 
+<<<<<<< HEAD
         {/* Action buttons */}
         <div className="ty-actions">
           {!feedback && !mustRetype && (
@@ -288,6 +307,10 @@ export default function Typing() {
         <div className="ty-keyboard-hint">
           Enter to check · {skipEnabled ? 'Esc to skip · ' : ''}
           {direction === 'entry->translation' ? 'Type the translation' : 'Type the word'}
+=======
+        <div className="ty-keyboard-hint">
+          Enter to check{skipEnabled ? ' · Esc to skip' : ''}
+>>>>>>> 8ad062d (Initial commit_4)
         </div>
       </div>
     </div>

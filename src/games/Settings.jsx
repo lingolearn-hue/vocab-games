@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import { useEffect } from 'react'
+>>>>>>> 8ad062d (Initial commit_4)
 import { useApp } from '../context/AppContext'
 import { getAllScores } from '../engine/srs'
 import './Settings.css'
@@ -16,6 +20,61 @@ const GAMES_WITH_FIELDS = [
   { id: 'typing',    label: '⌨️ Typing' },
 ]
 
+<<<<<<< HEAD
+=======
+function LevelPicker({ levels, availableLevels, onChange, isOverride = false, onReset }) {
+  if (availableLevels.length === 0) {
+    return <p className="st-hint">No vocab loaded yet.</p>
+  }
+  return (
+    <div className="st-level-picker">
+      {isOverride && levels === null && (
+        <span className="st-using-global-label">Using global</span>
+      )}
+      <div className="st-level-chips">
+        {availableLevels.map(level => {
+          const active = levels === null ? false : levels.includes(level)
+          const isGlobalMode = levels === null
+          return (
+            <button
+              key={level}
+              className={`st-level-chip ${!isGlobalMode && active ? 'active' : ''} ${isGlobalMode ? 'global' : ''}`}
+              onClick={() => {
+                if (isGlobalMode && isOverride) {
+                  // First click on a chip when using global: start override with just this level
+                  onChange([level])
+                } else {
+                  onChange(toggleLevelLocal(levels, level, availableLevels))
+                }
+              }}
+              title={isGlobalMode ? 'Click to override' : ''}
+            >
+              {level}
+            </button>
+          )
+        })}
+        {levels !== null && (
+          <button className="st-level-chip st-level-all" onClick={() => onChange(null)}>
+            All
+          </button>
+        )}
+      </div>
+      {onReset && levels !== null && (
+        <button className="st-reset-game" onClick={onReset}>Reset to global</button>
+      )}
+    </div>
+  )
+}
+
+function toggleLevelLocal(currentLevels, level, allLevels) {
+  if (!currentLevels) return [level]
+  const next = currentLevels.includes(level)
+    ? currentLevels.filter(l => l !== level)
+    : [...currentLevels, level]
+  return next.length === 0 || next.length === allLevels.length ? null : next
+}
+
+>>>>>>> 8ad062d (Initial commit_4)
 function FieldRow({ label, fields, onChange }) {
   return (
     <div className="st-field-row">
@@ -53,7 +112,17 @@ function FieldRow({ label, fields, onChange }) {
 }
 
 export default function Settings() {
+<<<<<<< HEAD
   const { setScreen, settings, updateSettings } = useApp()
+=======
+  const { setScreen, settings, updateSettings, availableLevels } = useApp()
+
+  useEffect(() => {
+    function onKey(e) { if (e.key === 'Escape') setScreen('setup') }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+>>>>>>> 8ad062d (Initial commit_4)
 
   function set(path, value) {
     updateSettings(s => {
@@ -98,6 +167,24 @@ export default function Settings() {
     })
   }
 
+<<<<<<< HEAD
+=======
+  function setGlobalLevels(levels) {
+    updateSettings(s => ({ ...s, levels: { ...s.levels, global: levels } }))
+  }
+
+  function setGameLevels(game, levels) {
+    updateSettings(s => ({ ...s, levels: { ...s.levels, [game]: levels } }))
+  }
+
+  function applyGlobalLevelsToAll() {
+    updateSettings(s => ({
+      ...s,
+      levels: { global: s.levels.global, flashcard: null, pairmatch: null, racecar: null, gapfill: null, typing: null }
+    }))
+  }
+
+>>>>>>> 8ad062d (Initial commit_4)
   function applyGlobalFieldsToAll() {
     updateSettings(s => ({
       ...s,
@@ -179,6 +266,45 @@ export default function Settings() {
           </div>
         </section>
 
+<<<<<<< HEAD
+=======
+        {/* ── Levels ── */}
+        <section className="st-section">
+          <h2>Levels</h2>
+          <p className="st-hint">Filter which vocabulary levels appear in games. Select none to use all levels.</p>
+
+          <div className="st-subsection">
+            <div className="st-subsection-header">
+              <span className="st-sublabel">Global (default for all games)</span>
+              <button className="st-apply-all" onClick={applyGlobalLevelsToAll}>Apply to all games</button>
+            </div>
+            <LevelPicker
+              levels={cfg.levels.global}
+              availableLevels={availableLevels}
+              onChange={setGlobalLevels}
+            />
+          </div>
+
+          {GAMES_WITH_FIELDS.map(g => {
+            const gameLevels = cfg.levels[g.id]
+            return (
+              <div key={g.id} className="st-subsection">
+                <div className="st-subsection-header">
+                  <span className="st-sublabel">{g.label}</span>
+                </div>
+                <LevelPicker
+                  levels={gameLevels}
+                  availableLevels={availableLevels}
+                  onChange={levels => setGameLevels(g.id, levels)}
+                  isOverride={true}
+                  onReset={gameLevels !== null ? () => setGameLevels(g.id, null) : null}
+                />
+              </div>
+            )
+          })}
+        </section>
+
+>>>>>>> 8ad062d (Initial commit_4)
         {/* ── Answer fields ── */}
         <section className="st-section">
           <h2>Answer fields</h2>

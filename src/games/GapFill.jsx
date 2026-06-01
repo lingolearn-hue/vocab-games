@@ -74,7 +74,12 @@ function buildQuestion(activeSentences, activeEntries, direction, usedIds, fixed
 const FEEDBACK_DURATION = 900
 
 export default function GapFill() {
+<<<<<<< HEAD
   const { activeEntries, activeSentences, direction, showReading, scoreActions, scores, settings, setScreen, activeLanguage, loadedLists, selectedIds } = useApp()
+=======
+  const { activeEntries: allEntries, activeSentences, direction, showReading, scoreActions, scores, settings, setScreen, activeLanguage, loadedLists, selectedIds, getEntriesForGame } = useApp()
+  const { entries: activeEntries, isEmpty: levelEmpty } = getEntriesForGame('gapfill')
+>>>>>>> 8ad062d (Initial commit_4)
   const fixedRatio = settings.gapfill.fixedRatio
 
   const language = useMemo(() => {
@@ -171,6 +176,15 @@ export default function GapFill() {
         </div>
       </div>
 
+<<<<<<< HEAD
+=======
+      {levelEmpty && (
+        <div className="level-warning">
+          ⚠ <strong>No entries at selected level</strong> — showing all levels instead. Change in Settings.
+        </div>
+      )}
+
+>>>>>>> 8ad062d (Initial commit_4)
       {/* Sentence card */}
       <div className="gf-card-area">
         <div className={`gf-card ${feedback || ''}`}>

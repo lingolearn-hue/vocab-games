@@ -30,6 +30,10 @@ export default function Dialogue() {
   const [correct,         setCorrect]         = useState(0)
   const [total,           setTotal]           = useState(0)
   const [finished,        setFinished]        = useState(false)
+<<<<<<< HEAD
+=======
+  const [showTranslations, setShowTranslations] = useState(false)
+>>>>>>> 8ad062d (Initial commit_4)
 
   const language = useMemo(() => {
     if (activeLanguage) return activeLanguage
@@ -53,7 +57,11 @@ export default function Dialogue() {
     setScore(0)
     setCorrect(0)
     setTotal(0)
+<<<<<<< HEAD
     setFinished(false)
+=======
+    setShowTranslations(false)
+>>>>>>> 8ad062d (Initial commit_4)
     // Advance past any leading line turns immediately
     let i = 0
     while (i < d.turns.length && d.turns[i].type === 'line') i++
@@ -148,6 +156,14 @@ export default function Dialogue() {
         <button className="dl-back" onClick={() => setActiveDialogue(null)}>← Back</button>
         <span className="dl-title dl-reading-title">{activeDialogue.title}</span>
         <div className="dl-score-wrap">
+<<<<<<< HEAD
+=======
+          <button
+            className={`dl-trans-toggle ${showTranslations ? 'active' : ''}`}
+            onClick={() => setShowTranslations(t => !t)}
+            title="Show/hide translations"
+          >EN</button>
+>>>>>>> 8ad062d (Initial commit_4)
           {total > 0 && <span className="dl-acc">{accuracy}%</span>}
           <span className="dl-score">{score}</span>
         </div>
@@ -170,7 +186,11 @@ export default function Dialogue() {
                       showReading={showReading}
                     />
                   </div>
+<<<<<<< HEAD
                   {turn.translation && (
+=======
+                  {turn.translation && showTranslations && (
+>>>>>>> 8ad062d (Initial commit_4)
                     <div className="dl-bubble-trans">{turn.translation}</div>
                   )}
                 </div>

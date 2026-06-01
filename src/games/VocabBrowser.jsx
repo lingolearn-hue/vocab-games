@@ -130,6 +130,7 @@ export default function VocabBrowser() {
           const rec    = scores[entry.id]
           const status = rec?.global ?? 'unseen'
           return (
+<<<<<<< HEAD
             <div key={entry.id} className="vb-row">
               <span
                 className="vb-dot"
@@ -186,6 +187,60 @@ export default function VocabBrowser() {
                 <button className="vb-reset" onClick={e => handleReset(e, entry.id)} title="Reset to learning">↩</button>
               )}
             </div>
+=======
+            <>
+              <div key={entry.id} className="vb-row">
+                <span
+                  className="vb-dot"
+                  style={{ background: GLOBAL_COLORS[status] }}
+                  title={status}
+                />
+                <div className="vb-main">
+                  <div className="vb-entry-line">
+                    <RubyText
+                      text={entry.entry}
+                      reading={entry.reading}
+                      visible={showReading}
+                      size="sm"
+                    />
+                    {entry.level && <span className="vb-level">{entry.level}</span>}
+                    {entry.pos   && <span className="vb-pos">{entry.pos}</span>}
+                  </div>
+                  {showTrans && (
+                    <div className="vb-trans">{entry.translation.join(' · ')}</div>
+                  )}
+                </div>
+
+                {/* Right side: scores + mnemonic + reset */}
+                <div className="vb-right">
+                  {showScores && (
+                    <div className="vb-scores">
+                      {GAMES.map(g => (
+                        <span key={g} className="vb-game-score" style={{ color: GAME_META[g].color }}>
+                          {rec?.[g]?.score ?? 0}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  {mnemonics[entry.id] && (
+                    <button
+                      className="vb-mnemonic-btn"
+                      onClick={() => setExpandedId(expandedId === entry.id ? null : entry.id)}
+                      title={expandedId === entry.id ? 'Hide mnemonic' : 'Show mnemonic'}
+                    >
+                      💡
+                    </button>
+                  )}
+                  {status === 'mastered' && (
+                    <button className="vb-reset" onClick={e => handleReset(e, entry.id)} title="Reset to learning">↩</button>
+                  )}
+                </div>
+              </div>
+              {expandedId === entry.id && mnemonics[entry.id] && (
+                <div className="vb-mnemonic-expanded">{mnemonics[entry.id].mnemonic}</div>
+              )}
+            </>
+>>>>>>> 8ad062d (Initial commit_4)
           )
         })}
       </div>

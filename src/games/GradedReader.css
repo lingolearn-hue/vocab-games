@@ -283,3 +283,119 @@
 [data-theme="dark"] .gr-legend        { border-color: #222; }
 [data-theme="dark"] .gr-tab           { color: #666; border-color: #333; }
 [data-theme="dark"] .gr-header-tabs   { border-color: #333; }
+<<<<<<< HEAD
+=======
+
+/* Series grouping */
+.gr-series {
+  margin-bottom: 1.2rem;
+}
+
+.gr-series-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0 0.5rem;
+  border-bottom: 1.5px solid #f0f0f0;
+  margin-bottom: 0.5rem;
+}
+
+.gr-series-icon {
+  font-size: 0.85rem;
+}
+
+.gr-series-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #888;
+  flex: 1;
+}
+
+.gr-series-count {
+  font-size: 0.7rem;
+  color: #bbb;
+}
+
+.gr-series-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .gr-series-header { border-color: #222; }
+}
+[data-theme="dark"] .gr-series-header { border-color: #222; }
+
+/* Tag filter bar */
+.gr-tag-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0 0 0.8rem;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 0.8rem;
+}
+
+.gr-tag-chip {
+  padding: 0.25rem 0.6rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 20px;
+  background: none;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.12s;
+  white-space: nowrap;
+}
+.gr-tag-chip:hover { border-color: #4f7ef8; color: #4f7ef8; }
+.gr-tag-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
+
+.gr-tag-clear {
+  padding: 0.25rem 0.6rem;
+  border: none;
+  background: none;
+  font-size: 0.72rem;
+  color: #ccc;
+  cursor: pointer;
+}
+.gr-tag-clear:hover { color: #e5534b; }
+
+/* Tags on passage card */
+.gr-passage-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.1rem;
+}
+
+.gr-passage-tags {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.gr-passage-tag {
+  font-size: 0.62rem;
+  padding: 1px 6px;
+  border-radius: 10px;
+  background: #f0f0f0;
+  color: #999;
+  white-space: nowrap;
+}
+
+@media (prefers-color-scheme: dark) {
+  .gr-tag-bar    { border-color: #222; }
+  .gr-tag-chip   { border-color: #333; color: #666; }
+  .gr-tag-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
+  .gr-passage-tag { background: #2a2a2a; color: #666; }
+}
+[data-theme="dark"] .gr-tag-bar    { border-color: #222; }
+[data-theme="dark"] .gr-tag-chip   { border-color: #333; color: #666; }
+[data-theme="dark"] .gr-tag-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
+[data-theme="dark"] .gr-passage-tag { background: #2a2a2a; color: #666; }
+>>>>>>> 8ad062d (Initial commit_4)

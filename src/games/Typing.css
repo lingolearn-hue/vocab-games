@@ -74,11 +74,19 @@
 
 /* Card */
 .ty-card-area {
+<<<<<<< HEAD
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem 1.2rem;
+=======
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem 0.4rem;
+>>>>>>> 8ad062d (Initial commit_4)
 }
 
 .ty-card {

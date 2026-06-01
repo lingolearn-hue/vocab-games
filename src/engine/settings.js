@@ -55,6 +55,18 @@ export const DEFAULTS = {
     gapfill:   null,
     typing:    null,
   },
+<<<<<<< HEAD
+=======
+  // Level filter per game. null = all levels. Array of level strings = filter.
+  levels: {
+    global:    null,
+    flashcard: null,
+    pairmatch: null,
+    racecar:   null,
+    gapfill:   null,
+    typing:    null,
+  },
+>>>>>>> 8ad062d (Initial commit_4)
   racecar: {
     defaultSpeed: 1.0,
     boostEnabled: true,
@@ -115,8 +127,26 @@ export function getAnswerFields(settings, game) {
 }
 
 /**
+<<<<<<< HEAD
  * Apply dark mode to <html> element.
  */
+=======
+ * Get resolved level filter for a specific game.
+ * Returns null (all levels) or an array of level strings.
+ */
+export function getGameLevels(settings, game) {
+  return settings.levels[game] ?? settings.levels.global ?? null
+}
+
+/**
+ * Filter entries by resolved level setting for a game.
+ * Returns all entries if levels is null.
+ */
+export function filterByLevel(entries, levels) {
+  if (!levels || levels.length === 0) return entries
+  return entries.filter(e => levels.includes(e.level))
+}
+>>>>>>> 8ad062d (Initial commit_4)
 export function applyDarkMode(mode) {
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
   const isDark = mode === 'dark' || (mode === 'auto' && prefersDark)
