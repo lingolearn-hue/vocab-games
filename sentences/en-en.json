@@ -1,0 +1,24 @@
+{
+  "language": "en",
+  "native": "en",
+  "sentences": [
+    {"text": "I {eat/drink/buy} an apple every day.", "translation": "I eat an apple every day.", "level": "A1"},
+    {"text": "She {drinks/eats/buys} water.", "translation": "She drinks water.", "level": "A1"},
+    {"text": "He is a {student/apple/cat}.", "translation": "He is a student.", "level": "A1"},
+    {"text": "The book is very {good/expensive/small}.", "translation": "The book is very good.", "level": "A2"},
+    {"text": "I {bought/sold/lost} a new book.", "translation": "I bought a new book.", "level": "A2"},
+    {"text": "Although it was cold, he {still/never/barely} went out for a run.", "translation": "Although it was cold, he still went out for a run.", "level": "B1"},
+    {"text": "He prepared {carefully/carelessly/hastily} for the exam.", "translation": "He prepared carefully for the exam.", "level": "B1"},
+    {"text": "This issue {deserves/avoids/ignores} serious consideration.", "translation": "This issue deserves serious consideration.", "level": "B1"},
+    {"text": "With the {development/decline/stagnation} of technology, life is becoming more convenient.", "translation": "With the development of technology, life is becoming more convenient.", "level": "B2"},
+    {"text": "His speech {attracted/ignored/deflected} the attention of the audience.", "translation": "His speech attracted the attention of the audience.", "level": "B2"},
+    {"text": "Economic globalisation brings both {opportunities/certainties/stagnation} and {challenges/solutions/guarantees}.", "translation": "Economic globalisation brings both opportunities and challenges.", "level": "B2"},
+    {"text": "She {persisted with/abandoned/interrupted} years of training and {finally/nevertheless/never} won the championship.", "translation": "She persisted with years of training and finally won the championship.", "level": "B2"},
+    {"text": "His theory has {overturned/reinforced/confirmed} the long-held {understanding/prejudice/certainty}.", "translation": "His theory has overturned the long-held understanding.", "level": "C1"},
+    {"text": "The novel {illuminates/conceals/simplifies} the {complexity/superficiality/monotony} of human nature.", "translation": "The novel illuminates the complexity of human nature.", "level": "C1"},
+    {"text": "In the age of {information overload/technological stagnation/global isolation}, {critical/passive/emotional} thinking is {indispensable/superfluous/harmful}.", "translation": "In the age of information overload, critical thinking is indispensable.", "level": "C1"},
+    {"text": "Language is not only a tool of {communication/division/competition}, but also a {vehicle/mirror/barrier} of {thought/emotion/identity}.", "translation": "Language is not only a tool of communication, but also a vehicle of thought.", "level": "C1"},
+    {"text": "The expansion of {capital/power/technology} often comes at the expense of the {public interest/individual will/market}.", "translation": "The expansion of capital often comes at the expense of the public interest.", "level": "C1"},
+    {"text": "The policy {revealed/concealed/generated} numerous {weaknesses/advantages/opportunities} during its {implementation/planning/evaluation}.", "translation": "The policy revealed numerous weaknesses during its implementation.", "level": "C1"}
+  ]
+}
