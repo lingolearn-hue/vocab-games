@@ -9,12 +9,14 @@ const AVAILABLE_LISTS = [
   { id: 'es-en', path: './vocab/es-en.json', label: 'Spanish → English', language: 'es', languageLabel: 'Spanish 🇪🇸',    sentencePath: './sentences/es-en.json' },
   { id: 'de-en', path: './vocab/de-en.json', label: 'German → English',  language: 'de', languageLabel: 'German 🇩🇪',     sentencePath: './sentences/de-en.json' },
   { id: 'ja-en', path: './vocab/ja-en.json', label: 'Japanese → English',language: 'ja', languageLabel: 'Japanese 🇯🇵',   sentencePath: './sentences/ja-en.json' },
+  { id: 'en-en', path: './vocab/en-en.json', label: 'English Reading',   language: 'en', languageLabel: 'English 🇬🇧',    sentencePath: './sentences/en-en.json' },
 ]
 
 const AppContext = createContext(null)
 
 export function AppProvider({ children }) {
   const [loadedLists,     setLoadedLists]     = useState({})
+  const [vocabLoading,    setVocabLoading]    = useState(false)
   const [loadedSentences, setLoadedSentences] = useState({})
   const [selectedIds,     setSelectedIds]     = useState([])
   const [activeEntries,   setActiveEntries]   = useState([])
@@ -33,8 +35,9 @@ export function AppProvider({ children }) {
   const setActiveLanguage = useCallback(async (lang) => {
     setActiveLanguageState(lang)
     localStorage.setItem('activeLanguage', lang ?? '')
-    if (!lang) { setSelectedIds([]); return }
+    if (!lang) { setSelectedIds([]); setVocabLoading(false); return }
     const listsForLang = AVAILABLE_LISTS.filter(l => l.language === lang)
+    setVocabLoading(true)
     // Load all in parallel, then select
     await Promise.all(listsForLang.map(async def => {
       if (!loadedLists[def.id]) {
@@ -49,6 +52,7 @@ export function AppProvider({ children }) {
       }
     }))
     setSelectedIds(listsForLang.map(l => l.id))
+    setVocabLoading(false)
   }, [loadedLists])
 
   // On mount: if a language was previously selected, load it
@@ -97,22 +101,32 @@ export function AppProvider({ children }) {
     return { entries: filtered.length > 0 ? filtered : activeEntries, isEmpty: filtered.length === 0 && levels !== null }
   }, [activeEntries, settings])
 
-  // Sorted unique levels present in the active entries
+  // Sorted unique levels present in the active entries — canonical order per language
   const availableLevels = useMemo(() => {
+    const LEVEL_ORDER = {
+      zh: ['HSK1','HSK2','HSK3','HSK4','HSK5','HSK6'],
+      ja: ['N5','N4','N3','N2','N1'],
+      de: ['A1','A2','B1','B2','C1','C2'],
+      es: ['A1','A2','B1','B2','C1','C2'],
+      en: ['A1','A2','B1','B2','C1','C2'],
+    }
     const set = new Set(activeEntries.map(e => e.level).filter(Boolean))
-    return [...set].sort()
-  }, [activeEntries])
+    const order = LEVEL_ORDER[activeLanguage] ?? []
+    const ordered = order.filter(l => set.has(l))
+    // Add any levels not in the canonical list (future-proof)
+    const extra = [...set].filter(l => !order.includes(l)).sort()
+    return [...ordered, ...extra]
+  }, [activeEntries, activeLanguage])
 
   const refreshScores = useCallback(() => setScores(getAllScores()), [])
 
   const activeSentences = selectedIds.reduce((acc, id) => {
     const s = loadedSentences[id]
     if (!s) return acc
-    return {
-      fixed:   [...(acc.fixed   || []), ...(s.fixed   || [])],
-      generic: [...(acc.generic || []), ...(s.generic || [])],
-    }
-  }, { fixed: [], generic: [] })
+    // Support new flat `sentences` array and legacy `fixed` array
+    const sentences = s.sentences ?? s.fixed ?? []
+    return [...acc, ...sentences]
+  }, [])
 
   const scoreActions = {
     correct: (id, game) => { recordCorrect(id, game);  refreshScores() },
@@ -133,7 +147,7 @@ export function AppProvider({ children }) {
       loadedLists,
       selectedIds, setSelectedIds,
       ensureLoaded,
-      activeEntries,
+      activeEntries, vocabLoading,
       activeSentences,
       direction, setDirection,
       showReading, setShowReading,

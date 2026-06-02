@@ -34,6 +34,7 @@ export default function GradedReader() {
   const { activeEntries, loadedLists, selectedIds, showReading, scores, setScreen, activeLanguage } = useApp()
 
   const [passages,        setPassages]        = useState([])
+  const [loading,         setLoading]         = useState(true)
   const [activePassage,   setActivePassage]   = useState(null)
   const [pastedText,      setPastedText]      = useState('')
   const [pastedTitle,     setPastedTitle]     = useState('')
@@ -53,8 +54,10 @@ export default function GradedReader() {
 
   useEffect(() => {
     if (!activeLanguage) return
+    setLoading(true)
     loadReaderPassages(`${activeLanguage}-en`).then(data => {
       setPassages(data?.passages ?? [])
+      setLoading(false)
     })
   }, [activeLanguage])
 
@@ -120,7 +123,9 @@ export default function GradedReader() {
 
         {mode === 'library' ? (
           <div className="gr-body">
-            {passages.length === 0 ? (
+            {loading ? (
+              <div className="gr-empty">Loading…</div>
+            ) : passages.length === 0 ? (
               <div className="gr-empty">
                 {activeLanguage ? 'No passages available for this language yet.' : 'Select a language on the home screen first.'}
               </div>

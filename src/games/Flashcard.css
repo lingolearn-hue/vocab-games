@@ -72,6 +72,11 @@
 
 .fc-card:active { cursor: grabbing; }
 
+/* Suppress flip animation on first render of each new card */
+.fc-card.no-anim .fc-card-flip {
+  animation: none !important;
+}
+
 /* Flip container inside card */
 .fc-card-flip {
   position: relative;
@@ -306,6 +311,33 @@
 }
 
 /* Dark mode */
+
+[data-theme="light"] {
+  .fc-card { background: #fff; }
+  .fc-main { color: #111; }
+  .fc-answer { color: #333; }
+  .fc-reading { color: #888; }
+  .fc-divider { background: #e0e0e0; }
+  .fc-tap-hint { color: #ccc; }
+  .fc-dot { background: #e0e0e0; }
+  .fc-dot.filled { background: #4f7ef8; }
+  .fc-back { color: #666; }
+  .fc-back:hover { color: #111; }
+  .fc-btn-unknown { background: #fff0ef; }
+  .fc-btn-known { background: #f0faf5; }
+  .fc-btn-master { background: #fffbea; }
+  .fc-detail-panel { background: #fff; }
+  .fc-detail-close:hover { color: #333; }
+  .fc-detail-trans-item { background: #f5f5f5; }
+  .fc-detail-level { background: #f0f0f0; }
+  .fc-mnemonic-text { color: #333; }
+  .fc-mnemonic-input { background: #fff; }
+  .fc-mnemonic-cancel { background: #f5f5f5; }
+  .fc-mnemonic-cancel:hover { background: #ebebeb; }
+  .fc-detail-actions { border-color: #e0e0e0; }
+  .fc-mnemonic-peek { color: #aaa; }
+}
+
 @media (prefers-color-scheme: dark) {
   .fc-card { background: #1e1e1e; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
   .fc-main { color: #f0f0f0; }

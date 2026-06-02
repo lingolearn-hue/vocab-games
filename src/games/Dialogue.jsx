@@ -23,6 +23,7 @@ export default function Dialogue() {
   const { activeEntries, showReading, scores, setScreen, activeLanguage, loadedLists, selectedIds } = useApp()
 
   const [dialogues,       setDialogues]       = useState([])
+  const [loading,         setLoading]         = useState(true)
   const [activeDialogue,  setActiveDialogue]  = useState(null)
   const [turnIndex,       setTurnIndex]       = useState(0)    // how far we've revealed
   const [questionState,   setQuestionState]   = useState({})   // { [turnIndex]: { chosen, correct } }
@@ -42,8 +43,10 @@ export default function Dialogue() {
 
   useEffect(() => {
     if (!activeLanguage) return
+    setLoading(true)
     loadDialogues(activeLanguage).then(data => {
       setDialogues(data?.dialogues ?? [])
+      setLoading(false)
     })
   }, [activeLanguage])
 
@@ -106,7 +109,9 @@ export default function Dialogue() {
           <span className="dl-title">Dialogue</span>
         </div>
         <div className="dl-body">
-          {dialogues.length === 0 ? (
+          {loading ? (
+            <div className="dl-empty">Loading…</div>
+          ) : dialogues.length === 0 ? (
             <div className="dl-empty">
               {activeLanguage ? 'No dialogues available for this language yet.' : 'Select a language on the home screen first.'}
             </div>

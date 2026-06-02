@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// @ts-check
 /**
  * DrKameleon complete-hsk-vocabulary → VocabGames internal format converter
  *
@@ -36,8 +37,8 @@
  * }
  */
 
-const fs   = require('fs')
-const path = require('path')
+import fs from 'fs'
+import path from 'path'
 
 // ── CLI argument parsing ──────────────────────────────────────────────────────
 

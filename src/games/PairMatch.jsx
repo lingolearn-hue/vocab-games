@@ -9,7 +9,7 @@ function shuffle(arr) {
 }
 
 export default function PairMatch() {
-  const { activeEntries: allEntries, direction, showReading, scoreActions, settings, setScreen, getEntriesForGame } = useApp()
+  const { activeEntries: allEntries, direction, showReading, scoreActions, settings, setScreen, getEntriesForGame, vocabLoading } = useApp()
   const { entries: activeEntries, isEmpty: levelEmpty } = getEntriesForGame('pairmatch')
   const ROUND_SIZE = settings.pairmatch.roundSize
 
@@ -47,9 +47,11 @@ export default function PairMatch() {
     setWrongPair(null)
   }, [activeEntries, direction, showReading])
 
+  const entriesKey = activeEntries.map(e => e.id).join(',')
+
   useEffect(() => {
     if (activeEntries.length >= 2) buildRound()
-  }, [activeEntries])
+  }, [entriesKey])
 
   // Evaluate pair when both sides selected
   useEffect(() => {

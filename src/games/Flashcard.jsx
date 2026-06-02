@@ -13,7 +13,7 @@ const SWIPE_UP_THRESHOLD = -80
 const SWIPE_DOWN_THRESHOLD = 80
 
 export default function Flashcard() {
-  const { activeEntries: allEntries, direction, showReading, scoreActions, scores, settings, setScreen, activeLanguage, loadedLists, selectedIds, getEntriesForGame } = useApp()
+  const { activeEntries: allEntries, direction, showReading, scoreActions, scores, settings, setScreen, activeLanguage, loadedLists, selectedIds, getEntriesForGame, vocabLoading } = useApp()
   const { entries: activeEntries, isEmpty: levelEmpty } = getEntriesForGame('flashcard')
   const swipeSens = settings.flashcard.swipeSensitivity
 
@@ -31,6 +31,7 @@ export default function Flashcard() {
   const [deck,       setDeck]       = useState([])
   const [deckIndex,  setDeckIndex]  = useState(0)
   const [revealed,   setRevealed]   = useState(false)
+  const [noAnim,     setNoAnim]     = useState(true)
   const [detailOpen, setDetailOpen] = useState(false)
   const [swipeDir,   setSwipeDir]   = useState(null)
   const [animating,  setAnimating]  = useState(false)
@@ -51,14 +52,19 @@ export default function Flashcard() {
     srsPickDistinct(activeEntries, activeEntries.length, 'flashcard')
   , [activeEntries])
 
+  // Stable key — only rebuild deck when entry IDs actually change
+  const entriesKey = activeEntries.map(e => e.id).join(',')
+
   useEffect(() => {
     if (activeEntries.length > 0) {
       setDeck(buildDeck())
       setDeckIndex(0)
       setRevealed(false)
       setDetailOpen(false)
+      setNoAnim(true)
+      requestAnimationFrame(() => setNoAnim(false))
     }
-  }, [activeEntries])
+  }, [entriesKey])
 
   const currentEntry = deck[deckIndex] ?? null
 
@@ -113,6 +119,9 @@ export default function Flashcard() {
       setDragOffset({ x: 0, y: 0 })
       setAnimating(false)
       setFeedback(null)
+      setNoAnim(true)
+      // Re-enable flip animation after one frame so the new card never plays unflip
+      requestAnimationFrame(() => setNoAnim(false))
     }, 350)
   }
 
@@ -179,7 +188,7 @@ export default function Flashcard() {
     return () => window.removeEventListener('keydown', onKey)
   }, [revealed, animating, currentEntry, deckIndex, deck, detailOpen, editingMnemonic])
 
-  if (!currentEntry) return <div className="fc-empty">No words loaded.</div>
+  if (!currentEntry) return <div className="fc-empty">{vocabLoading ? 'Loading…' : 'No words loaded.'}</div>
 
   const prompt  = getPrompt(currentEntry)
   const answer  = getAnswer(currentEntry)
@@ -205,6 +214,7 @@ export default function Flashcard() {
   const savedMnemonic  = getMnemonic(currentEntry.id)
   const mnemonicRecord = getAllMnemonics()[currentEntry.id]
   const isSeeded       = mnemonicRecord?.seeded ?? false
+  const allTranslations = currentEntry.translation ?? []
 
   return (
     <div className="fc-screen">
@@ -232,7 +242,7 @@ export default function Flashcard() {
 
         <div
           ref={cardRef}
-          className={`fc-card ${revealed ? 'revealed' : ''}`}
+          className={`fc-card ${revealed ? 'revealed' : ''} ${noAnim ? 'no-anim' : ''}`}
           style={cardStyle}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}

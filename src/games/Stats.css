@@ -224,6 +224,19 @@
 }
 
 /* Dark mode */
+
+[data-theme="light"] {
+  .stats-screen { background: #fafafa; }
+  .stats-header { border-color: #e0e0e0; }
+  .stats-back { color: #666; }
+  .stats-back:hover { color: #111; }
+  .stats-title { color: #111; }
+  .status-name { color: #444; }
+  .stat-bar-track { background: #f0f0f0; }
+  .list-stat-bar { background: #f0f0f0; }
+  .list-stat-label { color: #666; }
+}
+
 @media (prefers-color-scheme: dark) {
   .stats-screen  { background: #111; }
   .stats-header  { border-color: #222; }

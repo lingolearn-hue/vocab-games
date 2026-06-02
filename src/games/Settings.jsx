@@ -1,112 +1,58 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useApp } from '../context/AppContext'
-import { getAllScores } from '../engine/srs'
 import './Settings.css'
 
-const ANSWER_FIELD_OPTIONS = [
-  { value: 'entry',       label: 'Entry (foreign word)' },
+const PROMPT_OPTIONS = [
+  { value: 'entry',       label: 'Foreign word' },
   { value: 'translation', label: 'Translation' },
-  { value: 'reading',     label: 'Reading (pinyin/kana)' },
+  { value: 'reading',     label: 'Reading' },
 ]
 
-const GAMES_WITH_FIELDS = [
-  { id: 'flashcard', label: '🃏 Flashcard' },
-  { id: 'pairmatch', label: '🔗 Pair Match' },
-  { id: 'racecar',   label: '🏎 Race Car' },
-  { id: 'gapfill',   label: '✏️ Gap Fill' },
-  { id: 'typing',    label: '⌨️ Typing' },
-]
-
-function LevelPicker({ levels, availableLevels, onChange, isOverride = false, onReset }) {
-  if (availableLevels.length === 0) {
-    return <p className="st-hint">No vocab loaded yet.</p>
-  }
+function Accordion({ title, icon, children, open, onToggle }) {
   return (
-    <div className="st-level-picker">
-      {isOverride && levels === null && (
-        <span className="st-using-global-label">Using global</span>
-      )}
-      <div className="st-level-chips">
-        {availableLevels.map(level => {
-          const active = levels === null ? false : levels.includes(level)
-          const isGlobalMode = levels === null
-          return (
-            <button
-              key={level}
-              className={`st-level-chip ${!isGlobalMode && active ? 'active' : ''} ${isGlobalMode ? 'global' : ''}`}
-              onClick={() => {
-                if (isGlobalMode && isOverride) {
-                  // First click on a chip when using global: start override with just this level
-                  onChange([level])
-                } else {
-                  onChange(toggleLevelLocal(levels, level, availableLevels))
-                }
-              }}
-              title={isGlobalMode ? 'Click to override' : ''}
-            >
-              {level}
-            </button>
-          )
-        })}
-        {levels !== null && (
-          <button className="st-level-chip st-level-all" onClick={() => onChange(null)}>
-            All
-          </button>
-        )}
-      </div>
-      {onReset && levels !== null && (
-        <button className="st-reset-game" onClick={onReset}>Reset to global</button>
-      )}
+    <div className={`st-accordion ${open ? 'open' : ''}`}>
+      <button className="st-accordion-header" onClick={onToggle}>
+        <span className="st-accordion-icon">{icon}</span>
+        <span className="st-accordion-title">{title}</span>
+        <span className="st-accordion-arrow">{open ? '▾' : '›'}</span>
+      </button>
+      {open && <div className="st-accordion-body">{children}</div>}
     </div>
   )
 }
 
-function toggleLevelLocal(currentLevels, level, allLevels) {
-  if (!currentLevels) return [level]
-  const next = currentLevels.includes(level)
-    ? currentLevels.filter(l => l !== level)
-    : [...currentLevels, level]
-  return next.length === 0 || next.length === allLevels.length ? null : next
-}
-
-function FieldRow({ label, fields, onChange }) {
+function LevelChips({ levels, availableLevels, onChange }) {
+  if (!availableLevels.length) return <p className="st-hint">No vocab loaded yet.</p>
   return (
-    <div className="st-field-row">
-      <span className="st-field-label">{label}</span>
-      <div className="st-field-selects">
-        <div className="st-field-group">
-          <label className="st-field-sublabel">Prompt</label>
-          <select
-            className="st-select"
-            value={fields?.prompt ?? '__global__'}
-            onChange={e => onChange('prompt', e.target.value === '__global__' ? null : e.target.value)}
+    <div className="st-chips">
+      {availableLevels.map(level => {
+        const active = !levels || levels.includes(level)
+        return (
+          <button
+            key={level}
+            className={`st-chip ${active ? 'active' : ''}`}
+            onClick={() => {
+              if (!levels) {
+                onChange(availableLevels.filter(l => l !== level))
+              } else {
+                const next = levels.includes(level)
+                  ? levels.filter(l => l !== level)
+                  : [...levels, level]
+                onChange(next.length === 0 || next.length === availableLevels.length ? null : next)
+              }
+            }}
           >
-            {fields === null && <option value="__global__">↑ Use global</option>}
-            {ANSWER_FIELD_OPTIONS.map(o => (
-              <option key={o.value} value={o.value}>{o.label}</option>
-            ))}
-          </select>
-        </div>
-        <div className="st-field-group">
-          <label className="st-field-sublabel">Answer</label>
-          <select
-            className="st-select"
-            value={fields?.answer ?? '__global__'}
-            onChange={e => onChange('answer', e.target.value === '__global__' ? null : e.target.value)}
-          >
-            {fields === null && <option value="__global__">↑ Use global</option>}
-            {ANSWER_FIELD_OPTIONS.map(o => (
-              <option key={o.value} value={o.value}>{o.label}</option>
-            ))}
-          </select>
-        </div>
-      </div>
+            {level}
+          </button>
+        )
+      })}
     </div>
   )
 }
 
 export default function Settings() {
-  const { setScreen, settings, updateSettings, availableLevels } = useApp()
+  const { setScreen, settings, updateSettings, availableLevels, activeLanguage } = useApp()
+  const [open, setOpen] = useState(null)
 
   useEffect(() => {
     function onKey(e) { if (e.key === 'Escape') setScreen('setup') }
@@ -114,46 +60,15 @@ export default function Settings() {
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
+  function toggle(id) { setOpen(o => o === id ? null : id) }
+  const cfg = settings
+
   function set(path, value) {
     updateSettings(s => {
       const parts = path.split('.')
       if (parts.length === 1) return { ...s, [path]: value }
       if (parts.length === 2) return { ...s, [parts[0]]: { ...s[parts[0]], [parts[1]]: value } }
-      if (parts.length === 3) return {
-        ...s,
-        [parts[0]]: {
-          ...s[parts[0]],
-          [parts[1]]: { ...s[parts[0]][parts[1]], [parts[2]]: value }
-        }
-      }
       return s
-    })
-  }
-
-  function setGlobalAnswerField(field, value) {
-    updateSettings(s => ({
-      ...s,
-      answerFields: {
-        ...s.answerFields,
-        global: { ...s.answerFields.global, [field]: value }
-      }
-    }))
-  }
-
-  function setGameAnswerField(game, field, value) {
-    updateSettings(s => {
-      const current = s.answerFields[game] ?? { ...s.answerFields.global }
-      if (value === null) {
-        // Reset to global
-        return { ...s, answerFields: { ...s.answerFields, [game]: null } }
-      }
-      return {
-        ...s,
-        answerFields: {
-          ...s.answerFields,
-          [game]: { ...current, [field]: value }
-        }
-      }
     })
   }
 
@@ -161,29 +76,54 @@ export default function Settings() {
     updateSettings(s => ({ ...s, levels: { ...s.levels, global: levels } }))
   }
 
-  function setGameLevels(game, levels) {
-    updateSettings(s => ({ ...s, levels: { ...s.levels, [game]: levels } }))
-  }
-
-  function applyGlobalLevelsToAll() {
+  function setGlobalField(field, value) {
     updateSettings(s => ({
       ...s,
-      levels: { global: s.levels.global, flashcard: null, pairmatch: null, racecar: null, gapfill: null, typing: null }
+      answerFields: { ...s.answerFields, global: { ...s.answerFields.global, [field]: value } }
     }))
   }
 
-  function applyGlobalFieldsToAll() {
+  function resetPromptTarget() {
     updateSettings(s => ({
       ...s,
       answerFields: {
-        ...s.answerFields,
-        flashcard: null,
-        pairmatch: null,
-        racecar:   null,
-        gapfill:   null,
-        typing:    null,
+        global: { prompt: 'entry', answer: 'translation' },
+        flashcard: null, pairmatch: null, racecar: null, gapfill: null, typing: null,
       }
     }))
+  }
+
+  const BACKUP_KEYS = ['vocabScores', 'vocabSettings', 'vocabMnemonics', 'vocabMnemonicsSeeded', 'grammarScores', 'activeLanguage', 'rc-high']
+
+  function exportBackup() {
+    const data = {}
+    for (const key of BACKUP_KEYS) {
+      const val = localStorage.getItem(key)
+      if (val !== null) data[key] = val
+    }
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a'); a.href = url
+    a.download = `vocab-games-backup-${new Date().toISOString().slice(0,10)}.json`
+    a.click(); URL.revokeObjectURL(url)
+  }
+
+  function importBackup() {
+    const input = document.createElement('input')
+    input.type = 'file'; input.accept = '.json'
+    input.onchange = async e => {
+      const file = e.target.files[0]; if (!file) return
+      try {
+        const text = await file.text()
+        const data = JSON.parse(text)
+        if (!confirm(`Import backup from ${file.name}? This will overwrite current progress.`)) return
+        for (const [key, val] of Object.entries(data)) {
+          if (BACKUP_KEYS.includes(key)) localStorage.setItem(key, val)
+        }
+        window.location.reload()
+      } catch { alert('Invalid backup file.') }
+    }
+    input.click()
   }
 
   function resetAllScores() {
@@ -192,8 +132,10 @@ export default function Settings() {
     window.location.reload()
   }
 
-  const { settings: s } = { settings }
-  const cfg = settings
+  const gp = cfg.answerFields.global.prompt
+  const ga = cfg.answerFields.global.answer
+  const promptLabel = PROMPT_OPTIONS.find(o => o.value === gp)?.label ?? gp
+  const answerLabel = PROMPT_OPTIONS.find(o => o.value === ga)?.label ?? ga
 
   return (
     <div className="st-screen">
@@ -205,265 +147,119 @@ export default function Settings() {
       <div className="st-body">
 
         {/* ── Appearance ── */}
-        <section className="st-section">
-          <h2>Appearance</h2>
-
-          <div className="st-row">
-            <span className="st-label">Dark mode</span>
-            <div className="st-seg">
-              {['auto', 'light', 'dark'].map(v => (
-                <button
-                  key={v}
-                  className={`st-seg-btn ${cfg.darkMode === v ? 'active' : ''}`}
-                  onClick={() => set('darkMode', v)}
-                >
-                  {v === 'auto' ? 'Auto' : v === 'light' ? '☀️ Light' : '🌙 Dark'}
-                </button>
-              ))}
-            </div>
+        <div className="st-row st-row--padded">
+          <span className="st-label">Appearance</span>
+          <div className="st-seg">
+            {['auto', 'light', 'dark'].map(v => (
+              <button key={v} className={`st-seg-btn ${cfg.darkMode === v ? 'active' : ''}`}
+                onClick={() => set('darkMode', v)}>
+                {v === 'auto' ? 'Auto' : v === 'light' ? '☀️' : '🌙'}
+              </button>
+            ))}
           </div>
-        </section>
+        </div>
 
-        {/* ── Defaults ── */}
-        <section className="st-section">
-          <h2>Defaults</h2>
+        {/* ── Levels ── */}
+        <div className="st-section-label">Levels</div>
+        <div className="st-row st-row--padded">
+          <LevelChips
+            levels={cfg.levels.global}
+            availableLevels={availableLevels}
+            onChange={setGlobalLevels}
+          />
+        </div>
 
+        {/* ── Vocabulary Games ── */}
+        <Accordion title="Vocabulary Games" icon="🎯" open={open === 'vocab'} onToggle={() => toggle('vocab')}>
+
+          {/* Show reading */}
           <div className="st-row">
-            <span className="st-label">Direction</span>
-            <div className="st-seg">
-              <button
-                className={`st-seg-btn ${cfg.direction === 'entry->translation' ? 'active' : ''}`}
-                onClick={() => set('direction', 'entry->translation')}
-              >Foreign → Trans</button>
-              <button
-                className={`st-seg-btn ${cfg.direction === 'translation->entry' ? 'active' : ''}`}
-                onClick={() => set('direction', 'translation->entry')}
-              >Trans → Foreign</button>
-            </div>
-          </div>
-
-          <div className="st-row">
-            <span className="st-label">Show reading by default</span>
-            <button
-              className={`st-toggle ${cfg.showReading ? 'active' : ''}`}
-              onClick={() => set('showReading', !cfg.showReading)}
-            >
+            <span className="st-label">Show reading (pinyin/kana)</span>
+            <button className={`st-toggle ${cfg.showReading ? 'active' : ''}`}
+              onClick={() => set('showReading', !cfg.showReading)}>
               {cfg.showReading ? 'On' : 'Off'}
             </button>
           </div>
-        </section>
 
-        {/* ── Levels ── */}
-        <section className="st-section">
-          <h2>Levels</h2>
-          <p className="st-hint">Filter which vocabulary levels appear in games. Select none to use all levels.</p>
-
-          <div className="st-subsection">
-            <div className="st-subsection-header">
-              <span className="st-sublabel">Global (default for all games)</span>
-              <button className="st-apply-all" onClick={applyGlobalLevelsToAll}>Apply to all games</button>
-            </div>
-            <LevelPicker
-              levels={cfg.levels.global}
-              availableLevels={availableLevels}
-              onChange={setGlobalLevels}
-            />
+          {/* Prompt / Answer with inline reset */}
+          <div className="st-row st-row--between">
+            <span className="st-label">Prompt → Answer</span>
+            <button className="st-ghost-btn" onClick={resetPromptTarget}>Reset</button>
           </div>
-
-          {GAMES_WITH_FIELDS.map(g => {
-            const gameLevels = cfg.levels[g.id]
-            return (
-              <div key={g.id} className="st-subsection">
-                <div className="st-subsection-header">
-                  <span className="st-sublabel">{g.label}</span>
-                </div>
-                <LevelPicker
-                  levels={gameLevels}
-                  availableLevels={availableLevels}
-                  onChange={levels => setGameLevels(g.id, levels)}
-                  isOverride={true}
-                  onReset={gameLevels !== null ? () => setGameLevels(g.id, null) : null}
-                />
-              </div>
-            )
-          })}
-        </section>
-
-        {/* ── Answer fields ── */}
-        <section className="st-section">
-          <h2>Answer fields</h2>
-          <p className="st-hint">Set globally or override per game.</p>
-
-          <div className="st-subsection">
-            <div className="st-subsection-header">
-              <span className="st-sublabel">Global (default for all games)</span>
-              <button className="st-apply-all" onClick={applyGlobalFieldsToAll}>
-                Apply to all games
-              </button>
-            </div>
-            <FieldRow
-              label="Global"
-              fields={cfg.answerFields.global}
-              onChange={(field, value) => setGlobalAnswerField(field, value)}
-            />
-          </div>
-
-          {GAMES_WITH_FIELDS.map(g => {
-            const gameFields = cfg.answerFields[g.id]
-            return (
-              <div key={g.id} className="st-subsection">
-                <div className="st-subsection-header">
-                  <span className="st-sublabel">{g.label}</span>
-                  {gameFields !== null && (
-                    <button
-                      className="st-reset-game"
-                      onClick={() => setGameAnswerField(g.id, null, null)}
-                    >
-                      Reset to global
-                    </button>
-                  )}
-                </div>
-                {gameFields === null ? (
-                  <div className="st-using-global">
-                    Using global · {cfg.answerFields.global.prompt} → {cfg.answerFields.global.answer}
-                    <button
-                      className="st-override-btn"
-                      onClick={() => updateSettings(s => ({
-                        ...s,
-                        answerFields: { ...s.answerFields, [g.id]: { ...s.answerFields.global } }
-                      }))}
-                    >
-                      Override
-                    </button>
-                  </div>
-                ) : (
-                  <FieldRow
-                    label={g.label}
-                    fields={gameFields}
-                    onChange={(field, value) => setGameAnswerField(g.id, field, value)}
-                  />
-                )}
-              </div>
-            )
-          })}
-        </section>
-
-        {/* ── Race Car ── */}
-        <section className="st-section">
-          <h2>🏎 Race Car</h2>
-
-          <div className="st-row">
-            <span className="st-label">Default speed</span>
-            <div className="st-slider-wrap">
-              <input
-                type="range" min="50" max="200" step="5"
-                value={Math.round(cfg.racecar.defaultSpeed * 100)}
-                onChange={e => set('racecar.defaultSpeed', e.target.value / 100)}
-                className="st-slider"
-              />
-              <span className="st-slider-val">×{cfg.racecar.defaultSpeed.toFixed(2)}</span>
-            </div>
-          </div>
-
-          <div className="st-row">
-            <span className="st-label">Boost zone enabled</span>
-            <button
-              className={`st-toggle ${cfg.racecar.boostEnabled ? 'active' : ''}`}
-              onClick={() => set('racecar.boostEnabled', !cfg.racecar.boostEnabled)}
-            >
-              {cfg.racecar.boostEnabled ? 'On' : 'Off'}
-            </button>
-          </div>
-        </section>
-
-        {/* ── Flashcard ── */}
-        <section className="st-section">
-          <h2>🃏 Flashcard</h2>
-
-          <div className="st-row">
-            <span className="st-label">Swipe sensitivity</span>
-            <div className="st-slider-wrap">
-              <input
-                type="range" min="50" max="200" step="5"
-                value={Math.round(cfg.flashcard.swipeSensitivity * 100)}
-                onChange={e => set('flashcard.swipeSensitivity', e.target.value / 100)}
-                className="st-slider"
-              />
-              <span className="st-slider-val">×{cfg.flashcard.swipeSensitivity.toFixed(2)}</span>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Gap Fill ── */}
-        <section className="st-section">
-          <h2>✏️ Gap Fill</h2>
-
-          <div className="st-row">
-            <span className="st-label">Fixed sentence ratio</span>
-            <div className="st-slider-wrap">
-              <input
-                type="range" min="0" max="100" step="10"
-                value={Math.round(cfg.gapfill.fixedRatio * 100)}
-                onChange={e => set('gapfill.fixedRatio', e.target.value / 100)}
-                className="st-slider"
-              />
-              <span className="st-slider-val">{Math.round(cfg.gapfill.fixedRatio * 100)}%</span>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Pair Match ── */}
-        <section className="st-section">
-          <h2>🔗 Pair Match</h2>
-
-          <div className="st-row">
-            <span className="st-label">Round size</span>
+          <div className="st-prompt-row">
+            <span className="st-sublabel">Prompt</span>
             <div className="st-seg">
-              {[3, 4, 5, 6, 8].map(v => (
-                <button
-                  key={v}
-                  className={`st-seg-btn ${cfg.pairmatch.roundSize === v ? 'active' : ''}`}
-                  onClick={() => set('pairmatch.roundSize', v)}
-                >
-                  {v}
+              {PROMPT_OPTIONS.map(o => (
+                <button key={o.value}
+                  className={`st-seg-btn ${gp === o.value ? 'active' : ''}`}
+                  onClick={() => setGlobalField('prompt', o.value)}>
+                  {o.label}
                 </button>
               ))}
             </div>
           </div>
-        </section>
+          <div className="st-prompt-row">
+            <span className="st-sublabel">Answer</span>
+            <div className="st-seg">
+              {PROMPT_OPTIONS.map(o => (
+                <button key={o.value}
+                  className={`st-seg-btn ${ga === o.value ? 'active' : ''}`}
+                  onClick={() => setGlobalField('answer', o.value)}>
+                  {o.label}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="st-current-label">{promptLabel} → {answerLabel}</div>
+        </Accordion>
 
         {/* ── Typing ── */}
-        <section className="st-section">
-          <h2>⌨️ Typing</h2>
-
+        <Accordion title="Typing" icon="⌨️" open={open === 'typing'} onToggle={() => toggle('typing')}>
           <div className="st-row">
-            <span className="st-label">Require correct answer</span>
-            <button
-              className={`st-toggle ${cfg.typing.requireCorrect ? 'active' : ''}`}
-              onClick={() => set('typing.requireCorrect', !cfg.typing.requireCorrect)}
-            >
+            <span className="st-label">Require correct retype on wrong</span>
+            <button className={`st-toggle ${cfg.typing.requireCorrect ? 'active' : ''}`}
+              onClick={() => set('typing.requireCorrect', !cfg.typing.requireCorrect)}>
               {cfg.typing.requireCorrect ? 'On' : 'Off'}
             </button>
           </div>
-
           <div className="st-row">
-            <span className="st-label">Skip button enabled</span>
-            <button
-              className={`st-toggle ${cfg.typing.skipEnabled ? 'active' : ''}`}
-              onClick={() => set('typing.skipEnabled', !cfg.typing.skipEnabled)}
-            >
+            <span className="st-label">Skip button</span>
+            <button className={`st-toggle ${cfg.typing.skipEnabled ? 'active' : ''}`}
+              onClick={() => set('typing.skipEnabled', !cfg.typing.skipEnabled)}>
               {cfg.typing.skipEnabled ? 'On' : 'Off'}
             </button>
           </div>
-        </section>
+        </Accordion>
 
-        {/* ── Danger zone ── */}
-        <section className="st-section st-danger-section">
-          <h2>Data</h2>
-          <button className="st-danger-btn" onClick={resetAllScores}>
-            Reset all scores
-          </button>
-        </section>
+        {/* ── Race Car ── */}
+        <Accordion title="Race Car" icon="🏎" open={open === 'racecar'} onToggle={() => toggle('racecar')}>
+          <div className="st-row">
+            <span className="st-label">Base speed</span>
+            <div className="st-slider-wrap">
+              <input type="range" min="50" max="200" step="5"
+                value={Math.round(cfg.racecar.defaultSpeed * 100)}
+                onChange={e => set('racecar.defaultSpeed', e.target.value / 100)}
+                className="st-slider" />
+              <span className="st-slider-val">×{cfg.racecar.defaultSpeed.toFixed(1)}</span>
+            </div>
+          </div>
+          <div className="st-row">
+            <span className="st-label">Boost zone</span>
+            <button className={`st-toggle ${cfg.racecar.boostEnabled ? 'active' : ''}`}
+              onClick={() => set('racecar.boostEnabled', !cfg.racecar.boostEnabled)}>
+              {cfg.racecar.boostEnabled ? 'On' : 'Off'}
+            </button>
+          </div>
+        </Accordion>
+
+        {/* ── Data ── */}
+        <Accordion title="Data" icon="💾" open={open === 'data'} onToggle={() => toggle('data')}>
+          <div className="st-data-btns">
+            <button className="st-data-btn" onClick={exportBackup}>⬇ Export backup</button>
+            <button className="st-data-btn" onClick={importBackup}>⬆ Import backup</button>
+          </div>
+          <button className="st-danger-btn" onClick={resetAllScores}>Reset all scores</button>
+        </Accordion>
 
       </div>
     </div>

@@ -238,6 +238,23 @@
 }
 
 /* Dark mode */
+
+[data-theme="light"] {
+  .gf-screen { background: #fafafa; }
+  .gf-screen.correct { background: #f0faf5; }
+  .gf-screen.wrong { background: #fff5f5; }
+  .gf-card { background: #fff; }
+  .gf-sentence { color: #222; }
+  .gf-option { background: #fff; }
+  .gf-option-text { color: #222; }
+  .gf-option:hover:not(:disabled):not(.gf-option--correct):not(.gf-option--wrong) { background: #f8f9ff; }
+  .gf-option--correct { background: #f0faf5; }
+  .gf-option--wrong { background: #fff0ef; }
+  .gf-score { color: #111; }
+  .gf-entry-hint { border-color: #e0e0e0; }
+  .gf-back:hover { color: #111; }
+}
+
 @media (prefers-color-scheme: dark) {
   .gf-screen  { background: #111; }
   .gf-screen.correct { background: #0d1f16; }

@@ -423,6 +423,39 @@
 }
 
 /* Dark mode */
+
+[data-theme="light"] {
+  .gt-screen { background: #fafafa; }
+  .gt-header { border-color: #e0e0e0; }
+  .gt-back:hover { color: #111; }
+  .gt-title { color: #111; }
+  .gt-filter-bar { border-color: #e0e0e0; }
+  .gt-chip { border-color: #e0e0e0; }
+  .gt-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
+  .gt-explanation { background: #f8f8f8; }
+  .gt-sentence { background: #fff; }
+  .gt-sentence.correct { background: #fff; }
+  .gt-sentence.wrong { background: #fff; }
+  .gt-option { background: #fff; }
+  .gt-option--correct { background: #fff; }
+  .gt-option--wrong { background: #fff; }
+  .gt-pick-option { background: #fff; }
+  .gt-pick-option--correct { background: #fff; }
+  .gt-pick-option--wrong { background: #fff; }
+  .gt-answer-zone { border-color: #e0e0e0; }
+  .gt-answer-zone.correct { background: #fff; }
+  .gt-answer-zone.wrong { background: #fff; }
+  .gt-tile--bank { background: #f0f0f0; }
+  .gt-reset-btn { background: #f5f5f5; }
+  .gt-pattern-title { color: #111; }
+  .gt-wrong-feedback { background: #fff0ef; }
+  .gt-gear { border-color: #e0e0e0; }
+  .gt-type-card { background: white; }
+  .gt-type-card:hover { background: #fff; }
+  .gt-type-label { color: #222; }
+  .gt-type-prompt { color: #666; }
+}
+
 @media (prefers-color-scheme: dark) {
   .gt-screen    { background: #111; }
   .gt-header    { border-color: #222; }

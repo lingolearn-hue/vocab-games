@@ -1,0 +1,28 @@
+{
+  "id": "en-en",
+  "language": "en",
+  "native": "en",
+  "keys": ["entry", "translation", "pos", "categories", "level", "gender", "measureWord"],
+  "entries": [
+    ["benevolence", ["kindness", "goodwill"], "noun", ["ethics", "philosophy"], "B2", null, null],
+    ["virtue", ["moral excellence", "goodness"], "noun", ["ethics", "philosophy"], "B2", null, null],
+    ["ephemeral", ["short-lived", "transient", "fleeting"], "adj", ["time", "philosophy"], "C1", null, null],
+    ["reciprocal", ["mutual", "two-way"], "adj", ["relationships", "social"], "B2", null, null],
+    ["resilience", ["ability to recover", "toughness"], "noun", ["psychology", "character"], "B2", null, null],
+    ["autonomy", ["self-governance", "independence"], "noun", ["philosophy", "politics"], "C1", null, null],
+    ["ambivalence", ["mixed feelings", "uncertainty"], "noun", ["psychology", "emotions"], "C1", null, null],
+    ["catalyst", ["trigger", "stimulus", "agent of change"], "noun", ["science", "society"], "B2", null, null],
+    ["nostalgia", ["longing for the past", "homesickness"], "noun", ["emotions", "psychology"], "B2", null, null],
+    ["nuance", ["subtle distinction", "shade of meaning"], "noun", ["language", "analysis"], "C1", null, null],
+    ["anthropocentrism", ["human-centred worldview"], "noun", ["philosophy", "ecology"], "C1", null, null],
+    ["commodify", ["to turn into a commodity", "to commercialise"], "verb", ["economics", "society"], "C1", null, null],
+    ["empirical", ["based on observation", "evidence-based"], "adj", ["science", "philosophy"], "C1", null, null],
+    ["utilitarian", ["based on usefulness", "pragmatic"], "adj", ["philosophy", "ethics"], "C1", null, null],
+    ["atomise", ["to fragment", "to isolate individuals"], "verb", ["society", "sociology"], "C1", null, null],
+    ["logographic", ["representing words as symbols"], "adj", ["linguistics", "writing"], "C1", null, null],
+    ["itinerant", ["travelling from place to place", "wandering"], "adj", ["travel", "lifestyle"], "C1", null, null],
+    ["lamented", ["mourned", "missed", "grieved for"], "adj", ["emotions", "death"], "B2", null, null],
+    ["reconciliation", ["making peace", "resolution of conflict"], "noun", ["relationships", "conflict"], "B2", null, null],
+    ["impermanence", ["transience", "the state of not lasting"], "noun", ["philosophy", "Buddhism"], "C1", null, null]
+  ]
+}

@@ -64,6 +64,15 @@
 .fl-flag { font-size: 2rem; }
 .fl-lang-name { font-size: 0.85rem; font-weight: 600; color: #333; }
 
+
+[data-theme="light"] {
+  .fl-panel { background: #fff; }
+  .fl-title { color: #111; }
+  .fl-lang-btn { background: #fafafa; }
+  .fl-lang-btn:hover { background: #fff; }
+  .fl-lang-name { color: #111; }
+}
+
 @media (prefers-color-scheme: dark) {
   .fl-panel { background: #1e1e1e; }
   .fl-title  { color: #eee; }

@@ -9,6 +9,12 @@ body {
 
 button { font-family: inherit; }
 
+
+[data-theme="light"] {
+  body { background: #fafafa; }
+  .level-warning { background: #fff8e0; }
+}
+
 @media (prefers-color-scheme: dark) {
   body { background: #111; color: #eee; }
 }
@@ -33,3 +39,6 @@ button { font-family: inherit; }
   .level-warning { background: #2d2510; border-color: #5c4a1a; color: #c9a227; }
 }
 [data-theme="dark"] .level-warning { background: #2d2510; border-color: #5c4a1a; color: #c9a227; }
+
+/* Remove tap/click focus rings on touch devices — keep keyboard focus for a11y */
+button:focus:not(:focus-visible) { outline: none; }

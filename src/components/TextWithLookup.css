@@ -167,6 +167,16 @@
 }
 
 /* Dark mode */
+
+[data-theme="light"] {
+  .twl-popup { background: #fff; }
+  .twl-popup-close:hover { color: #666; }
+  .twl-popup-trans { background: #f5f5f5; }
+  .twl-popup-level { background: #f0f0f0; }
+  .twl-popup-mnemonic { border-color: #e0e0e0; }
+  .twl-popup-seeded { background: #fff8e0; }
+}
+
 @media (prefers-color-scheme: dark) {
   .twl-popup         { background: #1e1e1e; }
   .twl-popup-close:hover { color: #aaa; }

@@ -67,12 +67,14 @@ export function mergeLists(lists) {
 
 /**
  * Fetch a sentence JSON file.
- * Returns { language, native, fixed, generic }
+ * Supports new flat { sentences: [...] } and legacy { fixed, generic } formats.
  */
 export async function loadSentences(path) {
-  const res = await fetch(path)
-  if (!res.ok) throw new Error(`Failed to load sentences: ${path}`)
-  return res.json()
+  try {
+    const res = await fetch(path)
+    if (!res.ok) return null
+    return res.json()
+  } catch { return null }
 }
 
 /**

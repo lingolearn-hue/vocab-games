@@ -14,12 +14,13 @@ import GrammarTrainer from './games/GrammarTrainer'
 import MatchingDrills from './games/MatchingDrills'
 import './App.css'
 
-const LANGUAGE_FLAGS = { zh: '🇨🇳', es: '🇪🇸', de: '🇩🇪', ja: '🇯🇵' }
+const LANGUAGE_FLAGS = { zh: '🇨🇳', es: '🇪🇸', de: '🇩🇪', ja: '🇯🇵', en: '🇬🇧' }
 const LANGUAGES = [
   { language: 'zh', label: 'Chinese 🇨🇳' },
   { language: 'es', label: 'Spanish 🇪🇸' },
   { language: 'de', label: 'German 🇩🇪'  },
   { language: 'ja', label: 'Japanese 🇯🇵' },
+  { language: 'en', label: 'English 🇬🇧'  },
 ]
 
 function FirstLaunchOverlay() {

@@ -1,0 +1,569 @@
+{
+  "id": "en-en-reader",
+  "language": "en",
+  "native": "en",
+  "passages": [
+    {
+      "id": "en-p1",
+      "title": "My Friend",
+      "titleTranslation": "My Friend",
+      "level": "A1",
+      "tags": [
+        "fiction",
+        "topic:friendship",
+        "beginner",
+        "series:My Friend"
+      ],
+      "text": "I have a good friend. He is a student. He likes to eat apples and drink water. He is very happy. We study together every day.",
+      "translation": "I have a good friend. He is a student. He likes to eat apples and drink water. He is very happy. We study together every day.",
+      "series": "My Friend"
+    },
+    {
+      "id": "en-p1b",
+      "title": "My Good Friend Xiao Ming",
+      "titleTranslation": "My Good Friend Xiao Ming",
+      "level": "A2",
+      "tags": [
+        "fiction",
+        "topic:friendship",
+        "beginner",
+        "series:My Friend"
+      ],
+      "text": "I have a very good friend called Xiao Ming. Xiao Ming is a university student and studies very hard. Every morning he drinks water, eats an apple, and then goes to the library to read. He likes learning new things and also likes helping others. I am very happy to have a friend like him.",
+      "translation": "I have a very good friend called Xiao Ming. Xiao Ming is a university student and studies very hard. Every morning he drinks water, eats an apple, and then goes to the library to read. He likes learning new things and also likes helping others. I am very happy to have a friend like him.",
+      "series": "My Friend"
+    },
+    {
+      "id": "en-p1c",
+      "title": "The Power of Friendship",
+      "titleTranslation": "The Power of Friendship",
+      "level": "B1",
+      "tags": [
+        "fiction",
+        "topic:friendship",
+        "intermediate",
+        "series:My Friend"
+      ],
+      "text": "Xiao Ming and I have known each other for five years already. He is my best friend, even though our personalities are very different. He is careful and patient in everything he does, while I am more lively and like taking risks. It is precisely because of these differences that we learn from each other and grow together. When we face difficulties, we always support each other. I think true friendship doesn't require being together every day, but rather being there when the other person needs you.",
+      "translation": "Xiao Ming and I have known each other for five years already. He is my best friend, even though our personalities are very different. He is careful and patient in everything he does, while I am more lively and like taking risks. It is precisely because of these differences that we learn from each other and grow together. When we face difficulties, we always support each other. I think true friendship doesn't require being together every day, but rather being there when the other person needs you.",
+      "series": "My Friend"
+    },
+    {
+      "id": "en-p1d",
+      "title": "Distance and Longing",
+      "titleTranslation": "Distance and Longing",
+      "level": "B1",
+      "tags": [
+        "fiction",
+        "topic:friendship",
+        "intermediate",
+        "series:My Friend"
+      ],
+      "text": "After graduation, Xiao Ming went to Shanghai for work, while I stayed in Beijing. The distance grew, and opportunities to meet became fewer and fewer, but strangely, the friendship between us didn't fade because of it. Every so often he would send a long message recounting his observations and reflections in his new city; I would also share the small details of daily life with him. Sometimes we would video call and chat until late at night without feeling tired. I gradually came to understand that true friendship is like a deep-rooted tree — it won't wither with the changing of seasons, but only grows thicker with the years. The things we experienced together in our youth have already become part of our shared memories, and no distance can take them away.",
+      "translation": "After graduation, Xiao Ming went to Shanghai for work, while I stayed in Beijing. The distance grew, and opportunities to meet became fewer and fewer, but strangely, the friendship between us didn't fade because of it. Every so often he would send a long message recounting his observations and reflections in his new city; I would also share the small details of daily life with him. Sometimes we would video call and chat until late at night without feeling tired. I gradually came to understand that true friendship is like a deep-rooted tree — it won't wither with the changing of seasons, but only grows thicker with the years. The things we experienced together in our youth have already become part of our shared memories, and no distance can take them away.",
+      "series": "My Friend"
+    },
+    {
+      "id": "en-p1e",
+      "title": "Friendship and Self-Identity",
+      "titleTranslation": "Friendship and Self-Identity",
+      "level": "B2",
+      "tags": [
+        "essay",
+        "topic:friendship",
+        "topic:psychology",
+        "advanced",
+        "series:My Friend"
+      ],
+      "text": "Psychological research shows that the way we choose friends largely reflects our understanding of and expectations for ourselves. The friendships that give us lasting peace of mind tend to be those that have both a high degree of compatibility and sufficient tension — the other person can understand us, yet continuously challenges our fixed ideas from a different perspective. My friendship with Xiao Ming is exactly like this. His steadiness taught me to pause for a moment before acting on impulse, while my emotional nature has at certain moments helped him break through the limits he had set for himself. Sociologists call this kind of relationship a 'developmental friendship': both parties are not just emotional supports, but catalysts for each other's growth. However, the high-speed mobility of modern society makes deep friendship increasingly scarce. People accumulate hundreds of 'contacts' on social media, yet often struggle to find one person who is truly willing to listen. This makes me wonder: in this age of information overload, are we expanding our relationships, or diluting them?",
+      "translation": "Psychological research shows that the way we choose friends largely reflects our understanding of and expectations for ourselves. The friendships that give us lasting peace of mind tend to be those that have both a high degree of compatibility and sufficient tension — the other person can understand us, yet continuously challenges our fixed ideas from a different perspective. My friendship with Xiao Ming is exactly like this. His steadiness taught me to pause for a moment before acting on impulse, while my emotional nature has at certain moments helped him break through the limits he had set for himself. Sociologists call this kind of relationship a 'developmental friendship': both parties are not just emotional supports, but catalysts for each other's growth. However, the high-speed mobility of modern society makes deep friendship increasingly scarce. People accumulate hundreds of 'contacts' on social media, yet often struggle to find one person who is truly willing to listen. This makes me wonder: in this age of information overload, are we expanding our relationships, or diluting them?",
+      "series": "My Friend"
+    },
+    {
+      "id": "en-p1f",
+      "title": "On the Nature of Friendship",
+      "titleTranslation": "On the Nature of Friendship",
+      "level": "C1",
+      "tags": [
+        "essay",
+        "topic:friendship",
+        "topic:philosophy",
+        "advanced",
+        "series:My Friend"
+      ],
+      "text": "In his Nicomachean Ethics, Aristotle divided friendship into three kinds: friendship based on utility, friendship based on pleasure, and friendship based on virtue. The first two dissolve when the conditions they depend upon disappear; only friendship built on appreciation and respect for each other's character can withstand the test of time. More than two thousand years later, this insight remains profoundly resonant. The atomising tendencies of contemporary society make deep connections between people increasingly difficult. We live amid unprecedented material abundance, yet suffer from a widespread and ineffable loneliness. Sociologist Robert Putnam documented in detail the sustained decline of social capital, and this phenomenon has its corresponding mirror image globally. True friendship requires time, vulnerability, and shared trial — precisely the things that efficiency-driven modern life is least able to provide. Perhaps, while pursuing more connections, what we need even more is to learn how to invest more deeply in fewer relationships.",
+      "translation": "In his Nicomachean Ethics, Aristotle divided friendship into three kinds: friendship based on utility, friendship based on pleasure, and friendship based on virtue. The first two dissolve when the conditions they depend upon disappear; only friendship built on appreciation and respect for each other's character can withstand the test of time. More than two thousand years later, this insight remains profoundly resonant. The atomising tendencies of contemporary society make deep connections between people increasingly difficult. We live amid unprecedented material abundance, yet suffer from a widespread and ineffable loneliness. Sociologist Robert Putnam documented in detail the sustained decline of social capital, and this phenomenon has its corresponding mirror image globally. True friendship requires time, vulnerability, and shared trial — precisely the things that efficiency-driven modern life is least able to provide. Perhaps, while pursuing more connections, what we need even more is to learn how to invest more deeply in fewer relationships.",
+      "series": "My Friend"
+    },
+    {
+      "id": "en-p2",
+      "title": "My Cat",
+      "titleTranslation": "My Cat",
+      "level": "A1",
+      "tags": [
+        "fiction",
+        "topic:animals",
+        "topic:pets",
+        "beginner",
+        "series:My Cat"
+      ],
+      "text": "I have a cat. She is very small and very beautiful. She likes to drink water but does not like to eat books. My dog is also very good. The cat and the dog are good friends.",
+      "translation": "I have a cat. She is very small and very beautiful. She likes to drink water but does not like to eat books. My dog is also very good. The cat and the dog are good friends.",
+      "series": "My Cat"
+    },
+    {
+      "id": "en-p2b",
+      "title": "Xiao Hua and Da Huang",
+      "titleTranslation": "Xiao Hua and Da Huang",
+      "level": "A2",
+      "tags": [
+        "fiction",
+        "topic:animals",
+        "topic:pets",
+        "beginner",
+        "series:My Cat"
+      ],
+      "text": "My home has a cat and a dog. The cat is called Xiao Hua and the dog is called Da Huang. Xiao Hua is very smart and likes to run around the house. Da Huang is very friendly and likes to play in the yard. At first they didn't like each other and often quarrelled. But gradually they became good friends. Now every evening they sleep together — very adorable.",
+      "translation": "My home has a cat and a dog. The cat is called Xiao Hua and the dog is called Da Huang. Xiao Hua is very smart and likes to run around the house. Da Huang is very friendly and likes to play in the yard. At first they didn't like each other and often quarrelled. But gradually they became good friends. Now every evening they sleep together — very adorable.",
+      "series": "My Cat"
+    },
+    {
+      "id": "en-p2c",
+      "title": "Animals Have Feelings Too",
+      "titleTranslation": "Animals Have Feelings Too",
+      "level": "B1",
+      "tags": [
+        "essay",
+        "topic:animals",
+        "topic:science",
+        "intermediate",
+        "series:My Cat"
+      ],
+      "text": "Anyone who has kept a pet knows that animals, like humans, also have rich emotions. My cat Xiao Hua and dog Da Huang are the best example. Their journey from strangers to familiar companions, from quarrelling to reconciliation, went through a genuine process of emotional development. Scientific research shows that both cats and dogs can feel joy, fear, jealousy, and even sadness. When their owner leaves, they feel lonely; when their owner returns, they show genuine happiness. This makes us think: perhaps the distance between humans and animals is not as far as we imagine.",
+      "translation": "Anyone who has kept a pet knows that animals, like humans, also have rich emotions. My cat Xiao Hua and dog Da Huang are the best example. Their journey from strangers to familiar companions, from quarrelling to reconciliation, went through a genuine process of emotional development. Scientific research shows that both cats and dogs can feel joy, fear, jealousy, and even sadness. When their owner leaves, they feel lonely; when their owner returns, they show genuine happiness. This makes us think: perhaps the distance between humans and animals is not as far as we imagine.",
+      "series": "My Cat"
+    },
+    {
+      "id": "en-p2d",
+      "title": "Pets and Modern Loneliness",
+      "titleTranslation": "Pets and Modern Loneliness",
+      "level": "B1",
+      "tags": [
+        "essay",
+        "topic:animals",
+        "topic:society",
+        "topic:psychology",
+        "intermediate",
+        "series:My Cat"
+      ],
+      "text": "In recent years, the number of pets in Chinese cities has grown sharply. More and more young people are choosing to keep cats or dogs; some attribute this to increasing life pressures, while others see it as reflecting the social trend of rising single-person households. The companionship that pets provide is unconditional — they do not judge, do not demand anything in return, but simply stay quietly by your side. Psychological research has found that interacting with pets can effectively lower cortisol levels and reduce anxiety. However, this kind of relationship also raises some questions worth pondering: as people become increasingly accustomed to forming deep bonds with animals, does this mean that connections between people are becoming more difficult to form? Xiao Hua and Da Huang make me happy, but they cannot replace genuine human friendship. Perhaps pets are a mirror, reflecting what we most desire yet find most difficult to express — to be accepted unconditionally.",
+      "translation": "In recent years, the number of pets in Chinese cities has grown sharply. More and more young people are choosing to keep cats or dogs; some attribute this to increasing life pressures, while others see it as reflecting the social trend of rising single-person households. The companionship that pets provide is unconditional — they do not judge, do not demand anything in return, but simply stay quietly by your side. Psychological research has found that interacting with pets can effectively lower cortisol levels and reduce anxiety. However, this kind of relationship also raises some questions worth pondering: as people become increasingly accustomed to forming deep bonds with animals, does this mean that connections between people are becoming more difficult to form? Xiao Hua and Da Huang make me happy, but they cannot replace genuine human friendship. Perhaps pets are a mirror, reflecting what we most desire yet find most difficult to express — to be accepted unconditionally.",
+      "series": "My Cat"
+    },
+    {
+      "id": "en-p2e",
+      "title": "Emotional Bonds Across Species",
+      "titleTranslation": "Emotional Bonds Across Species",
+      "level": "B2",
+      "tags": [
+        "essay",
+        "topic:animals",
+        "topic:science",
+        "topic:philosophy",
+        "advanced",
+        "series:My Cat"
+      ],
+      "text": "Cross-disciplinary research at the intersection of ethology and neuroscience is overturning our traditional understanding of animal consciousness. For a long time, Descartes' 'animal-machine' theory provided a philosophical basis for how humans treat other species, holding that animals are nothing more than complex biological machines without genuine capacity for feeling. However, over the past few decades, a large body of empirical research has revealed a strikingly different picture. Primatologists such as Frans de Waal have documented complex empathic behaviours among chimpanzees; neurological research has also confirmed that mammals share brain structures associated with emotional processing. The journey of my cat and dog from opposition to reconciliation may not simply be the result of behavioural conditioning, but an expression of genuine emotional experience. This understanding not only changes how we think about pets, but also poses a profound challenge to the entire system of animal ethics, industrial farming, and anthropocentrism.",
+      "translation": "Cross-disciplinary research at the intersection of ethology and neuroscience is overturning our traditional understanding of animal consciousness. For a long time, Descartes' 'animal-machine' theory provided a philosophical basis for how humans treat other species, holding that animals are nothing more than complex biological machines without genuine capacity for feeling. However, over the past few decades, a large body of empirical research has revealed a strikingly different picture. Primatologists such as Frans de Waal have documented complex empathic behaviours among chimpanzees; neurological research has also confirmed that mammals share brain structures associated with emotional processing. The journey of my cat and dog from opposition to reconciliation may not simply be the result of behavioural conditioning, but an expression of genuine emotional experience. This understanding not only changes how we think about pets, but also poses a profound challenge to the entire system of animal ethics, industrial farming, and anthropocentrism.",
+      "series": "My Cat"
+    },
+    {
+      "id": "en-p2f",
+      "title": "On the Ethical Reconstruction of the Human-Animal Relationship",
+      "titleTranslation": "On the Ethical Reconstruction of the Human-Animal Relationship",
+      "level": "C1",
+      "tags": [
+        "essay",
+        "topic:animals",
+        "topic:philosophy",
+        "topic:ethics",
+        "advanced",
+        "series:My Cat"
+      ],
+      "text": "The utilitarian framework proposed by Peter Singer in Animal Liberation, and the rights-based animal ethics system of Tom Regan, represent the most systematic reflection on the human-animal relationship in Western philosophy at the end of the twentieth century. However, both approaches face deep practical difficulties: the former is hard to operationalise due to the complexity of utilitarian calculation; the latter creates fundamental conflicts with many real-world institutions by granting animals inviolable rights. At the same time, traditional Chinese philosophy also contains profound discussions of this issue. The Confucian idea that 'the benevolent person loves people, extending to birds and beasts', and the Taoist realm of 'all things and I are one', both offer dimensions of thought different from the Western discourse of rights. In the face of an increasingly severe ecological crisis, re-examining humanity's place in the community of life is no longer a luxurious speculation confined to philosophers' studies, but an urgent question concerning the survival of our entire species. The cat curled up at my feet for warmth is perhaps the best reminder: our responsibility towards another living being has never needed to wait for philosophy's permission.",
+      "translation": "The utilitarian framework proposed by Peter Singer in Animal Liberation, and the rights-based animal ethics system of Tom Regan, represent the most systematic reflection on the human-animal relationship in Western philosophy at the end of the twentieth century. However, both approaches face deep practical difficulties: the former is hard to operationalise due to the complexity of utilitarian calculation; the latter creates fundamental conflicts with many real-world institutions by granting animals inviolable rights. At the same time, traditional Chinese philosophy also contains profound discussions of this issue. The Confucian idea that 'the benevolent person loves people, extending to birds and beasts', and the Taoist realm of 'all things and I are one', both offer dimensions of thought different from the Western discourse of rights. In the face of an increasingly severe ecological crisis, re-examining humanity's place in the community of life is no longer a luxurious speculation confined to philosophers' studies, but an urgent question concerning the survival of our entire species. The cat curled up at my feet for warmth is perhaps the best reminder: our responsibility towards another living being has never needed to wait for philosophy's permission.",
+      "series": "My Cat"
+    },
+    {
+      "id": "en-p3",
+      "title": "Shopping at the Market",
+      "titleTranslation": "Shopping at the Market",
+      "level": "A1",
+      "tags": [
+        "fiction",
+        "topic:daily-life",
+        "topic:economy",
+        "beginner",
+        "series:The Market"
+      ],
+      "text": "Today I went to buy apples. The apples were very good and not expensive. I also bought water. I was very happy.",
+      "translation": "Today I went to buy apples. The apples were very good and not expensive. I also bought water. I was very happy.",
+      "series": "The Market"
+    },
+    {
+      "id": "en-p3b",
+      "title": "Going to the Vegetable Market on the Weekend",
+      "titleTranslation": "Going to the Vegetable Market on the Weekend",
+      "level": "A2",
+      "tags": [
+        "fiction",
+        "topic:daily-life",
+        "topic:economy",
+        "topic:culture",
+        "beginner",
+        "series:The Market"
+      ],
+      "text": "Every weekend I like to go to the nearby vegetable market to shop. The vegetables and fruit there are very fresh, and the prices are cheaper than the supermarket too. Today I bought apples, tomatoes, and some green vegetables. The old woman selling apples was very warm and even gave me two extra apples. I spent thirty yuan and bought a lot of things — it felt very good value. On the way home, I was in a great mood.",
+      "translation": "Every weekend I like to go to the nearby vegetable market to shop. The vegetables and fruit there are very fresh, and the prices are cheaper than the supermarket too. Today I bought apples, tomatoes, and some green vegetables. The old woman selling apples was very warm and even gave me two extra apples. I spent thirty yuan and bought a lot of things — it felt very good value. On the way home, I was in a great mood.",
+      "series": "The Market"
+    },
+    {
+      "id": "en-p3c",
+      "title": "The Disappearing Vegetable Market",
+      "titleTranslation": "The Disappearing Vegetable Market",
+      "level": "B1",
+      "tags": [
+        "essay",
+        "topic:society",
+        "topic:economy",
+        "topic:culture",
+        "intermediate",
+        "series:The Market"
+      ],
+      "text": "With the rapid development of urbanisation, traditional open-air vegetable markets are gradually disappearing, being replaced by modern supermarkets and online shopping platforms. Many urban residents have become used to tapping their phone and having vegetables delivered to their door. However, more and more people are beginning to miss the unique atmosphere of life found in the vegetable market. There you can chat with the elderly vendor, select the freshest ingredients, and feel genuine human warmth. The vegetable market is not just a place to buy and sell — it is also a carrier of community culture. In losing it, we lose more than just a way of shopping.",
+      "translation": "With the rapid development of urbanisation, traditional open-air vegetable markets are gradually disappearing, being replaced by modern supermarkets and online shopping platforms. Many urban residents have become used to tapping their phone and having vegetables delivered to their door. However, more and more people are beginning to miss the unique atmosphere of life found in the vegetable market. There you can chat with the elderly vendor, select the freshest ingredients, and feel genuine human warmth. The vegetable market is not just a place to buy and sell — it is also a carrier of community culture. In losing it, we lose more than just a way of shopping.",
+      "series": "The Market"
+    },
+    {
+      "id": "en-p3d",
+      "title": "The Contest Between the Digital Economy and Traditional Commerce",
+      "titleTranslation": "The Contest Between the Digital Economy and Traditional Commerce",
+      "level": "B1",
+      "tags": [
+        "essay",
+        "topic:economy",
+        "topic:technology",
+        "topic:society",
+        "intermediate",
+        "series:The Market"
+      ],
+      "text": "In recent years, fresh produce e-commerce platforms represented by Pinduoduo and Meituan Maicai have risen rapidly, profoundly changing the shopping habits of Chinese urban residents. Data shows that in 2023, the scale of China's fresh produce e-commerce market exceeded 500 billion yuan, with annual growth rates maintained at double digits. This trend has dealt a heavy blow to traditional vegetable markets — foot traffic has decreased, vendors' income has fallen, and some cities have seen large-scale closures. However, the evolution of markets is far from one-directional. More and more cities are beginning to realise that vegetable markets carry not just an economic function, but also serve as a spiritual bond of community life. Some local governments have begun attempting to modernise traditional markets, introducing cold-chain facilities, mobile payment, and online reservation systems, hoping to preserve the human warmth while improving market competitiveness. The tension between tradition and modernity may not necessarily lead to zero-sum confrontation — it may be possible to seek coexistence through innovation.",
+      "translation": "In recent years, fresh produce e-commerce platforms represented by Pinduoduo and Meituan Maicai have risen rapidly, profoundly changing the shopping habits of Chinese urban residents. Data shows that in 2023, the scale of China's fresh produce e-commerce market exceeded 500 billion yuan, with annual growth rates maintained at double digits. This trend has dealt a heavy blow to traditional vegetable markets — foot traffic has decreased, vendors' income has fallen, and some cities have seen large-scale closures. However, the evolution of markets is far from one-directional. More and more cities are beginning to realise that vegetable markets carry not just an economic function, but also serve as a spiritual bond of community life. Some local governments have begun attempting to modernise traditional markets, introducing cold-chain facilities, mobile payment, and online reservation systems, hoping to preserve the human warmth while improving market competitiveness. The tension between tradition and modernity may not necessarily lead to zero-sum confrontation — it may be possible to seek coexistence through innovation.",
+      "series": "The Market"
+    },
+    {
+      "id": "en-p3e",
+      "title": "The Market as a Form of Civilisation",
+      "titleTranslation": "The Market as a Form of Civilisation",
+      "level": "B2",
+      "tags": [
+        "essay",
+        "topic:economy",
+        "topic:anthropology",
+        "topic:culture",
+        "advanced",
+        "series:The Market"
+      ],
+      "text": "In his classic study of Moroccan bazaars, anthropologist Clifford Geertz pointed out that markets have never been merely places for the exchange of goods, but are complex spaces for the circulation of information, the reproduction of social relations, and the construction of cultural meaning. Bargaining in the bazaar is not simply economic game-playing, but a ritualised form of social interaction, containing deep codes about trust, identity, and community belonging. China's traditional market culture similarly has this characteristic. From the ancient grass markets and temple fairs to the modern Tianqiao and City God Temple markets, these spaces have always been important carriers of civil society's self-organisation. The current impact of fresh produce e-commerce on traditional markets is, in a certain sense, a process of de-socialisation: transactions are optimised into the most efficient information matching, yet stripped of the interpersonal warmth and cultural depth attached to them. This does not mean that technological progress is necessarily a civilisational regression, but it does require us, when designing new commercial forms, to carefully consider those social values that cannot be quantified by algorithms.",
+      "translation": "In his classic study of Moroccan bazaars, anthropologist Clifford Geertz pointed out that markets have never been merely places for the exchange of goods, but are complex spaces for the circulation of information, the reproduction of social relations, and the construction of cultural meaning. Bargaining in the bazaar is not simply economic game-playing, but a ritualised form of social interaction, containing deep codes about trust, identity, and community belonging. China's traditional market culture similarly has this characteristic. From the ancient grass markets and temple fairs to the modern Tianqiao and City God Temple markets, these spaces have always been important carriers of civil society's self-organisation. The current impact of fresh produce e-commerce on traditional markets is, in a certain sense, a process of de-socialisation: transactions are optimised into the most efficient information matching, yet stripped of the interpersonal warmth and cultural depth attached to them. This does not mean that technological progress is necessarily a civilisational regression, but it does require us, when designing new commercial forms, to carefully consider those social values that cannot be quantified by algorithms.",
+      "series": "The Market"
+    },
+    {
+      "id": "en-p3f",
+      "title": "The Market, Capital, and the Paradox of the Public",
+      "titleTranslation": "The Market, Capital, and the Paradox of the Public",
+      "level": "C1",
+      "tags": [
+        "essay",
+        "topic:economy",
+        "topic:philosophy",
+        "topic:politics",
+        "advanced",
+        "series:The Market"
+      ],
+      "text": "Within the discourse of economics, the 'market' is a mechanism for resource allocation; in the sociological perspective, it is a refraction of social structure; and at the level of political philosophy, debates surrounding the market are perpetually entangled with the fundamental tension between the public good, state power, and individual freedom. In The Great Transformation, Karl Polanyi profoundly revealed the internal contradictions of market society: once land, labour, and money are commodified, the self-regulating market systematically erodes the very social fabric upon which it depends, thereby generating counter-movements of political protection. The logic of this 'double movement' is being re-enacted in a highly compressed form in the contemporary platform economy. Algorithmic pricing, data monopolies, and the expansion of platform power not only reshape the competitive order in the traditional sense, but profoundly alter the power configuration between public space and private capital. The disappearance of the vegetable market is both a commercial transition at the micro level and a microcosm of the re-adjustment of the triangular relationship between state, capital, and society at the macro level. How to seek a dynamic balance between market efficiency and public values is one of the most pressing shared challenges that this era has left for policy makers and civil society.",
+      "translation": "Within the discourse of economics, the 'market' is a mechanism for resource allocation; in the sociological perspective, it is a refraction of social structure; and at the level of political philosophy, debates surrounding the market are perpetually entangled with the fundamental tension between the public good, state power, and individual freedom. In The Great Transformation, Karl Polanyi profoundly revealed the internal contradictions of market society: once land, labour, and money are commodified, the self-regulating market systematically erodes the very social fabric upon which it depends, thereby generating counter-movements of political protection. The logic of this 'double movement' is being re-enacted in a highly compressed form in the contemporary platform economy. Algorithmic pricing, data monopolies, and the expansion of platform power not only reshape the competitive order in the traditional sense, but profoundly alter the power configuration between public space and private capital. The disappearance of the vegetable market is both a commercial transition at the micro level and a microcosm of the re-adjustment of the triangular relationship between state, capital, and society at the macro level. How to seek a dynamic balance between market efficiency and public values is one of the most pressing shared challenges that this era has left for policy makers and civil society.",
+      "series": "The Market"
+    },
+    {
+      "id": "en-s1",
+      "title": "The First Snow",
+      "titleTranslation": "The First Snow",
+      "level": "A2",
+      "tags": [
+        "fiction",
+        "topic:daily-life",
+        "topic:nature",
+        "beginner"
+      ],
+      "text": "This morning I got up and saw that everything outside was white. It had snowed! This was the year's first snow. I was very happy and immediately put on thick clothes and ran outside. The snow was very soft and the sound of stepping on it was lovely. I made a little snowman out of snow and played snowballs with the neighbour's children. Even though it was very cold, we were all laughing happily. Winter is really wonderful.",
+      "translation": "This morning I got up and saw that everything outside was white. It had snowed! This was the year's first snow. I was very happy and immediately put on thick clothes and ran outside. The snow was very soft and the sound of stepping on it was lovely. I made a little snowman out of snow and played snowballs with the neighbour's children. Even though it was very cold, we were all laughing happily. Winter is really wonderful."
+    },
+    {
+      "id": "en-s2",
+      "title": "A Lost Afternoon",
+      "titleTranslation": "A Lost Afternoon",
+      "level": "A2",
+      "tags": [
+        "fiction",
+        "topic:daily-life",
+        "beginner"
+      ],
+      "text": "Last Saturday, I went to a new place by myself. I thought I knew the way, but after walking for a long time I still couldn't find the place I wanted to go. I was a little nervous because my phone had run out of battery and I couldn't use the map. I had no choice but to ask an elderly man on the roadside for directions. He was extremely helpful — not only did he tell me the way, he also accompanied me for a stretch. In the end I found my destination, though an hour late, but feeling very warm inside.",
+      "translation": "Last Saturday, I went to a new place by myself. I thought I knew the way, but after walking for a long time I still couldn't find the place I wanted to go. I was a little nervous because my phone had run out of battery and I couldn't use the map. I had no choice but to ask an elderly man on the roadside for directions. He was extremely helpful — not only did he tell me the way, he also accompanied me for a stretch. In the end I found my destination, though an hour late, but feeling very warm inside."
+    },
+    {
+      "id": "en-s3",
+      "title": "The Taste of the Night Market",
+      "titleTranslation": "The Taste of the Night Market",
+      "level": "B1",
+      "tags": [
+        "fiction",
+        "topic:culture",
+        "topic:food",
+        "topic:taiwan",
+        "intermediate"
+      ],
+      "text": "Taiwan's night markets are world-famous. Whenever night falls, the stalls on both sides of the street light up, and the air is filled with the fragrance of all kinds of food. There is grilled squid, stinky tofu, bubble milk tea, and all sorts of snacks I can't name. People jostle shoulder to shoulder, and the sounds of talking and laughter rise and fall. The night market is not just a place to eat — it represents a way of life and cultural identity. For many Taiwanese people, the night market is part of childhood memories, the taste of home. Even after many years away, smelling that familiar fragrance immediately brings back memories of the past.",
+      "translation": "Taiwan's night markets are world-famous. Whenever night falls, the stalls on both sides of the street light up, and the air is filled with the fragrance of all kinds of food. There is grilled squid, stinky tofu, bubble milk tea, and all sorts of snacks I can't name. People jostle shoulder to shoulder, and the sounds of talking and laughter rise and fall. The night market is not just a place to eat — it represents a way of life and cultural identity. For many Taiwanese people, the night market is part of childhood memories, the taste of home. Even after many years away, smelling that familiar fragrance immediately brings back memories of the past."
+    },
+    {
+      "id": "en-s4",
+      "title": "A Letter Never Sent",
+      "titleTranslation": "A Letter Never Sent",
+      "level": "B1",
+      "tags": [
+        "fiction",
+        "topic:nostalgia",
+        "topic:family",
+        "intermediate"
+      ],
+      "text": "While sorting through old belongings, I found a letter written ten years ago. At that time I had just started university, and missed my hometown and my parents very much. The letter was full of heartfelt words — hopes for the future and anxiety about leaving home. But for some reason, this letter was never sent and was simply buried in an old box. Reading it now feels both strange and familiar. That eighteen-year-old self had so many dreams and so many fears. I think perhaps some words don't need to be spoken — just writing them down is already enough.",
+      "translation": "While sorting through old belongings, I found a letter written ten years ago. At that time I had just started university, and missed my hometown and my parents very much. The letter was full of heartfelt words — hopes for the future and anxiety about leaving home. But for some reason, this letter was never sent and was simply buried in an old box. Reading it now feels both strange and familiar. That eighteen-year-old self had so many dreams and so many fears. I think perhaps some words don't need to be spoken — just writing them down is already enough."
+    },
+    {
+      "id": "en-s5",
+      "title": "Grandmother's Kitchen",
+      "titleTranslation": "Grandmother's Kitchen",
+      "level": "B1",
+      "tags": [
+        "fiction",
+        "topic:family",
+        "topic:nostalgia",
+        "topic:food",
+        "intermediate"
+      ],
+      "text": "In my memory, grandmother's kitchen was always warm. No matter how the wind blew or the rain fell outside, as soon as you stepped through that small door, you were greeted by the aroma of food and the warmth of the stove. Grandmother couldn't read, but she had a pair of magical hands that could transform the most ordinary ingredients into flavours impossible to forget. She never used a recipe — all the proportions were in the feel of her hands. Every time I asked her how to make something, she would smile and say: 'Just about right will do.' Only later did I understand that within that 'just about right' were hidden decades of experience and a wordless love for her family. Grandmother has been gone for three years, but whenever I smell the fragrance of red-braised pork, that kitchen door slowly opens in my memory.",
+      "translation": "In my memory, grandmother's kitchen was always warm. No matter how the wind blew or the rain fell outside, as soon as you stepped through that small door, you were greeted by the aroma of food and the warmth of the stove. Grandmother couldn't read, but she had a pair of magical hands that could transform the most ordinary ingredients into flavours impossible to forget. She never used a recipe — all the proportions were in the feel of her hands. Every time I asked her how to make something, she would smile and say: 'Just about right will do.' Only later did I understand that within that 'just about right' were hidden decades of experience and a wordless love for her family. Grandmother has been gone for three years, but whenever I smell the fragrance of red-braised pork, that kitchen door slowly opens in my memory."
+    },
+    {
+      "id": "en-s6",
+      "title": "The Last Subway",
+      "titleTranslation": "The Last Subway",
+      "level": "B1",
+      "tags": [
+        "fiction",
+        "topic:daily-life",
+        "topic:city",
+        "intermediate"
+      ],
+      "text": "It was late on a Friday night. I had worked overtime until eleven-thirty and just caught the last subway on this line. The carriage was almost empty, with only a scattering of passengers sitting in their respective corners, faces weary. Opposite me sat a middle-aged man in work clothes, his head leaning against the window, already asleep. He was still holding a hard hat in his hands, the corners of his mouth slightly upturned — who knows what he was dreaming of. I suddenly felt that this late-night carriage was like a small shelter, temporarily gathering all the tired people together, running quietly beneath the city. Everyone has somewhere to return to; everyone is working hard for something. This thought gave me an inexplicable sense of warmth.",
+      "translation": "It was late on a Friday night. I had worked overtime until eleven-thirty and just caught the last subway on this line. The carriage was almost empty, with only a scattering of passengers sitting in their respective corners, faces weary. Opposite me sat a middle-aged man in work clothes, his head leaning against the window, already asleep. He was still holding a hard hat in his hands, the corners of his mouth slightly upturned — who knows what he was dreaming of. I suddenly felt that this late-night carriage was like a small shelter, temporarily gathering all the tired people together, running quietly beneath the city. Everyone has somewhere to return to; everyone is working hard for something. This thought gave me an inexplicable sense of warmth."
+    },
+    {
+      "id": "en-s7",
+      "title": "The Limits of Language",
+      "titleTranslation": "The Limits of Language",
+      "level": "B2",
+      "tags": [
+        "essay",
+        "topic:language",
+        "topic:philosophy",
+        "advanced"
+      ],
+      "text": "Wittgenstein once said: 'The limits of my language are the limits of my world.' Learning a new language is not simply a matter of mastering a new set of vocabulary and grammatical rules, but of perceiving and organising reality in an entirely new way. The Japanese word komorebi describes the sight of sunlight falling through the gaps between leaves — a word without a precise equivalent in Chinese or English. The Portuguese word saudade refers to a deep longing and sadness for something absent, and is equally untranslatable. Every language carries the cognitive structures deposited through the long evolution of a particular culture; to learn it is, in a certain sense, to temporarily dwell within another way of being. This also explains why many bilingual people report feeling like different people when thinking in different languages. Language is not merely a tool for expressing thought — it is also the container that shapes thought.",
+      "translation": "Wittgenstein once said: 'The limits of my language are the limits of my world.' Learning a new language is not simply a matter of mastering a new set of vocabulary and grammatical rules, but of perceiving and organising reality in an entirely new way. The Japanese word komorebi describes the sight of sunlight falling through the gaps between leaves — a word without a precise equivalent in Chinese or English. The Portuguese word saudade refers to a deep longing and sadness for something absent, and is equally untranslatable. Every language carries the cognitive structures deposited through the long evolution of a particular culture; to learn it is, in a certain sense, to temporarily dwell within another way of being. This also explains why many bilingual people report feeling like different people when thinking in different languages. Language is not merely a tool for expressing thought — it is also the container that shapes thought."
+    },
+    {
+      "id": "en-s8",
+      "title": "Artificial Intelligence and the Boundaries of Human Creativity",
+      "titleTranslation": "Artificial Intelligence and the Boundaries of Human Creativity",
+      "level": "C1",
+      "tags": [
+        "essay",
+        "topic:technology",
+        "topic:philosophy",
+        "topic:society",
+        "advanced"
+      ],
+      "text": "The rapid proliferation of generative artificial intelligence is reshaping human society's understanding of the concept of 'creativity' to an unprecedented depth. When a language model can generate stylistically accomplished poetry, fiction, and even academic papers within seconds, the meaning of human subjectivity carried by the act of 'creation' comes under fundamental questioning. Critics point out that what artificial intelligence calls 'creation' is nothing more than a statistical summary and rearrangement of existing texts, lacking genuine intentionality and emotional foundation, and can therefore only be the appearance of creativity rather than its essence. Supporters counter, however, that human creativity is similarly built upon the imitation, absorption, and recombination of predecessors' work, and that the two are not fundamentally different at the mechanistic level, differing only in scale and speed. The core of this debate may not lie in whether artificial intelligence 'does or does not' possess creativity, but in why we value human creation in the first place. If the value of a painting lies solely in its visual effect, then machine-generated images are no different from those painted by human hands; but if the value of art lies in the human experience, vulnerability, and search for meaning crystallised in the creative process, then there exists between the two a gulf that cannot simply be bridged. This question is, in essence, a mirror that forces us to examine where precisely the uniqueness of our own existence resides.",
+      "translation": "The rapid proliferation of generative artificial intelligence is reshaping human society's understanding of the concept of 'creativity' to an unprecedented depth. When a language model can generate stylistically accomplished poetry, fiction, and even academic papers within seconds, the meaning of human subjectivity carried by the act of 'creation' comes under fundamental questioning. Critics point out that what artificial intelligence calls 'creation' is nothing more than a statistical summary and rearrangement of existing texts, lacking genuine intentionality and emotional foundation, and can therefore only be the appearance of creativity rather than its essence. Supporters counter, however, that human creativity is similarly built upon the imitation, absorption, and recombination of predecessors' work, and that the two are not fundamentally different at the mechanistic level, differing only in scale and speed. The core of this debate may not lie in whether artificial intelligence 'does or does not' possess creativity, but in why we value human creation in the first place. If the value of a painting lies solely in its visual effect, then machine-generated images are no different from those painted by human hands; but if the value of art lies in the human experience, vulnerability, and search for meaning crystallised in the creative process, then there exists between the two a gulf that cannot simply be bridged. This question is, in essence, a mirror that forces us to examine where precisely the uniqueness of our own existence resides."
+    },
+    {
+      "id": "en-nf1",
+      "title": "China's Four Great Inventions",
+      "titleTranslation": "China's Four Great Inventions",
+      "level": "A2",
+      "tags": [
+        "non-fiction",
+        "topic:history",
+        "topic:science",
+        "topic:china",
+        "beginner"
+      ],
+      "text": "Ancient China had four great inventions: papermaking, printing, gunpowder, and the compass. These four inventions changed the history of the world. Papermaking allowed people to write down and preserve knowledge. Printing allowed books to be produced in large quantities, so more people could read. Gunpowder was initially used for celebrations, and later used in warfare. The compass helped people find direction at sea, making ocean voyages possible. These inventions spread from China to all parts of the world and made great contributions to the development of human civilisation.",
+      "translation": "Ancient China had four great inventions: papermaking, printing, gunpowder, and the compass. These four inventions changed the history of the world. Papermaking allowed people to write down and preserve knowledge. Printing allowed books to be produced in large quantities, so more people could read. Gunpowder was initially used for celebrations, and later used in warfare. The compass helped people find direction at sea, making ocean voyages possible. These inventions spread from China to all parts of the world and made great contributions to the development of human civilisation."
+    },
+    {
+      "id": "en-nf2",
+      "title": "Beijing: A City of the Ancient and the Modern",
+      "titleTranslation": "Beijing: A City of the Ancient and the Modern",
+      "level": "A2",
+      "tags": [
+        "non-fiction",
+        "topic:geography",
+        "topic:china",
+        "topic:culture",
+        "beginner"
+      ],
+      "text": "Beijing is the capital of China and also an ancient city with more than three thousand years of history. There are many famous historical sites here, such as the Forbidden City, the Great Wall, and the Temple of Heaven. The Forbidden City was the residence of emperors of the Ming and Qing dynasties, with more than nine thousand rooms inside. The Great Wall stretches several thousand kilometres from east to west and is China's most famous structure. Besides historical sites, Beijing is also a modern metropolis with many tall buildings, subways, and shopping centres. Beijing's food is also very famous — the most well-known is Peking roast duck. If you come to China, you must go and see Beijing.",
+      "translation": "Beijing is the capital of China and also an ancient city with more than three thousand years of history. There are many famous historical sites here, such as the Forbidden City, the Great Wall, and the Temple of Heaven. The Forbidden City was the residence of emperors of the Ming and Qing dynasties, with more than nine thousand rooms inside. The Great Wall stretches several thousand kilometres from east to west and is China's most famous structure. Besides historical sites, Beijing is also a modern metropolis with many tall buildings, subways, and shopping centres. Beijing's food is also very famous — the most well-known is Peking roast duck. If you come to China, you must go and see Beijing."
+    },
+    {
+      "id": "en-nf3",
+      "title": "Confucius: The Thinker Who Changed China",
+      "titleTranslation": "Confucius: The Thinker Who Changed China",
+      "level": "B1",
+      "tags": [
+        "non-fiction",
+        "biography",
+        "topic:history",
+        "topic:philosophy",
+        "topic:china",
+        "intermediate"
+      ],
+      "text": "Confucius is one of the greatest thinkers and educators in Chinese history. He lived in the Spring and Autumn period two thousand five hundred years ago, and devoted his life to promoting moral concepts such as benevolence, righteousness, and ritual propriety. Confucius believed that a person should continuously study and cultivate their character in order to contribute to society. His educational philosophy was very advanced — he advocated teaching each student according to their particular characteristics. His teachings were later compiled by his followers into the Analects, which became one of the most important classics in China for thousands of years. Confucius's ideas influenced not only China but also had a profound impact on Asian countries such as Japan, Korea, and Vietnam. To this day, Confucian thought remains a key to understanding Chinese culture.",
+      "translation": "Confucius is one of the greatest thinkers and educators in Chinese history. He lived in the Spring and Autumn period two thousand five hundred years ago, and devoted his life to promoting moral concepts such as benevolence, righteousness, and ritual propriety. Confucius believed that a person should continuously study and cultivate their character in order to contribute to society. His educational philosophy was very advanced — he advocated teaching each student according to their particular characteristics. His teachings were later compiled by his followers into the Analects, which became one of the most important classics in China for thousands of years. Confucius's ideas influenced not only China but also had a profound impact on Asian countries such as Japan, Korea, and Vietnam. To this day, Confucian thought remains a key to understanding Chinese culture."
+    },
+    {
+      "id": "en-nf4",
+      "title": "Chinese New Year",
+      "titleTranslation": "Chinese New Year",
+      "level": "A2",
+      "tags": [
+        "non-fiction",
+        "topic:culture",
+        "topic:traditions",
+        "topic:china",
+        "beginner"
+      ],
+      "text": "The Spring Festival is the most important traditional holiday in China, also called the Lunar New Year. Every year in January or February, Chinese people celebrate the Spring Festival. Before the festival, people clean their houses, buy new clothes, and prepare lots of delicious food. On New Year's Eve, the whole family eats the reunion dinner together and watches the Spring Festival Gala programme. When the New Year arrives, children receive red envelopes containing lucky money. On the streets there are dragon and lion dances, and many fireworks. The Spring Festival is generally celebrated for fifteen days — the last day is called the Lantern Festival, when people eat glutinous rice balls and watch lantern displays. For Chinese people, the Spring Festival is a time to return home and reunite with family, the warmest time of the year.",
+      "translation": "The Spring Festival is the most important traditional holiday in China, also called the Lunar New Year. Every year in January or February, Chinese people celebrate the Spring Festival. Before the festival, people clean their houses, buy new clothes, and prepare lots of delicious food. On New Year's Eve, the whole family eats the reunion dinner together and watches the Spring Festival Gala programme. When the New Year arrives, children receive red envelopes containing lucky money. On the streets there are dragon and lion dances, and many fireworks. The Spring Festival is generally celebrated for fifteen days — the last day is called the Lantern Festival, when people eat glutinous rice balls and watch lantern displays. For Chinese people, the Spring Festival is a time to return home and reunite with family, the warmest time of the year."
+    },
+    {
+      "id": "en-nf5",
+      "title": "Tu Youyou: Saving Lives with Artemisinin",
+      "titleTranslation": "Tu Youyou: Saving Lives with Artemisinin",
+      "level": "B1",
+      "tags": [
+        "non-fiction",
+        "biography",
+        "topic:science",
+        "topic:medicine",
+        "topic:china",
+        "intermediate"
+      ],
+      "text": "Tu Youyou is a famous Chinese pharmacologist and the first Chinese scientist to receive the Nobel Prize in Physiology or Medicine. Born in 1930, she developed a strong interest in medicine from a young age. In the 1960s and 70s, malaria was claiming vast numbers of lives around the world, and the drugs available at the time could no longer effectively control the disease. Tu Youyou led a team that studied ancient Chinese medical texts in depth, searching for clues among hundreds of traditional herbs. After countless failures, she finally extracted the active ingredient from sweet wormwood — artemisinin. This drug has saved millions of lives, particularly among children in Africa. In 2015 she received the Nobel Prize, proving to the world the value of traditional Chinese medical wisdom. Her story tells us that perseverance and patience are the most important qualities in scientific exploration.",
+      "translation": "Tu Youyou is a famous Chinese pharmacologist and the first Chinese scientist to receive the Nobel Prize in Physiology or Medicine. Born in 1930, she developed a strong interest in medicine from a young age. In the 1960s and 70s, malaria was claiming vast numbers of lives around the world, and the drugs available at the time could no longer effectively control the disease. Tu Youyou led a team that studied ancient Chinese medical texts in depth, searching for clues among hundreds of traditional herbs. After countless failures, she finally extracted the active ingredient from sweet wormwood — artemisinin. This drug has saved millions of lives, particularly among children in Africa. In 2015 she received the Nobel Prize, proving to the world the value of traditional Chinese medical wisdom. Her story tells us that perseverance and patience are the most important qualities in scientific exploration."
+    },
+    {
+      "id": "en-nf6",
+      "title": "The Great Wall: Witness to History",
+      "titleTranslation": "The Great Wall: Witness to History",
+      "level": "B1",
+      "tags": [
+        "non-fiction",
+        "topic:history",
+        "topic:china",
+        "topic:culture",
+        "intermediate"
+      ],
+      "text": "The Great Wall is one of the most monumental construction projects in human history, stretching over twenty thousand kilometres across several provinces in northern China. The construction of the Great Wall began during the Spring and Autumn and Warring States periods, when various feudal states built separate sections of wall to resist the invasions of northern nomadic peoples. After the First Emperor of Qin unified the six states, he connected these scattered sections of wall, forming the earliest version of the Great Wall in the proper sense. Through subsequent repairs and expansions during the Han, Ming, and other dynasties, the Great Wall gradually evolved into the scale we see today. However, the significance of the Great Wall goes far beyond military defence. It is the embodiment of the ancient Chinese state's will; millions of labourers built with their blood and sweat this miracle of human civilisation that is nearly impossible to replicate. Today the Great Wall has become one of China's most important cultural symbols, attracting tens of millions of visitors each year. However, with the passage of time and the impact of human activity, the work of protecting the Wall faces increasingly serious challenges.",
+      "translation": "The Great Wall is one of the most monumental construction projects in human history, stretching over twenty thousand kilometres across several provinces in northern China. The construction of the Great Wall began during the Spring and Autumn and Warring States periods, when various feudal states built separate sections of wall to resist the invasions of northern nomadic peoples. After the First Emperor of Qin unified the six states, he connected these scattered sections of wall, forming the earliest version of the Great Wall in the proper sense. Through subsequent repairs and expansions during the Han, Ming, and other dynasties, the Great Wall gradually evolved into the scale we see today. However, the significance of the Great Wall goes far beyond military defence. It is the embodiment of the ancient Chinese state's will; millions of labourers built with their blood and sweat this miracle of human civilisation that is nearly impossible to replicate. Today the Great Wall has become one of China's most important cultural symbols, attracting tens of millions of visitors each year. However, with the passage of time and the impact of human activity, the work of protecting the Wall faces increasingly serious challenges."
+    },
+    {
+      "id": "en-nf7",
+      "title": "Li Bai: The Legendary Life of the Poet Immortal",
+      "titleTranslation": "Li Bai: The Legendary Life of the Poet Immortal",
+      "level": "B1",
+      "tags": [
+        "non-fiction",
+        "biography",
+        "topic:literature",
+        "topic:history",
+        "topic:china",
+        "intermediate"
+      ],
+      "text": "Li Bai (701-762) is one of the greatest poets in Chinese literary history, revered by posterity as the 'Poet Immortal'. Born during the height of the Tang dynasty, he spent his life wandering the world, leaving his footprints across more than half of China. Compared to his contemporary Du Fu, Li Bai's poetry is more free-spirited and uninhibited, filled with a love of nature, a yearning for freedom, and a profound sense of life's impermanence. His representative works including Quiet Night Thoughts, Bring in the Wine, and Gazing at Lushan Waterfall have been recited for hundreds of years and become iconic symbols of Chinese culture. Li Bai's official career was filled with setbacks; though he briefly served in the court of Emperor Xuanzong of Tang, he was marginalised due to his uninhibited personality and inability to flatter. He chose to return to the mountains and rivers, taking wine as his companion and using poetry to record the wild joy and deep sorrow of his inner world. According to legend, he finally fell drunk into a river, drowned while trying to grasp the reflection of the moon — a legend that is itself the best footnote to his legendary life.",
+      "translation": "Li Bai (701-762) is one of the greatest poets in Chinese literary history, revered by posterity as the 'Poet Immortal'. Born during the height of the Tang dynasty, he spent his life wandering the world, leaving his footprints across more than half of China. Compared to his contemporary Du Fu, Li Bai's poetry is more free-spirited and uninhibited, filled with a love of nature, a yearning for freedom, and a profound sense of life's impermanence. His representative works including Quiet Night Thoughts, Bring in the Wine, and Gazing at Lushan Waterfall have been recited for hundreds of years and become iconic symbols of Chinese culture. Li Bai's official career was filled with setbacks; though he briefly served in the court of Emperor Xuanzong of Tang, he was marginalised due to his uninhibited personality and inability to flatter. He chose to return to the mountains and rivers, taking wine as his companion and using poetry to record the wild joy and deep sorrow of his inner world. According to legend, he finally fell drunk into a river, drowned while trying to grasp the reflection of the moon — a legend that is itself the best footnote to his legendary life."
+    },
+    {
+      "id": "en-nf8",
+      "title": "Chinese Tea Culture",
+      "titleTranslation": "Chinese Tea Culture",
+      "level": "B2",
+      "tags": [
+        "non-fiction",
+        "topic:culture",
+        "topic:history",
+        "topic:china",
+        "topic:food",
+        "advanced"
+      ],
+      "text": "Tea, as one of China's most important cultural symbols, has a history traceable to more than four thousand years ago during the era of the Divine Farmer. Legend has it that when the Divine Farmer was tasting hundreds of plants, he accidentally discovered that tea leaves had detoxifying properties, thereby beginning humanity's long affinity with tea. However, tea truly entered the daily life of ordinary people only after the Tang dynasty. The Classic of Tea written by Lu Yu is the world's first monograph on tea, systematically expounding the way of cultivating, processing, preparing, and appreciating tea, elevating tea-drinking from a purely utilitarian act to a refined cultural art. Tea culture reached its peak during the Song dynasty, when 'tea competitions' emerged as a unique social custom. During the Ming and Qing dynasties, methods of brewing tea gradually shifted from compressed and powdered tea to loose-leaf tea, laying the foundation for the modern Chinese way of drinking tea. To this day, Chinese tea culture encompasses multiple dimensions including tea ceremony, tea art, the tea trade, and the Ancient Tea Horse Road — it is both a part of daily life and an important vehicle through which China exports cultural soft power to the world.",
+      "translation": "Tea, as one of China's most important cultural symbols, has a history traceable to more than four thousand years ago during the era of the Divine Farmer. Legend has it that when the Divine Farmer was tasting hundreds of plants, he accidentally discovered that tea leaves had detoxifying properties, thereby beginning humanity's long affinity with tea. However, tea truly entered the daily life of ordinary people only after the Tang dynasty. The Classic of Tea written by Lu Yu is the world's first monograph on tea, systematically expounding the way of cultivating, processing, preparing, and appreciating tea, elevating tea-drinking from a purely utilitarian act to a refined cultural art. Tea culture reached its peak during the Song dynasty, when 'tea competitions' emerged as a unique social custom. During the Ming and Qing dynasties, methods of brewing tea gradually shifted from compressed and powdered tea to loose-leaf tea, laying the foundation for the modern Chinese way of drinking tea. To this day, Chinese tea culture encompasses multiple dimensions including tea ceremony, tea art, the tea trade, and the Ancient Tea Horse Road — it is both a part of daily life and an important vehicle through which China exports cultural soft power to the world."
+    },
+    {
+      "id": "en-nf9",
+      "title": "Reform and Opening Up and China's Economic Miracle",
+      "titleTranslation": "Reform and Opening Up and China's Economic Miracle",
+      "level": "B2",
+      "tags": [
+        "non-fiction",
+        "topic:history",
+        "topic:economy",
+        "topic:china",
+        "topic:society",
+        "advanced"
+      ],
+      "text": "In 1978, the Reform and Opening Up policy promoted by Deng Xiaoping initiated the most profound socioeconomic transformation in Chinese history. In the more than forty years since, China's economic scale grew from less than two percent of global GDP to approximately eighteen percent, becoming the world's second-largest economy, with hundreds of millions of people lifted out of poverty in the process. This achievement has no precedent in human history, and economists have called it the 'China Miracle'. The core logic of Reform and Opening Up was to selectively introduce market mechanisms within the framework of the socialist system, using special economic zones as pilot projects and export-oriented development as a driving force, gradually integrating China into global value chains. Shenzhen's development from a small fishing village into an international metropolis with a population of over ten million is the most representative microcosm of this process. However, this high-speed growth was also accompanied by a series of deep-rooted contradictions, including widening regional imbalances, rising environmental pressures, and an expanding wealth gap. How to achieve more inclusive and sustainable growth while maintaining development momentum is one of the core policy challenges China currently faces.",
+      "translation": "In 1978, the Reform and Opening Up policy promoted by Deng Xiaoping initiated the most profound socioeconomic transformation in Chinese history. In the more than forty years since, China's economic scale grew from less than two percent of global GDP to approximately eighteen percent, becoming the world's second-largest economy, with hundreds of millions of people lifted out of poverty in the process. This achievement has no precedent in human history, and economists have called it the 'China Miracle'. The core logic of Reform and Opening Up was to selectively introduce market mechanisms within the framework of the socialist system, using special economic zones as pilot projects and export-oriented development as a driving force, gradually integrating China into global value chains. Shenzhen's development from a small fishing village into an international metropolis with a population of over ten million is the most representative microcosm of this process. However, this high-speed growth was also accompanied by a series of deep-rooted contradictions, including widening regional imbalances, rising environmental pressures, and an expanding wealth gap. How to achieve more inclusive and sustainable growth while maintaining development momentum is one of the core policy challenges China currently faces."
+    },
+    {
+      "id": "en-nf10",
+      "title": "The Origin and Evolution of Chinese Characters",
+      "titleTranslation": "The Origin and Evolution of Chinese Characters",
+      "level": "C1",
+      "tags": [
+        "non-fiction",
+        "topic:language",
+        "topic:history",
+        "topic:china",
+        "topic:culture",
+        "advanced"
+      ],
+      "text": "Chinese characters constitute the world's only ancient writing system that has never been interrupted, with a developmental lineage spanning more than three thousand years, bearing the entire memory of the evolution of Chinese civilisation. The earliest mature system of Chinese characters is found in the oracle bone inscriptions of the Shang dynasty — divination texts carved on turtle shells and animal bones dating back approximately 3,300 years. These early characters already displayed the rudimentary forms of the character-formation principles of pictography, ideography, compound ideography, and phono-semantic composition, laying the foundation for the 'Six Scripts' theory applied by later generations. Through the evolution of bronze inscriptions, large seal script, and small seal script, Chinese characters achieved the unification of script under the Qin dynasty, a political measure that had far-reaching implications for the continuity of Chinese civilisation. The logographic nature of Chinese characters creates a fundamental cognitive difference from alphabetic writing: research indicates that reading Chinese relies more on the right brain's holistic pattern recognition, while alphabetic writing relies more on the left brain's linear decoding. Whether this cognitive difference shapes different ways of thinking in its users remains a hot topic at the intersection of linguistics and cognitive science. In the dual context of globalisation and digitalisation, Chinese characters are undergoing yet another profound morphological evolution — emoji, input methods, and cross-linguistic transmission are reshaping the vitality of this ancient symbol system in ways that ancient people could not have anticipated.",
+      "translation": "Chinese characters constitute the world's only ancient writing system that has never been interrupted, with a developmental lineage spanning more than three thousand years, bearing the entire memory of the evolution of Chinese civilisation. The earliest mature system of Chinese characters is found in the oracle bone inscriptions of the Shang dynasty — divination texts carved on turtle shells and animal bones dating back approximately 3,300 years. These early characters already displayed the rudimentary forms of the character-formation principles of pictography, ideography, compound ideography, and phono-semantic composition, laying the foundation for the 'Six Scripts' theory applied by later generations. Through the evolution of bronze inscriptions, large seal script, and small seal script, Chinese characters achieved the unification of script under the Qin dynasty, a political measure that had far-reaching implications for the continuity of Chinese civilisation. The logographic nature of Chinese characters creates a fundamental cognitive difference from alphabetic writing: research indicates that reading Chinese relies more on the right brain's holistic pattern recognition, while alphabetic writing relies more on the left brain's linear decoding. Whether this cognitive difference shapes different ways of thinking in its users remains a hot topic at the intersection of linguistics and cognitive science. In the dual context of globalisation and digitalisation, Chinese characters are undergoing yet another profound morphological evolution — emoji, input methods, and cross-linguistic transmission are reshaping the vitality of this ancient symbol system in ways that ancient people could not have anticipated."
+    }
+  ]
+}

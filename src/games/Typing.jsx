@@ -30,7 +30,7 @@ function isCorrect(input, entry, direction) {
 }
 
 export default function Typing() {
-  const { activeEntries: allEntries, direction, showReading, scoreActions, scores, settings, setScreen, getEntriesForGame } = useApp()
+  const { activeEntries: allEntries, direction, showReading, scoreActions, scores, settings, setScreen, getEntriesForGame, vocabLoading } = useApp()
   const { entries: activeEntries, isEmpty: levelEmpty } = getEntriesForGame('typing')
   const { requireCorrect, skipEnabled } = settings.typing
 
@@ -63,9 +63,11 @@ export default function Typing() {
     setTimeout(() => inputRef.current?.focus(), 50)
   }, [activeEntries, seenIds])
 
+  const entriesKey = activeEntries.map(e => e.id).join(',')
+
   useEffect(() => {
     if (activeEntries.length > 0) nextEntry()
-  }, [activeEntries])
+  }, [entriesKey])
 
   // Focus input on mount and when feedback clears
   useEffect(() => {

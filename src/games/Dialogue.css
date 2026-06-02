@@ -348,6 +348,32 @@
 }
 
 /* Dark mode */
+
+[data-theme="light"] {
+  .dl-screen { background: #fafafa; }
+  .dl-header { border-color: #e0e0e0; }
+  .dl-back { color: #666; }
+  .dl-back:hover { color: #111; }
+  .dl-title { color: #111; }
+  .dl-card { background: #fff; }
+  .dl-card:hover { background: #fff; }
+  .dl-card-title { color: #111; }
+  .dl-card-level { background: #f0f0f0; }
+  .dl-bubble { background: #fff; }
+  .dl-bubble-text { color: #111; }
+  .dl-bubble-trans { border-color: #e0e0e0; }
+  .dl-question { background: #f8f9ff; }
+  .dl-question-prompt { color: #333; }
+  .dl-option { background: #fff; }
+  .dl-option-text { color: #222; }
+  .dl-option:hover:not(:disabled):not(.dl-option--correct):not(.dl-option--wrong) { background: #f0f4ff; }
+  .dl-option--correct { background: #f0faf5; }
+  .dl-option--wrong { background: #fff0ef; }
+  .dl-finish { background: #fff; }
+  .dl-finish-stats { color: #888; }
+  .dl-finish-btn { background: #f0f0f0; }
+}
+
 @media (prefers-color-scheme: dark) {
   .dl-screen   { background: #111; }
   .dl-header   { border-color: #222; }

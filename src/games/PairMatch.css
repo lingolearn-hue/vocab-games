@@ -154,6 +154,17 @@
 }
 
 /* Dark mode */
+
+[data-theme="light"] {
+  .pm-item { background: #fff; }
+  .pm-sub { color: #999; }
+  .pm-item--selected { background: #eef2ff; }
+  .pm-item--matched { background: #f0faf5; }
+  .pm-item--wrong { background: #fff0ef; }
+  .pm-pip { background: #e0e0e0; }
+  .pm-back:hover { color: #111; }
+}
+
 @media (prefers-color-scheme: dark) {
   .pm-item { background: #1e1e1e; border-color: #333; color: #eee; }
   .pm-sub { color: #666; }

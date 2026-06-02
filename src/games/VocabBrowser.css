@@ -263,6 +263,21 @@
 }
 
 /* Dark mode */
+
+[data-theme="light"] {
+  .vb-screen { background: #fafafa; }
+  .vb-title { color: #333; }
+  .vb-search { background: #fff; }
+  .vb-search:focus { border-color: #4f7ef8; }
+  .vb-select { background: #fff; }
+  .vb-tog { background: #fff; }
+  .vb-tog.on { background: #eef2ff; }
+  .vb-row { border-color: #e0e0e0; }
+  .vb-trans { color: #666; }
+  .vb-level { background: #f0f0f0; }
+  .vb-back:hover { color: #111; }
+}
+
 @media (prefers-color-scheme: dark) {
   .vb-screen   { background: #111; }
   .vb-title    { color: #ddd; }

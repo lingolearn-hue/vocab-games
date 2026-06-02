@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { useApp } from '../context/AppContext'
 import './Setup.css'
 
-const LANGUAGE_FLAGS = { zh: '🇨🇳', es: '🇪🇸', de: '🇩🇪', ja: '🇯🇵' }
+const LANGUAGE_FLAGS = { zh: '🇨🇳', es: '🇪🇸', de: '🇩🇪', ja: '🇯🇵', en: '🇬🇧' }
 
 // Level order per language family
 const LEVEL_ORDER = {
@@ -10,6 +10,7 @@ const LEVEL_ORDER = {
   ja: ['N5','N4','N3','N2','N1'],
   de: ['A1','A2','B1','B2','C1','C2'],
   es: ['A1','A2','B1','B2','C1','C2'],
+  en: ['A1','A2','B1','B2','C1','C2'],
 }
 
 const DRILL_GAMES = [
