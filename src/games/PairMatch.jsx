@@ -9,9 +9,10 @@ function shuffle(arr) {
 }
 
 export default function PairMatch() {
-  const { activeEntries: allEntries, direction, showReading, scoreActions, settings, setScreen, getEntriesForGame, vocabLoading } = useApp()
+  const { activeEntries: allEntries, direction, showReading, scoreActions, settings, setScreen, getEntriesForGame, vocabLoading, activeLanguage } = useApp()
   const { entries: activeEntries, isEmpty: levelEmpty } = getEntriesForGame('pairmatch')
   const ROUND_SIZE = settings.pairmatch.roundSize
+  const isCJK = activeLanguage === 'zh' || activeLanguage === 'ja'
 
   const [leftItems,  setLeftItems]  = useState([])
   const [rightItems, setRightItems] = useState([])
@@ -83,14 +84,6 @@ export default function PairMatch() {
       }, 500)
     }
   }, [matched, roundSize])
-
-  // Escape to exit
-  useEffect(() => {
-    function onKey(e) { if (e.key === 'Escape') setScreen('setup') }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [])
-
   function selectLeft(item) {
     if (matched.has(item.id) || wrongPair) return
     setSelectedLeft(prev => prev?.id === item.id ? null : item)

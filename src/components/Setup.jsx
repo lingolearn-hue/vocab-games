@@ -137,6 +137,7 @@ export default function Setup() {
           <span className="lang-flag-arrow">{langPickerOpen ? '▾' : '›'}</span>
         </button>
         <div className="setup-nav">
+          <button className="setup-nav-btn setup-nav-btn--adventure" onClick={() => setScreen('adventure')} title="Adventure Mode">⚔️</button>
           <button className="setup-nav-btn" onClick={() => setScreen('stats')}    title="Stats">📊</button>
           <button className="setup-nav-btn" onClick={() => setScreen('settings')} title="Settings">⚙️</button>
         </div>

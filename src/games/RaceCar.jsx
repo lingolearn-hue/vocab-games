@@ -206,16 +206,23 @@ export default function RaceCar() {
       if (e.key === 'Escape')     { setScreen('setup'); return }
       if (e.key === 'ArrowLeft')  setCarLane(l => { const n = Math.max(0, l-1); carLaneRef.current = n; return n })
       if (e.key === 'ArrowRight') setCarLane(l => { const n = Math.min(2, l+1); carLaneRef.current = n; return n })
-      if (e.key === 'ArrowUp') {
-        if (!boostEnabled) return
+      if (e.key === 'ArrowUp' && boostEnabled) {
         setBoosting(true)
         boostRef.current = true
-        // release after 800ms
-        setTimeout(() => { setBoosting(false); boostRef.current = false }, 800)
+      }
+    }
+    function onKeyUp(e) {
+      if (e.key === 'ArrowUp') {
+        setBoosting(false)
+        boostRef.current = false
       }
     }
     window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
+    window.addEventListener('keyup',   onKeyUp)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      window.removeEventListener('keyup',   onKeyUp)
+    }
   }, [boostEnabled])
 
   function onPointerDown(e) {

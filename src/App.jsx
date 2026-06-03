@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { AppProvider, useApp } from './context/AppContext'
 import Setup from './components/Setup'
 import RaceCar from './games/RaceCar'
@@ -12,6 +13,8 @@ import GradedReader from './games/GradedReader'
 import Dialogue from './games/Dialogue'
 import GrammarTrainer from './games/GrammarTrainer'
 import MatchingDrills from './games/MatchingDrills'
+import Adventure from './games/Adventure'
+import GrammarDictionary from './games/GrammarDictionary'
 import './App.css'
 
 const LANGUAGE_FLAGS = { zh: '🇨🇳', es: '🇪🇸', de: '🇩🇪', ja: '🇯🇵', en: '🇬🇧' }
@@ -49,7 +52,19 @@ function FirstLaunchOverlay() {
 }
 
 function Router() {
-  const { screen } = useApp()
+  const { screen, setScreen } = useApp()
+
+  // Global Escape: always returns to setup from any game screen
+  useEffect(() => {
+    const GAME_SCREENS = new Set(['racecar','pairmatch','flashcard','gapfill','typing',
+      'reader','dialogue','grammar','matching','vocab','stats','settings','adventure','grammar-dict'])
+    function onKey(e) {
+      if (e.key === 'Escape' && GAME_SCREENS.has(screen)) setScreen('setup')
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [screen])
+
   switch (screen) {
     case 'racecar':   return <RaceCar />
     case 'pairmatch': return <PairMatch />
@@ -63,7 +78,9 @@ function Router() {
     case 'dialogue':  return <Dialogue />
     case 'grammar':   return <GrammarTrainer />
     case 'matching':  return <MatchingDrills />
-    default:          return <Setup />
+    case 'adventure':     return <Adventure />
+    case 'grammar-dict':  return <GrammarDictionary />
+    default:              return <Setup />
   }
 }
 

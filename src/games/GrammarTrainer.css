@@ -584,3 +584,22 @@
 [data-theme="dark"] .gt-type-card:hover { background: #1a2340; border-color: #4f7ef8; }
 [data-theme="dark"] .gt-type-label    { color: #ddd; }
 [data-theme="dark"] .gt-type-prompt   { color: #888; }
+
+/* Feedback banner — fixed height to prevent layout shift */
+.gt-feedback-banner {
+  min-height: 1.6rem;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.gt-feedback-banner.hidden { visibility: hidden; }
+.gt-fb-correct { color: #22a06b; }
+.gt-fb-wrong   { color: #e5534b; }
+
+@media (prefers-color-scheme: dark) {
+  .gt-fb-correct { color: #22a06b; }
+  .gt-fb-wrong   { color: #e5534b; }
+}

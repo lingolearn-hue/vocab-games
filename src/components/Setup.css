@@ -301,3 +301,12 @@
 [data-theme="dark"] .sub-game-btn     { background: #1e1e1e; }
 [data-theme="dark"] .sub-game-btn:hover:not(.disabled) { border-color: #4f7ef8; background: #1a2340; }
 [data-theme="dark"] .sub-game-label   { color: #ddd; }
+
+/* Adventure mode button — subtle gold tint */
+.setup-nav-btn--adventure {
+  color: #e8c84a;
+}
+.setup-nav-btn--adventure:hover {
+  background: rgba(232,200,74,0.12);
+  border-radius: 6px;
+}

@@ -998,6 +998,146 @@ speak(text, language, { rate: 0.9, pitch: 1.0 })
 </div>
 </details>
 
+
+<!-- ═══════════════════════════════════════════════════════ 10. ADVENTURE MODE -->
+<details>
+<summary><h2>10. Adventure Mode</h2></summary>
+<div class="acc-body">
+
+<div class="intro">Adventure Mode is a campaign-based learning path alongside the free-play mode. Currently implemented for Japanese (N5 campaign). Accessed via the ⚔️ button on the home screen; returns to free play via ← Free Play in the adventure header.</div>
+
+<details>
+<summary><h3>10.1 Architecture</h3></summary>
+<div class="acc-body">
+<table>
+<tr><th>File</th><th>Purpose</th></tr>
+<tr><td><code>public/adventure/ja-campaign.json</code></td><td>Campaign data: chapters, vocab lists, grammar patterns, dialogues, passages</td></tr>
+<tr><td><code>src/games/Adventure.jsx</code></td><td>Campaign map screen — vertical scroll of chapter cards (bottom to top)</td></tr>
+<tr><td><code>src/games/AdventureChapter.jsx</code></td><td>Single chapter view with phase progression</td></tr>
+<tr><td><code>src/games/GrammarDictionary.jsx</code></td><td>Searchable/filterable grammar reference, usable standalone or from adventure</td></tr>
+<tr><td><code>localStorage['adventureProgress']</code></td><td><code>{ [chapterId]: { phase: 'vocab'|'grammar'|'dialogue'|'passage'|'complete' } }</code></td></tr>
+</table>
+<p><strong>sessionEntries</strong>: AppContext exposes <code>sessionEntries / setSessionEntries</code>. When set by AdventureChapter before launching a vocab drill game, <code>getEntriesForGame</code> uses these instead of the full <code>activeEntries</code>. Cleared when the player returns from the game.</p>
+</div>
+</details>
+
+<details>
+<summary><h3>10.2 Campaign JSON Format</h3></summary>
+<div class="acc-body">
+<pre>{
+  "id": "ja-campaign",
+  "language": "ja",
+  "title": "光のクリスタル",
+  "titleTranslation": "The Crystal of Light",
+  "totalChapters": 12,
+  "completionTitle": "光のクリスタルの勇者",
+  "chapters": [
+    {
+      "id": "ch01",
+      "number": 1,
+      "title": "ギルドへの入団",
+      "titleTranslation": "Guild Initiation",
+      "level": "N5",
+      "grammarArtifact": { "name": "Apprentice Badge", "icon": "🏅", "grammar": "は・です・か・も" },
+      "storyIntro": "光のクリスタルが消えた…",
+      "storyIntroTranslation": "The Crystal of Light has disappeared…",
+      "storyOutro": "旅はもう始まっている。",
+      "storyOutroTranslation": "The journey has already begun.",
+      "vocabLesson": {
+        "title": "Chapter 1 Vocabulary",
+        "wordIds": ["こんにちは", "ありがとう", …]
+      },
+      "grammarLesson": {
+        "title": "Chapter 1 Grammar",
+        "patterns": [ … grammar pattern objects … ]
+      },
+      "dialogue": { … dialogue object (same format as dialogues/*.json) … },
+      "passage":  { … passage object (same format as reader/*.json) … }
+    }
+  ]
+}</pre>
+<p><code>wordIds</code> are matched against <code>activeEntries</code> by the <code>entry</code> field string. If your vocab file uses a different format, the IDs may not resolve — the UI shows a warning rather than crashing.</p>
+</div>
+</details>
+
+<details>
+<summary><h3>10.3 Chapter Phase Flow</h3></summary>
+<div class="acc-body">
+<div class="sketch">Story Intro
+     ↓
+📚 Vocab Phase
+   • Preview word list (entry + reading + translation + 🔊)
+   • Launch: Flashcard / Pair Match / Race Car (filtered to chapter words)
+   • "Continue to Grammar →"
+     ↓
+📐 Grammar Phase
+   • Collapsible pattern cards (fill-blank / pick-correct)
+   • Each card has an inline exercise; ✓ marks done
+   • "📖 Grammar Dictionary" button → searchable reference
+   • "Continue to Dialogue →"
+     ↓
+💬 Dialogue Phase
+   • Same WhatsApp-style dialogue as main Dialogue game
+   • observe and choice types both supported
+   • "Continue to Reading →" unlocked when all turns answered
+     ↓
+📖 Passage Phase
+   • TextWithLookup reader passage
+   • EN toggle, 🔊 speak button
+   • "Complete Chapter →"
+     ↓
+⭐ Complete Phase
+   • Grammar artifact reward displayed
+   • Story outro text
+   • Next Chapter / ← Map</div>
+<p>Phase progress is persisted to <code>localStorage['adventureProgress']</code> after every advance. Returning to a chapter resumes at the saved phase. Phases are soft — you can always tap Continue without finishing the exercises.</p>
+</div>
+</details>
+
+<details>
+<summary><h3>10.4 Chapter Map</h3></summary>
+<div class="acc-body">
+<p>Vertical scroll, displayed in reverse order (highest chapter at top, Chapter 1 at bottom — direction of upward progression). Chapter cards show:</p>
+<ul>
+  <li>Chapter number, Japanese title, English subtitle</li>
+  <li>Level badge (N5, N4…) + grammar artifact name</li>
+  <li>Status: locked 🔒 / active (phase dots) / complete ✓</li>
+  <li>The next incomplete chapter is highlighted with a blue glow border</li>
+</ul>
+<p><strong>Unlock logic</strong>: Chapter 1 always unlocked. Each subsequent chapter unlocks when the previous is marked <code>complete</code>. Soft — no score threshold required.</p>
+</div>
+</details>
+
+<details>
+<summary><h3>10.5 Grammar Dictionary</h3></summary>
+<div class="acc-body">
+<p>A standalone searchable reference screen accessible from:</p>
+<ul>
+  <li>Adventure chapter grammar phase (shows chapter patterns starred)</li>
+  <li>Setup home screen (future: add to Grammar Drills group)</li>
+  <li>Direct route: <code>screen = 'grammar-dict'</code></li>
+</ul>
+<p>Filters: full-text search, level chips, category chips. When opened from a chapter, an additional "★ This chapter" filter shows only the current chapter's patterns. Chapter patterns are marked with ★ and a gold border.</p>
+<p>Pattern cards are collapsible and show: explanation + worked example (template/sentences/tiles depending on type).</p>
+</div>
+</details>
+
+<details>
+<summary><h3>10.6 Current Campaign: Crystal of Light (Japanese N5)</h3></summary>
+<div class="acc-body">
+<table>
+<tr><th>Chapter</th><th>Story</th><th>Grammar Artifact</th></tr>
+<tr><td>Ch 1 — Guild Initiation</td><td>Join the guild; meet Leon; crystal is missing</td><td>🏅 Apprentice Badge (は・です・か・も)</td></tr>
+<tr><td>Ch 2 — First Mission</td><td>Village mission; missing child; forest mystery</td><td>🕐 Bronze Clock (present/past/negative)</td></tr>
+<tr><td>Ch 3–12</td><td>Forest Road → Festival Town → Lost Child → Mountain → Old Tower → Castle Gate → Investigation → Dragon Valley → Dragon Cave → Crystal Dragon</td><td>See spec document</td></tr>
+</table>
+<p>Full 12-chapter arc maps the complete N5 grammar curriculum (see shared spec). Chapters 3–12 are data stubs — content to be written chapter by chapter.</p>
+</div>
+</details>
+
+</div>
+</details>
+
 <hr/>
 <p style="font-size:0.75rem; color:#aaa; text-align:center;">Vocab Games Design Spec · Generated v23 · Updated alongside codebase</p>
 

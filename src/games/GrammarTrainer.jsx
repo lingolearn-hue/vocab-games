@@ -33,7 +33,15 @@ function FillBlank({ pattern, onResult }) {
   const { text, correctAnswer, chosenOption } = useMemo(
     () => instantiateTemplate(pattern.template), [pattern.id]
   )
-  const options = useMemo(() => buildOptions(pattern, correctAnswer), [pattern.id, correctAnswer])
+
+  // Correct answer is distractors[0]; rest are wrong. Shuffle once on mount.
+  const options = useMemo(() => {
+    const correct = pattern.distractors[0]
+    const wrong   = pattern.distractors.slice(1)
+    return [{ text: correct, correct: true }, ...wrong.map(d => ({ text: d, correct: false }))]
+      .sort(() => Math.random() - 0.5)
+  }, [pattern.id])
+
   const [chosen,   setChosen]   = useState(null)
   const [feedback, setFeedback] = useState(null)
 
@@ -43,7 +51,7 @@ function FillBlank({ pattern, onResult }) {
     if (opt.correct) {
       setFeedback('correct')
       recordGrammarCorrect(pattern.id)
-      setTimeout(() => onResult(true), 900)
+      onResult(true)        // immediate — no delay
     } else {
       setFeedback('wrong')
       recordGrammarWrong(pattern.id)
@@ -54,6 +62,11 @@ function FillBlank({ pattern, onResult }) {
 
   return (
     <div className="gt-exercise">
+      {/* Feedback banner above sentence — no layout shift */}
+      <div className={`gt-feedback-banner ${feedback || 'hidden'}`}>
+        {feedback === 'correct' && <span className="gt-fb-correct">✓ Correct!</span>}
+        {feedback === 'wrong'   && <span className="gt-fb-wrong">✗ Correct answer: <strong>{pattern.distractors[0]}</strong></span>}
+      </div>
       <div className={`gt-sentence ${feedback || ''}`}>
         {displayText.split(/(\([^)]+\))/).map((part, i) =>
           part.startsWith('(')
@@ -82,13 +95,7 @@ function FillBlank({ pattern, onResult }) {
         })}
       </div>
       {feedback === 'wrong' && (
-        <div className="gt-wrong-feedback">
-          <span className="gt-wrong-label">✗ Wrong.</span>
-          Correct: <strong>{correctAnswer}</strong>
-        </div>
-      )}
-      {feedback && (
-        <button className="gt-next-btn" onClick={() => onResult(feedback === 'correct')}>
+        <button className="gt-next-btn" onClick={() => onResult(false)}>
           Next →
         </button>
       )}
@@ -107,7 +114,7 @@ function PickCorrect({ pattern, onResult }) {
     if (opt.correct) {
       setFeedback('correct')
       recordGrammarCorrect(pattern.id)
-      setTimeout(() => onResult(true), 900)
+      onResult(true)        // immediate
     } else {
       setFeedback('wrong')
       recordGrammarWrong(pattern.id)
@@ -116,6 +123,10 @@ function PickCorrect({ pattern, onResult }) {
 
   return (
     <div className="gt-exercise">
+      <div className={`gt-feedback-banner ${feedback || 'hidden'}`}>
+        {feedback === 'correct' && <span className="gt-fb-correct">✓ Correct!</span>}
+        {feedback === 'wrong'   && <span className="gt-fb-wrong">✗ Not quite — see correct answer below.</span>}
+      </div>
       <p className="gt-pick-prompt">Which sentence is grammatically correct?</p>
       <div className="gt-pick-options">
         {options.map((opt, i) => {
@@ -139,8 +150,8 @@ function PickCorrect({ pattern, onResult }) {
           )
         })}
       </div>
-      {feedback && (
-        <button className="gt-next-btn" onClick={() => onResult(feedback === 'correct')}>
+      {feedback === 'wrong' && (
+        <button className="gt-next-btn" onClick={() => onResult(false)}>
           Next →
         </button>
       )}

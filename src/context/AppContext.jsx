@@ -20,6 +20,8 @@ export function AppProvider({ children }) {
   const [loadedSentences, setLoadedSentences] = useState({})
   const [selectedIds,     setSelectedIds]     = useState([])
   const [activeEntries,   setActiveEntries]   = useState([])
+  // Adventure mode: when set, games use these entries instead of activeEntries
+  const [sessionEntries,  setSessionEntries]  = useState(null)
   const [screen,          setScreen]          = useState('setup')
   const [scores,          setScores]          = useState(getAllScores)
   const [activeLanguage,  setActiveLanguageState] = useState(
@@ -94,12 +96,13 @@ export function AppProvider({ children }) {
   }, [selectedIds, loadedLists])
 
   // Helper used by each game to get level-filtered entries
-  // Returns { entries, isEmpty } — isEmpty signals the warning state
+  // When sessionEntries is set (adventure mode), use those instead
   const getEntriesForGame = useCallback((game) => {
-    const levels  = getGameLevels(settings, game)
-    const filtered = filterByLevel(activeEntries, levels)
-    return { entries: filtered.length > 0 ? filtered : activeEntries, isEmpty: filtered.length === 0 && levels !== null }
-  }, [activeEntries, settings])
+    const base = sessionEntries ?? activeEntries
+    const levels = sessionEntries ? null : getGameLevels(settings, game)
+    const filtered = filterByLevel(base, levels)
+    return { entries: filtered.length > 0 ? filtered : base, isEmpty: filtered.length === 0 && levels !== null }
+  }, [activeEntries, sessionEntries, settings])
 
   // Sorted unique levels present in the active entries — canonical order per language
   const availableLevels = useMemo(() => {
@@ -147,7 +150,7 @@ export function AppProvider({ children }) {
       loadedLists,
       selectedIds, setSelectedIds,
       ensureLoaded,
-      activeEntries, vocabLoading,
+      activeEntries, sessionEntries, setSessionEntries, vocabLoading,
       activeSentences,
       direction, setDirection,
       showReading, setShowReading,

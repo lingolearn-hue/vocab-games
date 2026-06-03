@@ -206,27 +206,29 @@ export function GenderDrill() {
 
 // ── Tone drill (Chinese) ──────────────────────────────────────────────────────
 
+// Strip tone diacritics from a pinyin syllable: māo → mao
+function stripTone(syl) {
+  return syl.normalize('NFD').replace(/[\u0300-\u036f]/g,'').normalize('NFC')
+}
+
 export function ToneDrill() {
   const { activeEntries, setScreen, activeLanguage } = useApp()
   const language = activeLanguage ?? 'zh'
+  const [showPinyin, setShowPinyin] = useState(true)
 
-  // Build a flat list of syllable items from all entries with readings
   const syllableItems = useMemo(() => {
     const items = []
     for (const e of activeEntries) {
       if (!e.reading) continue
       const tones = parseTones(e.reading)
-      const syllables = e.reading.trim().split(/\s+/)
-      // Single syllable: quiz the tone directly
-      // Multi-syllable: quiz each syllable separately, show full word context
       tones.forEach((t, i) => {
-        if (t.tone === 5) return // skip neutral
+        if (t.tone === 5) return
         items.push({
           id: `${e.id}::tone::${i}`,
           entry: e.entry,
           reading: e.reading,
           translation: e.translation,
-          syllable: t.syllable,
+          syllable: t.syllable,          // with tone mark e.g. māo
           syllableIndex: i,
           tone: t.tone,
           totalSyllables: tones.length,
@@ -237,8 +239,9 @@ export function ToneDrill() {
     return items
   }, [activeEntries])
 
+  // Always show all 5 tones in fixed order 1–5
   const getAnswer  = useCallback(item => item.tone, [])
-  const getOptions = useCallback(() => shuffle([1,2,3,4]), [])
+  const getOptions = useCallback(() => [1,2,3,4,5], [])
   const scoreKey   = useCallback(item => `tone:${item.id}`, [])
 
   const { current, options, chosen, feedback, total, accuracy, choose, advance } = useQuiz(
@@ -251,46 +254,53 @@ export function ToneDrill() {
 
   const correctTone = current?.tone
 
-  // Highlight the target syllable in the full reading
-  function renderReading(item) {
-    if (!item) return null
+  // Pinyin above the character — tone-stripped so the student can't cheat
+  function renderPinyinAbove(item) {
+    if (!item || !showPinyin) return null
     const parts = item.reading.trim().split(/\s+/)
     return (
-      <span className="md-tone-reading">
+      <div className="md-tone-pinyin-above">
         {parts.map((syl, i) => (
           <span
             key={i}
-            className={`md-tone-syl ${i === item.syllableIndex ? 'target' : ''}`}
-            style={{ color: i === item.syllableIndex ? TONE_COLORS[getSyllableTone(syl)] : undefined }}
+            className={`md-tone-syl-above ${i === item.syllableIndex ? 'target' : ''}`}
           >
-            {syl}
+            {stripTone(syl)}{i === item.syllableIndex ? '?' : ''}
           </span>
         ))}
-      </span>
+      </div>
     )
   }
 
   return (
     <div className="md-exercise">
-      {total > 0 && (
-        <div className="md-score">{total} done{accuracy !== null ? ` · ${accuracy}%` : ''}</div>
-      )}
+      <div className="md-tone-header">
+        {total > 0 && (
+          <div className="md-score">{total} done{accuracy !== null ? ` · ${accuracy}%` : ''}</div>
+        )}
+        <button
+          className={`md-pinyin-toggle ${showPinyin ? 'active' : ''}`}
+          onClick={() => setShowPinyin(v => !v)}
+        >
+          拼音 {showPinyin ? 'on' : 'off'}
+        </button>
+      </div>
 
       <div className={`md-card ${feedback || ''}`}>
         <div className="md-prompt md-prompt--cjk">
           {current && (
             <>
+              {renderPinyinAbove(current)}
               <span className="md-entry">{current.entry}</span>
               <SpeakButton text={current.entry} language={language} size="md" />
-              <div className="md-tone-reading-wrap">{renderReading(current)}</div>
             </>
           )}
         </div>
         <div className="md-tone-question">
-          What tone is <strong>{current?.syllable}</strong>?
+          What tone is <strong>{stripTone(current?.syllable ?? '')}</strong>
           {current?.totalSyllables > 1 && (
             <span className="md-syllable-pos"> (syllable {current.syllableIndex + 1} of {current.totalSyllables})</span>
-          )}
+          )}?
         </div>
         <div className="md-translation">{current?.translation[0]}</div>
       </div>
@@ -302,17 +312,19 @@ export function ToneDrill() {
             if (tone === correctTone) state = 'correct'
             else if (tone === chosen) state = 'wrong'
           }
+          const labels5 = { ...TONE_LABELS, 5: '· (neutral)' }
+          const names5  = { ...TONE_NAMES,  5: 'Neutral' }
           return (
             <button
               key={tone}
               className={`md-option md-option--tone md-option--${state || 'idle'}`}
-              style={{ '--tone-color': TONE_COLORS[tone] }}
+              style={{ '--tone-color': TONE_COLORS[tone] ?? '#aaa' }}
               onClick={() => choose(tone)}
               disabled={!!feedback}
             >
               <span className="md-tone-num">{tone}</span>
-              <span className="md-tone-mark">{TONE_LABELS[tone]}</span>
-              <span className="md-tone-name">{TONE_NAMES[tone]}</span>
+              <span className="md-tone-mark">{labels5[tone]}</span>
+              <span className="md-tone-name">{names5[tone]}</span>
             </button>
           )
         })}
@@ -320,12 +332,12 @@ export function ToneDrill() {
 
       {feedback === 'correct' && (
         <div className="md-feedback md-feedback--correct">
-          ✓ Tone {correctTone} — {TONE_NAMES[correctTone]}
+          ✓ {current?.syllable} — Tone {correctTone}
         </div>
       )}
       {feedback === 'wrong' && (
         <div className="md-feedback md-feedback--wrong">
-          ✗ Tone <strong>{correctTone}</strong> — {TONE_NAMES[correctTone]}
+          ✗ Tone <strong>{correctTone}</strong> — {current?.syllable}
           <button className="md-next-btn" onClick={advance}>Next →</button>
         </div>
       )}
