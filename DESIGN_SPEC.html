@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vocab Games — Design Specification</title>
+<style>
+  :root {
+    --blue: #4f7ef8;
+    --green: #22a06b;
+    --amber: #f0a500;
+    --red: #e5534b;
+    --purple: #8b5cf6;
+    --pink: #e05cb0;
+    --bg: #fff;
+    --bg2: #f8f9ff;
+    --bg3: #f0f4ff;
+    --border: #e0e8ff;
+    --text: #111;
+    --text2: #444;
+    --text3: #666;
+    --code-bg: #f4f4f8;
+    --radius: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  body { max-width: 860px; margin: 0 auto; padding: 1.5rem 1.2rem 4rem; }
+
+  h1 { font-size: 1.7rem; color: var(--blue); margin-bottom: 0.2rem; }
+  .subtitle { color: var(--text3); font-size: 0.9rem; margin-bottom: 2rem; }
+  h2 { font-size: 1rem; font-weight: 700; color: var(--text); margin: 0; }
+  h3 { font-size: 0.92rem; font-weight: 700; color: var(--text); margin: 0 0 0.5rem; }
+  p, li { color: var(--text2); line-height: 1.65; }
+  ul, ol { padding-left: 1.4rem; }
+  li { margin-bottom: 0.25rem; }
+  code { background: var(--code-bg); border-radius: 4px; padding: 0.1em 0.4em; font-size: 0.85em; font-family: 'SF Mono', 'Fira Code', monospace; }
+  pre { background: var(--code-bg); border-radius: var(--radius); padding: 1rem; overflow-x: auto; font-size: 0.82em; line-height: 1.6; border: 1px solid var(--border); }
+
+  /* Accordion */
+  details { border: 1.5px solid var(--border); border-radius: var(--radius); margin-bottom: 0.6rem; background: var(--bg); }
+  details[open] { background: var(--bg2); }
+  summary { display: flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1rem; cursor: pointer; list-style: none; user-select: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '›'; font-size: 1.1rem; color: var(--blue); transition: transform 0.15s; flex-shrink: 0; }
+  details[open] summary::before { transform: rotate(90deg); }
+  .acc-body { padding: 0 1rem 1rem; }
+
+  /* Nested accordion */
+  details details { border-color: #dde3ff; background: #fff; margin-top: 0.5rem; }
+  details details[open] { background: #fafbff; }
+  details details summary { padding: 0.65rem 0.85rem; }
+  details details summary::before { color: var(--text3); }
+  details details .acc-body { padding: 0 0.85rem 0.85rem; }
+
+  /* Badges */
+  .badge { display: inline-block; padding: 0.15rem 0.55rem; border-radius: 20px; font-size: 0.72rem; font-weight: 700; }
+  .badge-blue   { background: var(--bg3); color: var(--blue); }
+  .badge-green  { background: #f0faf5; color: var(--green); }
+  .badge-amber  { background: #fff8e0; color: var(--amber); }
+  .badge-red    { background: #fff0ef; color: var(--red); }
+  .badge-purple { background: #f5f0ff; color: var(--purple); }
+  .badge-pink   { background: #fff0f8; color: var(--pink); }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 0.8rem 0; }
+  th { text-align: left; padding: 0.45rem 0.7rem; background: var(--bg3); color: var(--blue); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  td { padding: 0.4rem 0.7rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+
+  /* Sketch boxes */
+  .sketch { background: var(--bg2); border: 1.5px dashed var(--border); border-radius: var(--radius); padding: 1rem; margin: 0.8rem 0; font-family: 'SF Mono', monospace; font-size: 0.78rem; color: var(--text3); line-height: 1.7; white-space: pre; overflow-x: auto; }
+
+  /* Section intro */
+  .intro { background: var(--bg3); border-radius: var(--radius); padding: 0.8rem 1rem; margin-bottom: 1rem; font-size: 0.88rem; color: var(--text2); border-left: 3px solid var(--blue); }
+
+  /* Grid layout for languages */
+  .lang-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.6rem; margin: 0.6rem 0; }
+  .lang-card { background: var(--bg3); border-radius: var(--radius); padding: 0.7rem; }
+  .lang-card strong { display: block; font-size: 0.88rem; }
+  .lang-card span { font-size: 0.75rem; color: var(--text3); }
+
+  /* Color swatches */
+  .swatch { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: middle; margin-right: 0.3rem; }
+
+  /* File tree */
+  .filetree { font-family: 'SF Mono', monospace; font-size: 0.8rem; line-height: 1.9; color: var(--text2); background: var(--code-bg); border-radius: var(--radius); padding: 0.8rem 1rem; border: 1px solid var(--border); }
+  .filetree .dir { color: var(--blue); font-weight: 600; }
+  .filetree .file { color: var(--text2); }
+  .filetree .comment { color: #aaa; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 1.2rem 0; }
+
+  /* Version tag */
+  .version { font-size: 0.72rem; color: var(--text3); font-weight: normal; margin-left: 0.5rem; }
+
+  @media (max-width: 600px) { body { padding: 1rem 0.8rem; } }
+</style>
+<script>
+// Single-accordion behaviour: only one sibling open at a time
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('details').forEach(el => {
+    el.addEventListener('toggle', () => {
+      if (!el.open) return;
+      const parent = el.parentElement;
+      parent.querySelectorAll(':scope > details').forEach(sib => {
+        if (sib !== el && sib.open) sib.removeAttribute('open');
+      });
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<h1>Vocab Games <span class="version">v23 · Design Specification</span></h1>
+<p class="subtitle">A React/Vite browser-based language learning app · <a href="https://lingolearn-hue.github.io/vocab-games/">lingolearn-hue.github.io/vocab-games</a></p>
+
+<div class="intro">
+  This document describes the architecture, data formats, component design, and UX patterns of the Vocab Games application. It is maintained alongside the codebase and updated as features are added. Each chapter is independently collapsible; only one section at a time is expanded.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ 1. OVERVIEW -->
+<details open>
+<summary><h2>1. Overview</h2></summary>
+<div class="acc-body">
+
+<p>Vocab Games is a mobile-first Progressive Web App for vocabulary and grammar learning, supporting Chinese, Japanese, German, Spanish, and English. It uses a lightweight spaced-repetition system and organises content into three game groups:</p>
+
+<table>
+<tr><th>Group</th><th>Games</th></tr>
+<tr><td><strong>Vocabulary Drills</strong></td><td>Flashcard, Race Car, Pair Match, Typing</td></tr>
+<tr><td><strong>Language in Context</strong></td><td>Gap Fill, Graded Reader, Dialogue</td></tr>
+<tr><td><strong>Grammar Drills</strong></td><td>Grammar Patterns, Matching Drills (Gender · Tone · Measure Words)</td></tr>
+</table>
+
+<details>
+<summary><h3>1.1 Tech Stack</h3></summary>
+<div class="acc-body">
+<table>
+<tr><th>Layer</th><th>Technology</th></tr>
+<tr><td>Framework</td><td>React 19 + Vite 8</td></tr>
+<tr><td>Styling</td><td>Plain CSS per component (no CSS-in-JS, no Tailwind)</td></tr>
+<tr><td>Routing</td><td>Single string state <code>screen</code> in context — no router library</td></tr>
+<tr><td>State</td><td>React Context (<code>AppContext</code>) + <code>useState</code> / <code>useRef</code></td></tr>
+<tr><td>Persistence</td><td><code>localStorage</code> only — no backend</td></tr>
+<tr><td>PWA</td><td><code>vite-plugin-pwa</code> → Workbox service worker, offline-capable</td></tr>
+<tr><td>Deployment</td><td>GitHub Pages via Actions (gh-pages branch)</td></tr>
+<tr><td>Audio</td><td>Web Speech API (text-to-speech, browser-native)</td></tr>
+</table>
+</div>
+</details>
+
+<details>
+<summary><h3>1.2 Supported Languages</h3></summary>
+<div class="acc-body">
+<div class="lang-grid">
+  <div class="lang-card"><strong>🇨🇳 Chinese</strong><span>HSK 1–6 · Pinyin ruby · Tone drill · Measure words</span></div>
+  <div class="lang-card"><strong>🇯🇵 Japanese</strong><span>N5–N1 · Furigana ruby · Measure words</span></div>
+  <div class="lang-card"><strong>🇩🇪 German</strong><span>A1–C1 · Gender drill (der/die/das)</span></div>
+  <div class="lang-card"><strong>🇪🇸 Spanish</strong><span>A1–C1 · Gender drill (el/la)</span></div>
+  <div class="lang-card"><strong>🇬🇧 English</strong><span>A1–C1 · Reading-focused</span></div>
+</div>
+<p>Language is stored in <code>localStorage['activeLanguage']</code>. On first launch, a full-screen overlay prompts the user to select a language.</p>
+</div>
+</details>
+
+<details>
+<summary><h3>1.3 File Structure</h3></summary>
+<div class="acc-body">
+<div class="filetree">
+<span class="dir">vocab-games/</span>
+├── <span class="dir">public/</span>
+│   ├── <span class="dir">vocab/</span>          <span class="comment">zh-en.json  es-en.json  de-en.json  ja-en.json  en-en.json</span>
+│   ├── <span class="dir">sentences/</span>      <span class="comment">gap-fill sentences per language</span>
+│   ├── <span class="dir">grammar/</span>        <span class="comment">grammar pattern files per language</span>
+│   ├── <span class="dir">reader/</span>         <span class="comment">graded reader passages per language</span>
+│   ├── <span class="dir">dialogues/</span>      <span class="comment">dialogue files per language</span>
+│   ├── <span class="dir">mnemonics/</span>      <span class="comment">seeded mnemonic files per language</span>
+│   └── <span class="dir">icons/</span>          <span class="comment">PWA icons: 192×192, 512×512, 180×180 apple-touch</span>
+├── <span class="dir">src/</span>
+│   ├── App.jsx                <span class="comment">router + first-launch overlay</span>
+│   ├── <span class="dir">context/</span>
+│   │   └── AppContext.jsx     <span class="comment">global state: vocab, scores, settings, language</span>
+│   ├── <span class="dir">engine/</span>
+│   │   ├── vocab.js           <span class="comment">loadList, mergeLists, parseFixedSentence</span>
+│   │   ├── srs.js             <span class="comment">occurrence-based SRS, GAME_META</span>
+│   │   ├── settings.js        <span class="comment">loadSettings / saveSettings / DEFAULTS</span>
+│   │   ├── mnemonics.js       <span class="comment">getMnemonic / setMnemonic / seedMnemonics</span>
+│   │   ├── grammar.js         <span class="comment">grammar pattern engine + SRS</span>
+│   │   ├── reader.js          <span class="comment">buildLookup, tokenise, loadReaderPassages</span>
+│   │   └── speech.js          <span class="comment">Web Speech API TTS wrapper</span>
+│   ├── <span class="dir">components/</span>
+│   │   ├── Setup.jsx          <span class="comment">home screen: language, level chips, game groups</span>
+│   │   ├── RubyText.jsx       <span class="comment">native &lt;ruby&gt;/&lt;rt&gt; with size variants</span>
+│   │   ├── TextWithLookup.jsx <span class="comment">tap-to-translate word popup</span>
+│   │   ├── SpeakButton.jsx    <span class="comment">🔊 TTS button component</span>
+│   │   └── ReadingToggle.jsx  <span class="comment">show/hide reading toggle</span>
+│   └── <span class="dir">games/</span>
+│       ├── Flashcard.jsx      Typing.jsx   PairMatch.jsx  RaceCar.jsx
+│       ├── GapFill.jsx        GradedReader.jsx  Dialogue.jsx
+│       ├── GrammarTrainer.jsx  MatchingDrills.jsx
+│       ├── VocabBrowser.jsx   Settings.jsx  Stats.jsx
+│       └── [matching .css for each]
+├── vite.config.js             <span class="comment">PWA config + Workbox caching rules</span>
+└── DESIGN_SPEC.html           <span class="comment">← this file</span></div>
+</div>
+</details>
+
+</div>
+</details>
+
+<!-- ═══════════════════════════════════════════════════════ 2. DATA FORMATS -->
+<details>
+<summary><h2>2. Data Formats</h2></summary>
+<div class="acc-body">
+
+<p>All content is stored as static JSON under <code>public/</code> and fetched at runtime. No build-time imports of data files — all fetches use relative paths with <code>./</code> prefix (required for GitHub Pages subdirectory deployment).</p>
+
+<details>
+<summary><h3>2.1 Vocab List</h3></summary>
+<div class="acc-body">
+<p>File: <code>public/vocab/{lang}-en.json</code></p>
+<p>Keys are declared as an array so entries can be stored as compact arrays (not objects), reducing file size significantly for large lists.</p>
+<pre>{
+  "id": "zh-en",
+  "language": "zh",
+  "native": "en",
+  "keys": ["entry", "reading", "translation", "pos", "categories", "level", "gender", "measureWord"],
+  "entries": [
+    ["苹果", "píngguǒ", ["apple"], "noun", ["food", "fruit"], "HSK1", null, "个"],
+    ["水",   "shuǐ",    ["water"], "noun", ["food", "drinks"], "HSK1", null, "杯"]
+  ]
+}</pre>
+<table>
+<tr><th>Field</th><th>Type</th><th>Notes</th></tr>
+<tr><td><code>entry</code></td><td>string</td><td>The foreign word. German includes article: <code>"der Apfel"</code></td></tr>
+<tr><td><code>reading</code></td><td>string | null</td><td>Pinyin (zh) or furigana (ja). Null for de/es/en</td></tr>
+<tr><td><code>translation</code></td><td>string[]</td><td>Always an array; first element is primary</td></tr>
+<tr><td><code>pos</code></td><td>string | null</td><td><code>noun</code> · <code>verb</code> · <code>adj</code> · <code>adv</code> · <code>phrase</code> · <code>conj</code></td></tr>
+<tr><td><code>categories</code></td><td>string[]</td><td>Semantic tags: <code>["food","fruit"]</code></td></tr>
+<tr><td><code>level</code></td><td>string | null</td><td>HSK1–6 · N5–N1 · A1–C2</td></tr>
+<tr><td><code>gender</code></td><td>"m"|"f"|"n"|null</td><td>de: m/f/n · es: m/f · others: null</td></tr>
+<tr><td><code>measureWord</code></td><td>string | null</td><td>个/只/冊 etc. zh/ja nouns only</td></tr>
+</table>
+<p>The loader (<code>vocab.js:loadList</code>) normalises entries into objects with an <code>id</code> field (<code>"{listId}::{index}"</code>).</p>
+</div>
+</details>
+
+<details>
+<summary><h3>2.2 Sentences (Gap Fill)</h3></summary>
+<div class="acc-body">
+<p>File: <code>public/sentences/{lang}-en.json</code></p>
+<p>Each sentence contains its own answer options embedded with <code>{correct/distractor/distractor}</code> syntax. The engine picks the first <code>{...}</code> group as the blank.</p>
+<pre>{
+  "language": "zh",
+  "native": "en",
+  "sentences": [
+    {
+      "text": "我每天{吃/喝/买}苹果。",
+      "translation": "I eat apples every day.",
+      "level": "HSK1"
+    },
+    {
+      "text": "随着科技的{发展/衰退/停止}，生活越来越方便。",
+      "translation": "With the development of technology, life becomes more convenient.",
+      "level": "HSK4"
+    }
+  ]
+}</pre>
+<p>The <code>parseFixedSentence(text)</code> function in <code>vocab.js</code> returns <code>{ before, answer, distractors, after }</code>. Options are shuffled before display.</p>
+</div>
+</details>
+
+<details>
+<summary><h3>2.3 Grammar Patterns</h3></summary>
+<div class="acc-body">
+<p>File: <code>public/grammar/{lang}-en.json</code></p>
+<p>Three exercise types. All three share <code>id</code>, <code>level</code>, <code>category</code>, <code>title</code>, <code>explanation</code>, <code>type</code>.</p>
+
+<details>
+<summary>Type: <code>fill-blank</code></summary>
+<div class="acc-body">
+<pre>{
+  "id": "zh-g-001",
+  "level": "HSK1",
+  "category": "measure-words",
+  "title": "Measure word 个 (gè) — general",
+  "explanation": "个 is the most common measure word, used for people and general objects.",
+  "type": "fill-blank",
+  "template": "我有一___ {[朋友|学生|苹果]}。",
+  "hint": "个 (gè) is used with people and general objects.",
+  "distractors": ["个", "只", "本", "张"]
+}</pre>
+<p>The <code>template</code> field uses <code>___</code> as the blank position. The optional <code>{[a|b|c]}</code> syntax selects a random word for the wildcard slot in each instantiation.</p>
+</div>
+</details>
+
+<details>
+<summary>Type: <code>pick-correct</code></summary>
+<div class="acc-body">
+<pre>{
+  "id": "de-g-033",
+  "level": "B1",
+  "category": "conjunctions",
+  "title": "weil vs denn",
+  "explanation": "weil → verb-last. denn → verb-second (main clause).",
+  "type": "pick-correct",
+  "sentences": [
+    { "text": "Ich bleibe zuhause, weil ich krank bin.", "correct": true },
+    { "text": "Ich bleibe zuhause, denn ich bin krank.", "correct": true },
+    { "text": "Ich bleibe zuhause, weil ich bin krank.", "correct": false,
+      "error": "Nach weil kommt Verb-Letzt: weil ich krank bin." }
+  ]
+}</pre>
+<p>2–4 sentences; user identifies all correct ones. Wrong answers show <code>error</code> feedback.</p>
+</div>
+</details>
+
+<details>
+<summary>Type: <code>tile-order</code></summary>
+<div class="acc-body">
+<pre>{
+  "id": "zh-g-028",
+  "level": "HSK5",
+  "category": "particles",
+  "title": "被 passive with agent",
+  "explanation": "被 construction marks subject as receiver. Agent + VP follows.",
+  "type": "tile-order",
+  "tiles": ["这扇窗户", "被风", "吹开了"],
+  "answers": [
+    { "order": [0, 1, 2], "note": null },
+    { "order": [1, 0, 2], "note": "Agent-first variant also acceptable." }
+  ]
+}</pre>
+<p>Multiple valid orderings supported. First answer is the canonical one shown on incorrect.</p>
+</div>
+</details>
+
+<p>Grammar SRS scores are stored in <code>localStorage['grammarScores']</code> as <code>{ [patternId]: { attempts, correct, streak } }</code>. No time-based scheduling — occurrence-based priority queue only.</p>
+</div>
+</details>
+
+<details>
+<summary><h3>2.4 Reader Passages</h3></summary>
+<div class="acc-body">
+<p>File: <code>public/reader/{lang}-en.json</code></p>
+<p>36 passages per language. Three series (6 levels each) + 8 standalone stories + 10 non-fiction pieces.</p>
+<pre>{
+  "id": "zh-en-reader",
+  "language": "zh",
+  "native": "en",
+  "passages": [
+    {
+      "id": "zh-p1",
+      "title": "我的朋友",
+      "titleTranslation": "My Friend",
+      "level": "HSK1",
+      "series": "我的朋友",
+      "tags": ["fiction", "series:我的朋友", "topic:friendship", "beginner"],
+      "text": "我有一个好朋友。他是学生。...",
+      "translation": "I have a good friend. He is a student. ..."
+    }
+  ]
+}</pre>
+<table>
+<tr><th>Tag prefix</th><th>Values</th></tr>
+<tr><td><code>series:</code></td><td>Groups passages into progressive series (shown with ▸ in UI)</td></tr>
+<tr><td><code>topic:</code></td><td>Semantic topic for filtering</td></tr>
+<tr><td>(plain)</td><td><code>fiction</code> · <code>non-fiction</code> · <code>essay</code> · <code>biography</code> · <code>beginner</code> · <code>intermediate</code> · <code>advanced</code></td></tr>
+</table>
+</div>
+</details>
+
+<details>
+<summary><h3>2.5 Dialogues</h3></summary>
+<div class="acc-body">
+<p>File: <code>public/dialogues/{lang}-en.json</code> · 8 dialogues per language</p>
+<p>Two dialogue types: <code>observe</code> (read and answer questions) and <code>choice</code> (user participates).</p>
+<pre>{
+  "id": "zh-d3",
+  "title": "在咖啡馆点单",
+  "titleTranslation": "Ordering at a Café",
+  "level": "HSK2",
+  "type": "choice",
+  "tags": ["food", "cafe", "beginner", "choice"],
+  "speakers": ["服务员", "你"],
+  "turns": [
+    { "type": "line",     "speaker": "服务员", "text": "欢迎！请问您想喝什么？",
+      "translation": "Welcome! What would you like to drink?" },
+
+    { "type": "choice",   "prompt": "你想喝什么？", "promptTranslation": "What do you want?",
+      "options": [
+        { "text": "我想要一杯咖啡。", "translation": "I'd like a coffee.",
+          "response": "好的，需要加牛奶吗？", "responseTranslation": "Sure. Milk?" }
+      ]
+    },
+
+    { "type": "question", "prompt": "What does 服务员 say next?",
+      "options": [
+        { "text": "She says it will come right out", "correct": true,
+          "feedback": "对！她说马上就来。" },
+        { "text": "She says it's too expensive",    "correct": false,
+          "feedback": "不对。她说请稍等。" }
+      ]
+    }
+  ]
+}</pre>
+<table>
+<tr><th>Turn type</th><th>Purpose</th></tr>
+<tr><td><code>line</code></td><td>Displayed as a chat bubble (left or right depending on speaker)</td></tr>
+<tr><td><code>question</code></td><td>Comprehension question — collapses to one line after answer; feedback toggleable</td></tr>
+<tr><td><code>choice</code></td><td>User picks a response; conversation continues with predefined reply</td></tr>
+</table>
+</div>
+</details>
+
+<details>
+<summary><h3>2.6 localStorage Keys</h3></summary>
+<div class="acc-body">
+<table>
+<tr><th>Key</th><th>Content</th></tr>
+<tr><td><code>activeLanguage</code></td><td>String: <code>"zh"</code> | <code>"ja"</code> | <code>"de"</code> | <code>"es"</code> | <code>"en"</code></td></tr>
+<tr><td><code>vocabScores</code></td><td>Object: <code>{ [entryId]: { global, racecar, pairmatch, flashcard, gapfill, typing } }</code></td></tr>
+<tr><td><code>vocabSettings</code></td><td>Settings object (see §4.3)</td></tr>
+<tr><td><code>vocabMnemonics</code></td><td>Object: <code>{ [entryId]: { mnemonic, seeded } }</code></td></tr>
+<tr><td><code>vocabMnemonicsSeeded</code></td><td>Set of list IDs that have been seeded</td></tr>
+<tr><td><code>grammarScores</code></td><td>Object: <code>{ [patternId]: { attempts, correct, streak } }</code></td></tr>
+<tr><td><code>rc-high</code></td><td>Number: Race Car high score</td></tr>
+</table>
+<p>All keys are exported together in the Settings → Data → Export backup JSON.</p>
+</div>
+</details>
+
+</div>
+</details>
+
+<!-- ═══════════════════════════════════════════════════════ 3. STATE & CONTEXT -->
+<details>
+<summary><h2>3. Application State</h2></summary>
+<div class="acc-body">
+
+<p>All shared state lives in <code>AppContext.jsx</code>. No external state library. Games read from context and write via <code>scoreActions</code>.</p>
+
+<details>
+<summary><h3>3.1 Context Shape</h3></summary>
+<div class="acc-body">
+<pre>// Key values exposed by useApp()
+{
+  // Navigation
+  screen: string,           // current screen id
+  setScreen: fn,
+
+  // Language & vocab
+  activeLanguage: string,
+  setActiveLanguage: fn,
+  availableLists: ListDef[],
+  loadedLists: { [id]: List },
+  selectedIds: string[],
+  activeEntries: Entry[],   // merged + deduped entries for active language
+  vocabLoading: boolean,    // true while fetching vocab JSON
+
+  // Sentences
+  activeSentences: Sentence[],  // flat array, all sentences for active language
+
+  // Scores
+  scores: { [entryId]: ScoreRecord },
+  scoreActions: { correct, wrong, master, updateSettings },
+
+  // Settings
+  settings: Settings,
+  updateSettings: fn,       // (fn: Settings → Settings) → void
+
+  // Derived
+  availableLevels: string[],  // canonical ordered levels present in activeEntries
+  getEntriesForGame: fn,      // (game) → { entries, isEmpty }
+  showReading: boolean,
+  direction: string,
+
+  // Helpers
+  loadedSentences: { [id]: SentenceData },
+}</pre>
+</div>
+</details>
+
+<details>
+<summary><h3>3.2 SRS Score Record</h3></summary>
+<div class="acc-body">
+<pre>// Per vocabulary entry, stored in localStorage['vocabScores']
+{
+  global: 'unseen' | 'learning' | 'mastered',
+  racecar:   { score: 0–5, dueIn: 0+ },
+  pairmatch: { score: 0–5, dueIn: 0+ },
+  flashcard: { score: 0–5, dueIn: 0+ },
+  gapfill:   { score: 0–5, dueIn: 0+ },
+  typing:    { score: 0–5, dueIn: 0+ },
+}</pre>
+<p><strong>Spacing</strong>: <code>dueIn</code> is decremented by 1 for every other entry shown (tickAll). When a correct answer is given, <code>dueIn</code> is set to <code>SPACING[score]</code> = [0, 3, 6, 9, 12, 15]. When <code>dueIn > 0</code>, the entry is deprioritised in <code>srsPick</code>.</p>
+<p><strong>Auto-master</strong>: When all 5 game scores reach 5, <code>global</code> is promoted to <code>'mastered'</code>. Manual reset via Vocab Browser ↩ button.</p>
+<p><strong>Due for review</strong> (Stats screen): entries where average game score &lt; 3.5 across all games.</p>
+</div>
+</details>
+
+<details>
+<summary><h3>3.3 Screen Routing</h3></summary>
+<div class="acc-body">
+<p>Navigation is a simple string switch in <code>App.jsx</code>. No URL changes, no browser history.</p>
+<table>
+<tr><th>screen value</th><th>Component</th></tr>
+<tr><td><code>setup</code> (default)</td><td>Setup (home)</td></tr>
+<tr><td><code>flashcard</code></td><td>Flashcard</td></tr>
+<tr><td><code>racecar</code></td><td>RaceCar</td></tr>
+<tr><td><code>pairmatch</code></td><td>PairMatch</td></tr>
+<tr><td><code>typing</code></td><td>Typing</td></tr>
+<tr><td><code>gapfill</code></td><td>GapFill</td></tr>
+<tr><td><code>reader</code></td><td>GradedReader</td></tr>
+<tr><td><code>dialogue</code></td><td>Dialogue</td></tr>
+<tr><td><code>grammar</code></td><td>GrammarTrainer</td></tr>
+<tr><td><code>matching</code></td><td>MatchingDrills</td></tr>
+<tr><td><code>vocab</code></td><td>VocabBrowser</td></tr>
+<tr><td><code>stats</code></td><td>Stats</td></tr>
+<tr><td><code>settings</code></td><td>Settings</td></tr>
+</table>
+</div>
+</details>
+
+</div>
+</details>
+
+<!-- ═══════════════════════════════════════════════════════ 4. COMPONENTS -->
+<details>
+<summary><h2>4. Components</h2></summary>
+<div class="acc-body">
+
+<details>
+<summary><h3>4.1 Setup (Home Screen)</h3></summary>
+<div class="acc-body">
+<div class="sketch">┌─────────────────────────────────────────┐
+│ 🇨🇳 Chinese ›           📊  ⚙️           │  ← flag/lang picker + nav buttons
+├─────────────────────────────────────────┤
+│ [HSK1] [HSK2] [HSK3] [HSK4] [HSK5]     │  ← level filter chips (active = blue)
+│ 2847 words · avg 2.3 / 5               │  ← status bar
+├─────────────────────────────────────────┤
+│ 🗂️  Vocab Browser  ›                    │  ← always-visible shortcut
+├─────────────────────────────────────────┤
+│ ▸ 🎯 Vocabulary Drills ────────────────│  ← accordion group (one open at a time)
+│     🃏 Flashcard  · Swipe to learn      │
+│     🏎 Race Car   · Steer into answer   │
+│     🔗 Pair Match · Connect word pairs  │
+│     ⌨️ Typing    · Type from memory     │
+│                                         │
+│ › 📚 Language in Context ──────────────│  ← collapsed
+│ › 📐 Grammar Drills ───────────────────│  ← collapsed
+└─────────────────────────────────────────┘</div>
+
+<ul>
+  <li>Level chips read from <code>availableLevels</code> (canonical order per language: HSK1→6, N5→N1, A1→C2)</li>
+  <li>Chip toggles write to <code>settings.levels.global</code></li>
+  <li>Only one accordion group open at a time (via <code>openGroup</code> state)</li>
+  <li>Games disabled (<code>disabled</code> attribute) until <code>activeEntries.length ≥ 3</code></li>
+  <li>First-launch: <code>activeLanguage === null</code> → full-screen overlay with 5 language buttons</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary><h3>4.2 Flashcard</h3></summary>
+<div class="acc-body">
+<div class="sketch">┌─────────────────────────────────────────┐
+│ ← Back              ⚙️   3 / 847        │
+│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│                                         │
+│   ┌───────────────────────────────┐     │
+│   │  苹果           🔊            │     │  ← FRONT FACE
+│   │  píngguǒ                      │     │  ← ruby reading
+│   │                               │     │
+│   │  ● ● ○ ○ ○                    │     │  ← SRS score dots
+│   └───────────────────────────────┘     │
+│       [flip animation on tap]           │
+│   ┌───────────────────────────────┐     │
+│   │  苹果  píngguǒ   🔊           │     │  ← BACK FACE
+│   │  ───────────────────────────  │     │
+│   │  apple            🔊          │     │
+│   └───────────────────────────────┘     │
+│                                         │
+│  [✗ Unknown]  [⭐ Master]  [✓ Known]   │
+└─────────────────────────────────────────┘</div>
+
+<p><strong>Gestures</strong>: Swipe ← = Unknown · Swipe → = Known · Swipe ↑ = Master · Swipe ↓ = Detail panel · Tap/Space = flip. Swipe is locked to dominant axis (no diagonals). Left/right always allowed regardless of flip state.</p>
+<p><strong>Flip animation</strong>: CSS <code>rotateY</code> on a <code>.fc-card-flip</code> wrapper with <code>transform-style: preserve-3d</code>. New cards get <code>noAnim</code> class for 100ms to prevent reverse-flip on mount.</p>
+<p><strong>Detail panel</strong>: opens on swipe-down or ↓ key. Shows all translations, editable mnemonic, TextWithLookup of the entry text.</p>
+</div>
+</details>
+
+<details>
+<summary><h3>4.3 Race Car</h3></summary>
+<div class="acc-body">
+<div class="sketch">┌────────────────────────────────────────────┐
+│ ← Back   苹果 = ?              0  🏁 0×   │
+│  │   │         │         │                 │
+│  │   │  吃饭   │  苹果   │                 │  ← falling tiles
+│  │   │         │         │                 │
+│  │   │         │         │                 │
+│  │   │         │  apple  │                 │  ← correct tile
+│ ─┼───┼─────────┼─────────┼─ boost zone ─  │  ← zone line (blue tint)
+│  │   │         │  🚗     │                 │  ← car in normal zone
+│  │ × │   ─ ─ ─ ─ ─ ─ ─  │                 │  ← normal zone bottom
+└──┴───┴─────────┴─────────┴─────────────────┘</div>
+
+<p><strong>Zones</strong>: Bottom 15% = normal zone (default car position). 15–25% from bottom = boost zone (blue divider line, "boost" label at right). Above 25% = inactive for car movement.</p>
+<p><strong>Touch</strong>: Pointer events on the entire <code>.rc-lanes</code> div. Car position updated <em>directly via <code>carRef.current.style</code></em> (bypasses React state for 60fps smoothness). <code>carLane</code> state updated only when lane changes (for collision fallback). Boost toggled when finger enters boost zone.</p>
+<p><strong>Speed formula</strong>: <code>BASE_SPEED × defaultSpeed (slider, 0.5–2.0) × boostMultiplier × streakMultiplier</code></p>
+<p><strong>Collision</strong>: Uses pixel coordinates from <code>carPosRef</code> and <code>lanesRef.getBoundingClientRect()</code>. Tile horizontal bounds = <code>lane × laneWidth + 4px</code> to <code>+ laneWidth - 8px</code>.</p>
+<p><strong>Tile sizing</strong>: CJK tiles with ruby annotation get <code>min-height: 88px</code> and <code>data-has-ruby="true"</code>. Font uses <code>clamp()</code> based on language and text length.</p>
+</div>
+</details>
+
+<details>
+<summary><h3>4.4 Pair Match</h3></summary>
+<div class="acc-body">
+<div class="sketch">┌──────────────────────────────────────┐
+│ ← Back    Pair Match      3/5  ⚙️    │
+├──────────────────────────────────────┤
+│  ┌───────────┐    ┌───────────┐      │
+│  │   苹果    │    │   apple   │  ✓   │  ← matched (green)
+│  └───────────┘    └───────────┘      │
+│  ┌───────────┐    ┌───────────┐      │
+│  │   水      │    │  to drink │      │  ← left selected (blue)
+│  └───────────┘    └───────────┘      │
+│  ┌───────────┐    ┌───────────┐      │
+│  │  吃饭     │    │   water   │      │
+│  └───────────┘    └───────────┘      │
+├──────────────────────────────────────┤
+│  ● ● ● ○ ○  3 matched               │
+└──────────────────────────────────────┘</div>
+<p>Round size configurable (default 5). Items in left column are entries, right column translations (or reversed per direction setting). CJK items get class <code>pm-item--cjk</code> for larger font sizing.</p>
+</div>
+</details>
+
+<details>
+<summary><h3>4.5 Graded Reader</h3></summary>
+<div class="acc-body">
+<p>Two modes: <strong>library</strong> (passage list with tag filters) and <strong>reading</strong> (passage text + EN toggle).</p>
+<p>Uses <code>TextWithLookup</code> for all text. The lookup engine (<code>reader.js:buildLookup</code>) builds a longest-match trie from <code>activeEntries</code>. Tapping a highlighted word opens <code>WordPopup</code> showing translation, SRS status, mnemonic, and 🔊 speak button.</p>
+<p>Series are grouped in the library with a ▸ expand button. Tags shown as filter chips grouped by type.</p>
+</div>
+</details>
+
+<details>
+<summary><h3>4.6 Dialogue</h3></summary>
+<div class="acc-body">
+<div class="sketch">┌─────────────────────────────────────────┐
+│ ← Back   在咖啡馆点单          EN  82%  │
+├─────────────────────────────────────────┤
+│                                         │
+│  服务员 ←                               │
+│  ┌──────────────────────────┐           │
+│  │ 欢迎！请问您想喝什么？   │           │  ← other speaker: left bubble
+│  └──────────────────────────┘           │
+│                                         │
+│  ┌─────────────────────────────────┐    │
+│  │  你想喝什么？                   │    │  ← choice prompt
+│  │  [我想要一杯咖啡。          ]   │    │
+│  │  [给我一杯绿茶吧。          ]   │    │
+│  │  [我要一杯橙汁。            ]   │    │
+│  └─────────────────────────────────┘    │
+│                                         │
+│                       → 你              │
+│            ┌─────────────────────────┐  │
+│            │ 我想要一杯咖啡。   🔵   │  │  ← user: right bubble (choice done)
+│            └─────────────────────────┘  │
+│  服务员 ←                               │
+│  ┌──────────────────────────┐           │
+│  │ 好的，需要加牛奶吗？     │           │  ← response to choice
+│  └──────────────────────────┘           │
+│                                         │
+│  ┌─────────────────────────────────┐    │
+│  │ ❓ What does 服务员 say next?   │    │  ← question
+│  │  ① She says it will come out    │    │
+│  │  ② She says it's too expensive  │    │
+│  └─────────────────────────────────┘    │
+└─────────────────────────────────────────┘</div>
+<p>Bubble colour is assigned per speaker index from a palette of 6 colours. After a question is answered it collapses to a single-line badge; tapping toggles the feedback explanation. Filter chips on list screen: Type (observe/choice), Level, Topic.</p>
+</div>
+</details>
+
+<details>
+<summary><h3>4.7 Grammar Trainer</h3></summary>
+<div class="acc-body">
+<p>Two-screen flow: <strong>type selector</strong> → <strong>infinite stream</strong>.</p>
+<p>Type selector shows three cards: Fill the Blank · Pick Correct · Word Order. Each card shows pattern count and accuracy percentage. Selecting a type enters an infinite stream of patterns of that type only, sorted by priority (unseen first, then lowest accuracy). At the end of each cycle the pool re-sorts.</p>
+<p>Filter bar (always visible): level chips + category chips. Selecting a type resets the stream index.</p>
+</div>
+</details>
+
+<details>
+<summary><h3>4.8 Matching Drills</h3></summary>
+<div class="acc-body">
+<p>Three sub-drills, selected from a drill list screen:</p>
+<table>
+<tr><th>Drill</th><th>Languages</th><th>Mechanic</th></tr>
+<tr><td>Gender</td><td>de (der/die/das) · es (el/la)</td><td>Article stripped from entry; pick correct article</td></tr>
+<tr><td>Tones</td><td>zh</td><td>Per-syllable tone identification from pinyin diacritics. Multi-syllable: each syllable drilled separately with context</td></tr>
+<tr><td>Measure Words</td><td>zh · ja</td><td>Pick correct measure word for noun. Distractors from vocab pool + fallback list</td></tr>
+</table>
+<p>All three use the same <code>useQuiz</code> hook: priority queue by accuracy, infinite cycle, SRS scores under <code>gender:</code> · <code>tone:</code> · <code>mw:</code> prefixes in <code>grammarScores</code>.</p>
+<p>Card shows: large entry character (2.8rem) + 🔊 speak button + reading/ruby (1.1rem) + translation (muted).</p>
+</div>
+</details>
+
+<details>
+<summary><h3>4.9 Shared Components</h3></summary>
+<div class="acc-body">
+<table>
+<tr><th>Component</th><th>Props</th><th>Notes</th></tr>
+<tr><td><code>RubyText</code></td><td>text, reading, visible, size (sm|md|lg), className</td><td>Native <code>&lt;ruby&gt;&lt;rt&gt;</code>. Pairs chars to syllables if lengths match, else wraps whole word</td></tr>
+<tr><td><code>TextWithLookup</code></td><td>text, language, lookup, scores, showReading</td><td>Tokenises text with longest-match; highlights known words by SRS status; tap → WordPopup</td></tr>
+<tr><td><code>SpeakButton</code></td><td>text, language, size (sm|md|lg)</td><td>Calls <code>speech.js:speak()</code>; renders null if Web Speech API unavailable; pulses while speaking</td></tr>
+<tr><td><code>ReadingToggle</code></td><td>—</td><td>Toggle button wired to <code>showReading</code> in context</td></tr>
+</table>
+
+<p><strong>RubyText sizes</strong>:</p>
+<table>
+<tr><th>Size</th><th>font-size</th><th>line-height</th><th>Use</th></tr>
+<tr><td>sm</td><td>0.9rem</td><td>2.2</td><td>Vocab browser, secondary labels</td></tr>
+<tr><td>md</td><td>1.4rem</td><td>2.4</td><td>Default; game tiles, card answers</td></tr>
+<tr><td>lg</td><td>2.2rem</td><td>2.6</td><td>Flashcard front, matching drill entry</td></tr>
+</table>
+</div>
+</details>
+
+</div>
+</details>
+
+<!-- ═══════════════════════════════════════════════════════ 5. SETTINGS -->
+<details>
+<summary><h2>5. Settings</h2></summary>
+<div class="acc-body">
+
+<p>Settings are persisted to <code>localStorage['vocabSettings']</code> via <code>settings.js</code>. Deep merge on load ensures new keys in <code>DEFAULTS</code> are applied to existing saved settings.</p>
+
+<details>
+<summary><h3>5.1 Settings Object</h3></summary>
+<div class="acc-body">
+<pre>{
+  darkMode: 'auto' | 'light' | 'dark',
+
+  direction: 'entry->translation' | 'translation->entry',
+  showReading: boolean,
+
+  answerFields: {
+    global:    { prompt: 'entry' | 'translation' | 'reading',
+                 answer: 'entry' | 'translation' | 'reading' },
+    flashcard: null,   // null = use global
+    pairmatch: null,
+    racecar:   null,
+    gapfill:   null,
+    typing:    null,
+  },
+
+  levels: {
+    global:    null | string[],  // null = all levels
+    flashcard: null,
+    ...
+  },
+
+  racecar:   { defaultSpeed: 1.0, boostEnabled: true },
+  flashcard: { swipeSensitivity: 1.0 },
+  gapfill:   { fixedRatio: 0.6 },
+  pairmatch: { roundSize: 5 },
+  typing:    { requireCorrect: true, skipEnabled: true },
+}</pre>
+</div>
+</details>
+
+<details>
+<summary><h3>5.2 Dark Mode</h3></summary>
+<div class="acc-body">
+<p>Applied via <code>document.documentElement.setAttribute('data-theme', 'dark'|'light')</code>.</p>
+<ul>
+<li><code>auto</code>: reads <code>prefers-color-scheme</code> media query</li>
+<li><code>light</code>: forces <code>[data-theme="light"]</code> blocks (explicitly white background, black text)</li>
+<li><code>dark</code>: forces <code>[data-theme="dark"]</code> blocks</li>
+</ul>
+<p>Every CSS file has both <code>@media (prefers-color-scheme: dark)</code> and <code>[data-theme="dark"]</code> blocks, and explicit <code>[data-theme="light"]</code> override blocks to cancel the media query when user has forced light mode on a dark-system device.</p>
+<p><strong>Light mode base</strong>: <code>#fff</code> background, <code>#111</code> primary text, <code>#444–#555</code> secondary text. No light grey text below <code>#555</code> in light mode.</p>
+</div>
+</details>
+
+</div>
+</details>
+
+<!-- ═══════════════════════════════════════════════════════ 6. PWA -->
+<details>
+<summary><h2>6. PWA & Offline</h2></summary>
+<div class="acc-body">
+
+<p>Implemented with <code>vite-plugin-pwa</code> (Workbox <code>generateSW</code> mode).</p>
+
+<details>
+<summary><h3>6.1 Caching Strategy</h3></summary>
+<div class="acc-body">
+<table>
+<tr><th>Asset type</th><th>Strategy</th><th>Cache name</th></tr>
+<tr><td>JS, CSS, HTML, SVG, PNG</td><td>Precache on install</td><td>workbox-precache</td></tr>
+<tr><td>All <code>.json</code> data files</td><td>CacheFirst, 90-day TTL, max 200 entries</td><td>vocab-data</td></tr>
+</table>
+<p>After first full load of a language, the app is fully offline-capable for that language.</p>
+</div>
+</details>
+
+<details>
+<summary><h3>6.2 iOS Home Screen</h3></summary>
+<div class="acc-body">
+<pre>&lt;!-- index.html head --&gt;
+&lt;meta name="apple-mobile-web-app-capable" content="yes" /&gt;
+&lt;meta name="apple-mobile-web-app-status-bar-style" content="default" /&gt;
+&lt;meta name="apple-mobile-web-app-title" content="VocabGames" /&gt;
+&lt;link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" /&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /&gt;</pre>
+<p>Add to Home Screen in Safari → opens fullscreen with no browser chrome. Icons: 192×192, 512×512, 180×180 apple-touch. Theme colour: <code>#4f7ef8</code>.</p>
+</div>
+</details>
+
+</div>
+</details>
+
+<!-- ═══════════════════════════════════════════════════════ 7. UX PATTERNS -->
+<details>
+<summary><h2>7. UX Patterns</h2></summary>
+<div class="acc-body">
+
+<details>
+<summary><h3>7.1 Navigation Model</h3></summary>
+<div class="acc-body">
+<ul>
+<li>All screens have <code>← Back</code> button top-left → returns to <code>setup</code></li>
+<li><code>⚙️</code> button top-right → goes to <code>settings</code></li>
+<li>Escape key closes any open screen (where implemented)</li>
+<li>No browser back button support (single-page, no URL changes)</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary><h3>7.2 Feedback Timing</h3></summary>
+<div class="acc-body">
+<table>
+<tr><th>Game</th><th>Correct feedback</th><th>Wrong feedback</th></tr>
+<tr><td>Flashcard</td><td>Immediate advance after swipe animation</td><td>Score decremented, same card may return</td></tr>
+<tr><td>Race Car</td><td>Flash green + score, tile removed</td><td>Crash animation, brief pause</td></tr>
+<tr><td>Pair Match</td><td>Green highlight, pair fades out</td><td>Red shake, deselect</td></tr>
+<tr><td>Typing</td><td>900ms green, auto-advance</td><td>Red, retype if requireCorrect=true</td></tr>
+<tr><td>Gap Fill</td><td>900ms green, auto-advance</td><td>Red, shows correct + Next → button</td></tr>
+<tr><td>Grammar (fill)</td><td>900ms auto-advance</td><td>Shows correct, Next → button</td></tr>
+</table>
+</div>
+</details>
+
+<details>
+<summary><h3>7.3 Loading States</h3></summary>
+<div class="acc-body">
+<ul>
+<li><code>vocabLoading</code> in context: all vocab games show "Loading…" instead of "No words loaded"</li>
+<li>GradedReader and Dialogue have local <code>loading</code> state for their fetches</li>
+<li>Games only start when <code>activeEntries.length ≥ 3</code></li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary><h3>7.4 Colour System</h3></summary>
+<div class="acc-body">
+<table>
+<tr><th>Variable</th><th>Hex</th><th>Use</th></tr>
+<tr><td>—</td><td><span class="swatch" style="background:#4f7ef8"></span>#4f7ef8</td><td>Primary blue — interactive elements, active chips, Race Car</td></tr>
+<tr><td>—</td><td><span class="swatch" style="background:#22a06b"></span>#22a06b</td><td>Green — correct, mastered, Pair Match</td></tr>
+<tr><td>—</td><td><span class="swatch" style="background:#f0a500"></span>#f0a500</td><td>Amber — learning, Flashcard</td></tr>
+<tr><td>—</td><td><span class="swatch" style="background:#e5534b"></span>#e5534b</td><td>Red — wrong, crash, danger</td></tr>
+<tr><td>—</td><td><span class="swatch" style="background:#8b5cf6"></span>#8b5cf6</td><td>Purple — Gap Fill</td></tr>
+<tr><td>—</td><td><span class="swatch" style="background:#e05cb0"></span>#e05cb0</td><td>Pink — Typing, choice dialogue</td></tr>
+</table>
+<p>Chip states: inactive = <code>#f5f5f5</code> bg / <code>#555</code> text · active = blue bg / white text · hover = light blue tint.</p>
+</div>
+</details>
+
+<details>
+<summary><h3>7.5 Accordion Pattern</h3></summary>
+<div class="acc-body">
+<p>Used in: Setup (game groups), GrammarTrainer (type selector), Settings. Always "single open" — opening one closes siblings. Implemented with a <code>openGroup</code> state string and <code>toggle(id)</code> function.</p>
+<pre>// Pattern used throughout
+function toggle(id) {
+  setOpen(prev => prev === id ? null : id)
+}
+
+// In render
+&lt;GroupCard isOpen={open === 'drills'} onOpen={() => toggle('drills')} /&gt;
+&lt;GroupCard isOpen={open === 'context'} onOpen={() => toggle('context')} /&gt;</pre>
+</div>
+</details>
+
+<details>
+<summary><h3>7.6 Text-to-Speech</h3></summary>
+<div class="acc-body">
+<pre>// engine/speech.js
+const LANG_CODES = { zh:'zh-CN', ja:'ja-JP', de:'de-DE', es:'es-ES', en:'en-US' }
+
+speak(text, language, { rate: 0.9, pitch: 1.0 })
+// → new SpeechSynthesisUtterance(text) with lang + rate, then speechSynthesis.speak()</pre>
+<p><code>SpeakButton</code> renders <code>null</code> if <code>'speechSynthesis' not in window</code>. Must be triggered by user gesture (iOS requirement). Present in: Flashcard (front + back), Typing (prompt), all three Matching drills, TextWithLookup word popup.</p>
+</div>
+</details>
+
+</div>
+</details>
+
+<!-- ═══════════════════════════════════════════════════════ 8. CONTENT -->
+<details>
+<summary><h2>8. Content Summary</h2></summary>
+<div class="acc-body">
+
+<table>
+<tr><th>Content type</th><th>zh</th><th>ja</th><th>de</th><th>es</th><th>en</th></tr>
+<tr><td>Vocab entries (built-in)</td><td>~28</td><td>~36</td><td>~38</td><td>~25</td><td>~20</td></tr>
+<tr><td>Gap fill sentences</td><td>30</td><td>30</td><td>30</td><td>30</td><td>18</td></tr>
+<tr><td>Grammar patterns</td><td>32</td><td>37</td><td>36</td><td>36</td><td>5</td></tr>
+<tr><td>Reader passages</td><td>36</td><td>36</td><td>36</td><td>36</td><td>36</td></tr>
+<tr><td>Dialogues</td><td>8</td><td>8</td><td>8</td><td>8</td><td>1</td></tr>
+<tr><td>Seeded mnemonics</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+</table>
+
+<details>
+<summary><h3>8.1 Reader Passage Structure</h3></summary>
+<div class="acc-body">
+<table>
+<tr><th>Category</th><th>Passages</th><th>Level range</th></tr>
+<tr><td>Series: Friendship (我的朋友 / Mein Freund / etc.)</td><td>6</td><td>HSK1–6 / A1–C1 / N5–N1</td></tr>
+<tr><td>Series: Cat & Animals</td><td>6</td><td>HSK1–6 / A1–C1 / N5–N1</td></tr>
+<tr><td>Series: Market</td><td>6</td><td>HSK1–6 / A1–C1 / N5–N1</td></tr>
+<tr><td>Standalone stories</td><td>8</td><td>A2–C1</td></tr>
+<tr><td>Non-fiction (China history/culture)</td><td>10</td><td>A2–C1</td></tr>
+</table>
+<p>Series passages share the same characters and setting across levels — a learner can follow the same story as their level increases.</p>
+</div>
+</details>
+
+<details>
+<summary><h3>8.2 Grammar Coverage</h3></summary>
+<div class="acc-body">
+<table>
+<tr><th>Language</th><th>Level breakdown</th></tr>
+<tr><td>Chinese (zh)</td><td>HSK1: 3 · HSK2: 3 · HSK3: 5 · HSK4: 8 · HSK5: 8 · HSK6: 5</td></tr>
+<tr><td>Japanese (ja)</td><td>N5: 11 · N4: 8 · N3: 7 · N2: 6 · N1: 5</td></tr>
+<tr><td>German (de)</td><td>A1: 7 · A2: 9 · B1: 8 · B2: 6 · C1: 6</td></tr>
+<tr><td>Spanish (es)</td><td>A1: 8 · A2: 5 · B1: 8 · B2: 8 · C1: 7</td></tr>
+</table>
+</div>
+</details>
+
+</div>
+</details>
+
+<!-- ═══════════════════════════════════════════════════════ 9. KNOWN ISSUES -->
+<details>
+<summary><h2>9. Known Limitations &amp; Future Work</h2></summary>
+<div class="acc-body">
+
+<details>
+<summary><h3>9.1 Current Limitations</h3></summary>
+<div class="acc-body">
+<ul>
+<li>Built-in vocab lists are very small (20–38 words). App becomes significantly more useful with the user's own large vocab files dropped into <code>public/vocab/</code></li>
+<li>English content is minimal (1 dialogue, 5 grammar patterns, reading-focused only)</li>
+<li>Grammar SRS is occurrence-based only — no time-based scheduling</li>
+<li>No URL routing — browser back button does nothing; not linkable to specific screens</li>
+<li>Web Speech API TTS may not be fully local on Android/Chrome (may use Google servers)</li>
+<li><code>color-mix()</code> CSS in dialogue bubbles may not render in older Safari — consider fallback</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary><h3>9.2 Potential Future Features</h3></summary>
+<div class="acc-body">
+<ul>
+<li><strong>Time-based SRS scheduling</strong> — show "due today" cards based on days since last seen, not just occurrence spacing</li>
+<li><strong>Keyboard shortcuts</strong> — number keys 1/2/3 for option selection in Gap Fill, Grammar, Matching</li>
+<li><strong>Audio recording</strong> — record yourself repeating a word; compare waveform (browser MediaRecorder API)</li>
+<li><strong>User vocab import</strong> — drag-and-drop CSV/JSON import from Settings</li>
+<li><strong>Grammar session complete</strong> — show summary card after cycling all patterns in a session</li>
+<li><strong>Capacitor wrapper</strong> — for App Store distribution (minimal changes needed from current PWA)</li>
+</ul>
+</div>
+</details>
+
+</div>
+</details>
+
+<hr/>
+<p style="font-size:0.75rem; color:#aaa; text-align:center;">Vocab Games Design Spec · Generated v23 · Updated alongside codebase</p>
+
+</body>
+</html>

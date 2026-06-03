@@ -16,12 +16,13 @@ import { useState, useCallback } from 'react'
 import { tokenise } from '../engine/reader'
 import { getMnemonic, getAllMnemonics } from '../engine/mnemonics'
 import RubyText from './RubyText'
+import SpeakButton from './SpeakButton'
 import './TextWithLookup.css'
 
 const CJK_LANGS = new Set(['zh', 'ja', 'ko'])
 
 export function TextWithLookup({ text, language, lookup, scores, showReading, className = '' }) {
-  const [tappedEntry, setTappedEntry] = useState(null)
+  const [tapped, setTapped] = useState(null)  // { entry, surface, conjugated }
 
   const spans = tokenise(text, lookup, language)
   const isCJK = CJK_LANGS.has(language)
@@ -29,25 +30,29 @@ export function TextWithLookup({ text, language, lookup, scores, showReading, cl
   const handleTap = useCallback((span, e) => {
     if (!span.entry) return
     e.stopPropagation()
-    setTappedEntry(prev => prev?.id === span.entry.id ? null : span.entry)
+    setTapped(prev => prev?.entry?.id === span.entry.id ? null : {
+      entry: span.entry,
+      surface: span.text,
+      conjugated: !!span.conjugated,
+    })
   }, [])
 
   return (
     <>
       <span
         className={`twl-text ${isCJK ? 'twl-cjk' : ''} ${className}`}
-        onClick={() => setTappedEntry(null)}
+        onClick={() => setTapped(null)}
       >
         {spans.map((span, i) => {
           if (!span.entry) {
             return <span key={i} className="twl-plain">{span.text}</span>
           }
           const status = scores[span.entry.id]?.global ?? 'unseen'
-          const isActive = tappedEntry?.id === span.entry.id
+          const isActive = tapped?.entry?.id === span.entry.id
           return (
             <span
               key={i}
-              className={`twl-word twl-word--${status} ${isActive ? 'twl-word--active' : ''}`}
+              className={`twl-word twl-word--${status} ${isActive ? 'twl-word--active' : ''} ${span.conjugated ? 'twl-word--conjugated' : ''}`}
               onClick={e => handleTap(span, e)}
             >
               {span.text}
@@ -56,19 +61,22 @@ export function TextWithLookup({ text, language, lookup, scores, showReading, cl
         })}
       </span>
 
-      {tappedEntry && (
+      {tapped && (
         <WordPopup
-          entry={tappedEntry}
+          entry={tapped.entry}
+          surface={tapped.surface}
+          conjugated={tapped.conjugated}
           scores={scores}
           showReading={showReading}
-          onDismiss={() => setTappedEntry(null)}
+          language={language}
+          onDismiss={() => setTapped(null)}
         />
       )}
     </>
   )
 }
 
-export function WordPopup({ entry, scores, showReading, onDismiss }) {
+export function WordPopup({ entry, surface, conjugated, scores, showReading, onDismiss, language }) {
   const status   = scores[entry.id]?.global ?? 'unseen'
   const mnemonic = getMnemonic(entry.id)
   const mnemonicRecord = getAllMnemonics()[entry.id]
@@ -86,8 +94,16 @@ export function WordPopup({ entry, scores, showReading, onDismiss }) {
             visible={showReading && !!entry.reading}
             size="lg"
           />
+          <SpeakButton text={entry.entry} language={language} size="lg" />
           <span className={`twl-popup-status twl-popup-status--${status}`}>{status}</span>
         </div>
+        {conjugated && surface && surface !== entry.entry && (
+          <div className="twl-popup-conjugated">
+            <span className="twl-popup-surface">{surface}</span>
+            <span className="twl-popup-arrow">→</span>
+            <span className="twl-popup-dict">{entry.entry}</span>
+          </div>
+        )}
 
         <div className="twl-popup-translations">
           {entry.translation.map((t, i) => (

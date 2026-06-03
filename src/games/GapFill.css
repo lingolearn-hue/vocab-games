@@ -24,7 +24,7 @@
   background: none;
   border: none;
   font-size: 0.9rem;
-  color: #888;
+  color: #444;
   cursor: pointer;
 }
 .gf-back:hover { color: #111; }
@@ -63,7 +63,7 @@
 
 .gf-acc {
   font-size: 0.8rem;
-  color: #aaa;
+  color: #555;
 }
 
 /* Card */
@@ -93,7 +93,7 @@
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #ccc;
+  color: #444;
   margin-bottom: 1rem;
 }
 
@@ -142,7 +142,7 @@
 
 .gf-entry-trans {
   font-size: 0.8rem;
-  color: #aaa;
+  color: #555;
 }
 
 .gf-correct-hint {
@@ -190,7 +190,7 @@
 .gf-option-num {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #ccc;
+  color: #444;
   min-width: 16px;
 }
 
@@ -223,7 +223,7 @@
 .gf-keyboard-hint {
   text-align: center;
   font-size: 0.72rem;
-  color: #ccc;
+  color: #444;
   padding: 0.4rem 1rem 1rem;
 }
 
@@ -232,7 +232,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #aaa;
+  color: #555;
   text-align: center;
   padding: 2rem;
 }

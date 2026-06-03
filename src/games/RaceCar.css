@@ -39,7 +39,7 @@
   cursor: pointer;
   padding: 0.3rem 0;
 }
-.rc-back:hover { color: #eee; }
+.rc-back:hover { color: #222; }
 
 .rc-stats-inline {
   display: flex;
@@ -75,7 +75,7 @@
   cursor: pointer;
   padding: 0;
 }
-.rc-gear:hover { color: #eee; }
+.rc-gear:hover { color: #222; }
 
 /* ── Prompt ──────────────────────────────────────────────────────────────── */
 .rc-prompt-area {
@@ -156,14 +156,36 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 0.3rem;
+  padding: 0.4rem 0.3rem;
   z-index: 5;
   pointer-events: none;
   overflow: visible;
 }
 
-.rc-tile .ruby-md { font-size: 1.8rem; line-height: 2.2; }
-.rc-tile .ruby-sm { font-size: 1.4rem; line-height: 2.0; }
+/* CJK tiles with ruby annotation need extra height */
+.rc-tile[data-has-ruby="true"] { min-height: 88px; }
+
+/* Override RubyText sizes inside tiles */
+.rc-tile .ruby-md,
+.rc-tile .ruby-plain {
+  font-size: clamp(0.85rem, 4vw, 1.5rem);
+  line-height: 1.3;
+  text-align: center;
+  word-break: break-word;
+}
+.rc-tile .ruby-sm {
+  font-size: clamp(0.72rem, 3.5vw, 1.1rem);
+  line-height: 1.3;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* CJK tiles with ruby need more height and larger font is fine */
+.rc-tile[data-has-ruby="true"] { min-height: 88px; padding: 0.5rem 0.3rem; }
+.rc-tile[data-has-ruby="true"] .ruby-md { font-size: clamp(1.1rem, 5vw, 1.6rem); line-height: 1.2; }
+
+/* Ruby annotation inside tiles */
+.rc-tile rt { font-size: 0.5em; line-height: 1.8; }
 
 /* ── Car (box with speed lines) ──────────────────────────────────────────── */
 .rc-car {

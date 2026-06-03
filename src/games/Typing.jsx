@@ -16,6 +16,8 @@ function normalise(str) {
 }
 
 // Check if user input matches any accepted answer
+import SpeakButton from '../components/SpeakButton'
+
 function isCorrect(input, entry, direction) {
   const norm = normalise(input)
   if (norm === '') return false
@@ -31,6 +33,7 @@ function isCorrect(input, entry, direction) {
 
 export default function Typing() {
   const { activeEntries: allEntries, direction, showReading, scoreActions, scores, settings, setScreen, getEntriesForGame, vocabLoading } = useApp()
+  const language = useApp().activeLanguage ?? 'zh'
   const { entries: activeEntries, isEmpty: levelEmpty } = getEntriesForGame('typing')
   const { requireCorrect, skipEnabled } = settings.typing
 
@@ -201,6 +204,11 @@ export default function Typing() {
               reading={getPromptReading()}
               visible={!!getPromptReading()}
               size="lg"
+            />
+            <SpeakButton
+              text={entry?.entry}
+              language={language}
+              size="md"
             />
           </div>
 

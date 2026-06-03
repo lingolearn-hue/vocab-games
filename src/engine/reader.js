@@ -6,52 +6,186 @@
  *
  * For CJK (no spaces): tries substrings of decreasing length from position.
  * For spaced languages: tries multi-word and single-word matches.
+ *
+ * Japanese conjugation: when no direct match is found, tries stripping known
+ * verb/adjective suffixes and reconstructing dictionary forms. Text-specific —
+ * only resolves forms whose stems + candidates appear in the vocab index,
+ * so false positives are impossible for words not in the list.
  */
 
-// Languages that don't use spaces between words
 const CJK_LANGS = new Set(['zh', 'ja', 'ko'])
-const CJK_MAX_LEN = 8  // max chars to try for CJK match
+const CJK_MAX_LEN = 8
 
-/**
- * Build a lookup map from an array of vocab entries.
- * Returns Map<string, entry> keyed by lowercase entry text.
- * Also indexes translation[0] for reverse lookups.
- */
+// ── Japanese deinflection tables ──────────────────────────────────────────────
+
+// Polite/progressive suffixes to strip — leaves either ichidan stem or godan i-stem
+const POLITE_SUFFIXES = [
+  'ませんでした',
+  'ていました', 'ていません', 'ています', 'ていた', 'ている',
+  'でした',
+  'ました', 'ません', 'なかった',
+  'ます',
+]
+
+// Te-form / plain past suffixes that directly encode the godan class
+// [suffix, array of dictionary forms to try by appending to the pre-suffix stem]
+const TE_TA_FORMS = [
+  ['いって',  ['いく']],         // 行って → 行く (irregular)
+  ['きて',    ['くる']],          // 来て → 来る (irregular)
+  ['して',    ['する', 'す']],    // して → する / 話して → 話す
+  ['した',    ['する', 'す']],
+  ['きた',    ['くる']],
+  ['いった',  ['いく']],
+  ['って',    ['う', 'つ', 'る']], // 待って → 待つ, 言って→言う
+  ['んで',    ['ぬ', 'ぶ', 'む']],
+  ['いで',    ['ぐ']],
+  ['いて',    ['く']],
+  ['って',    ['う', 'つ']],
+  ['た',      ['る']],            // ichidan: 食べた → 食べる
+  ['て',      ['る']],
+]
+
+// Godan i-stem (連用形) ending → dictionary form ending
+// e.g. 飲み → 飲む, 書き → 書く, 話し → 話す
+const ISTEM_MAP = [
+  ['き', 'く'], ['ぎ', 'ぐ'], ['し', 'す'], ['ち', 'つ'],
+  ['に', 'ぬ'], ['び', 'ぶ'], ['み', 'む'], ['い', 'う'],
+]
+
+// Godan a-stem (未然形) ending → dictionary form (for ない-form)
+// e.g. 飲ま → 飲む, 書か → 書く
+const ASTEM_MAP = [
+  ['か', 'く'], ['が', 'ぐ'], ['さ', 'す'], ['た', 'つ'],
+  ['な', 'ぬ'], ['ば', 'ぶ'], ['ま', 'む'], ['わ', 'う'],
+  ['ら', 'る'],  // careful: also ichidan if verb ends in る
+]
+
+// い-adjective [suffix_to_strip, replacement]
+const IADJ_DEINFLECTIONS = [
+  ['くありませんでした', 'い'], ['くありません', 'い'],
+  ['くなかった', 'い'], ['くなります', 'い'], ['くなった', 'い'],
+  ['かった', 'い'], ['くない', 'い'], ['くて', 'い'], ['く', 'い'],
+  ['さ', 'い'],
+]
+
+// な-adjective / copula [suffix_to_strip, replacement]
+const NADJ_DEINFLECTIONS = [
+  ['ではなかった', ''], ['ではない', ''], ['じゃない', ''],
+  ['でした', ''], ['です', ''], ['な', ''], ['に', ''], ['で', ''],
+]
+
+function iStemToDict(stem, lookup) {
+  for (const [ending, dict] of ISTEM_MAP) {
+    if (stem.endsWith(ending)) {
+      const candidate = stem.slice(0, -ending.length) + dict
+      if (candidate.length >= 2 && lookup.has(candidate)) return lookup.get(candidate)
+    }
+  }
+  return null
+}
+
+function aStemToDict(stem, lookup) {
+  for (const [ending, dict] of ASTEM_MAP) {
+    if (stem.endsWith(ending)) {
+      const candidate = stem.slice(0, -ending.length) + dict
+      if (candidate.length >= 2 && lookup.has(candidate)) return lookup.get(candidate)
+    }
+  }
+  return null
+}
+
+function resolveConjugated(surface, lookup) {
+  if (surface.length < 2) return null
+
+  // 1. Polite / progressive forms → leaves i-stem or ichidan stem
+  for (const suffix of POLITE_SUFFIXES) {
+    if (surface.length <= suffix.length || !surface.endsWith(suffix)) continue
+    const stem = surface.slice(0, -suffix.length)
+    if (!stem) continue
+    // Ichidan: stem + る
+    const ichidan = stem + 'る'
+    if (lookup.has(ichidan)) return lookup.get(ichidan)
+    // Godan: stem is i-stem → convert
+    const godan = iStemToDict(stem, lookup)
+    if (godan) return godan
+    // Irregular: する、くる
+    if (lookup.has(stem)) return lookup.get(stem)
+  }
+
+  // 2. Te-form / plain past — suffix encodes conjugation class
+  for (const [suffix, endings] of TE_TA_FORMS) {
+    if (surface.length <= suffix.length || !surface.endsWith(suffix)) continue
+    const stem = surface.slice(0, -suffix.length)
+    for (const ending of endings) {
+      const candidate = stem + ending
+      if (candidate.length >= 2 && lookup.has(candidate)) return lookup.get(candidate)
+    }
+    // Also try ichidan (for て/た)
+    if (suffix === 'て' || suffix === 'た') {
+      const ichidan = stem + 'る'
+      if (lookup.has(ichidan)) return lookup.get(ichidan)
+    }
+  }
+
+  // 3. Negative ない-form → a-stem conversion
+  if (surface.length > 2 && surface.endsWith('ない')) {
+    const stem = surface.slice(0, -2)
+    // Ichidan: stem + る (e.g. 食べない → 食べる)
+    const ichidan = stem + 'る'
+    if (lookup.has(ichidan)) return lookup.get(ichidan)
+    // Godan: a-stem → dict
+    const godan = aStemToDict(stem, lookup)
+    if (godan) return godan
+  }
+
+  // 4. い-adjective inflections
+  for (const [suffix, replacement] of IADJ_DEINFLECTIONS) {
+    if (surface.length <= suffix.length || !surface.endsWith(suffix)) continue
+    const candidate = surface.slice(0, -suffix.length) + replacement
+    if (candidate.length >= 2 && lookup.has(candidate)) return lookup.get(candidate)
+  }
+
+  // 5. な-adjective / copula inflections
+  for (const [suffix, replacement] of NADJ_DEINFLECTIONS) {
+    if (!suffix || surface.length <= suffix.length || !surface.endsWith(suffix)) continue
+    const candidate = surface.slice(0, -suffix.length) + replacement
+    if (candidate.length >= 1 && lookup.has(candidate)) return lookup.get(candidate)
+  }
+
+  return null
+}
+
+// ── Lookup builder ────────────────────────────────────────────────────────────
+
 export function buildLookup(entries) {
   const map = new Map()
   for (const e of entries) {
-    // Index by entry text (normalised)
     map.set(e.entry.toLowerCase(), e)
-    // For German: also index without article (der/die/das)
+    // German: index without article
     const stripped = e.entry.replace(/^(der|die|das|den|dem|des)\s+/i, '')
-    if (stripped !== e.entry) {
-      map.set(stripped.toLowerCase(), e)
-    }
+    if (stripped !== e.entry) map.set(stripped.toLowerCase(), e)
   }
   return map
 }
 
-/**
- * Tokenise text into an array of spans: { text, entry|null, start, end }
- *
- * For CJK: character by character, trying longest match first.
- * For spaced: word by word (split on spaces/punctuation), trying multi-word first.
- *
- * language: 'zh' | 'ja' | 'es' | 'de' etc.
- */
+// ── Tokeniser ─────────────────────────────────────────────────────────────────
+
 export function tokenise(text, lookup, language) {
   if (!text) return []
   return CJK_LANGS.has(language)
-    ? tokeniseCJK(text, lookup)
+    ? tokeniseCJK(text, lookup, language)
     : tokeniseSpaced(text, lookup)
 }
 
-function tokeniseCJK(text, lookup) {
+function tokeniseCJK(text, lookup, language) {
+  const isJapanese = language === 'ja'
   const spans = []
   let i = 0
+
   while (i < text.length) {
     let matched = null
-    // Try longest match first, down to 1 char
+
+    // 1. Direct longest-match (dictionary form in text)
     for (let len = Math.min(CJK_MAX_LEN, text.length - i); len >= 1; len--) {
       const substr = text.slice(i, i + len)
       if (lookup.has(substr.toLowerCase())) {
@@ -59,12 +193,26 @@ function tokeniseCJK(text, lookup) {
         break
       }
     }
+
+    // 2. Japanese conjugation resolution — try substrings of decreasing length
+    if (!matched && isJapanese) {
+      // Try longer windows first (conjugated forms can be longer than dict forms)
+      const maxLen = Math.min(CJK_MAX_LEN + 6, text.length - i)
+      for (let len = maxLen; len >= 2; len--) {
+        const substr = text.slice(i, i + len)
+        const entry = resolveConjugated(substr, lookup)
+        if (entry) {
+          matched = { text: substr, entry, start: i, end: i + len, conjugated: true }
+          break
+        }
+      }
+    }
+
     if (matched) {
       spans.push(matched)
       i = matched.end
     } else {
-      // No match — emit single char as plain text
-      // Merge with previous plain span if possible
+      // Plain character — merge with previous plain span
       if (spans.length > 0 && spans[spans.length - 1].entry === null) {
         spans[spans.length - 1].text += text[i]
         spans[spans.length - 1].end = i + 1
@@ -78,28 +226,27 @@ function tokeniseCJK(text, lookup) {
 }
 
 function tokeniseSpaced(text, lookup) {
-  // Split into tokens preserving whitespace and punctuation as plain spans
-  // Strategy: scan word by word, try 3-word, 2-word, 1-word phrases
   const spans = []
-  // Split into alternating [word, gap, word, gap, ...]
   const parts = text.split(/(\s+|[.,!?;:"""''()\[\]{}—–\-\/\\])/)
-  const words = []  // { text, isWord, globalIndex }
+  const words = []
   let pos = 0
   for (const part of parts) {
-    words.push({ text: part, isWord: /\S/.test(part) && !/^[.,!?;:"""''()\[\]{}—–\-\/\\]$/.test(part), pos })
+    words.push({
+      text: part,
+      isWord: /\S/.test(part) && !/^[.,!?;:"""''()\[\]{}—–\-\/\\]$/.test(part),
+      pos,
+    })
     pos += part.length
   }
 
   let i = 0
   while (i < words.length) {
     if (!words[i].isWord) {
-      // whitespace / punctuation — plain
       spans.push({ text: words[i].text, entry: null, start: words[i].pos, end: words[i].pos + words[i].text.length })
       i++
       continue
     }
 
-    // Try 3-word phrase (skip gaps between words)
     let matched = null
     for (let phraseLen = 3; phraseLen >= 1 && !matched; phraseLen--) {
       const wordTokens = []
@@ -109,24 +256,18 @@ function tokeniseSpaced(text, lookup) {
         j++
       }
       if (wordTokens.length < phraseLen) continue
-
       const phrase = wordTokens.map(idx => words[idx].text).join(' ')
-      const phraseLC = phrase.toLowerCase()
-      if (lookup.has(phraseLC)) {
-        // Spans from words[i] through words[j-1]
+      if (lookup.has(phrase.toLowerCase())) {
         const startPos = words[i].pos
         const lastWord = words[wordTokens[wordTokens.length - 1]]
-        const endPos = lastWord.pos + lastWord.text.length
-        matched = { text: phrase, entry: lookup.get(phraseLC), start: startPos, end: endPos }
-        // Emit all intermediate tokens (spaces) as part of the match text
-        i = j  // advance past all consumed tokens
+        matched = { text: phrase, entry: lookup.get(phrase.toLowerCase()), start: startPos, end: lastWord.pos + lastWord.text.length }
+        i = j
       }
     }
 
     if (matched) {
       spans.push(matched)
     } else {
-      // No match — plain word
       spans.push({ text: words[i].text, entry: null, start: words[i].pos, end: words[i].pos + words[i].text.length })
       i++
     }
@@ -134,9 +275,8 @@ function tokeniseSpaced(text, lookup) {
   return spans
 }
 
-/**
- * Load a reader passage file from public/reader/<listId>.json
- */
+// ── Passage loader ────────────────────────────────────────────────────────────
+
 export async function loadReaderPassages(listId) {
   try {
     const res = await fetch(`./reader/${listId}.json`)

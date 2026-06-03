@@ -56,10 +56,10 @@ export default function RaceCar() {
   const activeRef     = useRef(activeEntries)
   const lanesRef      = useRef(null)
 
-  // Touch-driven car position — declared here so checkCollisions can close over them
-  const [carX, setCarX] = useState(null)
-  const [carY, setCarY] = useState(null)
-
+  // Car position — use a ref + direct DOM update for smooth 60fps movement
+  // carPosRef holds { x, y } in pixels; carRef points to the car DOM element
+  const carRef    = useRef(null)
+  const carPosRef = useRef({ x: null, y: null })  // null = default position
   useEffect(() => { tilesRef.current = tiles }, [tiles])
   useEffect(() => { promptRef.current = prompt }, [prompt])
   useEffect(() => { carLaneRef.current = carLane }, [carLane])
@@ -99,24 +99,20 @@ export default function RaceCar() {
   const checkCollisions = useCallback(() => {
     if (crashRef.current) return
     const sh = screenHeight.current
-    // Car vertical: carY is from top of lanes div; if not set, default bottom position
+    // Read car position directly from ref (bypasses React state for smooth movement)
+    const { x: carX, y: carY } = carPosRef.current
     let carTop, carBottom
-    if (carY !== null && lanesRef.current) {
-      const rect = lanesRef.current.getBoundingClientRect()
+    if (carY !== null) {
       carTop    = carY
       carBottom = carY + 72
     } else {
-      // Default: sit in normal zone — bottom 15%, car top at 85% of screen
       carBottom = sh * 0.97
       carTop    = carBottom - 72
     }
 
     tilesRef.current.forEach(tile => {
-      // Tile vertical overlap
       if (tile.y + TILE_HEIGHT < carTop || tile.y > carBottom) return
-      // Tile horizontal overlap — use pixel positions
       if (!lanesRef.current) {
-        // Fallback: lane-based check
         if (tile.lane !== carLaneRef.current) return
       } else {
         const rect = lanesRef.current.getBoundingClientRect()
@@ -164,7 +160,7 @@ export default function RaceCar() {
         }, 800)
       }
     })
-  }, [nextPrompt, scoreActions, highScore, carY, carX])
+  }, [nextPrompt, scoreActions, highScore])
 
   // Game loop
   const gameLoop = useCallback((timestamp) => {
@@ -232,7 +228,12 @@ export default function RaceCar() {
   }
   function onPointerUp(e) {
     lanesRef.current?.releasePointerCapture(e.pointerId)
-    setCarY(null) // snap back to default position on release
+    // Snap back to default bottom position
+    carPosRef.current = { x: null, y: null }
+    if (carRef.current) {
+      carRef.current.style.top    = 'auto'
+      carRef.current.style.bottom = '3%'
+    }
   }
 
   function updateCarFromPointer(clientX, clientY) {
@@ -240,27 +241,38 @@ export default function RaceCar() {
     if (!el) return
     const rect = el.getBoundingClientRect()
 
-    // X — smooth, clamped
+    // X — smooth, clamped, update DOM directly
     const CAR_HALF = 24
     const relX = Math.max(CAR_HALF, Math.min(rect.width - CAR_HALF, clientX - rect.left))
-    setCarX(relX)
+    carPosRef.current.x = relX
+    if (carRef.current) {
+      carRef.current.style.left   = `${relX - CAR_HALF}px`
+      carRef.current.style.bottom = 'auto'
+    }
+
+    // Lane for collision — still needs state update (but less frequent is fine)
     const lane = Math.min(2, Math.max(0, Math.floor(((clientX - rect.left) / rect.width) * 3)))
     carLaneRef.current = lane
-    setCarLane(lane)
+    if (lane !== carLane) setCarLane(lane)
 
-    // Y — car follows finger, clamped to bottom 25% (normal + boost zones)
+    // Y — follow finger within bottom 25% zone
     const CAR_HEIGHT = 72
     const relY = clientY - rect.top
-    const zoneTop = rect.height * 0.75  // can't go above 75% down = top of boost zone
-    const clampedY = Math.max(zoneTop, Math.min(rect.height - CAR_HEIGHT - 4, relY - CAR_HEIGHT / 2))
-    setCarY(clampedY)
+    const zoneTop   = rect.height * 0.75
+    const clampedY  = Math.max(zoneTop, Math.min(rect.height - CAR_HEIGHT - 4, relY - CAR_HEIGHT / 2))
+    carPosRef.current.y = clampedY
+    if (carRef.current) {
+      carRef.current.style.top = `${clampedY}px`
+    }
 
-    // Boost: upper half of interactive zone = boost zone (75–85% down = boost, 85–100% = normal)
+    // Boost zone
     if (!boostEnabled) { setBoosting(false); boostRef.current = false; return }
     const relYRatio = (clientY - rect.top) / rect.height
     const isBoost = relYRatio < 0.85 && relYRatio >= 0.75
-    setBoosting(isBoost)
-    boostRef.current = isBoost
+    if (isBoost !== boostRef.current) {
+      setBoosting(isBoost)
+      boostRef.current = isBoost
+    }
   }
 
   const laneWidth = 100 / LANE_COUNT
@@ -341,34 +353,33 @@ export default function RaceCar() {
         {tiles.map(tile => {
           const tileLabel = direction === 'entry->translation' ? tile.entry.entry : tile.entry.translation[0]
           const tileSub   = showReading && tile.entry.reading && direction === 'entry->translation' ? tile.entry.reading : null
+          // Pick size: CJK glyphs are compact; long Latin words need smaller font
+          const isCJK = /[\u4e00-\u9fff\u3040-\u30ff]/.test(tileLabel)
+          const tileSize = isCJK ? 'md' : tileLabel.length > 10 ? 'sm' : 'md'
           return (
             <div
               key={tile.id}
               className="rc-tile"
+              data-has-ruby={!!tileSub}
               style={{
                 left: `calc(${tile.lane * laneWidth}% + 4px)`,
                 width: `calc(${laneWidth}% - 8px)`,
                 top: tile.y,
               }}
             >
-              <RubyText text={tileLabel} reading={tileSub} visible={!!tileSub} size="md" className="ruby-dark" />
+              <RubyText text={tileLabel} reading={tileSub} visible={!!tileSub} size={tileSize} className="ruby-dark" />
             </div>
           )
         })}
 
-        {/* Car — smooth X and Y positioning */}
+        {/* Car — position updated directly via carRef for smooth 60fps movement */}
         <div
+          ref={carRef}
           className={`rc-car ${crash ? 'rc-car-crash' : ''}`}
           style={{
             position: 'absolute',
-            ...(carY !== null
-              ? { top: `${carY}px`, bottom: 'auto' }
-              : { bottom: '3%' }
-            ),
-            left: carX !== null
-              ? `${carX - 24}px`
-              : `calc(${carLane * laneWidth + laneWidth/2}% - 24px)`,
-            transition: 'left 0.05s linear',
+            bottom: '3%',
+            left: `calc(${carLane * laneWidth + laneWidth/2}% - 24px)`,
           }}
         >
           <div className="rc-car-body" />

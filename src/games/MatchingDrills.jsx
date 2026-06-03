@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo, useCallback } from 'react'
 import { useApp } from '../context/AppContext'
 import { getAllGrammarScores, recordGrammarCorrect, recordGrammarWrong } from '../engine/grammar'
 import RubyText from '../components/RubyText'
+import SpeakButton from '../components/SpeakButton'
 import './MatchingDrills.css'
 
 // ── Tone parsing ──────────────────────────────────────────────────────────────
@@ -121,7 +122,6 @@ const GENDER_NAMES = {
 
 export function GenderDrill() {
   const { activeEntries, showReading, setScreen, activeLanguage, loadedLists, selectedIds } = useApp()
-
   const language = activeLanguage ?? loadedLists[selectedIds[0]]?.language ?? 'de'
 
   // Only nouns with gender
@@ -161,6 +161,7 @@ export function GenderDrill() {
         <div className="md-prompt">
           <span className="md-article-blank">___</span>
           <span className="md-entry">{current ? displayEntry(current) : ''}</span>
+          <SpeakButton text={current?.entry} language={language} size="md" />
         </div>
         {current?.reading && showReading && (
           <div className="md-reading">{current.reading}</div>
@@ -207,6 +208,7 @@ export function GenderDrill() {
 
 export function ToneDrill() {
   const { activeEntries, setScreen, activeLanguage } = useApp()
+  const language = activeLanguage ?? 'zh'
 
   // Build a flat list of syllable items from all entries with readings
   const syllableItems = useMemo(() => {
@@ -279,6 +281,7 @@ export function ToneDrill() {
           {current && (
             <>
               <span className="md-entry">{current.entry}</span>
+              <SpeakButton text={current.entry} language={language} size="md" />
               <div className="md-tone-reading-wrap">{renderReading(current)}</div>
             </>
           )}
@@ -384,6 +387,7 @@ export function MeasureWordDrill() {
           <span className="md-mw-prefix">{quantifier}</span>
           <span className="md-article-blank">___</span>
           <span className="md-entry">{current?.entry}</span>
+          <SpeakButton text={current?.entry} language={language} size="md" />
         </div>
         {current?.reading && showReading && (
           <div className="md-reading">{current.reading}</div>

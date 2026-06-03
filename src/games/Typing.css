@@ -48,7 +48,7 @@
 
 .ty-acc {
   font-size: 0.8rem;
-  color: #aaa;
+  color: #555;
   font-variant-numeric: tabular-nums;
 }
 
@@ -256,7 +256,7 @@
   background: #f5f5f5;
   border: none;
   border-radius: 12px;
-  color: #888;
+  color: #444;
   font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
@@ -267,7 +267,7 @@
 .ty-keyboard-hint {
   text-align: center;
   font-size: 0.7rem;
-  color: #ccc;
+  color: #444;
   padding: 0.2rem 0;
 }
 
@@ -276,7 +276,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #aaa;
+  color: #555;
 }
 
 @keyframes fadeIn {

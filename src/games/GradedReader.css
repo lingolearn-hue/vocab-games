@@ -57,7 +57,7 @@
   padding: 0.3rem 0.65rem;
   font-size: 0.8rem;
   cursor: pointer;
-  color: #888;
+  color: #444;
   transition: background 0.12s, color 0.12s;
 }
 .gr-tab:first-child { border-left: none; }
@@ -70,7 +70,7 @@
   padding: 0.25rem 0.55rem;
   font-size: 0.78rem;
   font-weight: 700;
-  color: #aaa;
+  color: #555;
   cursor: pointer;
   flex-shrink: 0;
   transition: all 0.12s;
@@ -122,7 +122,7 @@
   font-size: 0.68rem;
   font-weight: 700;
   background: #f0f0f0;
-  color: #888;
+  color: #444;
   padding: 2px 7px;
   border-radius: 5px;
   flex-shrink: 0;
@@ -130,12 +130,12 @@
 
 .gr-passage-subtitle {
   font-size: 0.82rem;
-  color: #888;
+  color: #444;
 }
 
 .gr-passage-stats {
   font-size: 0.75rem;
-  color: #bbb;
+  color: #555;
   margin-top: 0.1rem;
 }
 
@@ -223,7 +223,7 @@
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  color: #aaa;
+  color: #555;
 }
 .gr-legend-item::before {
   content: '';
@@ -240,7 +240,7 @@
 /* Empty */
 .gr-empty {
   text-align: center;
-  color: #bbb;
+  color: #555;
   margin-top: 3rem;
   font-size: 0.9rem;
   line-height: 1.6;
@@ -333,13 +333,13 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #888;
+  color: #444;
   flex: 1;
 }
 
 .gr-series-count {
   font-size: 0.7rem;
-  color: #bbb;
+  color: #555;
 }
 
 .gr-series-cards {
@@ -370,7 +370,7 @@
   background: none;
   font-size: 0.72rem;
   font-weight: 600;
-  color: #888;
+  color: #444;
   cursor: pointer;
   transition: all 0.12s;
   white-space: nowrap;
@@ -383,7 +383,7 @@
   border: none;
   background: none;
   font-size: 0.72rem;
-  color: #ccc;
+  color: #444;
   cursor: pointer;
 }
 .gr-tag-clear:hover { color: #e5534b; }
@@ -408,7 +408,7 @@
   padding: 1px 6px;
   border-radius: 10px;
   background: #f0f0f0;
-  color: #999;
+  color: #444;
   white-space: nowrap;
 }
 

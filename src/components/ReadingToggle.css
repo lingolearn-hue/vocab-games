@@ -7,7 +7,7 @@
   width: 32px;
   height: 32px;
   cursor: pointer;
-  color: #aaa;
+  color: #555;
   transition: color 0.15s, border-color 0.15s, background 0.15s;
   display: flex;
   align-items: center;

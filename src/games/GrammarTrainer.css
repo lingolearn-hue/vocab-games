@@ -42,7 +42,7 @@
 
 .gt-session-score {
   font-size: 0.78rem;
-  color: #aaa;
+  color: #555;
   font-variant-numeric: tabular-nums;
 }
 
@@ -83,7 +83,7 @@
   background: none;
   font-size: 0.72rem;
   font-weight: 600;
-  color: #888;
+  color: #444;
   cursor: pointer;
   transition: all 0.12s;
   white-space: nowrap;
@@ -99,14 +99,14 @@
   border: none;
   background: none;
   font-size: 0.72rem;
-  color: #ccc;
+  color: #444;
   cursor: pointer;
 }
 .gt-chip-clear:hover { color: #e5534b; }
 
 .gt-count {
   font-size: 0.7rem;
-  color: #bbb;
+  color: #555;
 }
 
 /* Body */
@@ -121,7 +121,7 @@
 
 .gt-empty {
   text-align: center;
-  color: #bbb;
+  color: #555;
   margin-top: 3rem;
   font-size: 0.9rem;
 }
@@ -144,7 +144,7 @@
   font-size: 0.68rem;
   font-weight: 700;
   background: #f0f0f0;
-  color: #888;
+  color: #444;
   padding: 2px 7px;
   border-radius: 4px;
 }
@@ -160,7 +160,7 @@
 
 .gt-pattern-pos {
   font-size: 0.68rem;
-  color: #ccc;
+  color: #444;
   margin-left: auto;
   font-variant-numeric: tabular-nums;
 }
@@ -187,7 +187,7 @@
 }
 .gt-score-unseen {
   font-size: 0.72rem;
-  color: #bbb;
+  color: #555;
   font-style: italic;
 }
 .gt-score-acc {
@@ -223,7 +223,7 @@
 
 .gt-hint {
   font-size: 0.78rem;
-  color: #aaa;
+  color: #555;
   font-style: italic;
 }
 
@@ -310,7 +310,7 @@
 
 .gt-answer-placeholder {
   font-size: 0.75rem;
-  color: #ccc;
+  color: #444;
   font-style: italic;
 }
 
@@ -354,7 +354,7 @@
   border: none;
   border-radius: 10px;
   font-size: 0.85rem;
-  color: #888;
+  color: #444;
   cursor: pointer;
 }
 .gt-reset-btn:hover { background: #ebebeb; }
@@ -400,7 +400,7 @@
   padding-left: 0.5rem;
   border-left: 2px solid #22a06b;
 }
-.gt-alt-note { color: #888; font-style: italic; }
+.gt-alt-note { color: #444; font-style: italic; }
 
 /* Next button */
 .gt-next-btn {
@@ -559,7 +559,7 @@
 
 .gt-type-desc {
   font-size: 0.75rem;
-  color: #aaa;
+  color: #555;
 }
 
 .gt-type-count {
@@ -570,7 +570,7 @@
 
 .gt-type-arrow {
   font-size: 1rem;
-  color: #ccc;
+  color: #444;
 }
 
 /* Dark mode for type selector */

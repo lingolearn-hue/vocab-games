@@ -28,7 +28,7 @@
 
 .lang-flag-icon  { font-size: 1.2rem; line-height: 1; }
 .lang-flag-label { font-size: 0.82rem; font-weight: 600; color: #333; }
-.lang-flag-arrow { font-size: 0.7rem; color: #aaa; }
+.lang-flag-arrow { font-size: 0.7rem; color: #555; }
 
 /* Nav icons */
 .setup-nav {
@@ -94,7 +94,7 @@
   background: #f5f5f5;
   font-size: 0.75rem;
   font-weight: 700;
-  color: #aaa;
+  color: #555;
   cursor: pointer;
   transition: all 0.12s;
 }
@@ -113,7 +113,7 @@
   background: #f5f5f5;
   border-radius: 8px;
   font-size: 0.78rem;
-  color: #888;
+  color: #444;
   text-align: center;
 }
 
@@ -179,11 +179,11 @@
 }
 
 .group-name { font-size: 0.95rem; font-weight: 700; color: #222; }
-.group-sub  { font-size: 0.72rem; color: #aaa; }
+.group-sub  { font-size: 0.72rem; color: #555; }
 
 .group-arrow {
   font-size: 0.85rem;
-  color: #bbb;
+  color: #555;
   transition: transform 0.15s;
 }
 
@@ -213,13 +213,13 @@
 .sub-game-btn.disabled { opacity: 0.4; cursor: default; }
 
 .sub-game-label { font-size: 0.88rem; font-weight: 600; color: #222; }
-.sub-game-desc  { font-size: 0.72rem; color: #aaa; }
+.sub-game-desc  { font-size: 0.72rem; color: #555; }
 
 /* ── Hint ── */
 .hint {
   text-align: center;
   font-size: 0.82rem;
-  color: #bbb;
+  color: #555;
   padding: 1rem 1.2rem;
 }
 

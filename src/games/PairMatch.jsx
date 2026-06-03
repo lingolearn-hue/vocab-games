@@ -134,7 +134,7 @@ export default function PairMatch() {
           {leftItems.map(item => (
             <button
               key={item.id}
-              className={`pm-item pm-item--${itemState(item.id, 'left')}`}
+              className={`pm-item pm-item--${itemState(item.id, 'left')}${isCJK ? ' pm-item--cjk' : ''}`}
               onClick={() => selectLeft(item)}
             >
               <RubyText text={item.label} reading={item.sub} visible={!!item.sub} size="sm" />
@@ -146,7 +146,7 @@ export default function PairMatch() {
           {rightItems.map(item => (
             <button
               key={item.id}
-              className={`pm-item pm-item--${itemState(item.id, 'right')}`}
+              className={`pm-item pm-item--${itemState(item.id, 'right')}${isCJK ? ' pm-item--cjk' : ''}`}
               onClick={() => selectRight(item)}
             >
               <RubyText text={item.label} reading={item.sub} visible={!!item.sub} size="sm" />

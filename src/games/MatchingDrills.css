@@ -88,8 +88,8 @@
 }
 
 .md-drill-label { font-size: 0.95rem; font-weight: 700; color: #222; }
-.md-drill-desc  { font-size: 0.75rem; color: #aaa; }
-.md-drill-arrow { font-size: 1rem; color: #ccc; }
+.md-drill-desc  { font-size: 0.75rem; color: #555; }
+.md-drill-arrow { font-size: 1rem; color: #444; }
 
 /* Exercise container */
 .md-exercise {
@@ -100,7 +100,7 @@
 
 .md-score {
   font-size: 0.75rem;
-  color: #aaa;
+  color: #555;
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
@@ -136,7 +136,7 @@
 .md-article-blank {
   font-size: 2.8rem;
   font-weight: 300;
-  color: #ccc;
+  color: #444;
   font-family: monospace;
 }
 
@@ -149,18 +149,18 @@
 
 .md-mw-prefix {
   font-size: 2.2rem;
-  color: #aaa;
+  color: #555;
 }
 
 .md-reading {
   font-size: 1.1rem;
-  color: #888;
+  color: #444;
   letter-spacing: 0.05em;
 }
 
 .md-translation {
   font-size: 0.85rem;
-  color: #aaa;
+  color: #555;
   margin-top: 0.2rem;
 }
 
@@ -198,8 +198,8 @@
   border-top: 3px solid var(--tone-color, #e0e0e0);
 }
 .md-tone-num  { font-size: 1.3rem; font-weight: 800; }
-.md-tone-mark { font-size: 1.1rem; color: #888; }
-.md-tone-name { font-size: 0.65rem; color: #aaa; font-weight: 500; }
+.md-tone-mark { font-size: 1.1rem; color: #444; }
+.md-tone-name { font-size: 0.65rem; color: #555; font-weight: 500; }
 
 /* Measure word option */
 .md-option--mw { font-size: 1.4rem; padding: 0.9rem; }
@@ -213,7 +213,7 @@
   font-size: 0.85rem;
   color: #555;
 }
-.md-syllable-pos { color: #aaa; font-style: italic; }
+.md-syllable-pos { color: #555; font-style: italic; }
 
 .md-tone-reading-wrap { margin: 0.2rem 0; }
 
@@ -245,7 +245,7 @@
 
 .md-empty {
   text-align: center;
-  color: #bbb;
+  color: #555;
   margin-top: 3rem;
   font-size: 0.9rem;
   line-height: 1.6;

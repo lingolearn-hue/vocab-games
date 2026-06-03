@@ -5,6 +5,7 @@ import { getMnemonic, setMnemonic, getAllMnemonics } from '../engine/mnemonics'
 import { buildLookup } from '../engine/reader'
 import { TextWithLookup } from '../components/TextWithLookup'
 import RubyText from '../components/RubyText'
+import SpeakButton from '../components/SpeakButton'
 import ReadingToggle from '../components/ReadingToggle'
 import './Flashcard.css'
 
@@ -32,6 +33,7 @@ export default function Flashcard() {
   const [deckIndex,  setDeckIndex]  = useState(0)
   const [revealed,   setRevealed]   = useState(false)
   const [noAnim,     setNoAnim]     = useState(true)
+  const noAnimTimeoutRef = useRef(null)
   const [detailOpen, setDetailOpen] = useState(false)
   const [swipeDir,   setSwipeDir]   = useState(null)
   const [animating,  setAnimating]  = useState(false)
@@ -48,6 +50,11 @@ export default function Flashcard() {
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
   const isDragging  = useRef(false)
 
+  function enableAnimAfterReset() {
+    if (noAnimTimeoutRef.current) clearTimeout(noAnimTimeoutRef.current)
+    setNoAnim(true)
+    noAnimTimeoutRef.current = setTimeout(() => setNoAnim(false), 100)
+  }
   const buildDeck = useCallback(() =>
     srsPickDistinct(activeEntries, activeEntries.length, 'flashcard')
   , [activeEntries])
@@ -61,8 +68,7 @@ export default function Flashcard() {
       setDeckIndex(0)
       setRevealed(false)
       setDetailOpen(false)
-      setNoAnim(true)
-      requestAnimationFrame(() => setNoAnim(false))
+      enableAnimAfterReset()
     }
   }, [entriesKey])
 
@@ -119,9 +125,7 @@ export default function Flashcard() {
       setDragOffset({ x: 0, y: 0 })
       setAnimating(false)
       setFeedback(null)
-      setNoAnim(true)
-      // Re-enable flip animation after one frame so the new card never plays unflip
-      requestAnimationFrame(() => setNoAnim(false))
+      enableAnimAfterReset()
     }, 350)
   }
 
@@ -254,6 +258,11 @@ export default function Flashcard() {
             <div className="fc-card-inner">
               <div className="fc-prompt-side">
                 <RubyText text={prompt.main} reading={prompt.sub} visible={!!prompt.sub} size="lg" />
+                <SpeakButton
+                  text={direction === 'entry->translation' ? currentEntry.entry : currentEntry.translation[0]}
+                  language={language}
+                  size="lg"
+                />
               </div>
             </div>
             <div className="fc-score-dots">
@@ -279,6 +288,11 @@ export default function Flashcard() {
                   reading={direction === 'translation->entry' && showReading ? currentEntry.reading : null}
                   visible={showReading}
                   size="lg"
+                />
+                <SpeakButton
+                  text={currentEntry.entry}
+                  language={language}
+                  size="md"
                 />
               </div>
             </div>

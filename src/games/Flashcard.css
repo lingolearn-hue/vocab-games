@@ -44,7 +44,7 @@
 
 .fc-progress {
   font-size: 0.82rem;
-  color: #aaa;
+  color: #555;
   font-variant-numeric: tabular-nums;
 }
 
@@ -183,7 +183,7 @@
 
 .fc-reading {
   font-size: 1rem;
-  color: #888;
+  color: #444;
   margin-top: 0.4rem;
 }
 
@@ -208,7 +208,7 @@
 
 .fc-tap-hint {
   font-size: 0.8rem;
-  color: #ccc;
+  color: #444;
   margin-top: 0.5rem;
 }
 
@@ -289,7 +289,7 @@
 .fc-keyboard-hint {
   text-align: center;
   font-size: 0.68rem;
-  color: #ccc;
+  color: #444;
   padding: 0.2rem 1rem 0.8rem;
   display: flex;
   flex-direction: column;
@@ -298,7 +298,7 @@
 }
 
 .fc-hint-tap {
-  color: #aaa;
+  color: #555;
   font-size: 0.72rem;
 }
 
@@ -307,7 +307,7 @@
   align-items: center;
   justify-content: center;
   height: 100dvh;
-  color: #aaa;
+  color: #555;
 }
 
 /* Dark mode */
@@ -379,7 +379,7 @@
 /* Mnemonic peek on card */
 .fc-mnemonic-peek {
   font-size: 0.72rem;
-  color: #aaa;
+  color: #555;
   text-align: center;
   padding: 0.4rem 0.8rem 0;
   line-height: 1.3;
@@ -435,7 +435,7 @@
   background: none;
   border: none;
   font-size: 1.1rem;
-  color: #aaa;
+  color: #555;
   cursor: pointer;
   padding: 0.2rem 0.4rem;
 }
@@ -452,7 +452,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #aaa;
+  color: #555;
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -492,14 +492,14 @@
 
 .fc-detail-pos {
   font-size: 0.8rem;
-  color: #aaa;
+  color: #555;
   font-style: italic;
 }
 
 .fc-detail-level {
   font-size: 0.72rem;
   background: #f0f0f0;
-  color: #888;
+  color: #444;
   padding: 2px 7px;
   border-radius: 4px;
   font-weight: 600;
@@ -532,7 +532,7 @@
 }
 
 .fc-mnemonic-empty {
-  color: #ccc;
+  color: #444;
   font-style: italic;
 }
 
@@ -579,7 +579,7 @@
   background: #f5f5f5;
   border: none;
   border-radius: 8px;
-  color: #888;
+  color: #444;
   font-size: 0.88rem;
   cursor: pointer;
 }
