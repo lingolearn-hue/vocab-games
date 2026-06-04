@@ -1,0 +1,49 @@
+# adv0102 — Adventure Campaign, Level 01, Chapter 02: First Mission
+# Grammar scope: present/past ます・ました, negatives ません, basic verbs
+# Vocab scope: daily activities, time, basic verbs, numbers (ch01 + ch02)
+# Speakers: guild_master, villager, emma, player, narrator
+
+@columns	id	speaker	cmd	en	zh	ja	de	es
+
+# ── Dialogue 1: Departure briefing ─────────────────────────────────────────────
+
+adv010201-01	guild_master		This is a mission.	这是任务。	これはミッションです。	Das ist ein Auftrag.	Esta es una misión.
+adv010201-02	guild_master		Please go to the village.	请去村子。	村へ行ってください。	Bitte geh in das Dorf.	Por favor, ve al pueblo.
+adv010201-03	guild_master		Something happened there.	那里发生了一些事。	そこで何かありました。	Dort ist etwas passiert.	Allí pasó algo.
+
+adv010201-04a	player		Yes! I will go.	好的！我去。	はい！行きます。	Ja! Ich gehe.	¡Sí! Voy.
+adv010201-04b	player		What happened?	发生了什么？	何がありましたか？	Was ist passiert?	¿Qué pasó?
+
+adv010201-05a	guild_master		Thank you. Emma will go too.	谢谢。艾玛也去。	ありがとう。エマも行きます。	Danke. Emma geht auch.	Gracias. Emma también va.
+adv010201-05b	guild_master		I do not know. Please look.	我不知道。请去看看。	わかりません。見てください。	Ich weiß es nicht. Bitte schau nach.	No lo sé. Por favor, mira.
+
+adv010201-06	emma		Hello! I am Emma. Nice to meet you.	你好！我是艾玛。很高兴认识你。	こんにちは！わたしはエマです。はじめまして。	Hallo! Ich bin Emma. Schön, dich kennenzulernen.	¡Hola! Soy Emma. Encantada.
+adv010201-07	guild_master		Please come back tomorrow.	请明天回来。	明日帰ってください。	Bitte komm morgen zurück.	Por favor, volved mañana.
+
+adv010201-08q	question		Where does the player go?	玩家去哪里？	どこへ行きますか？	Wohin geht der Spieler?	¿Adónde va el jugador?
+adv010201-09a	option	correct	To the village.	去村子。	村へ行きます。	In das Dorf.	Al pueblo.
+adv010201-09b	option		To the market.	去市场。	市場へ行きます。	Auf den Markt.	Al mercado.
+adv010201-09c	option		To the forest.	去森林。	森へ行きます。	In den Wald.	Al bosque.
+
+
+# ── Dialogue 2: Arrival at the village ─────────────────────────────────────────
+
+adv010202-01	narrator		You arrived at the village.	你们到了村子。	村に来ました。	Ihr seid im Dorf angekommen.	Habéis llegado al pueblo.
+adv010202-02	narrator		It is quiet here.	这里很安静。	ここはしずかです。	Hier ist es still.	Aquí está tranquilo.
+adv010202-03	villager		Please help me!	请帮帮我！	助けてください！	Bitte hilf mir!	¡Por favor, ayúdame!
+adv010202-04	villager		My son is not here.	我的儿子不在这里。	むすこがいません。	Mein Sohn ist nicht hier.	Mi hijo no está aquí.
+adv010202-05	villager		He went to the forest yesterday.	他昨天去了森林。	きのう、もりへ行きました。	Er ging gestern in den Wald.	Ayer fue al bosque.
+adv010202-06	villager		He did not come home.	他没有回家。	家に帰りませんでした。	Er kam nicht nach Hause.	No volvió a casa.
+
+adv010202-07a	player		Do not worry. We will look.	别担心。我们去找找。	心配しないでください。さがします。	Keine Sorge. Wir schauen nach.	No se preocupe. Vamos a buscar.
+adv010202-07b	player		Where is the forest?	森林在哪里？	もりはどこですか？	Wo ist der Wald?	¿Dónde está el bosque?
+
+adv010202-08a	villager		Thank you very much!	非常感谢！	ありがとうございます！	Vielen Dank!	¡Muchísimas gracias!
+adv010202-08b	villager		The forest is there. To the east.	森林在那边。在东边。	あそこです。ひがしです。	Dort drüben. Im Osten.	Allí. Al este.
+
+adv010202-09	emma		The forest. Let us go.	森林。我们走吧。	もりへ行きましょう。	Der Wald. Lass uns gehen.	El bosque. Vamos.
+
+adv010202-10q	question		Where did the son go yesterday?	儿子昨天去了哪里？	むすこはきのうどこへ行きましたか？	Wohin ging der Sohn gestern?	¿Adónde fue el hijo ayer?
+adv010202-11a	option	correct	To the forest.	去了森林。	もりへ行きました。	In den Wald.	Al bosque.
+adv010202-11b	option		To the guild.	去了公会。	ギルドへ行きました。	In die Gilde.	Al gremio.
+adv010202-11c	option		To the market.	去了市场。	いちばへ行きました。	Auf den Markt.	Al mercado.
