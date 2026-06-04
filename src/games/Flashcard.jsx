@@ -31,10 +31,27 @@ export default function Flashcard() {
 
   const [deck,       setDeck]       = useState([])
   const [deckIndex,  setDeckIndex]  = useState(0)
-  const [revealed,   setRevealed]   = useState(false)
-  const [noAnim,     setNoAnim]     = useState(true)
-  const noAnimTimeoutRef = useRef(null)
   const [detailOpen, setDetailOpen] = useState(false)
+
+  // Flip state as a ref — direct DOM write, no React render cycle
+  const flipRef      = useRef(null)   // ref to the fc-card-flip div
+  const revealedRef  = useRef(false)  // current flip state (not React state)
+  const [isRevealed, setIsRevealed] = useState(false)  // for conditional render only
+
+  function setFlip(reveal, animate = true) {
+    revealedRef.current = reveal
+    setIsRevealed(reveal)             // trigger re-render only for detail pane show/hide
+    const el = flipRef.current
+    if (!el) return
+    if (!animate) {
+      el.style.transition = 'none'
+      el.style.transform  = reveal ? 'rotateY(180deg)' : 'rotateY(0deg)'
+      void el.offsetHeight             // force reflow
+    } else {
+      el.style.transition = 'transform 0.4s ease'
+      el.style.transform  = reveal ? 'rotateY(180deg)' : 'rotateY(0deg)'
+    }
+  }
   const [swipeDir,   setSwipeDir]   = useState(null)
   const [animating,  setAnimating]  = useState(false)
   const [feedback,   setFeedback]   = useState(null)
@@ -50,11 +67,6 @@ export default function Flashcard() {
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
   const isDragging  = useRef(false)
 
-  function enableAnimAfterReset() {
-    if (noAnimTimeoutRef.current) clearTimeout(noAnimTimeoutRef.current)
-    setNoAnim(true)
-    noAnimTimeoutRef.current = setTimeout(() => setNoAnim(false), 100)
-  }
   const buildDeck = useCallback(() =>
     srsPickDistinct(activeEntries, activeEntries.length, 'flashcard')
   , [activeEntries])
@@ -66,9 +78,8 @@ export default function Flashcard() {
     if (activeEntries.length > 0) {
       setDeck(buildDeck())
       setDeckIndex(0)
-      setRevealed(false)
+      setFlip(false, false)   // instant reset, no animation
       setDetailOpen(false)
-      enableAnimAfterReset()
     }
   }, [entriesKey])
 
@@ -119,13 +130,12 @@ export default function Flashcard() {
       } else {
         setDeckIndex(nextIndex)
       }
-      setRevealed(false)
+      setFlip(false, false)   // instant, no animation — new card starts face-up
       setDetailOpen(false)
       setSwipeDir(null)
       setDragOffset({ x: 0, y: 0 })
       setAnimating(false)
       setFeedback(null)
-      enableAnimAfterReset()
     }, 350)
   }
 
@@ -168,7 +178,7 @@ export default function Flashcard() {
       advance(dx > 0 ? 'known' : 'unknown')
     } else {
       // Tap — toggle reveal
-      setRevealed(r => !r)
+      setFlip(!revealedRef.current)
       setDragOffset({ x: 0, y: 0 })
     }
   }
@@ -181,7 +191,7 @@ export default function Flashcard() {
       if (e.key === 'Escape') { if (detailOpen) setDetailOpen(false); else setScreen('setup'); return }
 
       if (e.key === ' ' || e.key === 'Enter') {
-        setRevealed(r => !r); return
+        setFlip(!revealedRef.current); return
       }
       if (e.key === 'ArrowDown') { setDetailOpen(true); return }
       if (e.key === 'ArrowUp')    { advance('master'); return }
@@ -190,7 +200,7 @@ export default function Flashcard() {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [revealed, animating, currentEntry, deckIndex, deck, detailOpen, editingMnemonic])
+  }, [animating, currentEntry, deckIndex, deck, detailOpen, editingMnemonic])
 
   if (!currentEntry) return <div className="fc-empty">{vocabLoading ? 'Loading…' : 'No words loaded.'}</div>
 
@@ -246,14 +256,14 @@ export default function Flashcard() {
 
         <div
           ref={cardRef}
-          className={`fc-card ${revealed ? 'revealed' : ''} ${noAnim ? 'no-anim' : ''}`}
+          className="fc-card"
           style={cardStyle}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onPointerUp={onPointerUp}
         >
-          {/* Front face — prompt */}
-          <div className="fc-card-flip">
+          {/* Flip container — transform driven by flipRef directly, not React state */}
+          <div ref={flipRef} className="fc-card-flip" style={{ transform: 'rotateY(0deg)', transformStyle: 'preserve-3d', width: '100%', height: '100%', position: 'relative' }}>
           <div className="fc-card-face fc-card-front">
             <div className="fc-card-inner">
               <div className="fc-prompt-side">
@@ -317,7 +327,7 @@ export default function Flashcard() {
 
       {!detailOpen && (
         <div className="fc-keyboard-hint">
-          <span className="fc-hint-tap">Tap · Space to {revealed ? 'hide' : 'reveal'}</span>
+          <span className="fc-hint-tap">{isRevealed ? 'Tap · Space to hide' : 'Tap · Space to reveal'}</span>
           <span>← Unknown · → Known · ↑ Master · ↓ Detail</span>
         </div>
       )}
@@ -397,7 +407,7 @@ export default function Flashcard() {
             </div>
 
             {/* Action buttons inside detail */}
-            {revealed && (
+            {isRevealed && (
               <div className="fc-detail-actions">
                 <button className="fc-btn fc-btn-unknown" onClick={() => { setDetailOpen(false); advance('unknown') }}>
                   ✗<span>Unknown</span>

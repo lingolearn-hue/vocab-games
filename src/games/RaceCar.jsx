@@ -30,7 +30,6 @@ export default function RaceCar() {
   const { defaultSpeed, boostEnabled } = settings.racecar
 
   // Game state
-  const [carLane, setCarLane]     = useState(1)
   const [tiles, setTiles]         = useState([])
   const [prompt, setPrompt]       = useState(null)
   const [score, setScore]         = useState(0)
@@ -45,7 +44,7 @@ export default function RaceCar() {
   // Refs for game loop
   const tilesRef      = useRef(tiles)
   const promptRef     = useRef(prompt)
-  const carLaneRef    = useRef(carLane)
+  const carLaneRef    = useRef(1)  // lane 0-2; no React state needed
   const boostRef      = useRef(boosting)
   const crashRef      = useRef(false)
   const streakRef     = useRef(streak)
@@ -62,7 +61,6 @@ export default function RaceCar() {
   const carPosRef = useRef({ x: null, y: null })  // null = default position
   useEffect(() => { tilesRef.current = tiles }, [tiles])
   useEffect(() => { promptRef.current = prompt }, [prompt])
-  useEffect(() => { carLaneRef.current = carLane }, [carLane])
   useEffect(() => { boostRef.current = boosting }, [boosting])
   useEffect(() => { streakRef.current = streak }, [streak])
   useEffect(() => { scoreRef.current = score }, [score])
@@ -204,8 +202,18 @@ export default function RaceCar() {
   useEffect(() => {
     function onKey(e) {
       if (e.key === 'Escape')     { setScreen('setup'); return }
-      if (e.key === 'ArrowLeft')  setCarLane(l => { const n = Math.max(0, l-1); carLaneRef.current = n; return n })
-      if (e.key === 'ArrowRight') setCarLane(l => { const n = Math.min(2, l+1); carLaneRef.current = n; return n })
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+        const delta = e.key === 'ArrowLeft' ? -1 : 1
+        const n = Math.max(0, Math.min(2, carLaneRef.current + delta))
+        carLaneRef.current = n
+        // Update car DOM directly
+        if (carRef.current && lanesRef.current) {
+          const lw = 100 / 3
+          carRef.current.style.left   = `calc(${n * lw + lw/2}% - 24px)`
+          carRef.current.style.bottom = '3%'
+          carRef.current.style.top    = 'auto'
+        }
+      }
       if (e.key === 'ArrowUp' && boostEnabled) {
         setBoosting(true)
         boostRef.current = true
@@ -260,7 +268,6 @@ export default function RaceCar() {
     // Lane for collision — still needs state update (but less frequent is fine)
     const lane = Math.min(2, Math.max(0, Math.floor(((clientX - rect.left) / rect.width) * 3)))
     carLaneRef.current = lane
-    if (lane !== carLane) setCarLane(lane)
 
     // Y — follow finger within bottom 25% zone
     const CAR_HEIGHT = 72
@@ -386,7 +393,7 @@ export default function RaceCar() {
           style={{
             position: 'absolute',
             bottom: '3%',
-            left: `calc(${carLane * laneWidth + laneWidth/2}% - 24px)`,
+            left: `calc(${carLaneRef.current * laneWidth + laneWidth/2}% - 24px)`,
           }}
         >
           <div className="rc-car-body" />

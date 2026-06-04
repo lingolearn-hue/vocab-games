@@ -67,41 +67,20 @@
   height: 300px;
   cursor: grab;
   touch-action: none;
-  will-change: transform;
+  perspective: 1000px;
 }
 
 .fc-card:active { cursor: grabbing; }
 
-/* Suppress flip animation on first render of each new card */
-.fc-card.no-anim .fc-card-flip {
-  animation: none !important;
-}
-
-/* Flip container inside card */
+/* Flip container — transform and transition controlled directly via flipRef in JS.
+   No CSS animation classes needed. New cards start at rotateY(0deg) instantly,
+   tap/Space applies transition:transform 0.4s then sets rotateY(180deg). */
 .fc-card-flip {
   position: relative;
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transition: none;
-}
-
-.fc-card.revealed .fc-card-flip {
-  animation: flipContainer 0.4s ease forwards;
-}
-
-.fc-card:not(.revealed) .fc-card-flip {
-  animation: unflipContainer 0.4s ease forwards;
-}
-
-@keyframes flipContainer {
-  from { transform: rotateY(0deg); }
-  to   { transform: rotateY(180deg); }
-}
-
-@keyframes unflipContainer {
-  from { transform: rotateY(180deg); }
-  to   { transform: rotateY(0deg); }
+  transform: rotateY(0deg);
 }
 
 .fc-card-face {
