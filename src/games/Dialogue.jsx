@@ -211,6 +211,19 @@ export default function Dialogue() {
     if (bodyRef.current) bodyRef.current.scrollTop = bodyRef.current.scrollHeight
   }, [turnIndex, questionState, choiceState])
 
+  // Auto-advance past 'line' turns — pause briefly between lines for readability
+  useEffect(() => {
+    if (!activeDialogue) return
+    const turn = activeDialogue.turns[turnIndex]
+    if (!turn || turn.type !== 'line') return
+    const isLast = turnIndex >= activeDialogue.turns.length - 1
+    if (isLast) return
+    const t = setTimeout(() => {
+      setTurnIndex(i => i + 1)
+    }, 600)   // 600ms between consecutive lines
+    return () => clearTimeout(t)
+  }, [turnIndex, activeDialogue])
+
   // All tags present in loaded dialogues
   const allTags = useMemo(() => {
     const s = new Set()
@@ -250,7 +263,7 @@ export default function Dialogue() {
 
   function openDialogue(d) {
     setActiveDialogue(d)
-    setTurnIndex(d.turns.length - 1)  // show all lines at once
+    setTurnIndex(0)       // start at first turn, reveal progressively
     setQuestionState({})
     setChoiceState({})
     setFinished(false)
@@ -265,11 +278,15 @@ export default function Dialogue() {
     setQuestionState(prev => ({ ...prev, [turnIdx]: { chosen: optionIndex, correct: isCorrect } }))
     setTotal(t => t + 1)
     if (isCorrect) setCorrect(c => c + 1)
+    // Advance to next turn after answering
+    setTurnIndex(i => Math.min(activeDialogue.turns.length - 1, Math.max(i, turnIdx + 1)))
   }
 
   function chooseDialogueOption(turnIdx, optionIndex) {
     if (choiceState[turnIdx] !== undefined) return
     setChoiceState(prev => ({ ...prev, [turnIdx]: optionIndex }))
+    // Advance to next turn after choosing
+    setTurnIndex(i => Math.min(activeDialogue.turns.length - 1, Math.max(i, turnIdx + 1)))
   }
 
   // Check if all interactive turns are done
@@ -289,7 +306,7 @@ export default function Dialogue() {
     return (
       <div className="dl-screen">
         <div className="dl-header">
-          <button className="dl-back" onClick={() => setScreen('setup')}>← Back</button>
+          <button className="dl-back" onClick={goBack}>← Back</button>
           <span className="dl-title">Dialogue</span>
         </div>
         {!loading && allTags.size > 0 && (
@@ -348,7 +365,7 @@ export default function Dialogue() {
       </div>
 
       <div className="dl-body dl-reading-body" ref={bodyRef}>
-        {activeDialogue.turns.map((turn, i) => {
+        {activeDialogue.turns.slice(0, turnIndex + 1).map((turn, i) => {
           if (turn.type === 'line') {
             const idx = speakerMap[turn.speaker] ?? 0
             const isUser = turn.speaker === userSpeaker

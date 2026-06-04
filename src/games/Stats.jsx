@@ -109,7 +109,7 @@ export default function Stats() {
   return (
     <div className="stats-screen">
       <div className="stats-header">
-        <button className="stats-back" onClick={() => setScreen('setup')}>← Back</button>
+        <button className="stats-back" onClick={goBack}>← Back</button>
         <span className="stats-title">Progress</span>
       </div>
 

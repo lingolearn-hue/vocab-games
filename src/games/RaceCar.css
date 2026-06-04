@@ -148,7 +148,7 @@
 /* ── Tiles ───────────────────────────────────────────────────────────────── */
 .rc-tile {
   position: absolute;
-  min-height: 72px;
+  height: 80px;          /* fixed uniform height — matches TILE_HEIGHT const */
   background: #1e1e1e;
   border: 1.5px solid #444;
   border-radius: 14px;
@@ -156,14 +156,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0.4rem 0.3rem;
+  padding: 0.35rem 0.3rem;
   z-index: 5;
   pointer-events: none;
-  overflow: visible;
+  overflow: hidden;
 }
-
-/* CJK tiles with ruby annotation need extra height */
-.rc-tile[data-has-ruby="true"] { min-height: 88px; }
 
 /* Override RubyText sizes inside tiles */
 .rc-tile .ruby-md,
@@ -180,9 +177,6 @@
   word-break: break-word;
 }
 
-/* CJK tiles with ruby need more height and larger font is fine */
-.rc-tile[data-has-ruby="true"] { min-height: 88px; padding: 0.5rem 0.3rem; }
-.rc-tile[data-has-ruby="true"] .ruby-md { font-size: clamp(1.1rem, 5vw, 1.6rem); line-height: 1.2; }
 
 /* Ruby annotation inside tiles */
 .rc-tile rt { font-size: 0.5em; line-height: 1.8; }

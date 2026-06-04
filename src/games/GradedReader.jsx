@@ -113,7 +113,7 @@ export default function GradedReader() {
     return (
       <div className="gr-screen">
         <div className="gr-header">
-          <button className="gr-back" onClick={() => setScreen('setup')}>← Back</button>
+          <button className="gr-back" onClick={goBack}>← Back</button>
           <span className="gr-title">Reader</span>
           <div className="gr-header-tabs">
             <button className={`gr-tab ${mode === 'library' ? 'active' : ''}`} onClick={() => setMode('library')}>Library</button>

@@ -22,7 +22,7 @@ function resolveWordIds(wordIds, activeEntries) {
 // ── Phase: Vocab ───────────────────────────────────────────────────────────────
 
 function VocabPhase({ chapter, entries, onDone, language }) {
-  const { setScreen, setSessionEntries } = useApp()
+  const { setScreen, goBack, setSessionEntries } = useApp()
   const [launched, setLaunched] = useState(false)
 
   function launchGame(game) {

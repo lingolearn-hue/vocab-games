@@ -311,7 +311,7 @@ function TypeSelector({ patterns, onSelect, activeLevels, activeCategories,
 // ── Main component ─────────────────────────────────────────────────────────────
 
 export default function GrammarTrainer() {
-  const { setScreen, activeLanguage } = useApp()
+  const { setScreen, goBack, activeLanguage } = useApp()
 
   const [allPatterns,       setAllPatterns]       = useState([])
   const [activeLevels,      setActiveLevels]       = useState([])

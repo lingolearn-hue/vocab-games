@@ -100,7 +100,7 @@ export default function GapFill() {
     return (
       <div className="gf-screen">
         <div className="gf-header">
-          <button className="gf-back" onClick={() => setScreen('setup')}>← Back</button>
+          <button className="gf-back" onClick={goBack}>← Back</button>
           <span className="gf-title">Gap Fill</span>
         </div>
         <div className="gf-empty">
@@ -113,7 +113,7 @@ export default function GapFill() {
   return (
     <div className="gf-screen">
       <div className="gf-header">
-        <button className="gf-back" onClick={() => setScreen('setup')}>← Back</button>
+        <button className="gf-back" onClick={goBack}>← Back</button>
         <span className="gf-title">Gap Fill</span>
         <div className="gf-header-right">
           {total > 0 && (

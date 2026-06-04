@@ -104,15 +104,14 @@
 }
 
 .dl-bubble {
-  background: #fff;
-  border: 1.5px solid var(--bubble-color, #e0e0e0);
+  background: color-mix(in srgb, var(--bubble-color, #4f7ef8) 8%, white);
+  border: 1.5px solid color-mix(in srgb, var(--bubble-color, #4f7ef8) 40%, transparent);
   border-radius: 16px;
   padding: 0.65rem 0.85rem 0.5rem;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 .dl-line--user .dl-bubble {
-  background: color-mix(in srgb, var(--bubble-color, #4f7ef8) 12%, white);
-  border-color: var(--bubble-color, #4f7ef8);
+  background: color-mix(in srgb, var(--bubble-color, #4f7ef8) 15%, white);
 }
 .dl-bubble--choice {
   background: color-mix(in srgb, #4f7ef8 15%, white);

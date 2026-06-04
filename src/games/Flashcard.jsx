@@ -85,7 +85,23 @@ export default function Flashcard() {
 
   const currentEntry = deck[deckIndex] ?? null
 
-  // Sync mnemonic text when entry changes
+  const [autoPlay,   setAutoPlay]   = useState(() => localStorage.getItem('fc-autoplay') === 'true')
+
+  // Auto-play audio when card changes
+  useEffect(() => {
+    if (autoPlay && currentEntry) {
+      const text = direction === 'entry->translation' ? currentEntry.entry : currentEntry.translation?.[0]
+      if (text) {
+        import('../engine/speech').then(({ speak }) => speak(text, language))
+      }
+    }
+  }, [currentEntry?.id, autoPlay])
+
+  function toggleAutoPlay() {
+    const next = !autoPlay
+    setAutoPlay(next)
+    localStorage.setItem('fc-autoplay', String(next))
+  }
   useEffect(() => {
     if (currentEntry) {
       setMnemonicText(getMnemonic(currentEntry.id))
@@ -233,7 +249,7 @@ export default function Flashcard() {
   return (
     <div className="fc-screen">
       <div className="fc-header">
-        <button className="fc-back" onClick={() => setScreen('setup')}>← Back</button>
+        <button className="fc-back" onClick={goBack}>← Back</button>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
           <button className="fc-gear" onClick={() => setScreen('settings')} title="Settings">⚙️</button>
           <span className="fc-progress">{deckIndex + 1} / {deck.length}</span>
@@ -268,11 +284,6 @@ export default function Flashcard() {
             <div className="fc-card-inner">
               <div className="fc-prompt-side">
                 <RubyText text={prompt.main} reading={prompt.sub} visible={!!prompt.sub} size="lg" />
-                <SpeakButton
-                  text={direction === 'entry->translation' ? currentEntry.entry : currentEntry.translation[0]}
-                  language={language}
-                  size="lg"
-                />
               </div>
             </div>
             <div className="fc-score-dots">
@@ -299,11 +310,6 @@ export default function Flashcard() {
                   visible={showReading}
                   size="lg"
                 />
-                <SpeakButton
-                  text={currentEntry.entry}
-                  language={language}
-                  size="md"
-                />
               </div>
             </div>
             <div className="fc-score-dots">
@@ -318,11 +324,27 @@ export default function Flashcard() {
 
       {/* Action buttons — always visible */}
       {!animating && !detailOpen && (
-        <div className="fc-actions">
-          <button className="fc-btn fc-btn-unknown" onClick={() => advance('unknown')}>✗<span>Unknown</span></button>
-          <button className="fc-btn fc-btn-master"  onClick={() => advance('master')}>⭐<span>Master</span></button>
-          <button className="fc-btn fc-btn-known"   onClick={() => advance('known')}>✓<span>Known</span></button>
-        </div>
+        <>
+          <div className="fc-speak-row">
+            <SpeakButton
+              text={currentEntry.entry}
+              language={language}
+              size="md"
+            />
+            <button
+              className={`fc-autoplay-btn ${autoPlay ? 'active' : ''}`}
+              onClick={toggleAutoPlay}
+              title="Auto-play audio"
+            >
+              {autoPlay ? '🔊 Auto' : '🔇 Auto'}
+            </button>
+          </div>
+          <div className="fc-actions">
+            <button className="fc-btn fc-btn-unknown" onClick={() => advance('unknown')}>✗<span>Unknown</span></button>
+            <button className="fc-btn fc-btn-master"  onClick={() => advance('master')}>⭐<span>Master</span></button>
+            <button className="fc-btn fc-btn-known"   onClick={() => advance('known')}>✓<span>Known</span></button>
+          </div>
+        </>
       )}
 
       {!detailOpen && (
@@ -400,7 +422,7 @@ export default function Flashcard() {
                 <div className="fc-mnemonic-text">
                   {savedMnemonic
                     ? <TextWithLookup text={savedMnemonic} language={language} lookup={lookup} scores={scores} showReading={showReading} />
-                    : <span className="fc-mnemonic-empty">No mnemonic yet. Add one to help remember this word.</span>
+                    : <span className="fc-mnemonic-empty">No further details yet. Add a mnemonic to help remember this word.</span>
                   }
                 </div>
               )}

@@ -139,7 +139,7 @@ export default function Adventure() {
     <div className="adv-screen">
       {/* Header */}
       <div className="adv-header">
-        <button className="adv-mode-toggle" onClick={() => setScreen('setup')}>
+        <button className="adv-mode-toggle" onClick={goBack}>
           ← Free Play
         </button>
         <span className="adv-header-title">Adventure</span>

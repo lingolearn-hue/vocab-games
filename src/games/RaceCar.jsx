@@ -4,6 +4,12 @@ import { useApp } from '../context/AppContext'
 import { srsPick, srsPickDistinct } from '../engine/srs'
 import './RaceCar.css'
 
+function truncate(text) {
+  if (!text) return text
+  const idx = text.indexOf(';')
+  return idx > 0 ? text.slice(0, idx).trim() : text
+}
+
 const LANE_COUNT = 3
 const TILE_HEIGHT = 80
 const BASE_SPEED = 120 // px per second at x1
@@ -308,7 +314,7 @@ export default function RaceCar() {
       {/* Header */}
       <div className="rc-header">
         <div className="rc-header-left">
-          <button className="rc-back" onClick={() => setScreen('setup')}>← Back</button>
+          <button className="rc-back" onClick={goBack}>← Back</button>
           <div className="rc-stats-inline">
             <span className="rc-score-big">Score {score}</span>
             <span className="rc-seen">{seenPct}% seen · {posPct}% correct</span>
@@ -365,7 +371,8 @@ export default function RaceCar() {
 
         {/* Tiles */}
         {tiles.map(tile => {
-          const tileLabel = direction === 'entry->translation' ? tile.entry.entry : tile.entry.translation[0]
+          const rawLabel  = direction === 'entry->translation' ? tile.entry.entry : tile.entry.translation[0]
+          const tileLabel = truncate(rawLabel)
           const tileSub   = showReading && tile.entry.reading && direction === 'entry->translation' ? tile.entry.reading : null
           // Pick size: CJK glyphs are compact; long Latin words need smaller font
           const isCJK = /[\u4e00-\u9fff\u3040-\u30ff]/.test(tileLabel)

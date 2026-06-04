@@ -22,7 +22,27 @@ export function AppProvider({ children }) {
   const [activeEntries,   setActiveEntries]   = useState([])
   // Adventure mode: when set, games use these entries instead of activeEntries
   const [sessionEntries,  setSessionEntries]  = useState(null)
-  const [screen,          setScreen]          = useState('setup')
+  const [screen,          setScreenRaw]       = useState('setup')
+  const [screenHistory,   setScreenHistory]   = useState(['setup'])
+
+  // setScreen with history tracking
+  const setScreen = useCallback((next) => {
+    setScreenRaw(next)
+    setScreenHistory(h => {
+      if (h[h.length - 1] === next) return h   // no duplicate
+      return [...h, next]
+    })
+  }, [])
+
+  // Go back to the previous screen in the history stack
+  const goBack = useCallback(() => {
+    setScreenHistory(h => {
+      if (h.length <= 1) return h
+      const prev = h[h.length - 2]
+      setScreenRaw(prev)
+      return h.slice(0, -1)
+    })
+  }, [])
   const [scores,          setScores]          = useState(getAllScores)
   const [activeLanguage,  setActiveLanguageState] = useState(
     () => localStorage.getItem('activeLanguage') || null
@@ -154,7 +174,7 @@ export function AppProvider({ children }) {
       activeSentences,
       direction, setDirection,
       showReading, setShowReading,
-      screen, setScreen,
+      screen, setScreen, goBack,
       scores, scoreActions,
       settings, updateSettings,
       activeLanguage, setActiveLanguage,

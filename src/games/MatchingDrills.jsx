@@ -212,7 +212,7 @@ function stripTone(syl) {
 }
 
 export function ToneDrill() {
-  const { activeEntries, setScreen, activeLanguage } = useApp()
+  const { activeEntries, setScreen, goBack, activeLanguage } = useApp()
   const language = activeLanguage ?? 'zh'
   const [showPinyin, setShowPinyin] = useState(true)
 
@@ -451,7 +451,7 @@ const DRILL_TYPES = {
 }
 
 export default function MatchingDrills() {
-  const { setScreen, activeLanguage } = useApp()
+  const { setScreen, goBack, activeLanguage } = useApp()
   const [activeDrill, setActiveDrill] = useState(null)
 
   // Determine which drills are relevant for the active language

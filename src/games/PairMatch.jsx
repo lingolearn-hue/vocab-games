@@ -4,6 +4,13 @@ import { srsPickDistinct } from '../engine/srs'
 import RubyText from '../components/RubyText'
 import './PairMatch.css'
 
+// Truncate at first semicolon for display in tiles
+function truncate(text) {
+  if (!text) return text
+  const idx = text.indexOf(';')
+  return idx > 0 ? text.slice(0, idx).trim() : text
+}
+
 function shuffle(arr) {
   return [...arr].sort(() => Math.random() - 0.5)
 }
@@ -31,12 +38,12 @@ export default function PairMatch() {
 
     const lefts = entries.map(e => ({
       id: e.id,
-      label: direction === 'entry->translation' ? e.entry : e.translation[0],
+      label: truncate(direction === 'entry->translation' ? e.entry : e.translation[0]),
       sub: direction === 'entry->translation' && showReading && e.reading ? e.reading : null,
     }))
     const rights = entries.map(e => ({
       id: e.id,
-      label: direction === 'entry->translation' ? e.translation[0] : e.entry,
+      label: truncate(direction === 'entry->translation' ? e.translation[0] : e.entry),
       sub: direction === 'translation->entry' && showReading && e.reading ? e.reading : null,
     }))
 
@@ -109,7 +116,7 @@ export default function PairMatch() {
   return (
     <div className="pm-screen">
       <div className="pm-header">
-        <button className="pm-back" onClick={() => setScreen('setup')}>← Back</button>
+        <button className="pm-back" onClick={goBack}>← Back</button>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
           <button className="pm-gear" onClick={() => setScreen('settings')} title="Settings">⚙️</button>
           <span className="pm-stats">Round {roundsCompleted + 1} · {totalCorrect} matched</span>

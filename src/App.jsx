@@ -52,18 +52,18 @@ function FirstLaunchOverlay() {
 }
 
 function Router() {
-  const { screen, setScreen } = useApp()
+  const { screen, setScreen, goBack } = useApp()
 
-  // Global Escape: always returns to setup from any game screen
+  // Global Escape: always goes back to previous screen
   useEffect(() => {
     const GAME_SCREENS = new Set(['racecar','pairmatch','flashcard','gapfill','typing',
       'reader','dialogue','grammar','matching','vocab','stats','settings','adventure','grammar-dict'])
     function onKey(e) {
-      if (e.key === 'Escape' && GAME_SCREENS.has(screen)) setScreen('setup')
+      if (e.key === 'Escape' && GAME_SCREENS.has(screen)) goBack()
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [screen])
+  }, [screen, goBack])
 
   switch (screen) {
     case 'racecar':   return <RaceCar />

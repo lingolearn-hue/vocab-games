@@ -140,7 +140,7 @@ export default function Settings() {
   return (
     <div className="st-screen">
       <div className="st-header">
-        <button className="st-back" onClick={() => setScreen('setup')}>← Back</button>
+        <button className="st-back" onClick={goBack}>← Back</button>
         <span className="st-title">Settings</span>
       </div>
 

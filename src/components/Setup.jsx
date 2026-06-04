@@ -181,7 +181,7 @@ export default function Setup() {
         </div>
       )}
 
-      {/* Vocab Browser */}
+      {/* Vocab Browser + Grammar Dictionary */}
       <div className="setup-section">
         <button
           className={`vocab-browser-btn ${!canStart ? 'disabled' : ''}`}
@@ -192,6 +192,16 @@ export default function Setup() {
           <div>
             <div className="vocab-browser-label">Vocab Browser</div>
             <div className="vocab-browser-desc">Browse, filter and track progress</div>
+          </div>
+        </button>
+        <button
+          className="vocab-browser-btn"
+          onClick={() => setScreen('grammar-dict')}
+        >
+          <span className="vocab-browser-icon">📖</span>
+          <div>
+            <div className="vocab-browser-label">Grammar Dictionary</div>
+            <div className="vocab-browser-desc">Searchable grammar patterns reference</div>
           </div>
         </button>
       </div>

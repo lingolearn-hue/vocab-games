@@ -169,7 +169,7 @@ export default function Typing() {
     return (
       <div className="ty-screen">
         <div className="ty-header">
-          <button className="ty-back" onClick={() => setScreen('setup')}>← Back</button>
+          <button className="ty-back" onClick={goBack}>← Back</button>
         </div>
         <div className="ty-empty">No words loaded.</div>
       </div>
@@ -179,7 +179,7 @@ export default function Typing() {
   return (
     <div className={`ty-screen ${feedback || ''}`}>
       <div className="ty-header">
-        <button className="ty-back" onClick={() => setScreen('setup')}>← Back</button>
+        <button className="ty-back" onClick={goBack}>← Back</button>
         <div className="ty-stats">
           <span className="ty-score">{score}</span>
           {streak > 1 && <span className="ty-streak">🔥 {streak}</span>}

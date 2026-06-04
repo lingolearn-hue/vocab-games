@@ -70,7 +70,7 @@ export default function VocabBrowser() {
     <div className="vb-screen">
       {/* Header */}
       <div className="vb-header">
-        <button className="vb-back" onClick={() => setScreen('setup')}>← Back</button>
+        <button className="vb-back" onClick={goBack}>← Back</button>
         <span className="vb-title">Vocab ({filtered.length})</span>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
           <button className="vb-gear" onClick={() => setScreen('settings')} title="Settings">⚙️</button>
