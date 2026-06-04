@@ -32,7 +32,7 @@ function isCorrect(input, entry, direction) {
 }
 
 export default function Typing() {
-  const { activeEntries: allEntries, direction, showReading, scoreActions, scores, settings, setScreen, getEntriesForGame, vocabLoading } = useApp()
+  const { activeEntries: allEntries, direction, showReading, scoreActions, scores, settings, setScreen, goBack, getEntriesForGame, vocabLoading } = useApp()
   const language = useApp().activeLanguage ?? 'zh'
   const { entries: activeEntries, isEmpty: levelEmpty } = getEntriesForGame('typing')
   const { requireCorrect, skipEnabled } = settings.typing

@@ -31,7 +31,7 @@ function tagLabel(tag) {
 }
 
 export default function GradedReader() {
-  const { activeEntries, loadedLists, selectedIds, showReading, scores, setScreen, activeLanguage } = useApp()
+  const { activeEntries, loadedLists, selectedIds, showReading, scores, setScreen, goBack, activeLanguage } = useApp()
 
   const [passages,        setPassages]        = useState([])
   const [loading,         setLoading]         = useState(true)

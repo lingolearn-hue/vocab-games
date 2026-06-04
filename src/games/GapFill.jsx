@@ -10,7 +10,7 @@ const FEEDBACK_DURATION = 900
 
 export default function GapFill() {
   const {
-    activeSentences, settings, setScreen, activeLanguage, vocabLoading
+    activeSentences, settings, setScreen, goBack, activeLanguage, vocabLoading
   } = useApp()
 
   // Level filter — use global level setting

@@ -65,7 +65,7 @@ function ScoreDist({ entries, scores, game }) {
 }
 
 export default function Stats() {
-  const { setScreen, activeEntries, loadedLists, selectedIds, scores } = useApp()
+  const { setScreen, goBack, activeEntries, loadedLists, selectedIds, scores } = useApp()
 
   const globalCounts = useMemo(() => {
     const c = { unseen: 0, learning: 0, mastered: 0, due: 0 }

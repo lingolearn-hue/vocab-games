@@ -16,7 +16,7 @@ function shuffle(arr) {
 }
 
 export default function PairMatch() {
-  const { activeEntries: allEntries, direction, showReading, scoreActions, settings, setScreen, getEntriesForGame, vocabLoading, activeLanguage } = useApp()
+  const { activeEntries: allEntries, direction, showReading, scoreActions, settings, setScreen, goBack, getEntriesForGame, vocabLoading, activeLanguage } = useApp()
   const { entries: activeEntries, isEmpty: levelEmpty } = getEntriesForGame('pairmatch')
   const ROUND_SIZE = settings.pairmatch.roundSize
   const isCJK = activeLanguage === 'zh' || activeLanguage === 'ja'

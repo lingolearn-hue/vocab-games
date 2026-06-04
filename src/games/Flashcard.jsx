@@ -14,7 +14,7 @@ const SWIPE_UP_THRESHOLD = -80
 const SWIPE_DOWN_THRESHOLD = 80
 
 export default function Flashcard() {
-  const { activeEntries: allEntries, direction, showReading, scoreActions, scores, settings, setScreen, activeLanguage, loadedLists, selectedIds, getEntriesForGame, vocabLoading } = useApp()
+  const { activeEntries: allEntries, direction, showReading, scoreActions, scores, settings, setScreen, goBack, activeLanguage, loadedLists, selectedIds, getEntriesForGame, vocabLoading } = useApp()
   const { entries: activeEntries, isEmpty: levelEmpty } = getEntriesForGame('flashcard')
   const swipeSens = settings.flashcard.swipeSensitivity
 

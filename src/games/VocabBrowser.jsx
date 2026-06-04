@@ -13,7 +13,7 @@ const GLOBAL_COLORS = {
 }
 
 export default function VocabBrowser() {
-  const { activeEntries, loadedLists, selectedIds, showReading, setScreen, scoreActions, scores } = useApp()
+  const { activeEntries, loadedLists, selectedIds, showReading, setScreen, goBack, scoreActions, scores } = useApp()
 
   const [search,       setSearch]       = useState('')
   const [filterLevel,  setFilterLevel]  = useState('all')

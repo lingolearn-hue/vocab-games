@@ -51,7 +51,7 @@ function LevelChips({ levels, availableLevels, onChange }) {
 }
 
 export default function Settings() {
-  const { setScreen, settings, updateSettings, availableLevels, activeLanguage } = useApp()
+  const { setScreen, goBack, settings, updateSettings, availableLevels, activeLanguage } = useApp()
   const [open, setOpen] = useState(null)
 
   useEffect(() => {

@@ -174,7 +174,7 @@ function ChoiceTurn({ turn, turnIdx, chosen, onChoose, showTranslation }) {
 // ── Main component ─────────────────────────────────────────────────────────
 
 export default function Dialogue() {
-  const { activeEntries, showReading, scores, setScreen, activeLanguage, loadedLists, selectedIds } = useApp()
+  const { activeEntries, showReading, scores, setScreen, goBack, activeLanguage, loadedLists, selectedIds } = useApp()
 
   const [dialogues,        setDialogues]        = useState([])
   const [loading,          setLoading]          = useState(true)

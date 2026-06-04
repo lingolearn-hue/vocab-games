@@ -31,7 +31,7 @@ function makeTile(entry, isCorrect, lane, y) {
 }
 
 export default function RaceCar() {
-  const { activeEntries: allEntries, direction, showReading, scoreActions, scores, settings, updateSettings, setScreen, getEntriesForGame, vocabLoading } = useApp()
+  const { activeEntries: allEntries, direction, showReading, scoreActions, scores, settings, updateSettings, setScreen, goBack, getEntriesForGame, vocabLoading } = useApp()
   const { entries: activeEntries, isEmpty: levelEmpty } = getEntriesForGame('racecar')
   const { defaultSpeed, boostEnabled } = settings.racecar
 

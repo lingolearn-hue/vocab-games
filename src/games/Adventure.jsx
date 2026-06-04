@@ -65,7 +65,7 @@ function ChapterCard({ chapter, status, phasesDone, isNext, onOpen }) {
 }
 
 export default function Adventure() {
-  const { activeLanguage, setScreen } = useApp()
+  const { activeLanguage, setScreen, goBack } = useApp()
   const [campaign,   setCampaign]   = useState(null)
   const [loading,    setLoading]    = useState(true)
   const [progress,   setProgress]   = useState(getProgress)
