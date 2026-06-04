@@ -262,33 +262,45 @@ export default function RaceCar() {
     if (!el) return
     const rect = el.getBoundingClientRect()
 
-    // X — smooth, clamped, update DOM directly
+    // X — smooth continuous, update DOM directly
     const CAR_HALF = 24
     const relX = Math.max(CAR_HALF, Math.min(rect.width - CAR_HALF, clientX - rect.left))
     carPosRef.current.x = relX
     if (carRef.current) {
       carRef.current.style.left   = `${relX - CAR_HALF}px`
-      carRef.current.style.bottom = 'auto'
     }
 
-    // Lane for collision — still needs state update (but less frequent is fine)
+    // Lane for collision
     const lane = Math.min(2, Math.max(0, Math.floor(((clientX - rect.left) / rect.width) * 3)))
     carLaneRef.current = lane
 
-    // Y — follow finger within bottom 25% zone
+    // Y — snap to one of two fixed positions based on zone
+    // Normal zone: top of normal zone = bottom 15% line
+    // Boost zone: top of boost zone = bottom 25% line
+    // No continuous Y — eliminates layout reflow on every pointermove
+    const relYRatio = (clientY - rect.top) / rect.height
+    const inBoostZone = relYRatio >= 0.60 && relYRatio < 0.85
+    const inNormalZone = relYRatio >= 0.85
+
+    // Snap Y: boost position = 25% from bottom, normal = 15% from bottom
     const CAR_HEIGHT = 72
-    const relY = clientY - rect.top
-    const zoneTop   = rect.height * 0.75
-    const clampedY  = Math.max(zoneTop, Math.min(rect.height - CAR_HEIGHT - 4, relY - CAR_HEIGHT / 2))
-    carPosRef.current.y = clampedY
-    if (carRef.current) {
-      carRef.current.style.top = `${clampedY}px`
+    const normalY = rect.height * 0.85 - CAR_HEIGHT / 2   // top of normal zone
+    const boostY  = rect.height * 0.72 - CAR_HEIGHT / 2   // top of boost zone
+
+    if (inBoostZone || inNormalZone) {
+      const snapY = inBoostZone ? boostY : normalY
+      if (carPosRef.current.y !== snapY) {
+        carPosRef.current.y = snapY
+        if (carRef.current) {
+          carRef.current.style.top    = `${snapY}px`
+          carRef.current.style.bottom = 'auto'
+        }
+      }
     }
 
-    // Boost zone
+    // Boost toggle
     if (!boostEnabled) { setBoosting(false); boostRef.current = false; return }
-    const relYRatio = (clientY - rect.top) / rect.height
-    const isBoost = relYRatio < 0.85 && relYRatio >= 0.75
+    const isBoost = inBoostZone
     if (isBoost !== boostRef.current) {
       setBoosting(isBoost)
       boostRef.current = isBoost

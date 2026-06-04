@@ -1,3 +1,12 @@
+:root {
+  --dm-bright:    #f0f0f0;  /* primary text on dark bg — almost white */
+  --dm-text:      #e0e0e0;  /* standard body text */
+  --dm-soft:      #c8c8c8;  /* secondary text */
+  --dm-hint:      #b0b0b0;  /* hints, labels */
+  --dm-secondary: #b0b0b0;  /* secondary labels */
+  --dm-muted:     #a0a0a0;  /* very secondary — still clearly readable */
+}
+
 .rc-screen {
   position: fixed;
   inset: 0;
@@ -34,7 +43,7 @@
 .rc-back {
   background: none;
   border: none;
-  color: #555;
+  color: var(--dm-muted);
   font-size: 0.9rem;
   cursor: pointer;
   padding: 0.3rem 0;
@@ -48,11 +57,11 @@
 }
 
 .rc-score-big { font-size: 0.9rem; font-weight: 700; }
-.rc-seen      { font-size: 0.65rem; color: #555; }
+.rc-seen      { font-size: 0.65rem; color: var(--dm-muted); }
 
 .rc-header-center {
   font-size: 0.8rem;
-  color: #666;
+  color: var(--dm-secondary);
 }
 
 .rc-header-right {
@@ -70,7 +79,7 @@
 .rc-gear {
   background: none;
   border: none;
-  color: #555;
+  color: var(--dm-muted);
   font-size: 0.9rem;
   cursor: pointer;
   padding: 0;
@@ -80,7 +89,7 @@
 /* ── Prompt ──────────────────────────────────────────────────────────────── */
 .rc-prompt-area {
   text-align: center;
-  padding: 0.3rem 3rem 0.4rem;
+  padding: 0.6rem 3rem 0.5rem;
   flex-shrink: 0;
   z-index: 10;
 }
@@ -93,7 +102,7 @@
 
 .rc-prompt-reading {
   font-size: 0.85rem;
-  color: #666;
+  color: var(--dm-secondary);
   margin-top: 2px;
 }
 
@@ -185,7 +194,7 @@
 .rc-car {
   position: absolute;
   z-index: 10;
-  transition: left 0.12s ease;
+  transition: left 0.12s ease, top 0.12s ease;   /* smooth snap between zones */
   display: flex;
   flex-direction: column;
   align-items: center;

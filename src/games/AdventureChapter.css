@@ -1,3 +1,12 @@
+:root {
+  --dm-bright:    #f0f0f0;  /* primary text on dark bg — almost white */
+  --dm-text:      #e0e0e0;  /* standard body text */
+  --dm-soft:      #c8c8c8;  /* secondary text */
+  --dm-hint:      #b0b0b0;  /* hints, labels */
+  --dm-secondary: #b0b0b0;  /* secondary labels */
+  --dm-muted:     #a0a0a0;  /* very secondary — still clearly readable */
+}
+
 /* ── AdventureChapter ─────────────────────────────────────────────────────── */
 
 .advc-screen {
@@ -7,7 +16,7 @@
   max-width: 480px;
   margin: 0 auto;
   background: #0a0a1a;
-  color: #eee;
+  color: var(--dm-bright);
 }
 
 /* Header */
@@ -23,18 +32,18 @@
 .advc-back {
   background: none;
   border: none;
-  color: #666;
+  color: var(--dm-secondary);
   font-size: 0.85rem;
   cursor: pointer;
   padding: 0.3rem 0;
   flex-shrink: 0;
 }
-.advc-back:hover { color: #aaa; }
+.advc-back:hover { color: var(--dm-soft); }
 .advc-back:focus:not(:focus-visible) { outline: none; }
 
 .advc-header-center { flex: 1; min-width: 0; }
-.advc-chapter-num  { font-size: 0.65rem; color: #555; display: block; font-weight: 700; text-transform: uppercase; }
-.advc-chapter-name { font-size: 0.85rem; color: #ddd; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
+.advc-chapter-num  { font-size: 0.65rem; color: var(--dm-muted); display: block; font-weight: 700; text-transform: uppercase; }
+.advc-chapter-name { font-size: 0.85rem; color: var(--dm-text); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
 
 .advc-level-tag {
   font-size: 0.68rem;
@@ -87,12 +96,12 @@
   padding: 0.9rem 1.2rem;
   font-size: 0.85rem;
   line-height: 1.7;
-  color: #aaa;
+  color: var(--dm-soft);
   flex-shrink: 0;
 }
 .advc-story-trans {
   font-size: 0.75rem;
-  color: #555;
+  color: var(--dm-muted);
   margin-top: 0.4rem;
   font-style: italic;
 }
@@ -106,9 +115,9 @@
 }
 
 .advc-phase-icon { font-size: 1.8rem; text-align: center; }
-.advc-phase-title { font-size: 1rem; font-weight: 700; color: #ddd; text-align: center; margin: 0; }
-.advc-phase-sub   { font-size: 0.75rem; color: #555; text-align: center; margin: 0; }
-.advc-phase-desc  { font-size: 0.82rem; color: #666; text-align: center; line-height: 1.5; }
+.advc-phase-title { font-size: 1rem; font-weight: 700; color: var(--dm-text); text-align: center; margin: 0; }
+.advc-phase-sub   { font-size: 0.75rem; color: var(--dm-muted); text-align: center; margin: 0; }
+.advc-phase-desc  { font-size: 0.82rem; color: var(--dm-secondary); text-align: center; line-height: 1.5; }
 
 /* Vocab word list */
 .advc-word-list {
@@ -131,9 +140,9 @@
   font-size: 0.85rem;
 }
 .advc-word-item:last-child { border-bottom: none; }
-.advc-word-entry  { font-weight: 600; color: #ddd; min-width: 3.5rem; }
-.advc-word-reading { font-size: 0.72rem; color: #555; min-width: 3.5rem; }
-.advc-word-trans  { color: #777; flex: 1; font-size: 0.78rem; }
+.advc-word-entry  { font-weight: 600; color: var(--dm-text); min-width: 3.5rem; }
+.advc-word-reading { font-size: 0.72rem; color: var(--dm-muted); min-width: 3.5rem; }
+.advc-word-trans  { color: var(--dm-secondary); flex: 1; font-size: 0.78rem; }
 
 /* Game launch buttons */
 .advc-game-row {
@@ -142,7 +151,7 @@
   gap: 0.6rem;
   flex-wrap: wrap;
 }
-.advc-game-label { font-size: 0.75rem; color: #555; flex-shrink: 0; }
+.advc-game-label { font-size: 0.75rem; color: var(--dm-muted); flex-shrink: 0; }
 .advc-game-btns  { display: flex; gap: 0.4rem; flex-wrap: wrap; }
 
 .advc-game-btn {
@@ -199,14 +208,14 @@
   width: 100%;
   text-align: left;
   cursor: pointer;
-  color: #ccc;
+  color: var(--dm-text);
 }
 .advc-pattern-header:focus:not(:focus-visible) { outline: none; }
 
 .advc-pattern-done-icon { font-size: 0.85rem; color: #444; flex-shrink: 0; }
 .advc-pattern.done .advc-pattern-done-icon { color: #22a06b; }
 .advc-pattern-title { flex: 1; font-size: 0.85rem; font-weight: 600; }
-.advc-pattern-arrow { font-size: 0.85rem; color: #555; }
+.advc-pattern-arrow { font-size: 0.85rem; color: var(--dm-muted); }
 
 .advc-pattern-body {
   padding: 0.7rem 0.9rem 0.9rem;
@@ -215,18 +224,18 @@
 
 .advc-pattern-explanation {
   font-size: 0.8rem;
-  color: #888;
+  color: var(--dm-hint);
   line-height: 1.6;
   margin-bottom: 0.7rem;
 }
 
 .advc-template {
   font-size: 0.9rem;
-  color: #ccc;
+  color: var(--dm-text);
   font-weight: 600;
   margin-bottom: 0.3rem;
 }
-.advc-hint { font-size: 0.75rem; color: #555; margin-bottom: 0.5rem; }
+.advc-hint { font-size: 0.75rem; color: var(--dm-muted); margin-bottom: 0.5rem; }
 
 .advc-options { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .advc-option {
@@ -234,7 +243,7 @@
   border: 1.5px solid #2a2a3a;
   border-radius: 20px;
   background: #1a1a28;
-  color: #aaa;
+  color: var(--dm-soft);
   font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.12s;
@@ -246,7 +255,7 @@
 
 .advc-try-again { font-size: 0.75rem; color: #4f7ef8; background: none; border: none; cursor: pointer; padding: 0.2rem 0; }
 
-.advc-pick-label { font-size: 0.78rem; color: #555; margin-bottom: 0.4rem; }
+.advc-pick-label { font-size: 0.78rem; color: var(--dm-muted); margin-bottom: 0.4rem; }
 
 .advc-sentence-btn {
   display: flex;
@@ -257,7 +266,7 @@
   border: 1.5px solid #222;
   border-radius: 10px;
   background: #12121e;
-  color: #ccc;
+  color: var(--dm-text);
   font-size: 0.85rem;
   text-align: left;
   cursor: pointer;
@@ -275,7 +284,7 @@
   border: 1.5px solid #2a2a3a;
   border-radius: 10px;
   background: none;
-  color: #666;
+  color: var(--dm-secondary);
   font-size: 0.82rem;
   cursor: pointer;
   align-self: center;
@@ -302,7 +311,7 @@
   background: #1a1a28;
   font-size: 0.72rem;
   font-weight: 700;
-  color: #555;
+  color: var(--dm-muted);
   cursor: pointer;
   flex-shrink: 0;
 }
@@ -330,7 +339,7 @@
   border-radius: 14px;
   padding: 0.6rem 0.8rem;
   font-size: 0.9rem;
-  color: #ddd;
+  color: var(--dm-text);
   line-height: 1.55;
 }
 .advc-line.user .advc-bubble {
@@ -340,7 +349,7 @@
   background: #0e1530;
   border-color: #4f7ef8;
 }
-.advc-bubble-trans { font-size: 0.72rem; color: #555; margin-top: 0.3rem; font-style: italic; }
+.advc-bubble-trans { font-size: 0.72rem; color: var(--dm-muted); margin-top: 0.3rem; font-style: italic; }
 
 .advc-question {
   background: #12121e;
@@ -348,7 +357,7 @@
   border-radius: 12px;
   padding: 0.7rem 0.8rem;
 }
-.advc-question-prompt { font-size: 0.78rem; color: #666; font-weight: 600; margin-bottom: 0.5rem; }
+.advc-question-prompt { font-size: 0.78rem; color: var(--dm-secondary); font-weight: 600; margin-bottom: 0.5rem; }
 .advc-q-option {
   display: flex;
   align-items: center;
@@ -359,7 +368,7 @@
   border: 1.5px solid #222;
   border-radius: 9px;
   background: #1a1a28;
-  color: #bbb;
+  color: var(--dm-soft);
   font-size: 0.82rem;
   text-align: left;
   cursor: pointer;
@@ -367,7 +376,7 @@
 }
 .advc-q-option:hover { border-color: #4f7ef8; }
 .advc-q-option:focus:not(:focus-visible) { outline: none; }
-.advc-q-num { font-size: 0.68rem; color: #555; min-width: 1rem; }
+.advc-q-num { font-size: 0.68rem; color: var(--dm-muted); min-width: 1rem; }
 
 .advc-qanswered {
   display: flex;
@@ -385,8 +394,8 @@
   border-radius: 12px;
   padding: 0.7rem 0.8rem;
 }
-.advc-choice-prompt { font-size: 0.82rem; font-weight: 600; color: #bbb; margin-bottom: 0.5rem; }
-.advc-choice-sub    { font-size: 0.72rem; color: #555; font-weight: 400; }
+.advc-choice-prompt { font-size: 0.82rem; font-weight: 600; color: var(--dm-soft); margin-bottom: 0.5rem; }
+.advc-choice-sub    { font-size: 0.72rem; color: var(--dm-muted); font-weight: 400; }
 
 .advc-choice-opt {
   display: flex;
@@ -404,7 +413,7 @@
 }
 .advc-choice-opt:hover { border-color: #4f7ef8; }
 .advc-choice-opt:focus:not(:focus-visible) { outline: none; }
-.advc-choice-text { font-size: 0.85rem; color: #ccc; }
+.advc-choice-text { font-size: 0.85rem; color: var(--dm-text); }
 
 .advc-choice-done { display: flex; flex-direction: column; gap: 0.5rem; }
 
@@ -423,12 +432,12 @@
   padding: 1rem 1.1rem;
   font-size: 0.95rem;
   line-height: 2.2;
-  color: #ddd;
+  color: var(--dm-text);
 }
 
 .advc-passage-trans {
   font-size: 0.78rem;
-  color: #555;
+  color: var(--dm-muted);
   line-height: 1.7;
   padding: 0.7rem 1rem;
   background: #0e0e1a;
@@ -440,8 +449,8 @@
 .advc-phase--complete { align-items: center; text-align: center; padding-top: 2rem; }
 .advc-complete-star  { font-size: 3rem; }
 .advc-complete-title { font-size: 1.3rem; font-weight: 800; color: #e8c84a; }
-.advc-complete-chapter { font-size: 0.95rem; color: #ccc; font-weight: 600; margin: 0; }
-.advc-complete-sub   { font-size: 0.75rem; color: #555; margin: 0; }
+.advc-complete-chapter { font-size: 0.95rem; color: var(--dm-text); font-weight: 600; margin: 0; }
+.advc-complete-sub   { font-size: 0.75rem; color: var(--dm-muted); margin: 0; }
 
 .advc-artifact {
   display: flex;
@@ -460,7 +469,7 @@
 
 .advc-outro {
   font-size: 0.85rem;
-  color: #777;
+  color: var(--dm-secondary);
   line-height: 1.7;
   background: #0e0e1a;
   border-radius: 10px;
@@ -476,10 +485,10 @@
   border: 1.5px solid #333;
   border-radius: 12px;
   background: none;
-  color: #666;
+  color: var(--dm-secondary);
   font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.12s;
 }
-.advc-map-btn:hover { border-color: #555; color: #aaa; }
+.advc-map-btn:hover { border-color: var(--dm-muted); color: var(--dm-soft); }
 .advc-map-btn:focus:not(:focus-visible) { outline: none; }

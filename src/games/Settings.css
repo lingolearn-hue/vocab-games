@@ -231,21 +231,21 @@
 @media (prefers-color-scheme: dark) {
   .st-screen            { background: #111; }
   .st-header            { border-color: #222; }
-  .st-back              { color: #888; }
+  .st-back              { color: #bbb; }
   .st-back:hover        { color: #eee; }
   .st-title             { color: #ddd; }
-  .st-section-label     { color: #555; }
+  .st-section-label     { color: #aaa; }
   .st-label             { color: #ccc; }
-  .st-sublabel          { color: #666; }
-  .st-current-label     { color: #555; }
-  .st-chip              { background: #1e1e1e; border-color: #333; color: #555; }
+  .st-sublabel          { color: #aaa; }
+  .st-current-label     { color: #aaa; }
+  .st-chip              { background: #1e1e1e; border-color: #333; color: #aaa; }
   .st-chip.active       { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
   .st-seg               { border-color: #333; }
-  .st-seg-btn           { background: #1e1e1e; color: #888; border-color: #333; }
+  .st-seg-btn           { background: #1e1e1e; color: #bbb; border-color: #333; }
   .st-seg-btn.active    { background: #4f7ef8; color: #fff; }
-  .st-toggle            { background: #1e1e1e; border-color: #333; color: #555; }
+  .st-toggle            { background: #1e1e1e; border-color: #333; color: #aaa; }
   .st-toggle.active     { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
-  .st-ghost-btn         { color: #666; border-color: #333; }
+  .st-ghost-btn         { color: #aaa; border-color: #333; }
   .st-ghost-btn:hover   { border-color: #4f7ef8; color: #7fa4ff; }
   .st-accordion         { border-color: #222; }
   .st-accordion-header:hover { background: #1a1a1a; }
@@ -254,25 +254,25 @@
   .st-data-btn:hover    { background: #4f7ef8; color: #fff; }
   .st-danger-btn        { background: #2d0e0e; border-color: #a33; color: #e5534b; }
   .st-danger-btn:hover  { background: #e5534b; color: #fff; border-color: #e5534b; }
-  .st-hint              { color: #555; }
+  .st-hint              { color: #aaa; }
 }
 [data-theme="dark"] .st-screen            { background: #111; }
 [data-theme="dark"] .st-header            { border-color: #222; }
-[data-theme="dark"] .st-back              { color: #888; }
+[data-theme="dark"] .st-back              { color: #bbb; }
 [data-theme="dark"] .st-back:hover        { color: #eee; }
 [data-theme="dark"] .st-title             { color: #ddd; }
-[data-theme="dark"] .st-section-label     { color: #555; }
+[data-theme="dark"] .st-section-label     { color: #aaa; }
 [data-theme="dark"] .st-label             { color: #ccc; }
-[data-theme="dark"] .st-sublabel          { color: #666; }
-[data-theme="dark"] .st-current-label     { color: #555; }
-[data-theme="dark"] .st-chip              { background: #1e1e1e; border-color: #333; color: #555; }
+[data-theme="dark"] .st-sublabel          { color: #aaa; }
+[data-theme="dark"] .st-current-label     { color: #aaa; }
+[data-theme="dark"] .st-chip              { background: #1e1e1e; border-color: #333; color: #aaa; }
 [data-theme="dark"] .st-chip.active       { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
 [data-theme="dark"] .st-seg               { border-color: #333; }
-[data-theme="dark"] .st-seg-btn           { background: #1e1e1e; color: #888; border-color: #333; }
+[data-theme="dark"] .st-seg-btn           { background: #1e1e1e; color: #bbb; border-color: #333; }
 [data-theme="dark"] .st-seg-btn.active    { background: #4f7ef8; color: #fff; }
-[data-theme="dark"] .st-toggle            { background: #1e1e1e; border-color: #333; color: #555; }
+[data-theme="dark"] .st-toggle            { background: #1e1e1e; border-color: #333; color: #aaa; }
 [data-theme="dark"] .st-toggle.active     { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
-[data-theme="dark"] .st-ghost-btn         { color: #666; border-color: #333; }
+[data-theme="dark"] .st-ghost-btn         { color: #aaa; border-color: #333; }
 [data-theme="dark"] .st-ghost-btn:hover   { border-color: #4f7ef8; color: #7fa4ff; }
 [data-theme="dark"] .st-accordion         { border-color: #222; }
 [data-theme="dark"] .st-accordion-header:hover { background: #1a1a1a; }
@@ -281,7 +281,7 @@
 [data-theme="dark"] .st-data-btn:hover    { background: #4f7ef8; color: #fff; }
 [data-theme="dark"] .st-danger-btn        { background: #2d0e0e; border-color: #a33; color: #e5534b; }
 [data-theme="dark"] .st-danger-btn:hover  { background: #e5534b; color: #fff; border-color: #e5534b; }
-[data-theme="dark"] .st-hint              { color: #555; }
+[data-theme="dark"] .st-hint              { color: #aaa; }
 
 /* Light mode overrides (for system-dark + user-picks-light) */
 [data-theme="light"] .st-screen            { background: #fafafa; }

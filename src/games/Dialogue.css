@@ -207,9 +207,9 @@
   .dl-screen { background: #111; }
   .dl-header  { border-color: #222; }
   .dl-title   { color: #ddd; }
-  .dl-back    { color: #888; }
+  .dl-back    { color: #bbb; }
   .dl-filter-bar { border-color: #222; }
-  .dl-chip    { background: #1e1e1e; border-color: #333; color: #555; }
+  .dl-chip    { background: #1e1e1e; border-color: #333; color: #aaa; }
   .dl-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
   .dl-card    { background: #1e1e1e; border-color: #2a2a2a; }
   .dl-card:hover { background: #1a2340; border-color: #4f7ef8; }
@@ -234,9 +234,9 @@
 [data-theme="dark"] .dl-screen { background: #111; }
 [data-theme="dark"] .dl-header  { border-color: #222; }
 [data-theme="dark"] .dl-title   { color: #ddd; }
-[data-theme="dark"] .dl-back    { color: #888; }
+[data-theme="dark"] .dl-back    { color: #bbb; }
 [data-theme="dark"] .dl-filter-bar { border-color: #222; }
-[data-theme="dark"] .dl-chip    { background: #1e1e1e; border-color: #333; color: #555; }
+[data-theme="dark"] .dl-chip    { background: #1e1e1e; border-color: #333; color: #aaa; }
 [data-theme="dark"] .dl-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
 [data-theme="dark"] .dl-card    { background: #1e1e1e; border-color: #2a2a2a; }
 [data-theme="dark"] .dl-card:hover { background: #1a2340; border-color: #4f7ef8; }

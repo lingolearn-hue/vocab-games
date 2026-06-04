@@ -240,23 +240,23 @@
 @media (prefers-color-scheme: dark) {
   .stats-screen  { background: #111; }
   .stats-header  { border-color: #222; }
-  .stats-back    { color: #555; }
+  .stats-back    { color: #aaa; }
   .stats-back:hover { color: #eee; }
   .stats-title   { color: #eee; }
   .status-name   { color: #aaa; }
   .stat-bar-track { background: #2a2a2a; }
   .list-stat-bar  { background: #2a2a2a; }
-  .list-stat-label { color: #888; }
+  .list-stat-label { color: #bbb; }
 }
 [data-theme="dark"] .stats-screen  { background: #111; }
 [data-theme="dark"] .stats-header  { border-color: #222; }
-[data-theme="dark"] .stats-back    { color: #555; }
+[data-theme="dark"] .stats-back    { color: #aaa; }
 [data-theme="dark"] .stats-back:hover { color: #eee; }
 [data-theme="dark"] .stats-title   { color: #eee; }
 [data-theme="dark"] .status-name   { color: #aaa; }
 [data-theme="dark"] .stat-bar-track { background: #2a2a2a; }
 [data-theme="dark"] .list-stat-bar  { background: #2a2a2a; }
-[data-theme="dark"] .list-stat-label { color: #888; }
+[data-theme="dark"] .list-stat-label { color: #bbb; }
 
 /* Overview cards */
 .stats-overview {

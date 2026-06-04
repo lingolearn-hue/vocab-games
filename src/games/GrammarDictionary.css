@@ -226,18 +226,18 @@
   .gd-screen      { background: #111; }
   .gd-header      { border-color: #222; }
   .gd-title-main  { color: #ddd; }
-  .gd-back        { color: #888; }
+  .gd-back        { color: #bbb; }
   .gd-search      { background: #1e1e1e; border-color: #333; color: #ddd; }
   .gd-search:focus { border-color: #4f7ef8; }
   .gd-filters     { border-color: #222; }
-  .gd-filter-label { color: #555; }
-  .gd-chip        { background: #1e1e1e; border-color: #333; color: #666; }
+  .gd-filter-label { color: #aaa; }
+  .gd-chip        { background: #1e1e1e; border-color: #333; color: #aaa; }
   .gd-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
   .gd-card        { background: #1a1a1a; border-color: #2a2a2a; }
   .gd-card.open   { background: #1e1e28; }
   .gd-card-body   { border-color: #222; }
   .gd-title       { color: #ccc; }
-  .gd-explanation { color: #888; }
+  .gd-explanation { color: #bbb; }
   .gd-template    { color: #ddd; }
   .gd-sentence-text { color: #ccc; }
   .gd-tile        { background: #1a1a30; border-color: #2a2a50; color: #bbb; }
@@ -246,16 +246,16 @@
 [data-theme="dark"] .gd-screen      { background: #111; }
 [data-theme="dark"] .gd-header      { border-color: #222; }
 [data-theme="dark"] .gd-title-main  { color: #ddd; }
-[data-theme="dark"] .gd-back        { color: #888; }
+[data-theme="dark"] .gd-back        { color: #bbb; }
 [data-theme="dark"] .gd-search      { background: #1e1e1e; border-color: #333; color: #ddd; }
 [data-theme="dark"] .gd-filters     { border-color: #222; }
-[data-theme="dark"] .gd-chip        { background: #1e1e1e; border-color: #333; color: #666; }
+[data-theme="dark"] .gd-chip        { background: #1e1e1e; border-color: #333; color: #aaa; }
 [data-theme="dark"] .gd-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
 [data-theme="dark"] .gd-card        { background: #1a1a1a; border-color: #2a2a2a; }
 [data-theme="dark"] .gd-card.open   { background: #1e1e28; }
 [data-theme="dark"] .gd-card-body   { border-color: #222; }
 [data-theme="dark"] .gd-title       { color: #ccc; }
-[data-theme="dark"] .gd-explanation { color: #888; }
+[data-theme="dark"] .gd-explanation { color: #bbb; }
 [data-theme="dark"] .gd-template    { color: #ddd; }
 [data-theme="dark"] .gd-sentence-text { color: #ccc; }
 [data-theme="dark"] .gd-tile        { background: #1a1a30; border-color: #2a2a50; color: #bbb; }

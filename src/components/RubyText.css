@@ -17,7 +17,7 @@ ruby {
 }
 
 .ruby-rt {
-  font-size: 0.42em;
+  font-size: 0.52em;    /* was 0.42em — bigger pinyin/furigana */
   color: #444;
   line-height: 1.4;
   text-align: center;
@@ -26,9 +26,9 @@ ruby {
 }
 
 /* Sizes — set on the wrapper span, inherited by ruby base text */
-.ruby-sm { font-size: 0.9rem;  line-height: 2.2; }
-.ruby-md { font-size: 1.4rem;  line-height: 2.4; }
-.ruby-lg { font-size: 2.2rem;  line-height: 2.6; }
+.ruby-sm { font-size: 1.1rem;  line-height: 2.4; }   /* was 0.9 */
+.ruby-md { font-size: 1.6rem;  line-height: 2.6; }   /* was 1.4 */
+.ruby-lg { font-size: 2.6rem;  line-height: 2.8; }   /* was 2.2 */
 
 /* Dark contexts (race car tiles) */
 .ruby-dark .ruby-rt { color: #555; }

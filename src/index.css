@@ -45,3 +45,32 @@ button:focus:not(:focus-visible) { outline: none; }
 
 /* Remove tap/click focus rings on touch devices — keep keyboard focus for a11y */
 button:focus:not(:focus-visible) { outline: none; }
+
+/* ── Text color variables ─────────────────────────────────────────── */
+:root {
+  --text-primary:   #111;
+  --text-secondary: #444;
+  --text-muted:     #666;
+  --text-faint:     #999;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary:   #eee;
+    --text-secondary: #ccc;
+    --text-muted:     #aaa;
+    --text-faint:     #777;
+  }
+}
+[data-theme="dark"] {
+  --text-primary:   #eee;
+  --text-secondary: #ccc;
+  --text-muted:     #aaa;
+  --text-faint:     #777;
+}
+[data-theme="light"] {
+  --text-primary:   #111;
+  --text-secondary: #444;
+  --text-muted:     #666;
+  --text-faint:     #999;
+}
