@@ -1138,6 +1138,75 @@ speak(text, language, { rate: 0.9, pitch: 1.0 })
 </div>
 </details>
 
+
+<!-- ═══════════════════════════════════════════ 11. DIALOGUE TSV FORMAT -->
+<details>
+<summary><h2>11. Dialogue TSV Format</h2></summary>
+<div class="acc-body">
+
+<p>New dialogue content is authored in TSV (tab-separated values) files under <code>public/dialogues/tsv/</code>. The full specification is at <a href="public/dialogues/tsv/FORMAT_SPEC.html">public/dialogues/tsv/FORMAT_SPEC.html</a>. Summary below.</p>
+
+<details>
+<summary><h3>11.1 File Naming</h3></summary>
+<div class="acc-body">
+<table>
+<tr><th>Pattern</th><th>Meaning</th></tr>
+<tr><td><code>adv</code><em>LLCC</em><code>.tsv</code></td><td>Adventure campaign — level LL, chapter CC. e.g. <code>adv0102.tsv</code></td></tr>
+<tr><td><code>scn</code><em>NN</em><code>.tsv</code></td><td>Standalone scene set — all languages. e.g. <code>scn01.tsv</code></td></tr>
+</table>
+</div>
+</details>
+
+<details>
+<summary><h3>11.2 Column Order</h3></summary>
+<div class="acc-body">
+<pre>@columns	id	speaker	cmd	en	zh	ja	de	es</pre>
+<table>
+<tr><th>Col</th><th>Name</th><th>Notes</th></tr>
+<tr><td>1</td><td><code>id</code></td><td><code>adv010201-04a</code> — prefix + level + chapter + dialogue + line + branch suffix</td></tr>
+<tr><td>2</td><td><code>speaker</code></td><td><code>narrator</code> · NPC name · <code>player</code> · <code>question</code> · <code>option</code></td></tr>
+<tr><td>3</td><td><code>cmd</code></td><td><code>correct</code> on answer options; reserved for future jump/flag commands</td></tr>
+<tr><td>4–8</td><td><code>en zh ja de es</code></td><td>One column per language. Empty = two tabs. English always present as translation.</td></tr>
+</table>
+</div>
+</details>
+
+<details>
+<summary><h3>11.3 Key Rules</h3></summary>
+<div class="acc-body">
+<ul>
+<li><strong>Target language only</strong> — text is displayed in the active language. English is revealed on tap, never automatically shown.</li>
+<li><strong>Branching</strong> — player lines with matching number + different suffix (04a, 04b) are choice buttons. NPC responses carry the same suffix. A line without suffix after a branch always displays (convergence).</li>
+<li><strong>Questions</strong> — <code>question</code> line followed by <code>option</code> lines with same number and a/b/c suffixes. Option with <code>cmd=correct</code> is the right answer. Wrong answers loop back to the question.</li>
+<li><strong>Sort order</strong> — lines displayed by ID: numeric part ascending, then suffix a→b→c.</li>
+<li><strong>Difficulty scope</strong> — adventure dialogues must stay within the vocabulary and grammar unlocked by the current chapter and all prior chapters.</li>
+</ul>
+</div>
+</details>
+
+<details>
+<summary><h3>11.4 Minimal Example</h3></summary>
+<div class="acc-body">
+<pre>adv010101-01	guild_master		I am Leon.	我是里昂。	わたしはレオンです。	Ich bin Leon.	Soy León.
+adv010101-02	guild_master		Are you the new apprentice?	你是新来的学徒吗？	あなたは新しい見習いですか？	Bist du der neue Lehrling?	¿Eres el nuevo aprendiz?
+
+adv010101-03a	player		Yes. I am Alex.	是的。	はい。アレックスです。	Ja. Ich bin Alex.	Sí. Soy Alex.
+adv010101-03b	player		...	……	…	…	…
+
+adv010101-04a	guild_master		Welcome to the guild.	欢迎来到公会。	ギルドへようこそ。	Willkommen in der Gilde.	Bienvenido al gremio.
+adv010101-04b	guild_master		That is fine too. Welcome.	这也没关系。	それもいいですね。	Das ist auch gut.	Eso también está bien.
+
+adv010101-05	guild_master		This is the guild.	这是公会。	ここはギルドです。	Das ist die Gilde.	Este es el gremio.
+
+adv010101-06q	question		Where are you now?	你现在在哪里？	あなたは今どこにいますか？	Wo bist du jetzt?	¿Dónde estás ahora?
+adv010101-07a	option	correct	At the guild.	在公会。	ギルドにいます。	In der Gilde.	En el gremio.
+adv010101-07b	option		At the market.	在市场。	市場にいます。	Auf dem Markt.	En el mercado.</pre>
+</div>
+</details>
+
+</div>
+</details>
+
 <hr/>
 <p style="font-size:0.75rem; color:#aaa; text-align:center;">Vocab Games Design Spec · Generated v23 · Updated alongside codebase</p>
 
