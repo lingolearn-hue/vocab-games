@@ -129,6 +129,7 @@ export default function Settings() {
   function resetAllScores() {
     if (!confirm('Reset ALL scores? This cannot be undone.')) return
     localStorage.removeItem('vocabScores')
+    localStorage.removeItem('adventureProgress')
     window.location.reload()
   }
 
