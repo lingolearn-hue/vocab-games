@@ -65,7 +65,7 @@
 /* Items — fixed uniform height so all cards are same size */
 .pm-item {
   flex: 0 0 auto;
-  height: 80px;        /* fixed — uniform across all items */
+  height: 90px;        /* fixed — uniform across all items */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,7 +96,7 @@
 
 /* CJK glyphs are compact — can afford larger size */
 .pm-item--cjk .pm-label {
-  font-size: clamp(1.1rem, 5vw, 1.6rem);
+  font-size: clamp(1.4rem, 6vw, 2rem);
 }
 
 .pm-sub {
@@ -199,7 +199,7 @@
 /* Override RubyText inside pair items — dynamic sizing */
 .pm-item .ruby-sm,
 .pm-item .ruby-plain {
-  font-size: clamp(0.8rem, 4vw, 1.4rem);
+  font-size: clamp(1.0rem, 4.5vw, 1.6rem);
   line-height: 1.35;
   font-weight: 500;
   text-align: center;
@@ -210,5 +210,5 @@
 .pm-item .ruby-sm[lang="zh"],
 .pm-item .ruby-sm[lang="ja"],
 .pm-item--cjk .ruby-sm {
-  font-size: clamp(1.3rem, 5vw, 1.9rem);
+  font-size: clamp(1.5rem, 6vw, 2.2rem);
 }

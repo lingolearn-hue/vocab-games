@@ -11,7 +11,7 @@ function truncate(text) {
 }
 
 const LANE_COUNT = 3
-const TILE_HEIGHT = 80
+const TILE_HEIGHT = 90
 const BASE_SPEED = 120 // px per second at x1
 const BOOST_MULTIPLIER = 1.5
 const STREAK_THRESHOLDS = [1, 3, 6, 10] // streak levels
@@ -34,6 +34,8 @@ export default function RaceCar() {
   const { activeEntries: allEntries, direction, showReading, scoreActions, scores, settings, updateSettings, setScreen, goBack, getEntriesForGame, vocabLoading } = useApp()
   const { entries: activeEntries, isEmpty: levelEmpty } = getEntriesForGame('racecar')
   const { defaultSpeed, boostEnabled } = settings.racecar
+  const speedRef = useRef(defaultSpeed)
+  useEffect(() => { speedRef.current = defaultSpeed }, [defaultSpeed])
 
   // Game state
   const [tiles, setTiles]         = useState([])
@@ -173,7 +175,7 @@ export default function RaceCar() {
     lastTimeRef.current = timestamp
 
     if (!crashRef.current) {
-      const speed = BASE_SPEED * defaultSpeed * (boostRef.current ? BOOST_MULTIPLIER : 1) * getStreakMultiplier(streakRef.current)
+      const speed = BASE_SPEED * speedRef.current * (boostRef.current ? BOOST_MULTIPLIER : 1)
       const dy = speed * dt
 
       setTiles(prev => {
@@ -366,7 +368,10 @@ export default function RaceCar() {
             className="rc-slider"
             orient="vertical"
           />
-          <span className="rc-slider-label">x{defaultSpeed.toFixed(1)}{boosting ? '⚡' : ''}</span>
+          <span className="rc-slider-label">
+            x{defaultSpeed.toFixed(1)}
+            <span className="rc-slider-boost" style={{ visibility: boosting ? 'visible' : 'hidden' }}>⚡</span>
+          </span>
         </div>
 
         {/* Tiles */}
