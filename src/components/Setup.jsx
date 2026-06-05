@@ -222,6 +222,8 @@ export default function Setup() {
       {!canStart && (
         <p className="hint">{activeLanguage ? 'Loading vocabulary…' : 'Tap the flag above to choose a language.'}</p>
       )}
+
+      <div className="setup-version">v0.31</div>
     </div>
   )
 }

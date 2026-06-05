@@ -310,3 +310,11 @@
   background: rgba(232,200,74,0.12);
   border-radius: 6px;
 }
+
+.setup-version {
+  text-align: center;
+  font-size: 0.65rem;
+  color: #bbb;
+  padding: 0.8rem 0 0.5rem;
+  letter-spacing: 0.05em;
+}
