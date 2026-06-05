@@ -57,7 +57,7 @@
   border: 1.5px solid #e0e0e0;
   border-radius: 10px;
   font-size: 0.9rem;
-  background: #fff;
+  background: var(--card-bg);
   outline: none;
   transition: border-color 0.15s;
 }
@@ -79,7 +79,7 @@
   border: 1.5px solid #e0e0e0;
   border-radius: 8px;
   font-size: 0.78rem;
-  background: #fff;
+  background: var(--card-bg);
   color: #444;
   cursor: pointer;
   outline: none;
@@ -287,7 +287,7 @@
   .vb-tog      { background: #1e1e1e; border-color: #333; color: #aaa; }
   .vb-tog.on   { background: #0d1a3a; border-color: #4f7ef8; color: #4f7ef8; }
   .vb-row      { border-color: #222; }
-  .vb-trans    { color: #bbb; }
+  .vb-trans    { color: #c0c0c0; }
   .vb-level    { background: #2a2a2a; color: #aaa; }
   .vb-back:hover { color: #eee; }
 }

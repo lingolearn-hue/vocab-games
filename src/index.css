@@ -74,3 +74,39 @@ button:focus:not(:focus-visible) { outline: none; }
   --text-muted:     #666;
   --text-faint:     #999;
 }
+
+/* ── Card & surface color variables ──────────────────────────────── */
+:root {
+  /* Cards/panels sitting on page background */
+  --card-bg:       #ffffff;
+  --card-text:     #111111;   /* primary text on card */
+  --card-text2:    #444444;   /* secondary text on card */
+
+  /* Input fields, option buttons */
+  --input-bg:      #ffffff;
+  --input-text:    #111111;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --card-bg:       #1e1e1e;
+    --card-text:     #f0f0f0;
+    --card-text2:    #c0c0c0;
+    --input-bg:      #1e1e1e;
+    --input-text:    #f0f0f0;
+  }
+}
+[data-theme="dark"] {
+  --card-bg:       #1e1e1e;
+  --card-text:     #f0f0f0;
+  --card-text2:    #c0c0c0;
+  --input-bg:      #1e1e1e;
+  --input-text:    #f0f0f0;
+}
+[data-theme="light"] {
+  --card-bg:       #ffffff;
+  --card-text:     #111111;
+  --card-text2:    #444444;
+  --input-bg:      #ffffff;
+  --input-text:    #111111;
+}

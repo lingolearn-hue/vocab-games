@@ -84,7 +84,7 @@
 .ty-card {
   width: 100%;
   max-width: 360px;
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 20px;
   box-shadow: 0 6px 24px rgba(0,0,0,0.08);
   padding: 2rem 1.8rem 1.4rem;
@@ -140,7 +140,7 @@
   border: 2px solid #e0e0e0;
   border-radius: 12px;
   font-size: 1rem;
-  background: #fff;
+  background: var(--card-bg);
   color: #111;
   outline: none;
   transition: border-color 0.15s;

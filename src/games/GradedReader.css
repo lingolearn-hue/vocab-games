@@ -98,7 +98,7 @@
   padding: 0.9rem 1rem;
   border: 1.5px solid #e8e8e8;
   border-radius: 12px;
-  background: #fff;
+  background: var(--card-bg);
   cursor: pointer;
   text-align: left;
   transition: border-color 0.12s, background 0.12s;
@@ -166,7 +166,7 @@
   border-radius: 10px;
   font-size: 0.95rem;
   line-height: 1.7;
-  background: #fff;
+  background: var(--card-bg);
   color: #111;
   outline: none;
   resize: vertical;
@@ -278,7 +278,7 @@
   .gr-screen        { background: #111; }
   .gr-header        { border-color: #222; }
   .gr-back:hover    { color: #eee; }
-  .gr-back          { color: #aaa; }
+  .gr-back          { color: #c0c0c0; }
   .gr-title         { color: #eee; }
   .gr-passage-card  { background: #1e1e1e; border-color: #2a2a2a; }
   .gr-passage-card:hover { background: #1a2340; border-color: #4f7ef8; }
@@ -289,7 +289,7 @@
   .gr-text          { color: #ddd; }
   .gr-translation   { background: #1a1a1a; border-color: #333; color: #bbb; }
   .gr-legend        { border-color: #222; }
-  .gr-tab           { color: #aaa; }
+  .gr-tab           { color: #c0c0c0; }
   .gr-header-tabs   { border-color: #333; }
   .gr-tab           { border-color: #333; }
 }

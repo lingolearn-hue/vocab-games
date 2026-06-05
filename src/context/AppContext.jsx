@@ -83,9 +83,13 @@ export function AppProvider({ children }) {
     if (saved) setActiveLanguage(saved)
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-  const direction    = settings.direction
+  // Derive direction from answerFields — this is what Settings actually writes to
+  const direction = useMemo(() => {
+    const { prompt, answer } = settings.answerFields?.global ?? { prompt: 'entry', answer: 'translation' }
+    if (prompt === 'translation' || answer === 'entry') return 'translation->entry'
+    return 'entry->translation'
+  }, [settings.answerFields])
   const showReading  = settings.showReading
-  const setDirection   = (v) => updateSettings(s => ({ ...s, direction: v }))
   const setShowReading = (v) => updateSettings(s => ({ ...s, showReading: typeof v === 'function' ? v(s.showReading) : v }))
 
   function updateSettings(updater) {
@@ -172,7 +176,7 @@ export function AppProvider({ children }) {
       ensureLoaded,
       activeEntries, sessionEntries, setSessionEntries, vocabLoading,
       activeSentences,
-      direction, setDirection,
+      direction,
       showReading, setShowReading,
       screen, setScreen, goBack,
       scores, scoreActions,

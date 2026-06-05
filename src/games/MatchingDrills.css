@@ -71,7 +71,7 @@
   padding: 0.9rem 1rem;
   border: 1.5px solid #e0e0e0;
   border-radius: 14px;
-  background: white;
+  background: var(--card-bg);
   cursor: pointer;
   text-align: left;
   transition: border-color 0.12s, background 0.12s;
@@ -107,7 +107,7 @@
 
 /* Question card */
 .md-card {
-  background: #fff;
+  background: var(--card-bg);
   border: 1.5px solid #e0e0e0;
   border-radius: 16px;
   padding: 1.8rem 1.2rem 1.2rem;
@@ -178,7 +178,7 @@
   padding: 0.75rem 0.5rem;
   border: 1.5px solid #e0e0e0;
   border-radius: 12px;
-  background: #fff;
+  background: var(--card-bg);
   cursor: pointer;
   font-size: 1.1rem;
   font-weight: 700;
@@ -264,7 +264,7 @@
   .md-header { border-color: #e0e0e0; }
   .md-back:hover { color: #111; }
   .md-title { color: #111; }
-  .md-drill-card { background: white; }
+  .md-drill-card { background: var(--card-bg); }
   .md-drill-card:hover { background: #fff; }
   .md-drill-label { color: #111; }
   .md-card { background: #fff; border-color: #e0e0e0; }
@@ -367,7 +367,7 @@
 @media (prefers-color-scheme: dark) {
   .md-pinyin-toggle { background: #1e1e1e; border-color: #333; color: #aaa; }
   .md-pinyin-toggle.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
-  .md-tone-syl-above { color: #aaa; }
+  .md-tone-syl-above { color: #c0c0c0; }
   .md-tone-syl-above.target { color: #7fa4ff; }
 }
 [data-theme="dark"] .md-pinyin-toggle { background: #1e1e1e; border-color: #333; color: #aaa; }
