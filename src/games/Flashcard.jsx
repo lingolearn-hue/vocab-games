@@ -421,7 +421,7 @@ export default function Flashcard() {
               ) : (
                 <div className="fc-mnemonic-text">
                   {savedMnemonic
-                    ? <TextWithLookup text={savedMnemonic} language={language} lookup={lookup} scores={scores} showReading={showReading} noHighlight />
+                    ? <TextWithLookup text={savedMnemonic} language={language} lookup={lookup} scores={scores} showReading={showReading} />
                     : <span className="fc-mnemonic-empty">No further details yet. Add a mnemonic to help remember this word.</span>
                   }
                 </div>

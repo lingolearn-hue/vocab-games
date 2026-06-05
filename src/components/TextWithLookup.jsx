@@ -21,7 +21,7 @@ import './TextWithLookup.css'
 
 const CJK_LANGS = new Set(['zh', 'ja', 'ko'])
 
-export function TextWithLookup({ text, language, lookup, scores, showReading, className = '', noHighlight = false }) {
+export function TextWithLookup({ text, language, lookup, scores, showReading, className = '' }) {
   const [tapped, setTapped] = useState(null)  // { entry, surface, conjugated }
 
   const spans = tokenise(text, lookup, language)
@@ -47,12 +47,12 @@ export function TextWithLookup({ text, language, lookup, scores, showReading, cl
           if (!span.entry) {
             return <span key={i} className="twl-plain">{span.text}</span>
           }
-          const status = noHighlight ? 'none' : (scores[span.entry.id]?.global ?? 'unseen')
+          const status = scores[span.entry.id]?.global ?? 'unseen'
           const isActive = tapped?.entry?.id === span.entry.id
           return (
             <span
               key={i}
-              className={`twl-word ${noHighlight ? '' : `twl-word--${status}`} ${isActive ? 'twl-word--active' : ''} ${span.conjugated ? 'twl-word--conjugated' : ''}`}
+              className={`twl-word twl-word--${status} ${isActive ? 'twl-word--active' : ''} ${span.conjugated ? 'twl-word--conjugated' : ''}`}
               onClick={e => handleTap(span, e)}
             >
               {span.text}

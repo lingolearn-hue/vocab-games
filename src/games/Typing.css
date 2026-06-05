@@ -84,7 +84,7 @@
 .ty-card {
   width: 100%;
   max-width: 360px;
-  background: var(--card-bg);
+  background: #fff;
   border-radius: 20px;
   box-shadow: 0 6px 24px rgba(0,0,0,0.08);
   padding: 2rem 1.8rem 1.4rem;
@@ -140,7 +140,7 @@
   border: 2px solid #e0e0e0;
   border-radius: 12px;
   font-size: 1rem;
-  background: var(--card-bg);
+  background: #fff;
   color: #111;
   outline: none;
   transition: border-color 0.15s;
@@ -317,7 +317,7 @@
   .ty-score    { color: #eee; }
   .ty-dot      { background: #333; }
   .ty-answer-text { color: #ddd; }
-  .ty-btn-skip { background: #2a2a2a; color: #aaa; }
+  .ty-btn-skip { background: #2a2a2a; color: #666; }
   .ty-btn-skip:hover { background: #333; }
   .ty-settings-btn { border-color: #333; }
 }
@@ -333,6 +333,6 @@
 [data-theme="dark"] .ty-score    { color: #eee; }
 [data-theme="dark"] .ty-dot      { background: #333; }
 [data-theme="dark"] .ty-answer-text { color: #ddd; }
-[data-theme="dark"] .ty-btn-skip { background: #2a2a2a; color: #aaa; }
+[data-theme="dark"] .ty-btn-skip { background: #2a2a2a; color: #666; }
 [data-theme="dark"] .ty-btn-skip:hover { background: #333; }
 [data-theme="dark"] .ty-settings-btn { border-color: #333; }

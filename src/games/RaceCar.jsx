@@ -11,7 +11,7 @@ function truncate(text) {
 }
 
 const LANE_COUNT = 3
-const TILE_HEIGHT = 90
+const TILE_HEIGHT = 80
 const BASE_SPEED = 120 // px per second at x1
 const BOOST_MULTIPLIER = 1.5
 const STREAK_THRESHOLDS = [1, 3, 6, 10] // streak levels
@@ -34,8 +34,6 @@ export default function RaceCar() {
   const { activeEntries: allEntries, direction, showReading, scoreActions, scores, settings, updateSettings, setScreen, goBack, getEntriesForGame, vocabLoading } = useApp()
   const { entries: activeEntries, isEmpty: levelEmpty } = getEntriesForGame('racecar')
   const { defaultSpeed, boostEnabled } = settings.racecar
-  const speedRef = useRef(defaultSpeed)
-  useEffect(() => { speedRef.current = defaultSpeed }, [defaultSpeed])
 
   // Game state
   const [tiles, setTiles]         = useState([])
@@ -175,7 +173,7 @@ export default function RaceCar() {
     lastTimeRef.current = timestamp
 
     if (!crashRef.current) {
-      const speed = BASE_SPEED * speedRef.current * (boostRef.current ? BOOST_MULTIPLIER : 1)
+      const speed = BASE_SPEED * defaultSpeed * (boostRef.current ? BOOST_MULTIPLIER : 1) * getStreakMultiplier(streakRef.current)
       const dy = speed * dt
 
       setTiles(prev => {
@@ -264,45 +262,33 @@ export default function RaceCar() {
     if (!el) return
     const rect = el.getBoundingClientRect()
 
-    // X — smooth continuous, update DOM directly
+    // X — smooth, clamped, update DOM directly
     const CAR_HALF = 24
     const relX = Math.max(CAR_HALF, Math.min(rect.width - CAR_HALF, clientX - rect.left))
     carPosRef.current.x = relX
     if (carRef.current) {
       carRef.current.style.left   = `${relX - CAR_HALF}px`
+      carRef.current.style.bottom = 'auto'
     }
 
-    // Lane for collision
+    // Lane for collision — still needs state update (but less frequent is fine)
     const lane = Math.min(2, Math.max(0, Math.floor(((clientX - rect.left) / rect.width) * 3)))
     carLaneRef.current = lane
 
-    // Y — snap to one of two fixed positions based on zone
-    // Normal zone: top of normal zone = bottom 15% line
-    // Boost zone: top of boost zone = bottom 25% line
-    // No continuous Y — eliminates layout reflow on every pointermove
-    const relYRatio = (clientY - rect.top) / rect.height
-    const inBoostZone  = relYRatio >= 0.60 && relYRatio < 0.78
-    const inNormalZone = relYRatio >= 0.78
-
-    // Snap Y: boost position = top of boost zone (32% from bottom), normal = top of normal zone (22%)
+    // Y — follow finger within bottom 25% zone
     const CAR_HEIGHT = 72
-    const normalY = rect.height * 0.78 - CAR_HEIGHT / 2
-    const boostY  = rect.height * 0.65 - CAR_HEIGHT / 2
-
-    if (inBoostZone || inNormalZone) {
-      const snapY = inBoostZone ? boostY : normalY
-      if (carPosRef.current.y !== snapY) {
-        carPosRef.current.y = snapY
-        if (carRef.current) {
-          carRef.current.style.top    = `${snapY}px`
-          carRef.current.style.bottom = 'auto'
-        }
-      }
+    const relY = clientY - rect.top
+    const zoneTop   = rect.height * 0.75
+    const clampedY  = Math.max(zoneTop, Math.min(rect.height - CAR_HEIGHT - 4, relY - CAR_HEIGHT / 2))
+    carPosRef.current.y = clampedY
+    if (carRef.current) {
+      carRef.current.style.top = `${clampedY}px`
     }
 
-    // Boost toggle
+    // Boost zone
     if (!boostEnabled) { setBoosting(false); boostRef.current = false; return }
-    const isBoost = inBoostZone
+    const relYRatio = (clientY - rect.top) / rect.height
+    const isBoost = relYRatio < 0.85 && relYRatio >= 0.75
     if (isBoost !== boostRef.current) {
       setBoosting(isBoost)
       boostRef.current = isBoost
@@ -318,7 +304,7 @@ export default function RaceCar() {
   const posPct  = seenCount > 0 ? Math.round((positiveCount / seenCount) * 100) : 0
 
   // Speed lines scale with speed and boost
-  const lineBase = Math.round(8 + speedRef.current * 14)
+  const lineBase = Math.round(8 + defaultSpeed * 14)
   const lineMult = boosting ? 2 : 1
   const lineWidths = [lineBase * lineMult, Math.round(lineBase * 0.7) * lineMult, Math.round(lineBase * 0.5) * lineMult]
 
@@ -380,10 +366,7 @@ export default function RaceCar() {
             className="rc-slider"
             orient="vertical"
           />
-          <span className="rc-slider-label">
-            x{defaultSpeed.toFixed(1)}
-            <span className="rc-slider-boost" style={{ visibility: boosting ? 'visible' : 'hidden' }}>⚡</span>
-          </span>
+          <span className="rc-slider-label">x{defaultSpeed.toFixed(1)}{boosting ? '⚡' : ''}</span>
         </div>
 
         {/* Tiles */}

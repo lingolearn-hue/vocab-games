@@ -261,7 +261,7 @@
   .lang-picker-item { border-color: #2a2a2a; color: #ccc; }
   .lang-picker-item:hover  { background: #1a2340; }
   .lang-picker-item.active { background: #1a2340; color: #4f7ef8; }
-  .stats-bar        { background: #1e1e1e; color: #aaa; }
+  .stats-bar        { background: #1e1e1e; color: #666; }
   .vocab-browser-btn { background: #0d1a3a; border-color: #4f7ef8; }
   .vocab-browser-btn:hover:not(.disabled) { background: #1a2340; }
   .vocab-browser-btn.disabled { background: #1a1a1a; border-color: #2a2a2a; }
@@ -285,9 +285,9 @@
 [data-theme="dark"] .lang-picker-item { border-color: #2a2a2a; color: #ccc; }
 [data-theme="dark"] .lang-picker-item:hover  { background: #1a2340; }
 [data-theme="dark"] .lang-picker-item.active { background: #1a2340; color: #4f7ef8; }
-[data-theme="dark"] .level-chip { background: #1e1e1e; border-color: #333; color: #aaa; }
+[data-theme="dark"] .level-chip { background: #1e1e1e; border-color: #333; color: #555; }
 [data-theme="dark"] .level-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
-[data-theme="dark"] .stats-bar        { background: #1e1e1e; color: #aaa; }
+[data-theme="dark"] .stats-bar        { background: #1e1e1e; color: #666; }
 [data-theme="dark"] .vocab-browser-btn { background: #0d1a3a; border-color: #4f7ef8; }
 [data-theme="dark"] .vocab-browser-btn:hover:not(.disabled) { background: #1a2340; }
 [data-theme="dark"] .vocab-browser-btn.disabled { background: #1a1a1a; border-color: #2a2a2a; }

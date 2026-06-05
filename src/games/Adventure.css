@@ -1,12 +1,3 @@
-:root {
-  --dm-bright:    #f0f0f0;  /* primary text on dark bg — almost white */
-  --dm-text:      #e0e0e0;  /* standard body text */
-  --dm-soft:      #c8c8c8;  /* secondary text */
-  --dm-hint:      #b0b0b0;  /* hints, labels */
-  --dm-secondary: #b0b0b0;  /* secondary labels */
-  --dm-muted:     #a0a0a0;  /* very secondary — still clearly readable */
-}
-
 /* ── Adventure Map Screen ───────────────────────────────────────────────────── */
 
 .adv-screen {
@@ -16,7 +7,7 @@
   max-width: 480px;
   margin: 0 auto;
   background: #0a0a1a;
-  color: var(--dm-bright);
+  color: #eee;
 }
 
 .adv-header {
@@ -32,7 +23,7 @@
   background: none;
   border: 1.5px solid #333;
   border-radius: 8px;
-  color: var(--dm-hint);
+  color: #888;
   font-size: 0.8rem;
   padding: 0.35rem 0.7rem;
   cursor: pointer;
@@ -45,14 +36,14 @@
   flex: 1;
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--dm-text);
+  color: #ddd;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 .adv-progress-label {
   font-size: 0.78rem;
-  color: var(--dm-muted);
+  color: #555;
   font-weight: 600;
 }
 
@@ -73,7 +64,7 @@
 
 .adv-campaign-sub {
   font-size: 0.78rem;
-  color: var(--dm-secondary);
+  color: #666;
   line-height: 1.5;
   margin-bottom: 0.6rem;
 }
@@ -155,16 +146,16 @@
 .adv-chapter-title {
   font-size: 0.92rem;
   font-weight: 600;
-  color: var(--dm-text);
+  color: #ccc;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.adv-chapter-card.next .adv-chapter-title { color: var(--dm-bright); }
+.adv-chapter-card.next .adv-chapter-title { color: #eee; }
 
 .adv-chapter-sub {
   font-size: 0.72rem;
-  color: var(--dm-muted);
+  color: #555;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -188,7 +179,7 @@
 
 .adv-artifact-badge {
   font-size: 0.65rem;
-  color: var(--dm-secondary);
+  color: #666;
 }
 
 .adv-chapter-status { flex-shrink: 0; min-width: 2rem; text-align: right; }
@@ -207,7 +198,7 @@
 
 .adv-empty {
   text-align: center;
-  color: var(--dm-muted);
+  color: #555;
   margin-top: 4rem;
   font-size: 0.88rem;
   padding: 0 1.5rem;

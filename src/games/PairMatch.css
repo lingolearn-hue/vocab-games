@@ -65,7 +65,7 @@
 /* Items — fixed uniform height so all cards are same size */
 .pm-item {
   flex: 0 0 auto;
-  height: 90px;        /* fixed — uniform across all items */
+  height: 80px;        /* fixed — uniform across all items */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,7 +73,7 @@
   padding: 0.4rem 0.5rem;
   border: 2px solid #e0e0e0;
   border-radius: 12px;
-  background: var(--card-bg);
+  background: #fff;
   cursor: pointer;
   text-align: center;
   transition: border-color 0.12s, background 0.12s, opacity 0.2s, transform 0.12s;
@@ -96,7 +96,7 @@
 
 /* CJK glyphs are compact — can afford larger size */
 .pm-item--cjk .pm-label {
-  font-size: clamp(1.4rem, 6vw, 2rem);
+  font-size: clamp(1.1rem, 5vw, 1.6rem);
 }
 
 .pm-sub {
@@ -181,7 +181,7 @@
 
 @media (prefers-color-scheme: dark) {
   .pm-item { background: #1e1e1e; border-color: #333; color: #eee; }
-  .pm-sub { color: #c0c0c0; }
+  .pm-sub { color: #666; }
   .pm-item--selected { background: #1a2340; border-color: #4f7ef8; }
   .pm-item--matched  { background: #182d24; border-color: #22a06b; }
   .pm-item--wrong    { background: #2d1a19; border-color: #e5534b; }
@@ -189,7 +189,7 @@
   .pm-back:hover     { color: #eee; }
 }
 [data-theme="dark"] .pm-item { background: #1e1e1e; border-color: #333; color: #eee; }
-[data-theme="dark"] .pm-sub { color: #aaa; }
+[data-theme="dark"] .pm-sub { color: #666; }
 [data-theme="dark"] .pm-item--selected { background: #1a2340; border-color: #4f7ef8; }
 [data-theme="dark"] .pm-item--matched  { background: #182d24; border-color: #22a06b; }
 [data-theme="dark"] .pm-item--wrong    { background: #2d1a19; border-color: #e5534b; }
@@ -199,7 +199,7 @@
 /* Override RubyText inside pair items — dynamic sizing */
 .pm-item .ruby-sm,
 .pm-item .ruby-plain {
-  font-size: clamp(1.0rem, 4.5vw, 1.6rem);
+  font-size: clamp(0.8rem, 4vw, 1.4rem);
   line-height: 1.35;
   font-weight: 500;
   text-align: center;
@@ -210,5 +210,5 @@
 .pm-item .ruby-sm[lang="zh"],
 .pm-item .ruby-sm[lang="ja"],
 .pm-item--cjk .ruby-sm {
-  font-size: clamp(1.5rem, 6vw, 2.2rem);
+  font-size: clamp(1.3rem, 5vw, 1.9rem);
 }

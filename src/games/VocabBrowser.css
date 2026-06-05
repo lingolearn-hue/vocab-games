@@ -57,7 +57,7 @@
   border: 1.5px solid #e0e0e0;
   border-radius: 10px;
   font-size: 0.9rem;
-  background: var(--card-bg);
+  background: #fff;
   outline: none;
   transition: border-color 0.15s;
 }
@@ -79,7 +79,7 @@
   border: 1.5px solid #e0e0e0;
   border-radius: 8px;
   font-size: 0.78rem;
-  background: var(--card-bg);
+  background: #fff;
   color: #444;
   cursor: pointer;
   outline: none;
@@ -284,11 +284,11 @@
   .vb-search   { background: #1e1e1e; border-color: #333; color: #eee; }
   .vb-search:focus { border-color: #4f7ef8; }
   .vb-select   { background: #1e1e1e; border-color: #333; color: #ccc; }
-  .vb-tog      { background: #1e1e1e; border-color: #333; color: #aaa; }
+  .vb-tog      { background: #1e1e1e; border-color: #333; color: #555; }
   .vb-tog.on   { background: #0d1a3a; border-color: #4f7ef8; color: #4f7ef8; }
   .vb-row      { border-color: #222; }
-  .vb-trans    { color: #c0c0c0; }
-  .vb-level    { background: #2a2a2a; color: #aaa; }
+  .vb-trans    { color: #777; }
+  .vb-level    { background: #2a2a2a; color: #666; }
   .vb-back:hover { color: #eee; }
 }
 [data-theme="dark"] .vb-screen   { background: #111; }
@@ -296,9 +296,9 @@
 [data-theme="dark"] .vb-search   { background: #1e1e1e; border-color: #333; color: #eee; }
 [data-theme="dark"] .vb-search:focus { border-color: #4f7ef8; }
 [data-theme="dark"] .vb-select   { background: #1e1e1e; border-color: #333; color: #ccc; }
-[data-theme="dark"] .vb-tog      { background: #1e1e1e; border-color: #333; color: #aaa; }
+[data-theme="dark"] .vb-tog      { background: #1e1e1e; border-color: #333; color: #555; }
 [data-theme="dark"] .vb-tog.on   { background: #0d1a3a; border-color: #4f7ef8; color: #4f7ef8; }
 [data-theme="dark"] .vb-row      { border-color: #222; }
-[data-theme="dark"] .vb-trans    { color: #bbb; }
-[data-theme="dark"] .vb-level    { background: #2a2a2a; color: #aaa; }
+[data-theme="dark"] .vb-trans    { color: #777; }
+[data-theme="dark"] .vb-level    { background: #2a2a2a; color: #666; }
 [data-theme="dark"] .vb-back:hover { color: #eee; }
