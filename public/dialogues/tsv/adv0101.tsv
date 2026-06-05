@@ -1,0 +1,52 @@
+# adv0101 — Adventure Campaign, Level 01, Chapter 01: Guild Initiation
+# Grammar scope: は・です・か・も
+# Vocab scope: greetings, names, professions (ch01)
+# Speakers: guild_master (Leon), emma, player, narrator
+
+@columns	id	speaker	cmd	en	zh	ja	de	es
+
+# ── Dialogue 1: Meeting the Guild Master ──────────────────────────────────────
+
+adv010101-01	narrator		This is the guild.	这是公会。	ここはギルドです。	Das ist die Gilde.	Este es el gremio.
+adv010101-02	narrator		There are many adventurers here.	这里有很多冒险者。	ここには冒険者がたくさんいます。	Hier gibt es viele Abenteurer.	Aquí hay muchos aventureros.
+adv010101-03	guild_master		Hello! I am Leon.	你好！我是里昂。	こんにちは！わたしはレオンです。	Hallo! Ich bin Leon.	¡Hola! Soy León.
+adv010101-04	guild_master		I am the guild master.	我是公会长。	わたしはギルドマスターです。	Ich bin der Gildemaster.	Soy el maestro del gremio.
+adv010101-05	guild_master		Are you the new apprentice?	你是新来的学徒吗？	あなたは新しい見習いですか？	Bist du der neue Lehrling?	¿Eres el nuevo aprendiz?
+
+adv010101-06a	player		Yes. I am Alex.	是的。我是阿历克斯。	はい。わたしはアレックスです。	Ja. Ich bin Alex.	Sí. Soy Alex.
+adv010101-06b	player		...	……	…	…	…
+
+adv010101-07a	guild_master		Alex! Good name. Welcome.	阿历克斯！好名字。欢迎！	アレックス！いい名前です。ようこそ。	Alex! Guter Name. Willkommen.	¡Alex! Buen nombre. Bienvenido.
+adv010101-07b	guild_master		That is fine too. Welcome.	这也没关系。欢迎！	それもいいです。ようこそ。	Das ist auch gut. Willkommen.	Eso también está bien. Bienvenido.
+
+adv010101-08	guild_master		Emma is also an apprentice.	艾玛也是学徒。	エマも見習いです。	Emma ist auch ein Lehrling.	Emma también es aprendiz.
+adv010101-09	emma		Hello! Nice to meet you.	你好！很高兴认识你。	こんにちは！はじめまして。	Hallo! Schön, dich kennenzulernen.	¡Hola! Encantada de conocerte.
+adv010101-10	emma		I am also a new apprentice.	我也是新来的学徒。	わたしも新しい見習いです。	Ich bin auch ein neuer Lehrling.	Yo también soy una nueva aprendiz.
+
+adv010101-11q	question		Who is Leon?	里昂是谁？	レオンは誰ですか？	Wer ist Leon?	¿Quién es León?
+adv010101-12a	option	correct	The guild master.	公会长。	ギルドマスターです。	Der Gildemaster.	El maestro del gremio.
+adv010101-12b	option		An apprentice.	学徒。	見習いです。	Ein Lehrling.	Un aprendiz.
+adv010101-12c	option		A villager.	村民。	村人です。	Ein Dorfbewohner.	Un aldeano.
+
+
+# ── Dialogue 2: The Missing Crystal ──────────────────────────────────────────
+
+adv010102-01	guild_master		This is important.	这很重要。	これは大切なことです。	Das ist wichtig.	Esto es importante.
+adv010102-02	guild_master		The Crystal of Light is not here.	光之水晶不在这里。	光のクリスタルはここにありません。	Das Kristall des Lichts ist nicht hier.	El Cristal de Luz no está aquí.
+adv010102-03	emma		The Crystal of Light?	光之水晶？	光のクリスタルですか？	Das Kristall des Lichts?	¿El Cristal de Luz?
+adv010102-04	guild_master		Yes. It is very important.	是的。它非常重要。	はい。とても大切です。	Ja. Es ist sehr wichtig.	Sí. Es muy importante.
+adv010102-05	guild_master		Are you also an adventurer?	你也是冒险者吗？	あなたも冒険者ですか？	Bist du auch ein Abenteurer?	¿Tú también eres aventurero?
+
+adv010102-06a	player		Yes! I am an adventurer.	是的！我是冒险者。	はい！わたしは冒険者です。	Ja! Ich bin ein Abenteurer.	¡Sí! Soy un aventurero.
+adv010102-06b	player		I am only an apprentice.	我只是个学徒。	わたしは見習いだけです。	Ich bin nur ein Lehrling.	Solo soy un aprendiz.
+
+adv010102-07a	guild_master		Good! Let us search together.	好！我们一起找吧。	よかった！一緒に探しましょう。	Gut! Lasst uns gemeinsam suchen.	¡Bien! Busquemos juntos.
+adv010102-07b	guild_master		That is also fine. Let us search together.	那也没关系。我们一起找吧。	それもいいです。一緒に探しましょう。	Das ist auch gut. Lasst uns gemeinsam suchen.	Eso también está bien. Busquemos juntos.
+
+adv010102-08	emma		Where is the crystal?	水晶在哪里？	クリスタルはどこですか？	Wo ist das Kristall?	¿Dónde está el cristal?
+adv010102-09	guild_master		I do not know. That is the question.	我不知道。这就是问题所在。	わかりません。それが問題です。	Ich weiß es nicht. Das ist die Frage.	No lo sé. Esa es la pregunta.
+
+adv010102-10q	question		What is not here?	什么不在这里？	何がここにありませんか？	Was ist nicht hier?	¿Qué no está aquí?
+adv010102-11a	option	correct	The Crystal of Light.	光之水晶。	光のクリスタルです。	Das Kristall des Lichts.	El Cristal de Luz.
+adv010102-11b	option		Leon.	里昂。	レオンです。	Leon.	León.
+adv010102-11c	option		Emma.	艾玛。	エマです。	Emma.	Emma.

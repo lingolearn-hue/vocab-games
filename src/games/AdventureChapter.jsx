@@ -1,6 +1,7 @@
-import { useState, useEffect, useMemo, useCallback } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { useApp } from '../context/AppContext'
 import { buildLookup } from '../engine/reader'
+import { loadTSVDialogue } from '../engine/dialogueTSV'
 import { TextWithLookup } from '../components/TextWithLookup'
 import SpeakButton from '../components/SpeakButton'
 import GrammarDictionary from './GrammarDictionary'
@@ -8,44 +9,31 @@ import './AdventureChapter.css'
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
-const PHASES = ['vocab', 'grammar', 'dialogue', 'passage', 'complete']
-
-function phaseIndex(phase) { return PHASES.indexOf(phase) }
-
-// Resolve chapter word IDs to actual vocab entries
 function resolveWordIds(wordIds, activeEntries) {
   if (!wordIds?.length) return []
   const byEntry = new Map(activeEntries.map(e => [e.entry, e]))
   return wordIds.map(id => byEntry.get(id)).filter(Boolean)
 }
 
-// ── Phase: Vocab ───────────────────────────────────────────────────────────────
+// ── Vocab Phase ───────────────────────────────────────────────────────────────
 
-function VocabPhase({ chapter, entries, onDone, language }) {
-  const { setScreen, goBack, setSessionEntries } = useApp()
-  const [launched, setLaunched] = useState(false)
+function VocabPhase({ chapter, entries, language, onBack }) {
+  const { setScreen, setSessionEntries } = useApp()
 
   function launchGame(game) {
     setSessionEntries(entries)
-    setLaunched(true)
     setScreen(game)
   }
 
-  // When player returns from a game back to adventure
-  useEffect(() => {
-    if (launched) {
-      setSessionEntries(null)
-      setLaunched(false)
-    }
-  }, [])
-
   return (
     <div className="advc-phase">
-      <div className="advc-phase-icon">📚</div>
-      <h2 className="advc-phase-title">{chapter.vocabLesson.title}</h2>
-      <p className="advc-phase-desc">{chapter.vocabLesson.description}</p>
+      <div className="advc-phase-header">
+        <button className="advc-back-small" onClick={onBack}>← Back</button>
+        <div className="advc-phase-icon">📚</div>
+        <h2 className="advc-phase-title">{chapter.vocabLesson?.title ?? 'Vocabulary'}</h2>
+      </div>
+      <p className="advc-phase-desc">{chapter.vocabLesson?.description}</p>
 
-      {/* Word preview list */}
       <div className="advc-word-list">
         {entries.map(e => (
           <div key={e.id} className="advc-word-item">
@@ -55,78 +43,48 @@ function VocabPhase({ chapter, entries, onDone, language }) {
             <SpeakButton text={e.entry} language={language} size="sm" />
           </div>
         ))}
+        {entries.length === 0 && (
+          <p className="advc-warn">⚠ No vocab entries found for this chapter.</p>
+        )}
       </div>
-
-      {entries.length === 0 && (
-        <p className="advc-warn">⚠ Vocab entries not found. Make sure your Japanese vocab list is loaded.</p>
-      )}
 
       <div className="advc-game-row">
         <span className="advc-game-label">Train with:</span>
         <div className="advc-game-btns">
-          <button className="advc-game-btn" onClick={() => launchGame('flashcard')} disabled={entries.length < 1}>
-            🃏 Flashcard
-          </button>
-          <button className="advc-game-btn" onClick={() => launchGame('pairmatch')} disabled={entries.length < 2}>
-            🔗 Match
-          </button>
-          <button className="advc-game-btn" onClick={() => launchGame('racecar')} disabled={entries.length < 3}>
-            🏎 Race Car
-          </button>
+          <button className="advc-game-btn" onClick={() => launchGame('flashcard')} disabled={entries.length < 1}>🃏 Flashcard</button>
+          <button className="advc-game-btn" onClick={() => launchGame('pairmatch')} disabled={entries.length < 2}>🔗 Match</button>
+          <button className="advc-game-btn" onClick={() => launchGame('racecar')}   disabled={entries.length < 3}>🏎 Race Car</button>
         </div>
       </div>
-
-      <button className="advc-continue-btn" onClick={onDone}>
-        Continue to Grammar →
-      </button>
     </div>
   )
 }
 
-// ── Phase: Grammar ─────────────────────────────────────────────────────────────
+// ── Grammar Phase ─────────────────────────────────────────────────────────────
 
-function GrammarPhase({ chapter, onDone }) {
+function GrammarPhase({ chapter, onBack }) {
   const [doneIds, setDoneIds] = useState(new Set())
   const [showDict, setShowDict] = useState(false)
-  const patterns = chapter.grammarLesson.patterns ?? []
+  const patterns = chapter.grammarLesson?.patterns ?? []
 
-  function markDone(id) {
-    setDoneIds(prev => new Set([...prev, id]))
-  }
-
-  if (showDict) {
-    return (
-      <GrammarDictionary
-        patterns={patterns}
-        onBack={() => setShowDict(false)}
-      />
-    )
-  }
+  if (showDict) return <GrammarDictionary patterns={patterns} onBack={() => setShowDict(false)} />
 
   return (
     <div className="advc-phase">
-      <div className="advc-phase-icon">📐</div>
-      <h2 className="advc-phase-title">{chapter.grammarLesson.title}</h2>
-      <p className="advc-phase-desc">{chapter.grammarLesson.description}</p>
+      <div className="advc-phase-header">
+        <button className="advc-back-small" onClick={onBack}>← Back</button>
+        <div className="advc-phase-icon">📐</div>
+        <h2 className="advc-phase-title">{chapter.grammarLesson?.title ?? 'Grammar'}</h2>
+      </div>
+      <p className="advc-phase-desc">{chapter.grammarLesson?.description}</p>
 
       <div className="advc-pattern-list">
         {patterns.map(p => (
-          <GrammarPatternCard
-            key={p.id}
-            pattern={p}
-            done={doneIds.has(p.id)}
-            onDone={() => markDone(p.id)}
-          />
+          <GrammarPatternCard key={p.id} pattern={p} done={doneIds.has(p.id)} onDone={() => setDoneIds(prev => new Set([...prev, p.id]))} />
         ))}
       </div>
 
-      <button className="advc-dict-btn" onClick={() => setShowDict(true)}>
-        📖 Grammar Dictionary
-      </button>
-
-      <button className="advc-continue-btn" onClick={onDone}>
-        Continue to Dialogue →
-      </button>
+      <button className="advc-dict-btn" onClick={() => setShowDict(true)}>📖 Grammar Dictionary</button>
     </div>
   )
 }
@@ -135,27 +93,24 @@ function GrammarPatternCard({ pattern, done, onDone }) {
   const [open, setOpen] = useState(false)
   const [answered, setAnswered] = useState(null)
   const [chosen, setChosen] = useState(null)
-  const [tileOrder, setTileOrder] = useState(null)
 
-  // Shuffle distractors for fill-blank
   const options = useMemo(() => {
     if (pattern.type !== 'fill-blank') return []
     return [...pattern.distractors].sort(() => Math.random() - 0.5)
-  }, [pattern])
+  }, [pattern.id])
 
   function answerFillBlank(opt) {
     if (answered) return
     const correct = opt === pattern.distractors[0]
-    setChosen(opt)
-    setAnswered(correct ? 'correct' : 'wrong')
-    if (correct) setTimeout(onDone, 800)
+    setChosen(opt); setAnswered(correct ? 'correct' : 'wrong')
+    if (correct) setTimeout(onDone, 600)
   }
 
-  function answerPickCorrect(sentence, isCorrect) {
+  function answerPickCorrect(sentence) {
     if (answered) return
-    setAnswered(isCorrect ? 'correct' : 'wrong')
+    setAnswered(sentence.correct ? 'correct' : 'wrong')
     setChosen(sentence.text)
-    if (isCorrect) setTimeout(onDone, 800)
+    if (sentence.correct) setTimeout(onDone, 600)
   }
 
   return (
@@ -168,41 +123,29 @@ function GrammarPatternCard({ pattern, done, onDone }) {
       {open && (
         <div className="advc-pattern-body">
           <p className="advc-pattern-explanation">{pattern.explanation}</p>
-
           {pattern.type === 'fill-blank' && (
             <div className="advc-exercise">
               <p className="advc-template">{pattern.template.replace('___', '＿＿＿')}</p>
-              <p className="advc-hint">{pattern.hint}</p>
+              {pattern.hint && !answered && <p className="advc-hint">{pattern.hint}</p>}
               <div className="advc-options">
                 {options.map(opt => (
-                  <button
-                    key={opt}
+                  <button key={opt}
                     className={`advc-option ${answered && opt === chosen ? (answered === 'correct' ? 'correct' : 'wrong') : ''} ${answered && opt === pattern.distractors[0] && answered === 'wrong' ? 'correct' : ''}`}
-                    onClick={() => answerFillBlank(opt)}
-                    disabled={!!answered}
-                  >{opt}</button>
+                    onClick={() => answerFillBlank(opt)} disabled={!!answered}>{opt}</button>
                 ))}
               </div>
-              {answered === 'wrong' && (
-                <button className="advc-try-again" onClick={() => { setAnswered(null); setChosen(null) }}>Try again</button>
-              )}
+              {answered === 'wrong' && <button className="advc-try-again" onClick={() => { setAnswered(null); setChosen(null) }}>Try again</button>}
             </div>
           )}
-
           {pattern.type === 'pick-correct' && (
             <div className="advc-exercise">
-              <p className="advc-pick-label">Which sentences are correct?</p>
+              <p className="advc-pick-label">Which sentence is correct?</p>
               {pattern.sentences.map((s, i) => (
-                <button
-                  key={i}
+                <button key={i}
                   className={`advc-sentence-btn ${answered && chosen === s.text ? (s.correct ? 'correct' : 'wrong') : ''}`}
-                  onClick={() => answerPickCorrect(s, s.correct)}
-                  disabled={!!answered && s.correct}
-                >
+                  onClick={() => answerPickCorrect(s)} disabled={!!answered && s.correct}>
                   {s.text}
-                  {answered && chosen === s.text && !s.correct && (
-                    <span className="advc-sentence-err">{s.error}</span>
-                  )}
+                  {answered && chosen === s.text && !s.correct && <span className="advc-sentence-err">{s.error}</span>}
                 </button>
               ))}
             </div>
@@ -213,14 +156,13 @@ function GrammarPatternCard({ pattern, done, onDone }) {
   )
 }
 
-// ── Phase: Dialogue ────────────────────────────────────────────────────────────
+// ── Dialogue Phase ────────────────────────────────────────────────────────────
 
-function DialoguePhase({ chapter, onDone, language, lookup, scores, showReading }) {
-  const dialogue = chapter.dialogue
+function DialoguePhase({ dialogue, language, lookup, scores, showReading, onBack, onDone }) {
   const [questionState, setQuestionState] = useState({})
-  const [choiceState, setChoiceState] = useState({})
-  const [score, setScore] = useState({ correct: 0, total: 0 })
-  const [showTrans, setShowTrans] = useState(false)
+  const [choiceState, setChoiceState]     = useState({})
+  const [turnIndex, setTurnIndex]         = useState(0)
+  const [showTrans, setShowTrans]         = useState(false)
 
   const speakerColors = ['#4f7ef8', '#22a06b', '#e05cb0', '#f0a500']
   const speakerMap = useMemo(() => {
@@ -228,47 +170,55 @@ function DialoguePhase({ chapter, onDone, language, lookup, scores, showReading 
     return Object.fromEntries(speakers.map((s, i) => [s, i]))
   }, [dialogue])
 
-  const userSpeaker = dialogue.speakers?.[1] ?? null
+  // Auto-advance line turns
+  useEffect(() => {
+    const turn = dialogue.turns[turnIndex]
+    if (!turn || turn.type !== 'line') return
+    if (turnIndex >= dialogue.turns.length - 1) return
+    const t = setTimeout(() => setTurnIndex(i => i + 1), 600)
+    return () => clearTimeout(t)
+  }, [turnIndex, dialogue])
 
   function chooseQuestion(idx, opt, oi) {
     if (questionState[idx]) return
     setQuestionState(p => ({ ...p, [idx]: { chosen: oi, correct: opt.correct } }))
-    setScore(s => ({ correct: s.correct + (opt.correct ? 1 : 0), total: s.total + 1 }))
+    setTurnIndex(i => Math.min(dialogue.turns.length - 1, Math.max(i, idx + 1)))
   }
-
   function chooseChoice(idx, oi) {
     if (choiceState[idx] !== undefined) return
     setChoiceState(p => ({ ...p, [idx]: oi }))
+    setTurnIndex(i => Math.min(dialogue.turns.length - 1, Math.max(i, idx + 1)))
   }
 
   const allDone = dialogue.turns.every((t, i) => {
     if (t.type === 'question') return !!questionState[i]
-    if (t.type === 'choice') return choiceState[i] !== undefined
+    if (t.type === 'choice')   return choiceState[i] !== undefined
     return true
   })
 
   return (
     <div className="advc-phase advc-phase--dialogue">
       <div className="advc-dialogue-header">
-        <div className="advc-phase-icon">💬</div>
+        <button className="advc-back-small" onClick={onBack}>← Back</button>
         <div>
           <h2 className="advc-phase-title">{dialogue.title}</h2>
-          <p className="advc-phase-sub">{dialogue.titleTranslation}</p>
+          {dialogue.titleTranslation && <p className="advc-phase-sub">{dialogue.titleTranslation}</p>}
         </div>
         <button className={`advc-trans-toggle ${showTrans ? 'active' : ''}`} onClick={() => setShowTrans(t => !t)}>EN</button>
       </div>
 
       <div className="advc-bubbles">
-        {dialogue.turns.map((turn, i) => {
+        {dialogue.turns.slice(0, turnIndex + 1).map((turn, i) => {
           const color = speakerColors[speakerMap[turn.speaker] ?? 0]
-          const isUser = turn.speaker === userSpeaker
+          const isNarrator = turn.speaker === 'narrator' || turn.speaker === 'Narrator'
+          const isUser = dialogue.type === 'choice' && turn.speaker === dialogue.speakers?.[dialogue.speakers.length - 1]
 
           if (turn.type === 'line') return (
-            <div key={i} className={`advc-line ${isUser ? 'user' : 'other'}`}>
-              {!isUser && <span className="advc-speaker" style={{ color }}>{turn.speaker}</span>}
-              <div className="advc-bubble" style={{ '--bcolor': color }}>
+            <div key={i} className={`advc-line ${isNarrator ? 'narrator' : isUser ? 'user' : 'other'}`}>
+              {!isUser && !isNarrator && <span className="advc-speaker" style={{ color }}>{turn.speaker}</span>}
+              <div className={`advc-bubble ${isNarrator ? 'advc-bubble--narrator' : ''}`} style={isNarrator ? {} : { '--bcolor': color }}>
                 <TextWithLookup text={turn.text} language={language} lookup={lookup} scores={scores} showReading={showReading} />
-                {showTrans && <div className="advc-bubble-trans">{turn.translation}</div>}
+                {showTrans && turn.translation && <div className="advc-bubble-trans">{turn.translation}</div>}
               </div>
             </div>
           )
@@ -286,10 +236,14 @@ function DialoguePhase({ chapter, onDone, language, lookup, scores, showReading 
             }
             return (
               <div key={i} className="advc-question">
-                <p className="advc-question-prompt">{turn.prompt}</p>
+                <p className="advc-question-prompt">
+                  {turn.prompt}
+                  {showTrans && turn.translation && <span className="advc-choice-sub"> — {turn.translation}</span>}
+                </p>
                 {turn.options.map((opt, oi) => (
                   <button key={oi} className="advc-q-option" onClick={() => chooseQuestion(i, opt, oi)}>
                     <span className="advc-q-num">{oi + 1}</span> {opt.text}
+                    {showTrans && opt.translation && <span className="advc-choice-sub"> ({opt.translation})</span>}
                   </button>
                 ))}
               </div>
@@ -303,8 +257,7 @@ function DialoguePhase({ chapter, onDone, language, lookup, scores, showReading 
               return (
                 <div key={i} className="advc-choice-done">
                   <div className="advc-line user">
-                    <div className="advc-bubble advc-bubble--choice">
-                      {opt.text}
+                    <div className="advc-bubble advc-bubble--choice">{opt.text}
                       {showTrans && <div className="advc-bubble-trans">{opt.translation}</div>}
                     </div>
                   </div>
@@ -321,10 +274,7 @@ function DialoguePhase({ chapter, onDone, language, lookup, scores, showReading 
             }
             return (
               <div key={i} className="advc-choice">
-                <p className="advc-choice-prompt">
-                  {turn.prompt}
-                  {showTrans && <span className="advc-choice-sub"> — {turn.promptTranslation}</span>}
-                </p>
+                <p className="advc-choice-prompt">{turn.prompt}{showTrans && <span className="advc-choice-sub"> — {turn.promptTranslation}</span>}</p>
                 {turn.options.map((opt, oi) => (
                   <button key={oi} className="advc-choice-opt" onClick={() => chooseChoice(i, oi)}>
                     <span className="advc-choice-text">{opt.text}</span>
@@ -338,52 +288,38 @@ function DialoguePhase({ chapter, onDone, language, lookup, scores, showReading 
         })}
       </div>
 
-      {allDone && (
-        <button className="advc-continue-btn" onClick={onDone}>
-          Continue to Reading →
-        </button>
-      )}
+      {allDone && <button className="advc-continue-btn" onClick={onDone}>Continue →</button>}
     </div>
   )
 }
 
-// ── Phase: Passage ─────────────────────────────────────────────────────────────
+// ── Passage Phase ─────────────────────────────────────────────────────────────
 
-function PassagePhase({ chapter, onDone, language, lookup, scores, showReading }) {
-  const passage = chapter.passage
+function PassagePhase({ passage, language, lookup, scores, showReading, onBack, onDone }) {
   const [showTrans, setShowTrans] = useState(false)
-
   return (
     <div className="advc-phase">
-      <div className="advc-phase-icon">📖</div>
-      <h2 className="advc-phase-title">{passage.title}</h2>
-      <p className="advc-phase-sub">{passage.titleTranslation}</p>
-
+      <div className="advc-phase-header">
+        <button className="advc-back-small" onClick={onBack}>← Back</button>
+        <div className="advc-phase-icon">📖</div>
+        <h2 className="advc-phase-title">{passage.title}</h2>
+      </div>
       <div className="advc-passage-controls">
-        <button className={`advc-trans-toggle ${showTrans ? 'active' : ''}`} onClick={() => setShowTrans(t => !t)}>
-          EN
-        </button>
+        <button className={`advc-trans-toggle ${showTrans ? 'active' : ''}`} onClick={() => setShowTrans(t => !t)}>EN</button>
         <SpeakButton text={passage.text} language={language} size="sm" />
       </div>
-
       <div className="advc-passage-text">
         <TextWithLookup text={passage.text} language={language} lookup={lookup} scores={scores} showReading={showReading} />
       </div>
-
-      {showTrans && (
-        <div className="advc-passage-trans">{passage.translation}</div>
-      )}
-
-      <button className="advc-continue-btn" onClick={onDone}>
-        Complete Chapter →
-      </button>
+      {showTrans && <div className="advc-passage-trans">{passage.translation}</div>}
+      <button className="advc-continue-btn" onClick={onDone}>Complete Chapter →</button>
     </div>
   )
 }
 
-// ── Phase: Complete ────────────────────────────────────────────────────────────
+// ── Complete Phase ────────────────────────────────────────────────────────────
 
-function CompletePhase({ chapter, onNext, onMap }) {
+function CompletePhase({ chapter, onMap }) {
   const artifact = chapter.grammarArtifact
   return (
     <div className="advc-phase advc-phase--complete">
@@ -391,7 +327,6 @@ function CompletePhase({ chapter, onNext, onMap }) {
       <h2 className="advc-complete-title">Chapter Complete!</h2>
       <p className="advc-complete-chapter">{chapter.title}</p>
       <p className="advc-complete-sub">{chapter.titleTranslation}</p>
-
       {artifact && (
         <div className="advc-artifact">
           <span className="advc-artifact-icon">{artifact.icon}</span>
@@ -401,13 +336,113 @@ function CompletePhase({ chapter, onNext, onMap }) {
           </div>
         </div>
       )}
-
       <p className="advc-outro">{chapter.storyOutro}</p>
       <p className="advc-outro-trans">{chapter.storyOutroTranslation}</p>
+      <button className="advc-map-btn" onClick={onMap}>← Chapter Map</button>
+    </div>
+  )
+}
 
-      <div className="advc-complete-btns">
-        {onNext && <button className="advc-continue-btn" onClick={onNext}>Next Chapter →</button>}
-        <button className="advc-map-btn" onClick={onMap}>← Chapter Map</button>
+// ── Chapter Overview Hub ──────────────────────────────────────────────────────
+
+function ChapterHub({ chapter, wordEntries, dialogues, language, lookup, scores, showReading, currentPhase, onPhaseAdvance, onComplete, onBack }) {
+  const [activeView, setActiveView] = useState(null)  // 'vocab' | 'grammar' | {type:'dialogue',idx} | {type:'passage'}
+
+  const isComplete = currentPhase === 'complete'
+  const phaseDone  = p => {
+    const order = ['vocab','grammar','dialogue','passage','complete']
+    return order.indexOf(currentPhase) > order.indexOf(p) || currentPhase === 'complete'
+  }
+
+  function markDone(phase) {
+    onPhaseAdvance(phase)
+    setActiveView(null)
+  }
+
+  // Active sub-view
+  if (activeView === 'vocab') return (
+    <VocabPhase chapter={chapter} entries={wordEntries} language={language} onBack={() => setActiveView(null)} />
+  )
+  if (activeView === 'grammar') return (
+    <GrammarPhase chapter={chapter} onBack={() => setActiveView(null)} />
+  )
+  if (activeView?.type === 'dialogue') {
+    const dl = dialogues[activeView.idx]
+    if (!dl) { setActiveView(null); return null }
+    return (
+      <DialoguePhase
+        dialogue={dl} language={language} lookup={lookup} scores={scores} showReading={showReading}
+        onBack={() => setActiveView(null)}
+        onDone={() => markDone('passage')}
+      />
+    )
+  }
+  if (activeView?.type === 'passage') return (
+    <PassagePhase
+      passage={chapter.passage} language={language} lookup={lookup} scores={scores} showReading={showReading}
+      onBack={() => setActiveView(null)}
+      onDone={onComplete}
+    />
+  )
+  if (isComplete) return <CompletePhase chapter={chapter} onMap={onBack} />
+
+  // ── Hub layout ──
+  return (
+    <div className="advc-hub">
+      {/* Story intro */}
+      <div className="advc-story-intro">
+        <p>{chapter.storyIntro}</p>
+        <p className="advc-story-trans">{chapter.storyIntroTranslation}</p>
+      </div>
+
+      <div className="advc-hub-body">
+        {/* Left: vocab shortcut */}
+        <div className="advc-hub-left">
+          <button className="advc-hub-vocab-btn" onClick={() => setActiveView('vocab')}>
+            <span className="advc-hub-vocab-icon">📚</span>
+            <span className="advc-hub-vocab-label">Vocab</span>
+            <span className="advc-hub-vocab-count">{wordEntries.length} words</span>
+            {phaseDone('vocab') && <span className="advc-hub-check">✓</span>}
+          </button>
+          <button className="advc-hub-vocab-btn" onClick={() => setActiveView('grammar')}>
+            <span className="advc-hub-vocab-icon">📐</span>
+            <span className="advc-hub-vocab-label">Grammar</span>
+            <span className="advc-hub-vocab-count">{chapter.grammarLesson?.patterns?.length ?? 0} patterns</span>
+            {phaseDone('grammar') && <span className="advc-hub-check">✓</span>}
+          </button>
+        </div>
+
+        {/* Right: dialogues + passage */}
+        <div className="advc-hub-right">
+          <div className="advc-hub-section-label">Dialogues</div>
+          {dialogues.length === 0 && (
+            <p className="advc-hub-empty">No dialogues loaded.</p>
+          )}
+          {dialogues.map((dl, i) => (
+            <button key={dl.id} className="advc-hub-content-btn" onClick={() => setActiveView({ type: 'dialogue', idx: i })}>
+              <span className="advc-hub-content-icon">💬</span>
+              <div className="advc-hub-content-info">
+                <span className="advc-hub-content-title">{dl.title}</span>
+                <span className="advc-hub-content-meta">{dl.turns?.filter(t => t.type === 'line').length ?? 0} lines</span>
+              </div>
+              {phaseDone('dialogue') && <span className="advc-hub-check">✓</span>}
+            </button>
+          ))}
+
+          {chapter.passage && (
+            <>
+              <div className="advc-hub-section-label" style={{ marginTop: '0.8rem' }}>Reading</div>
+              <button className="advc-hub-content-btn" onClick={() => setActiveView({ type: 'passage' })}>
+                <span className="advc-hub-content-icon">📖</span>
+                <div className="advc-hub-content-info">
+                  <span className="advc-hub-content-title">{chapter.passage.title}</span>
+                  <span className="advc-hub-content-meta">{chapter.passage.titleTranslation}</span>
+                </div>
+                {phaseDone('passage') && <span className="advc-hub-check">✓</span>}
+              </button>
+            </>
+          )}
+        </div>
       </div>
     </div>
   )
@@ -423,24 +458,32 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
     () => resolveWordIds(chapter.vocabLesson?.wordIds, activeEntries),
     [chapter, activeEntries]
   )
-
   const lookup = useMemo(() => buildLookup(activeEntries), [activeEntries])
 
-  // Determine which phase to show
-  const phase = currentPhase === 'complete' ? 'complete' : (currentPhase ?? 'vocab')
-
-  function advanceTo(nextPhase) {
-    onPhaseAdvance(nextPhase)
-  }
+  // Load TSV dialogues for this chapter
+  const [dialogues, setDialogues] = useState([])
+  useEffect(() => {
+    // Path format: adv{LL}{CC}.tsv where LL = level index, CC = chapter within level
+    // chapter.id is e.g. 'ch01', chapter.number is 1..12
+    // For a 12-chapter N5 campaign, level = 01, chapters 1-12 → adv0101..adv0112
+    const chNum = String(chapter.number ?? 1).padStart(2, '0')
+    const path = `./dialogues/tsv/adv01${chNum}.tsv`
+    loadTSVDialogue(path, language).then(dls => {
+      if (dls?.length) setDialogues(dls)
+      else {
+        if (chapter.dialogue) setDialogues([chapter.dialogue])
+        else setDialogues([])
+      }
+    })
+  }, [chapter.id, language])
 
   // Phase step bar
-  const PHASE_LABELS = { vocab: '📚', grammar: '📐', dialogue: '💬', passage: '📖', complete: '⭐' }
   const phaseOrder = ['vocab', 'grammar', 'dialogue', 'passage', 'complete']
-  const currentIdx = phaseOrder.indexOf(phase)
+  const PHASE_LABELS = { vocab: '📚', grammar: '📐', dialogue: '💬', passage: '📖', complete: '⭐' }
+  const currentIdx = phaseOrder.indexOf(currentPhase === 'complete' ? 'complete' : (currentPhase ?? 'vocab'))
 
   return (
     <div className="advc-screen">
-      {/* Header */}
       <div className="advc-header">
         <button className="advc-back" onClick={onBack}>← Map</button>
         <div className="advc-header-center">
@@ -450,7 +493,6 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
         <span className="advc-level-tag">{chapter.level}</span>
       </div>
 
-      {/* Phase progress bar */}
       <div className="advc-phase-bar">
         {phaseOrder.map((p, i) => (
           <div key={p} className={`advc-phase-step ${i <= currentIdx ? 'done' : ''} ${i === currentIdx ? 'current' : ''}`}>
@@ -459,56 +501,20 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
         ))}
       </div>
 
-      {/* Story intro (shown before vocab phase only) */}
-      {phase === 'vocab' && (
-        <div className="advc-story-intro">
-          <p>{chapter.storyIntro}</p>
-          <p className="advc-story-trans">{chapter.storyIntroTranslation}</p>
-        </div>
-      )}
-
-      {/* Phase content */}
       <div className="advc-content">
-        {phase === 'vocab' && (
-          <VocabPhase
-            chapter={chapter}
-            entries={wordEntries}
-            language={language}
-            onDone={() => advanceTo('grammar')}
-          />
-        )}
-        {phase === 'grammar' && (
-          <GrammarPhase
-            chapter={chapter}
-            onDone={() => advanceTo('dialogue')}
-          />
-        )}
-        {phase === 'dialogue' && (
-          <DialoguePhase
-            chapter={chapter}
-            language={language}
-            lookup={lookup}
-            scores={scores}
-            showReading={showReading}
-            onDone={() => advanceTo('passage')}
-          />
-        )}
-        {phase === 'passage' && (
-          <PassagePhase
-            chapter={chapter}
-            language={language}
-            lookup={lookup}
-            scores={scores}
-            showReading={showReading}
-            onDone={onComplete}
-          />
-        )}
-        {phase === 'complete' && (
-          <CompletePhase
-            chapter={chapter}
-            onMap={onBack}
-          />
-        )}
+        <ChapterHub
+          chapter={chapter}
+          wordEntries={wordEntries}
+          dialogues={dialogues}
+          language={language}
+          lookup={lookup}
+          scores={scores}
+          showReading={showReading}
+          currentPhase={currentPhase ?? 'vocab'}
+          onPhaseAdvance={onPhaseAdvance}
+          onComplete={onComplete}
+          onBack={onBack}
+        />
       </div>
     </div>
   )

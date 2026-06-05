@@ -483,3 +483,133 @@
 }
 .advc-map-btn:hover { border-color: #555; color: #aaa; }
 .advc-map-btn:focus:not(:focus-visible) { outline: none; }
+
+/* ── Chapter Hub ─────────────────────────────────────────────────────────── */
+.advc-hub {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.advc-hub-body {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.8rem 1rem;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Left column: vocab + grammar shortcuts */
+.advc-hub-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 38%;
+  flex-shrink: 0;
+}
+
+.advc-hub-vocab-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.8rem 0.5rem;
+  background: #14142a;
+  border: 1.5px solid #2a2a50;
+  border-radius: 14px;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.12s;
+  text-align: center;
+}
+.advc-hub-vocab-btn:hover { border-color: #4f7ef8; }
+.advc-hub-vocab-btn:focus:not(:focus-visible) { outline: none; }
+
+.advc-hub-vocab-icon  { font-size: 1.5rem; }
+.advc-hub-vocab-label { font-size: 0.8rem; font-weight: 700; color: #ddd; }
+.advc-hub-vocab-count { font-size: 0.65rem; color: #777; }
+
+/* Right column: dialogues + reading */
+.advc-hub-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.advc-hub-section-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #555;
+}
+
+.advc-hub-content-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 0.7rem;
+  background: #14142a;
+  border: 1.5px solid #2a2a50;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.12s;
+  position: relative;
+  width: 100%;
+}
+.advc-hub-content-btn:hover { border-color: #4f7ef8; }
+.advc-hub-content-btn:focus:not(:focus-visible) { outline: none; }
+
+.advc-hub-content-icon { font-size: 1.2rem; flex-shrink: 0; }
+.advc-hub-content-info { flex: 1; min-width: 0; }
+.advc-hub-content-title { font-size: 0.82rem; font-weight: 600; color: #ccc; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.advc-hub-content-meta  { font-size: 0.68rem; color: #666; display: block; }
+.advc-hub-empty { font-size: 0.78rem; color: #555; }
+
+.advc-hub-check {
+  position: absolute;
+  top: 0.4rem; right: 0.5rem;
+  font-size: 0.75rem;
+  color: #22a06b;
+}
+
+/* Phase header with back button */
+.advc-phase-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.2rem;
+}
+
+.advc-back-small {
+  background: none;
+  border: none;
+  color: #777;
+  font-size: 0.78rem;
+  cursor: pointer;
+  padding: 0.2rem 0;
+  flex-shrink: 0;
+}
+.advc-back-small:hover { color: #bbb; }
+.advc-back-small:focus:not(:focus-visible) { outline: none; }
+
+/* Narrator bubble style */
+.advc-line.narrator {
+  align-self: center;
+  max-width: 95%;
+}
+.advc-bubble--narrator {
+  background: none !important;
+  border: none !important;
+  font-style: italic;
+  color: #888 !important;
+  font-size: 0.82rem;
+  text-align: center;
+  padding: 0.3rem 0.5rem;
+  box-shadow: none !important;
+}
