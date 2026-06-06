@@ -22,7 +22,7 @@
   background: none;
   border: none;
   font-size: 0.88rem;
-  color: #444;
+  color: #555;
   cursor: pointer;
   padding: 0.3rem 0;
   flex-shrink: 0;
@@ -30,7 +30,7 @@
 .gd-back:hover { color: #111; }
 .gd-back:focus:not(:focus-visible) { outline: none; }
 
-.gd-title-main { font-size: 0.95rem; font-weight: 700; color: #222; }
+.gd-title-main { font-size: 0.95rem; font-weight: 700; color: #111; }
 
 /* Search */
 .gd-search-wrap { padding: 0.6rem 1rem; flex-shrink: 0; }
@@ -69,7 +69,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #444;
+  color: #555;
   min-width: 3.5rem;
   flex-shrink: 0;
 }
@@ -83,7 +83,7 @@
   background: #f5f5f5;
   font-size: 0.72rem;
   font-weight: 600;
-  color: #444;
+  color: #555;
   cursor: pointer;
   transition: all 0.1s;
   white-space: nowrap;
@@ -103,7 +103,7 @@
   gap: 0.4rem;
 }
 
-.gd-empty { text-align: center; color: #444; margin-top: 2rem; font-size: 0.85rem; }
+.gd-empty { text-align: center; color: #555; margin-top: 2rem; font-size: 0.85rem; }
 
 .gd-item { position: relative; }
 .gd-chapter-star {
@@ -154,8 +154,8 @@
   flex-shrink: 0;
 }
 
-.gd-title { font-size: 0.85rem; font-weight: 600; color: #222; }
-.gd-arrow { font-size: 0.82rem; color: #444; flex-shrink: 0; }
+.gd-title { font-size: 0.85rem; font-weight: 600; color: #111; }
+.gd-arrow { font-size: 0.82rem; color: #555; flex-shrink: 0; }
 
 .gd-card-body {
   padding: 0.6rem 0.9rem 0.85rem;
@@ -176,18 +176,18 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #444;
+  color: #555;
   margin-bottom: 0.3rem;
 }
 
 .gd-template {
   font-size: 0.88rem;
-  color: #222;
+  color: #111;
   font-weight: 500;
   margin-bottom: 0.15rem;
 }
 
-.gd-hint { font-size: 0.72rem; color: #444; }
+.gd-hint { font-size: 0.72rem; color: #555; }
 
 .gd-sentence {
   display: flex;
@@ -199,7 +199,7 @@
 .gd-sentence-mark { flex-shrink: 0; margin-top: 0.1rem; }
 .gd-sentence.correct .gd-sentence-mark { color: #22a06b; }
 .gd-sentence.wrong   .gd-sentence-mark { color: #e5534b; }
-.gd-sentence-text { color: #333; }
+.gd-sentence-text { color: #111; }
 .gd-sentence.wrong .gd-sentence-text { color: #e5534b; text-decoration: line-through; opacity: 0.8; }
 .gd-sentence-err { font-size: 0.72rem; color: #e5534b; margin-top: 0.15rem; display: block; }
 
@@ -210,13 +210,13 @@
   border-radius: 8px;
   padding: 0.25rem 0.6rem;
   font-size: 0.82rem;
-  color: #333;
+  color: #111;
 }
 
 .gd-count {
   text-align: center;
   font-size: 0.72rem;
-  color: #444;
+  color: #555;
   padding: 0.5rem;
   flex-shrink: 0;
 }
@@ -226,18 +226,18 @@
   .gd-screen      { background: #111; }
   .gd-header      { border-color: #222; }
   .gd-title-main  { color: #ddd; }
-  .gd-back        { color: #c0c0c0; }
+  .gd-back        { color: #b0b0b0; }
   .gd-search      { background: #1e1e1e; border-color: #333; color: #ddd; }
   .gd-search:focus { border-color: #4f7ef8; }
   .gd-filters     { border-color: #222; }
-  .gd-filter-label { color: #c0c0c0; }
+  .gd-filter-label { color: #b0b0b0; }
   .gd-chip        { background: #1e1e1e; border-color: #333; color: #666; }
   .gd-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
   .gd-card        { background: #1a1a1a; border-color: #2a2a2a; }
   .gd-card.open   { background: #1e1e28; }
   .gd-card-body   { border-color: #222; }
   .gd-title       { color: #ccc; }
-  .gd-explanation { color: #c0c0c0; }
+  .gd-explanation { color: #b0b0b0; }
   .gd-template    { color: #ddd; }
   .gd-sentence-text { color: #ccc; }
   .gd-tile        { background: #1a1a30; border-color: #2a2a50; color: #bbb; }
@@ -245,8 +245,8 @@
 }
 [data-theme="dark"] .gd-screen      { background: #111; }
 [data-theme="dark"] .gd-header      { border-color: #222; }
-[data-theme="dark"] .gd-title-main  { color: #444; }
-[data-theme="dark"] .gd-back        { color: #444; }
+[data-theme="dark"] .gd-title-main  { color: #555; }
+[data-theme="dark"] .gd-back        { color: #555; }
 [data-theme="dark"] .gd-search      { background: #1e1e1e; border-color: #333; color: #ddd; }
 [data-theme="dark"] .gd-filters     { border-color: #222; }
 [data-theme="dark"] .gd-chip        { background: #1e1e1e; border-color: #333; color: #666; }
@@ -254,8 +254,8 @@
 [data-theme="dark"] .gd-card        { background: #1a1a1a; border-color: #2a2a2a; }
 [data-theme="dark"] .gd-card.open   { background: #1e1e28; }
 [data-theme="dark"] .gd-card-body   { border-color: #222; }
-[data-theme="dark"] .gd-title       { color: #444; }
-[data-theme="dark"] .gd-explanation { color: #444; }
-[data-theme="dark"] .gd-template    { color: #444; }
-[data-theme="dark"] .gd-sentence-text { color: #444; }
+[data-theme="dark"] .gd-title       { color: #555; }
+[data-theme="dark"] .gd-explanation { color: #555; }
+[data-theme="dark"] .gd-template    { color: #555; }
+[data-theme="dark"] .gd-sentence-text { color: #555; }
 [data-theme="dark"] .gd-tile        { background: #1a1a30; border-color: #2a2a50; color: #bbb; }

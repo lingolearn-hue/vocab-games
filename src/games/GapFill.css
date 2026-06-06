@@ -24,7 +24,7 @@
   background: none;
   border: none;
   font-size: 0.9rem;
-  color: #444;
+  color: #555;
   cursor: pointer;
 }
 .gf-back:hover { color: #111; }
@@ -93,14 +93,14 @@
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #444;
+  color: #555;
   margin-bottom: 1rem;
 }
 
 .gf-sentence {
   font-size: 1.25rem;
   line-height: 1.8;
-  color: #222;
+  color: #111;
 }
 
 .gf-blank {
@@ -190,13 +190,13 @@
 .gf-option-num {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #444;
+  color: #555;
   min-width: 16px;
 }
 
 .gf-option-text {
   font-weight: 500;
-  color: #222;
+  color: #111;
 }
 
 .gf-option--correct {
@@ -223,7 +223,7 @@
 .gf-keyboard-hint {
   text-align: center;
   font-size: 0.72rem;
-  color: #444;
+  color: #555;
   padding: 0.4rem 1rem 1rem;
 }
 
@@ -244,9 +244,9 @@
   .gf-screen.correct { background: #f0faf5; }
   .gf-screen.wrong { background: #fff5f5; }
   .gf-card { background: #fff; }
-  .gf-sentence { color: #222; }
+  .gf-sentence { color: #111; }
   .gf-option { background: #fff; }
-  .gf-option-text { color: #222; }
+  .gf-option-text { color: #111; }
   .gf-option:hover:not(:disabled):not(.gf-option--correct):not(.gf-option--wrong) { background: #f8f9ff; }
   .gf-option--correct { background: #f0faf5; }
   .gf-option--wrong { background: #fff0ef; }
@@ -276,14 +276,14 @@
 [data-theme="dark"] .gf-screen.correct { background: #0d1f16; }
 [data-theme="dark"] .gf-screen.wrong   { background: #1f0d0d; }
 [data-theme="dark"] .gf-card    { background: #1e1e1e; box-shadow: 0 4px 24px rgba(0,0,0,0.3); }
-[data-theme="dark"] .gf-sentence { color: #444; }
+[data-theme="dark"] .gf-sentence { color: #555; }
 [data-theme="dark"] .gf-option  { background: #1e1e1e; border-color: #333; }
-[data-theme="dark"] .gf-option-text { color: #444; }
+[data-theme="dark"] .gf-option-text { color: #555; }
 [data-theme="dark"] .gf-option:hover:not(:disabled):not(.gf-option--correct):not(.gf-option--wrong) {
   background: #1a2340; border-color: #4f7ef8;
 }
 [data-theme="dark"] .gf-option--correct { background: #182d24; }
 [data-theme="dark"] .gf-option--wrong   { background: #2d1a19; }
-[data-theme="dark"] .gf-score { color: #444; }
+[data-theme="dark"] .gf-score { color: #555; }
 [data-theme="dark"] .gf-entry-hint { border-color: #2a2a2a; }
-[data-theme="dark"] .gf-back:hover { color: #444; }
+[data-theme="dark"] .gf-back:hover { color: #555; }

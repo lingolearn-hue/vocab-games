@@ -34,7 +34,7 @@
 
 .fl-subtitle {
   font-size: 0.88rem;
-  color: #444;
+  color: #555;
   text-align: center;
   margin-top: -0.4rem;
 }
@@ -62,7 +62,7 @@
 .fl-lang-btn:active { transform: scale(0.97); }
 
 .fl-flag { font-size: 2rem; }
-.fl-lang-name { font-size: 0.85rem; font-weight: 600; color: #333; }
+.fl-lang-name { font-size: 0.85rem; font-weight: 600; color: #111; }
 
 
 [data-theme="light"] {
@@ -81,7 +81,7 @@
   .fl-lang-name { color: #ddd; }
 }
 [data-theme="dark"] .fl-panel { background: #1e1e1e; }
-[data-theme="dark"] .fl-title  { color: #444; }
+[data-theme="dark"] .fl-title  { color: #555; }
 [data-theme="dark"] .fl-lang-btn { background: #252525; border-color: #333; }
 [data-theme="dark"] .fl-lang-btn:hover { background: #1a2340; border-color: #4f7ef8; }
-[data-theme="dark"] .fl-lang-name { color: #444; }
+[data-theme="dark"] .fl-lang-name { color: #555; }

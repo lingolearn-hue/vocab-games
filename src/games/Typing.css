@@ -24,7 +24,7 @@
   background: none;
   border: none;
   font-size: 0.9rem;
-  color: #444;
+  color: #555;
   cursor: pointer;
   padding: 0.4rem 0;
 }
@@ -156,7 +156,7 @@
   background: #4f7ef8;
   border: none;
   border-radius: 10px;
-  color: #444;
+  color: #555;
   font-size: 1.1rem;
   width: 44px;
   height: 44px;
@@ -204,7 +204,7 @@
 .ty-answer-text {
   font-size: 1rem;
   font-weight: 600;
-  color: #333;
+  color: #111;
 }
 
 /* Retype */
@@ -242,7 +242,7 @@
   background: #4f7ef8;
   border: none;
   border-radius: 12px;
-  color: #444;
+  color: #555;
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
@@ -256,7 +256,7 @@
   background: #f5f5f5;
   border: none;
   border-radius: 12px;
-  color: #444;
+  color: #555;
   font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
@@ -267,7 +267,7 @@
 .ty-keyboard-hint {
   text-align: center;
   font-size: 0.7rem;
-  color: #444;
+  color: #555;
   padding: 0.2rem 0;
 }
 
@@ -298,7 +298,7 @@
   .ty-back:hover { color: #111; }
   .ty-score { color: #111; }
   .ty-dot { background: #e0e0e0; }
-  .ty-answer-text { color: #333; }
+  .ty-answer-text { color: #111; }
   .ty-btn-skip { background: #f5f5f5; }
   .ty-btn-skip:hover { background: #ebebeb; }
   .ty-settings-btn { border-color: #e0e0e0; }
@@ -329,10 +329,10 @@
 [data-theme="dark"] .ty-input.correct { background: #182d24; }
 [data-theme="dark"] .ty-input.wrong   { background: #2d1a19; }
 [data-theme="dark"] .ty-input.ty-retype { border-color: #7a5200; }
-[data-theme="dark"] .ty-back:hover { color: #444; }
-[data-theme="dark"] .ty-score    { color: #444; }
+[data-theme="dark"] .ty-back:hover { color: #555; }
+[data-theme="dark"] .ty-score    { color: #555; }
 [data-theme="dark"] .ty-dot      { background: #333; }
-[data-theme="dark"] .ty-answer-text { color: #444; }
+[data-theme="dark"] .ty-answer-text { color: #555; }
 [data-theme="dark"] .ty-btn-skip { background: #2a2a2a; color: #666; }
 [data-theme="dark"] .ty-btn-skip:hover { background: #333; }
 [data-theme="dark"] .ty-settings-btn { border-color: #333; }

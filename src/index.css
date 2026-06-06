@@ -46,23 +46,25 @@ button:focus:not(:focus-visible) { outline: none; }
 /* Remove tap/click focus rings on touch devices — keep keyboard focus for a11y */
 button:focus:not(:focus-visible) { outline: none; }
 
-/* ── Global text color system ─────────────────────────────────────
-   Light backgrounds (white cards, panels):
-     --t1: #111  — primary text
-     --t2: #444  — secondary / muted text
-   Dark backgrounds (dark panels, adventure screens, dark mode):
-     --dt1: #f0f0f0  — primary text
-     --dt2: #c0c0c0  — secondary / muted text
-   Rule: ONLY use these four values for text color.
-─────────────────────────────────────────────────────────────── */
+/* ── Global text color system ─────────────────────────────────────────
+   ONLY these four values are used for text color across the entire app.
+
+   Light backgrounds (white cards, white screens):
+     #111  — primary text
+     #555  — secondary / muted text
+
+   Dark backgrounds (dark cards, adventure/racecar, dark mode):
+     #f0f0f0  — primary text
+     #b0b0b0  — secondary / muted text
+──────────────────────────────────────────────────────────────────── */
 :root {
-  --t1:  #111111;
-  --t2:  #444444;
-  --dt1: #f0f0f0;
-  --dt2: #c0c0c0;
+  --t1:  #111;      /* primary on light */
+  --t2:  #555;      /* secondary on light */
+  --dt1: #f0f0f0;   /* primary on dark */
+  --dt2: #b0b0b0;   /* secondary on dark */
 }
 @media (prefers-color-scheme: dark) {
-  :root { --t1: #f0f0f0; --t2: #c0c0c0; }
+  :root { --t1: #f0f0f0; --t2: #b0b0b0; }
 }
-[data-theme="dark"]  { --t1: #f0f0f0; --t2: #c0c0c0; }
-[data-theme="light"] { --t1: #111111; --t2: #444444; }
+[data-theme="dark"]  { --t1: #f0f0f0; --t2: #b0b0b0; }
+[data-theme="light"] { --t1: #111;     --t2: #555; }

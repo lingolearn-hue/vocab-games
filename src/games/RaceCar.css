@@ -34,12 +34,12 @@
 .rc-back {
   background: none;
   border: none;
-  color: #c0c0c0;
+  color: #b0b0b0;
   font-size: 0.9rem;
   cursor: pointer;
   padding: 0.3rem 0;
 }
-.rc-back:hover { color: #c0c0c0; }
+.rc-back:hover { color: #b0b0b0; }
 
 .rc-stats-inline {
   display: flex;
@@ -48,11 +48,11 @@
 }
 
 .rc-score-big { font-size: 0.9rem; font-weight: 700; }
-.rc-seen      { font-size: 0.65rem; color: #c0c0c0; }
+.rc-seen      { font-size: 0.65rem; color: #b0b0b0; }
 
 .rc-header-center {
   font-size: 0.8rem;
-  color: #c0c0c0;
+  color: #b0b0b0;
 }
 
 .rc-header-right {
@@ -70,12 +70,12 @@
 .rc-gear {
   background: none;
   border: none;
-  color: #c0c0c0;
+  color: #b0b0b0;
   font-size: 0.9rem;
   cursor: pointer;
   padding: 0;
 }
-.rc-gear:hover { color: #c0c0c0; }
+.rc-gear:hover { color: #b0b0b0; }
 
 /* ── Prompt ──────────────────────────────────────────────────────────────── */
 .rc-prompt-area {
@@ -93,7 +93,7 @@
 
 .rc-prompt-reading {
   font-size: 0.85rem;
-  color: #c0c0c0;
+  color: #b0b0b0;
   margin-top: 2px;
 }
 
