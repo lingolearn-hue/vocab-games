@@ -33,7 +33,7 @@ export function parseTSV(tsv, language) {
     // @columns header
     if (cells[0] === '@columns') {
       columns = {}
-      cells.slice(1).forEach((name, i) => { columns[name.trim()] = i + 1 })
+      cells.slice(1).forEach((name, i) => { columns[name.trim()] = i })  // 0-indexed into data cells
       continue
     }
 
@@ -47,7 +47,7 @@ export function parseTSV(tsv, language) {
 
     // Language text: prefer active language, fall back to en
     const langIdx = columns[language]
-    const enIdx   = columns.en
+    const enIdx   = columns.en ?? 3
     const text    = (langIdx !== undefined ? cells[langIdx]?.trim() : '') || cells[enIdx]?.trim() || ''
     const en      = cells[enIdx]?.trim() ?? ''
 
