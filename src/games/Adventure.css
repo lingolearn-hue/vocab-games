@@ -204,3 +204,15 @@
   padding: 0 1.5rem;
   line-height: 1.7;
 }
+
+.adv-back {
+  background: none;
+  border: none;
+  color: #b0b0b0;
+  font-size: 0.88rem;
+  cursor: pointer;
+  padding: 0.3rem 0;
+  flex-shrink: 0;
+}
+.adv-back:hover { color: #f0f0f0; }
+.adv-back:focus:not(:focus-visible) { outline: none; }

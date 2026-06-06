@@ -139,7 +139,7 @@ export default function Adventure() {
     <div className="adv-screen">
       {/* Header */}
       <div className="adv-header">
-        <button className="adv-mode-toggle" onClick={goBack}>← Back</button>
+        <button className="adv-back" onClick={goBack}>← Back</button>
         <span className="adv-header-title">Adventure</span>
         <span className="adv-progress-label">
           {completedCount}/{totalCount}
