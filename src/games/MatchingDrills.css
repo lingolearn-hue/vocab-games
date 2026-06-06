@@ -300,15 +300,15 @@
 }
 [data-theme="dark"] .md-screen      { background: #111; }
 [data-theme="dark"] .md-header      { border-color: #222; }
-[data-theme="dark"] .md-back:hover  { color: #555; }
-[data-theme="dark"] .md-title       { color: #555; }
+[data-theme="dark"] .md-back:hover  { color: #f0f0f0; }
+[data-theme="dark"] .md-title       { color: #f0f0f0; }
 [data-theme="dark"] .md-drill-card  { background: #1e1e1e; border-color: #2a2a2a; }
 [data-theme="dark"] .md-drill-card:hover { background: #1a2340; border-color: #4f7ef8; }
-[data-theme="dark"] .md-drill-label { color: #555; }
+[data-theme="dark"] .md-drill-label { color: #f0f0f0; }
 [data-theme="dark"] .md-card        { background: #1e1e1e; border-color: #2a2a2a; }
 [data-theme="dark"] .md-card.correct { background: #182d24; }
 [data-theme="dark"] .md-card.wrong   { background: #2d1a19; }
-[data-theme="dark"] .md-entry       { color: #555; }
+[data-theme="dark"] .md-entry       { color: #f0f0f0; }
 [data-theme="dark"] .md-option      { background: #1e1e1e; border-color: #333; color: #ddd; }
 [data-theme="dark"] .md-option--correct { background: #182d24; }
 [data-theme="dark"] .md-option--wrong   { background: #2d1a19; }
@@ -372,5 +372,5 @@
 }
 [data-theme="dark"] .md-pinyin-toggle { background: #1e1e1e; border-color: #333; color: #555; }
 [data-theme="dark"] .md-pinyin-toggle.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
-[data-theme="dark"] .md-tone-syl-above { color: #555; }
+[data-theme="dark"] .md-tone-syl-above { color: #f0f0f0; }
 [data-theme="dark"] .md-tone-syl-above.target { color: #7fa4ff; }

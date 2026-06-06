@@ -189,21 +189,22 @@
   .pm-back:hover     { color: #eee; }
 }
 [data-theme="dark"] .pm-item { background: #1e1e1e; border-color: #333; color: #eee; }
-[data-theme="dark"] .pm-sub { color: #555; }
+[data-theme="dark"] .pm-sub { color: #b0b0b0; }
 [data-theme="dark"] .pm-item--selected { background: #1a2340; border-color: #4f7ef8; }
 [data-theme="dark"] .pm-item--matched  { background: #182d24; border-color: #22a06b; }
 [data-theme="dark"] .pm-item--wrong    { background: #2d1a19; border-color: #e5534b; }
 [data-theme="dark"] .pm-pip            { background: #333; }
-[data-theme="dark"] .pm-back:hover     { color: #555; }
+[data-theme="dark"] .pm-back:hover     { color: #f0f0f0; }
 
 /* Override RubyText inside pair items — dynamic sizing */
 .pm-item .ruby-sm,
 .pm-item .ruby-plain {
   font-size: clamp(1.0rem, 4.5vw, 1.6rem);
   line-height: 1.35;
-  font-weight: 500;
+  font-weight: 400;
   text-align: center;
   word-break: break-word;
+  color: #111;
 }
 
 /* CJK: short glyphs can be larger */

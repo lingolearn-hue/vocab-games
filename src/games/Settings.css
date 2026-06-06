@@ -258,13 +258,13 @@
 }
 [data-theme="dark"] .st-screen            { background: #111; }
 [data-theme="dark"] .st-header            { border-color: #222; }
-[data-theme="dark"] .st-back              { color: #555; }
-[data-theme="dark"] .st-back:hover        { color: #555; }
-[data-theme="dark"] .st-title             { color: #555; }
-[data-theme="dark"] .st-section-label     { color: #555; }
-[data-theme="dark"] .st-label             { color: #555; }
-[data-theme="dark"] .st-sublabel          { color: #555; }
-[data-theme="dark"] .st-current-label     { color: #555; }
+[data-theme="dark"] .st-back              { color: #f0f0f0; }
+[data-theme="dark"] .st-back:hover        { color: #f0f0f0; }
+[data-theme="dark"] .st-title             { color: #f0f0f0; }
+[data-theme="dark"] .st-section-label     { color: #f0f0f0; }
+[data-theme="dark"] .st-label             { color: #f0f0f0; }
+[data-theme="dark"] .st-sublabel          { color: #f0f0f0; }
+[data-theme="dark"] .st-current-label     { color: #f0f0f0; }
 [data-theme="dark"] .st-chip              { background: #1e1e1e; border-color: #333; color: #555; }
 [data-theme="dark"] .st-chip.active       { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
 [data-theme="dark"] .st-seg               { border-color: #333; }
@@ -276,12 +276,12 @@
 [data-theme="dark"] .st-ghost-btn:hover   { border-color: #4f7ef8; color: #7fa4ff; }
 [data-theme="dark"] .st-accordion         { border-color: #222; }
 [data-theme="dark"] .st-accordion-header:hover { background: #1a1a1a; }
-[data-theme="dark"] .st-accordion-title   { color: #555; }
+[data-theme="dark"] .st-accordion-title   { color: #f0f0f0; }
 [data-theme="dark"] .st-data-btn          { background: #0d1a3a; border-color: #4f7ef8; color: #7fa4ff; }
 [data-theme="dark"] .st-data-btn:hover    { background: #4f7ef8; color: #fff; }
 [data-theme="dark"] .st-danger-btn        { background: #2d0e0e; border-color: #a33; color: #e5534b; }
 [data-theme="dark"] .st-danger-btn:hover  { background: #e5534b; color: #fff; border-color: #e5534b; }
-[data-theme="dark"] .st-hint              { color: #555; }
+[data-theme="dark"] .st-hint              { color: #f0f0f0; }
 
 /* Light mode overrides (for system-dark + user-picks-light) */
 [data-theme="light"] .st-screen            { background: #fafafa; }

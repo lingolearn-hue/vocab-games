@@ -278,7 +278,7 @@
 }
 [data-theme="dark"] .lang-flag-btn    { border-color: #333; }
 [data-theme="dark"] .lang-flag-btn:hover { background: #1a2340; border-color: #4f7ef8; }
-[data-theme="dark"] .lang-flag-label  { color: #555; }
+[data-theme="dark"] .lang-flag-label  { color: #f0f0f0; }
 [data-theme="dark"] .setup-nav-btn    { border-color: #333; }
 [data-theme="dark"] .setup-nav-btn:hover { background: #1a2340; border-color: #4f7ef8; }
 [data-theme="dark"] .lang-picker      { background: #1e1e1e; border-color: #333; }
@@ -296,11 +296,11 @@
 [data-theme="dark"] .group-card       { background: #1e1e1e; border-color: #2a2a2a; }
 [data-theme="dark"] .group-card.open  { border-color: #4f7ef8; }
 [data-theme="dark"] .group-header:hover { background: #252525; }
-[data-theme="dark"] .group-name       { color: #555; }
+[data-theme="dark"] .group-name       { color: #f0f0f0; }
 [data-theme="dark"] .group-body       { background: #181820; border-color: #2a2a2a; }
 [data-theme="dark"] .sub-game-btn     { background: #1e1e1e; }
 [data-theme="dark"] .sub-game-btn:hover:not(.disabled) { border-color: #4f7ef8; background: #1a2340; }
-[data-theme="dark"] .sub-game-label   { color: #555; }
+[data-theme="dark"] .sub-game-label   { color: #f0f0f0; }
 
 /* Adventure mode button — subtle gold tint */
 .setup-nav-btn--adventure {

@@ -295,16 +295,16 @@
 }
 [data-theme="dark"] .gr-screen        { background: #111; }
 [data-theme="dark"] .gr-header        { border-color: #222; }
-[data-theme="dark"] .gr-back          { color: #555; }
-[data-theme="dark"] .gr-back:hover    { color: #555; }
-[data-theme="dark"] .gr-title         { color: #555; }
+[data-theme="dark"] .gr-back          { color: #f0f0f0; }
+[data-theme="dark"] .gr-back:hover    { color: #f0f0f0; }
+[data-theme="dark"] .gr-title         { color: #f0f0f0; }
 [data-theme="dark"] .gr-passage-card  { background: #1e1e1e; border-color: #2a2a2a; }
 [data-theme="dark"] .gr-passage-card:hover { background: #1a2340; border-color: #4f7ef8; }
-[data-theme="dark"] .gr-passage-title { color: #555; }
+[data-theme="dark"] .gr-passage-title { color: #f0f0f0; }
 [data-theme="dark"] .gr-passage-level { background: #2a2a2a; color: #666; }
 [data-theme="dark"] .gr-paste-title,
 [data-theme="dark"] .gr-paste-input   { background: #1e1e1e; border-color: #333; color: #eee; }
-[data-theme="dark"] .gr-text          { color: #555; }
+[data-theme="dark"] .gr-text          { color: #f0f0f0; }
 [data-theme="dark"] .gr-translation   { background: #1a1a1a; border-color: #333; color: #888; }
 [data-theme="dark"] .gr-legend        { border-color: #222; }
 [data-theme="dark"] .gr-tab           { color: #666; border-color: #333; }
