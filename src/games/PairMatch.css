@@ -20,7 +20,7 @@
   background: none;
   border: none;
   font-size: 0.9rem;
-  color: #666;
+  color: #444;
   cursor: pointer;
   padding: 0.4rem 0;
 }
@@ -171,7 +171,7 @@
 
 [data-theme="light"] {
   .pm-item { background: #fff; }
-  .pm-sub { color: #999; }
+  .pm-sub { color: #444; }
   .pm-item--selected { background: #eef2ff; }
   .pm-item--matched { background: #f0faf5; }
   .pm-item--wrong { background: #fff0ef; }
@@ -181,7 +181,7 @@
 
 @media (prefers-color-scheme: dark) {
   .pm-item { background: #1e1e1e; border-color: #333; color: #eee; }
-  .pm-sub { color: #666; }
+  .pm-sub { color: #c0c0c0; }
   .pm-item--selected { background: #1a2340; border-color: #4f7ef8; }
   .pm-item--matched  { background: #182d24; border-color: #22a06b; }
   .pm-item--wrong    { background: #2d1a19; border-color: #e5534b; }
@@ -189,12 +189,12 @@
   .pm-back:hover     { color: #eee; }
 }
 [data-theme="dark"] .pm-item { background: #1e1e1e; border-color: #333; color: #eee; }
-[data-theme="dark"] .pm-sub { color: #666; }
+[data-theme="dark"] .pm-sub { color: #444; }
 [data-theme="dark"] .pm-item--selected { background: #1a2340; border-color: #4f7ef8; }
 [data-theme="dark"] .pm-item--matched  { background: #182d24; border-color: #22a06b; }
 [data-theme="dark"] .pm-item--wrong    { background: #2d1a19; border-color: #e5534b; }
 [data-theme="dark"] .pm-pip            { background: #333; }
-[data-theme="dark"] .pm-back:hover     { color: #eee; }
+[data-theme="dark"] .pm-back:hover     { color: #444; }
 
 /* Override RubyText inside pair items — dynamic sizing */
 .pm-item .ruby-sm,

@@ -21,7 +21,7 @@
   background: none;
   border: none;
   font-size: 0.9rem;
-  color: #666;
+  color: #444;
   cursor: pointer;
   padding: 0.4rem 0;
   flex-shrink: 0;
@@ -179,7 +179,7 @@
   background: #4f7ef8;
   border: none;
   border-radius: 10px;
-  color: #fff;
+  color: #444;
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
@@ -253,7 +253,7 @@
   .gr-screen { background: #fafafa; }
   .gr-header { border-color: #e0e0e0; }
   .gr-back:hover { color: #111; }
-  .gr-back { color: #666; }
+  .gr-back { color: #444; }
   .gr-title { color: #111; }
   .gr-passage-card { background: #fff; }
   .gr-passage-card:hover { background: #fff; }
@@ -264,7 +264,7 @@
   .gr-text { color: #111; }
   .gr-translation { background: #1a1a1a; border-color: #333; color: #888; }
   .gr-legend { border-color: #e0e0e0; }
-  .gr-tab { color: #888; }
+  .gr-tab { color: #444; }
   .gr-header-tabs { border-color: #e0e0e0; }
   .gr-tab { border-color: #e0e0e0; }
   .gr-series-header { border-color: #e0e0e0; }
@@ -278,7 +278,7 @@
   .gr-screen        { background: #111; }
   .gr-header        { border-color: #222; }
   .gr-back:hover    { color: #eee; }
-  .gr-back          { color: #555; }
+  .gr-back          { color: #c0c0c0; }
   .gr-title         { color: #eee; }
   .gr-passage-card  { background: #1e1e1e; border-color: #2a2a2a; }
   .gr-passage-card:hover { background: #1a2340; border-color: #4f7ef8; }
@@ -289,22 +289,22 @@
   .gr-text          { color: #ddd; }
   .gr-translation   { background: #1a1a1a; border-color: #333; color: #888; }
   .gr-legend        { border-color: #222; }
-  .gr-tab           { color: #666; }
+  .gr-tab           { color: #c0c0c0; }
   .gr-header-tabs   { border-color: #333; }
   .gr-tab           { border-color: #333; }
 }
 [data-theme="dark"] .gr-screen        { background: #111; }
 [data-theme="dark"] .gr-header        { border-color: #222; }
 [data-theme="dark"] .gr-back          { color: #555; }
-[data-theme="dark"] .gr-back:hover    { color: #eee; }
-[data-theme="dark"] .gr-title         { color: #eee; }
+[data-theme="dark"] .gr-back:hover    { color: #444; }
+[data-theme="dark"] .gr-title         { color: #444; }
 [data-theme="dark"] .gr-passage-card  { background: #1e1e1e; border-color: #2a2a2a; }
 [data-theme="dark"] .gr-passage-card:hover { background: #1a2340; border-color: #4f7ef8; }
-[data-theme="dark"] .gr-passage-title { color: #eee; }
+[data-theme="dark"] .gr-passage-title { color: #444; }
 [data-theme="dark"] .gr-passage-level { background: #2a2a2a; color: #666; }
 [data-theme="dark"] .gr-paste-title,
 [data-theme="dark"] .gr-paste-input   { background: #1e1e1e; border-color: #333; color: #eee; }
-[data-theme="dark"] .gr-text          { color: #ddd; }
+[data-theme="dark"] .gr-text          { color: #444; }
 [data-theme="dark"] .gr-translation   { background: #1a1a1a; border-color: #333; color: #888; }
 [data-theme="dark"] .gr-legend        { border-color: #222; }
 [data-theme="dark"] .gr-tab           { color: #666; border-color: #333; }

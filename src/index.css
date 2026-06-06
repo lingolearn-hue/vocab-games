@@ -45,3 +45,24 @@ button:focus:not(:focus-visible) { outline: none; }
 
 /* Remove tap/click focus rings on touch devices — keep keyboard focus for a11y */
 button:focus:not(:focus-visible) { outline: none; }
+
+/* ── Global text color system ─────────────────────────────────────
+   Light backgrounds (white cards, panels):
+     --t1: #111  — primary text
+     --t2: #444  — secondary / muted text
+   Dark backgrounds (dark panels, adventure screens, dark mode):
+     --dt1: #f0f0f0  — primary text
+     --dt2: #c0c0c0  — secondary / muted text
+   Rule: ONLY use these four values for text color.
+─────────────────────────────────────────────────────────────── */
+:root {
+  --t1:  #111111;
+  --t2:  #444444;
+  --dt1: #f0f0f0;
+  --dt2: #c0c0c0;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --t1: #f0f0f0; --t2: #c0c0c0; }
+}
+[data-theme="dark"]  { --t1: #f0f0f0; --t2: #c0c0c0; }
+[data-theme="light"] { --t1: #111111; --t2: #444444; }

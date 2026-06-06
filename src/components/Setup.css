@@ -101,7 +101,7 @@
 .level-chip.active {
   background: #4f7ef8;
   border-color: #4f7ef8;
-  color: #fff;
+  color: #444;
 }
 .level-chip:focus:not(:focus-visible) { outline: none; }
 .level-chip:hover:not(.active) { border-color: #4f7ef8; color: #4f7ef8; background: #f0f4ff; }
@@ -278,7 +278,7 @@
 }
 [data-theme="dark"] .lang-flag-btn    { border-color: #333; }
 [data-theme="dark"] .lang-flag-btn:hover { background: #1a2340; border-color: #4f7ef8; }
-[data-theme="dark"] .lang-flag-label  { color: #ccc; }
+[data-theme="dark"] .lang-flag-label  { color: #444; }
 [data-theme="dark"] .setup-nav-btn    { border-color: #333; }
 [data-theme="dark"] .setup-nav-btn:hover { background: #1a2340; border-color: #4f7ef8; }
 [data-theme="dark"] .lang-picker      { background: #1e1e1e; border-color: #333; }
@@ -296,11 +296,11 @@
 [data-theme="dark"] .group-card       { background: #1e1e1e; border-color: #2a2a2a; }
 [data-theme="dark"] .group-card.open  { border-color: #4f7ef8; }
 [data-theme="dark"] .group-header:hover { background: #252525; }
-[data-theme="dark"] .group-name       { color: #ddd; }
+[data-theme="dark"] .group-name       { color: #444; }
 [data-theme="dark"] .group-body       { background: #181820; border-color: #2a2a2a; }
 [data-theme="dark"] .sub-game-btn     { background: #1e1e1e; }
 [data-theme="dark"] .sub-game-btn:hover:not(.disabled) { border-color: #4f7ef8; background: #1a2340; }
-[data-theme="dark"] .sub-game-label   { color: #ddd; }
+[data-theme="dark"] .sub-game-label   { color: #444; }
 
 /* Adventure mode button — subtle gold tint */
 .setup-nav-btn--adventure {
@@ -314,7 +314,7 @@
 .setup-version {
   text-align: center;
   font-size: 0.65rem;
-  color: #bbb;
+  color: #444;
   padding: 0.8rem 0 0.5rem;
   letter-spacing: 0.05em;
 }

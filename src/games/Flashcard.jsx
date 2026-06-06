@@ -204,7 +204,7 @@ export default function Flashcard() {
     function onKey(e) {
       if (animating) return
       if (editingMnemonic) return
-      if (e.key === 'Escape') { if (detailOpen) setDetailOpen(false); else setScreen('setup'); return }
+      if (e.key === 'Escape') { if (detailOpen) setDetailOpen(false); else goBack(); return }
 
       if (e.key === ' ' || e.key === 'Enter') {
         setFlip(!revealedRef.current); return

@@ -209,7 +209,7 @@ export default function RaceCar() {
   // Keyboard controls
   useEffect(() => {
     function onKey(e) {
-      if (e.key === 'Escape')     { setScreen('setup'); return }
+      if (e.key === 'Escape')     { goBack(); return }
       if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
         const delta = e.key === 'ArrowLeft' ? -1 : 1
         const n = Math.max(0, Math.min(2, carLaneRef.current + delta))

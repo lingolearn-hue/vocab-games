@@ -390,7 +390,7 @@ export default function GrammarTrainer() {
           className="gt-back"
           onClick={() => {
             if (selectedType) setSelectedType(null)
-            else setScreen('setup')
+            else goBack()
           }}
         >
           {selectedType ? '← Types' : '← Back'}

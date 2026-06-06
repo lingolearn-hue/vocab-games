@@ -346,20 +346,24 @@ function CompletePhase({ chapter, onMap }) {
 // ── Chapter Overview Hub ──────────────────────────────────────────────────────
 
 function ChapterHub({ chapter, wordEntries, dialogues, language, lookup, scores, showReading, currentPhase, onPhaseAdvance, onComplete, onBack }) {
-  const [activeView, setActiveView] = useState(null)  // 'vocab' | 'grammar' | {type:'dialogue',idx} | {type:'passage'}
+  const [activeView, setActiveView] = useState(null)
+  const [doneParts, setDoneParts]   = useState(new Set())
 
   const isComplete = currentPhase === 'complete'
-  const phaseDone  = p => {
-    const order = ['vocab','grammar','dialogue','passage','complete']
-    return order.indexOf(currentPhase) > order.indexOf(p) || currentPhase === 'complete'
-  }
+  const phaseOrder = ['vocab','grammar','dialogue','passage','complete']
+  const phaseDone  = p =>
+    phaseOrder.indexOf(currentPhase) > phaseOrder.indexOf(p) ||
+    currentPhase === 'complete' || doneParts.has(p)
 
-  function markDone(phase) {
-    onPhaseAdvance(phase)
+  function markPartDone(part) {
+    setDoneParts(prev => new Set([...prev, part]))
+    const idx    = phaseOrder.indexOf(part)
+    const curIdx = phaseOrder.indexOf(currentPhase ?? 'vocab')
+    if (idx >= curIdx) onPhaseAdvance(phaseOrder[Math.min(idx + 1, phaseOrder.length - 2)])
     setActiveView(null)
   }
 
-  // Active sub-view
+  // Active sub-view — always has its own ← Back to hub
   if (activeView === 'vocab') return (
     <VocabPhase chapter={chapter} entries={wordEntries} language={language} onBack={() => setActiveView(null)} />
   )
@@ -373,7 +377,7 @@ function ChapterHub({ chapter, wordEntries, dialogues, language, lookup, scores,
       <DialoguePhase
         dialogue={dl} language={language} lookup={lookup} scores={scores} showReading={showReading}
         onBack={() => setActiveView(null)}
-        onDone={() => markDone('passage')}
+        onDone={() => markPartDone('dialogue')}
       />
     )
   }
@@ -381,7 +385,7 @@ function ChapterHub({ chapter, wordEntries, dialogues, language, lookup, scores,
     <PassagePhase
       passage={chapter.passage} language={language} lookup={lookup} scores={scores} showReading={showReading}
       onBack={() => setActiveView(null)}
-      onDone={onComplete}
+      onDone={() => markPartDone('passage')}
     />
   )
   if (isComplete) return <CompletePhase chapter={chapter} onMap={onBack} />
@@ -431,7 +435,7 @@ function ChapterHub({ chapter, wordEntries, dialogues, language, lookup, scores,
 
           {chapter.passage && (
             <>
-              <div className="advc-hub-section-label" style={{ marginTop: '0.8rem' }}>Reading</div>
+              <div className="advc-hub-section-label" style={{ marginTop: dialogues.length ? '0.8rem' : 0 }}>Reading</div>
               <button className="advc-hub-content-btn" onClick={() => setActiveView({ type: 'passage' })}>
                 <span className="advc-hub-content-icon">📖</span>
                 <div className="advc-hub-content-info">
@@ -441,6 +445,13 @@ function ChapterHub({ chapter, wordEntries, dialogues, language, lookup, scores,
                 {phaseDone('passage') && <span className="advc-hub-check">✓</span>}
               </button>
             </>
+          )}
+
+          {/* Complete chapter button — shown when all content visited */}
+          {(phaseDone('dialogue') || dialogues.length === 0) && (!chapter.passage || phaseDone('passage')) && (
+            <button className="advc-hub-complete-btn" onClick={onComplete}>
+              ⭐ Complete Chapter
+            </button>
           )}
         </div>
       </div>

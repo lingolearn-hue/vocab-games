@@ -81,7 +81,7 @@
   .fl-lang-name { color: #ddd; }
 }
 [data-theme="dark"] .fl-panel { background: #1e1e1e; }
-[data-theme="dark"] .fl-title  { color: #eee; }
+[data-theme="dark"] .fl-title  { color: #444; }
 [data-theme="dark"] .fl-lang-btn { background: #252525; border-color: #333; }
 [data-theme="dark"] .fl-lang-btn:hover { background: #1a2340; border-color: #4f7ef8; }
-[data-theme="dark"] .fl-lang-name { color: #ddd; }
+[data-theme="dark"] .fl-lang-name { color: #444; }
