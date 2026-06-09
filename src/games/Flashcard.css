@@ -88,6 +88,7 @@
   inset: 0;
   border-radius: 20px;
   background: #fff;
+  color: #111;    /* always black text — card is always white */
   box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
   display: flex;
   flex-direction: column;
