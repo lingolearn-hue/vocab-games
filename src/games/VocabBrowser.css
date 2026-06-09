@@ -19,6 +19,8 @@
 .vb-back {
   background: none;
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   font-size: 0.9rem;
   color: #555;
   cursor: pointer;
@@ -213,6 +215,8 @@
 .vb-mnemonic-btn {
   background: none;
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   font-size: 0.8rem;
   cursor: pointer;
   padding: 0;
@@ -246,6 +250,8 @@
 .vb-reset {
   background: none;
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   color: #555;
   font-size: 1rem;
   cursor: pointer;

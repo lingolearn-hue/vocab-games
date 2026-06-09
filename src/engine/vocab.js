@@ -126,6 +126,5 @@ export function displayEntry(entry, language) {
   if (!entry.gender || entry.pos !== 'noun') return entry.entry
   const article = articleMap[entry.gender]
   if (!article) return entry.entry
-  // Capitalise article for display
-  return article.charAt(0).toUpperCase() + article.slice(1) + ' ' + entry.entry
+  return article + ' ' + entry.entry
 }

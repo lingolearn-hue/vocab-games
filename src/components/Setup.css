@@ -68,6 +68,8 @@
   width: 100%;
   padding: 0.7rem 1rem;
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   border-bottom: 1px solid #f0f0f0;
   background: none;
   font-size: 0.9rem;
@@ -163,6 +165,8 @@
   width: 100%;
   padding: 0.85rem 1rem;
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   background: none;
   cursor: pointer;
   text-align: left;

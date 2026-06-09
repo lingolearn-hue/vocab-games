@@ -43,8 +43,8 @@ function ChapterCard({ chapter, status, phasesDone, isNext, onOpen }) {
     >
       <div className="adv-chapter-num">Ch.{chapter.number}</div>
       <div className="adv-chapter-info">
-        <div className="adv-chapter-title">{chapter.title}</div>
-        <div className="adv-chapter-sub">{chapter.titleTranslation}</div>
+        <div className="adv-chapter-title">{chapter.titleTranslation}</div>
+        <div className="adv-chapter-sub">{chapter.title}</div>
         <div className="adv-chapter-level">
           <span className="adv-level-badge">{chapter.level}</span>
           {chapter.grammarArtifact && (

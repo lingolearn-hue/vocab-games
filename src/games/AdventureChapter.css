@@ -23,6 +23,8 @@
 .advc-back {
   background: none;
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   color: #b0b0b0;
   font-size: 0.85rem;
   cursor: pointer;
@@ -166,6 +168,8 @@
   padding: 0.8rem 1.5rem;
   background: linear-gradient(135deg, #4f7ef8, #6a5acd);
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   border-radius: 14px;
   color: #fff;
   font-size: 0.9rem;
@@ -196,6 +200,8 @@
   padding: 0.7rem 0.9rem;
   background: none;
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   width: 100%;
   text-align: left;
   cursor: pointer;
@@ -589,6 +595,8 @@
 .advc-back-small {
   background: none;
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   color: #b0b0b0;
   font-size: 0.78rem;
   cursor: pointer;
@@ -620,6 +628,8 @@
   padding: 0.7rem 1rem;
   background: linear-gradient(135deg, #4f7ef8, #6a5acd);
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   border-radius: 12px;
   color: #fff;
   font-size: 0.88rem;

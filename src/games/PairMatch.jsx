@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useApp } from '../context/AppContext'
 import { srsPickDistinct } from '../engine/srs'
+import { displayEntry } from '../engine/vocab'
 import RubyText from '../components/RubyText'
 import './PairMatch.css'
 
@@ -38,12 +39,12 @@ export default function PairMatch() {
 
     const lefts = entries.map(e => ({
       id: e.id,
-      label: truncate(direction === 'entry->translation' ? e.entry : e.translation[0]),
+      label: truncate(direction === 'entry->translation' ? displayEntry(e, activeLanguage) : e.translation[0]),
       sub: direction === 'entry->translation' && showReading && e.reading ? e.reading : null,
     }))
     const rights = entries.map(e => ({
       id: e.id,
-      label: truncate(direction === 'entry->translation' ? e.translation[0] : e.entry),
+      label: truncate(direction === 'entry->translation' ? e.translation[0] : displayEntry(e, activeLanguage)),
       sub: direction === 'translation->entry' && showReading && e.reading ? e.reading : null,
     }))
 

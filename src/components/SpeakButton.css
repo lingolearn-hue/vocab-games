@@ -1,6 +1,8 @@
 .speak-btn {
   background: none;
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   cursor: pointer;
   padding: 0.2rem;
   border-radius: 6px;

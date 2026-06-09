@@ -20,6 +20,8 @@
 .gr-back {
   background: none;
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   font-size: 0.9rem;
   color: #555;
   cursor: pointer;
@@ -53,6 +55,8 @@
 .gr-tab {
   background: none;
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   border-left: 1.5px solid #e0e0e0;
   padding: 0.3rem 0.65rem;
   font-size: 0.8rem;
@@ -178,6 +182,8 @@
   padding: 0.75rem;
   background: #4f7ef8;
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   border-radius: 10px;
   color: #555;
   font-size: 0.95rem;
@@ -381,6 +387,8 @@
 .gr-tag-clear {
   padding: 0.25rem 0.6rem;
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   background: none;
   font-size: 0.72rem;
   color: #555;

@@ -19,6 +19,8 @@
 .md-back {
   background: none;
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   font-size: 0.9rem;
   color: #555;
   cursor: pointer;
@@ -234,6 +236,8 @@
   padding: 0.4rem 0.9rem;
   background: #4f7ef8;
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   border-radius: 8px;
   color: #555;
   font-size: 0.82rem;

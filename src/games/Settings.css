@@ -20,6 +20,8 @@
 .st-back {
   background: none;
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   font-size: 0.9rem;
   color: #555;
   cursor: pointer;
@@ -113,6 +115,8 @@
 .st-seg-btn {
   padding: 0.35rem 0.7rem;
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   background: #fff;
   font-size: 0.78rem;
   color: #555;
@@ -177,6 +181,8 @@
   padding: 0.85rem 1.2rem;
   background: none;
   border: none;
+  -webkit-appearance: none;
+  appearance: none;
   cursor: pointer;
   text-align: left;
   transition: background 0.1s;
