@@ -1,11 +1,20 @@
-# adv0102 — Adventure Campaign, Level 01, Chapter 02: First Mission
-# Grammar scope: present/past ます・ました, negatives ません, basic verbs
-# Vocab scope: daily activities, time, basic verbs, numbers (ch01 + ch02)
-# Speakers: guild_master, villager, emma, player, narrator
+# ══════════════════════════════════════════════════════════════════════════════
+# adv0102 — The Crystal of Light · Chapter 02: First Mission
+# ══════════════════════════════════════════════════════════════════════════════
 
 @columns	id	speaker	cmd	en	zh	ja	de	es
 
-# ── Dialogue 1: Departure briefing ─────────────────────────────────────────────
+@chapter	02	First Mission	第一个任务	最初のミッション	Erste Mission	Primera misión	N5
+@artifact	🕐	Bronze Clock	Present · Past · Negative · Verbs
+
+@story_intro	The first mission has arrived from the guild. You must go to a nearby village. Something is happening there.	公会的第一个任务来了。你必须去附近的村子。那里发生了一些事情。	ギルドから最初のミッションが来た。近くの村に行かなければならない。何かが村で起きている。	Der erste Auftrag der Gilde ist angekommen. Du musst in ein nahes Dorf gehen. Dort passiert etwas.	Ha llegado la primera misión del gremio. Debes ir a un pueblo cercano. Allí está pasando algo.
+@story_outro	The mission is complete. The villagers are relieved. But the mystery of the crystal remains unsolved.	任务完成了。村民们松了口气。但水晶的谜题仍未解决。	ミッションを終えた。村の人たちは安心した。でも、クリスタルのことはまだわからない。	Die Mission ist abgeschlossen. Die Dorfbewohner sind erleichtert. Aber das Rätsel des Kristalls bleibt ungelöst.	La misión está completada. Los aldeanos están aliviados. Pero el misterio del cristal sigue sin resolverse.
+
+
+# ── Section 1: Departure Briefing ─────────────────────────────────────────────
+@section	01	Departure Briefing	出发简报	出発のブリーフィング	Abschlussbriefing	Briefing de salida
+@vocab	いく	くる	たべる	のむ	みる	きく	はなす	よむ	かく	まいにち	いま	きのう	きょう	あした	なんじ	ひとつ	ふたつ	みっつ
+@grammar	adv-ja-g-004	adv-ja-g-005
 
 adv010201-01	guild_master		This is a mission.	这是任务。	これはミッションです。	Das ist ein Auftrag.	Esta es una misión.
 adv010201-02	guild_master		Please go to the village.	请去村子。	村へ行ってください。	Bitte geh in das Dorf.	Por favor, ve al pueblo.
@@ -26,7 +35,10 @@ adv010201-09b	option		To the market.	去市场。	市場へ行きます。	Auf d
 adv010201-09c	option		To the forest.	去森林。	森へ行きます。	In den Wald.	Al bosque.
 
 
-# ── Dialogue 2: Arrival at the village ─────────────────────────────────────────
+# ── Section 2: Arrival at the Village ────────────────────────────────────────
+@section	02	Arrival at the Village	抵达村子	村への到着	Ankunft im Dorf	Llegada al pueblo
+@vocab	むら	しずか	こまる	たすける	むすこ	もり	ひがし	しんぱい
+@grammar	adv-ja-g-004	adv-ja-g-005
 
 adv010202-01	narrator		You arrived at the village.	你们到了村子。	村に来ました。	Ihr seid im Dorf angekommen.	Habéis llegado al pueblo.
 adv010202-02	narrator		It is quiet here.	这里很安静。	ここはしずかです。	Hier ist es still.	Aquí está tranquilo.
@@ -47,3 +59,19 @@ adv010202-10q	question		Where did the son go yesterday?	儿子昨天去了哪里
 adv010202-11a	option	correct	To the forest.	去了森林。	もりへ行きました。	In den Wald.	Al bosque.
 adv010202-11b	option		To the guild.	去了公会。	ギルドへ行きました。	In die Gilde.	Al gremio.
 adv010202-11c	option		To the market.	去了市场。	いちばへ行きました。	Auf den Markt.	Al mercado.
+
+
+# ── Section 2 Passage ─────────────────────────────────────────────────────────
+@passage	02	The Village Mystery	村子的谜题	むらのなぞ	Das Dorfgeheimnis	El misterio del pueblo
+
+@passage_line	We arrived at the village.	我们到了村子。	むらに つきました。	Wir kamen im Dorf an.	Llegamos al pueblo.
+@passage_line	The village is quiet.	村子很安静。	むらは しずかです。	Das Dorf ist still.	El pueblo está tranquilo.
+@passage_line	But something feels strange.	但感觉有些奇怪。	でも、なにか おかしいです。	Aber irgendetwas fühlt sich seltsam an.	Pero algo parece raro.
+@passage_line	We met a villager.	我们遇见了一个村民。	むらびとに あいました。	Wir trafen einen Dorfbewohner.	Nos encontramos con un aldeano.
+@passage_line	"Yesterday my son disappeared," the villager said.	"昨天我的儿子不见了，"村民说。	「きのう、わたしの むすこが いなくなりました」と むらびとが いいました。	„Gestern ist mein Sohn verschwunden", sagte der Dorfbewohner.	«Ayer mi hijo desapareció», dijo el aldeano.
+@passage_line	"Where did he go?" I asked.	"他去哪里了？"我问。	「どこに いきましたか？」とわたしが ききました。	„Wo ist er hingegangen?", fragte ich.	«¿Adónde fue?», pregunté.
+@passage_line	"I do not know. He plays in the forest every day."	"我不知道。他每天在森林里玩。"	「わかりません。まいにち もりで あそびます。」	„Ich weiß es nicht. Er spielt jeden Tag im Wald."	«No lo sé. Juega en el bosque todos los días.»
+@passage_line	"But yesterday he did not come home," the villager replied.	"但昨天他没有回家，"村民回答。	「でも、きのうは かえりませんでした」と むらびとが こたえました。	„Aber gestern kam er nicht nach Hause", antwortete der Dorfbewohner.	«Pero ayer no volvió a casa», respondió el aldeano.
+@passage_line	I went to the forest.	我去了森林。	わたしは もりに いきました。	Ich ging in den Wald.	Fui al bosque.
+@passage_line	The forest is dark.	森林很黑暗。	もりは くらいです。	Der Wald ist dunkel.	El bosque está oscuro.
+@passage_line	But I will not give up.	但我不会放弃。	でも、あきらめません。	Aber ich gebe nicht auf.	Pero no me rendiré.
