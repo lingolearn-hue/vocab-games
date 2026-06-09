@@ -476,7 +476,7 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
 
   useEffect(() => {
     const chNum = String(chapter.number ?? 1).padStart(2, '0')
-    const path  = `./adventure/campaign01${chNum}.tsv`
+    const path  = `./campaign/campaign01${chNum}.tsv`
     loadTSVChapter(path, language).then(data => {
       if (!data) return
       const { meta, sections } = data

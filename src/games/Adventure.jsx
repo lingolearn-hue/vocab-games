@@ -5,7 +5,7 @@ import './Adventure.css'
 
 async function loadCampaign() {
   try {
-    const res = await fetch('./adventure/campaigns.json')
+    const res = await fetch('./campaign/campaigns.json')
     if (res.ok) return res.json()
   } catch {}
   return null
@@ -14,7 +14,7 @@ async function loadCampaign() {
 async function loadChapterMeta(chapterNumber, language) {
   try {
     const chNum = String(chapterNumber).padStart(2, '0')
-    const res = await fetch(`./adventure/campaign01${chNum}.tsv`)
+    const res = await fetch(`./campaign/campaign01${chNum}.tsv`)
     if (!res.ok) return null
     const text = await res.text()
     return parseChapterMeta(text, language)
