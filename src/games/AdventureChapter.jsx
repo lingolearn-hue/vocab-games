@@ -319,14 +319,12 @@ function PassagePhase({ passage, language, lookup, scores, showReading, onBack, 
 
 // ── Complete Phase ────────────────────────────────────────────────────────────
 
-function CompletePhase({ chapter, onMap }) {
-  const artifact = chapter.grammarArtifact
+function CompletePhase({ chapter, chapterTitle, artifact, onMap }) {
   return (
     <div className="advc-phase advc-phase--complete">
       <div className="advc-complete-star">⭐</div>
       <h2 className="advc-complete-title">Chapter Complete!</h2>
-      <p className="advc-complete-chapter">{chapter.title}</p>
-      <p className="advc-complete-sub">{chapter.titleTranslation}</p>
+      <p className="advc-complete-chapter">{chapterTitle ?? chapter.titleTranslation ?? chapter.title}</p>
       {artifact && (
         <div className="advc-artifact">
           <span className="advc-artifact-icon">{artifact.icon}</span>
@@ -345,11 +343,12 @@ function CompletePhase({ chapter, onMap }) {
 
 // ── Chapter Overview Hub ──────────────────────────────────────────────────────
 
-function ChapterHub({ chapter, wordEntries, dialogues, language, lookup, scores, showReading, currentPhase, onPhaseAdvance, onComplete, onBack }) {
+function ChapterHub({ chapter, chapterTitle, chapterLevel, storyIntro, storyIntroTranslation, wordEntries, dialogues, passages, artifact, language, lookup, scores, showReading, currentPhase, onPhaseAdvance, onComplete, onBack }) {
   const [activeView, setActiveView] = useState(null)
   const [doneParts, setDoneParts]   = useState(new Set())
 
   const isComplete = currentPhase === 'complete'
+  const chArtifact = artifact ?? chapter.grammarArtifact
   const phaseOrder = ['vocab','grammar','dialogue','passage','complete']
   const phaseDone  = p =>
     phaseOrder.indexOf(currentPhase) > phaseOrder.indexOf(p) ||
@@ -383,20 +382,20 @@ function ChapterHub({ chapter, wordEntries, dialogues, language, lookup, scores,
   }
   if (activeView?.type === 'passage') return (
     <PassagePhase
-      passage={chapter.passage} language={language} lookup={lookup} scores={scores} showReading={showReading}
+      passage={passages[activeView?.idx ?? 0] ?? passages[0]} language={language} lookup={lookup} scores={scores} showReading={showReading}
       onBack={() => setActiveView(null)}
       onDone={() => markPartDone('passage')}
     />
   )
-  if (isComplete) return <CompletePhase chapter={chapter} onMap={onBack} />
+  if (isComplete) return <CompletePhase chapter={chapter} chapterTitle={chapterTitle} artifact={chArtifact} onMap={onBack} />
 
   // ── Hub layout ──
   return (
     <div className="advc-hub">
       {/* Story intro */}
       <div className="advc-story-intro">
-        <p>{chapter.storyIntro}</p>
-        <p className="advc-story-trans">{chapter.storyIntroTranslation}</p>
+        {storyIntro && <p>{storyIntro}</p>}
+        {storyIntroTranslation && storyIntroTranslation !== storyIntro && <p className="advc-story-trans">{storyIntroTranslation}</p>}
       </div>
 
       <div className="advc-hub-body">
@@ -433,22 +432,24 @@ function ChapterHub({ chapter, wordEntries, dialogues, language, lookup, scores,
             </button>
           ))}
 
-          {chapter.passage && (
+          {passages.length > 0 && (
             <>
               <div className="advc-hub-section-label" style={{ marginTop: dialogues.length ? '0.8rem' : 0 }}>Reading</div>
-              <button className="advc-hub-content-btn" onClick={() => setActiveView({ type: 'passage' })}>
-                <span className="advc-hub-content-icon">📖</span>
-                <div className="advc-hub-content-info">
-                  <span className="advc-hub-content-title">{chapter.passage.title}</span>
-                  <span className="advc-hub-content-meta">{chapter.passage.titleTranslation}</span>
-                </div>
-                {phaseDone('passage') && <span className="advc-hub-check">✓</span>}
-              </button>
+              {passages.map((p, i) => (
+                <button key={i} className="advc-hub-content-btn" onClick={() => setActiveView({ type: 'passage', idx: i })}>
+                  <span className="advc-hub-content-icon">📖</span>
+                  <div className="advc-hub-content-info">
+                    <span className="advc-hub-content-title">{p.title}</span>
+                    <span className="advc-hub-content-meta">{p.titleTranslation}</span>
+                  </div>
+                  {phaseDone('passage') && <span className="advc-hub-check">✓</span>}
+                </button>
+              ))}
             </>
           )}
 
           {/* Complete chapter button — shown when all content visited */}
-          {(phaseDone('dialogue') || dialogues.length === 0) && (!chapter.passage || phaseDone('passage')) && (
+          {(phaseDone('dialogue') || dialogues.length === 0) && (passages.length === 0 || phaseDone('passage')) && (
             <button className="advc-hub-complete-btn" onClick={onComplete}>
               ⭐ Complete Chapter
             </button>
@@ -524,9 +525,15 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
 
       <div className="advc-content">
         <ChapterHub
-          chapter={{ ...chapter, storyIntro, storyOutro, storyIntroTranslation: tsvMeta?.storyIntro?.en, grammarArtifact: artifact, passage: passages[0] ?? chapter.passage }}
+          chapter={chapter}
+          chapterTitle={chapterTitle}
+          chapterLevel={chapterLevel}
+          storyIntro={storyIntro}
+          storyIntroTranslation={tsvMeta?.storyIntro?.en ?? ''}
           wordEntries={wordEntries}
           dialogues={dialogues}
+          passages={passages}
+          artifact={artifact}
           language={language}
           lookup={lookup}
           scores={scores}

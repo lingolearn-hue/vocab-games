@@ -8,14 +8,13 @@
   margin: 0 auto;
   background: #0a0a1a;
   color: #eee;
-  padding-top: env(safe-area-inset-top);
 }
 
 .adv-header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.9rem 1rem 0.7rem;
+  padding: calc(0.9rem + env(safe-area-inset-top)) 1rem 0.7rem;
   padding-left: max(1rem, env(safe-area-inset-left));
   padding-right: max(1rem, env(safe-area-inset-right));
   border-bottom: 1px solid #1e1e3a;
