@@ -8,27 +8,46 @@
   "totalChapters": 12,
   "completionTitle": "光のクリスタルの勇者",
   "completionTitleTranslation": "Hero of the Crystal Kingdom",
-
   "chapters": [
-
     {
       "id": "ch01",
       "number": 1,
       "title": "ギルドへの入団",
       "titleTranslation": "Guild Initiation",
       "level": "N5",
-      "grammarArtifact": { "name": "Apprentice Badge", "icon": "🏅", "grammar": "は・です・か・も" },
+      "grammarArtifact": {
+        "name": "Apprentice Badge",
+        "icon": "🏅",
+        "grammar": "は・です・か・も"
+      },
       "storyIntro": "光のクリスタルが消えた。王国では不思議なことが起きている。冒険者ギルドが新しい見習いを探している。それが、あなただ。",
       "storyIntroTranslation": "The Crystal of Light has disappeared. Strange things are happening across the kingdom. The Adventurer Guild is looking for a new apprentice. That apprentice is you.",
       "storyOutro": "あなたはギルドの見習いになった。まだ何もわからない。でも、旅はもう始まっている。",
       "storyOutroTranslation": "You have become a guild apprentice. You still don't know anything. But the journey has already begun.",
-
       "vocabLesson": {
         "title": "Chapter 1 Vocabulary",
         "description": "Learn these words before entering the guild.",
-        "wordIds": ["こんにちは", "ありがとう", "はい", "いいえ", "わたし", "なまえ", "ひと", "がくせい", "せんせい", "ともだち", "にほん", "どこ", "なに", "いくら", "おはようございます", "こんばんは", "すみません", "はじめまして"]
+        "wordIds": [
+          "こんにちは",
+          "ありがとう",
+          "はい",
+          "いいえ",
+          "わたし",
+          "なまえ",
+          "ひと",
+          "がくせい",
+          "せんせい",
+          "ともだち",
+          "にほん",
+          "どこ",
+          "なに",
+          "いくら",
+          "おはようございます",
+          "こんばんは",
+          "すみません",
+          "はじめまして"
+        ]
       },
-
       "grammarLesson": {
         "title": "Chapter 1 Grammar",
         "description": "Master these patterns to communicate in the guild.",
@@ -42,7 +61,12 @@
             "type": "fill-blank",
             "template": "わたし___ ギルドの 見習いです。",
             "hint": "は marks the topic of the sentence.",
-            "distractors": ["は", "が", "を", "に"]
+            "distractors": [
+              "は",
+              "が",
+              "を",
+              "に"
+            ]
           },
           {
             "id": "adv-ja-g-002",
@@ -52,9 +76,19 @@
             "explanation": "Add か to the end of a です sentence to make a question. Rising intonation is optional in writing.",
             "type": "pick-correct",
             "sentences": [
-              { "text": "あなたは 冒険者ですか。", "correct": true },
-              { "text": "あなたは 冒険者か です。", "correct": false, "error": "か comes at the very end: ですか, not か です." },
-              { "text": "これは クリスタルですか。", "correct": true }
+              {
+                "text": "あなたは 冒険者ですか。",
+                "correct": true
+              },
+              {
+                "text": "あなたは 冒険者か です。",
+                "correct": false,
+                "error": "か comes at the very end: ですか, not か です."
+              },
+              {
+                "text": "これは クリスタルですか。",
+                "correct": true
+              }
             ]
           },
           {
@@ -66,17 +100,24 @@
             "type": "fill-blank",
             "template": "エマ___ 見習いです。",
             "hint": "も replaces は when meaning 'also'.",
-            "distractors": ["も", "は", "が", "を"]
+            "distractors": [
+              "も",
+              "は",
+              "が",
+              "を"
+            ]
           }
         ]
       },
-
       "dialogue": {
         "id": "adv-ja-d01",
         "title": "ギルドマスターとの出会い",
         "titleTranslation": "Meeting the Guild Master",
         "type": "choice",
-        "speakers": ["ギルドマスター", "あなた"],
+        "speakers": [
+          "ギルドマスター",
+          "あなた"
+        ],
         "turns": [
           {
             "type": "line",
@@ -119,9 +160,21 @@
             "type": "question",
             "prompt": "What does the Guild Master ask?",
             "options": [
-              { "text": "Where you are from", "correct": false, "feedback": "ちがいます。職業（仕事）を聞いています。" },
-              { "text": "Your occupation / role", "correct": true, "feedback": "そうです！仕事は何ですか = What is your occupation?" },
-              { "text": "Your name", "correct": false, "feedback": "ちがいます。名前はもう聞きました。" }
+              {
+                "text": "Where you are from",
+                "correct": false,
+                "feedback": "ちがいます。職業（仕事）を聞いています。"
+              },
+              {
+                "text": "Your occupation / role",
+                "correct": true,
+                "feedback": "そうです！仕事は何ですか = What is your occupation?"
+              },
+              {
+                "text": "Your name",
+                "correct": false,
+                "feedback": "ちがいます。名前はもう聞きました。"
+              }
             ]
           },
           {
@@ -134,41 +187,79 @@
             "type": "question",
             "prompt": "What has disappeared?",
             "options": [
-              { "text": "The Guild Master's sword", "correct": false, "feedback": "ちがいます。クリスタルが消えました。" },
-              { "text": "The Crystal of Light", "correct": true, "feedback": "そうです！光のクリスタルが消えた。" },
-              { "text": "A guild member", "correct": false, "feedback": "ちがいます。クリスタルのことです。" }
+              {
+                "text": "The Guild Master's sword",
+                "correct": false,
+                "feedback": "ちがいます。クリスタルが消えました。"
+              },
+              {
+                "text": "The Crystal of Light",
+                "correct": true,
+                "feedback": "そうです！光のクリスタルが消えた。"
+              },
+              {
+                "text": "A guild member",
+                "correct": false,
+                "feedback": "ちがいます。クリスタルのことです。"
+              }
             ]
           }
         ]
       },
-
       "passage": {
         "id": "adv-ja-p01",
         "title": "ギルドの朝",
         "titleTranslation": "Morning at the Guild",
         "text": "ここはギルドです。ギルドには冒険者がたくさんいます。わたしは新しい見習いです。わたしの名前はアレックスです。ギルドマスターの名前はレオンです。レオンさんはとても強い人です。「おはようございます、アレックスさん」とエマさんが言いました。エマさんも見習いです。「おはようございます」とわたしが言いました。今日から、わたしたちは一緒に働きます。光のクリスタルを探します。",
         "translation": "This is the guild. There are many adventurers in the guild. I am a new apprentice. My name is Alex. The guild master's name is Leon. Leon is a very strong person. 'Good morning, Alex,' said Emma. Emma is also an apprentice. 'Good morning,' I said. From today, we will work together. We will search for the Crystal of Light."
+      },
+      "titles": {
+        "en": "Guild Initiation",
+        "zh": "公会入团",
+        "ja": "ギルドへの入団",
+        "de": "Gildeneintritt",
+        "es": "Iniciación en el gremio"
       }
     },
-
     {
       "id": "ch02",
       "number": 2,
       "title": "最初のミッション",
       "titleTranslation": "First Mission",
       "level": "N5",
-      "grammarArtifact": { "name": "Bronze Clock", "icon": "🕐", "grammar": "Present · Past · Negative · Verbs" },
+      "grammarArtifact": {
+        "name": "Bronze Clock",
+        "icon": "🕐",
+        "grammar": "Present · Past · Negative · Verbs"
+      },
       "storyIntro": "ギルドから最初のミッションが来た。近くの村に行かなければならない。何かが村で起きている。",
       "storyIntroTranslation": "The first mission has arrived from the guild. You must go to a nearby village. Something is happening there.",
       "storyOutro": "ミッションを終えた。村の人たちは安心した。でも、クリスタルのことはまだわからない。",
       "storyOutroTranslation": "The mission is complete. The villagers are relieved. But the mystery of the crystal remains unsolved.",
-
       "vocabLesson": {
         "title": "Chapter 2 Vocabulary",
         "description": "Words for your first mission.",
-        "wordIds": ["いく", "くる", "たべる", "のむ", "みる", "きく", "はなす", "よむ", "かく", "まいにち", "いま", "きのう", "きょう", "あした", "なんじ", "ひとつ", "ふたつ", "みっつ"]
+        "wordIds": [
+          "いく",
+          "くる",
+          "たべる",
+          "のむ",
+          "みる",
+          "きく",
+          "はなす",
+          "よむ",
+          "かく",
+          "まいにち",
+          "いま",
+          "きのう",
+          "きょう",
+          "あした",
+          "なんじ",
+          "ひとつ",
+          "ふたつ",
+          "みっつ"
+        ]
       },
-
       "grammarLesson": {
         "title": "Chapter 2 Grammar",
         "description": "Past tense and negatives — report what happened in the village.",
@@ -182,7 +273,12 @@
             "type": "fill-blank",
             "template": "きのう、むらに___。",
             "hint": "Past polite form of 行く (to go): 行きました.",
-            "distractors": ["いきました", "いきます", "いきません", "いって"]
+            "distractors": [
+              "いきました",
+              "いきます",
+              "いきません",
+              "いって"
+            ]
           },
           {
             "id": "adv-ja-g-005",
@@ -192,20 +288,32 @@
             "explanation": "ません is the polite negative: 食べません = don't eat / won't eat. ませんでした = didn't eat.",
             "type": "pick-correct",
             "sentences": [
-              { "text": "わたしは にくを たべません。", "correct": true },
-              { "text": "わたしは にくを たべないます。", "correct": false, "error": "ない and ます don't combine like this. Use ません for polite negative." },
-              { "text": "クリスタルは ここに ありません。", "correct": true }
+              {
+                "text": "わたしは にくを たべません。",
+                "correct": true
+              },
+              {
+                "text": "わたしは にくを たべないます。",
+                "correct": false,
+                "error": "ない and ます don't combine like this. Use ません for polite negative."
+              },
+              {
+                "text": "クリスタルは ここに ありません。",
+                "correct": true
+              }
             ]
           }
         ]
       },
-
       "dialogue": {
         "id": "adv-ja-d02",
         "title": "むらびととのかいわ",
         "titleTranslation": "Conversation with a Villager",
         "type": "observe",
-        "speakers": ["むらびと", "アレックス"],
+        "speakers": [
+          "むらびと",
+          "アレックス"
+        ],
         "turns": [
           {
             "type": "line",
@@ -229,9 +337,21 @@
             "type": "question",
             "prompt": "What happened to the villager's son?",
             "options": [
-              { "text": "He went to the guild", "correct": false, "feedback": "いいえ。むすこは いなくなりました — he disappeared." },
-              { "text": "He disappeared yesterday", "correct": true, "feedback": "そうです！きのう いなくなりました。" },
-              { "text": "He found the crystal", "correct": false, "feedback": "いいえ。まだクリスタルのことは わかりません。" }
+              {
+                "text": "He went to the guild",
+                "correct": false,
+                "feedback": "いいえ。むすこは いなくなりました — he disappeared."
+              },
+              {
+                "text": "He disappeared yesterday",
+                "correct": true,
+                "feedback": "そうです！きのう いなくなりました。"
+              },
+              {
+                "text": "He found the crystal",
+                "correct": false,
+                "feedback": "いいえ。まだクリスタルのことは わかりません。"
+              }
             ]
           },
           {
@@ -250,22 +370,39 @@
             "type": "question",
             "prompt": "Where does the son usually play?",
             "options": [
-              { "text": "Near the guild", "correct": false, "feedback": "いいえ。もりの ちかくで あそびます。" },
-              { "text": "Near the forest", "correct": true, "feedback": "そうです！もりの ちかくです。" },
-              { "text": "In the village square", "correct": false, "feedback": "いいえ。もり (forest) の ちかくです。" }
+              {
+                "text": "Near the guild",
+                "correct": false,
+                "feedback": "いいえ。もりの ちかくで あそびます。"
+              },
+              {
+                "text": "Near the forest",
+                "correct": true,
+                "feedback": "そうです！もりの ちかくです。"
+              },
+              {
+                "text": "In the village square",
+                "correct": false,
+                "feedback": "いいえ。もり (forest) の ちかくです。"
+              }
             ]
           }
         ]
       },
-
       "passage": {
         "id": "adv-ja-p02",
         "title": "むらのなぞ",
         "titleTranslation": "The Village Mystery",
         "text": "むらに つきました。むらは しずかです。でも、なにか おかしいです。むらびとに あいました。「きのう、わたしの むすこが いなくなりました」と むらびとが いいました。「どこに いきましたか？」とわたしが ききました。「わかりません。まいにち もりで あそびます。でも、きのうは かえりませんでした」と むらびとが こたえました。わたしは もりに いきました。もりは くらいです。でも、あきらめません。",
         "translation": "We arrived at the village. The village is quiet. But something feels strange. We met a villager. 'Yesterday, my son disappeared,' the villager said. 'Where did he go?' I asked. 'I don't know. He plays in the forest every day. But yesterday he didn't come home,' the villager replied. I went to the forest. The forest is dark. But I won't give up."
+      },
+      "titles": {
+        "en": "First Mission",
+        "zh": "第一个任务",
+        "ja": "最初のミッション",
+        "de": "Erste Mission",
+        "es": "Primera misión"
       }
     }
-
   ]
 }

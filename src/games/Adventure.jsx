@@ -30,7 +30,7 @@ function phaseLabel(phase) {
   return { vocab: 'Vocab', grammar: 'Grammar', dialogue: 'Dialogue', passage: 'Reading', complete: 'Done' }[phase] ?? phase
 }
 
-function ChapterCard({ chapter, status, phasesDone, isNext, onOpen }) {
+function ChapterCard({ chapter, status, phasesDone, isNext, onOpen, activeLanguage }) {
   const locked = status === 'locked'
   const done   = status === 'complete'
   const active = !locked && !done
@@ -43,7 +43,7 @@ function ChapterCard({ chapter, status, phasesDone, isNext, onOpen }) {
     >
       <div className="adv-chapter-num">Ch.{chapter.number}</div>
       <div className="adv-chapter-info">
-        <div className="adv-chapter-title">{chapter.titleTranslation}</div>
+        <div className="adv-chapter-title">{chapter.titles?.[activeLanguage] || chapter.titles?.en || chapter.titleTranslation}</div>
         <div className="adv-chapter-sub">{chapter.title}</div>
         <div className="adv-chapter-level">
           <span className="adv-level-badge">{chapter.level}</span>
@@ -180,6 +180,7 @@ export default function Adventure() {
                   phasesDone={getPhasesDone(chapter.id)}
                   isNext={chapter.id === nextChapterId}
                   onOpen={setOpenChapter}
+                  activeLanguage={activeLanguage}
                 />
               )
             })}
