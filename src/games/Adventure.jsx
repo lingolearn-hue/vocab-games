@@ -4,11 +4,14 @@ import AdventureChapter from './AdventureChapter'
 import './Adventure.css'
 
 async function loadCampaign(language) {
-  try {
-    const res = await fetch(`./adventure/${language}-campaign.json`)
-    if (!res.ok) return null
-    return res.json()
-  } catch { return null }
+  // Try language-specific campaign first, fall back to Japanese
+  for (const lang of [language, 'ja']) {
+    try {
+      const res = await fetch(`./adventure/${lang}-campaign.json`)
+      if (res.ok) return res.json()
+    } catch {}
+  }
+  return null
 }
 
 function getProgress() {
@@ -151,7 +154,6 @@ export default function Adventure() {
       ) : !campaign ? (
         <div className="adv-empty">
           No adventure available for this language yet.
-          {activeLanguage !== 'ja' && ' Switch to Japanese 🇯🇵 to play.'}
         </div>
       ) : (
         <>

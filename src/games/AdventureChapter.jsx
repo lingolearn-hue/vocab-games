@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import { useApp } from '../context/AppContext'
 import { buildLookup } from '../engine/reader'
-import { loadTSVDialogue } from '../engine/dialogueTSV'
+import { loadTSVChapter } from '../engine/dialogueTSV'
 import { TextWithLookup } from '../components/TextWithLookup'
 import SpeakButton from '../components/SpeakButton'
 import GrammarDictionary from './GrammarDictionary'
@@ -465,28 +465,38 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
   const { activeEntries, activeLanguage, showReading, scores } = useApp()
   const language = activeLanguage ?? 'ja'
 
-  const wordEntries = useMemo(
-    () => resolveWordIds(chapter.vocabLesson?.wordIds, activeEntries),
-    [chapter, activeEntries]
-  )
   const lookup = useMemo(() => buildLookup(activeEntries), [activeEntries])
 
-  // Load TSV dialogues for this chapter
-  const [dialogues, setDialogues] = useState([])
+  // All content loaded from TSV — no campaign JSON needed
+  const [dialogues,   setDialogues]   = useState([])
+  const [passages,    setPassages]    = useState([])
+  const [wordEntries, setWordEntries] = useState([])
+  const [tsvMeta,     setTsvMeta]     = useState(null)
+
   useEffect(() => {
-    // Path format: adv{LL}{CC}.tsv where LL = level index, CC = chapter within level
-    // chapter.id is e.g. 'ch01', chapter.number is 1..12
-    // For a 12-chapter N5 campaign, level = 01, chapters 1-12 → adv0101..adv0112
     const chNum = String(chapter.number ?? 1).padStart(2, '0')
-    const path = `./dialogues/tsv/adv01${chNum}.tsv`
-    loadTSVDialogue(path, language).then(dls => {
-      if (dls?.length) setDialogues(dls)
-      else {
-        if (chapter.dialogue) setDialogues([chapter.dialogue])
-        else setDialogues([])
+    const path  = `./dialogues/tsv/adv01${chNum}.tsv`
+    loadTSVChapter(path, language).then(data => {
+      if (!data) return
+      const { meta, sections } = data
+      setTsvMeta(meta)
+      setDialogues(sections.flatMap(s => s.dialogues))
+      setPassages(sections.flatMap(s => s.passages))
+      // Resolve vocab wordIds from TSV @vocab lines
+      const allVocab = [...new Set(sections.flatMap(s => s.vocab))]
+      if (allVocab.length) {
+        const byEntry = new Map(activeEntries.map(e => [e.entry, e]))
+        setWordEntries(allVocab.map(w => byEntry.get(w)).filter(Boolean))
       }
     })
-  }, [chapter.id, language])
+  }, [chapter.number, language, activeEntries])
+
+  // Use TSV meta if available, fall back to campaign JSON fields
+  const chapterTitle  = tsvMeta?.chapterTitle?.en   ?? chapter.titleTranslation
+  const chapterLevel  = tsvMeta?.level               ?? chapter.level
+  const storyIntro    = tsvMeta?.storyIntro?.[language] ?? tsvMeta?.storyIntro?.en ?? chapter.storyIntro ?? ''
+  const storyOutro    = tsvMeta?.storyOutro?.[language] ?? tsvMeta?.storyOutro?.en ?? chapter.storyOutro ?? ''
+  const artifact      = tsvMeta?.artifact ?? chapter.grammarArtifact
 
   // Phase step bar
   const phaseOrder = ['vocab', 'grammar', 'dialogue', 'passage', 'complete']
@@ -499,9 +509,9 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
         <button className="advc-back" onClick={onBack}>← Map</button>
         <div className="advc-header-center">
           <span className="advc-chapter-num">Chapter {chapter.number}</span>
-          <span className="advc-chapter-name">{chapter.titleTranslation}</span>
+          <span className="advc-chapter-name">{chapterTitle}</span>
         </div>
-        <span className="advc-level-tag">{chapter.level}</span>
+        <span className="advc-level-tag">{chapterLevel}</span>
       </div>
 
       <div className="advc-phase-bar">
@@ -514,7 +524,7 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
 
       <div className="advc-content">
         <ChapterHub
-          chapter={chapter}
+          chapter={{ ...chapter, storyIntro, storyOutro, storyIntroTranslation: tsvMeta?.storyIntro?.en, grammarArtifact: artifact, passage: passages[0] ?? chapter.passage }}
           wordEntries={wordEntries}
           dialogues={dialogues}
           language={language}
