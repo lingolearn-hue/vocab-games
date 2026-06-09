@@ -1,0 +1,21 @@
+{
+  "id": "crystal-of-light",
+  "titles": {
+    "en": "The Crystal of Light",
+    "zh": "光之水晶",
+    "ja": "光のクリスタル",
+    "de": "Das Kristall des Lichts",
+    "es": "El Cristal de Luz"
+  },
+  "totalChapters": 12,
+  "chapters": [
+    {
+      "id": "ch01",
+      "number": 1
+    },
+    {
+      "id": "ch02",
+      "number": 2
+    }
+  ]
+}
