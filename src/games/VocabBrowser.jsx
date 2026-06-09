@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from 'react'
 import { useApp } from '../context/AppContext'
 import { GAME_META, resetToLearning, getAllScores } from '../engine/srs'
 import { getAllMnemonics } from '../engine/mnemonics'
+import { displayEntry } from '../engine/vocab'
 import RubyText from '../components/RubyText'
 import './VocabBrowser.css'
 
@@ -140,7 +141,7 @@ export default function VocabBrowser() {
                 <div className="vb-main">
                   <div className="vb-entry-line">
                     <RubyText
-                      text={entry.entry}
+                      text={displayEntry(entry, activeLanguage)}
                       reading={entry.reading}
                       visible={showReading}
                       size="sm"

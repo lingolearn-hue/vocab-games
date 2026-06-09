@@ -319,7 +319,7 @@
 
 @media (prefers-color-scheme: dark) {
   .fc-card { background: #1e1e1e; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
-  .fc-main { color: #f0f0f0; }
+  .fc-main { color: #111; }
   .fc-answer { color: #ddd; }
   .fc-reading { color: #b0b0b0; }
   .fc-divider { background: #333; }
@@ -333,7 +333,7 @@
   .fc-btn-master  { background: #2d2510; border-color: #5c4a1a; }
 }
 [data-theme="dark"] .fc-card { background: #1e1e1e; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
-[data-theme="dark"] .fc-main { color: #f0f0f0; }
+[data-theme="dark"] .fc-main { color: #111; }
 [data-theme="dark"] .fc-answer { color: #f0f0f0; }
 [data-theme="dark"] .fc-reading { color: #b0b0b0; }
 [data-theme="dark"] .fc-divider { background: #333; }

@@ -105,3 +105,27 @@ export function buildGenericQuestion(template, entry, direction) {
   const text = template.replace('___', `{${answer}}`)
   return parseFixedSentence(text)
 }
+
+// ── Article display helper ────────────────────────────────────────────────────
+
+const ARTICLES = {
+  de: { m: 'der', f: 'die', n: 'das' },
+  es: { m: 'el',  f: 'la'           },
+  fr: { m: 'le',  f: 'la'           },
+}
+
+/**
+ * Returns the display string for a vocab entry, prepending the article
+ * for gendered languages (de/es/fr) when the entry is a noun with a gender.
+ * e.g. entry='Auto', gender='n', language='de' → 'das Auto'
+ */
+export function displayEntry(entry, language) {
+  if (!entry) return ''
+  const articleMap = ARTICLES[language]
+  if (!articleMap) return entry.entry
+  if (!entry.gender || entry.pos !== 'noun') return entry.entry
+  const article = articleMap[entry.gender]
+  if (!article) return entry.entry
+  // Capitalise article for display
+  return article.charAt(0).toUpperCase() + article.slice(1) + ' ' + entry.entry
+}

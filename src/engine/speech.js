@@ -8,6 +8,7 @@ const LANG_CODES = {
   ja: 'ja-JP',
   de: 'de-DE',
   es: 'es-ES',
+  fr: 'fr-FR',
   en: 'en-US',
 }
 

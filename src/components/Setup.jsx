@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { useApp } from '../context/AppContext'
 import './Setup.css'
 
-const LANGUAGE_FLAGS = { zh: '🇨🇳', es: '🇪🇸', de: '🇩🇪', ja: '🇯🇵', en: '🇬🇧' }
+const LANGUAGE_FLAGS = { zh: '🇨🇳', es: '🇪🇸', de: '🇩🇪', ja: '🇯🇵', en: '🇬🇧', fr: '🇫🇷' }
 
 // Level order per language family
 const LEVEL_ORDER = {
@@ -11,6 +11,7 @@ const LEVEL_ORDER = {
   de: ['A1','A2','B1','B2','C1','C2'],
   es: ['A1','A2','B1','B2','C1','C2'],
   en: ['A1','A2','B1','B2','C1','C2'],
+  fr: ['A1','A2','B1','B2','C1','C2'],
 }
 
 const DRILL_GAMES = [
@@ -223,7 +224,7 @@ export default function Setup() {
         <p className="hint">{activeLanguage ? 'Loading vocabulary…' : 'Tap the flag above to choose a language.'}</p>
       )}
 
-      <div className="setup-version">v0.37</div>
+      <div className="setup-version">v0.38</div>
     </div>
   )
 }

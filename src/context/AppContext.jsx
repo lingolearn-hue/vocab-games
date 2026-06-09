@@ -136,6 +136,7 @@ export function AppProvider({ children }) {
       de: ['A1','A2','B1','B2','C1','C2'],
       es: ['A1','A2','B1','B2','C1','C2'],
       en: ['A1','A2','B1','B2','C1','C2'],
+  fr: ['A1','A2','B1','B2','C1','C2'],
     }
     const set = new Set(activeEntries.map(e => e.level).filter(Boolean))
     const order = LEVEL_ORDER[activeLanguage] ?? []

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { useApp } from '../context/AppContext'
 import { srsPickDistinct } from '../engine/srs'
+import { displayEntry } from '../engine/vocab'
 import { getMnemonic, setMnemonic, getAllMnemonics } from '../engine/mnemonics'
 import { buildLookup } from '../engine/reader'
 import { TextWithLookup } from '../components/TextWithLookup'
@@ -117,7 +118,7 @@ export default function Flashcard() {
   function getPrompt(entry) {
     if (!entry) return { main: '', sub: null }
     if (direction === 'entry->translation') {
-      return { main: entry.entry, sub: showReading && entry.reading ? entry.reading : null }
+      return { main: displayEntry(entry, language), sub: showReading && entry.reading ? entry.reading : null }
     } else {
       return { main: entry.translation[0], sub: null }
     }
@@ -125,7 +126,7 @@ export default function Flashcard() {
 
   function getAnswer(entry) {
     if (!entry) return ''
-    return direction === 'entry->translation' ? entry.translation[0] : entry.entry
+    return direction === 'entry->translation' ? entry.translation[0] : displayEntry(entry, language)
   }
 
   function advance(action) {
