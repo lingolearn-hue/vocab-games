@@ -475,7 +475,7 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
 
   useEffect(() => {
     const chNum = String(chapter.number ?? 1).padStart(2, '0')
-    const path  = `./dialogues/tsv/adv01${chNum}.tsv`
+    const path  = `./adventure/adv01${chNum}.tsv`
     loadTSVChapter(path, language).then(data => {
       if (!data) return
       const { meta, sections } = data
@@ -492,7 +492,7 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
   }, [chapter.number, language, activeEntries])
 
   // Use TSV meta if available, fall back to campaign JSON fields
-  const chapterTitle  = tsvMeta?.chapterTitle?.en   ?? chapter.titleTranslation
+  const chapterTitle  = (tsvMeta?.chapterTitle ?? tsvMeta?.titles)?.[language] ?? (tsvMeta?.chapterTitle ?? tsvMeta?.titles)?.en ?? chapter.title ?? chapter.titleTranslation
   const chapterLevel  = tsvMeta?.level               ?? chapter.level
   const storyIntro    = tsvMeta?.storyIntro?.[language] ?? tsvMeta?.storyIntro?.en ?? chapter.storyIntro ?? ''
   const storyOutro    = tsvMeta?.storyOutro?.[language] ?? tsvMeta?.storyOutro?.en ?? chapter.storyOutro ?? ''

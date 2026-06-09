@@ -3,15 +3,56 @@ import { useApp } from '../context/AppContext'
 import AdventureChapter from './AdventureChapter'
 import './Adventure.css'
 
-async function loadCampaign(language) {
-  // Try language-specific campaign first, fall back to Japanese
-  for (const lang of [language, 'ja']) {
-    try {
-      const res = await fetch(`./adventure/${lang}-campaign.json`)
-      if (res.ok) return res.json()
-    } catch {}
-  }
+async function loadCampaign() {
+  try {
+    const res = await fetch('./adventure/campaigns.json')
+    if (res.ok) return res.json()
+  } catch {}
   return null
+}
+
+async function loadChapterMeta(chapterNumber, language) {
+  try {
+    const chNum = String(chapterNumber).padStart(2, '0')
+    const res = await fetch(`./adventure/adv01${chNum}.tsv`)
+    if (!res.ok) return null
+    const text = await res.text()
+    return parseChapterMeta(text, language)
+  } catch { return null }
+}
+
+function parseChapterMeta(tsv, language) {
+  // Extract only @chapter, @artifact, @story_intro, @story_outro from TSV
+  const meta = {}
+  const langOrder = ['en','zh','ja','de','es']
+  for (const raw of tsv.split('\n')) {
+    const cells = raw.trim().split('\t')
+    const tag = cells[0]
+    if (tag === '@chapter') {
+      meta.number = cells[1]
+      // cells 2-6: en, zh, ja, de, es
+      const titles = {}
+      langOrder.forEach((l,i) => { titles[l] = cells[2+i]?.trim() ?? '' })
+      meta.titles = titles
+      meta.title = titles[language] || titles.en
+      meta.titleTranslation = titles.en
+      meta.level = cells[7]?.trim() ?? ''
+    }
+    if (tag === '@artifact') {
+      meta.grammarArtifact = { icon: cells[1]?.trim(), name: cells[2]?.trim(), grammar: cells[3]?.trim() }
+    }
+    if (tag === '@story_intro') {
+      const t = {}; langOrder.forEach((l,i) => { t[l] = cells[1+i]?.trim() ?? '' })
+      meta.storyIntro = t[language] || t.en
+      meta.storyIntroTranslation = t.en
+    }
+    if (tag === '@story_outro') {
+      const t = {}; langOrder.forEach((l,i) => { t[l] = cells[1+i]?.trim() ?? '' })
+      meta.storyOutro = t[language] || t.en
+      meta.storyOutroTranslation = t.en
+    }
+  }
+  return meta
 }
 
 function getProgress() {
@@ -30,7 +71,7 @@ function phaseLabel(phase) {
   return { vocab: 'Vocab', grammar: 'Grammar', dialogue: 'Dialogue', passage: 'Reading', complete: 'Done' }[phase] ?? phase
 }
 
-function ChapterCard({ chapter, status, phasesDone, isNext, onOpen, activeLanguage }) {
+function ChapterCard({ chapter, status, phasesDone, isNext, onOpen, meta }) {
   const locked = status === 'locked'
   const done   = status === 'complete'
   const active = !locked && !done
@@ -43,12 +84,12 @@ function ChapterCard({ chapter, status, phasesDone, isNext, onOpen, activeLangua
     >
       <div className="adv-chapter-num">Ch.{chapter.number}</div>
       <div className="adv-chapter-info">
-        <div className="adv-chapter-title">{chapter.titles?.[activeLanguage] || chapter.titles?.en || chapter.titleTranslation}</div>
-        <div className="adv-chapter-sub">{chapter.title}</div>
+        <div className="adv-chapter-title">{meta?.title || `Chapter ${chapter.number}`}</div>
+        <div className="adv-chapter-sub">{meta?.titles?.ja ?? ""}</div>
         <div className="adv-chapter-level">
-          <span className="adv-level-badge">{chapter.level}</span>
-          {chapter.grammarArtifact && (
-            <span className="adv-artifact-badge">{chapter.grammarArtifact.icon} {chapter.grammarArtifact.name}</span>
+          <span className="adv-level-badge">{meta?.level || chapter.level}</span>
+          {meta?.grammarArtifact && (
+            <span className="adv-artifact-badge">{meta.grammarArtifact.icon} {meta.grammarArtifact.name}</span>
           )}
         </div>
       </div>
@@ -69,19 +110,32 @@ function ChapterCard({ chapter, status, phasesDone, isNext, onOpen, activeLangua
 
 export default function Adventure() {
   const { activeLanguage, setScreen, goBack } = useApp()
-  const [campaign,   setCampaign]   = useState(null)
-  const [loading,    setLoading]    = useState(true)
-  const [progress,   setProgress]   = useState(getProgress)
-  const [openChapter, setOpenChapter] = useState(null)
+  const [campaign,      setCampaign]      = useState(null)
+  const [chapterMetas,  setChapterMetas]  = useState({})
+  const [loading,       setLoading]       = useState(true)
+  const [progress,      setProgress]      = useState(getProgress)
+  const [openChapter,   setOpenChapter]   = useState(null)
 
   useEffect(() => {
-    if (!activeLanguage) return
     setLoading(true)
-    loadCampaign(activeLanguage).then(data => {
+    loadCampaign().then(data => {
       setCampaign(data)
       setLoading(false)
     })
-  }, [activeLanguage])
+  }, [])
+
+  // Load chapter metadata from TSV whenever language changes
+  useEffect(() => {
+    if (!campaign || !activeLanguage) return
+    const metas = {}
+    Promise.all(
+      campaign.chapters.map(ch =>
+        loadChapterMeta(ch.number, activeLanguage).then(meta => {
+          if (meta) metas[ch.id] = meta
+        })
+      )
+    ).then(() => setChapterMetas({ ...metas }))
+  }, [campaign, activeLanguage])
 
   function getChapterStatus(chapter) {
     const cp = progress[chapter.id]
@@ -106,6 +160,11 @@ export default function Adventure() {
     setProgress(next)
     saveProgress(next)
     setOpenChapter(null)
+  }
+
+  function openChapterWithMeta(chapter) {
+    const meta = chapterMetas[chapter.id] ?? {}
+    setOpenChapter({ ...chapter, ...meta })
   }
 
   function handlePhaseAdvance(chapterId, phase) {
@@ -179,8 +238,8 @@ export default function Adventure() {
                   status={status}
                   phasesDone={getPhasesDone(chapter.id)}
                   isNext={chapter.id === nextChapterId}
-                  onOpen={setOpenChapter}
-                  activeLanguage={activeLanguage}
+                  onOpen={openChapterWithMeta}
+                  meta={chapterMetas[chapter.id]}
                 />
               )
             })}
