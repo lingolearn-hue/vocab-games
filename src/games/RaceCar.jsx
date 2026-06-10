@@ -277,20 +277,28 @@ export default function RaceCar() {
     const lane = Math.min(2, Math.max(0, Math.floor(((clientX - rect.left) / rect.width) * 3)))
     carLaneRef.current = lane
 
-    // Y — follow finger within bottom 25% zone
+    // Y — snap to two fixed positions: normal zone or boost zone
     const CAR_HEIGHT = 72
-    const relY = clientY - rect.top
-    const zoneTop   = rect.height * 0.75
-    const clampedY  = Math.max(zoneTop, Math.min(rect.height - CAR_HEIGHT - 4, relY - CAR_HEIGHT / 2))
-    carPosRef.current.y = clampedY
-    if (carRef.current) {
-      carRef.current.style.top = `${clampedY}px`
+    const relYRatio  = (clientY - rect.top) / rect.height
+    const inBoost    = relYRatio >= 0.60 && relYRatio < 0.78
+    const inNormal   = relYRatio >= 0.78
+
+    if (inBoost || inNormal) {
+      const snapY = inBoost
+        ? rect.height * 0.65 - CAR_HEIGHT / 2   // boost line
+        : rect.height * 0.78 - CAR_HEIGHT / 2   // normal line
+      if (carPosRef.current.y !== snapY) {
+        carPosRef.current.y = snapY
+        if (carRef.current) {
+          carRef.current.style.bottom = 'auto'
+          carRef.current.style.top    = `${snapY}px`
+        }
+      }
     }
 
-    // Boost zone
+    // Boost toggle — only fires when crossing zone boundary
     if (!boostEnabled) { setBoosting(false); boostRef.current = false; return }
-    const relYRatio = (clientY - rect.top) / rect.height
-    const isBoost = relYRatio < 0.85 && relYRatio >= 0.75
+    const isBoost = inBoost
     if (isBoost !== boostRef.current) {
       setBoosting(isBoost)
       boostRef.current = isBoost
