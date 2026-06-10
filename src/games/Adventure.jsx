@@ -139,11 +139,11 @@ export default function Adventure() {
   // Load chapter meta for all campaigns when language changes
   useEffect(() => {
     if (!campaigns || !activeLanguage) return
-    const allChapters = campaigns.flatMap(c => c.chapters)
+    const allChapters = campaigns.flatMap(c => c.chapters.map(ch => ({ ...ch, campaignKey: c.key ?? 'A' })))
     const metas = {}
     Promise.all(
       allChapters.map(ch =>
-        loadChapterJSON(ch.number, activeLanguage, campaign.key ?? 'A').then(data => {
+        loadChapterJSON(ch.number, activeLanguage, ch.campaignKey).then(data => {
           if (data?.meta) metas[ch.id] = { ...data.meta, title: data.meta.chapterTitle }
         })
       )
