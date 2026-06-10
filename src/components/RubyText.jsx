@@ -8,7 +8,7 @@ export default function RubyText({ text, reading, visible = true, size = 'md', c
   if (!text) return null
 
   if (!reading || !visible) {
-    return <span className={`ruby-plain ruby-${size} ${className}`}>{text}</span>
+    return <span className={`ruby-plain ruby-${size} ruby-no-rt ${className}`}>{text}</span>
   }
 
   const chars     = [...text]
