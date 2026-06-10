@@ -183,23 +183,25 @@ export default function RaceCar() {
       const speed = BASE_SPEED * speedRef.current * (boostRef.current ? BOOST_MULTIPLIER : 1)
       const dy = speed * dt
 
-      // Move tiles via direct DOM writes — no React state update per frame
-      const yMap = tileYRef.current
+      // Move tiles: write directly to DOM via tileDomRefs
+      // tileYRef tracks positions; domRefs updated once refs attach
+      const yMap    = tileYRef.current
       const domRefs = tileDomRefs.current
+      const sh      = screenHeight.current
       const toRemove = []
-      const sh = screenHeight.current
 
-      for (const id in yMap) {
-        const newY = yMap[id] + dy
+      for (const t of tilesRef.current) {
+        const id   = t.id
+        const newY = (yMap[id] ?? t.y) + dy
         if (newY > sh + 20) {
           toRemove.push(id)
         } else {
           yMap[id] = newY
-          if (domRefs[id]) domRefs[id].style.top = newY + 'px'
+          const el = domRefs[id]
+          if (el) el.style.top = newY + 'px'
         }
       }
 
-      // Remove off-screen tiles (triggers React re-render but rare)
       if (toRemove.length) {
         for (const id of toRemove) {
           delete yMap[id]
@@ -420,13 +422,20 @@ export default function RaceCar() {
           return (
             <div
               key={tile.id}
-              ref={el => { if (el) tileDomRefs.current[tile.id] = el; else delete tileDomRefs.current[tile.id] }}
+              ref={el => {
+                if (el) {
+                  tileDomRefs.current[tile.id] = el
+                  // Set initial position immediately on mount
+                  el.style.top = (tileYRef.current[tile.id] ?? tile.y) + 'px'
+                } else {
+                  delete tileDomRefs.current[tile.id]
+                }
+              }}
               className="rc-tile"
               data-has-ruby={!!tileSub}
               style={{
                 left: `calc(${tile.lane * laneWidth}% + 4px)`,
                 width: `calc(${laneWidth}% - 8px)`,
-                top: tileYRef.current[tile.id] ?? tile.y,
               }}
             >
               <RubyText text={tileLabel} reading={tileSub} visible={!!tileSub} size={tileSize} className="ruby-dark" />
