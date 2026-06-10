@@ -1,0 +1,494 @@
+{
+  "meta": {
+    "chapterNum": "02",
+    "chapterTitle": {
+      "en": "First Mission",
+      "zh": "第一个任务",
+      "ja": "最初のミッション",
+      "de": "Erste Mission",
+      "es": "Primera misión"
+    },
+    "level": "N5",
+    "artifact": {
+      "icon": "🕐",
+      "name": "Bronze Clock",
+      "grammar": "Present · Past · Negative · Verbs"
+    },
+    "storyIntro": {
+      "en": "The first mission has arrived from the guild. You must go to a nearby village. Something is happening there.",
+      "zh": "公会的第一个任务来了。你必须去附近的村子。那里发生了一些事情。",
+      "ja": "ギルドから最初のミッションが来た。近くの村に行かなければならない。何かが村で起きている。",
+      "de": "Der erste Auftrag der Gilde ist angekommen. Du musst in ein nahes Dorf gehen. Dort passiert etwas.",
+      "es": "Ha llegado la primera misión del gremio. Debes ir a un pueblo cercano. Allí está pasando algo."
+    },
+    "storyOutro": {
+      "en": "The mission is complete. The villagers are relieved. But the mystery of the crystal remains unsolved.",
+      "zh": "任务完成了。村民们松了口气。但水晶的谜题仍未解决。",
+      "ja": "ミッションを終えた。村の人たちは安心した。でも、クリスタルのことはまだわからない。",
+      "de": "Die Mission ist abgeschlossen. Die Dorfbewohner sind erleichtert. Aber das Rätsel des Kristalls bleibt ungelöst.",
+      "es": "La misión está completada. Los aldeanos están aliviados. Pero el misterio del cristal sigue sin resolverse."
+    }
+  },
+  "sections": [
+    {
+      "num": "01",
+      "title": {
+        "en": "Departure Briefing",
+        "zh": "出发简报",
+        "ja": "出発のブリーフィング",
+        "de": "Abschlussbriefing",
+        "es": "Briefing de salida"
+      },
+      "vocab": [
+        "いく",
+        "くる",
+        "たべる",
+        "のむ",
+        "みる",
+        "きく",
+        "はなす",
+        "よむ",
+        "かく",
+        "まいにち",
+        "いま",
+        "きのう",
+        "きょう",
+        "あした",
+        "なんじ",
+        "ひとつ",
+        "ふたつ",
+        "みっつ"
+      ],
+      "grammar": [
+        "adv-ja-g-004",
+        "adv-ja-g-005"
+      ],
+      "dialogues": [
+        {
+          "id": "adv010201",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "guild_master",
+              "text": {
+                "en": "This is a mission.",
+                "zh": "这是任务。",
+                "ja": "これはミッションです。",
+                "de": "Das ist ein Auftrag.",
+                "es": "Esta es una misión."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "guild_master",
+              "text": {
+                "en": "Please go to the village.",
+                "zh": "请去村子。",
+                "ja": "村へ行ってください。",
+                "de": "Bitte geh in das Dorf.",
+                "es": "Por favor, ve al pueblo."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "guild_master",
+              "text": {
+                "en": "Something happened there.",
+                "zh": "那里发生了一些事。",
+                "ja": "そこで何かありました。",
+                "de": "Dort ist etwas passiert.",
+                "es": "Allí pasó algo."
+              }
+            },
+            {
+              "type": "choice",
+              "options": [
+                {
+                  "suffix": "a",
+                  "text": {
+                    "en": "Yes! I will go.",
+                    "zh": "好的！我去。",
+                    "ja": "はい！行きます。",
+                    "de": "Ja! Ich gehe.",
+                    "es": "¡Sí! Voy."
+                  },
+                  "response": {
+                    "en": "Thank you. Emma will go too.",
+                    "zh": "谢谢。艾玛也去。",
+                    "ja": "ありがとう。エマも行きます。",
+                    "de": "Danke. Emma geht auch.",
+                    "es": "Gracias. Emma también va."
+                  }
+                },
+                {
+                  "suffix": "b",
+                  "text": {
+                    "en": "What happened?",
+                    "zh": "发生了什么？",
+                    "ja": "何がありましたか？",
+                    "de": "Was ist passiert?",
+                    "es": "¿Qué pasó?"
+                  },
+                  "response": {
+                    "en": "I do not know. Please look.",
+                    "zh": "我不知道。请去看看。",
+                    "ja": "わかりません。見てください。",
+                    "de": "Ich weiß es nicht. Bitte schau nach.",
+                    "es": "No lo sé. Por favor, mira."
+                  }
+                }
+              ]
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Hello! I am Emma. Nice to meet you.",
+                "zh": "你好！我是艾玛。很高兴认识你。",
+                "ja": "こんにちは！わたしはエマです。はじめまして。",
+                "de": "Hallo! Ich bin Emma. Schön, dich kennenzulernen.",
+                "es": "¡Hola! Soy Emma. Encantada."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "guild_master",
+              "text": {
+                "en": "Please come back tomorrow.",
+                "zh": "请明天回来。",
+                "ja": "明日帰ってください。",
+                "de": "Bitte komm morgen zurück.",
+                "es": "Por favor, volved mañana."
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "Where does the player go?",
+                "zh": "玩家去哪里？",
+                "ja": "どこへ行きますか？",
+                "de": "Wohin geht der Spieler?",
+                "es": "¿Adónde va el jugador?"
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "To the village.",
+                    "zh": "去村子。",
+                    "ja": "村へ行きます。",
+                    "de": "In das Dorf.",
+                    "es": "Al pueblo."
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "To the market.",
+                    "zh": "去市场。",
+                    "ja": "市場へ行きます。",
+                    "de": "Auf den Markt.",
+                    "es": "Al mercado."
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "To the forest.",
+                    "zh": "去森林。",
+                    "ja": "森へ行きます。",
+                    "de": "In den Wald.",
+                    "es": "Al bosque."
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "02",
+      "title": {
+        "en": "Arrival at the Village",
+        "zh": "抵达村子",
+        "ja": "村への到着",
+        "de": "Ankunft im Dorf",
+        "es": "Llegada al pueblo"
+      },
+      "vocab": [
+        "むら",
+        "しずか",
+        "こまる",
+        "たすける",
+        "むすこ",
+        "もり",
+        "ひがし",
+        "しんぱい"
+      ],
+      "grammar": [
+        "adv-ja-g-004",
+        "adv-ja-g-005"
+      ],
+      "dialogues": [
+        {
+          "id": "adv010202",
+          "dialogueNum": 2,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You arrived at the village.",
+                "zh": "你们到了村子。",
+                "ja": "村に来ました。",
+                "de": "Ihr seid im Dorf angekommen.",
+                "es": "Habéis llegado al pueblo."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "It is quiet here.",
+                "zh": "这里很安静。",
+                "ja": "ここはしずかです。",
+                "de": "Hier ist es still.",
+                "es": "Aquí está tranquilo."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "villager",
+              "text": {
+                "en": "Please help me!",
+                "zh": "请帮帮我！",
+                "ja": "助けてください！",
+                "de": "Bitte hilf mir!",
+                "es": "¡Por favor, ayúdame!"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "villager",
+              "text": {
+                "en": "My son is not here.",
+                "zh": "我的儿子不在这里。",
+                "ja": "むすこがいません。",
+                "de": "Mein Sohn ist nicht hier.",
+                "es": "Mi hijo no está aquí."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "villager",
+              "text": {
+                "en": "He went to the forest yesterday.",
+                "zh": "他昨天去了森林。",
+                "ja": "きのう、もりへ行きました。",
+                "de": "Er ging gestern in den Wald.",
+                "es": "Ayer fue al bosque."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "villager",
+              "text": {
+                "en": "He did not come home.",
+                "zh": "他没有回家。",
+                "ja": "家に帰りませんでした。",
+                "de": "Er kam nicht nach Hause.",
+                "es": "No volvió a casa."
+              }
+            },
+            {
+              "type": "choice",
+              "options": [
+                {
+                  "suffix": "a",
+                  "text": {
+                    "en": "Do not worry. We will look.",
+                    "zh": "别担心。我们去找找。",
+                    "ja": "心配しないでください。さがします。",
+                    "de": "Keine Sorge. Wir schauen nach.",
+                    "es": "No se preocupe. Vamos a buscar."
+                  },
+                  "response": {
+                    "en": "Thank you very much!",
+                    "zh": "非常感谢！",
+                    "ja": "ありがとうございます！",
+                    "de": "Vielen Dank!",
+                    "es": "¡Muchísimas gracias!"
+                  }
+                },
+                {
+                  "suffix": "b",
+                  "text": {
+                    "en": "Where is the forest?",
+                    "zh": "森林在哪里？",
+                    "ja": "もりはどこですか？",
+                    "de": "Wo ist der Wald?",
+                    "es": "¿Dónde está el bosque?"
+                  },
+                  "response": {
+                    "en": "The forest is there. To the east.",
+                    "zh": "森林在那边。在东边。",
+                    "ja": "あそこです。ひがしです。",
+                    "de": "Dort drüben. Im Osten.",
+                    "es": "Allí. Al este."
+                  }
+                }
+              ]
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "The forest. Let us go.",
+                "zh": "森林。我们走吧。",
+                "ja": "もりへ行きましょう。",
+                "de": "Der Wald. Lass uns gehen.",
+                "es": "El bosque. Vamos."
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "Where did the son go yesterday?",
+                "zh": "儿子昨天去了哪里？",
+                "ja": "むすこはきのうどこへ行きましたか？",
+                "de": "Wohin ging der Sohn gestern?",
+                "es": "¿Adónde fue el hijo ayer?"
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "To the forest.",
+                    "zh": "去了森林。",
+                    "ja": "もりへ行きました。",
+                    "de": "In den Wald.",
+                    "es": "Al bosque."
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "To the guild.",
+                    "zh": "去了公会。",
+                    "ja": "ギルドへ行きました。",
+                    "de": "In die Gilde.",
+                    "es": "Al gremio."
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "To the market.",
+                    "zh": "去了市场。",
+                    "ja": "いちばへ行きました。",
+                    "de": "Auf den Markt.",
+                    "es": "Al mercado."
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": [
+        {
+          "num": "02",
+          "title": {
+            "en": "The Village Mystery",
+            "zh": "村子的谜题",
+            "ja": "むらのなぞ",
+            "de": "Das Dorfgeheimnis",
+            "es": "El misterio del pueblo"
+          },
+          "lines": [
+            {
+              "en": "We arrived at the village.",
+              "zh": "我们到了村子。",
+              "ja": "むらに つきました。",
+              "de": "Wir kamen im Dorf an.",
+              "es": "Llegamos al pueblo."
+            },
+            {
+              "en": "The village is quiet.",
+              "zh": "村子很安静。",
+              "ja": "むらは しずかです。",
+              "de": "Das Dorf ist still.",
+              "es": "El pueblo está tranquilo."
+            },
+            {
+              "en": "But something feels strange.",
+              "zh": "但感觉有些奇怪。",
+              "ja": "でも、なにか おかしいです。",
+              "de": "Aber irgendetwas fühlt sich seltsam an.",
+              "es": "Pero algo parece raro."
+            },
+            {
+              "en": "We met a villager.",
+              "zh": "我们遇见了一个村民。",
+              "ja": "むらびとに あいました。",
+              "de": "Wir trafen einen Dorfbewohner.",
+              "es": "Nos encontramos con un aldeano."
+            },
+            {
+              "en": "\"Yesterday my son disappeared,\" the villager said.",
+              "zh": "\"昨天我的儿子不见了，\"村民说。",
+              "ja": "「きのう、わたしの むすこが いなくなりました」と むらびとが いいました。",
+              "de": "„Gestern ist mein Sohn verschwunden\", sagte der Dorfbewohner.",
+              "es": "«Ayer mi hijo desapareció», dijo el aldeano."
+            },
+            {
+              "en": "\"Where did he go?\" I asked.",
+              "zh": "\"他去哪里了？\"我问。",
+              "ja": "「どこに いきましたか？」とわたしが ききました。",
+              "de": "„Wo ist er hingegangen?\", fragte ich.",
+              "es": "«¿Adónde fue?», pregunté."
+            },
+            {
+              "en": "\"I do not know. He plays in the forest every day.\"",
+              "zh": "\"我不知道。他每天在森林里玩。\"",
+              "ja": "「わかりません。まいにち もりで あそびます。」",
+              "de": "„Ich weiß es nicht. Er spielt jeden Tag im Wald.\"",
+              "es": "«No lo sé. Juega en el bosque todos los días.»"
+            },
+            {
+              "en": "\"But yesterday he did not come home,\" the villager replied.",
+              "zh": "\"但昨天他没有回家，\"村民回答。",
+              "ja": "「でも、きのうは かえりませんでした」と むらびとが こたえました。",
+              "de": "„Aber gestern kam er nicht nach Hause\", antwortete der Dorfbewohner.",
+              "es": "«Pero ayer no volvió a casa», respondió el aldeano."
+            },
+            {
+              "en": "I went to the forest.",
+              "zh": "我去了森林。",
+              "ja": "わたしは もりに いきました。",
+              "de": "Ich ging in den Wald.",
+              "es": "Fui al bosque."
+            },
+            {
+              "en": "The forest is dark.",
+              "zh": "森林很黑暗。",
+              "ja": "もりは くらいです。",
+              "de": "Der Wald ist dunkel.",
+              "es": "El bosque está oscuro."
+            },
+            {
+              "en": "But I will not give up.",
+              "zh": "但我不会放弃。",
+              "ja": "でも、あきらめません。",
+              "de": "Aber ich gebe nicht auf.",
+              "es": "Pero no me rendiré."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
