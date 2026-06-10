@@ -75,7 +75,8 @@ function PatternCard({ pattern, initialOpen }) {
 }
 
 export default function GrammarDictionary({ patterns: chapterPatterns, onBack }) {
-  const { activeLanguage } = useApp()
+  const { activeLanguage, goBack } = useApp()
+  const handleBack = onBack ?? goBack
   const [allPatterns, setAllPatterns] = useState([])
   const [loading, setLoading] = useState(false)
   const [search, setSearch] = useState('')
@@ -131,7 +132,7 @@ export default function GrammarDictionary({ patterns: chapterPatterns, onBack })
   return (
     <div className="gd-screen">
       <div className="gd-header">
-        {onBack && <button className="gd-back" onClick={onBack}>← Back</button>}
+        {<button className="gd-back" onClick={handleBack}>← Back</button>}
         <span className="gd-title-main">Grammar Dictionary</span>
       </div>
 
