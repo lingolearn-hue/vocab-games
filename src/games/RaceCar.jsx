@@ -91,6 +91,9 @@ export default function RaceCar() {
       lanes[i],
       -TILE_HEIGHT - 20 + stagger[i]
     ))
+    // Initialise Y positions in ref — game loop reads/writes these directly
+    for (const t of newTiles) tileYRef.current[t.id] = t.y
+    tilesRef.current = newTiles
     setTiles(newTiles)
   }, [])
 
