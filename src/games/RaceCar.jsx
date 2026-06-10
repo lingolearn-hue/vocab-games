@@ -66,6 +66,8 @@ export default function RaceCar() {
   // Car position — use a ref + direct DOM update for smooth 60fps movement
   // carPosRef holds { x, y } in pixels; carRef points to the car DOM element
   const carRef    = useRef(null)
+  const tileDomRefs = useRef({})   // id → DOM element, for direct Y writes
+  const tileYRef    = useRef({})   // id → current Y position
   const carPosRef = useRef({ x: null, y: null })  // null = default position
   useEffect(() => { tilesRef.current = tiles }, [tiles])
   useEffect(() => { promptRef.current = prompt }, [prompt])
@@ -117,7 +119,7 @@ export default function RaceCar() {
     }
 
     tilesRef.current.forEach(tile => {
-      if (tile.y + TILE_HEIGHT < carTop || tile.y > carBottom) return
+      if (tileY + TILE_HEIGHT < carTop || tileY > carBottom) return
       if (!lanesRef.current) {
         if (tile.lane !== carLaneRef.current) return
       } else {
@@ -178,13 +180,35 @@ export default function RaceCar() {
       const speed = BASE_SPEED * speedRef.current * (boostRef.current ? BOOST_MULTIPLIER : 1)
       const dy = speed * dt
 
-      setTiles(prev => {
-        const next = prev
-          .map(t => ({ ...t, y: t.y + dy }))
-          .filter(t => t.y < screenHeight.current + 20)
-        tilesRef.current = next
-        return next
-      })
+      // Move tiles via direct DOM writes — no React state update per frame
+      const yMap = tileYRef.current
+      const domRefs = tileDomRefs.current
+      const toRemove = []
+      const sh = screenHeight.current
+
+      for (const id in yMap) {
+        const newY = yMap[id] + dy
+        if (newY > sh + 20) {
+          toRemove.push(id)
+        } else {
+          yMap[id] = newY
+          if (domRefs[id]) domRefs[id].style.top = newY + 'px'
+        }
+      }
+
+      // Remove off-screen tiles (triggers React re-render but rare)
+      if (toRemove.length) {
+        for (const id of toRemove) {
+          delete yMap[id]
+          delete domRefs[id]
+        }
+        setTiles(prev => {
+          const next = prev.filter(t => !toRemove.includes(t.id))
+          tilesRef.current = next
+          return next
+        })
+      }
+
       checkCollisions()
     }
 
@@ -273,24 +297,33 @@ export default function RaceCar() {
       carRef.current.style.bottom = 'auto'
     }
 
-    // Lane for collision — still needs state update (but less frequent is fine)
+    // Lane for collision
     const lane = Math.min(2, Math.max(0, Math.floor(((clientX - rect.left) / rect.width) * 3)))
     carLaneRef.current = lane
 
-    // Y — follow finger within bottom 25% zone
+    // Y — snap to two fixed positions (normal zone / boost zone)
     const CAR_HEIGHT = 72
-    const relY = clientY - rect.top
-    const zoneTop   = rect.height * 0.75
-    const clampedY  = Math.max(zoneTop, Math.min(rect.height - CAR_HEIGHT - 4, relY - CAR_HEIGHT / 2))
-    carPosRef.current.y = clampedY
-    if (carRef.current) {
-      carRef.current.style.top = `${clampedY}px`
+    const relYRatio  = (clientY - rect.top) / rect.height
+    const inBoost    = relYRatio >= 0.60 && relYRatio < 0.78
+    const inNormal   = relYRatio >= 0.78
+
+    const normalY = rect.height * 0.78 - CAR_HEIGHT / 2
+    const boostY  = rect.height * 0.65 - CAR_HEIGHT / 2
+
+    if (inBoost || inNormal) {
+      const snapY = inBoost ? boostY : normalY
+      if (carPosRef.current.y !== snapY) {
+        carPosRef.current.y = snapY
+        if (carRef.current) {
+          carRef.current.style.bottom = 'auto'
+          carRef.current.style.top    = snapY + 'px'
+        }
+      }
     }
 
-    // Boost zone
+    // Boost toggle — only fires on zone boundary crossing (no React render if unchanged)
     if (!boostEnabled) { setBoosting(false); boostRef.current = false; return }
-    const relYRatio = (clientY - rect.top) / rect.height
-    const isBoost = relYRatio < 0.85 && relYRatio >= 0.75
+    const isBoost = inBoost
     if (isBoost !== boostRef.current) {
       setBoosting(isBoost)
       boostRef.current = isBoost
@@ -374,23 +407,23 @@ export default function RaceCar() {
           </span>
         </div>
 
-        {/* Tiles */}
+        {/* Tiles — Y position updated via tileDomRefs for zero React renders per frame */}
         {tiles.map(tile => {
           const rawLabel  = direction === 'entry->translation' ? tile.entry.entry : tile.entry.translation[0]
           const tileLabel = truncate(rawLabel)
           const tileSub   = showReading && tile.entry.reading && direction === 'entry->translation' ? tile.entry.reading : null
-          // Pick size: CJK glyphs are compact; long Latin words need smaller font
           const isCJK = /[\u4e00-\u9fff\u3040-\u30ff]/.test(tileLabel)
           const tileSize = isCJK ? 'md' : tileLabel.length > 10 ? 'sm' : 'md'
           return (
             <div
               key={tile.id}
+              ref={el => { if (el) tileDomRefs.current[tile.id] = el; else delete tileDomRefs.current[tile.id] }}
               className="rc-tile"
               data-has-ruby={!!tileSub}
               style={{
                 left: `calc(${tile.lane * laneWidth}% + 4px)`,
                 width: `calc(${laneWidth}% - 8px)`,
-                top: tile.y,
+                top: tileYRef.current[tile.id] ?? tile.y,
               }}
             >
               <RubyText text={tileLabel} reading={tileSub} visible={!!tileSub} size={tileSize} className="ruby-dark" />

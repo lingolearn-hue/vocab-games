@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import { useApp } from '../context/AppContext'
 import { buildLookup } from '../engine/reader'
-import { loadTSVChapter } from '../engine/dialogueTSV'
+import { loadChapterJSON } from '../engine/campaignLoader'
 import { TextWithLookup } from '../components/TextWithLookup'
 import SpeakButton from '../components/SpeakButton'
 import GrammarDictionary from './GrammarDictionary'
@@ -387,8 +387,6 @@ function ChapterHub({ chapter, chapterTitle, chapterLevel, storyIntro, storyIntr
       onDone={() => markPartDone('passage')}
     />
   )
-  if (isComplete) return <CompletePhase chapter={chapter} chapterTitle={chapterTitle} artifact={chArtifact} onMap={onBack} />
-
   // ── Hub layout ──
   return (
     <div className="advc-hub">
@@ -401,13 +399,13 @@ function ChapterHub({ chapter, chapterTitle, chapterLevel, storyIntro, storyIntr
       <div className="advc-hub-body">
         {/* Left: vocab shortcut */}
         <div className="advc-hub-left">
-          <button className="advc-hub-vocab-btn" onClick={() => setActiveView('vocab')}>
+          <button className={`advc-hub-vocab-btn ${phaseDone('vocab') ? 'is-done' : ''}`} onClick={() => setActiveView('vocab')}>
             <span className="advc-hub-vocab-icon">📚</span>
             <span className="advc-hub-vocab-label">Vocab</span>
             <span className="advc-hub-vocab-count">{wordEntries.length} words</span>
             {phaseDone('vocab') && <span className="advc-hub-check">✓</span>}
           </button>
-          <button className="advc-hub-vocab-btn" onClick={() => setActiveView('grammar')}>
+          <button className={`advc-hub-vocab-btn ${phaseDone('grammar') ? 'is-done' : ''}`} onClick={() => setActiveView('grammar')}>
             <span className="advc-hub-vocab-icon">📐</span>
             <span className="advc-hub-vocab-label">Grammar</span>
             <span className="advc-hub-vocab-count">{chapter.grammarLesson?.patterns?.length ?? 0} patterns</span>
@@ -436,7 +434,7 @@ function ChapterHub({ chapter, chapterTitle, chapterLevel, storyIntro, storyIntr
             <>
               <div className="advc-hub-section-label" style={{ marginTop: dialogues.length ? '0.8rem' : 0 }}>Reading</div>
               {passages.map((p, i) => (
-                <button key={i} className="advc-hub-content-btn" onClick={() => setActiveView({ type: 'passage', idx: i })}>
+                <button key={i} className={`advc-hub-content-btn ${phaseDone('passage') ? 'is-done' : ''}`} onClick={() => setActiveView({ type: 'passage', idx: i })}>
                   <span className="advc-hub-content-icon">📖</span>
                   <div className="advc-hub-content-info">
                     <span className="advc-hub-content-title">{p.title}</span>
@@ -448,12 +446,14 @@ function ChapterHub({ chapter, chapterTitle, chapterLevel, storyIntro, storyIntr
             </>
           )}
 
-          {/* Complete chapter button — shown when all content visited */}
-          {(phaseDone('dialogue') || dialogues.length === 0) && (passages.length === 0 || phaseDone('passage')) && (
+          {/* Complete / completed status */}
+          {isComplete ? (
+            <div className="advc-hub-complete-badge">⭐ Chapter Complete</div>
+          ) : (phaseDone('dialogue') || dialogues.length === 0) && (passages.length === 0 || phaseDone('passage')) ? (
             <button className="advc-hub-complete-btn" onClick={onComplete}>
               ⭐ Complete Chapter
             </button>
-          )}
+          ) : null}
         </div>
       </div>
     </div>
@@ -475,15 +475,12 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
   const [tsvMeta,     setTsvMeta]     = useState(null)
 
   useEffect(() => {
-    const chNum = String(chapter.number ?? 1).padStart(2, '0')
-    const path  = `./campaign/campaign01${chNum}.tsv`
-    loadTSVChapter(path, language).then(data => {
+    loadChapterJSON(chapter.number, language, chapter.campaignKey ?? 'A').then(data => {
       if (!data) return
       const { meta, sections } = data
       setTsvMeta(meta)
       setDialogues(sections.flatMap(s => s.dialogues))
       setPassages(sections.flatMap(s => s.passages))
-      // Resolve vocab wordIds from TSV @vocab lines
       const allVocab = [...new Set(sections.flatMap(s => s.vocab))]
       if (allVocab.length) {
         const byEntry = new Map(activeEntries.map(e => [e.entry, e]))

@@ -1,105 +1,41 @@
 import { useState, useEffect, useMemo } from 'react'
 import { useApp } from '../context/AppContext'
 import AdventureChapter from './AdventureChapter'
+import { loadCampaignIndex, loadChapterJSON } from '../engine/campaignLoader'
 import './Adventure.css'
-
-async function loadCampaign() {
-  try {
-    const res = await fetch('./campaign/campaigns.json')
-    if (res.ok) return res.json()
-  } catch {}
-  return null
-}
-
-async function loadChapterMeta(chapterNumber, language) {
-  try {
-    const chNum = String(chapterNumber).padStart(2, '0')
-    const res = await fetch(`./campaign/campaign01${chNum}.tsv`)
-    if (!res.ok) return null
-    const text = await res.text()
-    return parseChapterMeta(text, language)
-  } catch { return null }
-}
-
-function parseChapterMeta(tsv, language) {
-  // Extract only @chapter, @artifact, @story_intro, @story_outro from TSV
-  const meta = {}
-  const langOrder = ['en','zh','ja','de','es']
-  for (const raw of tsv.split('\n')) {
-    const cells = raw.trim().split('\t')
-    const tag = cells[0]
-    if (tag === '@chapter') {
-      meta.number = cells[1]
-      // cells 2-6: en, zh, ja, de, es
-      const titles = {}
-      langOrder.forEach((l,i) => { titles[l] = cells[2+i]?.trim() ?? '' })
-      meta.titles = titles
-      meta.title = titles[language] || titles.en
-      meta.titleTranslation = titles.en
-      meta.level = cells[7]?.trim() ?? ''
-    }
-    if (tag === '@artifact') {
-      meta.grammarArtifact = { icon: cells[1]?.trim(), name: cells[2]?.trim(), grammar: cells[3]?.trim() }
-    }
-    if (tag === '@story_intro') {
-      const t = {}; langOrder.forEach((l,i) => { t[l] = cells[1+i]?.trim() ?? '' })
-      meta.storyIntro = t[language] || t.en
-      meta.storyIntroTranslation = t.en
-    }
-    if (tag === '@story_outro') {
-      const t = {}; langOrder.forEach((l,i) => { t[l] = cells[1+i]?.trim() ?? '' })
-      meta.storyOutro = t[language] || t.en
-      meta.storyOutroTranslation = t.en
-    }
-  }
-  return meta
-}
 
 function getProgress() {
   try { return JSON.parse(localStorage.getItem('adventureProgress') || '{}') }
   catch { return {} }
 }
+function saveProgress(p) { localStorage.setItem('adventureProgress', JSON.stringify(p)) }
 
-function saveProgress(p) {
-  localStorage.setItem('adventureProgress', JSON.stringify(p))
-}
-
-// Phase order within a chapter
 const PHASES = ['vocab', 'grammar', 'dialogue', 'passage', 'complete']
 
-function phaseLabel(phase) {
-  return { vocab: 'Vocab', grammar: 'Grammar', dialogue: 'Dialogue', passage: 'Reading', complete: 'Done' }[phase] ?? phase
-}
+// ── Chapter row inside accordion ─────────────────────────────────────────────
 
-function ChapterCard({ chapter, status, phasesDone, isNext, onOpen, meta }) {
+function ChapterRow({ chapter, status, phasesDone, isNext, onOpen, meta }) {
   const locked = status === 'locked'
   const done   = status === 'complete'
-  const active = !locked && !done
 
   return (
     <button
-      className={`adv-chapter-card ${done ? 'done' : ''} ${active ? 'active' : ''} ${locked ? 'locked' : ''} ${isNext ? 'next' : ''}`}
+      className={`adv-chapter-row ${done ? 'done' : ''} ${locked ? 'locked' : ''} ${isNext ? 'next' : ''}`}
       onClick={() => !locked && onOpen(chapter)}
       disabled={locked}
     >
-      <div className="adv-chapter-num">Ch.{chapter.number}</div>
-      <div className="adv-chapter-info">
-        <div className="adv-chapter-title">{meta?.title || `Chapter ${chapter.number}`}</div>
-        <div className="adv-chapter-sub">{meta?.titles?.ja ?? ""}</div>
-        <div className="adv-chapter-level">
-          <span className="adv-level-badge">{meta?.level || chapter.level}</span>
-          {meta?.grammarArtifact && (
-            <span className="adv-artifact-badge">{meta.grammarArtifact.icon} {meta.grammarArtifact.name}</span>
-          )}
-        </div>
+      <span className="adv-row-num">Ch.{chapter.number}</span>
+      <div className="adv-row-info">
+        <span className="adv-row-title">{meta?.title || `Chapter ${chapter.number}`}</span>
+        {meta?.level && <span className="adv-row-level">{meta.level}</span>}
       </div>
-      <div className="adv-chapter-status">
-        {done && <span className="adv-done-icon">✓</span>}
+      <div className="adv-row-status">
+        {done   && <span className="adv-done-icon">✓</span>}
         {locked && <span className="adv-lock-icon">🔒</span>}
-        {active && !done && (
+        {!done && !locked && (
           <div className="adv-phase-dots">
             {PHASES.slice(0,-1).map(p => (
-              <span key={p} className={`adv-phase-dot ${phasesDone.includes(p) ? 'done' : ''}`} title={phaseLabel(p)} />
+              <span key={p} className={`adv-phase-dot ${phasesDone.includes(p) ? 'done' : ''}`} />
             ))}
           </div>
         )}
@@ -108,9 +44,85 @@ function ChapterCard({ chapter, status, phasesDone, isNext, onOpen, meta }) {
   )
 }
 
+// ── Campaign accordion card ───────────────────────────────────────────────────
+
+function CampaignCard({ campaign, progress, chapterMetas, activeLanguage, onOpenChapter, nextChapterId }) {
+  const [open, setOpen] = useState(campaign.id === 'crystal-of-light')  // first open by default
+
+  const t = (obj) => (obj && typeof obj === 'object') ? (obj[activeLanguage] || obj.en || '') : (obj ?? '')
+
+  const completedCount = campaign.chapters.filter(ch => progress[ch.id]?.phase === 'complete').length
+  const total          = campaign.totalChapters ?? campaign.chapters.length
+  const pct            = total > 0 ? Math.round(completedCount / total * 100) : 0
+
+  function getStatus(ch) {
+    const cp = progress[ch.id]
+    if (cp?.phase === 'complete') return 'complete'
+    if (ch.number === 1) return 'unlocked'
+    const prev = campaign.chapters[ch.number - 2]
+    return progress[prev?.id]?.phase === 'complete' ? 'unlocked' : 'locked'
+  }
+
+  function getPhasesDone(chId) {
+    const cp = progress[chId]
+    if (!cp) return []
+    const idx = PHASES.indexOf(cp.phase)
+    return PHASES.slice(0, idx)
+  }
+
+  return (
+    <div className={`adv-campaign-card ${open ? 'open' : ''} ${campaign.comingSoon ? 'coming-soon' : ''}`}>
+      {/* Campaign header — tap to expand */}
+      <button className="adv-campaign-header" onClick={() => !campaign.comingSoon && setOpen(o => !o)}>
+        <span className="adv-campaign-icon">{campaign.icon ?? '⚔️'}</span>
+        <div className="adv-campaign-info">
+          <span className="adv-campaign-name">{t(campaign.titles)}</span>
+          <span className="adv-campaign-sub">{t(campaign.subtitles)}</span>
+        </div>
+        <div className="adv-campaign-right">
+          {campaign.comingSoon ? (
+            <span className="adv-coming-soon">Coming soon</span>
+          ) : (
+            <>
+              {completedCount > 0 && <span className="adv-campaign-pct">{pct}%</span>}
+              <span className="adv-campaign-arrow">{open ? '▾' : '›'}</span>
+            </>
+          )}
+        </div>
+      </button>
+
+      {/* Progress bar */}
+      {open && completedCount > 0 && (
+        <div className="adv-progress-bar">
+          <div className="adv-progress-fill" style={{ width: `${pct}%` }} />
+        </div>
+      )}
+
+      {/* Chapter list */}
+      {open && !campaign.comingSoon && (
+        <div className="adv-chapter-list">
+          {campaign.chapters.map(ch => (
+            <ChapterRow
+              key={ch.id}
+              chapter={ch}
+              status={getStatus(ch)}
+              phasesDone={getPhasesDone(ch.id)}
+              isNext={ch.id === nextChapterId}
+              onOpen={ch => onOpenChapter(ch, campaign.key)}
+              meta={chapterMetas[ch.id]}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
+// ── Main Adventure screen ─────────────────────────────────────────────────────
+
 export default function Adventure() {
-  const { activeLanguage, setScreen, goBack } = useApp()
-  const [campaign,      setCampaign]      = useState(null)
+  const { activeLanguage, goBack } = useApp()
+  const [campaigns,     setCampaigns]     = useState(null)
   const [chapterMetas,  setChapterMetas]  = useState({})
   const [loading,       setLoading]       = useState(true)
   const [progress,      setProgress]      = useState(getProgress)
@@ -118,79 +130,60 @@ export default function Adventure() {
 
   useEffect(() => {
     setLoading(true)
-    loadCampaign().then(data => {
-      setCampaign(data)
+    loadCampaignIndex().then(data => {
+      setCampaigns(data)
       setLoading(false)
     })
   }, [])
 
-  // Load chapter metadata from TSV whenever language changes
+  // Load chapter meta for all campaigns when language changes
   useEffect(() => {
-    if (!campaign || !activeLanguage) return
+    if (!campaigns || !activeLanguage) return
+    const allChapters = campaigns.flatMap(c => c.chapters)
     const metas = {}
     Promise.all(
-      campaign.chapters.map(ch =>
-        loadChapterMeta(ch.number, activeLanguage).then(meta => {
-          if (meta) metas[ch.id] = meta
+      allChapters.map(ch =>
+        loadChapterJSON(ch.number, activeLanguage, campaign.key ?? 'A').then(data => {
+          if (data?.meta) metas[ch.id] = { ...data.meta, title: data.meta.chapterTitle }
         })
       )
     ).then(() => setChapterMetas({ ...metas }))
-  }, [campaign, activeLanguage])
-
-  function getChapterStatus(chapter) {
-    const cp = progress[chapter.id]
-    if (!cp) {
-      // Chapter 1 always unlocked; others locked until previous complete
-      if (chapter.number === 1) return 'unlocked'
-      const prevId = campaign.chapters[chapter.number - 2]?.id
-      return progress[prevId]?.phase === 'complete' ? 'unlocked' : 'locked'
-    }
-    return cp.phase === 'complete' ? 'complete' : 'unlocked'
-  }
-
-  function getPhasesDone(chapterId) {
-    const cp = progress[chapterId]
-    if (!cp) return []
-    const idx = PHASES.indexOf(cp.phase)
-    return PHASES.slice(0, idx)
-  }
+  }, [campaigns, activeLanguage])
 
   function handleChapterComplete(chapterId) {
     const next = { ...progress, [chapterId]: { phase: 'complete' } }
-    setProgress(next)
-    saveProgress(next)
+    setProgress(next); saveProgress(next)
     setOpenChapter(null)
-  }
-
-  function openChapterWithMeta(chapter) {
-    const meta = chapterMetas[chapter.id] ?? {}
-    setOpenChapter({ ...chapter, ...meta })
   }
 
   function handlePhaseAdvance(chapterId, phase) {
     const next = { ...progress, [chapterId]: { phase } }
-    setProgress(next)
-    saveProgress(next)
+    setProgress(next); saveProgress(next)
   }
 
-  // Determine which chapter to highlight as "next"
+  function openChapterWithMeta(chapter, campaignKey) {
+    const meta = chapterMetas[chapter.id] ?? {}
+    setOpenChapter({ ...chapter, ...meta, campaignKey: campaignKey ?? 'A' })
+  }
+
+  // Next chapter to highlight across all campaigns
   const nextChapterId = useMemo(() => {
-    if (!campaign) return null
-    for (const ch of campaign.chapters) {
-      if (getChapterStatus(ch) !== 'complete') return ch.id
+    if (!campaigns) return null
+    for (const campaign of campaigns) {
+      for (const ch of campaign.chapters) {
+        const cp = progress[ch.id]
+        if (!cp || cp.phase !== 'complete') return ch.id
+      }
     }
     return null
-  }, [campaign, progress])
-
-  const completedCount = campaign ? campaign.chapters.filter(ch => progress[ch.id]?.phase === 'complete').length : 0
-  const totalCount     = campaign?.chapters.length ?? 0
+  }, [campaigns, progress])
 
   if (openChapter) {
     return (
       <AdventureChapter
         chapter={openChapter}
         currentPhase={progress[openChapter.id]?.phase ?? 'vocab'}
-        onPhaseAdvance={(phase) => handlePhaseAdvance(openChapter.id, phase)}
+        onPhaseAdvance={phase => handlePhaseAdvance(openChapter.id, phase)}
         onComplete={() => handleChapterComplete(openChapter.id)}
         onBack={() => setOpenChapter(null)}
       />
@@ -199,53 +192,30 @@ export default function Adventure() {
 
   return (
     <div className="adv-screen">
-      {/* Header */}
       <div className="adv-header">
         <button className="adv-back" onClick={goBack}>← Back</button>
         <span className="adv-header-title">Adventure</span>
-        <span className="adv-progress-label">
-          {completedCount}/{totalCount}
-        </span>
       </div>
 
-      {loading ? (
-        <div className="adv-empty">Loading campaign…</div>
-      ) : !campaign ? (
-        <div className="adv-empty">
-          No adventure available for this language yet.
-        </div>
-      ) : (
-        <>
-          {/* Campaign intro */}
-          <div className="adv-campaign-intro">
-            <div className="adv-campaign-title">{campaign.title}</div>
-            <div className="adv-campaign-sub">{campaign.description}</div>
-            {completedCount > 0 && (
-              <div className="adv-campaign-bar">
-                <div className="adv-campaign-fill" style={{ width: `${(completedCount/totalCount)*100}%` }} />
-              </div>
-            )}
-          </div>
-
-          {/* Chapter map — bottom to top */}
-          <div className="adv-map">
-            {[...campaign.chapters].reverse().map(chapter => {
-              const status = getChapterStatus(chapter)
-              return (
-                <ChapterCard
-                  key={chapter.id}
-                  chapter={chapter}
-                  status={status}
-                  phasesDone={getPhasesDone(chapter.id)}
-                  isNext={chapter.id === nextChapterId}
-                  onOpen={openChapterWithMeta}
-                  meta={chapterMetas[chapter.id]}
-                />
-              )
-            })}
-          </div>
-        </>
-      )}
+      <div className="adv-scroll">
+        {loading ? (
+          <div className="adv-empty">Loading…</div>
+        ) : !campaigns?.length ? (
+          <div className="adv-empty">No adventures available yet.</div>
+        ) : (
+          campaigns.map(campaign => (
+            <CampaignCard
+              key={campaign.id}
+              campaign={campaign}
+              progress={progress}
+              chapterMetas={chapterMetas}
+              activeLanguage={activeLanguage}
+              onOpenChapter={openChapterWithMeta}
+              nextChapterId={nextChapterId}
+            />
+          ))
+        )}
+      </div>
     </div>
   )
 }

@@ -643,3 +643,26 @@
 }
 .advc-hub-complete-btn:hover { opacity: 0.9; }
 .advc-hub-complete-btn:focus:not(:focus-visible) { outline: none; }
+
+/* Completed chapter badge */
+.advc-hub-complete-badge {
+  margin-top: 0.8rem;
+  padding: 0.6rem 1rem;
+  background: #182d24;
+  border: 1.5px solid #22a06b;
+  border-radius: 12px;
+  color: #22a06b;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Done content buttons — green frame, slightly dimmed */
+.advc-hub-content-btn.is-done {
+  border-color: #22a06b;
+  opacity: 0.75;
+}
+.advc-hub-vocab-btn.is-done {
+  border-color: #22a06b;
+  opacity: 0.75;
+}

@@ -1,0 +1,528 @@
+{
+  "meta": {
+    "chapterNum": "01",
+    "chapterTitle": {
+      "en": "Guild Initiation",
+      "zh": "公会入团",
+      "ja": "ギルドへの入団",
+      "de": "Gildeneintritt",
+      "es": "Iniciación en el gremio"
+    },
+    "level": "N5",
+    "artifact": {
+      "icon": "🏅",
+      "name": "Apprentice Badge",
+      "grammar": "は・です・か・も"
+    },
+    "storyIntro": {
+      "en": "The Crystal of Light has disappeared. Strange things are happening. The Adventurer Guild is looking for a new apprentice. That is you.",
+      "zh": "光之水晶消失了。奇怪的事情正在发生。冒险者公会在寻找新学徒。那就是你。",
+      "ja": "光のクリスタルが消えた。王国では不思議なことが起きている。冒険者ギルドが新しい見習いを探している。それが、あなただ。",
+      "de": "Das Kristall des Lichts ist verschwunden. Seltsame Dinge geschehen. Die Abenteurergilde sucht einen neuen Lehrling. Das bist du.",
+      "es": "El Cristal de Luz ha desaparecido. Cosas extrañas están sucediendo. El gremio de aventureros busca un nuevo aprendiz. Ese eres tú."
+    },
+    "storyOutro": {
+      "en": "You have become a guild apprentice. You still know nothing. But the journey has already begun.",
+      "zh": "你成为了公会的学徒。你还什么都不知道。但旅程已经开始了。",
+      "ja": "あなたはギルドの見習いになった。まだ何もわからない。でも、旅はもう始まっている。",
+      "de": "Du bist ein Gildenlehrling geworden. Du weißt noch nichts. Aber die Reise hat bereits begonnen.",
+      "es": "Te has convertido en aprendiz del gremio. Todavía no sabes nada. Pero el viaje ya ha comenzado."
+    }
+  },
+  "sections": [
+    {
+      "num": "01",
+      "title": {
+        "en": "Meeting the Guild Master",
+        "zh": "与公会长见面",
+        "ja": "ギルドマスターとの出会い",
+        "de": "Treffen mit dem Gildemaster",
+        "es": "Conociendo al maestro del gremio"
+      },
+      "vocab": [
+        "こんにちは",
+        "ありがとう",
+        "はい",
+        "いいえ",
+        "わたし",
+        "なまえ",
+        "ひと",
+        "がくせい",
+        "せんせい",
+        "ともだち",
+        "にほん",
+        "どこ",
+        "なに",
+        "いくら",
+        "おはようございます",
+        "こんばんは",
+        "すみません",
+        "はじめまして"
+      ],
+      "grammar": [
+        "adv-ja-g-001",
+        "adv-ja-g-002",
+        "adv-ja-g-003"
+      ],
+      "dialogues": [
+        {
+          "id": "adv010101",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "This is the guild.",
+                "zh": "这是公会。",
+                "ja": "ここはギルドです。",
+                "de": "Das ist die Gilde.",
+                "es": "Este es el gremio."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "There are many adventurers here.",
+                "zh": "这里有很多冒险者。",
+                "ja": "ここには冒険者がたくさんいます。",
+                "de": "Hier gibt es viele Abenteurer.",
+                "es": "Aquí hay muchos aventureros."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "guild_master",
+              "text": {
+                "en": "Hello! I am Leon.",
+                "zh": "你好！我是里昂。",
+                "ja": "こんにちは！わたしはレオンです。",
+                "de": "Hallo! Ich bin Leon.",
+                "es": "¡Hola! Soy León."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "guild_master",
+              "text": {
+                "en": "I am the guild master.",
+                "zh": "我是公会长。",
+                "ja": "わたしはギルドマスターです。",
+                "de": "Ich bin der Gildemaster.",
+                "es": "Soy el maestro del gremio."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "guild_master",
+              "text": {
+                "en": "Are you the new apprentice?",
+                "zh": "你是新来的学徒吗？",
+                "ja": "あなたは新しい見習いですか？",
+                "de": "Bist du der neue Lehrling?",
+                "es": "¿Eres el nuevo aprendiz?"
+              }
+            },
+            {
+              "type": "choice",
+              "options": [
+                {
+                  "suffix": "a",
+                  "text": {
+                    "en": "Yes. I am Alex.",
+                    "zh": "是的。我是阿历克斯。",
+                    "ja": "はい。わたしはアレックスです。",
+                    "de": "Ja. Ich bin Alex.",
+                    "es": "Sí. Soy Alex."
+                  },
+                  "response": {
+                    "en": "Alex! Good name. Welcome.",
+                    "zh": "阿历克斯！好名字。欢迎！",
+                    "ja": "アレックス！いい名前です。ようこそ。",
+                    "de": "Alex! Guter Name. Willkommen.",
+                    "es": "¡Alex! Buen nombre. Bienvenido."
+                  }
+                },
+                {
+                  "suffix": "b",
+                  "text": {
+                    "en": "...",
+                    "zh": "……",
+                    "ja": "…",
+                    "de": "…",
+                    "es": "…"
+                  },
+                  "response": {
+                    "en": "That is fine too. Welcome.",
+                    "zh": "这也没关系。欢迎！",
+                    "ja": "それもいいです。ようこそ。",
+                    "de": "Das ist auch gut. Willkommen.",
+                    "es": "Eso también está bien. Bienvenido."
+                  }
+                }
+              ]
+            },
+            {
+              "type": "line",
+              "speaker": "guild_master",
+              "text": {
+                "en": "Emma is also an apprentice.",
+                "zh": "艾玛也是学徒。",
+                "ja": "エマも見習いです。",
+                "de": "Emma ist auch ein Lehrling.",
+                "es": "Emma también es aprendiz."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Hello! Nice to meet you.",
+                "zh": "你好！很高兴认识你。",
+                "ja": "こんにちは！はじめまして。",
+                "de": "Hallo! Schön, dich kennenzulernen.",
+                "es": "¡Hola! Encantada de conocerte."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "I am also a new apprentice.",
+                "zh": "我也是新来的学徒。",
+                "ja": "わたしも新しい見習いです。",
+                "de": "Ich bin auch ein neuer Lehrling.",
+                "es": "Yo también soy una nueva aprendiz."
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "Who is Leon?",
+                "zh": "里昂是谁？",
+                "ja": "レオンは誰ですか？",
+                "de": "Wer ist Leon?",
+                "es": "¿Quién es León?"
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "The guild master.",
+                    "zh": "公会长。",
+                    "ja": "ギルドマスターです。",
+                    "de": "Der Gildemaster.",
+                    "es": "El maestro del gremio."
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "An apprentice.",
+                    "zh": "学徒。",
+                    "ja": "見習いです。",
+                    "de": "Ein Lehrling.",
+                    "es": "Un aprendiz."
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "A villager.",
+                    "zh": "村民。",
+                    "ja": "村人です。",
+                    "de": "Ein Dorfbewohner.",
+                    "es": "Un aldeano."
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": [
+        {
+          "num": "01",
+          "title": {
+            "en": "Morning at the Guild",
+            "zh": "公会的早晨",
+            "ja": "ギルドの朝",
+            "de": "Morgen in der Gilde",
+            "es": "Mañana en el gremio"
+          },
+          "lines": [
+            {
+              "en": "This is the guild.",
+              "zh": "这是公会。",
+              "ja": "ここはギルドです。",
+              "de": "Das ist die Gilde.",
+              "es": "Este es el gremio."
+            },
+            {
+              "en": "There are many adventurers in the guild.",
+              "zh": "公会里有很多冒险者。",
+              "ja": "ギルドには冒険者がたくさんいます。",
+              "de": "In der Gilde gibt es viele Abenteurer.",
+              "es": "En el gremio hay muchos aventureros."
+            },
+            {
+              "en": "I am a new apprentice.",
+              "zh": "我是新来的学徒。",
+              "ja": "わたしは新しい見習いです。",
+              "de": "Ich bin ein neuer Lehrling.",
+              "es": "Soy un nuevo aprendiz."
+            },
+            {
+              "en": "My name is Alex.",
+              "zh": "我的名字是阿历克斯。",
+              "ja": "わたしの名前はアレックスです。",
+              "de": "Mein Name ist Alex.",
+              "es": "Me llamo Alex."
+            },
+            {
+              "en": "The guild master's name is Leon.",
+              "zh": "公会长的名字是里昂。",
+              "ja": "ギルドマスターの名前はレオンです。",
+              "de": "Der Name des Gildemasters ist Leon.",
+              "es": "El nombre del maestro del gremio es León."
+            },
+            {
+              "en": "Leon is a very strong person.",
+              "zh": "里昂是个非常强大的人。",
+              "ja": "レオンさんはとても強い人です。",
+              "de": "Leon ist ein sehr starker Mensch.",
+              "es": "León es una persona muy fuerte."
+            },
+            {
+              "en": "\"Good morning, Alex,\" said Emma.",
+              "zh": "\"早上好，阿历克斯，\"艾玛说。",
+              "ja": "「おはようございます、アレックスさん」とエマさんが言いました。",
+              "de": "„Guten Morgen, Alex\", sagte Emma.",
+              "es": "«Buenos días, Alex», dijo Emma."
+            },
+            {
+              "en": "Emma is also an apprentice.",
+              "zh": "艾玛也是学徒。",
+              "ja": "エマさんも見習いです。",
+              "de": "Emma ist auch ein Lehrling.",
+              "es": "Emma también es aprendiz."
+            },
+            {
+              "en": "\"Good morning,\" I said.",
+              "zh": "\"早上好，\"我说。",
+              "ja": "「おはようございます」とわたしが言いました。",
+              "de": "„Guten Morgen\", sagte ich.",
+              "es": "«Buenos días», dije yo."
+            },
+            {
+              "en": "From today we will work together.",
+              "zh": "从今天起，我们将一起工作。",
+              "ja": "今日から、わたしたちは一緒に働きます。",
+              "de": "Ab heute werden wir zusammen arbeiten.",
+              "es": "Desde hoy trabajaremos juntos."
+            },
+            {
+              "en": "We will search for the Crystal of Light.",
+              "zh": "我们将寻找光之水晶。",
+              "ja": "光のクリスタルを探します。",
+              "de": "Wir werden nach dem Kristall des Lichts suchen.",
+              "es": "Buscaremos el Cristal de Luz."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "02",
+      "title": {
+        "en": "The Missing Crystal",
+        "zh": "消失的水晶",
+        "ja": "消えたクリスタル",
+        "de": "Das verschwundene Kristall",
+        "es": "El cristal desaparecido"
+      },
+      "vocab": [
+        "ひかり",
+        "クリスタル",
+        "ここ",
+        "あります",
+        "いません",
+        "たいせつ",
+        "いっしょ",
+        "さがす"
+      ],
+      "grammar": [
+        "adv-ja-g-002",
+        "adv-ja-g-003"
+      ],
+      "dialogues": [
+        {
+          "id": "adv010102",
+          "dialogueNum": 2,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "guild_master",
+              "text": {
+                "en": "This is important.",
+                "zh": "这很重要。",
+                "ja": "これは大切なことです。",
+                "de": "Das ist wichtig.",
+                "es": "Esto es importante."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "guild_master",
+              "text": {
+                "en": "The Crystal of Light is not here.",
+                "zh": "光之水晶不在这里。",
+                "ja": "光のクリスタルはここにありません。",
+                "de": "Das Kristall des Lichts ist nicht hier.",
+                "es": "El Cristal de Luz no está aquí."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "The Crystal of Light?",
+                "zh": "光之水晶？",
+                "ja": "光のクリスタルですか？",
+                "de": "Das Kristall des Lichts?",
+                "es": "¿El Cristal de Luz?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "guild_master",
+              "text": {
+                "en": "Yes. It is very important.",
+                "zh": "是的。它非常重要。",
+                "ja": "はい。とても大切です。",
+                "de": "Ja. Es ist sehr wichtig.",
+                "es": "Sí. Es muy importante."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "guild_master",
+              "text": {
+                "en": "Are you also an adventurer?",
+                "zh": "你也是冒险者吗？",
+                "ja": "あなたも冒険者ですか？",
+                "de": "Bist du auch ein Abenteurer?",
+                "es": "¿Tú también eres aventurero?"
+              }
+            },
+            {
+              "type": "choice",
+              "options": [
+                {
+                  "suffix": "a",
+                  "text": {
+                    "en": "Yes! I am an adventurer.",
+                    "zh": "是的！我是冒险者。",
+                    "ja": "はい！わたしは冒険者です。",
+                    "de": "Ja! Ich bin ein Abenteurer.",
+                    "es": "¡Sí! Soy un aventurero."
+                  },
+                  "response": {
+                    "en": "Good! Let us search together.",
+                    "zh": "好！我们一起找吧。",
+                    "ja": "よかった！一緒に探しましょう。",
+                    "de": "Gut! Lasst uns gemeinsam suchen.",
+                    "es": "¡Bien! Busquemos juntos."
+                  }
+                },
+                {
+                  "suffix": "b",
+                  "text": {
+                    "en": "I am only an apprentice.",
+                    "zh": "我只是个学徒。",
+                    "ja": "わたしは見習いだけです。",
+                    "de": "Ich bin nur ein Lehrling.",
+                    "es": "Solo soy un aprendiz."
+                  },
+                  "response": {
+                    "en": "That is fine too. Let us search together.",
+                    "zh": "那也没关系。我们一起找吧。",
+                    "ja": "それもいいです。一緒に探しましょう。",
+                    "de": "Das ist auch gut. Lasst uns gemeinsam suchen.",
+                    "es": "Eso también está bien. Busquemos juntos."
+                  }
+                }
+              ]
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Where is the crystal?",
+                "zh": "水晶在哪里？",
+                "ja": "クリスタルはどこですか？",
+                "de": "Wo ist das Kristall?",
+                "es": "¿Dónde está el cristal?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "guild_master",
+              "text": {
+                "en": "I do not know. That is the question.",
+                "zh": "我不知道。这就是问题所在。",
+                "ja": "わかりません。それが問題です。",
+                "de": "Ich weiß es nicht. Das ist die Frage.",
+                "es": "No lo sé. Esa es la pregunta."
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "What is not here?",
+                "zh": "什么不在这里？",
+                "ja": "何がここにありませんか？",
+                "de": "Was ist nicht hier?",
+                "es": "¿Qué no está aquí?"
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "The Crystal of Light.",
+                    "zh": "光之水晶。",
+                    "ja": "光のクリスタルです。",
+                    "de": "Das Kristall des Lichts.",
+                    "es": "El Cristal de Luz."
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "Leon.",
+                    "zh": "里昂。",
+                    "ja": "レオンです。",
+                    "de": "Leon.",
+                    "es": "León."
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "Emma.",
+                    "zh": "艾玛。",
+                    "ja": "エマです。",
+                    "de": "Emma.",
+                    "es": "Emma."
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    }
+  ]
+}
