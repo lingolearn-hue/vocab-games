@@ -26,14 +26,14 @@ ruby {
 }
 
 /* Sizes — set on the wrapper span, inherited by ruby base text */
-.ruby-sm { font-size: 1.1rem;  line-height: 2.4; }
-.ruby-md { font-size: 1.6rem;  line-height: 2.6; }
-.ruby-lg { font-size: 2.6rem;  line-height: 2.8; }
+.ruby-sm { font-size: 1.1rem;  line-height: normal; }
+.ruby-md { font-size: 1.6rem;  line-height: normal; }
+.ruby-lg { font-size: 2.6rem;  line-height: normal; }
 
 /* When no ruby annotation is present, use tight line-height */
-.ruby-sm.ruby-no-rt { line-height: 1.3; }
-.ruby-md.ruby-no-rt { line-height: 1.3; }
-.ruby-lg.ruby-no-rt { line-height: 1.2; }
+.ruby-sm.ruby-no-rt { line-height: 1.4; }
+.ruby-md.ruby-no-rt { line-height: 1.4; }
+.ruby-lg.ruby-no-rt { line-height: 1.3; }
 
 /* Dark contexts (race car tiles) */
 .ruby-dark .ruby-rt { color: #555; }
