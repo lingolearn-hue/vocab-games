@@ -26,17 +26,17 @@ export function TextWithLookup({ text, language, lookup, scores, showReading, cl
 
   // Build augmented lookup that resolves surface forms via surfaceForms dict
   const augmentedLookup = useMemo(() => {
-    if (!surfaceForms || !Object.keys(surfaceForms).length) return lookup
+    const base = lookup ?? {}
+    if (!surfaceForms || !Object.keys(surfaceForms).length) return base
     const langForms = surfaceForms[language] ?? {}
-    if (!Object.keys(langForms).length) return lookup
-    // Add surface forms pointing to their lemma entries
+    if (!Object.keys(langForms).length) return base
     const extra = {}
     for (const [surface, lemma] of Object.entries(langForms)) {
-      if (!lookup[surface] && lookup[lemma]) {
-        extra[surface] = { ...lookup[lemma], _surface: surface }
+      if (!base[surface] && base[lemma]) {
+        extra[surface] = { ...base[lemma], _surface: surface }
       }
     }
-    return { ...lookup, ...extra }
+    return { ...base, ...extra }
   }, [lookup, surfaceForms, language])
 
   const spans = tokenise(text, augmentedLookup, language)

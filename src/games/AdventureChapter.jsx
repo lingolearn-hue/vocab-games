@@ -423,7 +423,7 @@ function ChapterHub({ chapter, chapterTitle, chapterLevel, storyIntro, storyIntr
   }
   if (activeView?.type === 'passage') return (
     <PassagePhase
-      passage={passages[activeView?.idx ?? 0] ?? passages[0]} language={language} lookup={lookup} scores={scores} showReading={showReading}
+      passage={passages[activeView?.idx ?? 0] ?? passages[0]} language={language} lookup={lookup} scores={scores} showReading={showReading} surfaceForms={surfaceForms}
       onBack={() => setActiveView(null)}
       onDone={() => markPartDone('passage')}
     />
