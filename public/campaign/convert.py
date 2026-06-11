@@ -12,6 +12,18 @@ Usage:
 Output:
     campaign_A0101.json  (same folder as input, same base name)
 
+Lemmatization (optional, requires spaCy models):
+    python3 convert.py campaign_A0101.tsv --lemmatize
+    python3 convert.py --all --lemmatize
+
+    Install models once:
+        pip install spacy fugashi unidic-lite jieba
+        python -m spacy download de_core_news_sm
+        python -m spacy download fr_core_news_sm
+        python -m spacy download es_core_news_sm
+        python -m spacy download ja_core_news_sm
+        python -m spacy download zh_core_web_sm
+
 TSV Format:
     See FORMAT_SPEC.html for full documentation.
     Key directives: @chapter, @artifact, @story_intro, @story_outro,
@@ -24,6 +36,18 @@ import re
 import sys
 import os
 import glob
+
+# Optional lemmatization — imported lazily to avoid hard dependency
+_lemmatize_fn = None
+def _get_lemmatize():
+    global _lemmatize_fn
+    if _lemmatize_fn is None:
+        try:
+            from lemmatize import lemmatize_section
+            _lemmatize_fn = lemmatize_section
+        except ImportError:
+            _lemmatize_fn = lambda *a, **k: {}
+    return _lemmatize_fn
 
 LANG_ORDER = ['en', 'zh', 'ja', 'de', 'es']
 
@@ -281,12 +305,61 @@ def parse_tsv(tsv_text):
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
-def convert_file(tsv_path):
+def _add_surface_forms(data):
+    """
+    For each section, collect all text in each language, lemmatize it,
+    and store surface→lemma pairs in section['surfaceForms'][lang].
+    Only stores forms that differ from their lemma.
+    """
+    lemmatize = _get_lemmatize()
+    LANGS = ['de', 'fr', 'es', 'ja', 'zh']
+
+    for section in data.get('sections', []):
+        # Build vocab set per language for filtering
+        vocab_ids = set(section.get('vocab', []))
+
+        # Collect all text in this section per language
+        texts = {l: [] for l in LANGS}
+        for dl in section.get('dialogues', []):
+            for turn in dl.get('turns', []):
+                if turn['type'] == 'line':
+                    for l in LANGS:
+                        v = turn.get('text', {}).get(l, '')
+                        if v: texts[l].append(v)
+                elif turn['type'] in ('question', 'choice'):
+                    for opt in turn.get('options', []):
+                        for l in LANGS:
+                            v = opt.get('text', {}).get(l, '')
+                            if v: texts[l].append(v)
+        for p in section.get('passages', []):
+            for line in p.get('lines', []):
+                for l in LANGS:
+                    v = line.get(l, '')
+                    if v: texts[l].append(v)
+
+        texts_combined = {l: ' '.join(ts) for l, ts in texts.items() if ts}
+        if not texts_combined:
+            continue
+
+        print(f"  Lemmatizing section {section.get('num', '?')}…")
+        surface_forms = lemmatize(texts_combined)
+
+        if surface_forms:
+            section['surfaceForms'] = surface_forms
+            total = sum(len(v) for v in surface_forms.values())
+            langs_found = list(surface_forms.keys())
+            print(f"    → {total} surface forms across {langs_found}")
+
+
+def convert_file(tsv_path, do_lemmatize=False):
     """Convert a single TSV file to JSON. Returns the output path."""
     with open(tsv_path, encoding='utf-8') as f:
         tsv_text = f.read()
 
     data = parse_tsv(tsv_text)
+
+    if do_lemmatize:
+        _add_surface_forms(data)
 
     json_path = tsv_path.replace('.tsv', '.json')
     with open(json_path, 'w', encoding='utf-8') as f:
@@ -321,6 +394,9 @@ def main():
         print(__doc__)
         sys.exit(0)
 
+    do_lemmatize = '--lemmatize' in args
+    args = [a for a in args if a != '--lemmatize']
+
     # Collect input files
     if '--all' in args:
         script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -334,9 +410,12 @@ def main():
         print("No TSV files found.")
         sys.exit(1)
 
+    if do_lemmatize:
+        print("Lemmatization enabled.")
+
     print(f"Converting {len(files)} file(s)…")
     for path in files:
-        convert_file(path)
+        convert_file(path, do_lemmatize=do_lemmatize)
     print(f"Done.")
 
 

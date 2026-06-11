@@ -158,11 +158,12 @@ function GrammarPatternCard({ pattern, done, onDone }) {
 
 // ── Dialogue Phase ────────────────────────────────────────────────────────────
 
-function DialoguePhase({ dialogue, language, lookup, scores, showReading, onBack, onDone }) {
+function DialoguePhase({ dialogue, language, lookup, scores, showReading, surfaceForms, onBack, onDone }) {
   const [questionState, setQuestionState] = useState({})
   const [choiceState, setChoiceState]     = useState({})
   const [turnIndex, setTurnIndex]         = useState(0)
-  const [showTrans, setShowTrans]         = useState(false)
+  const [shownTrans, setShownTrans]       = useState(new Set())  // per-bubble
+  const bubblesRef = useRef(null)
 
   const speakerColors = ['#4f7ef8', '#22a06b', '#e05cb0', '#f0a500']
   const speakerMap = useMemo(() => {
@@ -170,14 +171,34 @@ function DialoguePhase({ dialogue, language, lookup, scores, showReading, onBack
     return Object.fromEntries(speakers.map((s, i) => [s, i]))
   }, [dialogue])
 
-  // Auto-advance line turns
+  // Scroll to bottom when new turn appears
   useEffect(() => {
-    const turn = dialogue.turns[turnIndex]
-    if (!turn || turn.type !== 'line') return
-    if (turnIndex >= dialogue.turns.length - 1) return
-    const t = setTimeout(() => setTurnIndex(i => i + 1), 600)
-    return () => clearTimeout(t)
-  }, [turnIndex, dialogue])
+    if (bubblesRef.current) {
+      bubblesRef.current.scrollTop = bubblesRef.current.scrollHeight
+    }
+  }, [turnIndex, questionState, choiceState])
+
+  const currentTurn = dialogue.turns[turnIndex]
+  const isInteractive = currentTurn?.type === 'question' || currentTurn?.type === 'choice'
+  const allDone = turnIndex >= dialogue.turns.length - 1 &&
+    dialogue.turns.every((t, i) => {
+      if (t.type === 'question') return !!questionState[i]
+      if (t.type === 'choice')   return choiceState[i] !== undefined
+      return true
+    })
+
+  function advance() {
+    if (isInteractive) return  // wait for user interaction
+    if (turnIndex < dialogue.turns.length - 1) setTurnIndex(i => i + 1)
+  }
+
+  function toggleTrans(idx) {
+    setShownTrans(prev => {
+      const next = new Set(prev)
+      next.has(idx) ? next.delete(idx) : next.add(idx)
+      return next
+    })
+  }
 
   function chooseQuestion(idx, opt, oi) {
     if (questionState[idx]) return
@@ -190,12 +211,6 @@ function DialoguePhase({ dialogue, language, lookup, scores, showReading, onBack
     setTurnIndex(i => Math.min(dialogue.turns.length - 1, Math.max(i, idx + 1)))
   }
 
-  const allDone = dialogue.turns.every((t, i) => {
-    if (t.type === 'question') return !!questionState[i]
-    if (t.type === 'choice')   return choiceState[i] !== undefined
-    return true
-  })
-
   return (
     <div className="advc-phase advc-phase--dialogue">
       <div className="advc-dialogue-header">
@@ -204,21 +219,26 @@ function DialoguePhase({ dialogue, language, lookup, scores, showReading, onBack
           <h2 className="advc-phase-title">{dialogue.title}</h2>
           {dialogue.titleTranslation && <p className="advc-phase-sub">{dialogue.titleTranslation}</p>}
         </div>
-        <button className={`advc-trans-toggle ${showTrans ? 'active' : ''}`} onClick={() => setShowTrans(t => !t)}>EN</button>
       </div>
 
-      <div className="advc-bubbles">
+      <div className="advc-bubbles" ref={bubblesRef}>
         {dialogue.turns.slice(0, turnIndex + 1).map((turn, i) => {
           const color = speakerColors[speakerMap[turn.speaker] ?? 0]
           const isNarrator = turn.speaker === 'narrator' || turn.speaker === 'Narrator'
           const isUser = dialogue.type === 'choice' && turn.speaker === dialogue.speakers?.[dialogue.speakers.length - 1]
+          const showTrans = shownTrans.has(i)
 
           if (turn.type === 'line') return (
             <div key={i} className={`advc-line ${isNarrator ? 'narrator' : isUser ? 'user' : 'other'}`}>
               {!isUser && !isNarrator && <span className="advc-speaker" style={{ color }}>{turn.speaker}</span>}
               <div className={`advc-bubble ${isNarrator ? 'advc-bubble--narrator' : ''}`} style={isNarrator ? {} : { '--bcolor': color }}>
-                <TextWithLookup text={turn.text} language={language} lookup={lookup} scores={scores} showReading={showReading} />
+                <TextWithLookup text={turn.text} language={language} lookup={lookup} scores={scores} showReading={showReading} surfaceForms={surfaceForms} />
                 {showTrans && turn.translation && <div className="advc-bubble-trans">{turn.translation}</div>}
+                {turn.translation && (
+                  <button className="advc-bubble-en-btn" onClick={e => { e.stopPropagation(); toggleTrans(i) }}>
+                    {showTrans ? '▲' : 'EN'}
+                  </button>
+                )}
               </div>
             </div>
           )
@@ -239,6 +259,11 @@ function DialoguePhase({ dialogue, language, lookup, scores, showReading, onBack
                 <p className="advc-question-prompt">
                   {turn.prompt}
                   {showTrans && turn.translation && <span className="advc-choice-sub"> — {turn.translation}</span>}
+                  {turn.translation && (
+                    <button className="advc-bubble-en-btn advc-bubble-en-btn--inline" onClick={() => toggleTrans(i)}>
+                      {showTrans ? '▲' : 'EN'}
+                    </button>
+                  )}
                 </p>
                 {turn.options.map((opt, oi) => (
                   <button key={oi} className="advc-q-option" onClick={() => chooseQuestion(i, opt, oi)}>
@@ -274,7 +299,15 @@ function DialoguePhase({ dialogue, language, lookup, scores, showReading, onBack
             }
             return (
               <div key={i} className="advc-choice">
-                <p className="advc-choice-prompt">{turn.prompt}{showTrans && <span className="advc-choice-sub"> — {turn.promptTranslation}</span>}</p>
+                <p className="advc-choice-prompt">
+                  {turn.prompt}
+                  {showTrans && <span className="advc-choice-sub"> — {turn.promptTranslation}</span>}
+                  {turn.prompt && (
+                    <button className="advc-bubble-en-btn advc-bubble-en-btn--inline" onClick={() => toggleTrans(i)}>
+                      {showTrans ? '▲' : 'EN'}
+                    </button>
+                  )}
+                </p>
                 {turn.options.map((opt, oi) => (
                   <button key={oi} className="advc-choice-opt" onClick={() => chooseChoice(i, oi)}>
                     <span className="advc-choice-text">{opt.text}</span>
@@ -288,14 +321,22 @@ function DialoguePhase({ dialogue, language, lookup, scores, showReading, onBack
         })}
       </div>
 
-      {allDone && <button className="advc-continue-btn" onClick={onDone}>Continue →</button>}
+      {/* Tap zone at bottom — advances to next line, or shows Continue when done */}
+      {allDone ? (
+        <button className="advc-continue-btn" onClick={onDone}>Continue →</button>
+      ) : !isInteractive ? (
+        <button className="advc-tap-next" onClick={advance}>
+          <span className="advc-tap-hint">tap to continue</span>
+          <span className="advc-tap-arrow">▼</span>
+        </button>
+      ) : null}
     </div>
   )
 }
 
 // ── Passage Phase ─────────────────────────────────────────────────────────────
 
-function PassagePhase({ passage, language, lookup, scores, showReading, onBack, onDone }) {
+function PassagePhase({ passage, language, lookup, scores, showReading, surfaceForms, onBack, onDone }) {
   const [showTrans, setShowTrans] = useState(false)
   return (
     <div className="advc-phase">
@@ -309,7 +350,7 @@ function PassagePhase({ passage, language, lookup, scores, showReading, onBack, 
         <SpeakButton text={passage.text} language={language} size="sm" />
       </div>
       <div className="advc-passage-text">
-        <TextWithLookup text={passage.text} language={language} lookup={lookup} scores={scores} showReading={showReading} />
+        <TextWithLookup text={passage.text} language={language} lookup={lookup} scores={scores} showReading={showReading} surfaceForms={surfaceForms} />
       </div>
       {showTrans && <div className="advc-passage-trans">{passage.translation}</div>}
       <button className="advc-continue-btn" onClick={onDone}>Complete Chapter →</button>
@@ -343,7 +384,7 @@ function CompletePhase({ chapter, chapterTitle, artifact, onMap }) {
 
 // ── Chapter Overview Hub ──────────────────────────────────────────────────────
 
-function ChapterHub({ chapter, chapterTitle, chapterLevel, storyIntro, storyIntroTranslation, wordEntries, dialogues, passages, artifact, language, lookup, scores, showReading, currentPhase, onPhaseAdvance, onComplete, onBack }) {
+function ChapterHub({ chapter, chapterTitle, chapterLevel, storyIntro, storyIntroTranslation, wordEntries, dialogues, passages, artifact, surfaceForms, language, lookup, scores, showReading, currentPhase, onPhaseAdvance, onComplete, onBack }) {
   const [activeView, setActiveView] = useState(null)
   const [doneParts, setDoneParts]   = useState(new Set())
 
@@ -374,7 +415,7 @@ function ChapterHub({ chapter, chapterTitle, chapterLevel, storyIntro, storyIntr
     if (!dl) { setActiveView(null); return null }
     return (
       <DialoguePhase
-        dialogue={dl} language={language} lookup={lookup} scores={scores} showReading={showReading}
+        dialogue={dl} language={language} lookup={lookup} scores={scores} showReading={showReading} surfaceForms={surfaceForms}
         onBack={() => setActiveView(null)}
         onDone={() => markPartDone('dialogue')}
       />
@@ -473,6 +514,7 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
   const [passages,    setPassages]    = useState([])
   const [wordEntries, setWordEntries] = useState([])
   const [tsvMeta,     setTsvMeta]     = useState(null)
+  const [surfaceForms, setSurfaceForms] = useState({})
 
   useEffect(() => {
     loadChapterJSON(chapter.number, language, chapter.campaignKey ?? 'A').then(data => {
@@ -481,6 +523,14 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
       setTsvMeta(meta)
       setDialogues(sections.flatMap(s => s.dialogues))
       setPassages(sections.flatMap(s => s.passages))
+      // Merge surfaceForms from all sections
+      const merged = {}
+      for (const s of sections) {
+        for (const [lang, pairs] of Object.entries(s.surfaceForms ?? {})) {
+          merged[lang] = { ...(merged[lang] ?? {}), ...pairs }
+        }
+      }
+      setSurfaceForms(merged)
       const allVocab = [...new Set(sections.flatMap(s => s.vocab))]
       if (allVocab.length) {
         const byEntry = new Map(activeEntries.map(e => [e.entry, e]))
@@ -534,6 +584,7 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
           language={language}
           lookup={lookup}
           scores={scores}
+          surfaceForms={surfaceForms}
           showReading={showReading}
           currentPhase={currentPhase ?? 'vocab'}
           onPhaseAdvance={onPhaseAdvance}

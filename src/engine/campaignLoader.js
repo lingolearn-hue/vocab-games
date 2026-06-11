@@ -53,6 +53,7 @@ function resolveChapter(data, language) {
     title: t(s.title),
     vocab: s.vocab ?? [],
     grammar: s.grammar ?? [],
+    surfaceForms: s.surfaceForms ?? {},   // {lang: {surface: lemma}}
     dialogues: (s.dialogues ?? []).map(dl => resolveDialogue(dl, lang)),
     passages: (s.passages ?? []).map(p => resolvePassage(p, lang)),
   }))

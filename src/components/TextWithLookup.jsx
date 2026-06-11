@@ -12,7 +12,7 @@
  *   isCJK      — override CJK rendering (default: auto from language)
  */
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useMemo } from "react"
 import { tokenise } from '../engine/reader'
 import { getMnemonic, getAllMnemonics } from '../engine/mnemonics'
 import RubyText from './RubyText'
@@ -21,10 +21,25 @@ import './TextWithLookup.css'
 
 const CJK_LANGS = new Set(['zh', 'ja', 'ko'])
 
-export function TextWithLookup({ text, language, lookup, scores, showReading, className = '', noHighlight = false }) {
+export function TextWithLookup({ text, language, lookup, scores, showReading, className = '', noHighlight = false, surfaceForms = {} }) {
   const [tapped, setTapped] = useState(null)  // { entry, surface, conjugated }
 
-  const spans = tokenise(text, lookup, language)
+  // Build augmented lookup that resolves surface forms via surfaceForms dict
+  const augmentedLookup = useMemo(() => {
+    if (!surfaceForms || !Object.keys(surfaceForms).length) return lookup
+    const langForms = surfaceForms[language] ?? {}
+    if (!Object.keys(langForms).length) return lookup
+    // Add surface forms pointing to their lemma entries
+    const extra = {}
+    for (const [surface, lemma] of Object.entries(langForms)) {
+      if (!lookup[surface] && lookup[lemma]) {
+        extra[surface] = { ...lookup[lemma], _surface: surface }
+      }
+    }
+    return { ...lookup, ...extra }
+  }, [lookup, surfaceForms, language])
+
+  const spans = tokenise(text, augmentedLookup, language)
   const isCJK = CJK_LANGS.has(language)
 
   const handleTap = useCallback((span, e) => {
@@ -33,7 +48,7 @@ export function TextWithLookup({ text, language, lookup, scores, showReading, cl
     setTapped(prev => prev?.entry?.id === span.entry.id ? null : {
       entry: span.entry,
       surface: span.text,
-      conjugated: !!span.conjugated,
+      conjugated: !!span.conjugated || !!(span.entry._surface),
     })
   }, [])
 
