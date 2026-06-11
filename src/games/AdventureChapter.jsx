@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import { useApp } from '../context/AppContext'
 import { buildLookup } from '../engine/reader'
 import { loadChapterJSON } from '../engine/campaignLoader'
