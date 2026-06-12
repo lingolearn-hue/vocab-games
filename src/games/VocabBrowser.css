@@ -308,3 +308,10 @@
 [data-theme="dark"] .vb-trans    { color: #f0f0f0; }
 [data-theme="dark"] .vb-level    { background: #2a2a2a; color: #666; }
 [data-theme="dark"] .vb-back:hover { color: #f0f0f0; }
+
+.vb-sentinel {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.72rem;
+  color: #999;
+}

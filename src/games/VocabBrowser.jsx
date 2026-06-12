@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import { useApp } from '../context/AppContext'
 import { GAME_META, resetToLearning, getAllScores } from '../engine/srs'
 import { getAllMnemonics } from '../engine/mnemonics'
@@ -23,7 +23,9 @@ export default function VocabBrowser() {
   const [showTrans,    setShowTrans]    = useState(true)
   const [showScores,   setShowScores]   = useState(true)
   const [expandedId,   setExpandedId]   = useState(null)  // entry id with mnemonic expanded
-  const mnemonics = useMemo(() => getAllMnemonics(), [scores])
+  const mnemonics     = useMemo(() => getAllMnemonics(), [scores])
+  const [displayCount, setDisplayCount] = useState(100)
+  const sentinelRef   = useRef(null)
 
   useEffect(() => {
     function onKey(e) { if (e.key === 'Escape') setScreen('setup') }
@@ -61,6 +63,21 @@ export default function VocabBrowser() {
       return true
     })
   }, [activeEntries, scores, search, filterLevel, filterPos, filterStatus])
+
+  // Reset window when filtered list changes
+  useEffect(() => { setDisplayCount(100) }, [filtered])
+
+  // Load more when sentinel scrolls into view
+  useEffect(() => {
+    if (!sentinelRef.current) return
+    const obs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) setDisplayCount(n => n + 100)
+    }, { threshold: 0.1 })
+    obs.observe(sentinelRef.current)
+    return () => obs.disconnect()
+  }, [filtered])
+
+  const visible = filtered.slice(0, displayCount)
 
   function handleReset(e, entryId) {
     e.stopPropagation()
@@ -127,7 +144,7 @@ export default function VocabBrowser() {
         {filtered.length === 0 && (
           <div className="vb-empty">No words match the current filters.</div>
         )}
-        {filtered.map(entry => {
+        {visible.map(entry => {
           const rec    = scores[entry.id]
           const status = rec?.global ?? 'unseen'
           return (

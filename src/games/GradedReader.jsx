@@ -61,29 +61,38 @@ export default function GradedReader() {
     })
   }, [activeLanguage])
 
-  // Derive all available tags from passages, in group order
-  const availableTags = useMemo(() => {
-    const allTags = new Set(passages.flatMap(p => p.tags ?? []))
-    const ordered = []
-    for (const group of TAG_GROUPS) {
-      if (group.tags) {
-        group.tags.filter(t => allTags.has(t)).forEach(t => ordered.push(t))
-      } else {
-        // Dynamic prefix group
-        ;[...allTags].filter(t => t.startsWith(group.prefix)).sort().forEach(t => ordered.push(t))
-      }
-    }
-    return ordered
+  // Derive available levels and tags from passages
+  const availableLevels = useMemo(() => {
+    const s = new Set(passages.map(p => p.level).filter(Boolean))
+    // Sort: A1<A2<B1<B2<C1<C2, then N5<N4<N3<N2<N1, then HSK1..6
+    const order = ['A1','A2','B1','B2','C1','C2','N5','N4','N3','N2','N1','HSK1','HSK2','HSK3','HSK4','HSK5','HSK6']
+    return [...s].sort((a,b) => {
+      const ai = order.indexOf(a), bi = order.indexOf(b)
+      if (ai >= 0 && bi >= 0) return ai - bi
+      return a.localeCompare(b)
+    })
   }, [passages])
 
-  // Filter passages by active tags (AND within a group prefix, OR across groups)
+  const availableTags = useMemo(() => {
+    const allTags = new Set(passages.flatMap(p => p.tags ?? []))
+    // Exclude level-like tags (beginner/intermediate/advanced) — now handled by level chips
+    const levelLike = new Set(['beginner','intermediate','advanced'])
+    const typeTags  = ['fiction','non-fiction','biography','essay'].filter(t => allTags.has(t))
+    const topicTags = [...allTags].filter(t => !levelLike.has(t) && !['fiction','non-fiction','biography','essay'].includes(t)).sort()
+    return [...typeTags, ...topicTags]
+  }, [passages])
+
+  // Active level (single selection) + active tags (multi)
+  const [activeLevel, setActiveLevel] = useState(null)
+
   const filteredPassages = useMemo(() => {
-    if (activeTags.size === 0) return passages
     return passages.filter(p => {
+      if (activeLevel && p.level !== activeLevel) return false
+      if (activeTags.size === 0) return true
       const ptags = new Set(p.tags ?? [])
       return [...activeTags].every(t => ptags.has(t))
     })
-  }, [passages, activeTags])
+  }, [passages, activeLevel, activeTags])
 
   function toggleTag(tag) {
     setActiveTags(prev => {
@@ -133,21 +142,20 @@ export default function GradedReader() {
               <>
                 {/* ── Level chips — prominent row at top ── */}
                 {(() => {
-                  const levelTags = ['beginner','intermediate','advanced'].filter(t => availableTags.includes(t))
                   const typeTags  = ['fiction','non-fiction','biography','essay'].filter(t => availableTags.includes(t))
-                  const topicTags = availableTags.filter(t => t.startsWith('topic:') || t.startsWith('series:'))
-                  if (availableTags.length === 0) return null
+                  const topicTags = availableTags.filter(t => !typeTags.includes(t))
+                  if (availableLevels.length === 0 && availableTags.length === 0) return null
                   return (
                     <div className="gr-filters">
-                      {levelTags.length > 0 && (
+                      {availableLevels.length > 0 && (
                         <div className="gr-filter-levels">
-                          {levelTags.map(tag => (
+                          {availableLevels.map(level => (
                             <button
-                              key={tag}
-                              className={`gr-level-chip ${activeTags.has(tag) ? 'active' : ''}`}
-                              onClick={() => toggleTag(tag)}
+                              key={level}
+                              className={`gr-level-chip ${activeLevel === level ? 'active' : ''}`}
+                              onClick={() => setActiveLevel(l => l === level ? null : level)}
                             >
-                              {tagLabel(tag)}
+                              {level}
                             </button>
                           ))}
                         </div>
@@ -180,8 +188,8 @@ export default function GradedReader() {
                           )}
                         </div>
                       )}
-                      {activeTags.size > 0 && (
-                        <button className="gr-tag-clear" onClick={() => setActiveTags(new Set())}>✕ Clear filters</button>
+                      {(activeTags.size > 0 || activeLevel) && (
+                        <button className="gr-tag-clear" onClick={() => { setActiveTags(new Set()); setActiveLevel(null) }}>✕ Clear filters</button>
                       )}
                     </div>
                   )
