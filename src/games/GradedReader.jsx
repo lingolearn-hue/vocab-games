@@ -131,23 +131,61 @@ export default function GradedReader() {
               </div>
             ) : (
               <>
-                {/* Tag filter bar */}
-                {availableTags.length > 0 && (
-                  <div className="gr-tag-bar">
-                    {availableTags.map(tag => (
-                      <button
-                        key={tag}
-                        className={`gr-tag-chip ${activeTags.has(tag) ? 'active' : ''}`}
-                        onClick={() => toggleTag(tag)}
-                      >
-                        {tagLabel(tag)}
-                      </button>
-                    ))}
-                    {activeTags.size > 0 && (
-                      <button className="gr-tag-clear" onClick={() => setActiveTags(new Set())}>✕ Clear</button>
-                    )}
-                  </div>
-                )}
+                {/* ── Level chips — prominent row at top ── */}
+                {(() => {
+                  const levelTags = ['beginner','intermediate','advanced'].filter(t => availableTags.includes(t))
+                  const typeTags  = ['fiction','non-fiction','biography','essay'].filter(t => availableTags.includes(t))
+                  const topicTags = availableTags.filter(t => t.startsWith('topic:') || t.startsWith('series:'))
+                  if (availableTags.length === 0) return null
+                  return (
+                    <div className="gr-filters">
+                      {levelTags.length > 0 && (
+                        <div className="gr-filter-levels">
+                          {levelTags.map(tag => (
+                            <button
+                              key={tag}
+                              className={`gr-level-chip ${activeTags.has(tag) ? 'active' : ''}`}
+                              onClick={() => toggleTag(tag)}
+                            >
+                              {tagLabel(tag)}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                      {(typeTags.length > 0 || topicTags.length > 0) && (
+                        <div className="gr-filter-tags">
+                          {typeTags.length > 0 && (
+                            <div className="gr-tag-row">
+                              <span className="gr-tag-row-label">Type</span>
+                              <div className="gr-tag-scroll">
+                                {typeTags.map(tag => (
+                                  <button key={tag} className={`gr-tag-chip ${activeTags.has(tag) ? 'active' : ''}`} onClick={() => toggleTag(tag)}>
+                                    {tagLabel(tag)}
+                                  </button>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                          {topicTags.length > 0 && (
+                            <div className="gr-tag-row">
+                              <span className="gr-tag-row-label">Topic</span>
+                              <div className="gr-tag-scroll">
+                                {topicTags.map(tag => (
+                                  <button key={tag} className={`gr-tag-chip ${activeTags.has(tag) ? 'active' : ''}`} onClick={() => toggleTag(tag)}>
+                                    {tagLabel(tag)}
+                                  </button>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                      {activeTags.size > 0 && (
+                        <button className="gr-tag-clear" onClick={() => setActiveTags(new Set())}>✕ Clear filters</button>
+                      )}
+                    </div>
+                  )
+                })()}
 
                 {filteredPassages.length === 0 ? (
                   <div className="gr-empty">No passages match the selected filters.</div>

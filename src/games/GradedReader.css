@@ -274,127 +274,104 @@
   .gr-header-tabs { border-color: #e0e0e0; }
   .gr-tab { border-color: #e0e0e0; }
   .gr-series-header { border-color: #e0e0e0; }
-  .gr-tag-bar { border-color: #e0e0e0; }
-  .gr-tag-chip { border-color: #e0e0e0; }
-  .gr-tag-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
-  .gr-passage-tag { background: #f0f0f0; }
+  /* ── Filter system ─────────────────────────────────────────────── */
+.gr-filters {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
 }
 
-@media (prefers-color-scheme: dark) {
-  .gr-screen        { background: #111; }
-  .gr-header        { border-color: #222; }
-  .gr-back:hover    { color: #eee; }
-  .gr-back          { color: #b0b0b0; }
-  .gr-title         { color: #eee; }
-  .gr-passage-card  { background: #1e1e1e; border-color: #2a2a2a; }
-  .gr-passage-card:hover { background: #1a2340; border-color: #4f7ef8; }
-  .gr-passage-title { color: #eee; }
-  .gr-passage-level { background: #2a2a2a; color: #666; }
-  .gr-paste-title,
-  .gr-paste-input   { background: #1e1e1e; border-color: #333; color: #eee; }
-  .gr-text          { color: #ddd; }
-  .gr-translation   { background: #1a1a1a; border-color: #333; color: #888; }
-  .gr-legend        { border-color: #222; }
-  .gr-tab           { color: #b0b0b0; }
-  .gr-header-tabs   { border-color: #333; }
-  .gr-tab           { border-color: #333; }
-}
-[data-theme="dark"] .gr-screen        { background: #111; }
-[data-theme="dark"] .gr-header        { border-color: #222; }
-[data-theme="dark"] .gr-back          { color: #f0f0f0; }
-[data-theme="dark"] .gr-back:hover    { color: #f0f0f0; }
-[data-theme="dark"] .gr-title         { color: #f0f0f0; }
-[data-theme="dark"] .gr-passage-card  { background: #1e1e1e; border-color: #2a2a2a; }
-[data-theme="dark"] .gr-passage-card:hover { background: #1a2340; border-color: #4f7ef8; }
-[data-theme="dark"] .gr-passage-title { color: #f0f0f0; }
-[data-theme="dark"] .gr-passage-level { background: #2a2a2a; color: #666; }
-[data-theme="dark"] .gr-paste-title,
-[data-theme="dark"] .gr-paste-input   { background: #1e1e1e; border-color: #333; color: #eee; }
-[data-theme="dark"] .gr-text          { color: #f0f0f0; }
-[data-theme="dark"] .gr-translation   { background: #1a1a1a; border-color: #333; color: #888; }
-[data-theme="dark"] .gr-legend        { border-color: #222; }
-[data-theme="dark"] .gr-tab           { color: #666; border-color: #333; }
-[data-theme="dark"] .gr-header-tabs   { border-color: #333; }
-
-/* Series grouping */
-.gr-series {
-  margin-bottom: 1.2rem;
-}
-
-.gr-series-header {
+/* Level chips — prominent, full-width row */
+.gr-filter-levels {
   display: flex;
-  align-items: center;
   gap: 0.4rem;
-  padding: 0.3rem 0 0.5rem;
-  border-bottom: 1.5px solid #f0f0f0;
-  margin-bottom: 0.5rem;
+  padding: 0.6rem 1rem 0.4rem;
 }
 
-.gr-series-icon {
-  font-size: 0.85rem;
-}
-
-.gr-series-name {
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #555;
+.gr-level-chip {
   flex: 1;
+  padding: 0.35rem 0.5rem;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: none;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.12s, color 0.12s, background 0.12s;
+  -webkit-appearance: none;
 }
+.gr-level-chip:hover { border-color: #4f7ef8; color: #4f7ef8; }
+.gr-level-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
 
-.gr-series-count {
-  font-size: 0.7rem;
-  color: #555;
-}
-
-.gr-series-cards {
+/* Type + Topic rows — labeled, single-line horizontal scroll */
+.gr-filter-tags {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  .gr-series-header { border-color: #222; }
-}
-[data-theme="dark"] .gr-series-header { border-color: #222; }
-
-/* Tag filter bar */
-.gr-tag-bar {
+.gr-tag-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  padding: 0 0 0.8rem;
-  border-bottom: 1px solid #f0f0f0;
-  margin-bottom: 0.8rem;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 1rem;
+  overflow: hidden;
 }
+
+.gr-tag-row-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+  min-width: 2.8rem;
+}
+
+.gr-tag-scroll {
+  display: flex;
+  gap: 0.35rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 1px;
+}
+.gr-tag-scroll::-webkit-scrollbar { display: none; }
 
 .gr-tag-chip {
-  padding: 0.25rem 0.6rem;
-  border: 1.5px solid #e0e0e0;
+  padding: 0.2rem 0.55rem;
   border-radius: 20px;
+  border: 1.5px solid var(--border);
   background: none;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 600;
-  color: #555;
+  color: var(--text-secondary);
   cursor: pointer;
-  transition: all 0.12s;
   white-space: nowrap;
+  flex-shrink: 0;
+  transition: border-color 0.12s, color 0.12s, background 0.12s;
+  -webkit-appearance: none;
 }
 .gr-tag-chip:hover { border-color: #4f7ef8; color: #4f7ef8; }
 .gr-tag-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
 
 .gr-tag-clear {
-  padding: 0.25rem 0.6rem;
-  border: none;
-  -webkit-appearance: none;
-  appearance: none;
+  display: block;
+  width: calc(100% - 2rem);
+  margin: 0.3rem 1rem 0.5rem;
+  padding: 0.25rem;
+  border-radius: 20px;
+  border: 1.5px solid #e5534b;
   background: none;
-  font-size: 0.72rem;
-  color: #555;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #e5534b;
   cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
 }
-.gr-tag-clear:hover { color: #e5534b; }
+.gr-tag-clear:hover { background: #e5534b22; }
 
 /* Tags on passage card */
 .gr-passage-card-bottom {
@@ -421,12 +398,13 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .gr-tag-bar    { border-color: #222; }
+  .gr-filters    { border-color: #222; }
   .gr-tag-chip   { border-color: #333; color: #666; }
   .gr-tag-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
   .gr-passage-tag { background: #2a2a2a; color: #666; }
 }
-[data-theme="dark"] .gr-tag-bar    { border-color: #222; }
+[data-theme="dark"] .gr-filters    { border-color: #222; }
 [data-theme="dark"] .gr-tag-chip   { border-color: #333; color: #666; }
 [data-theme="dark"] .gr-tag-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
 [data-theme="dark"] .gr-passage-tag { background: #2a2a2a; color: #666; }
+}
