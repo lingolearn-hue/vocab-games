@@ -1,251 +1,376 @@
 /**
- * Leitner SRS engine — 5-box system for flashcards.
+ * Leitner SRS engine — pass-based, score-seeded box system.
  *
- * Box 0: unseen pool (waiting room)
- * Box 1: active, reviewed every pass     (max 20 cards)
- * Box 2: reviewed every 2nd pass
- * Box 3: reviewed every 4th pass
- * Box 4: reviewed every 8th pass
- * Box 5: mastered / retired
+ * Score: persistent (0–5). 0=unseen, 1–4=active, 5=mastered.
+ *   correct → score+1 (max 5)
+ *   wrong   → score=1
  *
- * Sequence: B1 B1 B2 B1 B1 B2 B3 B1 B1 B2 B1 B1 B2 B3 B4 ...
- * (binary counting — each position reviews the box = trailing 1s + 1)
+ * Session boxes (rebuilt from scores on open):
+ *   box 1: up to 20 cards (filled from score-1, then score-0)
+ *   box 2–4: up to 10 cards each (from score-N)
+ *   stack: overflow + score-0 remainder
  *
- * Rules:
- * - Correct → advance one box
- * - Wrong   → back to box 1
- * - When a word graduates from box 1 and box 1 has room (≤ BOX1_MAX),
- *   pull a new word from box 0 into box 1
+ * Pass rhythm (1-2-4-8):
+ *   pass 0: B1  pass 1: B1  pass 2: B2  pass 3: B1
+ *   pass 4: B1  pass 5: B2  pass 6: B3  pass 7: B1 ...
  *
- * Storage: localStorage 'leitnerState' → { boxes: { entryId: 0-5 }, passCount: N }
+ *   Each pass = ALL cards in that box.
+ *   Box 1 refills to 20 BEFORE each B1 pass opens.
+ *   Wrong answers during a pass go to next B1 pass, not current.
+ *
+ * Storage:
+ *   'leitnerScores'  → { id: 0-5 }            (persistent)
+ *   'leitnerSession' → { boxes, stack,          (rebuilt each app open)
+ *                        passIndex,             (which pass we're on)
+ *                        currentPass,           (which box is active: 1-4)
+ *                        passQueue: [id,...],   (cards remaining in current pass)
+ *                        passDone: number,      (cards done in current pass)
+ *                        passTotal: number }    (total cards when pass opened)
  */
 
-const STORAGE_KEY = 'leitnerState'
+const SCORES_KEY  = 'leitnerScores'
+const SESSION_KEY = 'leitnerSession'
 const BOX1_MAX    = 20
-const MAX_BOX     = 5
+const BOXN_MAX    = 10
+const MAX_SCORE   = 5
 
 // ── Persistence ───────────────────────────────────────────────────────────────
 
-function readState() {
+function readScores() {
+  try { return JSON.parse(localStorage.getItem(SCORES_KEY) || '{}') } catch { return {} }
+}
+function writeScores(s) { localStorage.setItem(SCORES_KEY, JSON.stringify(s)) }
+
+function readSession() {
   try {
-    const s = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null')
-    if (s && typeof s === 'object') return s
+    const s = JSON.parse(localStorage.getItem(SESSION_KEY) || 'null')
+    if (s?.boxes && Array.isArray(s.stack)) return s
   } catch {}
-  return { boxes: {}, passCount: 0 }
+  return null
+}
+function writeSession(s) { localStorage.setItem(SESSION_KEY, JSON.stringify(s)) }
+
+// ── Score accessors ───────────────────────────────────────────────────────────
+
+export function getScore(entryId)    { return readScores()[entryId] ?? 0 }
+export function getAllScores()        { return readScores() }
+
+export function getScoreCounts(entryIds) {
+  const scores = readScores()
+  const counts = [0,0,0,0,0,0]
+  for (const id of entryIds) counts[Math.min(scores[id]??0,5)]++
+  return counts
 }
 
-function writeState(state) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
-}
+// ── Session init ──────────────────────────────────────────────────────────────
 
-// ── Box helpers ───────────────────────────────────────────────────────────────
+export function initSession(entries) {
+  const scores = readScores()
 
-export function getBox(entryId) {
-  return readState().boxes[entryId] ?? 0
-}
-
-export function getAllBoxes() {
-  return readState().boxes
-}
-
-/**
- * Initialise a set of entries into the Leitner system.
- * New entries go into box 0. Existing entries keep their box.
- * Called when vocab list changes.
- */
-export function initEntries(entries) {
-  const state = readState()
+  // Seed missing entries
   let changed = false
   for (const e of entries) {
-    if (!(e.id in state.boxes)) {
-      state.boxes[e.id] = 0
-      changed = true
-    }
+    if (!(e.id in scores)) { scores[e.id] = 0; changed = true }
   }
-  // Remove entries no longer in the active list
   const ids = new Set(entries.map(e => e.id))
-  for (const id of Object.keys(state.boxes)) {
-    if (!ids.has(id)) {
-      delete state.boxes[id]
-      changed = true
-    }
+  for (const id of Object.keys(scores)) {
+    if (!ids.has(id)) { delete scores[id]; changed = true }
   }
-  if (changed) writeState(state)
+  if (changed) writeScores(scores)
+
+  // Group by score
+  const byScore = {0:[],1:[],2:[],3:[],4:[],5:[]}
+  for (const e of entries) {
+    const s = Math.min(scores[e.id]??0, 5)
+    byScore[s].push(e.id)
+  }
+  for (const arr of Object.values(byScore)) shuffle(arr)
+
+  // Seed boxes
+  const boxes = {}
+  const stack = [...byScore[0]]
+
+  for (const s of [1,2,3,4]) {
+    const limit = s === 1 ? BOX1_MAX : BOXN_MAX
+    const words = byScore[s]
+    for (const id of words.slice(0, limit))  boxes[id] = s
+    stack.push(...words.slice(limit))
+  }
+
+  // Top up box 1 from score-0 stack
+  _topUpBox1(boxes, stack, scores)
+
+  // Open the first pass (B1)
+  const session = {
+    boxes, stack,
+    b1PassCount:  0,
+    passSchedule: [],
+    currentPass:  1,
+    passQueue:    [],
+    passDone:     0,
+    passTotal:    0,
+    pendingWrong: [],
+  }
+  _openPass(session, scores)
+  writeSession(session)
+  return session
 }
 
-/**
- * Count entries in each box for a given set of entry IDs.
- * Returns [b0count, b1count, b2count, b3count, b4count, b5count]
- */
+export function getSession(entries) {
+  return readSession() ?? initSession(entries)
+}
+
+// ── Box/pass accessors ────────────────────────────────────────────────────────
+
+export function getBox(entryId) {
+  const s = readSession()
+  if (!s) return 0
+  return s.boxes[entryId] ?? 0
+}
+
 export function getBoxCounts(entryIds) {
-  const state = readState()
-  const counts = [0, 0, 0, 0, 0, 0]
+  const session = readSession()
+  const scores  = readScores()
+  if (!session) return [0,0,0,0,0,0]
+  const counts = [0,0,0,0,0,0]
   for (const id of entryIds) {
-    const box = state.boxes[id] ?? 0
-    counts[Math.min(box, 5)]++
+    const box = session.boxes[id]
+    if (box >= 1 && box <= 4) { counts[box]++; continue }
+    if ((scores[id]??0) === 5)  { counts[5]++; continue }
+    counts[0]++
   }
   return counts
 }
 
-// ── Pass sequence ─────────────────────────────────────────────────────────────
+/**
+ * Returns pass progress for the status bar display.
+ * {
+ *   passIndex,     // 0-based global pass count
+ *   currentPass,   // which box is active (1-4)
+ *   passDone,      // cards done in current pass
+ *   passTotal,     // total cards in current pass
+ *   barFills: {    // 0-1 fill for each box's status bar
+ *     1: 0.6,      // within-pass progress for active box, inter-pass for others
+ *     2: 0.5,
+ *     3: 0.25,
+ *     4: 0.125,
+ *   }
+ * }
+ */
+export function getPassState() {
+  const s = readSession()
+  if (!s) return { b1PassCount:0, currentPass:1, passDone:0, passTotal:0, barFills:{1:0,2:0,3:0,4:0}, passQueue:[] }
+
+  const { b1PassCount = 0, currentPass, passDone, passTotal } = s
+  const withinFill = passTotal > 0 ? passDone / passTotal : 0
+
+  const barFills = {}
+  for (const b of [1,2,3,4]) {
+    if (b === currentPass) {
+      barFills[b] = withinFill
+    } else {
+      // How far through the inter-pass interval for this box
+      const period = Math.pow(2, b - 1)   // B2=2, B3=4, B4=8
+      barFills[b] = (b1PassCount % period) / period
+    }
+  }
+
+  return { b1PassCount, currentPass, passDone, passTotal, barFills, passQueue: s.passQueue ?? [] }
+}
+
+// ── Card answering ────────────────────────────────────────────────────────────
 
 /**
- * Given the current pass count (0-based), which box is due?
- * Binary counting: pass 0→B1, 1→B1, 2→B2, 3→B1, 4→B1, 5→B2, 6→B3...
- * Box = index of lowest set bit in (passCount + 1), capped at 4.
+ * Get the next card to show from the current pass queue.
+ * Returns { id, box } or null if pass is done.
  */
-export function boxDueForPass(passCount) {
-  const n = passCount + 1
-  // Number of trailing zeros in n = position of lowest set bit
-  // Box 1 is the minimum, so: trailing zeros = 0 → box 1, etc.
-  let trailing = 0
-  let x = n
-  while ((x & 1) === 0) { trailing++; x >>= 1 }
-  return Math.min(trailing + 1, 4)  // cap at box 4 (box 5 = mastered)
+export function nextCard(entryMap) {
+  const s = readSession()
+  if (!s || s.passQueue.length === 0) return null
+  const id = s.passQueue[0]
+  return { id, entry: entryMap?.get(id), box: s.currentPass }
 }
 
 /**
- * Build the ordered card sequence for the current session.
- * Returns array of entryIds in the order they should be shown.
- *
- * A "pass" is one full run through box 1 (or the due box).
- * We pre-compute enough passes to cover all active cards.
- */
-export function buildSequence(entryIds) {
-  const state  = readState()
-  const boxes  = state.boxes
-
-  // Group entry IDs by box
-  const byBox  = { 1: [], 2: [], 3: [], 4: [] }
-  for (const id of entryIds) {
-    const b = boxes[id] ?? 0
-    if (b >= 1 && b <= 4) byBox[b].push(id)
-  }
-
-  // Shuffle within each box
-  for (const b of [1, 2, 3, 4]) shuffle(byBox[b])
-
-  // Build sequence using the binary pass pattern
-  // Each "pass" reviews B1, and conditionally B2/B3/B4
-  const sequence = []
-  const b1 = [...byBox[1]]
-  const b2 = [...byBox[2]]
-  const b3 = [...byBox[3]]
-  const b4 = [...byBox[4]]
-
-  let passCount = state.passCount
-  let b1idx = 0, b2idx = 0, b3idx = 0, b4idx = 0
-
-  // Continue until all active boxes are exhausted
-  const totalActive = b1.length + b2.length + b3.length + b4.length
-  if (totalActive === 0) return []
-
-  let safety = 0
-  while ((b1idx < b1.length || b2idx < b2.length || b3idx < b3.length || b4idx < b4.length) && safety++ < 1000) {
-    const dueBox = boxDueForPass(passCount)
-
-    // Always add one B1 card per pass
-    if (b1idx < b1.length) sequence.push({ id: b1[b1idx++], box: 1 })
-
-    // Add due higher-box card
-    if (dueBox === 2 && b2idx < b2.length) sequence.push({ id: b2[b2idx++], box: 2 })
-    if (dueBox === 3 && b3idx < b3.length) { sequence.push({ id: b3[b3idx++], box: 3 }) }
-    if (dueBox === 4 && b4idx < b4.length) { sequence.push({ id: b4[b4idx++], box: 4 }) }
-
-    passCount++
-  }
-
-  return sequence
-}
-
-// ── Scoring ───────────────────────────────────────────────────────────────────
-
-/**
- * Record a correct answer. Advances word one box.
- * If graduating from box 1, pulls a new word from box 0 if space available.
- * Returns the new box number.
+ * Record correct answer. Advances score and box. Removes from pass queue.
+ * Returns true if pass is now complete.
  */
 export function recordCorrect(entryId, allEntryIds) {
-  const state  = readState()
-  const curBox = state.boxes[entryId] ?? 0
-  const newBox = Math.min(curBox + 1, MAX_BOX)
-  state.boxes[entryId] = newBox
+  const scores  = readScores()
+  const session = readSession()
+  if (!session) return false
 
-  // If graduated from box 1, maybe pull from box 0
-  if (curBox === 1) {
-    _maybePromoteFromBox0(state, allEntryIds)
+  // Remove from pass queue
+  session.passQueue = session.passQueue.filter(id => id !== entryId)
+  session.passDone++
+
+  // Score + box advance
+  const oldScore = scores[entryId] ?? 0
+  scores[entryId] = Math.min(oldScore + 1, MAX_SCORE)
+  writeScores(scores)
+
+  const oldBox = session.boxes[entryId] ?? 0
+  const newBox = Math.min(oldBox + 1, MAX_SCORE)
+  if (newBox === MAX_SCORE) delete session.boxes[entryId]
+  else session.boxes[entryId] = newBox
+
+  const passComplete = session.passQueue.length === 0
+  if (passComplete) _advancePass(session, scores, allEntryIds)
+  writeSession(session)
+  return passComplete
+}
+
+/**
+ * Record wrong answer. Score→1. Card deferred to next B1 pass.
+ * Returns true if pass is now complete.
+ */
+export function recordWrong(entryId, allEntryIds) {
+  const scores  = readScores()
+  const session = readSession()
+  if (!session) return false
+
+  session.passQueue = session.passQueue.filter(id => id !== entryId)
+  session.passDone++
+
+  scores[entryId] = 1
+  writeScores(scores)
+
+  // Keep in box 1 (or move to box 1 if it was higher)
+  session.boxes[entryId] = 1
+  // Defer to next B1 pass
+  if (!session.pendingWrong.includes(entryId)) {
+    session.pendingWrong.push(entryId)
   }
 
-  writeState(state)
-  return newBox
+  const passComplete = session.passQueue.length === 0
+  if (passComplete) _advancePass(session, scores, allEntryIds)
+  writeSession(session)
+  return passComplete
 }
 
 /**
- * Record a wrong answer. Always sends word back to box 1.
- * Returns the new box number (always 1).
- */
-export function recordWrong(entryId) {
-  const state  = readState()
-  const curBox = state.boxes[entryId] ?? 0
-  state.boxes[entryId] = Math.max(1, curBox > 0 ? 1 : 0)
-  // If word was in box 0 (unseen), promote to box 1
-  if (curBox === 0) state.boxes[entryId] = 1
-  writeState(state)
-  return 1
-}
-
-/**
- * Manually master a word (swipe up).
+ * Master a card immediately. Removes from pass queue.
  */
 export function recordMaster(entryId, allEntryIds) {
-  const state = readState()
-  const curBox = state.boxes[entryId] ?? 0
-  state.boxes[entryId] = MAX_BOX
-  if (curBox === 1) _maybePromoteFromBox0(state, allEntryIds)
-  writeState(state)
-  return MAX_BOX
+  const scores  = readScores()
+  const session = readSession()
+  if (!session) return false
+
+  session.passQueue = session.passQueue.filter(id => id !== entryId)
+  session.passDone++
+
+  scores[entryId] = MAX_SCORE
+  writeScores(scores)
+  delete session.boxes[entryId]
+
+  const passComplete = session.passQueue.length === 0
+  if (passComplete) _advancePass(session, scores, allEntryIds)
+  writeSession(session)
+  return passComplete
 }
 
-/**
- * Increment pass counter (call when a full B1 pass completes).
- */
-export function incrementPassCount() {
-  const state = readState()
-  state.passCount = (state.passCount ?? 0) + 1
-  writeState(state)
-  return state.passCount
-}
-
-/**
- * Reset a word to box 1 (from vocab browser).
- */
-export function resetToBox1(entryId) {
-  const state = readState()
-  state.boxes[entryId] = 1
-  writeState(state)
-}
-
-/**
- * Reset everything for a fresh start.
- */
 export function resetAll() {
-  localStorage.removeItem(STORAGE_KEY)
+  localStorage.removeItem(SCORES_KEY)
+  localStorage.removeItem(SESSION_KEY)
 }
 
 // ── Internal ──────────────────────────────────────────────────────────────────
 
-function _maybePromoteFromBox0(state, allEntryIds) {
-  // Count current box 1 size
-  const b1count = allEntryIds.filter(id => (state.boxes[id] ?? 0) === 1).length
+/**
+ * After completing b1PassCount B1 passes, which higher boxes are due?
+ * B2 due every 2nd B1 pass, B3 every 4th, B4 every 8th.
+ * Returns array of box numbers due (may be empty, or [2], or [2,3], etc.)
+ */
+function _higherBoxesDue(b1PassCount) {
+  const due = []
+  if (b1PassCount > 0 && b1PassCount % 2 === 0) due.push(2)
+  if (b1PassCount > 0 && b1PassCount % 4 === 0) due.push(3)
+  if (b1PassCount > 0 && b1PassCount % 8 === 0) due.push(4)
+  return due
+}
+
+function _openPass(session, scores) {
+  const box = session.currentPass
+  let cards
+
+  if (box === 1) {
+    _topUpBox1(session.boxes, session.stack, scores)
+    for (const id of session.pendingWrong) {
+      if (!session.boxes[id]) session.boxes[id] = 1
+    }
+    session.pendingWrong = []
+    cards = Object.entries(session.boxes)
+      .filter(([,b]) => b === 1)
+      .map(([id]) => id)
+  } else {
+    cards = Object.entries(session.boxes)
+      .filter(([,b]) => b === box)
+      .map(([id]) => id)
+  }
+
+  shuffle(cards)
+  session.passQueue = cards
+  session.passDone  = 0
+  session.passTotal = cards.length
+}
+
+function _advancePass(session, scores, allEntryIds) {
+  // Ensure passSchedule exists (handles old localStorage sessions)
+  if (!Array.isArray(session.passSchedule)) session.passSchedule = []
+  if (typeof session.b1PassCount !== 'number') session.b1PassCount = 0
+
+  // If schedule is empty, we just finished a B1 pass — build next schedule
+  if (session.passSchedule.length === 0) {
+    session.b1PassCount++
+    const due = _higherBoxesDue(session.b1PassCount)
+    // Queue: any due higher boxes (non-empty), then B1
+    for (const b of due) {
+      const count = Object.values(session.boxes).filter(x => x === b).length
+      if (count > 0) session.passSchedule.push(b)
+    }
+    session.passSchedule.push(1)
+  }
+
+  // Take next box from schedule
+  let next = session.passSchedule.shift()
+
+  // Skip empty boxes — find next non-empty one
+  for (let safety = 0; safety < 8; safety++) {
+    if (next === undefined) { next = 1; break }
+    const count = next === 1
+      ? Object.values(session.boxes).filter(b => b === 1).length + (session.pendingWrong?.length ?? 0)
+      : Object.values(session.boxes).filter(b => b === next).length
+    if (count > 0) break
+    // Empty — try next in schedule, or default to B1
+    next = session.passSchedule.length > 0 ? session.passSchedule.shift() : 1
+  }
+
+  session.currentPass = next ?? 1
+  _openPass(session, scores)
+}
+
+function _topUpBox1(boxes, stack, scores) {
+  const b1count = Object.values(boxes).filter(b => b === 1).length
   if (b1count >= BOX1_MAX) return
+  const slots = BOX1_MAX - b1count
 
-  // Find first box 0 entry (preserve insertion order)
-  const box0 = allEntryIds.filter(id => (state.boxes[id] ?? 0) === 0)
-  if (box0.length === 0) return
+  // Prefer score-1 words, then score-0
+  let candidates = stack.filter(id => (scores[id]??0) === 1)
+  if (candidates.length < slots) {
+    candidates = candidates.concat(
+      stack.filter(id => (scores[id]??0) === 0)
+    )
+  }
+  shuffle(candidates)
 
-  // Pick randomly from box 0
-  const idx = Math.floor(Math.random() * box0.length)
-  state.boxes[box0[idx]] = 1
+  let promoted = 0
+  for (const id of candidates) {
+    if (promoted >= slots) break
+    boxes[id] = 1
+    const idx = stack.indexOf(id)
+    if (idx >= 0) stack.splice(idx, 1)
+    promoted++
+  }
 }
 
 function shuffle(arr) {

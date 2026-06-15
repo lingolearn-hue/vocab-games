@@ -1,0 +1,225 @@
+/* ── Tutorial / Onboarding Screen ─────────────────────────────────────────── */
+
+.tut-screen {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.tut-panel {
+  background: #fff;
+  border-radius: 20px;
+  max-width: 420px;
+  width: 100%;
+  max-height: 90dvh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+/* Top section — scrollable content */
+.tut-top {
+  padding: 2rem 1.8rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* Bottom section — sticky buttons */
+.tut-bottom {
+  padding: 1rem 1.8rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* ── Warning page ─────────────────────────────────────────────────────────── */
+
+.tut-icon {
+  font-size: 2.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.tut-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #111;
+  text-align: center;
+  margin: 0;
+  line-height: 1.2;
+}
+.tut-title--sm { font-size: 1.2rem; }
+
+.tut-warning-badge {
+  background: #fff3cd;
+  border: 1.5px solid #f0a500;
+  color: #7a5500;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.8rem;
+  border-radius: 20px;
+  margin: 0;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.tut-warning-text {
+  font-size: 0.88rem;
+  color: #444;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0;
+  max-width: 320px;
+}
+
+/* ── Box system page ──────────────────────────────────────────────────────── */
+
+.tut-subtitle {
+  font-size: 0.85rem;
+  color: #555;
+  text-align: center;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 300px;
+}
+
+.tut-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+}
+
+.tut-box-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.35rem 0;
+  position: relative;
+}
+
+.tut-box-badge {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 8px;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.tut-box-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+  flex: 1;
+}
+.tut-box-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+.tut-box-desc {
+  font-size: 0.72rem;
+  color: #777;
+}
+
+.tut-box-arrow {
+  position: absolute;
+  left: 1rem;
+  bottom: -0.6rem;
+  font-size: 0.7rem;
+  color: #ccc;
+  z-index: 1;
+}
+
+.tut-rhythm {
+  font-size: 0.78rem;
+  color: #555;
+  text-align: center;
+  line-height: 1.6;
+  margin: 0.3rem 0 0;
+  max-width: 280px;
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 0.6rem 0.9rem;
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────────── */
+
+.tut-next-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: #4f7ef8;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-appearance: none;
+  transition: opacity 0.12s;
+}
+.tut-next-btn:hover { opacity: 0.9; }
+
+.tut-back-btn {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 0.82rem;
+  cursor: pointer;
+  padding: 0.2rem;
+  -webkit-appearance: none;
+  text-align: center;
+}
+.tut-back-btn:hover { color: #555; }
+
+/* Page dots */
+.tut-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.8rem 0 0.5rem;
+}
+.tut-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #ddd;
+  transition: background 0.2s;
+}
+.tut-dot.active { background: #4f7ef8; }
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .tut-panel     { background: #1a1a1a; }
+  .tut-bottom    { border-color: #2a2a2a; }
+  .tut-title     { color: #f0f0f0; }
+  .tut-warning-text, .tut-subtitle { color: #b0b0b0; }
+  .tut-rhythm    { background: #222; color: #b0b0b0; }
+  .tut-box-desc  { color: #888; }
+  .tut-dot       { background: #444; }
+  .tut-dot.active { background: #4f7ef8; }
+  .tut-back-btn  { color: #555; }
+}
+[data-theme="dark"] .tut-panel  { background: #1a1a1a; }
+[data-theme="dark"] .tut-bottom { border-color: #2a2a2a; }
+[data-theme="dark"] .tut-title  { color: #f0f0f0; }
+[data-theme="dark"] .tut-warning-text,
+[data-theme="dark"] .tut-subtitle { color: #b0b0b0; }
+[data-theme="dark"] .tut-rhythm  { background: #222; color: #b0b0b0; }
+[data-theme="dark"] .tut-box-desc { color: #888; }
+[data-theme="dark"] .tut-dot     { background: #444; }

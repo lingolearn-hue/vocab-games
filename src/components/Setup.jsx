@@ -39,7 +39,7 @@ function getLanguages(availableLists) {
 }
 
 // Single accordion — only one group open at a time
-function GroupCard({ title, subtitle, icon, games, canStart, setScreen, isOpen, onOpen }) {
+function GroupCard({ title, subtitle, icon, games, canStart, setScreen, isOpen, onOpen, extraButton }) {
   return (
     <div className={`group-card ${isOpen ? 'open' : ''}`}>
       <button className="group-header" onClick={onOpen}>
@@ -63,6 +63,16 @@ function GroupCard({ title, subtitle, icon, games, canStart, setScreen, isOpen, 
               <span className="sub-game-desc">{g.desc}</span>
             </button>
           ))}
+          {extraButton && (
+            <button
+              className={`sub-game-btn ${!canStart ? 'disabled' : ''}`}
+              disabled={!canStart}
+              onClick={() => setScreen(extraButton.id)}
+            >
+              <span className="sub-game-label">{extraButton.label}</span>
+              <span className="sub-game-desc">{extraButton.desc}</span>
+            </button>
+          )}
         </div>
       )}
     </div>
@@ -205,26 +215,17 @@ export default function Setup() {
             <div className="vocab-browser-desc">Searchable grammar patterns reference</div>
           </div>
         </button>
-        {['zh','ja'].includes(activeLanguage) && (
-          <button
-            className={`vocab-browser-btn ${!canStart ? 'disabled' : ''}`}
-            disabled={!canStart}
-            onClick={() => setScreen('stroke-order')}
-          >
-            <span className="vocab-browser-icon">✍️</span>
-            <div>
-              <div className="vocab-browser-label">Stroke Order</div>
-              <div className="vocab-browser-desc">Animate and practise character strokes</div>
-            </div>
-          </button>
-        )}
+
       </div>
 
       {/* Game groups — single accordion */}
       <div className="setup-section">
         <GroupCard title="Vocabulary Drills" subtitle="Flashcard · Race Car · Match · Typing"
           icon="🎯" games={DRILL_GAMES} canStart={canStart} setScreen={setScreen}
-          isOpen={openGroup === 'drills'} onOpen={() => toggleGroup('drills')} />
+          isOpen={openGroup === 'drills'} onOpen={() => toggleGroup('drills')}
+          extraButton={['zh','ja'].includes(activeLanguage) ? {
+            id: 'stroke-order', label: '✍️ Stroke Order', desc: 'Write characters stroke by stroke'
+          } : null} />
         <GroupCard title="Language in Context" subtitle="Gap Fill · Reader · Dialogue"
           icon="📚" games={CONTEXT_GAMES} canStart={canStart} setScreen={setScreen}
           isOpen={openGroup === 'context'} onOpen={() => toggleGroup('context')} />
@@ -237,7 +238,7 @@ export default function Setup() {
         <p className="hint">{activeLanguage ? 'Loading vocabulary…' : 'Tap the flag above to choose a language.'}</p>
       )}
 
-      <div className="setup-version">v0.50</div>
+      <div className="setup-version">v0.61</div>
     </div>
   )
 }

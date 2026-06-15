@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { AppProvider, useApp } from './context/AppContext'
 import Setup from './components/Setup'
 import RaceCar from './games/RaceCar'
@@ -16,6 +16,7 @@ import GrammarTrainer from './games/GrammarTrainer'
 import MatchingDrills from './games/MatchingDrills'
 import Adventure from './games/Adventure'
 import GrammarDictionary from './games/GrammarDictionary'
+import Tutorial from './components/Tutorial'
 import './App.css'
 
 const LANGUAGE_FLAGS = { zh: '🇨🇳', es: '🇪🇸', de: '🇩🇪', ja: '🇯🇵', en: '🇬🇧', fr: '🇫🇷' }
@@ -86,11 +87,31 @@ function Router() {
   }
 }
 
+function TutorialGate({ children }) {
+  const [showTutorial, setShowTutorial] = useState(
+    () => !localStorage.getItem('hasSeenTutorial')
+  )
+
+  function handleDone() {
+    localStorage.setItem('hasSeenTutorial', '1')
+    setShowTutorial(false)
+  }
+
+  return (
+    <>
+      {children}
+      {showTutorial && <Tutorial onDone={handleDone} />}
+    </>
+  )
+}
+
 export default function App() {
   return (
     <AppProvider>
-      <Router />
-      <FirstLaunchOverlay />
+      <TutorialGate>
+        <Router />
+        <FirstLaunchOverlay />
+      </TutorialGate>
     </AppProvider>
   )
 }

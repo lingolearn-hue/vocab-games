@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { useApp } from '../context/AppContext'
 import HanziWriter from 'hanzi-writer'
 import {
-  initEntries, buildSequence, getBoxCounts,
+  initSession, getBoxCounts, getPassState,
   recordCorrect as leitnerCorrect,
   recordWrong   as leitnerWrong,
   recordMaster  as leitnerMaster,
@@ -209,19 +209,19 @@ export default function StrokeOrder() {
   // Initialise Leitner for CJK entries
   useEffect(() => {
     if (cjkEntries.length === 0) return
-    initEntries(cjkEntries)
+    initSession(cjkEntries)
     setBoxCounts(getBoxCounts(entryIds))
-    const seq = buildSequence(entryIds)
+    const ps = getPassState()
     const entryMap = new Map(cjkEntries.map(e => [e.id, e]))
-    setSequence(seq.map(s => entryMap.get(s.id)).filter(Boolean))
+    setSequence((ps.passQueue ?? []).map(id => entryMap.get(id)).filter(Boolean))
     setSeqIndex(0)
   }, [entryIds.join(',')])
 
   function refreshCounts() {
     setBoxCounts(getBoxCounts(entryIds))
-    const seq = buildSequence(entryIds)
+    const ps = getPassState()
     const entryMap = new Map(cjkEntries.map(e => [e.id, e]))
-    setSequence(seq.map(s => entryMap.get(s.id)).filter(Boolean))
+    setSequence((ps.passQueue ?? []).map(id => entryMap.get(id)).filter(Boolean))
   }
 
   function openEntry(entry) {

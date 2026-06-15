@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { useApp } from '../context/AppContext'
 import { srsPickDistinct } from '../engine/srs'
-import { initEntries, buildSequence, getBoxCounts, recordCorrect as leitnerCorrect, recordWrong as leitnerWrong, recordMaster as leitnerMaster, getBox } from '../engine/leitner'
+import { initSession, getBoxCounts, getPassState, recordCorrect as leitnerCorrect, recordWrong as leitnerWrong, recordMaster as leitnerMaster, getBox } from '../engine/leitner'
 import { displayEntry } from '../engine/vocab'
 import { getMnemonic, setMnemonic, getAllMnemonics } from '../engine/mnemonics'
 import { buildLookup } from '../engine/reader'
@@ -75,15 +75,26 @@ export default function Flashcard() {
   // Stable key — only rebuild deck when entry IDs actually change
   const entriesKey = entryIds.join(',')
 
-  // Leitner: initialise entries and build sequence
+  // Pass state
+  const [passState, setPassState] = useState(() => ({ passIndex:0, currentPass:1, passDone:0, passTotal:0, barFills:{1:0,2:0,3:0,4:0} }))
+
+  function refreshState() {
+    setBoxCounts(getBoxCounts(entryIds))
+    setPassState(getPassState())
+  }
+
+  // Leitner: init session and build first pass
   useEffect(() => {
     if (activeEntries.length === 0) return
-    initEntries(activeEntries)
-    setBoxCounts(getBoxCounts(entryIds))
-    const seq = buildSequence(entryIds)
-    // Map sequence back to entry objects
+    initSession(activeEntries)
     const entryMap = new Map(activeEntries.map(e => [e.id, e]))
-    const deck = seq.map(s => ({ entry: entryMap.get(s.id), box: s.box })).filter(s => s.entry)
+    const ps = getPassState()
+    setPassState(ps)
+    setBoxCounts(getBoxCounts(entryIds))
+    // Build deck from pass queue
+    const deck = ps.passQueue
+      ? ps.passQueue.map(id => ({ entry: entryMap.get(id), box: ps.currentPass })).filter(s => s.entry)
+      : []
     setDeck(deck)
     setDeckIndex(0)
     setFlip(false, false)
@@ -92,7 +103,7 @@ export default function Flashcard() {
 
   const currentItem  = deck[deckIndex] ?? null
   const currentEntry = currentItem?.entry ?? null
-  const currentBox   = currentItem?.box ?? 1
+  const currentBox   = currentItem?.box ?? passState.currentPass
 
   const [autoPlay,   setAutoPlay]   = useState(() => localStorage.getItem('fc-autoplay') === 'true')
 
@@ -148,14 +159,20 @@ export default function Flashcard() {
     if (action === 'known')   scoreActions.correct(currentEntry.id, 'flashcard')
     if (action === 'unknown') scoreActions.wrong(currentEntry.id, 'flashcard')
     if (action === 'master')  scoreActions.master(currentEntry.id)
-    setBoxCounts(getBoxCounts(entryIds))
+    refreshState()
 
     setSwipeDir(action === 'unknown' ? 'left' : action === 'known' ? 'right' : 'up')
 
     setTimeout(() => {
       const nextIndex = deckIndex + 1
       if (nextIndex >= deck.length) {
-        setDeck(buildDeck())
+        // Pass complete — rebuild deck from new pass queue
+        const ps = getPassState()
+        const entryMap = new Map(activeEntries.map(e => [e.id, e]))
+        const newDeck = (ps.passQueue ?? [])
+          .map(id => ({ entry: entryMap.get(id), box: ps.currentPass }))
+          .filter(s => s.entry)
+        setDeck(newDeck)
         setDeckIndex(0)
       } else {
         setDeckIndex(nextIndex)
@@ -266,7 +283,6 @@ export default function Flashcard() {
         <button className="fc-back" onClick={goBack}>← Back</button>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
           <button className="fc-gear" onClick={() => setScreen('settings')} title="Settings">⚙️</button>
-          <span className="fc-progress">{deckIndex + 1} / {deck.length} · B{currentBox}</span>
         </div>
       </div>
 
@@ -279,9 +295,14 @@ export default function Flashcard() {
       {/* Leitner box display */}
       <div className="fc-leitner-bar">
         {[0,1,2,3,4,5].map(b => (
-          <div key={b} className={`fc-leitner-box ${currentBox === b ? 'active' : ''} ${b === 0 ? 'box-unseen' : b === 5 ? 'box-mastered' : ''}`}>
+          <div key={b} className={`fc-leitner-box ${passState.currentPass === b ? 'active' : ''} ${b === 0 ? 'box-unseen' : b === 5 ? 'box-mastered' : ''}`}>
             <span className="fc-leitner-label">{b === 0 ? '○' : b === 5 ? '★' : `B${b}`}</span>
             <span className="fc-leitner-count">{boxCounts[b] ?? 0}</span>
+            {b >= 1 && b <= 4 && (
+              <div className="fc-leitner-progress">
+                <div className="fc-leitner-fill" style={{ width: `${((passState.barFills?.[b] ?? 0) * 100).toFixed(1)}%` }} />
+              </div>
+            )}
           </div>
         ))}
       </div>

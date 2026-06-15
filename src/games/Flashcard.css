@@ -691,3 +691,26 @@
 [data-theme="dark"] .fc-leitner-box.box-mastered { background: #182d24; border-color: #22a06b; }
 [data-theme="dark"] .fc-leitner-label          { color: #b0b0b0; }
 [data-theme="dark"] .fc-leitner-count          { color: #f0f0f0; }
+
+/* Leitner pass progress bar */
+.fc-leitner-progress {
+  width: 100%;
+  height: 3px;
+  background: #e0e0e0;
+  border-radius: 2px;
+  margin-top: 2px;
+  overflow: hidden;
+}
+.fc-leitner-fill {
+  height: 100%;
+  background: #4f7ef8;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+.fc-leitner-box.active .fc-leitner-fill { background: #4f7ef8; }
+.fc-leitner-box.box-mastered .fc-leitner-fill { background: #22a06b; }
+
+@media (prefers-color-scheme: dark) {
+  .fc-leitner-progress { background: #333; }
+}
+[data-theme="dark"] .fc-leitner-progress { background: #333; }
