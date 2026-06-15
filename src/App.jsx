@@ -10,6 +10,7 @@ import Settings from './games/Settings'
 import Stats from './games/Stats'
 import Typing from './games/Typing'
 import GradedReader from './games/GradedReader'
+import StrokeOrder from './games/StrokeOrder'
 import Dialogue from './games/Dialogue'
 import GrammarTrainer from './games/GrammarTrainer'
 import MatchingDrills from './games/MatchingDrills'
@@ -80,6 +81,7 @@ function Router() {
     case 'matching':  return <MatchingDrills />
     case 'adventure':     return <Adventure />
     case 'grammar-dict':  return <GrammarDictionary />
+    case 'stroke-order':  return <StrokeOrder />
     default:              return <Setup />
   }
 }

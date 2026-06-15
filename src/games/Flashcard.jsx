@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { useApp } from '../context/AppContext'
 import { srsPickDistinct } from '../engine/srs'
+import { initEntries, buildSequence, getBoxCounts, recordCorrect as leitnerCorrect, recordWrong as leitnerWrong, recordMaster as leitnerMaster, getBox } from '../engine/leitner'
 import { displayEntry } from '../engine/vocab'
 import { getMnemonic, setMnemonic, getAllMnemonics } from '../engine/mnemonics'
 import { buildLookup } from '../engine/reader'
@@ -33,6 +34,7 @@ export default function Flashcard() {
   const [deck,       setDeck]       = useState([])
   const [deckIndex,  setDeckIndex]  = useState(0)
   const [detailOpen, setDetailOpen] = useState(false)
+  const [boxCounts,  setBoxCounts]  = useState([0,0,0,0,0,0])
 
   // Flip state as a ref — direct DOM write, no React render cycle
   const flipRef      = useRef(null)   // ref to the fc-card-flip div
@@ -68,23 +70,29 @@ export default function Flashcard() {
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
   const isDragging  = useRef(false)
 
-  const buildDeck = useCallback(() =>
-    srsPickDistinct(activeEntries, activeEntries.length, 'flashcard')
-  , [activeEntries])
+  const entryIds = useMemo(() => activeEntries.map(e => e.id), [activeEntries])
 
   // Stable key — only rebuild deck when entry IDs actually change
-  const entriesKey = activeEntries.map(e => e.id).join(',')
+  const entriesKey = entryIds.join(',')
 
+  // Leitner: initialise entries and build sequence
   useEffect(() => {
-    if (activeEntries.length > 0) {
-      setDeck(buildDeck())
-      setDeckIndex(0)
-      setFlip(false, false)   // instant reset, no animation
-      setDetailOpen(false)
-    }
+    if (activeEntries.length === 0) return
+    initEntries(activeEntries)
+    setBoxCounts(getBoxCounts(entryIds))
+    const seq = buildSequence(entryIds)
+    // Map sequence back to entry objects
+    const entryMap = new Map(activeEntries.map(e => [e.id, e]))
+    const deck = seq.map(s => ({ entry: entryMap.get(s.id), box: s.box })).filter(s => s.entry)
+    setDeck(deck)
+    setDeckIndex(0)
+    setFlip(false, false)
+    setDetailOpen(false)
   }, [entriesKey])
 
-  const currentEntry = deck[deckIndex] ?? null
+  const currentItem  = deck[deckIndex] ?? null
+  const currentEntry = currentItem?.entry ?? null
+  const currentBox   = currentItem?.box ?? 1
 
   const [autoPlay,   setAutoPlay]   = useState(() => localStorage.getItem('fc-autoplay') === 'true')
 
@@ -133,9 +141,14 @@ export default function Flashcard() {
     if (animating || !currentEntry) return
     setAnimating(true)
 
+    if (action === 'known')   leitnerCorrect(currentEntry.id, entryIds)
+    if (action === 'unknown') leitnerWrong(currentEntry.id)
+    if (action === 'master')  leitnerMaster(currentEntry.id, entryIds)
+    // Keep legacy SRS in sync for other games
     if (action === 'known')   scoreActions.correct(currentEntry.id, 'flashcard')
     if (action === 'unknown') scoreActions.wrong(currentEntry.id, 'flashcard')
     if (action === 'master')  scoreActions.master(currentEntry.id)
+    setBoxCounts(getBoxCounts(entryIds))
 
     setSwipeDir(action === 'unknown' ? 'left' : action === 'known' ? 'right' : 'up')
 
@@ -223,7 +236,7 @@ export default function Flashcard() {
 
   const prompt  = getPrompt(currentEntry)
   const answer  = getAnswer(currentEntry)
-  const score   = scores[currentEntry.id]?.flashcard?.score ?? 0
+  const score   = scores[currentEntry?.id]?.flashcard?.score ?? 0
 
   // Card translate — pure horizontal or vertical only (no diagonal)
   let cardStyle = {}
@@ -253,7 +266,7 @@ export default function Flashcard() {
         <button className="fc-back" onClick={goBack}>← Back</button>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
           <button className="fc-gear" onClick={() => setScreen('settings')} title="Settings">⚙️</button>
-          <span className="fc-progress">{deckIndex + 1} / {deck.length}</span>
+          <span className="fc-progress">{deckIndex + 1} / {deck.length} · B{currentBox}</span>
         </div>
       </div>
 
@@ -262,6 +275,16 @@ export default function Flashcard() {
           ⚠ <strong>No entries at selected level</strong> — showing all levels instead. Change in Settings.
         </div>
       )}
+
+      {/* Leitner box display */}
+      <div className="fc-leitner-bar">
+        {[0,1,2,3,4,5].map(b => (
+          <div key={b} className={`fc-leitner-box ${currentBox === b ? 'active' : ''} ${b === 0 ? 'box-unseen' : b === 5 ? 'box-mastered' : ''}`}>
+            <span className="fc-leitner-label">{b === 0 ? '○' : b === 5 ? '★' : `B${b}`}</span>
+            <span className="fc-leitner-count">{boxCounts[b] ?? 0}</span>
+          </div>
+        ))}
+      </div>
 
       {/* Card area */}
       <div className="fc-stage">

@@ -636,3 +636,58 @@
 }
 [data-theme="dark"] .fc-autoplay-btn { background: #1e1e1e; border-color: #333; color: #555; }
 [data-theme="dark"] .fc-autoplay-btn.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
+
+/* ── Leitner box bar ─────────────────────────────────────────────────────── */
+.fc-leitner-bar {
+  display: flex;
+  gap: 0.3rem;
+  padding: 0.4rem 1rem;
+  justify-content: center;
+}
+
+.fc-leitner-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0.25rem 0.4rem;
+  border-radius: 8px;
+  border: 1.5px solid #ddd;
+  min-width: 2.4rem;
+  transition: border-color 0.12s, background 0.12s;
+}
+.fc-leitner-box.active {
+  border-color: #4f7ef8;
+  background: #eef2ff;
+}
+.fc-leitner-box.box-unseen  { border-color: #e0e0e0; opacity: 0.5; }
+.fc-leitner-box.box-mastered { border-color: #22a06b; background: #f0faf5; }
+
+.fc-leitner-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #555;
+}
+.fc-leitner-count {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #111;
+}
+.fc-leitner-box.active .fc-leitner-label,
+.fc-leitner-box.active .fc-leitner-count { color: #4f7ef8; }
+.fc-leitner-box.box-mastered .fc-leitner-label,
+.fc-leitner-box.box-mastered .fc-leitner-count { color: #22a06b; }
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .fc-leitner-box            { border-color: #333; }
+  .fc-leitner-box.active     { background: #1a1a30; border-color: #4f7ef8; }
+  .fc-leitner-box.box-mastered { background: #182d24; border-color: #22a06b; }
+  .fc-leitner-label          { color: #b0b0b0; }
+  .fc-leitner-count          { color: #f0f0f0; }
+}
+[data-theme="dark"] .fc-leitner-box            { border-color: #333; }
+[data-theme="dark"] .fc-leitner-box.active     { background: #1a1a30; border-color: #4f7ef8; }
+[data-theme="dark"] .fc-leitner-box.box-mastered { background: #182d24; border-color: #22a06b; }
+[data-theme="dark"] .fc-leitner-label          { color: #b0b0b0; }
+[data-theme="dark"] .fc-leitner-count          { color: #f0f0f0; }

@@ -205,6 +205,19 @@ export default function Setup() {
             <div className="vocab-browser-desc">Searchable grammar patterns reference</div>
           </div>
         </button>
+        {['zh','ja'].includes(activeLanguage) && (
+          <button
+            className={`vocab-browser-btn ${!canStart ? 'disabled' : ''}`}
+            disabled={!canStart}
+            onClick={() => setScreen('stroke-order')}
+          >
+            <span className="vocab-browser-icon">✍️</span>
+            <div>
+              <div className="vocab-browser-label">Stroke Order</div>
+              <div className="vocab-browser-desc">Animate and practise character strokes</div>
+            </div>
+          </button>
+        )}
       </div>
 
       {/* Game groups — single accordion */}
@@ -224,7 +237,7 @@ export default function Setup() {
         <p className="hint">{activeLanguage ? 'Loading vocabulary…' : 'Tap the flag above to choose a language.'}</p>
       )}
 
-      <div className="setup-version">v0.49</div>
+      <div className="setup-version">v0.50</div>
     </div>
   )
 }
