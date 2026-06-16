@@ -67,7 +67,7 @@
 /* Items — fixed uniform height so all cards are same size */
 .pm-item {
   flex: 0 0 auto;
-  height: 90px;        /* fixed — uniform across all items */
+  height: 68px;        /* fixed — uniform across all items */
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -215,7 +215,7 @@ export function recordCorrect(entryId, allEntryIds, game='flashcard') {
   // Score + box advance
   const oldScore = scores[entryId] ?? 0
   scores[entryId] = Math.min(oldScore + 1, MAX_SCORE)
-  writeScores(scores)
+  writeScores(scores, game)
 
   const oldBox = session.boxes[entryId] ?? 0
   const newBox = Math.min(oldBox + 1, MAX_SCORE)
@@ -241,7 +241,7 @@ export function recordWrong(entryId, allEntryIds, game='flashcard') {
   session.passDone++
 
   scores[entryId] = 1
-  writeScores(scores)
+  writeScores(scores, game)
 
   // Keep in box 1 (or move to box 1 if it was higher)
   session.boxes[entryId] = 1
@@ -268,7 +268,7 @@ export function recordMaster(entryId, allEntryIds, game='flashcard') {
   session.passDone++
 
   scores[entryId] = MAX_SCORE
-  writeScores(scores)
+  writeScores(scores, game)
   delete session.boxes[entryId]
 
   const passComplete = session.passQueue.length === 0

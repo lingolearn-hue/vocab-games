@@ -366,40 +366,52 @@
 
 /* ── Score boxes ──────────────────────────────────────────────────────────── */
 .stats-score-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.6rem;
-  padding: 0.8rem 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.3rem;
+  padding: 0.5rem 1rem 0;
 }
 
 .stats-score-box {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.2rem;
-  padding: 0.8rem 0.4rem;
-  border-radius: 12px;
-  border: 2px solid var(--box-color);
+  gap: 0.1rem;
+  padding: 0.35rem 0.2rem;
+  border-radius: 8px;
+  border: 1.5px solid var(--box-color);
   background: color-mix(in srgb, var(--box-color) 10%, transparent);
+  min-width: 0;
 }
 
 .stats-score-count {
-  font-size: 1.6rem;
+  font-size: 0.85rem;
   font-weight: 800;
   color: var(--box-color);
   line-height: 1;
 }
 
-.stats-score-label {
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: var(--box-color);
-  text-align: center;
+.stats-score-pct {
+  font-size: 0.55rem;
+  color: #888;
 }
 
-.stats-score-pct {
-  font-size: 0.72rem;
-  color: #888;
+.stats-score-label-row {
+  display: flex;
+  gap: 0.3rem;
+  padding: 0.3rem 1rem 0.2rem;
+}
+
+.stats-score-label-item {
+  flex: 1;
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: var(--label-color, #888);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .stats-total {
@@ -416,3 +428,12 @@
 }
 [data-theme="dark"] .stats-score-pct { color: #666; }
 [data-theme="dark"] .stats-total     { color: #555; }
+
+.stats-game-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.6rem 1rem 0;
+}

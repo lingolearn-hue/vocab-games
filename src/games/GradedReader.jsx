@@ -42,6 +42,7 @@ export default function GradedReader() {
   const [customPassage,   setCustomPassage]   = useState(null)
   const [showTranslation, setShowTranslation] = useState(false)
   const [activeTags,      setActiveTags]      = useState(new Set())
+  const [search,          setSearch]          = useState('')
   const textAreaRef = useRef(null)
 
   const language = useMemo(() => {
@@ -86,13 +87,21 @@ export default function GradedReader() {
   const [activeLevel, setActiveLevel] = useState(null)
 
   const filteredPassages = useMemo(() => {
+    const q = search.trim().toLowerCase()
     return passages.filter(p => {
       if (activeLevel && p.level !== activeLevel) return false
-      if (activeTags.size === 0) return true
-      const ptags = new Set(p.tags ?? [])
-      return [...activeTags].every(t => ptags.has(t))
+      if (activeTags.size > 0) {
+        const ptags = new Set(p.tags ?? [])
+        if (![...activeTags].every(t => ptags.has(t))) return false
+      }
+      if (q) {
+        return p.title?.toLowerCase().includes(q) ||
+               p.text?.toLowerCase().includes(q) ||
+               p.titleTranslation?.toLowerCase().includes(q)
+      }
+      return true
     })
-  }, [passages, activeLevel, activeTags])
+  }, [passages, activeLevel, activeTags, search])
 
   function toggleTag(tag) {
     setActiveTags(prev => {
@@ -191,6 +200,16 @@ export default function GradedReader() {
                       {(activeTags.size > 0 || activeLevel) && (
                         <button className="gr-tag-clear" onClick={() => { setActiveTags(new Set()); setActiveLevel(null) }}>✕ Clear filters</button>
                       )}
+                      <div className="gr-search-row">
+                        <input
+                          className="gr-search"
+                          type="text"
+                          placeholder="Search titles or text…"
+                          value={search}
+                          onChange={e => setSearch(e.target.value)}
+                        />
+                        {search && <button className="gr-search-clear" onClick={() => setSearch('')}>✕</button>}
+                      </div>
                     </div>
                   )
                 })()}

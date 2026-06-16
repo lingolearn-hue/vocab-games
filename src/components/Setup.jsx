@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { useApp } from '../context/AppContext'
+import LevelChips from './LevelChips'
 import './Setup.css'
 
 const LANGUAGE_FLAGS = { zh: '🇨🇳', es: '🇪🇸', de: '🇩🇪', ja: '🇯🇵', en: '🇬🇧', fr: '🇫🇷' }
@@ -171,19 +172,7 @@ export default function Setup() {
       )}
 
       {/* Level filter */}
-      {orderedLevels.length > 0 && (
-        <div className="level-filter">
-          {orderedLevels.map(level => (
-            <button
-              key={level}
-              className={`level-chip ${isLevelActive(level) ? 'active' : ''}`}
-              onClick={() => toggleLevel(level)}
-            >
-              {level}
-            </button>
-          ))}
-        </div>
-      )}
+      <LevelChips />
 
       {/* Status bar */}
       {canStart && (
@@ -238,7 +227,7 @@ export default function Setup() {
         <p className="hint">{activeLanguage ? 'Loading vocabulary…' : 'Tap the flag above to choose a language.'}</p>
       )}
 
-      <div className="setup-version">v0.62</div>
+      <div className="setup-version">v0.63</div>
     </div>
   )
 }
