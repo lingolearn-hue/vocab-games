@@ -17,9 +17,39 @@ function getChars(entry) {
   return [...(entry?.entry ?? '')].filter(ch => CJK_RE.test(ch))
 }
 
+// ── 米字格 grid ───────────────────────────────────────────────────────────────
+
+function MiziGrid({ size }) {
+  const ref = useRef(null)
+  useEffect(() => {
+    const canvas = ref.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    ctx.clearRect(0, 0, size, size)
+    ctx.strokeStyle = '#7a9ab5'
+    ctx.lineWidth = 1
+    ctx.strokeRect(0.5, 0.5, size - 1, size - 1)
+    ctx.setLineDash([4, 4])
+    ctx.beginPath()
+    ctx.moveTo(size / 2, 0); ctx.lineTo(size / 2, size)
+    ctx.moveTo(0, size / 2); ctx.lineTo(size, size / 2)
+    ctx.moveTo(0, 0);        ctx.lineTo(size, size)
+    ctx.moveTo(size, 0);     ctx.lineTo(0, size)
+    ctx.stroke()
+    ctx.setLineDash([])
+  }, [size])
+  return (
+    <canvas
+      ref={ref}
+      width={size} height={size}
+      style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none', borderRadius: 12 }}
+    />
+  )
+}
+
 // ── Single character writer ───────────────────────────────────────────────────
 
-function CharWriter({ char, showOutline, size = 220, onComplete, onWrong }) {
+function CharWriter({ char, showOutline, showHanzi = true, showGrid = true, size = 260, onComplete, onWrong }) {
   const containerRef = useRef(null)
   const writerRef    = useRef(null)
   const [phase, setPhase] = useState('idle')  // idle | quiz | done | error
@@ -43,71 +73,53 @@ function CharWriter({ char, showOutline, size = 220, onComplete, onWrong }) {
       strokeColor:            '#222',
       radicalColor:           '#4f7ef8',
       highlightColor:         '#4f7ef8',
-      drawingColor:           '#4f7ef8',
-      drawingWidth:           4,
+      drawingColor:           '#1a1a2e',
+      drawingWidth:           10,
       strokeAnimationSpeed:   1,
       delayBetweenStrokes:    150,
       // Quiz settings
-      showHintAfterMisses:    3,
+      showHintAfterMisses:    2,
+      leniency:               1.2,
       acceptBackwardsStrokes: false,
       onLoadCharDataError:    () => setPhase('error'),
     })
 
+    // Auto-start quiz immediately
+    writer.quiz({
+      onMistake:       () => onWrong?.(),
+      onCorrectStroke: () => {},
+      onComplete:      () => { setPhase('done'); onComplete?.() },
+    })
+    setPhase('quiz')
     writerRef.current = writer
     return () => {
       try { writer.cancelQuiz(); writer.cancelAnimation() } catch {}
     }
   }, [char, size, showOutline])
 
-  const startQuiz = useCallback(() => {
-    if (!writerRef.current || phase === 'quiz') return
-    setPhase('quiz')
-    writerRef.current.quiz({
-      onMistake:       () => onWrong?.(),
-      onCorrectStroke: () => {},
-      onComplete:      () => { setPhase('done'); onComplete?.() },
-    })
-  }, [phase, onComplete, onWrong])
-
-  const animate = useCallback(() => {
-    if (!writerRef.current || phase === 'quiz') return
-    setPhase('idle')
-    writerRef.current.cancelQuiz()
-    writerRef.current.animateCharacter({ onComplete: () => setPhase('idle') })
-  }, [phase])
-
-  const reset = useCallback(() => {
-    if (!writerRef.current) return
-    writerRef.current.cancelQuiz()
-    writerRef.current.showCharacter()
-    setPhase('idle')
-  }, [])
-
   return (
-    <div className="so-char-block">
-      <div className="so-char-label">{char}</div>
-      <div ref={containerRef} className="so-canvas" style={{ width: size, height: size }} />
-      {phase === 'error' ? (
-        <div className="so-error">No data for "{char}"</div>
-      ) : phase === 'done' ? (
-        <div className="so-char-done">✓ Complete</div>
-      ) : (
-        <div className="so-char-controls">
-          <button className="so-btn" onClick={animate} disabled={phase === 'quiz'}>▶ Show</button>
-          <button className="so-btn so-btn--quiz" onClick={startQuiz} disabled={phase === 'quiz'}>✏️ Write</button>
-          {phase === 'quiz' && (
-            <button className="so-btn so-btn--reset" onClick={reset}>↺ Reset</button>
-          )}
-        </div>
-      )}
+    <div className="so-char-row">
+      {/* Fixed-width glyph slot — always reserves space */}
+      <div className="so-glyph-slot">
+        {showHanzi && <div className="so-char-glyph">{char}</div>}
+      </div>
+      <div className="so-char-block">
+      <div style={{ position: 'relative', display: 'inline-block' }}>
+        <div ref={containerRef} className="so-canvas" style={{ width: size, height: size }} />
+        {showGrid && <MiziGrid size={size} />}
+      </div>
+      {phase === 'error' && <div className="so-error">No data for "{char}"</div>}
+      {phase === 'done'  && <div className="so-char-done">✓</div>}
+      </div>
     </div>
   )
 }
 
 // ── Practice view — one entry, all its characters ─────────────────────────────
 
-function PracticeView({ entry, entryIds, onBack, onAdvance }) {
-  const box         = getBox(entry.id)
+function PracticeView({ entry, entryIds, showHanzi, showGrid, onToggleHanzi, onToggleGrid, onBack, onAdvance }) {
+  if (!entry) return null
+  const box         = getBox(entry.id, 'stroke')
   const showOutline = box <= 1   // box 0 or 1: show outline
   const chars       = getChars(entry)
 
@@ -127,19 +139,20 @@ function PracticeView({ entry, entryIds, onBack, onAdvance }) {
 
   function handleResult(correct) {
     if (correct) leitnerCorrect(entry.id, entryIds)
-    else         leitnerWrong(entry.id)
+    else         leitnerWrong(entry.id, entryIds, 'stroke')
     onAdvance()
   }
 
   return (
     <div className="so-practice">
       <div className="so-practice-header">
-        <button className="so-back-to-list" onClick={onBack}>← List</button>
         <div className="so-practice-title">
           <span className="so-practice-word">{entry.entry}</span>
-          <span className="so-practice-trans">{entry.translation?.[0]}</span>
         </div>
-        <span className="so-box-badge">B{box === 0 ? '1' : box}</span>
+        <div className="so-toggles">
+          <button className={`so-toggle ${showHanzi ? 'active' : ''}`} onClick={onToggleHanzi} title="Toggle character">字</button>
+          <button className={`so-toggle ${showGrid ? 'active' : ''}`} onClick={onToggleGrid} title="Toggle grid">⊞</button>
+        </div>
       </div>
 
       <div className="so-outline-hint">
@@ -154,7 +167,9 @@ function PracticeView({ entry, entryIds, onBack, onAdvance }) {
             key={`${ch}-${i}`}
             char={ch}
             showOutline={showOutline}
-            size={200}
+            showHanzi={showHanzi}
+            showGrid={showGrid}
+            size={260}
             onComplete={() => handleCharComplete(i)}
             onWrong={handleMistake}
           />
@@ -191,7 +206,8 @@ function PracticeView({ entry, entryIds, onBack, onAdvance }) {
 // ── Main StrokeOrder screen ───────────────────────────────────────────────────
 
 export default function StrokeOrder() {
-  const { activeEntries, goBack } = useApp()
+  const { goBack, getEntriesForGame } = useApp()
+  const { entries: activeEntries } = getEntriesForGame('stroke-order')
 
   const cjkEntries = useMemo(() =>
     activeEntries.filter(e => isCJK(e.entry)),
@@ -203,23 +219,30 @@ export default function StrokeOrder() {
   const [sequence,   setSequence]   = useState([])
   const [seqIndex,   setSeqIndex]   = useState(0)
   const [search,     setSearch]     = useState('')
-  const [view,       setView]       = useState('list')  // 'list' | 'practice' | 'queue'
+  const [view,       setView]       = useState('list')
   const [activeEntry, setActiveEntry] = useState(null)
+  const [showHanzi,  setShowHanzi]  = useState(true)
+  const [showGrid,   setShowGrid]   = useState(true)
 
   // Initialise Leitner for CJK entries
   useEffect(() => {
     if (cjkEntries.length === 0) return
-    initSession(cjkEntries)
-    setBoxCounts(getBoxCounts(entryIds))
-    const ps = getPassState()
+    initSession(cjkEntries, 'stroke')
+    setBoxCounts(getBoxCounts(entryIds, 'stroke'))
+    const ps = getPassState('stroke')
     const entryMap = new Map(cjkEntries.map(e => [e.id, e]))
-    setSequence((ps.passQueue ?? []).map(id => entryMap.get(id)).filter(Boolean))
+    const seq = (ps.passQueue ?? []).map(id => entryMap.get(id)).filter(Boolean)
+    setSequence(seq)
     setSeqIndex(0)
+    if (seq.length > 0) {
+      setActiveEntry(seq[0])
+      setView('queue')
+    }
   }, [entryIds.join(',')])
 
   function refreshCounts() {
-    setBoxCounts(getBoxCounts(entryIds))
-    const ps = getPassState()
+    setBoxCounts(getBoxCounts(entryIds, 'stroke'))
+    const ps = getPassState('stroke')
     const entryMap = new Map(cjkEntries.map(e => [e.id, e]))
     setSequence((ps.passQueue ?? []).map(id => entryMap.get(id)).filter(Boolean))
   }
@@ -269,9 +292,7 @@ export default function StrokeOrder() {
     <div className="so-screen">
       {/* Header */}
       <div className="so-header">
-        <button className="so-back" onClick={view === 'list' ? goBack : () => { setView('list'); setActiveEntry(null) }}>
-          ← {view === 'list' ? 'Back' : 'List'}
-        </button>
+        <button className="so-back" onClick={goBack}>← Back</button>
         <span className="so-title">Stroke Order</span>
       </div>
 
@@ -289,11 +310,17 @@ export default function StrokeOrder() {
         <div className="so-empty">
           Stroke order requires Chinese or Japanese.<br/>Switch language to use this tool.
         </div>
+      ) : (view === 'practice' || view === 'queue') && !activeEntry ? (
+        <div className="so-empty">Loading…</div>
       ) : view === 'practice' || view === 'queue' ? (
         <div className="so-scroll">
           <PracticeView
             entry={activeEntry}
             entryIds={entryIds}
+            showHanzi={showHanzi}
+            showGrid={showGrid}
+            onToggleHanzi={() => setShowHanzi(v => !v)}
+            onToggleGrid={() => setShowGrid(v => !v)}
             onBack={() => { setView('list'); setActiveEntry(null) }}
             onAdvance={handleAdvance}
           />
@@ -325,7 +352,7 @@ export default function StrokeOrder() {
           {/* Entry list */}
           <div className="so-list">
             {filtered.map(entry => {
-              const box = getBox(entry.id)
+              const box = getBox(entry.id, 'stroke')
               return (
                 <button
                   key={entry.id}

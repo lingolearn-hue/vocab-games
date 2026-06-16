@@ -1,108 +1,48 @@
 import { useMemo } from 'react'
 import { useApp } from '../context/AppContext'
-import { GAME_META } from '../engine/srs'
+import { getAllScores } from '../engine/leitner'
 import './Stats.css'
 
-const GAMES = ['racecar', 'pairmatch', 'flashcard', 'gapfill', 'typing']
-const STATUS_COLORS = { unseen: '#ccc', learning: '#f0a500', mastered: '#22a06b' }
-
-// SRS thresholds — a word is "due" if its best game score is low enough that it
-// hasn't been seen recently enough. We approximate: score < 3 across all games = learning/due.
-function getEntryStatus(scores, id) {
-  const rec = scores[id]
-  if (!rec || !rec.global) return 'unseen'
-  return rec.global
-}
-
-function isDue(scores, id) {
-  const rec = scores[id]
-  if (!rec) return true  // unseen = always due
-  const gameScores = GAMES.map(g => rec[g]?.score ?? 0)
-  const avgScore = gameScores.reduce((a, b) => a + b, 0) / gameScores.length
-  return avgScore < 3.5
-}
-
-function Bar({ value, max, color, label }) {
-  const pct = max > 0 ? Math.round((value / max) * 100) : 0
-  return (
-    <div className="stat-bar-wrap">
-      {label && <span className="stat-bar-label">{label}</span>}
-      <div className="stat-bar-track">
-        <div className="stat-bar-fill" style={{ width: `${pct}%`, background: color }} />
-      </div>
-      <span className="stat-bar-val">{value}</span>
-    </div>
-  )
-}
-
-function ScoreDist({ entries, scores, game }) {
-  const dist = [0, 0, 0, 0, 0, 0]
-  for (const e of entries) {
-    const s = scores[e.id]?.[game]?.score ?? 0
-    dist[s]++
-  }
-  const max = Math.max(...dist, 1)
-  const color = GAME_META[game]?.color ?? '#4f7ef8'
-  const played = dist.slice(1).reduce((a, b) => a + b, 0)
-
-  return (
-    <div className="sd-wrap">
-      <div className="sd-bars">
-        {dist.map((count, i) => (
-          <div key={i} className="sd-col">
-            <div className="sd-bar" style={{ height: `${Math.round((count / max) * 48)}px`, background: i === 0 ? '#e0e0e0' : color }} />
-            <span className="sd-score">{i}</span>
-          </div>
-        ))}
-      </div>
-      <div className="sd-meta">
-        {played > 0
-          ? `${played}/${entries.length} played · avg ${entries.length > 0 ? (entries.reduce((s, e) => s + (scores[e.id]?.[game]?.score ?? 0), 0) / entries.length).toFixed(1) : 0}`
-          : 'Not played yet'}
-      </div>
-    </div>
-  )
-}
+// Score → display config
+const SCORE_CONFIG = [
+  { score: 0, label: 'Unseen',   color: '#bbb'    },
+  { score: 1, label: 'Score 1',  color: '#4f7ef8' },
+  { score: 2, label: 'Score 2',  color: '#7b6cf8' },
+  { score: 3, label: 'Score 3',  color: '#f0a500' },
+  { score: 4, label: 'Score 4',  color: '#e07a30' },
+  { score: 5, label: 'Mastered', color: '#22a06b' },
+]
 
 export default function Stats() {
-  const { setScreen, goBack, activeEntries, loadedLists, selectedIds, scores } = useApp()
+  const {
+    goBack, activeEntries, availableLevels, settings, updateSettings
+  } = useApp()
 
-  const globalCounts = useMemo(() => {
-    const c = { unseen: 0, learning: 0, mastered: 0, due: 0 }
-    for (const e of activeEntries) {
-      const status = getEntryStatus(scores, e.id)
-      c[status]++
-      if (isDue(scores, e.id)) c.due++
-    }
-    return c
-  }, [activeEntries, scores])
+  const fcScores = getAllScores('flashcard')
 
-  const perList = useMemo(() =>
-    selectedIds.map(id => {
-      const list = loadedLists[id]
-      if (!list) return null
-      const c = { unseen: 0, learning: 0, mastered: 0 }
-      for (const e of list.entries) {
-        const status = getEntryStatus(scores, e.id)
-        c[status]++
-      }
-      return { id, label: list.id, entries: list.entries, counts: c }
-    }).filter(Boolean),
-  [selectedIds, loadedLists, scores])
+  // Ordered levels for chip display
+  const orderedLevels = availableLevels ?? []
+  const activeLevels  = settings.levels?.global ?? null
 
-  // Per-game summary: avg score + % played
-  const perGame = useMemo(() =>
-    GAMES.filter(g => GAME_META[g]).map(game => {
-      const played  = activeEntries.filter(e => (scores[e.id]?.[game]?.score ?? 0) > 0).length
-      const avgScore = activeEntries.length > 0
-        ? (activeEntries.reduce((s, e) => s + (scores[e.id]?.[game]?.score ?? 0), 0) / activeEntries.length).toFixed(1)
-        : '—'
-      const masteredPct = activeEntries.length > 0
-        ? Math.round(activeEntries.filter(e => (scores[e.id]?.[game]?.score ?? 0) >= 4).length / activeEntries.length * 100)
-        : 0
-      return { game, played, avgScore, masteredPct }
-    }),
-  [activeEntries, scores])
+  function isLevelActive(level) {
+    return !activeLevels || activeLevels.includes(level)
+  }
+
+  function toggleLevel(level) {
+    const current = activeLevels ?? orderedLevels
+    const has = current.includes(level)
+    let next = has ? current.filter(l => l !== level) : [...current, level]
+    if (next.length === 0) next = null
+    if (next?.length === orderedLevels.length) next = null
+    updateSettings({ levels: { ...settings.levels, global: next } })
+  }
+
+  // Score distribution for active entries
+  const dist = useMemo(() => {
+    const d = [0, 0, 0, 0, 0, 0]
+    for (const e of activeEntries) d[Math.min(fcScores[e.id] ?? 0, 5)]++
+    return d
+  }, [activeEntries, fcScores])
 
   const total = activeEntries.length
 
@@ -118,98 +58,37 @@ export default function Stats() {
           <div className="stats-empty">Select a language on the home screen first.</div>
         ) : (<>
 
-          {/* ── Overview cards ── */}
-          <div className="stats-overview">
-            <div className="stats-overview-card">
-              <div className="stats-overview-num" style={{ color: '#22a06b' }}>{globalCounts.mastered}</div>
-              <div className="stats-overview-label">Mastered</div>
-            </div>
-            <div className="stats-overview-card">
-              <div className="stats-overview-num" style={{ color: '#f0a500' }}>{globalCounts.learning}</div>
-              <div className="stats-overview-label">Learning</div>
-            </div>
-            <div className="stats-overview-card">
-              <div className="stats-overview-num" style={{ color: '#bbb' }}>{globalCounts.unseen}</div>
-              <div className="stats-overview-label">Unseen</div>
-            </div>
-            <div className="stats-overview-card">
-              <div className="stats-overview-num" style={{ color: '#4f7ef8' }}>{globalCounts.due}</div>
-              <div className="stats-overview-label">Due for review</div>
-            </div>
-          </div>
-
-          {/* ── Status bars ── */}
-          <section className="stats-section">
-            <h2>Overall · {total} words</h2>
-            <div className="status-rows">
-              {['mastered', 'learning', 'unseen'].map(s => (
-                <div key={s} className="status-row">
-                  <span className="status-dot" style={{ background: STATUS_COLORS[s] }} />
-                  <span className="status-name">{s.charAt(0).toUpperCase() + s.slice(1)}</span>
-                  <Bar value={globalCounts[s]} max={total} color={STATUS_COLORS[s]} />
-                  <span className="status-pct">{total > 0 ? Math.round((globalCounts[s] / total) * 100) : 0}%</span>
-                </div>
+          {/* ── Level filter chips ── */}
+          {orderedLevels.length > 0 && (
+            <div className="stats-level-filter">
+              {orderedLevels.map(level => (
+                <button
+                  key={level}
+                  className={`level-chip ${isLevelActive(level) ? 'active' : ''}`}
+                  onClick={() => toggleLevel(level)}
+                >
+                  {level}
+                </button>
               ))}
             </div>
-          </section>
-
-          {/* ── Per-game breakdown ── */}
-          <section className="stats-section">
-            <h2>By game</h2>
-            <div className="game-table">
-              <div className="game-table-head">
-                <span>Game</span><span>Played</span><span>Avg</span><span>≥4</span>
-              </div>
-              {perGame.map(({ game, played, avgScore, masteredPct }) => (
-                <div key={game} className="game-table-row">
-                  <span className="game-table-name" style={{ color: GAME_META[game].color }}>
-                    {GAME_META[game].label}
-                  </span>
-                  <span>{played}/{total}</span>
-                  <span>{avgScore}</span>
-                  <span>{masteredPct}%</span>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* ── Per-list stacked bars ── */}
-          {perList.length > 1 && (
-            <section className="stats-section">
-              <h2>By list</h2>
-              {perList.map(l => (
-                <div key={l.id} className="list-stat">
-                  <div className="list-stat-label">{l.label} · {l.entries.length}</div>
-                  <div className="list-stat-bar">
-                    {['mastered', 'learning', 'unseen'].map(s => {
-                      const pct = l.entries.length > 0 ? (l.counts[s] / l.entries.length) * 100 : 0
-                      return pct > 0 ? (
-                        <div key={s} className="list-stat-segment"
-                          style={{ width: `${pct}%`, background: STATUS_COLORS[s] }}
-                          title={`${s}: ${l.counts[s]}`} />
-                      ) : null
-                    })}
-                  </div>
-                </div>
-              ))}
-            </section>
           )}
 
-          {/* ── Score histograms ── */}
-          <section className="stats-section">
-            <h2>Score distributions</h2>
-            <p className="stats-hint">Number of words at each score level (0–5).</p>
-            <div className="game-dists">
-              {GAMES.filter(g => GAME_META[g]).map(game => (
-                <div key={game} className="game-dist">
-                  <div className="game-dist-label" style={{ color: GAME_META[game].color }}>
-                    {GAME_META[game].label}
-                  </div>
-                  <ScoreDist entries={activeEntries} scores={scores} game={game} />
+          {/* ── Score boxes: Unseen · Score 1–4 · Mastered ── */}
+          <div className="stats-score-grid">
+            {SCORE_CONFIG.map(({ score, label, color }) => {
+              const count = dist[score] ?? 0
+              const pct   = total > 0 ? Math.round((count / total) * 100) : 0
+              return (
+                <div key={score} className="stats-score-box" style={{ '--box-color': color }}>
+                  <div className="stats-score-count">{count}</div>
+                  <div className="stats-score-label">{label}</div>
+                  <div className="stats-score-pct">{pct}%</div>
                 </div>
-              ))}
-            </div>
-          </section>
+              )
+            })}
+          </div>
+
+          <div className="stats-total">{total} words total · Flashcard scores</div>
 
         </>)}
       </div>

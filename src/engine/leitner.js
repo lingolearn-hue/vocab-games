@@ -28,35 +28,35 @@
  *                        passTotal: number }    (total cards when pass opened)
  */
 
-const SCORES_KEY  = 'leitnerScores'
-const SESSION_KEY = 'leitnerSession'
+const SCORES_KEY  = (game='flashcard') => `leitnerScores_${game}`
+const SESSION_KEY = (game='flashcard') => `leitnerSession_${game}`
 const BOX1_MAX    = 20
 const BOXN_MAX    = 10
 const MAX_SCORE   = 5
 
 // ── Persistence ───────────────────────────────────────────────────────────────
 
-function readScores() {
-  try { return JSON.parse(localStorage.getItem(SCORES_KEY) || '{}') } catch { return {} }
+function readScores(game='flashcard') {
+  try { return JSON.parse(localStorage.getItem(SCORES_KEY(game)) || '{}') } catch { return {} }
 }
-function writeScores(s) { localStorage.setItem(SCORES_KEY, JSON.stringify(s)) }
+function writeScores(s, game='flashcard') { localStorage.setItem(SCORES_KEY(game), JSON.stringify(s)) }
 
-function readSession() {
+function readSession(game='flashcard') {
   try {
-    const s = JSON.parse(localStorage.getItem(SESSION_KEY) || 'null')
+    const s = JSON.parse(localStorage.getItem(SESSION_KEY(game)) || 'null')
     if (s?.boxes && Array.isArray(s.stack)) return s
   } catch {}
   return null
 }
-function writeSession(s) { localStorage.setItem(SESSION_KEY, JSON.stringify(s)) }
+function writeSession(s, game='flashcard') { localStorage.setItem(SESSION_KEY(game), JSON.stringify(s)) }
 
 // ── Score accessors ───────────────────────────────────────────────────────────
 
-export function getScore(entryId)    { return readScores()[entryId] ?? 0 }
-export function getAllScores()        { return readScores() }
+export function getScore(entryId, game='flashcard')    { return readScores(game)[entryId] ?? 0 }
+export function getAllScores(game='flashcard')            { return readScores(game) }
 
-export function getScoreCounts(entryIds) {
-  const scores = readScores()
+export function getScoreCounts(entryIds, game='flashcard') {
+  const scores = readScores(game)
   const counts = [0,0,0,0,0,0]
   for (const id of entryIds) counts[Math.min(scores[id]??0,5)]++
   return counts
@@ -64,19 +64,26 @@ export function getScoreCounts(entryIds) {
 
 // ── Session init ──────────────────────────────────────────────────────────────
 
-export function initSession(entries) {
-  const scores = readScores()
+export function initSession(entries, game='flashcard') {
+  // Migrate old scores from pre-game-key era (leitnerScores → leitnerScores_flashcard)
+  const OLD_KEY = 'leitnerScores'
+  if (game === 'flashcard' && localStorage.getItem(OLD_KEY) && !localStorage.getItem('leitnerScores_flashcard')) {
+    try {
+      const old = localStorage.getItem(OLD_KEY)
+      localStorage.setItem('leitnerScores_flashcard', old)
+      localStorage.removeItem(OLD_KEY)
+    } catch {}
+  }
 
-  // Seed missing entries
+  const scores = readScores(game)
+
+  // Seed missing entries at score 0
+  // Never delete scores for other entries — they may belong to other languages
   let changed = false
   for (const e of entries) {
     if (!(e.id in scores)) { scores[e.id] = 0; changed = true }
   }
-  const ids = new Set(entries.map(e => e.id))
-  for (const id of Object.keys(scores)) {
-    if (!ids.has(id)) { delete scores[id]; changed = true }
-  }
-  if (changed) writeScores(scores)
+  if (changed) writeScores(scores, game)
 
   // Group by score
   const byScore = {0:[],1:[],2:[],3:[],4:[],5:[]}
@@ -111,26 +118,27 @@ export function initSession(entries) {
     passTotal:    0,
     pendingWrong: [],
   }
-  _openPass(session, scores)
-  writeSession(session)
+  _openPass(session, scores, game)
+  writeSession(session, game)
   return session
+  // game stored for session writes
 }
 
-export function getSession(entries) {
-  return readSession() ?? initSession(entries)
+export function getSession(entries, game='flashcard') {
+  return readSession(game) ?? initSession(entries, game)
 }
 
 // ── Box/pass accessors ────────────────────────────────────────────────────────
 
-export function getBox(entryId) {
-  const s = readSession()
+export function getBox(entryId, game='flashcard') {
+  const s = readSession(game)
   if (!s) return 0
   return s.boxes[entryId] ?? 0
 }
 
-export function getBoxCounts(entryIds) {
-  const session = readSession()
-  const scores  = readScores()
+export function getBoxCounts(entryIds, game='flashcard') {
+  const session = readSession(game)
+  const scores  = readScores(game)
   if (!session) return [0,0,0,0,0,0]
   const counts = [0,0,0,0,0,0]
   for (const id of entryIds) {
@@ -157,9 +165,9 @@ export function getBoxCounts(entryIds) {
  *   }
  * }
  */
-export function getPassState() {
-  const s = readSession()
-  if (!s) return { b1PassCount:0, currentPass:1, passDone:0, passTotal:0, barFills:{1:0,2:0,3:0,4:0}, passQueue:[] }
+export function getPassState(game='flashcard') {
+  const s = readSession(game)
+  if (!s) return { b1PassCount:0, currentPass:1, passDone:0, passTotal:0, barFills:{1:0,2:0,3:0,4:0}, passQueue:[], game }
 
   const { b1PassCount = 0, currentPass, passDone, passTotal } = s
   const withinFill = passTotal > 0 ? passDone / passTotal : 0
@@ -195,9 +203,9 @@ export function nextCard(entryMap) {
  * Record correct answer. Advances score and box. Removes from pass queue.
  * Returns true if pass is now complete.
  */
-export function recordCorrect(entryId, allEntryIds) {
-  const scores  = readScores()
-  const session = readSession()
+export function recordCorrect(entryId, allEntryIds, game='flashcard') {
+  const scores  = readScores(game)
+  const session = readSession(game)
   if (!session) return false
 
   // Remove from pass queue
@@ -215,8 +223,8 @@ export function recordCorrect(entryId, allEntryIds) {
   else session.boxes[entryId] = newBox
 
   const passComplete = session.passQueue.length === 0
-  if (passComplete) _advancePass(session, scores, allEntryIds)
-  writeSession(session)
+  if (passComplete) _advancePass(session, scores, allEntryIds, game)
+  writeSession(session, game)
   return passComplete
 }
 
@@ -224,9 +232,9 @@ export function recordCorrect(entryId, allEntryIds) {
  * Record wrong answer. Score→1. Card deferred to next B1 pass.
  * Returns true if pass is now complete.
  */
-export function recordWrong(entryId, allEntryIds) {
-  const scores  = readScores()
-  const session = readSession()
+export function recordWrong(entryId, allEntryIds, game='flashcard') {
+  const scores  = readScores(game)
+  const session = readSession(game)
   if (!session) return false
 
   session.passQueue = session.passQueue.filter(id => id !== entryId)
@@ -243,17 +251,17 @@ export function recordWrong(entryId, allEntryIds) {
   }
 
   const passComplete = session.passQueue.length === 0
-  if (passComplete) _advancePass(session, scores, allEntryIds)
-  writeSession(session)
+  if (passComplete) _advancePass(session, scores, allEntryIds, game)
+  writeSession(session, game)
   return passComplete
 }
 
 /**
  * Master a card immediately. Removes from pass queue.
  */
-export function recordMaster(entryId, allEntryIds) {
-  const scores  = readScores()
-  const session = readSession()
+export function recordMaster(entryId, allEntryIds, game='flashcard') {
+  const scores  = readScores(game)
+  const session = readSession(game)
   if (!session) return false
 
   session.passQueue = session.passQueue.filter(id => id !== entryId)
@@ -265,13 +273,13 @@ export function recordMaster(entryId, allEntryIds) {
 
   const passComplete = session.passQueue.length === 0
   if (passComplete) _advancePass(session, scores, allEntryIds)
-  writeSession(session)
+  writeSession(session, game)
   return passComplete
 }
 
-export function resetAll() {
-  localStorage.removeItem(SCORES_KEY)
-  localStorage.removeItem(SESSION_KEY)
+export function resetAll(game='flashcard') {
+  localStorage.removeItem(SCORES_KEY(game))
+  localStorage.removeItem(SESSION_KEY(game))
 }
 
 // ── Internal ──────────────────────────────────────────────────────────────────
@@ -289,12 +297,13 @@ function _higherBoxesDue(b1PassCount) {
   return due
 }
 
-function _openPass(session, scores) {
+function _openPass(session, scores, game='flashcard') {
   const box = session.currentPass
   let cards
 
   if (box === 1) {
     _topUpBox1(session.boxes, session.stack, scores)
+    writeScores(scores, game)  // persist score=1 for newly promoted cards
     for (const id of session.pendingWrong) {
       if (!session.boxes[id]) session.boxes[id] = 1
     }
@@ -314,7 +323,7 @@ function _openPass(session, scores) {
   session.passTotal = cards.length
 }
 
-function _advancePass(session, scores, allEntryIds) {
+function _advancePass(session, scores, allEntryIds, game='flashcard') {
   // Ensure passSchedule exists (handles old localStorage sessions)
   if (!Array.isArray(session.passSchedule)) session.passSchedule = []
   if (typeof session.b1PassCount !== 'number') session.b1PassCount = 0
@@ -346,7 +355,7 @@ function _advancePass(session, scores, allEntryIds) {
   }
 
   session.currentPass = next ?? 1
-  _openPass(session, scores)
+  _openPass(session, scores, game)
 }
 
 function _topUpBox1(boxes, stack, scores) {
@@ -367,6 +376,8 @@ function _topUpBox1(boxes, stack, scores) {
   for (const id of candidates) {
     if (promoted >= slots) break
     boxes[id] = 1
+    // Set score to 1 when entering box 1 for the first time
+    if ((scores[id] ?? 0) === 0) scores[id] = 1
     const idx = stack.indexOf(id)
     if (idx >= 0) stack.splice(idx, 1)
     promoted++

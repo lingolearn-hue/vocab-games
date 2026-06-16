@@ -119,6 +119,22 @@
 
 /* Single char block */
 .so-char-block { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+
+/* Row: glyph left, canvas right */
+.so-char-row {
+  display: flex; align-items: center; gap: 1rem;
+}
+
+/* Fixed-width slot — always reserves space */
+.so-glyph-slot {
+  width: 3.2rem; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  align-self: stretch;
+}
+
+.so-char-glyph {
+  font-size: 2.8rem; line-height: 1; color: #333; text-align: center;
+}
 .so-char-label { font-size: 1rem; font-weight: 700; color: #555; }
 .so-canvas { border: 1.5px solid #e0e0e0; border-radius: 12px; background: #fff; touch-action: none; }
 .so-char-controls { display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; justify-content: center; }

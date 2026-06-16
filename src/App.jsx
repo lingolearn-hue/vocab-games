@@ -24,6 +24,7 @@ const LANGUAGES = [
   { language: 'zh', label: 'Chinese 🇨🇳' },
   { language: 'es', label: 'Spanish 🇪🇸' },
   { language: 'de', label: 'German 🇩🇪'  },
+  { language: 'fr', label: 'French 🇫🇷'   },
   { language: 'ja', label: 'Japanese 🇯🇵' },
   { language: 'en', label: 'English 🇬🇧'  },
 ]
@@ -87,6 +88,17 @@ function Router() {
   }
 }
 
+function LoadingOverlay() {
+  const { vocabLoading } = useApp()
+  if (!vocabLoading) return null
+  return (
+    <div className="loading-overlay">
+      <div className="loading-spinner" />
+      <div className="loading-text">Loading vocabulary…</div>
+    </div>
+  )
+}
+
 function TutorialGate({ children }) {
   const [showTutorial, setShowTutorial] = useState(
     () => !localStorage.getItem('hasSeenTutorial')
@@ -111,6 +123,7 @@ export default function App() {
       <TutorialGate>
         <Router />
         <FirstLaunchOverlay />
+        <LoadingOverlay />
       </TutorialGate>
     </AppProvider>
   )

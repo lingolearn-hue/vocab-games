@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import { useApp } from '../context/AppContext'
-import { GAME_META, resetToLearning, getAllScores } from '../engine/srs'
+import { GAME_META, resetToLearning } from '../engine/srs'
+import { getAllScores } from '../engine/leitner'
 import { getAllMnemonics } from '../engine/mnemonics'
 import { displayEntry } from '../engine/vocab'
 import RubyText from '../components/RubyText'
@@ -23,6 +24,7 @@ export default function VocabBrowser() {
   const [showTrans,    setShowTrans]    = useState(true)
   const [showScores,   setShowScores]   = useState(true)
   const [expandedId,   setExpandedId]   = useState(null)  // entry id with mnemonic expanded
+  const leitnerScores = useMemo(() => getAllScores('flashcard'), [scores])
   const mnemonics     = useMemo(() => getAllMnemonics(), [scores])
   const [displayCount, setDisplayCount] = useState(100)
   const sentinelRef   = useRef(null)
@@ -50,8 +52,8 @@ export default function VocabBrowser() {
       if (filterLevel !== 'all' && e.level !== filterLevel) return false
       if (filterPos   !== 'all' && e.pos   !== filterPos)   return false
 
-      const rec = scores[e.id]
-      const status = rec?.global ?? 'unseen'
+      const lScore = leitnerScores[e.id] ?? 0
+      const status = lScore === 0 ? 'unseen' : lScore >= 5 ? 'mastered' : 'learning'
       if (filterStatus !== 'all' && status !== filterStatus) return false
 
       if (q) {
@@ -131,11 +133,7 @@ export default function VocabBrowser() {
       {/* Legend */}
       {showScores && (
         <div className="vb-legend">
-          {GAMES.map(g => (
-            <span key={g} className="vb-legend-item" style={{ color: GAME_META[g].color }}>
-              {GAME_META[g].label}
-            </span>
-          ))}
+          <span className="vb-legend-item" style={{ color: '#4f7ef8' }}>Flashcard score (0–5)</span>
         </div>
       )}
 
@@ -145,8 +143,8 @@ export default function VocabBrowser() {
           <div className="vb-empty">No words match the current filters.</div>
         )}
         {visible.map(entry => {
-          const rec    = scores[entry.id]
-          const status = rec?.global ?? 'unseen'
+          const lScore = leitnerScores[entry.id] ?? 0
+          const status = lScore === 0 ? 'unseen' : lScore >= 5 ? 'mastered' : 'learning'
           return (
             <>
               <div key={entry.id} className="vb-row">
@@ -175,11 +173,9 @@ export default function VocabBrowser() {
                 <div className="vb-right">
                   {showScores && (
                     <div className="vb-scores">
-                      {GAMES.map(g => (
-                        <span key={g} className="vb-game-score" style={{ color: GAME_META[g].color }}>
-                          {rec?.[g]?.score ?? 0}
-                        </span>
-                      ))}
+                      <span className="vb-game-score" style={{ color: '#4f7ef8' }} title="Flashcard score">
+                        {leitnerScores[entry.id] ?? 0}
+                      </span>
                     </div>
                   )}
                   {mnemonics[entry.id] && (

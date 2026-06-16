@@ -79,18 +79,18 @@ export default function Flashcard() {
   const [passState, setPassState] = useState(() => ({ passIndex:0, currentPass:1, passDone:0, passTotal:0, barFills:{1:0,2:0,3:0,4:0} }))
 
   function refreshState() {
-    setBoxCounts(getBoxCounts(entryIds))
-    setPassState(getPassState())
+    setBoxCounts(getBoxCounts(entryIds, 'flashcard'))
+    setPassState(getPassState('flashcard'))
   }
 
   // Leitner: init session and build first pass
   useEffect(() => {
     if (activeEntries.length === 0) return
-    initSession(activeEntries)
+    initSession(activeEntries, 'flashcard')
     const entryMap = new Map(activeEntries.map(e => [e.id, e]))
-    const ps = getPassState()
+    const ps = getPassState('flashcard')
     setPassState(ps)
-    setBoxCounts(getBoxCounts(entryIds))
+    setBoxCounts(getBoxCounts(entryIds, 'flashcard'))
     // Build deck from pass queue
     const deck = ps.passQueue
       ? ps.passQueue.map(id => ({ entry: entryMap.get(id), box: ps.currentPass })).filter(s => s.entry)
@@ -152,13 +152,9 @@ export default function Flashcard() {
     if (animating || !currentEntry) return
     setAnimating(true)
 
-    if (action === 'known')   leitnerCorrect(currentEntry.id, entryIds)
-    if (action === 'unknown') leitnerWrong(currentEntry.id)
-    if (action === 'master')  leitnerMaster(currentEntry.id, entryIds)
-    // Keep legacy SRS in sync for other games
-    if (action === 'known')   scoreActions.correct(currentEntry.id, 'flashcard')
-    if (action === 'unknown') scoreActions.wrong(currentEntry.id, 'flashcard')
-    if (action === 'master')  scoreActions.master(currentEntry.id)
+    if (action === 'known')   leitnerCorrect(currentEntry.id, entryIds, 'flashcard')
+    if (action === 'unknown') leitnerWrong(currentEntry.id, entryIds, 'flashcard')
+    if (action === 'master')  leitnerMaster(currentEntry.id, entryIds, 'flashcard')
     refreshState()
 
     setSwipeDir(action === 'unknown' ? 'left' : action === 'known' ? 'right' : 'up')
@@ -167,7 +163,7 @@ export default function Flashcard() {
       const nextIndex = deckIndex + 1
       if (nextIndex >= deck.length) {
         // Pass complete — rebuild deck from new pass queue
-        const ps = getPassState()
+        const ps = getPassState('flashcard')
         const entryMap = new Map(activeEntries.map(e => [e.id, e]))
         const newDeck = (ps.passQueue ?? [])
           .map(id => ({ entry: entryMap.get(id), box: ps.currentPass }))
