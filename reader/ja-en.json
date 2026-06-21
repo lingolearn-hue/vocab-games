@@ -1,0 +1,386 @@
+{
+  "id": "ja-en-reader",
+  "language": "ja",
+  "native": "en",
+  "passages": [
+
+    {
+      "id": "ja-p1",
+      "title": "わたしのともだち",
+      "titleTranslation": "My Friend",
+      "level": "N5",
+      "series": "わたしのともだち",
+      "tags": ["fiction", "series:わたしのともだち", "topic:friendship", "beginner"],
+      "text": "わたしには よいともだちが います。かれは がくせいです。りんごを たべるのと みずを のむのが すきです。かれは とても しあわせです。わたしたちは まいにち いっしょに べんきょうします。",
+      "translation": "I have a good friend. He is a student. He likes to eat apples and drink water. He is very happy. We study together every day."
+    },
+
+    {
+      "id": "ja-p1b",
+      "title": "わたしのよいともだち けんた",
+      "titleTranslation": "My Good Friend Kenta",
+      "level": "N4",
+      "series": "わたしのともだち",
+      "tags": ["fiction", "series:わたしのともだち", "topic:friendship", "beginner"],
+      "text": "わたしには とても よいともだちが います。かれの なまえは けんたです。けんたは だいがくせいで、まじめに べんきょうしています。まいあさ みずを のんで、りんごを たべてから としょかんへ いきます。あたらしいことを まなぶのが すきで、ひとを たすけるのも すきです。このような ともだちが いて、とても うれしいです。",
+      "translation": "I have a very good friend. His name is Kenta. Kenta is a university student and studies seriously. Every morning he drinks water, eats an apple, and then goes to the library. He likes learning new things and also likes helping people. I am very happy to have a friend like this."
+    },
+
+    {
+      "id": "ja-p1c",
+      "title": "ともだちの ちから",
+      "titleTranslation": "The Power of Friendship",
+      "level": "N3",
+      "series": "わたしのともだち",
+      "tags": ["fiction", "series:わたしのともだち", "topic:friendship", "intermediate"],
+      "text": "けんたと わたしは もう 五年間 しりあいです。かれは わたしの いちばんの ともだちです。ふたりの せいかくは とても ちがいますが、それでも なかよくしています。かれは なんでも ていねいに、しんぼうづよく やります。わたしは どちらかというと かっぱつで、ぼうけんが すきです。この ちがいが あるから こそ、たがいに まなびあい、いっしょに せいちょうできるのだと おもいます。こまったときは いつも たがいに ささえあいます。ほんとうの ともだちとは、まいにち いっしょに いなくても、おたがいが ひつような ときに そこに いられる ものだと おもいます。",
+      "translation": "Kenta and I have known each other for five years already. He is my best friend. Our personalities are very different, but we still get along well. He does everything carefully and patiently. I tend to be more lively and like adventures. I think it is precisely because of these differences that we learn from each other and can grow together. When we are in trouble we always support each other. I think true friendship means being there when you need each other, even without being together every day."
+    },
+
+    {
+      "id": "ja-p1d",
+      "title": "きょりと きがかり",
+      "titleTranslation": "Distance and Longing",
+      "level": "N3",
+      "series": "わたしのともだち",
+      "tags": ["fiction", "series:わたしのともだち", "topic:friendship", "intermediate"],
+      "text": "そつぎょうごは、けんたは おおさかに しごとで いきました。わたしは とうきょうに のこりました。きょりは はなれましたが、ふたりの ともだちかんけいは よわくなりませんでした。けんたは ときどき ながい メッセージを おくってきて、あたらしい まちでの けいけんや かんがえを はなしてくれます。わたしも にちじょうの こまかな できごとを かれに はなします。ときどき ビデオ通話を して、よるおそくまで はなすこともあります。しんの ともだちかんけいとは、きせつが かわっても かれない、ふかく ねづいた き のようなものだと、だんだん わかってきました。わかいころ いっしょに たいけんしたことは、わたしたちの きょうつうの おもいでに なっていて、どんな きょりが あっても うばえないのです。",
+      "translation": "After graduation, Kenta went to Osaka for work. I stayed in Tokyo. The distance grew, but the friendship between us did not weaken. Kenta sometimes sends long messages sharing his experiences and thoughts in his new city. I also tell him the small details of daily life. Sometimes we video call and talk until late into the night. I gradually understood that true friendship is like a deep-rooted tree that does not wither even when the seasons change. The things we experienced together when we were young have become part of our shared memories, and no distance can take them away."
+    },
+
+    {
+      "id": "ja-p1e",
+      "title": "ともだちと じこ にんしき",
+      "titleTranslation": "Friendship and Self-Awareness",
+      "level": "N2",
+      "series": "わたしのともだち",
+      "tags": ["essay", "series:わたしのともだち", "topic:friendship", "topic:psychology", "advanced"],
+      "text": "しんりがくの けんきゅうに よると、ともだちの えらびかたは、じぶん じしんへの りかいや きたいを おおいに はんえい するそうです。ながく こころの やすらぎを もたらす ともだちかんけいは、たかい きょうかん と じゅうぶんな きんちょうかん の りょうほうを もつ ことが おおいです。あいては わたしを りかいしながらも、ちがう かんてんから わたしの こていした かんがえに ちょうせん しつづけます。けんたと わたしの ともだちかんけいは まさに そうです。かれの おちつきから、わたしは こうどうする まえに ちょっと とまって かんがえることを まなびました。いっぽう わたしの かんじやすさが、かれが じぶんで せってい した かぎりを のりこえる たすけに なったことも あります。しゃかいがくでは この ような かんけいを「はったつてき ゆうじょう」と よびます。しかし げんだいの はやい しゃかいでは ふかい ともだちかんけいが ますます めずらしく なってきています。SNS で なんびゃくもの「つながり」を つくっても、ほんとうに きいてくれる ひとを みつけにくいのが げんじつです。このような じょうほう があふれる じだいに、わたしたちは ほんとうに かんけいを ひろげているのでしょうか、それとも うすめているのでしょうか。",
+      "translation": "According to psychological research, the way we choose friends greatly reflects our understanding of and expectations for ourselves. Friendships that bring lasting peace of mind often have both high empathy and sufficient tension. The other person understands us, yet continuously challenges our fixed ideas from a different perspective. My friendship with Kenta is exactly like this. From his calmness I learned to pause and think before acting. On the other hand, my sensitivity has at times helped him overcome limits he had set for himself. In sociology, this kind of relationship is called a 'developmental friendship'. However, in today's fast-moving society, deep friendships are becoming increasingly rare. Even if you create hundreds of 'connections' on social media, in reality it is hard to find someone who truly listens. In this age overflowing with information, are we truly expanding our relationships, or diluting them?"
+    },
+
+    {
+      "id": "ja-p1f",
+      "title": "ゆうじょうの ほんしつについて",
+      "titleTranslation": "On the Nature of Friendship",
+      "level": "N1",
+      "series": "わたしのともだち",
+      "tags": ["essay", "series:わたしのともだち", "topic:friendship", "topic:philosophy", "advanced"],
+      "text": "アリストテレスは『ニコマコス倫理学』のなかで ゆうじょうを 三つに わけています。りえきに もとづく ゆうじょう、たのしみに もとづく ゆうじょう、そして とくに もとづく ゆうじょうです。はじめの ふたつは それが よりどころと する じょうけんが なくなれば くずれますが、たがいの せいかくへの けいちょうと そんちょうに もとづく ゆうじょうだけが じかんの しれんに たえます。二千年以上 たった いまも、この ちけんは ふかく ひびきます。げんだい しゃかいの げんしかする けいこうに よって、ひととひとの ふかい つながりは ますます むずかしく なっています。わたしたちは ぜんだいみもんの ぶっしつてき ほうふさの なかで くらしながらも、ひろく いいあらわしにくい こどくに なやまされています。ほんとうの ゆうじょうには じかんと よわさと ともに のりこえた しれんが ひつようです。それは こうりつを もとめる げんだいの せいかつが もっとも あたえにくいものです。もっと おおくの つながりを もとめる いっぽうで、すくない かんけいに もっと ふかく とうしする ことを まなぶ ひつようが あるのかも しれません。",
+      "translation": "In his Nicomachean Ethics, Aristotle divided friendship into three kinds: friendship based on utility, friendship based on pleasure, and friendship based on virtue. The first two collapse when the conditions they rely upon disappear, but only friendship based on mutual appreciation and respect for character can withstand the test of time. More than two thousand years later, this wisdom still resonates deeply. Due to the atomising tendencies of modern society, deep connections between people are becoming increasingly difficult. We live in unprecedented material abundance yet are troubled by a widely shared loneliness that is hard to put into words. True friendship requires time, vulnerability, and shared ordeals — precisely what efficiency-seeking modern life is least able to provide. Perhaps, while seeking more connections, we also need to learn to invest more deeply in fewer relationships."
+    },
+
+    {
+      "id": "ja-p2",
+      "title": "わたしの ねこ",
+      "titleTranslation": "My Cat",
+      "level": "N5",
+      "series": "わたしの ねこ",
+      "tags": ["fiction", "series:わたしの ねこ", "topic:animals", "topic:pets", "beginner"],
+      "text": "わたしには ねこが います。とても ちいさくて、とても かわいいです。みずを のむのが すきです。ほんを たべません。わたしの いぬも とても いいです。ねこと いぬは なかよしです。",
+      "translation": "I have a cat. She is very small and very cute. She likes to drink water. She does not eat books. My dog is also very good. The cat and the dog are friends."
+    },
+
+    {
+      "id": "ja-p2b",
+      "title": "こむぎと くろ",
+      "titleTranslation": "Komugi and Kuro",
+      "level": "N4",
+      "series": "わたしの ねこ",
+      "tags": ["fiction", "series:わたしの ねこ", "topic:animals", "topic:pets", "beginner"],
+      "text": "わたしには ねこと いぬが います。ねこの なまえは こむぎで、いぬの なまえは くろです。こむぎは とても かしこくて、いえじゅうを はしりまわるのが すきです。くろは とても やさしくて、にわで あそぶのが すきです。さいしょは なかよくなくて、よく けんかを していました。でも だんだん なかよく なりました。いまは まいばん いっしょに ねています。とても かわいいです。",
+      "translation": "I have a cat and a dog. The cat's name is Komugi and the dog's name is Kuro. Komugi is very clever and likes to run all around the house. Kuro is very gentle and likes to play in the garden. At first they were not friends and often quarrelled. But gradually they became friends. Now they sleep together every evening. It is very cute."
+    },
+
+    {
+      "id": "ja-p2c",
+      "title": "どうぶつにも きもちが ある",
+      "titleTranslation": "Animals Have Feelings Too",
+      "level": "N3",
+      "series": "わたしの ねこ",
+      "tags": ["essay", "series:わたしの ねこ", "topic:animals", "topic:science", "intermediate"],
+      "text": "ペットを かった ことの ある ひとは みんな しっています。どうぶつにも にんげんと おなじように ゆたかな かんじょうが あります。わたしの ねこの こむぎと いぬの くろは その いちばんの れいです。しらない どうしから なじみの なかまへ、けんかから わかいへと いたる みちのりは、ほんとうの かんじょうてきな はったつ かていでした。かがくの けんきゅうに よると、ねこも いぬも よろこび、おそれ、しっと、かなしみ さえ かんじる ことが できるそうです。かいぬしが でかけると さびしく なり、もどってくると しんから よろこびます。このことは、にんげんと どうぶつの きょりは わたしたちが おもうほど とおくないのかも しれない と、かんがえさせてくれます。",
+      "translation": "Anyone who has kept a pet knows it. Animals have rich emotions just like humans. My cat Komugi and dog Kuro are the best example of this. Their journey from strangers to familiar companions, from quarrelling to reconciliation, was a genuine process of emotional development. According to scientific research, both cats and dogs can feel joy, fear, jealousy, and even sadness. When their owner goes out they feel lonely, and when they return they are truly joyful. This makes us think that the distance between humans and animals may not be as far as we imagine."
+    },
+
+    {
+      "id": "ja-p2d",
+      "title": "ペットと げんだいじんの こどく",
+      "titleTranslation": "Pets and Modern Loneliness",
+      "level": "N3",
+      "series": "わたしの ねこ",
+      "tags": ["essay", "series:わたしの ねこ", "topic:animals", "topic:society", "topic:psychology", "intermediate"],
+      "text": "ちかごろ にほんの まちでは ペットの かず が きゅうそくに ふえています。わかいひとを ちゅうしんに、ねこや いぬを かう ひとが どんどん ふえています。せいかつの ストレスが おおきく なったから という ひとも いますし、ひとりぐらしの そうしょうを うつしている という ひとも います。ペットが くれる なかまは むじょうけん です。はんだんせず、なにも もとめず、ただ あなたの そばに います。しんりがくの けんきゅうに よると、ペットと ふれあう ことで コルチゾールの ちが さがり、ふあんが やわらぐ こうかが ある そうです。しかし、この かんけいは かんがえさせる てんも あります。ひとと どうぶつの ふかい きずなに なれて いくにつれ、ひととひとの つながりが むずかしく なっているのでしょうか。こむぎと くろは わたしを しあわせに しますが、ほんとうの にんげんの ともだちにとって かわることは できません。ペットは わたしたちが もっとも もとめながら、もっとも いいにくい もの、つまり むじょうけんに うけいれられること を うつしかがみ なのかも しれません。",
+      "translation": "Recently the number of pets in Japanese cities has increased rapidly. More and more people, especially young people, are keeping cats and dogs. Some say it is because the stress of daily life has increased, while others say it reflects the increase in people living alone. The companionship that pets give is unconditional. They do not judge, ask for nothing, and simply stay beside you. According to psychological research, interacting with pets can lower cortisol levels and ease anxiety. However, this relationship also makes one think. As people become accustomed to deep bonds with animals, is it becoming harder to connect with other people? Komugi and Kuro make me happy, but they cannot replace true human friends. Pets may be a mirror reflecting what we most desire yet find hardest to say: to be accepted unconditionally."
+    },
+
+    {
+      "id": "ja-p2e",
+      "title": "しゅを こえた こころの きずな",
+      "titleTranslation": "Emotional Bonds Across Species",
+      "level": "N2",
+      "series": "わたしの ねこ",
+      "tags": ["essay", "series:わたしの ねこ", "topic:animals", "topic:science", "topic:philosophy", "advanced"],
+      "text": "どうぶつこうどうがくと しんけいかがくの がくさいてきな けんきゅうが、どうぶつの いしきに かんする でんとうてきな りかいを くつがえしつつ あります。デカルトの「どうぶつ＝きかい」せつは ながいあいだ、にんげんが ほかの しゅを あつかう てつがくてきな こんきょと なってきました。どうぶつは たんなる ふくざつな せいぶつてきな きかいに すぎず、ほんとうの かんじゅせい を もたない という かんがえかたです。しかし ちかごろの けいけん てきな けんきゅうは まったく ちがう すがたを えがきだしています。フランス・ドゥ・ワールなど の れいちょるいがくしゃは チンパンジーの あいだの ふくざつな きょうかん こうどう を きろく しています。しんけいがくの けんきゅうも、ほにゅうるいが かんじょう しょりに かかわる のうの こうぞう を きょうゆう していることを しょうめいしています。こむぎと くろが たいりつから わかいへと すすんだ みちのりは、たんなる こうどう じょうけんづけの けっか では なく、ほんもの の かんじょうてきな けいけんの ひょうれん かも しれません。",
+      "translation": "Interdisciplinary research at the intersection of ethology and neuroscience is overturning the traditional understanding of animal consciousness. Descartes' 'animal = machine' theory has long served as the philosophical basis for how humans treat other species — the idea that animals are nothing more than complex biological machines without genuine sensitivity. However, recent empirical research is painting a completely different picture. Primatologists such as Frans de Waal have recorded complex empathic behaviours among chimpanzees. Neurological research has also demonstrated that mammals share brain structures involved in emotional processing. The journey of Komugi and Kuro from opposition to reconciliation may not be merely the result of behavioural conditioning, but the expression of genuine emotional experience."
+    },
+
+    {
+      "id": "ja-p2f",
+      "title": "にんげんと どうぶつの かんけいの りんりてき さいこうちく について",
+      "titleTranslation": "On the Ethical Reconstruction of the Human-Animal Relationship",
+      "level": "N1",
+      "series": "わたしの ねこ",
+      "tags": ["essay", "series:わたしの ねこ", "topic:animals", "topic:philosophy", "topic:ethics", "advanced"],
+      "text": "ピーター・シンガーが「どうぶつの かいほう」で ていしょう した こうりしゅぎ てき わくぐみと、トム・レーガンの けんりろん に もとづく どうぶつ りんり の たいけいは、20世紀まつの せいよう てつがくに おける にんげんと どうぶつの かんけい について の もっとも そうごうてき な はんせいを あらわしています。しかし どちらの アプローチも じっさいてきな こんなんに ちょくめんしています。げんかんていな エコロジー きき を まえにして、せいめい きょうどうたい の なかでの にんげんの いちを みなおすことは、もはや てつがくしゃの しょさいの しゃこうてき すいろん では なく、わたしたちの しゅの ぞんぞく に かかわる きんきゅう の もんだい です。あしもとで あたたかそうに まるまって いる ねこは、もしかすると いちばん よい きおく かも しれません：べつの いのちへの せきにんは、けっして てつがくの きょかを まつ ひつようが なかったのだ と。",
+      "translation": "The utilitarian framework Peter Singer proposed in Animal Liberation, and Tom Regan's rights-based animal ethics system, represent the most comprehensive reflection on the relationship between humans and animals in Western philosophy at the end of the twentieth century. However, both approaches face practical difficulties. In the face of a worsening ecological crisis, re-examining humanity's place within the community of life is no longer luxurious speculation in a philosopher's study, but an urgent question concerning the survival of our species. The cat curled up warmly at our feet is perhaps the best reminder: our responsibility to another life has never needed to wait for philosophy's permission."
+    },
+
+    {
+      "id": "ja-p3",
+      "title": "しじょうで かいもの",
+      "titleTranslation": "Shopping at the Market",
+      "level": "N5",
+      "series": "しじょう",
+      "tags": ["fiction", "series:しじょう", "topic:daily-life", "topic:economy", "beginner"],
+      "text": "きょう りんごを かいます。りんごは とても いいです。やすいです。みずも かいます。とても うれしいです。",
+      "translation": "Today I am buying apples. The apples are very good. They are cheap. I also buy water. I am very happy."
+    },
+
+    {
+      "id": "ja-p3b",
+      "title": "しゅうまつの いちば",
+      "titleTranslation": "The Weekend Market",
+      "level": "N4",
+      "series": "しじょう",
+      "tags": ["fiction", "series:しじょう", "topic:daily-life", "topic:economy", "topic:culture", "beginner"],
+      "text": "まいしゅう どようびに、ちかくの いちばへ かいものに いくのが すきです。やさいや くだものが とても しんせんで、スーパーより ねだんも やすいです。きょうは りんごと トマトと やさいを かいました。りんごを うっていた おばあさんが とても しんせつで、りんごを 二こ おまけ してくれました。二千えんで たくさんの ものが かえて、とても おとく でした。かえりは とても きぶん が よかったです。",
+      "translation": "Every Saturday I like to go shopping at the nearby market. The vegetables and fruit are very fresh and the prices are cheaper than the supermarket. Today I bought apples, tomatoes, and some vegetables. The old woman selling apples was very kind and gave me two apples as a bonus. I was able to buy a lot of things for two thousand yen — it was very good value. On the way home I was in a very good mood."
+    },
+
+    {
+      "id": "ja-p3c",
+      "title": "きえゆく いちば",
+      "titleTranslation": "The Disappearing Market",
+      "level": "N3",
+      "series": "しじょう",
+      "tags": ["essay", "series:しじょう", "topic:society", "topic:economy", "topic:culture", "intermediate"],
+      "text": "としか が すすむ なかで、でんとうてきな いちばは だんだん すがたを けしています。げんだいの スーパーや ネットつうはん に とって かわられています。スマートフォンで タップ するだけで やさいが いえまで とどく せいかつに なれた とし の ひとも おおい です。しかし、いちばの どくとくな ふんいき を なつかしむ ひとも ふえてきました。そこでは やさい の おじさんと おしゃべり して、いちばん しんせんな しょくざいを えらんで、にんげんらしい あたたかみを かんじる ことが できます。いちばは かいもの の ばしょ だけでは なく、ちいきの ぶんかを になう ばしょ でも あります。それを うしなう ことは、かいもの の ほうほうを うしなう こと いじょうの こと です。",
+      "translation": "As urbanisation progresses, traditional markets are gradually disappearing, replaced by modern supermarkets and online shopping. There are many city residents who have become accustomed to tapping on a smartphone and having vegetables delivered to their home. However, more and more people are missing the unique atmosphere of the market. There you can chat with the vegetable vendors, select the freshest ingredients, and feel genuine human warmth. The market is not just a place for shopping — it is also a place that carries local culture. Losing it is more than losing a way of shopping."
+    },
+
+    {
+      "id": "ja-p3d",
+      "title": "デジタル けいざい と でんとうてき しょうぎょうの せめぎあい",
+      "titleTranslation": "The Contest Between the Digital Economy and Traditional Commerce",
+      "level": "N3",
+      "series": "しじょう",
+      "tags": ["essay", "series:しじょう", "topic:economy", "topic:technology", "topic:society", "intermediate"],
+      "text": "ちかごろ、ネットスーパーや しょくざい はいそう サービスが きゅうせいちょう し、とし の かいもの しゅうかんを おおきく かえています。このながれは でんとうてきな いちばに だいきな えいきょうを あたえています。きゃくが へり、てんじん の しゅうにゅうが さがり、ところによっては おおきな きぼで とじてしまう ところも あります。しかし、こうした へんかが いちほうてきに すすむ わけでは ありません。いちばが けいざいてきな やくわりを はたすだけでなく、ちいきの くらしの こころのよりどころ でも あると きが つき はじめた じちたいも おおく なっています。ひとびとの あたたかさを のこしながら きょうそうりょくを たかめようと、れいとうチェーンや スマート けっさい、ネット よやくなどを とりいれ、でんとうてきな いちばを きんだいか しようとして いる じちたい も あります。でんとうと げんだいの あいだの きんちょうが かならずしも ゼロサム の たいりつ に なる わけでは ありません。イノベーション の なかに きょうぞん の みち を さぐれる かも しれません。",
+      "translation": "Recently, online supermarkets and food delivery services have grown rapidly, greatly changing the shopping habits of city residents. This trend has had a big impact on traditional markets. Customer numbers have fallen, vendors' income has decreased, and in some places markets have closed on a large scale. However, these changes do not proceed in one direction only. More and more local governments are noticing that markets not only fulfil an economic role but are also a spiritual anchor for community life. Some municipalities are trying to modernise traditional markets by introducing cold chains, smart payment, and online reservation, hoping to maintain human warmth while improving competitiveness. The tension between tradition and modernity does not necessarily lead to zero-sum confrontation. A path of coexistence may be found through innovation."
+    },
+
+    {
+      "id": "ja-p3e",
+      "title": "いちば という ぶんめい の かたち",
+      "titleTranslation": "The Market as a Form of Civilisation",
+      "level": "N2",
+      "series": "しじょう",
+      "tags": ["essay", "series:しじょう", "topic:economy", "topic:anthropology", "topic:culture", "advanced"],
+      "text": "文化人類学者の クリフォード・ギアツは モロッコの バザールの こてんてきな けんきゅうの なかで、いちばは たんに ものを こうかん する ばしょ では なく、じょうほうが ながれ、しゃかいてきな かんけいが さいせいさん され、ぶんかてきな いみが きずかれる ふくごうてきな くうかん だ と してき しました。バザールでの ねぎり は たんなる けいざいてきな ゲーム では なく、しんらい、アイデンティティ、きょうどうたいへの きぞくかんに かんする ふかい コード を ふくむ ぎしきてきな しゃかいてき こうどう です。にほん の でんとうてきな いちば の ぶんか も この とくちょうを もって います。ちゅうせいの いちから きんだいの しじょう まで、これらの くうかんは つねに まちの じこ そしきの ための じゅうような きばん でした。げんざい の しょくざい EC が でんとうてきな いちばに あたえる えいきょうは、ある いみで ひとびとの しゃかいてきな きずなを うすめる プロセスです。しかし それは ぎじゅつの しんぽが ぶんめいの こうたいを ひきおこす という ことを いみ しません。あたらしい しょうぎょうの かたちを デザインする とき、アルゴリズムに よって ていりょうか できない しゃかいてきな かちを しんちょうに かんがえる ひつようが あります。",
+      "translation": "Cultural anthropologist Clifford Geertz pointed out in his classic study of Moroccan bazaars that markets are not simply places for exchanging goods, but complex spaces where information flows, social relations are reproduced, and cultural meanings are constructed. Bargaining in the bazaar is not a mere economic game, but a ritualised social behaviour containing deep codes about trust, identity, and sense of belonging to a community. The culture of traditional markets in Japan also has this characteristic. From medieval markets to modern markets, these spaces have always been an important foundation for the self-organisation of towns. The current impact of food e-commerce on traditional markets is, in a sense, a process of thinning the social bonds between people. However, that does not mean that technological progress causes civilisational regression. When designing new forms of commerce, we need to carefully consider those social values that cannot be quantified by algorithms."
+    },
+
+    {
+      "id": "ja-p3f",
+      "title": "いちば、しほん と こうきょうせい の ぎゃくせつ",
+      "titleTranslation": "The Market, Capital, and the Paradox of the Public",
+      "level": "N1",
+      "series": "しじょう",
+      "tags": ["essay", "series:しじょう", "topic:economy", "topic:philosophy", "topic:politics", "advanced"],
+      "text": "けいざいがくの ことば では「いちば」は しげんはいぶんの きこうです。しゃかいがくの してんから は しゃかい こうぞうの はんえいです。そして せいじてつがくの レベルでは いちば を めぐる ぎろんは、こうきょうの ぜんのう、こくかけんりょく と こじんの じゆうの あいだの こんぽんてきな きんちょう と つねに からみあっています。カール・ポランニーは「大転換」の なかで しじょうしゃかいの ない てきな むじゅんを あきらかに しました。いちどは や ろうどうりょく と かねが しょうひんか されると、じこ ちょうせいてきな しじょうは じぶんが よりどころと している しゃかい こうぞう その ものを けいとうてきに むしょく し、そのことで せいじてきな ほご を もとめる はんたいの うごきを しょうじさせます。この「にじゅうの うごき」の ろんりは げんだいの プラットフォーム けいざい において こうど に あっしゅく された かたちで ふたたび えんじられています。アルゴリズムてきな かかく けってい、データ どくせん と プラットフォームけんりょく の かくだいは、でんとうてきな いみ での きょうそう ちつじょを さいへん する だけでなく、こうきょうの くうかんと みんかんの しほんの あいだの けんりょく こうぞうを ふかく かえています。",
+      "translation": "In the language of economics, the 'market' is a mechanism for resource allocation. From a sociological viewpoint, it is a reflection of social structure. And at the level of political philosophy, debates surrounding the market are always entangled with the fundamental tension between the public good, state power, and individual freedom. In The Great Transformation, Karl Polanyi revealed the internal contradictions of market society. Once land, labour, and money are commodified, the self-regulating market systematically erodes the very social structure upon which it depends, thereby generating counter-movements seeking political protection. The logic of this 'double movement' is being re-enacted in highly compressed form in today's platform economy. Algorithmic pricing, data monopolies, and the expansion of platform power not only reconfigure the competitive order in the traditional sense, but profoundly change the power structure between public space and private capital."
+    },
+
+    {
+      "id": "ja-s1",
+      "title": "はつゆき",
+      "titleTranslation": "The First Snow",
+      "level": "N4",
+      "tags": ["fiction", "topic:daily-life", "topic:nature", "beginner"],
+      "text": "けさ おきたら、そとが ぜんぶ しろく なって いました。ゆきが ふりました！ことしの はじめての ゆきです。とても うれしくて、すぐ あつい コートを きて そとへ はしりました。ゆきは とても やわらかくて、ふむと きもちよかったです。ちいさな ゆきだるまを つくって、きんじょの こどもたちと ゆきがっせんを しました。とても さむかったけれど、みんな たのしく わらいました。ふゆは ほんとうに すばらしいです。",
+      "translation": "When I got up this morning, everything outside had turned white. It snowed! It is the first snow of the year. I was very happy and immediately put on a thick coat and ran outside. The snow was very soft and it felt nice to step on it. I made a small snowman and had a snowball fight with the children in the neighbourhood. It was very cold but everyone laughed and had a great time. Winter is truly wonderful."
+    },
+
+    {
+      "id": "ja-s2",
+      "title": "まよった ごご",
+      "titleTranslation": "A Lost Afternoon",
+      "level": "N4",
+      "tags": ["fiction", "topic:daily-life", "beginner"],
+      "text": "せんしゅうの どようびに、ひとりで あたらしい ばしょへ いきました。みちを しっていると おもって いたのですが、ながく あるいても いきたい ばしょが みつかりませんでした。スマートフォンの でんちが きれて いたので ちずが つかえず、すこし きんちょう しました。みちばたに いた おじいさんに みちを きくしか ありませんでした。そのかたは とても しんせつで、みちを おしえてくれただけでなく、いっしょに すこし あるいてくれました。おくれて しまいましたが、さいごに もくてきちに たどりつきました。こころが とても あたたかく なりました。",
+      "translation": "Last Saturday I went alone to a new place. I thought I knew the way, but even after walking for a long time I couldn't find the place I wanted to go. My smartphone's battery had run out so I couldn't use the map, and I felt a little anxious. I had no choice but to ask an elderly man on the roadside for directions. He was very kind and not only told me the way but also walked with me for a little. I was late, but in the end I reached my destination. My heart felt very warm."
+    },
+
+    {
+      "id": "ja-s3",
+      "title": "よいちの あじ",
+      "titleTranslation": "The Taste of the Night Market",
+      "level": "N3",
+      "tags": ["fiction", "topic:culture", "topic:food", "topic:japan", "intermediate"],
+      "text": "にほんの まつりの よいちは せかいじゅうで しられています。よるに なると、みちの りょうがわの やたいに あかりが ともり、いろいろな たべものの においが あたり いっめんに ひろがります。やきとり、たこやき、わたあめ、かきごおり、それに なまえも しらない たべものが いっぱいあります。ひとびとは かたを よせ あい、ざわめきと わらいごえが あちらこちらから きこえます。よいちは ただ たべる ばしょ では ありません。そこは ひとつの いきかたと ぶんかてきな アイデンティティを あらわしています。おおくの にほんじんに とって、まつりの よいちは こどもの ころの おもいでの いちぶで、こきょうの あじです。なんねんも はなれて くらしても、あの なつかしい においを かぐと、すぐに むかしの じかんが よみがえります。",
+      "translation": "The night markets of Japanese festivals are known throughout the world. When night comes, lights appear at the stalls on both sides of the road, and the smell of all kinds of food spreads all around. There is yakitori, takoyaki, cotton candy, shaved ice, and lots of food whose names I don't know. People crowd shoulder to shoulder, and the noise and laughter can be heard from here and there. The night market is not just a place to eat. It represents a way of life and a cultural identity. For many Japanese people, the night market of a festival is part of their childhood memories — the taste of home. Even after living away for many years, smelling that nostalgic aroma immediately brings back memories of the past."
+    },
+
+    {
+      "id": "ja-s4",
+      "title": "おくれなかった てがみ",
+      "titleTranslation": "A Letter Never Sent",
+      "level": "N3",
+      "tags": ["fiction", "topic:nostalgia", "topic:family", "intermediate"],
+      "text": "ふるい ものを かたづけて いた とき、じゅうねんまえに かいた てがみ を みつけました。そのとき わたしは だいがくに はいった ばかりで、こきょうと りょうしんを とても なつかしんで いました。てがみの なかには こころの うちを たくさん かきました。みらいへの きたいと、いえを はなれる こころぼそさと。でも なぜかは わかりませんが、このてがみは けっきょく ださずに、ふるい はこの なかに ねむって いました。いま よむと、なんとも ふしぎな きもちです。あのじゅうはっさいの じぶんには、それほど たくさんの ゆめも、それほど たくさんの こわさも ありました。いくつかの ことばは いいあらわさなくても、ただ かきとめるだけで、もう じゅうぶんだったのかも しれません。",
+      "translation": "When I was tidying up old things, I found a letter I had written ten years ago. At that time I had just entered university and was very homesick for my hometown and my parents. I wrote many things from my heart in the letter — hopes for the future and loneliness at leaving home. But for some reason, this letter was never sent and slept in an old box. Reading it now gives me a strange feeling. That eighteen-year-old self had so many dreams and so many fears. Perhaps for some words, just writing them down without saying them aloud was already enough."
+    },
+
+    {
+      "id": "ja-s5",
+      "title": "おばあちゃんの だいどころ",
+      "titleTranslation": "Grandmother's Kitchen",
+      "level": "N3",
+      "tags": ["fiction", "topic:family", "topic:nostalgia", "topic:food", "intermediate"],
+      "text": "わたしの きおくのなかで、おばあちゃんの だいどころは いつも あたたかかったです。そとが どんなに かぜが ふいても あめが ふっても、あの ちいさな ドアを くぐると、かならず ごはんの においと かまどの ぬくもりが むかえてくれました。おばあちゃんは じが よめませんでしたが、ふつうの しょくざいを わすれられない あじに かえる まほうの てを もっていました。レシピを つかうことは なく、すべての ぶんりょうは てのひらの かんかくに ありました。どうやって つくるのか きくたびに、かれは えがおで「だいたい こんな かんじで いいのよ」と いいました。あとに なって、その「だいたい」のなかに、なんじゅうねんもの けいけんと かぞくへの むちょうの あいが かくれていた と わかりました。おばあちゃんが なくなって もう 三年 たちますが、おでんの においを かぐたびに、あの だいどころの ドアが わたしの きおくの なかで ゆっくりと ひらきます。",
+      "translation": "In my memory, grandmother's kitchen was always warm. No matter how the wind blew or the rain fell outside, as soon as you stepped through that small door, the smell of food and the warmth of the stove always welcomed you. Grandmother could not read, but she had magical hands for turning ordinary ingredients into unforgettable flavours. She never used a recipe — all the amounts were in the feel of her hands. Every time I asked her how to make something, she would smile and say: 'About like this will do.' Later I understood that hidden inside that 'about' were decades of experience and a wordless love for the family. It has been three years since grandmother passed away, but every time I smell oden, that kitchen door slowly opens in my memory."
+    },
+
+    {
+      "id": "ja-s6",
+      "title": "さいしゅうでんしゃ",
+      "titleTranslation": "The Last Train",
+      "level": "N3",
+      "tags": ["fiction", "topic:daily-life", "topic:city", "intermediate"],
+      "text": "ある きんようびの よる、おそくまで ざんぎょうして、この せん の さいしゅうでんしゃに ぎりぎりまにあいました。しゃりょうは ほとんど ひとが いなくて、ぱらぱらと のっている お きゃくさまが、それぞれの かたすみに すわり、つかれた かおを していました。むこうには ちゅうねんの さぎょういんの かたが すわっていて、あたまを まどに もたれさせ、もう ねむって います。まだ ヘルメットを てに もったまま、くちびるの はしが すこし あがって いて、どんな ゆめを みているのか わかりません。わたしは ふと、この よるの しゃりょうが、つかれた ひとたちを ひとときたずさえる ちいさな ひなんしょのようだと かんじました。まちの ちか を しずかに はしりながら。だれでも もどる ばしょが あり、だれでも なにかの ために がんばっています。そう おもったら、なんとなく こころが あたたまりました。",
+      "translation": "One Friday night, after working overtime until late, I just barely caught the last train on this line. The carriage was almost empty, with passengers scattered here and there in their respective corners, their faces tired. Opposite sat a middle-aged worker, head leaning against the window, already asleep. Still holding a hard hat in his hands, the corners of his lips slightly raised — I wonder what dream he was having. I suddenly felt that this night carriage was like a small shelter briefly carrying tired people, running quietly beneath the city. Everyone has a place to return to; everyone is working hard for something. Thinking that, my heart felt somehow warm."
+    },
+
+    {
+      "id": "ja-s7",
+      "title": "ことばの かぎり",
+      "titleTranslation": "The Limits of Language",
+      "level": "N2",
+      "tags": ["essay", "topic:language", "topic:philosophy", "advanced"],
+      "text": "ヴィトゲンシュタインは かつて いいました。「わたしの ことばの かぎりは わたしの せかいの かぎりを いみする。」 あたらしい ことばを まなぶ ということは、たんに あたらしい たんご と ぶんぽうの きそくを みにつける だけでなく、まったく あたらしい ほうほうで げんじつを にんしき し、くみたてる ということです。にほんご の「こもれび」は、は の すきまから ひかりが こぼれおちる ようすを あらわす ことば で、ほかの ことばに ちょうど あてはまる ひょうげん は ありません。ポルトガルご の「サウダーデ」は、ない もの に たいする ふかい おもい と かなしみを さし、こちらも ほんやく が むずかしいです。すべての ことばは、あるとくていの ぶんかの ながい かんけいを へて つみかさなった にんちこうぞうを もっています。それを まなぶ ということは、ある いみで、べつの あり かたの なかに しばらく すみこむ ことです。これは また、なぜ たくさんの バイリンガルが、ことばを かえると じぶんが べつの にんげんに なった ように かんじると いうかの せつめいに もなります。ことばは かんがえを つたえる どうぐ では ない、かんがえを かたちづくる うつわ でも あるのです。",
+      "translation": "Wittgenstein once said: 'The limits of my language mean the limits of my world.' Learning a new language is not simply a matter of acquiring new vocabulary and grammatical rules — it is a matter of perceiving and organising reality in a completely new way. The Japanese word komorebi describes the scene of light filtering down through gaps between leaves, and there is no expression in other languages that corresponds to it precisely. The Portuguese word saudade refers to a deep longing and sadness for something that is absent, and is equally difficult to translate. Every language carries cognitive structures accumulated through the long evolution of a particular culture. To learn it is, in a certain sense, to temporarily inhabit another way of being. This also explains why many bilingual people say that when they change languages they feel as if they have become a different person. Language is not just a tool for conveying thoughts — it is also the vessel that shapes thoughts."
+    },
+
+    {
+      "id": "ja-s8",
+      "title": "じんこうちのう と にんげんの そうぞうせいの かぎり",
+      "titleTranslation": "Artificial Intelligence and the Limits of Human Creativity",
+      "level": "N1",
+      "tags": ["essay", "topic:technology", "topic:philosophy", "topic:society", "advanced"],
+      "text": "せいせいてき じんこうちのうの きゅうそくな ふきゅうは、にんげん しゃかいの「そうぞうせい」という がいねんへの りかいを ぜんだいみもんの ふかさで かいへん しつつ あります。げんごモデルが すうびょうで ぎじゅつてきに なれた しじん、しょうせつ、さらには がくじゅつ ろんぶん を せいせいできる ように なった とき、「そうさく」という こうい が にんげんの しゅかんせいに もつ いみは こんぽんてきな とい に さらされます。ひはんしゃは、じんこうちのうの いわゆる「そうぞう」は きそんの テキストの とうけいてきな よう やくと さいはいれつに すぎず、ほんもの の いとせいや かんじょうてきな きばんが なく、そのため そうぞうの みかけ に すぎない と していました。しかし しじしゃは、にんげんの そうぞうせいも おなじく さきじんの さくひんの もほう、きゅうしゅう と さいくみあわせの うえに なりたって おり、きこうてきな レベルで は ほんしつてきな ちがいが なく、ちがい は はんい と はやさ だけだ と はんろん します。この ぎろんの かくしんは、じんこうちのうが「そうぞうせい を もつか もたないか」に ある のでは なく、わたしたちが なぜ にんげんの そうさく を たいせつ に する のか に あるのかも しれません。",
+      "translation": "The rapid spread of generative artificial intelligence is reshaping human society's understanding of the concept of 'creativity' to an unprecedented depth. When a language model becomes capable of generating technically accomplished poetry, novels, and even academic papers within seconds, the significance that the act of 'creation' holds for human subjectivity comes under fundamental questioning. Critics maintained that what artificial intelligence calls 'creation' is nothing more than a statistical summary and rearrangement of existing texts, lacking genuine intentionality or an emotional foundation, and is therefore merely the appearance of creativity. Supporters counter, however, that human creativity is similarly built upon imitation, absorption, and recombination of predecessors' works, and that at the mechanistic level there is no essential difference — the difference lies only in scale and speed. The core of this debate may not lie in whether artificial intelligence 'possesses creativity or not', but in why we value human creation in the first place."
+    },
+
+    {
+      "id": "ja-nf1",
+      "title": "ちゅうごくの よんだいはつめい",
+      "titleTranslation": "China's Four Great Inventions",
+      "level": "N4",
+      "tags": ["non-fiction", "topic:history", "topic:science", "topic:china", "beginner"],
+      "text": "むかしの ちゅうごくには よんだいはつめいが あります。せいしじゅつ、いんさつじゅつ、かやく、そして らしんばんです。この よっつの はつめいは せかいの れきしを かえました。せいしじゅつの おかげで ちしきを かきとめて のこすことが できるように なりました。いんさつじゅつの おかげで ほんが たくさん つくれるように なり、もっと おおくの ひとが よめるように なりました。かやくは はじめ おいわいに つかわれ、あとで せんそうに つかわれました。らしんばんは うみで ほうがくを みつける たすけに なり、えんよう こうかいを かのうに しました。これらの はつめいは ちゅうごくから せかいじゅうに ひろまり、にんるい の ぶんめいの はったつに おおきく こうけんしました。",
+      "translation": "Ancient China had four great inventions: papermaking, printing, gunpowder, and the compass. These four inventions changed the history of the world. Thanks to papermaking, it became possible to write down and preserve knowledge. Thanks to printing, books could be made in large quantities, allowing more people to read. Gunpowder was first used for celebrations and later used in war. The compass helped find direction at sea and made ocean voyages possible. These inventions spread from China throughout the world and greatly contributed to the development of human civilisation."
+    },
+
+    {
+      "id": "ja-nf2",
+      "title": "ペキン：ふるさと と げんだい の まち",
+      "titleTranslation": "Beijing: A City of the Ancient and the Modern",
+      "level": "N4",
+      "tags": ["non-fiction", "topic:geography", "topic:china", "topic:culture", "beginner"],
+      "text": "ペキンは ちゅうごくの しゅとで、三千ねん いじょうの れきしを もつ ふるい まちです。こきゅう、ばんりの ちょうじょう、てんだんなどの ゆうめいな れきしてきな けんちくが たくさん あります。こきゅうは みん と しん の こうてい が すんでいた ところで、九千 いじょうの へやが あります。ばんりの ちょうじょうは ひがしから にしへ なんせんきろも つづき、ちゅうごくで いちばん ゆうめいな けんちくぶつです。れきしてきな けんちくのほかに、ペキンは たかい ビル、ちかてつ、ショッピングセンターが ある げんだいてきな だいとしでもあります。ペキンの しょくじも ゆうめいで、いちばん しられているのは ペキンダックです。もし ちゅうごくに きたら、ぜひ ペキンに いってください。",
+      "translation": "Beijing is the capital of China and an ancient city with a history of more than three thousand years. There are many famous historical buildings such as the Forbidden City, the Great Wall, and the Temple of Heaven. The Forbidden City is where the emperors of the Ming and Qing dynasties lived, and has more than nine thousand rooms. The Great Wall continues from east to west for thousands of kilometres and is the most famous structure in China. Besides historical buildings, Beijing is also a modern metropolis with tall buildings, a subway, and shopping centres. Beijing's food is also famous — the best-known is Peking duck. If you come to China, please be sure to go to Beijing."
+    },
+
+    {
+      "id": "ja-nf3",
+      "title": "こうし：ちゅうごくを かえた しそうか",
+      "titleTranslation": "Confucius: The Thinker Who Changed China",
+      "level": "N3",
+      "tags": ["non-fiction", "biography", "topic:history", "topic:philosophy", "topic:china", "intermediate"],
+      "text": "こうしは ちゅうごくの れきしの なかで もっとも いだいな しそうか・きょういくしゃの ひとりです。二千五百年まえの しゅんじゅう じだいに いきて、じん、ぎ、れいなどの どうとく かんねんを ひろめる ことに いっしょうを ささげました。こうしは、ひとは たゆまず まなび、じぶんを みがかなければ しゃかいに こうけんできない と かんがえていました。かれの きょういくてつがくは とても すすんでいました。じょ がくせいの とくちょうに あわせて きょういくする こと を となえていました。かれの おしえは あとの ひとびとによって「ろんご」に まとめられ、ちゅうごくの もっとも じゅうような こてんの ひとつと なりました。こうしの おもいは ちゅうごくだけでなく、にほん、かんこく、ベトナムなどの アジアの くにぐにに も おおきな えいきょうを あたえました。げんざいも じゅきょうの かんがえは ちゅうごくの ぶんかを りかいする ための かぎと なっています。",
+      "translation": "Confucius is one of the greatest thinkers and educators in Chinese history. He lived in the Spring and Autumn period two thousand five hundred years ago and devoted his life to spreading moral values such as benevolence, righteousness, and propriety. Confucius believed that a person must keep learning and cultivating themselves in order to contribute to society. His educational philosophy was very advanced. He advocated educating each student according to their individual characteristics. His teachings were later compiled by subsequent people into the Analects, which became one of China's most important classics. Confucius's ideas had a great influence not only on China but also on Asian countries such as Japan, Korea, and Vietnam. Even today, Confucian thought serves as a key to understanding Chinese culture."
+    },
+
+    {
+      "id": "ja-nf4",
+      "title": "ちゅうごくの しゅんせつ",
+      "titleTranslation": "The Chinese Spring Festival",
+      "level": "N4",
+      "tags": ["non-fiction", "topic:culture", "topic:traditions", "topic:china", "beginner"],
+      "text": "しゅんせつは ちゅうごくで いちばん たいせつな でんとうてきな おまつりです。おんれき の しんねんとも よばれます。まいとし いち がつか に がつに ちゅうごくじんは しゅんせつを おいわいします。おまつりの まえに、ひとびとは いえを そうじして、あたらしい ふくを かって、おいしい たべものを じゅんびします。おおみそか には かぞくぜんいんで ねんまいさんに しょくじを とって、テレビで しんねんの とくべつ ばんぐみを みます。しんねんに なると、こどもたちは こうはくの おとしだまを もらいます。そとでは りゅうのおどりや ししのおどりが あり、はなびも あがります。しゅんせつは ふつう じゅうごにちかんつづき、さいご の ひを げんしょうせつ と いい、だんご を たべて あかりの ちょうちんをみます。ちゅうごくじんにとって しゅんせつは うちに かえり かぞくが そろう とき、いちねんで いちばん あたたかい とき です。",
+      "translation": "The Spring Festival is the most important traditional festival in China. It is also called the Lunar New Year. Every year in January or February, Chinese people celebrate the Spring Festival. Before the festival, people clean their houses, buy new clothes, and prepare delicious food. On New Year's Eve, the whole family eats together at the New Year's meal and watches a special New Year's programme on television. When the New Year arrives, children receive red-and-white lucky money envelopes. Outside there are dragon dances and lion dances, and fireworks are set off. The Spring Festival usually continues for fifteen days; the last day is called the Lantern Festival, when people eat dumplings and watch lanterns. For Chinese people, the Spring Festival is the time to return home and the family gathers together — the warmest time of the year."
+    },
+
+    {
+      "id": "ja-nf5",
+      "title": "とゆゆゆう：アルテミシニンで いのちを すくう",
+      "titleTranslation": "Tu Youyou: Saving Lives with Artemisinin",
+      "level": "N3",
+      "tags": ["non-fiction", "biography", "topic:science", "topic:medicine", "topic:china", "intermediate"],
+      "text": "と ゆゆゆうは ちゅうごくの ゆうめいな やくがくしゃで、ちゅうごくで はじめて ノーベル いがくしょうを うけた かがくしゃです。1930年に うまれ、こどもの ころから いがくに ふかい きょうみを もちました。20世紀の 60〜70年代に、マラリアが せかいじゅうで たくさんの いのちを うばっていましたが、そのころの くすりでは コントロールできなくなっていました。と ゆゆゆうは チームを ひきいて、ちゅうごくの こてきな いがくの ほんを くわしく けんきゅうし、なんびゃくもの でんとう くさきの なかから てがかりを さがしました。かずしれない しっぱいを くりかえしたのち、とうとう オウギン というくさから ゆうこうせいぶん のアルテミシニンを ちゅうしゅつ することに せいこうしました。このくすりは とくに アフリカの こどもたちを ちゅうしんに、なんびゃくまんもの いのちを すくいました。2015年に ノーベルしょうを うけ、せかいに でんとうてきな ちゅうごく いがくの ちえの かちを しょうめいしました。かのじょの はなしは わたしたちに まなびます：ねばりと にんたいは かがくの けんきゅうで もっとも たいせつな せいしつです。",
+      "translation": "Tu Youyou is a famous Chinese pharmacologist and the first Chinese scientist to receive the Nobel Prize in Medicine. Born in 1930, she had a deep interest in medicine from childhood. In the 1960s and 70s of the twentieth century, malaria was claiming many lives around the world, but the drugs of that time could no longer control it. Tu Youyou led a team and carefully studied ancient Chinese medical texts, searching for clues among hundreds of traditional herbs. After countless failures, she finally succeeded in extracting the effective ingredient artemisinin from sweet wormwood. This drug has saved millions of lives, particularly among children in Africa. In 2015 she received the Nobel Prize, proving to the world the value of the wisdom of traditional Chinese medicine. Her story teaches us: perseverance and patience are the most important qualities in scientific research."
+    },
+
+    {
+      "id": "ja-nf6",
+      "title": "まんりの ちょうじょう：れきしの あかし",
+      "titleTranslation": "The Great Wall: Witness to History",
+      "level": "N3",
+      "tags": ["non-fiction", "topic:history", "topic:china", "topic:culture", "intermediate"],
+      "text": "ばんりの ちょうじょうは にんるいの れきしで もっとも きぼの おおきな けんせつ プロジェクトの ひとつで、ちゅうごく ほくぶの いくつかの しゅうを またいで 二万キロメートル いじょうに わたって つづいています。けんせつは しゅんじゅうせんごくじだいに はじまり、ほくほうの ゆうぼく みんぞくの しんにゅうに そなえ、さまざまな ほうけん りょうこくが べつべつに たてました。しん の しこうていが りっこくを とういつした のち、これらの ばらばらの へいが つなぎあわされ、ほんとうの いみの「ばんりの ちょうじょう」が できました。その ご かん、みんなどの おうちょうで なんどもの しゅうぜんと かくちょうを へて、こんにち の すがたに なっていきました。しかし ちょうじょうの いみは ぐんじてきな ぼうえいを はるかに こえています。それは むかしの ちゅうごくの こっか いしの しょうちょうで あり、なんびゃくまんもの ろうどうしゃが ちと あせで にんるい ぶんめいし じょうで ふくせい こんなんな きせきを きずきました。いまは ちゅうごくで もっとも たいせつな ぶんかてきな しょうちょうの ひとつと なり、まいとし なんせんまんもの かんこうきゃくが おとずれます。",
+      "translation": "The Great Wall is one of the largest-scale construction projects in human history, extending over twenty thousand kilometres across several provinces in northern China. Construction began in the Spring and Autumn and Warring States periods, when various feudal states built separate walls in preparation for invasions by northern nomadic peoples. After the First Emperor of Qin unified the six states, these scattered walls were connected to form the Great Wall in the true sense. Through subsequent repairs and expansions during the Han, Ming, and other dynasties, it gradually took on its present appearance. However, the significance of the Wall goes far beyond military defence. It is a symbol of the will of the ancient Chinese state, and millions of workers built this difficult-to-replicate miracle of human civilisation history with their blood and sweat. Today it has become one of China's most important cultural symbols, with tens of millions of tourists visiting every year."
+    },
+
+    {
+      "id": "ja-nf7",
+      "title": "りはく：しせんと よばれた つきの でんせつ",
+      "titleTranslation": "Li Bai: The Legendary Life of the Poetry Immortal",
+      "level": "N3",
+      "tags": ["non-fiction", "biography", "topic:literature", "topic:history", "topic:china", "intermediate"],
+      "text": "りはく（701〜762年）は ちゅうごくの ぶんがくし じょうで もっとも いだいな しじんの ひとりで、「しせん」として のちの よに うやまわれています。とうちょうの さかりの ころ うまれ、いっしょうを たびして、ちゅうごくの 半分 いじょうに あしあとを のこしました。どうじだいの とほ と くらべて、りはくの し は より ほうかつ で きほうふせい で あり、しぜんへの あいじょう、じゆうへの あこがれ、じんせいの むじょうかんへの ふかい なつき で みちて います。「せいやし」「しょうしん」「ろざんのたきを のぞむ」などの だいひょうさく は なんびゃくねんも ろうえいされ、ちゅうごく ぶんかの アイコン と なりました。かれの にほんへの えいきょうも おおきく、にほんの かんし の でんとうに ふかく ねづいています。",
+      "translation": "Li Bai (701-762) is one of the greatest poets in Chinese literary history, revered by later generations as the 'Poetry Immortal'. Born at the height of the Tang dynasty, he spent his whole life travelling, leaving footprints across more than half of China. Compared to his contemporary Du Fu, Li Bai's poetry is more free-spirited and uninhibited, filled with love of nature, longing for freedom, and a deep sense of life's impermanence. Representative works such as Quiet Night Thoughts, Bring in the Wine, and Gazing at Lushan Waterfall have been recited for hundreds of years and have become icons of Chinese culture. His influence on Japan has also been great, deeply rooted in the Japanese tradition of Chinese poetry."
+    },
+
+    {
+      "id": "ja-nf8",
+      "title": "ちゅうごくの おちゃ ぶんか",
+      "titleTranslation": "Chinese Tea Culture",
+      "level": "N2",
+      "tags": ["non-fiction", "topic:culture", "topic:history", "topic:china", "topic:food", "advanced"],
+      "text": "ちゃは ちゅうごくで もっとも じゅうような ぶんかてきな しょうちょうの ひとつで、その れきしは 四千ねん いじょう まえの しんのうの じだいに さかのぼります。しんのうが くさきを たべていた とき、ぐうぜん ちゃの はに どくだしの こうか が あることを はっけんし、それが にんるいと ちゃの ながい えんの はじまりと いわれています。しかし ちゃが ふつうの ひとびとの にちじょう せいかつに はいったのは とう の じだい いご の ことです。りく う の「ちゃきょう」は せかいさいしょの ちゃに かんする せんもんしょ で、ちゃの さいばい、かこう、ちょうり、きど の みちを けいとうてきに かいせつ し、ちゃを のむ こうい を たんなる じつようてきな こうどうから しゃれた ぶんかてきな げいじゅつへと たかめました。とう の じだいに ちゃ ぶんかは せいちょうし、そう の じだいに ちゃ くらべ という どくとくな しゃかい ふうちょうが あらわれました。みん・しんの じだいには おちゃの ちょうほうが だんだん ちゃかん・まっちゃから さんちゃに うつり、げんだいの ちゅうごくふう おちゃの のみかたの きそを きずきました。",
+      "translation": "Tea is one of China's most important cultural symbols, and its history goes back more than four thousand years to the era of the Divine Farmer. It is said that when the Divine Farmer was tasting plants, he accidentally discovered that tea leaves had a detoxifying effect, and this is said to be the beginning of humanity's long affinity with tea. However, tea entered the daily lives of ordinary people only after the Tang dynasty. Lu Yu's Classic of Tea is the world's first specialist work on tea, systematically explaining the art of cultivating, processing, preparing, and appreciating tea, and elevated the act of drinking tea from a merely practical behaviour to a sophisticated cultural art. Tea culture grew during the Tang dynasty, and in the Song dynasty a unique social custom called 'tea competitions' appeared. In the Ming and Qing dynasties, the method of preparing tea gradually shifted from compressed tea cakes and powdered tea to loose-leaf tea, laying the foundation of the modern Chinese way of drinking tea."
+    },
+
+    {
+      "id": "ja-nf9",
+      "title": "かいかくかいほうと ちゅうごくの けいざい きせき",
+      "titleTranslation": "Reform and Opening Up and China's Economic Miracle",
+      "level": "N2",
+      "tags": ["non-fiction", "topic:history", "topic:economy", "topic:china", "topic:society", "advanced"],
+      "text": "1978年に とうしょうへいが しゅどう した かいかく かいほう せいさくは ちゅうごく れきしで もっとも ふかい しゃかい けいざい てきへん か の はじまりと なりました。その のちの 四十ねんあまりで、ちゅうごくの けいざい きぼは せかいの GDP の二パーセントに も みたなかった ものが、やく じゅうはっぱーせんとに なり、せかい だいに の けいざい たいこくに なりました。このかていで なんおくもの ひとびとが ひんこんから ぬけだしました。この せいかは にんるい れきしに ぜんれいが なく、けいざいがくかい では「ちゅうごくの きせき」と よばれています。かいかく かいほうの ちゅうかく ろんりは、しゃかいしゅぎ せいどの わくぐみを まもりながら、せんたくてきに しじょう きこうを どうにゅう し、とくく を パイロット じぎょうとして、ゆしゅつ しこう を げんどうりょくとして、ちゅうごくを だんかいてきに グローバル バリュー チェーンに とうにゅうする ことでした。しかし この きゅうせいちょうは、ちいきの ふびょうどうの かくだい、かんきょう あっぱくの じょうしょう、ひんぷ かくさの かくだいなど ふかい むじゅんも ともないました。",
+      "translation": "In 1978, the Reform and Opening Up policy led by Deng Xiaoping marked the beginning of the most profound socioeconomic transformation in Chinese history. In the more than forty years that followed, China's economic scale grew from less than two percent of world GDP to approximately eighteen percent, becoming the world's second-largest economy. In this process, hundreds of millions of people escaped poverty. This achievement has no precedent in human history and is called the 'China miracle' by economists. The core logic of Reform and Opening Up was to selectively introduce market mechanisms while maintaining the framework of the socialist system, using special economic zones as pilot projects and export orientation as a driving force, gradually integrating China into the global value chain. However, this rapid growth was also accompanied by deep contradictions: widening regional inequality, rising environmental pressure, and an expanding gap between rich and poor."
+    },
+
+    {
+      "id": "ja-nf10",
+      "title": "かんじの きげんと えんかく",
+      "titleTranslation": "The Origin and Evolution of Chinese Characters",
+      "level": "N1",
+      "tags": ["non-fiction", "topic:language", "topic:history", "topic:china", "topic:culture", "advanced"],
+      "text": "かんじは せかいで ゆいいつの とだえた ことの ない こだいの もじ たいけい で、その はったつの みちすじは 三千ねん いじょうに わたり、ちゅうごく ぶんめいの しんか の すべての きおくを たずさえています。もっとも はやい せいじゅく した かんじ たいけいは いんちょうの こつぶん に みられます。かめ の こうらや どうぶつの ほねに きざまれた うらないの もじで、やく 三千三百ねん まえに さかのぼります。これらの はやい もじは すでに しょうけい、しじ、かいい、けいせいなどの もじ せいせいの げんそくの さきがけ を しめして おり、こうだいに てきよう された「りくしょ」の りろん の きそ を きずきました。かんじの ひょうい もじ としての とくせい は、アルファベット もじ との あいだに こんぽんてきな にんちてきな ちがいを うみます。けんきゅうに よると、かんじの どくしょ は みぎ のう の ぜんたい にんしき により おおく たよる いっぽう、アルファベット もじ は ひだりのう の せんけいてきな でこーど に より おおく たよる と いう。この にんちてきな ちがいが りようしゃの おもいかたを かたちどる かどうか は、げんごがく と にんちかがくの ます おおく の かんしん を あつめる だいざいと なっています。",
+      "translation": "Chinese characters are the world's only ancient writing system that has never been interrupted, with a developmental lineage spanning more than three thousand years, carrying all the memories of the evolution of Chinese civilisation. The earliest mature system of Chinese characters is found in the oracle bone inscriptions of the Shang dynasty — divination texts carved on turtle shells and animal bones, dating back approximately 3,300 years. These early characters already showed the precursors of the character-formation principles of pictography, ideography, compound ideography, and phono-semantic composition, laying the foundation for the theory of the 'Six Scripts' applied by later generations. The logographic nature of Chinese characters creates a fundamental cognitive difference from alphabetic writing. According to research, reading Chinese characters relies more on the holistic recognition of the right brain, while alphabetic writing relies more on the linear decoding of the left brain. Whether this cognitive difference shapes the thinking of users is a subject attracting increasing attention at the intersection of linguistics and cognitive science."
+    }
+
+  ]
+}

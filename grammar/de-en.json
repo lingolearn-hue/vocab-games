@@ -1,0 +1,761 @@
+{
+  "id": "de-grammar",
+  "language": "de",
+  "native": "en",
+  "patterns": [
+    {
+      "id": "de-g-001",
+      "level": "A1",
+      "category": "articles",
+      "title": "Definite article — nominative",
+      "explanation": "The nominative case is used for the subject of a sentence. Definite articles: der (masc), die (fem/pl), das (neut).",
+      "type": "fill-blank",
+      "template": "___ {[der Hund|die Katze|das Buch|die Frau|der Mann|das Kind|der Apfel|die Stadt]} ist hier.",
+      "hint": "Choose the correct definite article for the noun in brackets.",
+      "distractors": [
+        "auto:nominative-article"
+      ]
+    },
+    {
+      "id": "de-g-002",
+      "level": "A1",
+      "category": "articles",
+      "title": "Indefinite article — nominative",
+      "explanation": "Indefinite articles in nominative: ein (masc/neut), eine (fem). There is no plural indefinite article.",
+      "type": "fill-blank",
+      "template": "Das ist ___ {[Hund:ein|Katze:eine|Buch:ein|Frau:eine|Mann:ein|Kind:ein|Apfel:ein]}.",
+      "hint": "Choose ein or eine depending on the noun's gender.",
+      "distractors": [
+        "ein",
+        "eine",
+        "einen"
+      ]
+    },
+    {
+      "id": "de-g-003",
+      "level": "A1",
+      "category": "conjugation",
+      "title": "Present tense — sein (to be)",
+      "explanation": "sein: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind.",
+      "type": "fill-blank",
+      "template": "{[Ich|Du|Er|Sie|Es|Wir|Ihr|Sie]} ___ Student.",
+      "hint": "Conjugate 'sein' to match the subject.",
+      "distractors": [
+        "auto:sein-present"
+      ]
+    },
+    {
+      "id": "de-g-004",
+      "level": "A1",
+      "category": "conjugation",
+      "title": "Present tense — haben (to have)",
+      "explanation": "haben: ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie/Sie haben.",
+      "type": "fill-blank",
+      "template": "{[Ich|Du|Er|Sie|Wir|Ihr]} ___ einen Hund.",
+      "hint": "Conjugate 'haben' to match the subject.",
+      "distractors": [
+        "auto:haben-present"
+      ]
+    },
+    {
+      "id": "de-g-005",
+      "level": "A1",
+      "category": "conjugation",
+      "title": "Present tense — regular -en verbs",
+      "explanation": "Regular verbs: stem + -e (ich), -st (du), -t (er/sie/es), -en (wir/sie), -t (ihr).",
+      "type": "fill-blank",
+      "template": "Ich ___ {[gern Äpfel:esse|viel:lerne|jeden Tag:arbeite|gern:trinke]}.",
+      "hint": "Fill in the correct 'ich' form of the verb.",
+      "distractors": [
+        "auto:regular-ich"
+      ]
+    },
+    {
+      "id": "de-g-006",
+      "level": "A1",
+      "category": "word-order",
+      "title": "Verb-second rule (V2)",
+      "explanation": "In German main clauses, the finite verb is always in second position. If something other than the subject comes first, subject and verb swap (inversion).",
+      "type": "tile-order",
+      "tiles": [
+        "Ich",
+        "jeden Tag",
+        "lerne",
+        "Deutsch"
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "note": null
+        },
+        {
+          "order": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "note": "Fronting the time adverb — verb stays in position 2."
+        }
+      ]
+    },
+    {
+      "id": "de-g-007",
+      "level": "A1",
+      "category": "word-order",
+      "title": "Verb-second — with place",
+      "explanation": "The verb stays in second position even when a place adverb leads the sentence.",
+      "type": "tile-order",
+      "tiles": [
+        "Er",
+        "in Berlin",
+        "wohnt",
+        "jetzt"
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "note": null
+        },
+        {
+          "order": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "note": "Time before place is also common."
+        },
+        {
+          "order": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "note": "Fronting the place — inversion applies."
+        }
+      ]
+    },
+    {
+      "id": "de-g-008",
+      "level": "A2",
+      "category": "articles",
+      "title": "Accusative case — definite article",
+      "explanation": "In the accusative case (direct object), masculine changes: der → den. Feminine and neuter stay the same.",
+      "type": "fill-blank",
+      "template": "Ich sehe ___ {[Hund:den|Katze:die|Buch:das|Mann:den|Frau:die|Apfel:den]}.",
+      "hint": "Only masculine changes in the accusative: der → den.",
+      "distractors": [
+        "auto:accusative-article"
+      ]
+    },
+    {
+      "id": "de-g-009",
+      "level": "A2",
+      "category": "articles",
+      "title": "Accusative case — indefinite article",
+      "explanation": "Indefinite articles in accusative: einen (masc), eine (fem), ein (neut).",
+      "type": "fill-blank",
+      "template": "Ich kaufe ___ {[Hund:einen|Katze:eine|Buch:ein|Apfel:einen|Freund:einen]}.",
+      "hint": "Masculine gets -en ending in accusative: ein → einen.",
+      "distractors": [
+        "ein",
+        "eine",
+        "einen"
+      ]
+    },
+    {
+      "id": "de-g-010",
+      "level": "A2",
+      "category": "prepositions",
+      "title": "Accusative prepositions",
+      "explanation": "These prepositions always take the accusative: durch, für, gegen, ohne, um.",
+      "type": "fill-blank",
+      "template": "Das Geschenk ist ___ {[meinen Vater:für|meine Mutter:für|das Kind:für]}.",
+      "hint": "für always takes the accusative case.",
+      "distractors": [
+        "auto:accusative-article-masc"
+      ]
+    },
+    {
+      "id": "de-g-011",
+      "level": "A2",
+      "category": "prepositions",
+      "title": "Dative prepositions",
+      "explanation": "These prepositions always take the dative: aus, bei, mit, nach, seit, von, zu, gegenüber.",
+      "type": "fill-blank",
+      "template": "Ich fahre ___ {[dem Bus:mit|der Bahn:mit|meinem Freund:mit]}.",
+      "hint": "mit always takes the dative. Masculine/neuter: dem. Feminine: der.",
+      "distractors": [
+        "auto:dative-article"
+      ]
+    },
+    {
+      "id": "de-g-012",
+      "level": "A2",
+      "category": "conjugation",
+      "title": "Modal verb — können (can)",
+      "explanation": "können: ich kann, du kannst, er/sie/es kann, wir können, ihr könnt, sie können. Modal + infinitive at end.",
+      "type": "fill-blank",
+      "template": "Ich ___ gut {[Deutsch sprechen|Klavier spielen|schnell laufen|gut kochen]}.",
+      "hint": "Fill in the correct form of 'können' for 'ich'.",
+      "distractors": [
+        "kann",
+        "kannst",
+        "können",
+        "könnt"
+      ]
+    },
+    {
+      "id": "de-g-013",
+      "level": "A2",
+      "category": "conjugation",
+      "title": "Modal verb — müssen (must)",
+      "explanation": "müssen: ich muss, du musst, er muss, wir müssen, ihr müsst, sie müssen.",
+      "type": "fill-blank",
+      "template": "{[Ich|Du|Er|Wir|Ihr|Sie]} ___ morgen arbeiten.",
+      "hint": "Conjugate 'müssen' to match the subject.",
+      "distractors": [
+        "auto:müssen-present"
+      ]
+    },
+    {
+      "id": "de-g-014",
+      "level": "A2",
+      "category": "word-order",
+      "title": "Modal verb sentence structure",
+      "explanation": "With modal verbs, the modal is in position 2 and the infinitive goes to the end.",
+      "type": "tile-order",
+      "tiles": [
+        "Ich",
+        "heute",
+        "muss",
+        "Deutsch",
+        "lernen"
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            2,
+            1,
+            3,
+            4
+          ],
+          "note": null
+        },
+        {
+          "order": [
+            1,
+            2,
+            0,
+            3,
+            4
+          ],
+          "note": "Fronting the time adverb — muss stays in position 2."
+        }
+      ]
+    },
+    {
+      "id": "de-g-015",
+      "level": "B1",
+      "category": "tense",
+      "title": "Perfekt — regular verbs",
+      "explanation": "The Perfekt uses haben/sein + past participle. Regular verbs: ge- + stem + -t. E.g. machen → gemacht.",
+      "type": "fill-blank",
+      "template": "Ich habe gestern ___ {[das Buch gelesen:gelesen|Deutsch gelernt:gelernt|Pizza gegessen:gegessen|Musik gehört:gehört]}.",
+      "hint": "The past participle of regular verbs ends in -t, irregular in -en.",
+      "distractors": [
+        "auto:participle-confusion"
+      ]
+    },
+    {
+      "id": "de-g-016",
+      "level": "B1",
+      "category": "tense",
+      "title": "Perfekt — sein vs haben",
+      "explanation": "Verbs of motion and change of state use 'sein' in Perfekt. All others use 'haben'.",
+      "type": "fill-blank",
+      "template": "Er ___ nach Berlin {[gefahren:ist|gegangen:ist|gegessen:hat|gearbeitet:hat]}.",
+      "hint": "Motion verbs (fahren, gehen) use sein. Action verbs (essen, arbeiten) use haben.",
+      "distractors": [
+        "ist",
+        "hat",
+        "war",
+        "hatte"
+      ]
+    },
+    {
+      "id": "de-g-017",
+      "level": "B1",
+      "category": "word-order",
+      "title": "Subordinate clause word order",
+      "explanation": "In subordinate clauses (after weil, dass, ob, wenn...), the verb moves to the end.",
+      "type": "tile-order",
+      "tiles": [
+        "Ich",
+        "lerne",
+        "Deutsch",
+        "weil",
+        "es",
+        "interessant",
+        "ist"
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "de-g-018",
+      "level": "B1",
+      "category": "articles",
+      "title": "Dative case — definite article",
+      "explanation": "Dative articles: dem (masc/neut), der (fem), den+n (pl). Used with indirect objects and dative prepositions.",
+      "type": "fill-blank",
+      "template": "Ich gebe ___ {[Hund:dem|Katze:der|Kind:dem|Frau:der|Mann:dem]} das Buch.",
+      "hint": "Masculine and neuter become dem. Feminine becomes der in dative.",
+      "distractors": [
+        "auto:dative-article"
+      ]
+    },
+    {
+      "id": "de-g-019",
+      "level": "B1",
+      "category": "adjectives",
+      "title": "Adjective endings — after definite article",
+      "explanation": "After der/die/das, adjective endings: -e (nom masc/fem/neut), -en (acc masc and all dative/genitive).",
+      "type": "fill-blank",
+      "template": "Der {[alt:alte|groß:große|klein:kleine|schön:schöne]} Hund schläft.",
+      "hint": "After der/die/das in nominative, the adjective ends in -e.",
+      "distractors": [
+        "auto:adj-ending-nom"
+      ]
+    },
+    {
+      "id": "de-g-020",
+      "level": "B1",
+      "category": "conjunctions",
+      "title": "Coordinating vs subordinating conjunctions",
+      "explanation": "Coordinating conjunctions (und, aber, oder, denn) don't change word order. Subordinating (weil, dass, wenn, obwohl) send the verb to end.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "Ich lerne Deutsch, weil es interessant ist.",
+          "correct": true
+        },
+        {
+          "text": "Ich lerne Deutsch, weil es ist interessant.",
+          "correct": false,
+          "error": "After 'weil', the verb must go to the end."
+        },
+        {
+          "text": "Ich lerne Deutsch, weil ist es interessant.",
+          "correct": false,
+          "error": "After 'weil', verb goes to end, not second position."
+        }
+      ]
+    },
+    {
+      "id": "de-g-021",
+      "level": "B2",
+      "category": "tense",
+      "title": "Konjunktiv II — würden + infinitive",
+      "explanation": "Konjunktiv II expresses hypothetical situations. Most commonly formed with würden + infinitive.",
+      "type": "fill-blank",
+      "template": "Wenn ich Zeit hätte, ___ ich mehr {[lesen:würde|reisen:würde|lernen:würde|schlafen:würde]}.",
+      "hint": "Konjunktiv II: würde + infinitive at end.",
+      "distractors": [
+        "würde",
+        "werde",
+        "wird",
+        "würden"
+      ]
+    },
+    {
+      "id": "de-g-022",
+      "level": "B2",
+      "category": "word-order",
+      "title": "Infinitive clause with zu",
+      "explanation": "Infinitive clauses use zu + infinitive at the end. With separable verbs: ge- inserts before the stem.",
+      "type": "tile-order",
+      "tiles": [
+        "Es",
+        "ist",
+        "wichtig",
+        "Deutsch",
+        "zu",
+        "lernen"
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "de-g-023",
+      "level": "B2",
+      "category": "konjunktiv",
+      "title": "Konjunktiv II — Irrealis (würde + Infinitiv)",
+      "explanation": "Konjunktiv II drückt Irreales, Hypothetisches oder höfliche Bitten aus. Muster: würde + Infinitiv, oder starke Formen (käme, gäbe, wäre).",
+      "type": "fill-blank",
+      "template": "Wenn ich mehr Zeit _____, würde ich mehr reisen.",
+      "hint": "Konjunktiv II von 'haben': hätte.",
+      "distractors": [
+        "hätte",
+        "habe",
+        "hatte",
+        "haben würde"
+      ]
+    },
+    {
+      "id": "de-g-024",
+      "level": "B2",
+      "category": "konjunktiv",
+      "title": "Konjunktiv II — Ratschläge mit sollte",
+      "explanation": "sollte + Infinitiv drückt Ratschläge oder Empfehlungen aus. Es ist schwächer als 'muss', aber stärker als 'kann'.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "Du solltest mehr schlafen.",
+          "correct": true
+        },
+        {
+          "text": "Du sollst mehr schlafen.",
+          "correct": false,
+          "error": "sollst klingt wie eine strenge Pflicht. Für Ratschläge: solltest."
+        },
+        {
+          "text": "Man sollte täglich Gemüse essen.",
+          "correct": true
+        },
+        {
+          "text": "Man soll täglich Gemüse essen.",
+          "correct": false,
+          "error": "soll klingt wie eine Vorschrift. Für Empfehlungen: sollte."
+        }
+      ]
+    },
+    {
+      "id": "de-g-025",
+      "level": "B2",
+      "category": "passiv",
+      "title": "Vorgangspassiv — werden + Partizip II",
+      "explanation": "Das Vorgangspassiv betont den Vorgang, nicht den Handelnden. Bildung: werden (konjugiert) + Partizip II. Agens optional mit 'von'.",
+      "type": "fill-blank",
+      "template": "Das Buch _____ von Millionen Menschen gelesen.",
+      "hint": "Vorgangspassiv Präsens: wird + Partizip II.",
+      "distractors": [
+        "wird",
+        "ist",
+        "wurde",
+        "worden"
+      ]
+    },
+    {
+      "id": "de-g-026",
+      "level": "B2",
+      "category": "passiv",
+      "title": "Zustandspassiv — sein + Partizip II",
+      "explanation": "Das Zustandspassiv beschreibt einen Zustand, der durch einen vorangegangenen Vorgang entstanden ist. Bildung: sein + Partizip II.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "Das Fenster ist geöffnet.",
+          "correct": true
+        },
+        {
+          "text": "Das Fenster wird geöffnet.",
+          "correct": true
+        },
+        {
+          "text": "Das Fenster ist geöffnet worden.",
+          "correct": true
+        },
+        {
+          "text": "Das Fenster ist geöffnet werden.",
+          "correct": false,
+          "error": "Perfekt des Vorgangspassivs: ist … worden (nicht 'werden')."
+        }
+      ]
+    },
+    {
+      "id": "de-g-027",
+      "level": "C1",
+      "category": "infinitivkonstruktionen",
+      "title": "Infinitivkonstruktion mit zu",
+      "explanation": "Nach vielen Verben, Adjektiven und Nomen steht ein Infinitiv mit 'zu'. Bei trennbaren Verben: aufzumachen. Kein 'zu' nach Modalverben.",
+      "type": "fill-blank",
+      "template": "Es ist wichtig, gesund _____ ernähren.",
+      "hint": "Infinitiv mit zu: sich zu ernähren.",
+      "distractors": [
+        "sich zu",
+        "zu sich",
+        "sich",
+        "zu"
+      ]
+    },
+    {
+      "id": "de-g-028",
+      "level": "C1",
+      "category": "konnektoren",
+      "title": "Konzessive Konnektoren — obwohl, trotzdem, dennoch",
+      "explanation": "obwohl: Konzessivsatz (Nebensatz, Verb-Letzt). trotzdem/dennoch: Hauptsatz mit Inversion (Verb-Zweit). Bedeutung ähnlich, Struktur verschieden.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "Obwohl er müde war, arbeitete er weiter.",
+          "correct": true
+        },
+        {
+          "text": "Trotzdem er müde war, arbeitete er weiter.",
+          "correct": false,
+          "error": "'Trotzdem' leitet keinen Nebensatz ein. Verwende 'obwohl' oder: Er war müde, trotzdem arbeitete er weiter."
+        },
+        {
+          "text": "Er war müde, dennoch arbeitete er weiter.",
+          "correct": true
+        },
+        {
+          "text": "Er war müde, obwohl arbeitete er weiter.",
+          "correct": false,
+          "error": "'Obwohl' leitet einen Nebensatz ein (Verb-Letzt): '...obwohl er müde war'."
+        }
+      ]
+    },
+    {
+      "id": "de-g-029",
+      "level": "C1",
+      "category": "relativsätze",
+      "title": "Relativsätze mit Präpositionen",
+      "explanation": "Wenn das Relativpronomen mit einer Präposition steht, kommt die Präposition vor das Pronomen: das Buch, für das ich mich interessiere.",
+      "type": "tile-order",
+      "tiles": [
+        "Das ist das Thema,",
+        "über das",
+        "wir",
+        "gesprochen haben."
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "de-g-030",
+      "level": "C1",
+      "category": "modalpartikeln",
+      "title": "Modalpartikeln — doch, ja, mal, eigentlich",
+      "explanation": "Modalpartikeln verleihen Aussagen eine Nuance: 'doch' = Appell/Erinnerung, 'ja' = geteiltes Wissen, 'mal' = Abschwächung, 'eigentlich' = leichter Widerspruch.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "Komm doch mal vorbei!",
+          "correct": true
+        },
+        {
+          "text": "Das weißt du ja.",
+          "correct": true
+        },
+        {
+          "text": "Das weißt du eigentlich.",
+          "correct": true
+        },
+        {
+          "text": "Komm doch eigentlich mal vorbei!",
+          "correct": false,
+          "error": "Mehrere Modalpartikeln gleichzeitig wirken unnatürlich. Wähle eine: doch, mal oder eigentlich."
+        }
+      ]
+    },
+    {
+      "id": "de-g-031",
+      "level": "A2",
+      "category": "word-order",
+      "title": "Inversion after adverb — Verbzweitstellung",
+      "explanation": "In German main clauses, the verb always comes second. If something other than the subject starts the sentence (adverb, object), subject and verb invert.",
+      "type": "tile-order",
+      "tiles": [
+        "Gestern",
+        "habe",
+        "ich",
+        "meinen Freund",
+        "besucht"
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "de-g-032",
+      "level": "B1",
+      "category": "tense",
+      "title": "Präteritum vs Perfekt",
+      "explanation": "In spoken German, Perfekt is used for past events (haben/sein + Partizip II). Präteritum is mainly written/formal, plus modal verbs and sein/haben in all registers.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "Gestern habe ich meine Mutter angerufen.",
+          "correct": true
+        },
+        {
+          "text": "Gestern rief ich meine Mutter an.",
+          "correct": true
+        },
+        {
+          "text": "Ich bin gestern müde gewesen.",
+          "correct": true
+        },
+        {
+          "text": "Ich habe gestern müde gewesen.",
+          "correct": false,
+          "error": "Das Partizip von 'sein' bildet das Perfekt mit 'sein', nicht 'haben': Ich bin müde gewesen."
+        }
+      ]
+    },
+    {
+      "id": "de-g-033",
+      "level": "B1",
+      "category": "conjunctions",
+      "title": "Kausale Konjunktionen — weil vs denn",
+      "explanation": "weil: subordinate clause, verb-last. denn: coordinating conjunction, main clause order (verb second). Both mean 'because' but have different word order consequences.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "Ich bleibe zuhause, weil ich krank bin.",
+          "correct": true
+        },
+        {
+          "text": "Ich bleibe zuhause, denn ich bin krank.",
+          "correct": true
+        },
+        {
+          "text": "Ich bleibe zuhause, weil ich bin krank.",
+          "correct": false,
+          "error": "Nach 'weil' kommt Verb-Letzt: weil ich krank bin."
+        },
+        {
+          "text": "Ich bleibe zuhause, denn ich krank bin.",
+          "correct": false,
+          "error": "Nach 'denn' gilt normale Hauptsatzstellung: denn ich bin krank."
+        }
+      ]
+    },
+    {
+      "id": "de-g-034",
+      "level": "B2",
+      "category": "word-order",
+      "title": "Nachfeld — Ausklammerung",
+      "explanation": "In spoken German, elements can be placed after the sentence bracket (Nachfeld) for emphasis or to avoid overloading the middle field.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "Er hat sie gestern angerufen, seine Schwester.",
+          "correct": true
+        },
+        {
+          "text": "Er hat gestern sie angerufen, seine Schwester.",
+          "correct": false,
+          "error": "Das Pronomen 'sie' steht vor Adverben. Korrekt: Er hat sie gestern angerufen."
+        },
+        {
+          "text": "Ich habe das Buch gelesen, das du mir empfohlen hast.",
+          "correct": true
+        },
+        {
+          "text": "Sie ist sehr begeistert, von dieser Idee.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "de-g-035",
+      "level": "C1",
+      "category": "subjunktiv",
+      "title": "Konjunktiv I — indirekte Rede",
+      "explanation": "Konjunktiv I is used for reported speech in formal/journalistic German, to signal that the statement comes from someone else. Er sagte, er sei krank (he said he was ill).",
+      "type": "fill-blank",
+      "template": "Der Zeuge sagte, er ___ den Täter nicht erkannt.",
+      "hint": "Konjunktiv I von 'haben': er habe.",
+      "distractors": [
+        "habe",
+        "hat",
+        "hätte",
+        "hatte"
+      ]
+    },
+    {
+      "id": "de-g-036",
+      "level": "C1",
+      "category": "word-order",
+      "title": "Erweiterte Adjektivattribute",
+      "explanation": "German allows complex participial phrases before a noun: das von allen erwartete Ergebnis (the result expected by everyone). The whole phrase precedes the noun it modifies.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "Das von vielen erwartete Ergebnis blieb aus.",
+          "correct": true
+        },
+        {
+          "text": "Das erwartete von vielen Ergebnis blieb aus.",
+          "correct": false,
+          "error": "Das erweiterte Partizipialattribut steht geschlossen vor dem Nomen: das von vielen erwartete Ergebnis."
+        },
+        {
+          "text": "Die im letzten Jahr verabschiedete Reform trat in Kraft.",
+          "correct": true
+        },
+        {
+          "text": "Ein in mehreren Ländern erprobtes Modell wurde vorgestellt.",
+          "correct": true
+        }
+      ]
+    }
+  ]
+}

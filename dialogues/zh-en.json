@@ -1,0 +1,216 @@
+{
+  "language": "zh",
+  "native": "en",
+  "dialogues": [
+    {
+      "id": "zh-d1",
+      "title": "在市场",
+      "titleTranslation": "At the Market",
+      "level": "HSK1",
+      "type": "observe",
+      "tags": ["shopping", "beginner", "observe"],
+      "speakers": ["小明", "卖家"],
+      "turns": [
+        { "type": "line", "speaker": "小明", "text": "你好！苹果多少钱？", "translation": "Hello! How much are the apples?" },
+        { "type": "line", "speaker": "卖家", "text": "你好！苹果五块钱一斤。", "translation": "Hello! Apples are 5 yuan per jin." },
+        { "type": "question", "prompt": "What does 小明 ask about?", "options": [
+          { "text": "The price of apples", "correct": true, "feedback": "对！他问苹果多少钱。" },
+          { "text": "The price of water", "correct": false, "feedback": "不对。他问的是苹果的价格。" },
+          { "text": "The price of books", "correct": false, "feedback": "不对。他问苹果，不是书。" }
+        ]},
+        { "type": "line", "speaker": "小明", "text": "好的，我买两斤。多少钱？", "translation": "Okay, I'll take two jin. How much is that?" },
+        { "type": "line", "speaker": "卖家", "text": "一共十块钱。", "translation": "Ten yuan in total." },
+        { "type": "question", "prompt": "How much does 小明 pay?", "options": [
+          { "text": "Five yuan", "correct": false, "feedback": "不对。一斤五块，两斤一共十块。" },
+          { "text": "Ten yuan", "correct": true, "feedback": "对！两斤苹果一共十块钱。" },
+          { "text": "Twenty yuan", "correct": false, "feedback": "不对。是十块，不是二十块。" }
+        ]},
+        { "type": "line", "speaker": "小明", "text": "给你钱，谢谢！", "translation": "Here's the money, thank you!" },
+        { "type": "line", "speaker": "卖家", "text": "不客气！再见！", "translation": "You're welcome! Goodbye!" }
+      ]
+    },
+    {
+      "id": "zh-d2",
+      "title": "认识朋友",
+      "titleTranslation": "Meeting a Friend",
+      "level": "HSK2",
+      "type": "observe",
+      "tags": ["social", "beginner", "observe"],
+      "speakers": ["小红", "小明"],
+      "turns": [
+        { "type": "line", "speaker": "小红", "text": "你好！你叫什么名字？", "translation": "Hello! What's your name?" },
+        { "type": "line", "speaker": "小明", "text": "我叫小明。你呢？", "translation": "My name is Xiaoming. And you?" },
+        { "type": "line", "speaker": "小红", "text": "我叫小红。你是哪国人？", "translation": "My name is Xiaohong. Where are you from?" },
+        { "type": "question", "prompt": "What does 小红 ask next?", "options": [
+          { "text": "What Xiaoming's job is", "correct": false, "feedback": "不对。她问他是哪国人。" },
+          { "text": "Where Xiaoming is from", "correct": true, "feedback": "对！她问他是哪国人。" },
+          { "text": "How old Xiaoming is", "correct": false, "feedback": "不对。她问的是国籍，不是年龄。" }
+        ]},
+        { "type": "line", "speaker": "小明", "text": "我是中国人。你喜欢学习语言吗？", "translation": "I'm Chinese. Do you like learning languages?" },
+        { "type": "line", "speaker": "小红", "text": "喜欢！我现在学汉语和英语。你呢？", "translation": "Yes! I'm currently studying Chinese and English. What about you?" },
+        { "type": "question", "prompt": "How many languages is 小红 studying?", "options": [
+          { "text": "One", "correct": false, "feedback": "不对。她学两种语言：汉语和英语。" },
+          { "text": "Two", "correct": true, "feedback": "对！她学汉语和英语，一共两种。" },
+          { "text": "Three", "correct": false, "feedback": "不对。她只学两种语言。" }
+        ]},
+        { "type": "line", "speaker": "小明", "text": "我也学英语。以后一起练习吧！", "translation": "I also study English. Let's practise together in the future!" },
+        { "type": "line", "speaker": "小红", "text": "好主意！很高兴认识你！", "translation": "Great idea! Nice to meet you!" }
+      ]
+    },
+    {
+      "id": "zh-d3",
+      "title": "在咖啡馆点单",
+      "titleTranslation": "Ordering at a Café",
+      "level": "HSK2",
+      "type": "choice",
+      "tags": ["food", "cafe", "beginner", "choice"],
+      "speakers": ["服务员", "你"],
+      "turns": [
+        { "type": "line", "speaker": "服务员", "text": "欢迎！请问您想喝什么？", "translation": "Welcome! What would you like to drink?" },
+        { "type": "choice", "prompt": "你想喝什么？", "promptTranslation": "What do you want to drink?",
+          "options": [
+            { "text": "我想要一杯咖啡。", "translation": "I'd like a coffee.", "response": "好的，一杯咖啡。需要加牛奶吗？", "responseTranslation": "Sure, one coffee. Would you like milk?" },
+            { "text": "给我一杯绿茶吧。", "translation": "I'll have a green tea.", "response": "好的，一杯绿茶。冷的还是热的？", "responseTranslation": "Sure, one green tea. Cold or hot?" },
+            { "text": "我要一杯橙汁。", "translation": "I'll have an orange juice.", "response": "好的，新鲜橙汁。还要别的吗？", "responseTranslation": "Sure, fresh orange juice. Anything else?" }
+          ]
+        },
+        { "type": "line", "speaker": "服务员", "text": "请稍等，马上就来。", "translation": "Please wait a moment, it'll be right out." },
+        { "type": "question", "prompt": "What does 服务员 say after taking the order?", "options": [
+          { "text": "She says it's too expensive", "correct": false, "feedback": "不对。她说请稍等。" },
+          { "text": "She says it will come right out", "correct": true, "feedback": "对！她说马上就来。" },
+          { "text": "She says the café is closed", "correct": false, "feedback": "不对。她说请稍等，马上就来。" }
+        ]},
+        { "type": "line", "speaker": "服务员", "text": "您的饮料，请慢用！", "translation": "Here is your drink, enjoy!" }
+      ]
+    },
+    {
+      "id": "zh-d4",
+      "title": "问路",
+      "titleTranslation": "Asking for Directions",
+      "level": "HSK3",
+      "type": "choice",
+      "tags": ["navigation", "city", "intermediate", "choice"],
+      "speakers": ["行人", "你"],
+      "turns": [
+        { "type": "line", "speaker": "行人", "text": "你好，我迷路了。你知道附近有没有地铁站？", "translation": "Hello, I'm lost. Do you know if there's a metro station nearby?" },
+        { "type": "choice", "prompt": "你怎么回答？", "promptTranslation": "How do you respond?",
+          "options": [
+            { "text": "知道！前面走两个路口，右转就到了。", "translation": "I do! Go straight for two intersections, then turn right.", "response": "非常感谢！那走路大概要多久？", "responseTranslation": "Thank you very much! About how long does it take to walk?" },
+            { "text": "对不起，我也不太清楚这里。", "translation": "Sorry, I'm not very familiar with this area either.", "response": "没关系，我再问别人。谢谢你！", "responseTranslation": "No problem, I'll ask someone else. Thank you!" },
+            { "text": "附近没有地铁站，你需要坐公共汽车。", "translation": "There's no metro station nearby; you need to take a bus.", "response": "好的，公交站在哪儿？", "responseTranslation": "Okay, where is the bus stop?" }
+          ]
+        },
+        { "type": "line", "speaker": "行人", "text": "明白了，我找到了，太感谢你了！", "translation": "I understand, I found it — thank you so much!" },
+        { "type": "question", "prompt": "Why did the passer-by stop you?", "options": [
+          { "text": "They wanted to buy something", "correct": false, "feedback": "不对。他迷路了，想找地铁站。" },
+          { "text": "They were lost and looking for the metro", "correct": true, "feedback": "对！他迷路了，在找地铁站。" },
+          { "text": "They wanted to chat", "correct": false, "feedback": "不对。他需要找路。" }
+        ]}
+      ]
+    },
+    {
+      "id": "zh-d5",
+      "title": "租房看房",
+      "titleTranslation": "Viewing a Flat to Rent",
+      "level": "HSK4",
+      "type": "observe",
+      "tags": ["housing", "intermediate", "observe"],
+      "speakers": ["房东", "租客"],
+      "turns": [
+        { "type": "line", "speaker": "房东", "text": "这套公寓两室一厅，月租三千五，包括水电网费。", "translation": "This apartment has two bedrooms and a living room. Monthly rent is 3,500 yuan, including water, electricity, and internet." },
+        { "type": "line", "speaker": "租客", "text": "请问有没有停车位？我有一辆车。", "translation": "Is there a parking space? I have a car." },
+        { "type": "line", "speaker": "房东", "text": "有地下停车场，停车位另外收费，每月两百块。", "translation": "There's an underground car park. Parking spaces are charged separately — two hundred yuan per month." },
+        { "type": "question", "prompt": "What does the parking space cost per month?", "options": [
+          { "text": "Included in the rent", "correct": false, "feedback": "不对。停车位是另外收费的。" },
+          { "text": "200 yuan separately", "correct": true, "feedback": "对！停车位每月另收两百块。" },
+          { "text": "350 yuan separately", "correct": false, "feedback": "不对。三千五是房租，停车位是两百块。" }
+        ]},
+        { "type": "line", "speaker": "租客", "text": "周边环境怎么样？附近有超市和学校吗？", "translation": "What's the surrounding environment like? Are there supermarkets and schools nearby?" },
+        { "type": "line", "speaker": "房东", "text": "非常方便。走路五分钟有大型超市，附近有两所小学和一所中学。", "translation": "Very convenient. There's a large supermarket a five-minute walk away, and two primary schools and a middle school nearby." },
+        { "type": "question", "prompt": "How many schools are near the apartment?", "options": [
+          { "text": "Two", "correct": false, "feedback": "不对。有两所小学和一所中学，一共三所。" },
+          { "text": "Three", "correct": true, "feedback": "对！两所小学加一所中学，共三所学校。" },
+          { "text": "Four", "correct": false, "feedback": "不对。是三所：两所小学和一所中学。" }
+        ]},
+        { "type": "line", "speaker": "租客", "text": "条件不错，我很感兴趣。可以先签一年的合同吗？", "translation": "The conditions are good, I'm very interested. Can we sign a one-year contract first?" },
+        { "type": "line", "speaker": "房东", "text": "当然可以。你什么时候方便来签合同？", "translation": "Of course. When would it be convenient for you to come and sign?" }
+      ]
+    },
+    {
+      "id": "zh-d6",
+      "title": "工作面试",
+      "titleTranslation": "Job Interview",
+      "level": "HSK4",
+      "type": "choice",
+      "tags": ["work", "intermediate", "choice"],
+      "speakers": ["面试官", "你"],
+      "turns": [
+        { "type": "line", "speaker": "面试官", "text": "请介绍一下你自己，以及为什么想加入我们公司。", "translation": "Please introduce yourself and explain why you want to join our company." },
+        { "type": "choice", "prompt": "你怎么介绍自己？", "promptTranslation": "How do you introduce yourself?",
+          "options": [
+            { "text": "我有三年市场营销经验，非常欣赏贵公司的创新文化。", "translation": "I have three years of marketing experience and greatly admire your company's innovative culture.", "response": "很好。那请说说你最大的优点和缺点。", "responseTranslation": "Very good. Please tell me about your greatest strengths and weaknesses." },
+            { "text": "我是应届毕业生，学习能力强，期待在贵公司积累经验。", "translation": "I'm a recent graduate with strong learning ability, and look forward to gaining experience at your company.", "response": "不错。你对我们公司有哪些了解？", "responseTranslation": "Good. What do you know about our company?" },
+            { "text": "我做过很多工作，但都做得不太好，希望在这里重新开始。", "translation": "I've had many jobs but haven't done very well. I hope to start fresh here.", "response": "能具体说说遇到了什么困难吗？", "responseTranslation": "Could you elaborate on the difficulties you encountered?" }
+          ]
+        },
+        { "type": "line", "speaker": "面试官", "text": "你的期望薪资是多少？", "translation": "What is your expected salary?" },
+        { "type": "question", "prompt": "What does the interviewer ask at the end?", "options": [
+          { "text": "When can you start", "correct": false, "feedback": "不对。他问期望薪资。" },
+          { "text": "What the expected salary is", "correct": true, "feedback": "对！他问期望薪资是多少。" },
+          { "text": "What the candidate's hobbies are", "correct": false, "feedback": "不对。这是最后一个问题，关于薪资。" }
+        ]}
+      ]
+    },
+    {
+      "id": "zh-d7",
+      "title": "关于人工智能的讨论",
+      "titleTranslation": "A Discussion about AI",
+      "level": "HSK5",
+      "type": "observe",
+      "tags": ["technology", "society", "advanced", "observe"],
+      "speakers": ["老师", "学生"],
+      "turns": [
+        { "type": "line", "speaker": "老师", "text": "最近人工智能发展很快，你们怎么看？它对社会是利大于弊，还是弊大于利？", "translation": "AI has been developing rapidly recently. What do you think? Are its benefits greater than its drawbacks for society, or vice versa?" },
+        { "type": "line", "speaker": "学生", "text": "我觉得利大于弊。AI可以帮助医生更准确地诊断疾病，也能提高工业生产效率。", "translation": "I think the benefits outweigh the drawbacks. AI can help doctors diagnose illnesses more accurately and improve industrial productivity." },
+        { "type": "question", "prompt": "What two benefits does the student mention?", "options": [
+          { "text": "Diagnosis and transport", "correct": false, "feedback": "不对。学生提到的是医疗诊断和工业效率。" },
+          { "text": "Medical diagnosis and industrial efficiency", "correct": true, "feedback": "对！他说AI能帮助诊断疾病，也能提高生产效率。" },
+          { "text": "Education and banking", "correct": false, "feedback": "不对。他说的是医疗和工业，不是教育和银行。" }
+        ]},
+        { "type": "line", "speaker": "老师", "text": "说得有道理。但也有人担心AI会取代人类的工作，导致大规模失业。你怎么反驳这个观点？", "translation": "That's a valid point. But some people worry that AI will replace human jobs and cause mass unemployment. How would you counter that argument?" },
+        { "type": "line", "speaker": "学生", "text": "历史上每次技术革命都带来了新的就业机会。AI取代了一些重复性劳动，同时也会创造出我们现在还难以想象的新职业。", "translation": "Every technological revolution in history has created new employment opportunities. While AI replaces some repetitive labour, it will also create new professions we can barely imagine now." },
+        { "type": "question", "prompt": "What historical pattern does the student point to?", "options": [
+          { "text": "Wars always lead to economic growth", "correct": false, "feedback": "不对。他提到的是技术革命带来新职业，不是战争。" },
+          { "text": "Technological revolutions always create new jobs", "correct": true, "feedback": "对！他说历史上每次技术革命都带来了新的就业机会。" },
+          { "text": "AI has always existed in some form", "correct": false, "feedback": "不对。他说的是技术革命的历史规律。" }
+        ]},
+        { "type": "line", "speaker": "老师", "text": "非常好！兼顾历史视角与当下现实，论点很有说服力。", "translation": "Excellent! You balance a historical perspective with present reality — your argument is very persuasive." }
+      ]
+    },
+    {
+      "id": "zh-d8",
+      "title": "谈判续约",
+      "titleTranslation": "Contract Renewal Negotiation",
+      "level": "HSK5",
+      "type": "choice",
+      "tags": ["work", "negotiation", "advanced", "choice"],
+      "speakers": ["经理", "你"],
+      "turns": [
+        { "type": "line", "speaker": "经理", "text": "这一年你工作表现非常出色。我们希望你续签合同，但薪资调整幅度可能有限。", "translation": "Your performance this year has been outstanding. We'd like you to renew your contract, but the salary adjustment may be limited." },
+        { "type": "choice", "prompt": "你怎么回应？", "promptTranslation": "How do you respond?",
+          "options": [
+            { "text": "感谢认可，但我希望结合市场标准讨论一个合理的涨幅。", "translation": "Thank you for the recognition, but I'd like to discuss a reasonable raise in line with market standards.", "response": "我理解。你有没有具体的期望数字？", "responseTranslation": "I understand. Do you have a specific figure in mind?" },
+            { "text": "没关系，薪资不是最重要的，我更看重学习机会。", "translation": "That's fine. Salary isn't most important to me — I value learning opportunities more.", "response": "很好。我们可以为你安排更多培训项目。", "responseTranslation": "Great. We can arrange more training programmes for you." },
+            { "text": "如果涨幅太少，我可能需要考虑其他机会。", "translation": "If the raise is too small, I may need to consider other opportunities.", "response": "我明白，让我向上级汇报后再给你答复。", "responseTranslation": "I understand. Let me report to my superiors and get back to you." }
+          ]
+        },
+        { "type": "line", "speaker": "经理", "text": "我会将你的情况向上级汇报，争取为你争取更好的条件。", "translation": "I'll report your situation to my superiors and try to negotiate better terms for you." },
+        { "type": "question", "prompt": "What does the manager promise to do?", "options": [
+          { "text": "Offer an immediate raise", "correct": false, "feedback": "不对。他说要汇报给上级，不是立刻给涨薪。" },
+          { "text": "Report to superiors to try for better terms", "correct": true, "feedback": "对！他说会向上级汇报，争取更好条件。" },
+          { "text": "End the contract immediately", "correct": false, "feedback": "不对。他想留住这位员工。" }
+        ]}
+      ]
+    }
+  ]
+}

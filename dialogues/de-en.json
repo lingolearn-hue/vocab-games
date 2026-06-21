@@ -1,0 +1,214 @@
+{
+  "language": "de",
+  "native": "en",
+  "dialogues": [
+    {
+      "id": "de-d1",
+      "title": "Auf dem Markt",
+      "titleTranslation": "At the Market",
+      "level": "A1",
+      "type": "observe",
+      "tags": ["shopping", "beginner", "observe"],
+      "speakers": ["Kunde", "Verkäuferin"],
+      "turns": [
+        { "type": "line", "speaker": "Kunde", "text": "Guten Tag! Was kostet ein Kilo Äpfel?", "translation": "Good day! How much is a kilo of apples?" },
+        { "type": "line", "speaker": "Verkäuferin", "text": "Guten Tag! Ein Kilo kostet zwei Euro.", "translation": "Good day! One kilo costs two euros." },
+        { "type": "question", "prompt": "How much does one kilo of apples cost?", "options": [
+          { "text": "One euro", "correct": false, "feedback": "Nein. Ein Kilo kostet zwei Euro." },
+          { "text": "Two euros", "correct": true, "feedback": "Richtig! Ein Kilo Äpfel kostet zwei Euro." },
+          { "text": "Five euros", "correct": false, "feedback": "Nein. Es sind zwei Euro, nicht fünf." }
+        ]},
+        { "type": "line", "speaker": "Kunde", "text": "Gut, ich nehme zwei Kilo bitte.", "translation": "Good, I'll take two kilos please." },
+        { "type": "line", "speaker": "Verkäuferin", "text": "Das macht vier Euro bitte.", "translation": "That will be four euros please." },
+        { "type": "question", "prompt": "How much does the customer pay?", "options": [
+          { "text": "Two euros", "correct": false, "feedback": "Nein. Zwei Kilo kosten vier Euro." },
+          { "text": "Four euros", "correct": true, "feedback": "Richtig! Zwei Kilo zu je zwei Euro macht vier Euro." },
+          { "text": "Six euros", "correct": false, "feedback": "Nein. Zwei mal zwei ist vier." }
+        ]},
+        { "type": "line", "speaker": "Kunde", "text": "Bitte sehr. Auf Wiedersehen!", "translation": "Here you are. Goodbye!" },
+        { "type": "line", "speaker": "Verkäuferin", "text": "Danke schön! Auf Wiedersehen!", "translation": "Thank you very much! Goodbye!" }
+      ]
+    },
+    {
+      "id": "de-d2",
+      "title": "Jemanden kennenlernen",
+      "titleTranslation": "Meeting Someone",
+      "level": "A2",
+      "type": "observe",
+      "tags": ["social", "beginner", "observe"],
+      "speakers": ["Anna", "Thomas"],
+      "turns": [
+        { "type": "line", "speaker": "Anna", "text": "Hallo! Ich bin Anna. Wie heißt du?", "translation": "Hello! I'm Anna. What's your name?" },
+        { "type": "line", "speaker": "Thomas", "text": "Hallo Anna! Ich heiße Thomas. Woher kommst du?", "translation": "Hello Anna! My name is Thomas. Where are you from?" },
+        { "type": "line", "speaker": "Anna", "text": "Ich komme aus Wien. Und du?", "translation": "I'm from Vienna. And you?" },
+        { "type": "question", "prompt": "Where is Anna from?", "options": [
+          { "text": "Berlin", "correct": false, "feedback": "Nein. Anna kommt aus Wien." },
+          { "text": "Vienna", "correct": true, "feedback": "Richtig! Anna kommt aus Wien." },
+          { "text": "Hamburg", "correct": false, "feedback": "Nein. Sie kommt aus Wien, nicht Hamburg." }
+        ]},
+        { "type": "line", "speaker": "Thomas", "text": "Ich komme aus München. Was machst du hier in Berlin?", "translation": "I'm from Munich. What are you doing here in Berlin?" },
+        { "type": "line", "speaker": "Anna", "text": "Ich studiere hier Germanistik. Ich lerne auch gerne Sprachen.", "translation": "I'm studying German Studies here. I also enjoy learning languages." },
+        { "type": "question", "prompt": "What does Anna study?", "options": [
+          { "text": "Medicine", "correct": false, "feedback": "Nein. Anna studiert Germanistik." },
+          { "text": "German Studies", "correct": true, "feedback": "Richtig! Anna studiert Germanistik." },
+          { "text": "Engineering", "correct": false, "feedback": "Nein. Sie studiert Germanistik." }
+        ]},
+        { "type": "line", "speaker": "Thomas", "text": "Interessant! Ich auch. Wir können zusammen lernen.", "translation": "Interesting! Me too. We could learn together." },
+        { "type": "line", "speaker": "Anna", "text": "Gerne! Das ist eine super Idee.", "translation": "I'd love that! That's a great idea." }
+      ]
+    },
+    {
+      "id": "de-d3",
+      "title": "Im Café bestellen",
+      "titleTranslation": "Ordering in a Café",
+      "level": "A2",
+      "type": "choice",
+      "tags": ["food", "cafe", "beginner", "choice"],
+      "speakers": ["Kellner", "du"],
+      "turns": [
+        { "type": "line", "speaker": "Kellner", "text": "Guten Morgen! Was darf ich Ihnen bringen?", "translation": "Good morning! What can I get you?" },
+        { "type": "choice", "prompt": "Was möchtest du bestellen?", "promptTranslation": "What would you like to order?",
+          "options": [
+            { "text": "Ich hätte gerne einen Kaffee mit Milch, bitte.", "translation": "I'd like a coffee with milk, please.", "response": "Natürlich. Und möchten Sie auch etwas essen?", "responseTranslation": "Of course. Would you also like something to eat?" },
+            { "text": "Einen Tee und ein Stück Kuchen, bitte.", "translation": "A tea and a piece of cake, please.", "response": "Sehr gern. Welchen Kuchen hätten Sie gerne — Apfel oder Schokolade?", "responseTranslation": "Certainly. Which cake would you like — apple or chocolate?" },
+            { "text": "Nur ein Wasser, danke.", "translation": "Just a water, thank you.", "response": "Selbstverständlich. Still oder mit Kohlensäure?", "responseTranslation": "Of course. Still or sparkling?" }
+          ]
+        },
+        { "type": "line", "speaker": "Kellner", "text": "Einen Moment bitte, ich bringe das sofort.", "translation": "One moment please, I'll bring that right away." },
+        { "type": "question", "prompt": "What does the waiter say he will do?", "options": [
+          { "text": "Ask the manager", "correct": false, "feedback": "Nein. Er sagt, er bringt es sofort." },
+          { "text": "Bring it right away", "correct": true, "feedback": "Richtig! Er sagt: Ich bringe das sofort." },
+          { "text": "Write down the order first", "correct": false, "feedback": "Nein. Er sagt, er bringt es sofort." }
+        ]},
+        { "type": "line", "speaker": "Kellner", "text": "Hier ist Ihre Bestellung. Guten Appetit!", "translation": "Here is your order. Enjoy!" }
+      ]
+    },
+    {
+      "id": "de-d4",
+      "title": "Nach dem Weg fragen",
+      "titleTranslation": "Asking for Directions",
+      "level": "B1",
+      "type": "choice",
+      "tags": ["navigation", "city", "intermediate", "choice"],
+      "speakers": ["Passant", "du"],
+      "turns": [
+        { "type": "line", "speaker": "Passant", "text": "Entschuldigung, ich suche den Hauptbahnhof. Können Sie mir helfen?", "translation": "Excuse me, I'm looking for the main train station. Can you help me?" },
+        { "type": "choice", "prompt": "Wie antwortest du?", "promptTranslation": "How do you reply?",
+          "options": [
+            { "text": "Ja, gerne! Gehen Sie geradeaus und dann die zweite Straße links.", "translation": "Yes, gladly! Go straight ahead, then take the second street on the left.", "response": "Vielen Dank! Wie lange dauert das zu Fuß?", "responseTranslation": "Thank you very much! How long does it take on foot?" },
+            { "text": "Tut mir leid, ich kenne mich hier leider nicht so gut aus.", "translation": "I'm sorry, I'm not very familiar with this area, unfortunately.", "response": "Kein Problem. Ich frage jemand anderen. Trotzdem danke!", "responseTranslation": "No problem. I'll ask someone else. Thank you anyway!" },
+            { "text": "Am besten nehmen Sie die U-Bahn, Linie 6 Richtung Mitte.", "translation": "Your best bet is the underground, line 6 towards Mitte.", "response": "Wo ist denn die nächste U-Bahn-Station?", "responseTranslation": "Where is the nearest underground station?" }
+          ]
+        },
+        { "type": "line", "speaker": "Passant", "text": "Wunderbar, ich habe es gefunden. Herzlichen Dank!", "translation": "Wonderful, I found it. Many thanks!" },
+        { "type": "question", "prompt": "Why did the passer-by stop you?", "options": [
+          { "text": "To ask for money", "correct": false, "feedback": "Nein. Er sucht den Hauptbahnhof." },
+          { "text": "To find the main train station", "correct": true, "feedback": "Richtig! Er sucht den Hauptbahnhof." },
+          { "text": "To ask about a restaurant", "correct": false, "feedback": "Nein. Er fragt nach dem Hauptbahnhof." }
+        ]}
+      ]
+    },
+    {
+      "id": "de-d5",
+      "title": "Wohnungsbesichtigung",
+      "titleTranslation": "Flat Viewing",
+      "level": "B1",
+      "type": "observe",
+      "tags": ["housing", "intermediate", "observe"],
+      "speakers": ["Vermieter", "Mieterin"],
+      "turns": [
+        { "type": "line", "speaker": "Vermieter", "text": "Die Wohnung hat zwei Zimmer, Küche und Bad. Die Miete beträgt neunhundert Euro warm.", "translation": "The flat has two rooms, a kitchen, and a bathroom. The rent is nine hundred euros all-inclusive." },
+        { "type": "line", "speaker": "Mieterin", "text": "Sind Nebenkosten dabei?", "translation": "Are utilities included?" },
+        { "type": "line", "speaker": "Vermieter", "text": "Ja, Heizung und Wasser sind inklusive. Strom bezahlen Sie selbst.", "translation": "Yes, heating and water are included. You pay electricity yourself." },
+        { "type": "question", "prompt": "What does the tenant have to pay separately?", "options": [
+          { "text": "Heating", "correct": false, "feedback": "Nein. Heizung ist inklusive." },
+          { "text": "Electricity", "correct": true, "feedback": "Richtig! Strom zahlt die Mieterin selbst." },
+          { "text": "Water", "correct": false, "feedback": "Nein. Wasser ist in der Warmmiete enthalten." }
+        ]},
+        { "type": "line", "speaker": "Mieterin", "text": "Gibt es einen Keller und einen Stellplatz?", "translation": "Is there a cellar and a parking space?" },
+        { "type": "line", "speaker": "Vermieter", "text": "Einen Kellerraum gibt es. Einen Stellplatz kann ich für fünfzig Euro extra im Monat anbieten.", "translation": "There is a cellar. I can offer a parking space for an extra fifty euros per month." },
+        { "type": "question", "prompt": "How much extra does the parking space cost?", "options": [
+          { "text": "Free", "correct": false, "feedback": "Nein. Der Stellplatz kostet fünfzig Euro extra." },
+          { "text": "Fifty euros per month", "correct": true, "feedback": "Richtig! Der Stellplatz kostet fünfzig Euro im Monat extra." },
+          { "text": "One hundred euros per month", "correct": false, "feedback": "Nein. Es sind fünfzig Euro." }
+        ]},
+        { "type": "line", "speaker": "Mieterin", "text": "Das klingt gut. Ich bin sehr interessiert. Wann kann ich einziehen?", "translation": "That sounds good. I'm very interested. When can I move in?" }
+      ]
+    },
+    {
+      "id": "de-d6",
+      "title": "Bewerbungsgespräch",
+      "titleTranslation": "Job Interview",
+      "level": "B2",
+      "type": "choice",
+      "tags": ["work", "intermediate", "choice"],
+      "speakers": ["Personalerin", "du"],
+      "turns": [
+        { "type": "line", "speaker": "Personalerin", "text": "Erzählen Sie uns bitte etwas über sich und Ihre Motivation, bei uns zu arbeiten.", "translation": "Please tell us something about yourself and your motivation to work with us." },
+        { "type": "choice", "prompt": "Wie stellst du dich vor?", "promptTranslation": "How do you introduce yourself?",
+          "options": [
+            { "text": "Ich habe fünf Jahre Erfahrung im Projektmanagement und schätze besonders Ihre agile Unternehmenskultur.", "translation": "I have five years of project management experience and particularly appreciate your agile company culture.", "response": "Sehr gut. Können Sie uns ein konkretes Beispiel für ein erfolgreiches Projekt nennen?", "responseTranslation": "Very good. Can you give us a concrete example of a successful project?" },
+            { "text": "Ich bin Berufseinsteiger, aber sehr lernbereit und motiviert, mich in Ihrem Unternehmen zu entwickeln.", "translation": "I'm a career starter, but very eager to learn and motivated to develop at your company.", "response": "Das klingt vielversprechend. Welche Stärken bringen Sie konkret mit?", "responseTranslation": "That sounds promising. What specific strengths do you bring?" },
+            { "text": "Ich suche hauptsächlich eine Stelle, die gut zu meinen Arbeitszeiten passt.", "translation": "I'm mainly looking for a position that fits my working hours well.", "response": "Welche Arbeitszeiten schweben Ihnen vor?", "responseTranslation": "What working hours do you have in mind?" }
+          ]
+        },
+        { "type": "line", "speaker": "Personalerin", "text": "Sehr interessant. Wir melden uns bis Ende der Woche.", "translation": "Very interesting. We will get back to you by the end of the week." },
+        { "type": "question", "prompt": "When will the interviewer get back to the candidate?", "options": [
+          { "text": "Tomorrow", "correct": false, "feedback": "Nein. Sie sagt: bis Ende der Woche." },
+          { "text": "By the end of the week", "correct": true, "feedback": "Richtig! Sie sagt: Wir melden uns bis Ende der Woche." },
+          { "text": "Next month", "correct": false, "feedback": "Nein. Es ist bis Ende der Woche." }
+        ]}
+      ]
+    },
+    {
+      "id": "de-d7",
+      "title": "Debatte über Homeoffice",
+      "titleTranslation": "Debate about Working from Home",
+      "level": "B2",
+      "type": "observe",
+      "tags": ["work", "society", "advanced", "observe"],
+      "speakers": ["Lena", "Markus"],
+      "turns": [
+        { "type": "line", "speaker": "Lena", "text": "Ich finde Homeoffice sehr produktiv. Ich spare täglich zwei Stunden Pendelzeit und kann konzentrierter arbeiten.", "translation": "I find working from home very productive. I save two hours of commuting every day and can concentrate better." },
+        { "type": "line", "speaker": "Markus", "text": "Das kann ich verstehen. Aber ich vermisse den direkten Austausch mit Kollegen. Spontane Gespräche am Kaffeeautomaten sind oft goldwert.", "translation": "I can understand that. But I miss the direct exchange with colleagues. Spontaneous conversations by the coffee machine are often invaluable." },
+        { "type": "question", "prompt": "What does Markus miss about the office?", "options": [
+          { "text": "The free coffee", "correct": false, "feedback": "Nein. Er vermisst den direkten Kontakt mit Kollegen." },
+          { "text": "Direct exchange with colleagues", "correct": true, "feedback": "Richtig! Markus vermisst den spontanen Austausch mit Kollegen." },
+          { "text": "The faster internet", "correct": false, "feedback": "Nein. Es geht um den menschlichen Kontakt." }
+        ]},
+        { "type": "line", "speaker": "Lena", "text": "Das stimmt. Deshalb finde ich hybrides Arbeiten am besten — ein Mix aus Büro und Homeoffice.", "translation": "That's true. That's why I think hybrid working is best — a mix of office and working from home." },
+        { "type": "line", "speaker": "Markus", "text": "Da bin ich völlig einverstanden. Flexibilität ist das Wichtigste — solange die Ergebnisse stimmen.", "translation": "I fully agree with that. Flexibility is the most important thing — as long as the results are good." },
+        { "type": "question", "prompt": "What do both Lena and Markus ultimately agree is most important?", "options": [
+          { "text": "Always being in the office", "correct": false, "feedback": "Nein. Beide befürworten Flexibilität, nicht das Büro." },
+          { "text": "Flexibility", "correct": true, "feedback": "Richtig! Beide sind sich einig: Flexibilität ist am wichtigsten." },
+          { "text": "Saving on office rent", "correct": false, "feedback": "Nein. Es geht um Flexibilität, nicht um Kosten." }
+        ]}
+      ]
+    },
+    {
+      "id": "de-d8",
+      "title": "Nachhaltigkeit im Alltag",
+      "titleTranslation": "Sustainability in Daily Life",
+      "level": "C1",
+      "type": "choice",
+      "tags": ["environment", "society", "advanced", "choice"],
+      "speakers": ["Journalist", "du"],
+      "turns": [
+        { "type": "line", "speaker": "Journalist", "text": "Wir führen eine Umfrage über nachhaltige Lebensweise durch. Was tun Sie persönlich für die Umwelt?", "translation": "We're conducting a survey on sustainable living. What do you personally do for the environment?" },
+        { "type": "choice", "prompt": "Wie antwortest du?", "promptTranslation": "How do you respond?",
+          "options": [
+            { "text": "Ich fahre fast nie Auto, kaufe regional ein und verzichte weitgehend auf Fleisch.", "translation": "I almost never drive, buy regionally, and largely avoid eating meat.", "response": "Beeindruckend. Würden Sie sagen, individuelle Verhaltensänderungen reichen aus, oder braucht es mehr?", "responseTranslation": "Impressive. Would you say individual behaviour changes are enough, or is more needed?" },
+            { "text": "Ich versuche, Plastik zu vermeiden und trenne meinen Müll konsequent.", "translation": "I try to avoid plastic and consistently sort my rubbish.", "response": "Gut. Glauben Sie, dass Mülltrennung wirklich einen Unterschied macht?", "responseTranslation": "Good. Do you believe that waste sorting really makes a difference?" },
+            { "text": "Ehrlich gesagt fällt es mir schwer, meinen Alltag grundlegend zu ändern.", "translation": "Honestly, I find it hard to fundamentally change my daily life.", "response": "Das höre ich oft. Was wären Ihrer Meinung nach die größten Hürden?", "responseTranslation": "I hear that often. What do you think are the biggest hurdles?" }
+          ]
+        },
+        { "type": "line", "speaker": "Journalist", "text": "Vielen Dank für Ihre ehrliche Antwort. Das ist sehr aufschlussreich.", "translation": "Thank you for your honest answer. That is very illuminating." },
+        { "type": "question", "prompt": "What is the journalist conducting?", "options": [
+          { "text": "A political poll", "correct": false, "feedback": "Nein. Es geht um nachhaltige Lebensweise." },
+          { "text": "A survey on sustainable living", "correct": true, "feedback": "Richtig! Er führt eine Umfrage über nachhaltige Lebensweise durch." },
+          { "text": "A job interview", "correct": false, "feedback": "Nein. Er macht eine Umfrage für einen Artikel." }
+        ]}
+      ]
+    }
+  ]
+}

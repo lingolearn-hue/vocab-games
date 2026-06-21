@@ -1,0 +1,181 @@
+{
+  "language": "es",
+  "native": "en",
+  "dialogues": [
+    {
+      "id": "es-d1", "title": "En el mercado", "titleTranslation": "At the Market",
+      "level": "A1", "type": "observe", "tags": ["shopping", "beginner", "observe"],
+      "speakers": ["Cliente", "Vendedora"],
+      "turns": [
+        { "type": "line", "speaker": "Cliente", "text": "¡Buenos días! ¿Cuánto cuestan los tomates?", "translation": "Good morning! How much do the tomatoes cost?" },
+        { "type": "line", "speaker": "Vendedora", "text": "¡Buenos días! Están a dos euros el kilo.", "translation": "Good morning! They are two euros a kilo." },
+        { "type": "question", "prompt": "How much is one kilo of tomatoes?", "options": [
+          { "text": "One euro", "correct": false, "feedback": "No. Los tomates cuestan dos euros el kilo." },
+          { "text": "Two euros", "correct": true, "feedback": "¡Correcto! Están a dos euros el kilo." },
+          { "text": "Three euros", "correct": false, "feedback": "No. Son dos euros, no tres." }
+        ]},
+        { "type": "line", "speaker": "Cliente", "text": "Bien, me llevo dos kilos.", "translation": "Good, I'll take two kilos." },
+        { "type": "line", "speaker": "Vendedora", "text": "Son cuatro euros en total.", "translation": "That's four euros in total." },
+        { "type": "question", "prompt": "How much does the customer pay?", "options": [
+          { "text": "Two euros", "correct": false, "feedback": "No. Dos kilos a dos euros son cuatro euros." },
+          { "text": "Four euros", "correct": true, "feedback": "¡Correcto! Dos kilos a dos euros el kilo son cuatro euros." },
+          { "text": "Six euros", "correct": false, "feedback": "No. Dos por dos es cuatro, no seis." }
+        ]},
+        { "type": "line", "speaker": "Cliente", "text": "Aquí tiene. ¡Hasta luego!", "translation": "Here you are. Goodbye!" },
+        { "type": "line", "speaker": "Vendedora", "text": "¡Gracias! ¡Hasta luego!", "translation": "Thank you! Goodbye!" }
+      ]
+    },
+    {
+      "id": "es-d2", "title": "Conociendo a alguien", "titleTranslation": "Meeting Someone",
+      "level": "A2", "type": "observe", "tags": ["social", "beginner", "observe"],
+      "speakers": ["María", "Carlos"],
+      "turns": [
+        { "type": "line", "speaker": "María", "text": "¡Hola! Me llamo María. ¿Y tú?", "translation": "Hi! My name is María. And you?" },
+        { "type": "line", "speaker": "Carlos", "text": "Hola María, me llamo Carlos. ¿De dónde eres?", "translation": "Hi María, my name is Carlos. Where are you from?" },
+        { "type": "line", "speaker": "María", "text": "Soy de Madrid. ¿Y tú?", "translation": "I'm from Madrid. And you?" },
+        { "type": "question", "prompt": "Where is María from?", "options": [
+          { "text": "Barcelona", "correct": false, "feedback": "No. María es de Madrid." },
+          { "text": "Madrid", "correct": true, "feedback": "¡Correcto! María es de Madrid." },
+          { "text": "Valencia", "correct": false, "feedback": "No. Ella es de Madrid." }
+        ]},
+        { "type": "line", "speaker": "Carlos", "text": "Soy de Buenos Aires. Estudio aquí en España.", "translation": "I'm from Buenos Aires. I'm studying here in Spain." },
+        { "type": "line", "speaker": "María", "text": "¡Qué interesante! ¿Qué estudias?", "translation": "How interesting! What do you study?" },
+        { "type": "question", "prompt": "Where is Carlos from?", "options": [
+          { "text": "Spain", "correct": false, "feedback": "No. Carlos estudia en España pero es de Buenos Aires." },
+          { "text": "Buenos Aires", "correct": true, "feedback": "¡Correcto! Carlos es de Buenos Aires." },
+          { "text": "Mexico City", "correct": false, "feedback": "No. Es de Buenos Aires, Argentina." }
+        ]},
+        { "type": "line", "speaker": "Carlos", "text": "Estudio economía. ¿Y tú, a qué te dedicas?", "translation": "I study economics. And you, what do you do?" },
+        { "type": "line", "speaker": "María", "text": "Soy profesora de español. ¡Mucho gusto, Carlos!", "translation": "I'm a Spanish teacher. Nice to meet you, Carlos!" }
+      ]
+    },
+    {
+      "id": "es-d3", "title": "En el café", "titleTranslation": "At the Café",
+      "level": "A2", "type": "choice", "tags": ["food", "cafe", "beginner", "choice"],
+      "speakers": ["Camarero", "tú"],
+      "turns": [
+        { "type": "line", "speaker": "Camarero", "text": "¡Buenos días! ¿Qué le pongo?", "translation": "Good morning! What can I get you?" },
+        { "type": "choice", "prompt": "¿Qué quieres pedir?", "promptTranslation": "What do you want to order?",
+          "options": [
+            { "text": "Un café con leche y un croissant, por favor.", "translation": "A coffee with milk and a croissant, please.", "response": "En seguida. ¿Lo quiere templado o frío el café?", "responseTranslation": "Right away. Do you want the coffee warm or cold?" },
+            { "text": "Un zumo de naranja natural y una tostada.", "translation": "A fresh orange juice and a piece of toast.", "response": "Perfecto. ¿La tostada con mantequilla o con aceite?", "responseTranslation": "Perfect. The toast with butter or with oil?" },
+            { "text": "Solo un agua, gracias.", "translation": "Just a water, thank you.", "response": "¿Con gas o sin gas?", "responseTranslation": "Sparkling or still?" }
+          ]
+        },
+        { "type": "line", "speaker": "Camarero", "text": "Aquí tiene, que lo disfrute.", "translation": "Here you are, enjoy it." },
+        { "type": "question", "prompt": "What does the waiter say when bringing the order?", "options": [
+          { "text": "He apologises for the wait", "correct": false, "feedback": "No. Dice: que lo disfrute." },
+          { "text": "He says enjoy it", "correct": true, "feedback": "¡Correcto! Dice: aquí tiene, que lo disfrute." },
+          { "text": "He asks for payment", "correct": false, "feedback": "No. Solo dice que disfrute la comida." }
+        ]}
+      ]
+    },
+    {
+      "id": "es-d4", "title": "Pidiendo direcciones", "titleTranslation": "Asking for Directions",
+      "level": "B1", "type": "choice", "tags": ["navigation", "city", "intermediate", "choice"],
+      "speakers": ["Transeúnte", "tú"],
+      "turns": [
+        { "type": "line", "speaker": "Transeúnte", "text": "Perdona, ¿sabes dónde está la estación de metro más cercana?", "translation": "Excuse me, do you know where the nearest metro station is?" },
+        { "type": "choice", "prompt": "¿Cómo respondes?", "promptTranslation": "How do you respond?",
+          "options": [
+            { "text": "Sí, sigue todo recto y gira a la izquierda en el segundo semáforo.", "translation": "Yes, go straight ahead and turn left at the second traffic light.", "response": "Muchas gracias. ¿Está lejos a pie?", "responseTranslation": "Thank you very much. Is it far on foot?" },
+            { "text": "Lo siento, no soy de aquí y no conozco bien la zona.", "translation": "I'm sorry, I'm not from here and don't know the area well.", "response": "No te preocupes, preguntaré a otro. ¡Gracias!", "responseTranslation": "Don't worry, I'll ask someone else. Thanks!" },
+            { "text": "No hay metro, tendrías que coger el autobús número 5.", "translation": "There's no metro; you'd need to take bus number 5.", "response": "¿Y dónde está la parada de autobús?", "responseTranslation": "And where is the bus stop?" }
+          ]
+        },
+        { "type": "line", "speaker": "Transeúnte", "text": "¡Genial, lo encontré! Muchas gracias por tu ayuda.", "translation": "Great, I found it! Thank you very much for your help." },
+        { "type": "question", "prompt": "What was the passer-by looking for?", "options": [
+          { "text": "A bus stop", "correct": false, "feedback": "No. Busca la estación de metro." },
+          { "text": "The nearest metro station", "correct": true, "feedback": "¡Correcto! Busca la estación de metro más cercana." },
+          { "text": "A taxi rank", "correct": false, "feedback": "No. Pregunta por el metro." }
+        ]}
+      ]
+    },
+    {
+      "id": "es-d5", "title": "Visita a un piso de alquiler", "titleTranslation": "Visiting a Flat to Rent",
+      "level": "B1", "type": "observe", "tags": ["housing", "intermediate", "observe"],
+      "speakers": ["Propietario", "Inquilina"],
+      "turns": [
+        { "type": "line", "speaker": "Propietario", "text": "El piso tiene dos habitaciones, salón, cocina y baño. El alquiler es ochocientos euros al mes.", "translation": "The flat has two bedrooms, a living room, kitchen, and bathroom. The rent is eight hundred euros a month." },
+        { "type": "line", "speaker": "Inquilina", "text": "¿Los gastos están incluidos?", "translation": "Are bills included?" },
+        { "type": "line", "speaker": "Propietario", "text": "El agua y la comunidad sí están incluidas. La luz y el gas van aparte.", "translation": "Water and community fees are included. Electricity and gas are separate." },
+        { "type": "question", "prompt": "What does the tenant pay separately?", "options": [
+          { "text": "Water and community fees", "correct": false, "feedback": "No. Esos están incluidos. La luz y el gas van aparte." },
+          { "text": "Electricity and gas", "correct": true, "feedback": "¡Correcto! La luz y el gas van aparte." },
+          { "text": "Internet and phone", "correct": false, "feedback": "No. Son la luz y el gas." }
+        ]},
+        { "type": "line", "speaker": "Inquilina", "text": "¿Hay plaza de garaje disponible?", "translation": "Is there a parking space available?" },
+        { "type": "line", "speaker": "Propietario", "text": "Sí, hay una plaza en el garaje por sesenta euros al mes adicionales.", "translation": "Yes, there is a parking space in the garage for sixty euros extra per month." },
+        { "type": "question", "prompt": "How much does the parking space cost?", "options": [
+          { "text": "Free with the flat", "correct": false, "feedback": "No. Cuesta sesenta euros más al mes." },
+          { "text": "Sixty euros per month extra", "correct": true, "feedback": "¡Correcto! La plaza cuesta sesenta euros al mes adicionales." },
+          { "text": "One hundred euros per month", "correct": false, "feedback": "No. Son solo sesenta euros." }
+        ]},
+        { "type": "line", "speaker": "Inquilina", "text": "Me interesa mucho. ¿Cuándo podría entrar a vivir?", "translation": "I'm very interested. When could I move in?" }
+      ]
+    },
+    {
+      "id": "es-d6", "title": "Entrevista de trabajo", "titleTranslation": "Job Interview",
+      "level": "B2", "type": "choice", "tags": ["work", "intermediate", "choice"],
+      "speakers": ["Entrevistadora", "tú"],
+      "turns": [
+        { "type": "line", "speaker": "Entrevistadora", "text": "Cuéntame sobre ti y por qué quieres trabajar con nosotros.", "translation": "Tell me about yourself and why you want to work with us." },
+        { "type": "choice", "prompt": "¿Cómo te presentas?", "promptTranslation": "How do you introduce yourself?",
+          "options": [
+            { "text": "Tengo cinco años de experiencia en marketing digital y valoro especialmente vuestra apuesta por la innovación.", "translation": "I have five years of experience in digital marketing and particularly value your commitment to innovation.", "response": "Interesante. ¿Puedes darme un ejemplo concreto de un proyecto exitoso?", "responseTranslation": "Interesting. Can you give me a specific example of a successful project?" },
+            { "text": "Acabo de terminar mis estudios y estoy muy motivado para aprender y crecer en vuestra empresa.", "translation": "I have just finished my studies and am very motivated to learn and grow at your company.", "response": "¿Qué habilidades concretas aportas al equipo?", "responseTranslation": "What specific skills do you bring to the team?" },
+            { "text": "Principalmente busco un trabajo con buen horario y que no sea muy estresante.", "translation": "I'm mainly looking for a job with good hours and that isn't too stressful.", "response": "¿Qué tipo de horario tienes en mente?", "responseTranslation": "What kind of schedule do you have in mind?" }
+          ]
+        },
+        { "type": "line", "speaker": "Entrevistadora", "text": "Muy bien. Nos pondremos en contacto contigo esta semana.", "translation": "Very good. We will be in touch with you this week." },
+        { "type": "question", "prompt": "When will the interviewer contact the candidate?", "options": [
+          { "text": "Next month", "correct": false, "feedback": "No. Dice que se pondrán en contacto esta semana." },
+          { "text": "This week", "correct": true, "feedback": "¡Correcto! Dice: nos pondremos en contacto contigo esta semana." },
+          { "text": "Tomorrow morning", "correct": false, "feedback": "No. Dice esta semana, no mañana." }
+        ]}
+      ]
+    },
+    {
+      "id": "es-d7", "title": "Debate sobre redes sociales", "titleTranslation": "Debate about Social Media",
+      "level": "B2", "type": "observe", "tags": ["technology", "society", "advanced", "observe"],
+      "speakers": ["Profesora", "Estudiante"],
+      "turns": [
+        { "type": "line", "speaker": "Profesora", "text": "¿Crees que las redes sociales son más beneficiosas o perjudiciales para los jóvenes?", "translation": "Do you think social media is more beneficial or harmful for young people?" },
+        { "type": "line", "speaker": "Estudiante", "text": "Creo que depende del uso. Permiten conectar con personas de todo el mundo y acceder a información, pero el uso excesivo puede provocar ansiedad y afectar el sueño.", "translation": "I think it depends on usage. They allow connecting with people all over the world and accessing information, but excessive use can cause anxiety and affect sleep." },
+        { "type": "question", "prompt": "What negative effect does the student mention?", "options": [
+          { "text": "Increased cost of living", "correct": false, "feedback": "No. El estudiante menciona la ansiedad y problemas de sueño." },
+          { "text": "Anxiety and disrupted sleep", "correct": true, "feedback": "¡Correcto! Dice que el uso excesivo puede provocar ansiedad y afectar el sueño." },
+          { "text": "Lower academic grades", "correct": false, "feedback": "No. Habla de ansiedad y problemas de sueño." }
+        ]},
+        { "type": "line", "speaker": "Profesora", "text": "Buen análisis. ¿Y cómo crees que debería regularse ese uso?", "translation": "Good analysis. And how do you think that usage should be regulated?" },
+        { "type": "line", "speaker": "Estudiante", "text": "La educación digital desde edades tempranas es clave. No basta con prohibir; hay que enseñar a usar estas herramientas de forma crítica y responsable.", "translation": "Digital education from an early age is key. Banning is not enough; we need to teach people to use these tools critically and responsibly." },
+        { "type": "question", "prompt": "What solution does the student propose?", "options": [
+          { "text": "A complete ban on social media", "correct": false, "feedback": "No. Dice que no basta con prohibir." },
+          { "text": "Digital education from an early age", "correct": true, "feedback": "¡Correcto! Propone educación digital desde edades tempranas." },
+          { "text": "Taxing social media companies", "correct": false, "feedback": "No. Habla de educación digital, no de impuestos." }
+        ]}
+      ]
+    },
+    {
+      "id": "es-d8", "title": "Negociación de contrato", "titleTranslation": "Contract Negotiation",
+      "level": "C1", "type": "choice", "tags": ["work", "negotiation", "advanced", "choice"],
+      "speakers": ["Director", "tú"],
+      "turns": [
+        { "type": "line", "speaker": "Director", "text": "Tu desempeño ha sido excelente este año. Queremos renovar tu contrato, aunque la subida salarial será moderada.", "translation": "Your performance has been excellent this year. We want to renew your contract, although the salary increase will be moderate." },
+        { "type": "choice", "prompt": "¿Cómo respondes?", "promptTranslation": "How do you respond?",
+          "options": [
+            { "text": "Agradezco el reconocimiento, pero me gustaría hablar de una subida acorde con el mercado.", "translation": "I appreciate the recognition, but I'd like to discuss a raise in line with the market.", "response": "Entiendo. ¿Tienes una cifra concreta en mente?", "responseTranslation": "I understand. Do you have a specific figure in mind?" },
+            { "text": "El salario no es lo más importante para mí; valoro más la estabilidad y el buen ambiente.", "translation": "Salary isn't most important to me; I value stability and a good atmosphere more.", "response": "Me alegra oír eso. ¿Hay algo más que te gustaría mejorar en tu situación?", "responseTranslation": "I'm glad to hear that. Is there anything else you'd like to improve in your situation?" },
+            { "text": "Si la subida es muy pequeña, tendré que considerar otras ofertas.", "translation": "If the raise is very small, I'll have to consider other offers.", "response": "Lo entiendo. Déjame consultar con mis superiores y te doy una respuesta esta semana.", "responseTranslation": "I understand. Let me consult with my superiors and I'll give you an answer this week." }
+          ]
+        },
+        { "type": "line", "speaker": "Director", "text": "Trasladaré tu situación a la dirección y haré todo lo posible por mejorar las condiciones.", "translation": "I will convey your situation to management and will do everything possible to improve the conditions." },
+        { "type": "question", "prompt": "What does the director promise?", "options": [
+          { "text": "An immediate salary increase", "correct": false, "feedback": "No. Dice que lo trasladará a la dirección." },
+          { "text": "To inform management and try to improve conditions", "correct": true, "feedback": "¡Correcto! Dice que lo trasladará a la dirección y hará lo posible." },
+          { "text": "To end the contract", "correct": false, "feedback": "No. Quiere renovar el contrato." }
+        ]}
+      ]
+    }
+  ]
+}

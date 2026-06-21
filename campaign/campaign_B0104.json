@@ -1,0 +1,958 @@
+{
+  "meta": {
+    "chapterNum": "04",
+    "chapterTitle": {
+      "en": "The Best of All Possible Mornings",
+      "zh": "",
+      "ja": "",
+      "de": "Der beste aller möglichen Morgen",
+      "es": ""
+    },
+    "level": "A2",
+    "artifact": {
+      "icon": "🔍",
+      "name": "A Magnifying Glass",
+      "grammar": "Konjunktiv II · weil/da · Relativsätze mit dessen/deren"
+    },
+    "storyIntro": {
+      "en": "A methodical, cheerful visitor arrives — Gottfried Wilhelm Leibniz, who believes every mystery has a logical explanation, and that this is, in fact, the best of all possible mornings to find one.",
+      "zh": "",
+      "ja": "",
+      "de": "Ein methodischer, fröhlicher Besucher kommt an — Gottfried Wilhelm Leibniz, der glaubt, dass jedes Rätsel eine logische Erklärung hat, und dass dies tatsächlich der beste aller möglichen Morgen ist, um sie zu finden.",
+      "es": ""
+    },
+    "storyOutro": {
+      "en": "The mystery is solved — and the answer is far less sinister than anyone expected. Schopenhauer, of all people, must admit that the world's meaning sometimes comes from nowhere at all.",
+      "zh": "",
+      "ja": "",
+      "de": "Das Rätsel ist gelöst — und die Antwort ist weit weniger finster, als jeder erwartet hatte. Schopenhauer, von allen Menschen, muss zugeben, dass der Sinn der Welt manchmal aus dem Nichts kommt.",
+      "es": ""
+    }
+  },
+  "sections": [
+    {
+      "num": "01",
+      "title": {
+        "en": "A Cheerful Stranger",
+        "zh": "",
+        "ja": "",
+        "de": "Ein fröhlicher Fremder",
+        "es": ""
+      },
+      "vocab": [
+        "fröhlich",
+        "optimistisch",
+        "der Besuch",
+        "vorstellen",
+        "bekannt",
+        "das Problem",
+        "lösen",
+        "helfen",
+        "die Logik",
+        "denken",
+        "erklären",
+        "der Grund"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv030101",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Morning. Nietzsche and Schopenhauer are still discussing the mystery when there is a knock at the door.",
+                "zh": "",
+                "ja": "",
+                "de": "Morgen. Nietzsche und Schopenhauer diskutieren noch das Rätsel, als es an der Tür klopft.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "An older, well-dressed man stands there, smiling broadly.",
+                "zh": "",
+                "ja": "",
+                "de": "Ein älterer, gut gekleideter Mann steht da und lächelt breit.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "Good morning! I am Gottfried Wilhelm Leibniz. I was traveling nearby and heard a philosopher lives here. I could not resist a visit.",
+                "zh": "",
+                "ja": "",
+                "de": "Guten Morgen! Ich bin Gottfried Wilhelm Leibniz. Ich war in der Nähe auf Reisen und habe gehört, dass hier ein Philosoph lebt. Ich konnte einem Besuch nicht widerstehen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Leibniz! This is... unexpected. Please, come in. We have something of a puzzle here, actually.",
+                "zh": "",
+                "ja": "",
+                "de": "Leibniz! Das ist... unerwartet. Bitte, kommen Sie herein. Wir haben hier tatsächlich so etwas wie ein Rätsel.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "A puzzle? Wonderful! I love puzzles. The universe itself is the greatest puzzle of all, and I have spent my whole life trying to understand its logic.",
+                "zh": "",
+                "ja": "",
+                "de": "Ein Rätsel? Wunderbar! Ich liebe Rätsel. Das Universum selbst ist das größte Rätsel von allen, und ich habe mein ganzes Leben damit verbracht, seine Logik zu verstehen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "nietzsche",
+              "text": {
+                "en": "Herr Leibniz, I am Friedrich Nietzsche, a humble student. This is truly an honor.",
+                "zh": "",
+                "ja": "",
+                "de": "Herr Leibniz, ich bin Friedrich Nietzsche, ein bescheidener Student. Das ist wirklich eine Ehre.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "The honor is mine, young man. Now, tell me about this puzzle. I am extremely curious.",
+                "zh": "",
+                "ja": "",
+                "de": "Die Ehre ist meine, junger Mann. Nun, erzählen Sie mir von diesem Rätsel. Ich bin äußerst neugierig.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Someone wrote critical notes in my manuscript, during the night. We do not know who. There is also a strange ink mark, shaped almost like a paw print.",
+                "zh": "",
+                "ja": "",
+                "de": "Jemand hat während der Nacht kritische Notizen in mein Manuskript geschrieben. Wir wissen nicht, wer. Es gibt auch einen seltsamen Tintenfleck, fast wie ein Pfotenabdruck geformt.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "How delightful! Every event, no matter how strange, has a sufficient reason. We simply have not found it yet.",
+                "zh": "",
+                "ja": "",
+                "de": "Wie reizend! Jedes Ereignis, wie seltsam auch immer, hat einen hinreichenden Grund. Wir haben ihn nur noch nicht gefunden.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "nietzsche",
+              "text": {
+                "en": "Herr Schopenhauer is less optimistic about finding a satisfying answer.",
+                "zh": "",
+                "ja": "",
+                "de": "Herr Schopenhauer ist weniger optimistisch, eine zufriedenstellende Antwort zu finden.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "Of course he is. But I believe we live in the best of all possible worlds, and even mysteries here have elegant solutions. Show me everything.",
+                "zh": "",
+                "ja": "",
+                "de": "Natürlich ist er das. Aber ich glaube, wir leben in der besten aller möglichen Welten, und sogar Rätsel haben hier elegante Lösungen. Zeigen Sie mir alles.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "\"The best of all possible worlds.\" I have always found that phrase a little hard to believe, given how much suffering exists in it.",
+                "zh": "",
+                "ja": "",
+                "de": "„Die beste aller möglichen Welten.\" Diesen Satz fand ich schon immer ein bisschen schwer zu glauben, angesichts so viel Leidens, das in ihr existiert.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "A fair challenge! But let us solve one small mystery before we solve the larger problem of suffering, shall we?",
+                "zh": "",
+                "ja": "",
+                "de": "Eine faire Herausforderung! Aber lassen Sie uns zuerst ein kleines Rätsel lösen, bevor wir das größere Problem des Leidens lösen, einverstanden?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Schopenhauer leads Leibniz to the desk. Nietzsche follows closely, notebook ready.",
+                "zh": "",
+                "ja": "",
+                "de": "Schopenhauer führt Leibniz zum Schreibtisch. Nietzsche folgt eng, Notizbuch bereit.",
+                "es": ""
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "What does Leibniz believe about every event, no matter how strange?",
+                "zh": "",
+                "ja": "",
+                "de": "Was glaubt Leibniz über jedes Ereignis, wie seltsam es auch ist?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "It has a sufficient reason.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Es hat einen hinreichenden Grund.",
+                    "es": ""
+                  },
+                  "correct": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "02",
+      "title": {
+        "en": "The Best of All Possible Worlds",
+        "zh": "",
+        "ja": "",
+        "de": "Die beste aller möglichen Welten",
+        "es": ""
+      },
+      "vocab": [
+        "möglich",
+        "die Welt",
+        "wählen",
+        "vollkommen",
+        "der Grund",
+        "weise",
+        "gütig",
+        "das Übel",
+        "notwendig",
+        "rechtfertigen",
+        "das Gleichgewicht",
+        "der Sinn"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "01a",
+          "title": {
+            "en": "GENUINE EXCERPT — Leibniz, \"Theodizee\" (1710)",
+            "zh": "",
+            "ja": "",
+            "de": "ECHTES ZITAT — Leibniz, „Theodizee\" (1710)",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "Direct quotation, Leibniz's most famous phrase, repeated across his \"Theodizee\": \"die beste aller möglichen Welten.\"",
+              "zh": "",
+              "ja": "",
+              "de": "Direktes Zitat, Leibniz' berühmteste Formulierung, wiederholt in seiner „Theodizee\": „die beste aller möglichen Welten.\"",
+              "es": ""
+            }
+          ]
+        },
+        {
+          "num": "01a2",
+          "title": {
+            "en": "MY OWN SUMMARY (not a quotation) — what this idea means",
+            "zh": "",
+            "ja": "",
+            "de": "MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — was diese Idee bedeutet",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "The following is my own restatement, not Leibniz's exact wording: he argued that God, being wise and good, could only have created the best possible world among all the worlds that could have existed — even though this best possible world still contains some evil and suffering, for reasons we may not fully understand.",
+              "zh": "",
+              "ja": "",
+              "de": "Das Folgende ist meine eigene Wiedergabe, nicht Leibniz' genauer Wortlaut: Er argumentierte, dass Gott, da er weise und gütig sei, nur die beste mögliche Welt unter allen möglichen Welten erschaffen haben könne — auch wenn diese beste mögliche Welt immer noch etwas Übel und Leiden enthält, aus Gründen, die wir vielleicht nicht vollständig verstehen.",
+              "es": ""
+            },
+            {
+              "en": "This idea was later mocked by other writers, most famously Voltaire, who found it difficult to accept given the real disasters and suffering in the world.",
+              "zh": "",
+              "ja": "",
+              "de": "Diese Idee wurde später von anderen Schriftstellern verspottet, am berühmtesten von Voltaire, der es angesichts der wirklichen Katastrophen und des Leidens in der Welt schwer fand, sie zu akzeptieren.",
+              "es": ""
+            }
+          ]
+        },
+        {
+          "num": "01b",
+          "title": {
+            "en": "Simplified — Is this really the best world possible?",
+            "zh": "",
+            "ja": "",
+            "de": "Vereinfacht — Ist das wirklich die beste mögliche Welt?",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "Leibniz believed God could only create the best possible world, because God is wise and good.",
+              "zh": "",
+              "ja": "",
+              "de": "Leibniz glaubte, Gott könne nur die beste mögliche Welt erschaffen, weil Gott weise und gütig ist.",
+              "es": ""
+            },
+            {
+              "en": "Even this best world has some bad things in it, but Leibniz thought there must be a good reason for this, even if we cannot see it.",
+              "zh": "",
+              "ja": "",
+              "de": "Sogar diese beste Welt hat einige schlechte Dinge in sich, aber Leibniz dachte, es müsse dafür einen guten Grund geben, auch wenn wir ihn nicht sehen können.",
+              "es": ""
+            },
+            {
+              "en": "Many people disagreed with this idea, especially after terrible events. They asked: how can this be the best possible world?",
+              "zh": "",
+              "ja": "",
+              "de": "Viele Menschen waren mit dieser Idee nicht einverstanden, besonders nach furchtbaren Ereignissen. Sie fragten: Wie kann das die beste mögliche Welt sein?",
+              "es": ""
+            },
+            {
+              "en": "Schopenhauer, as we already know, strongly disagreed with Leibniz's optimism.",
+              "zh": "",
+              "ja": "",
+              "de": "Schopenhauer, wie wir schon wissen, war mit Leibniz' Optimismus stark nicht einverstanden.",
+              "es": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "03",
+      "title": {
+        "en": "Leibniz Examines the Evidence",
+        "zh": "",
+        "ja": "",
+        "de": "Leibniz untersucht die Beweise",
+        "es": ""
+      },
+      "vocab": [
+        "der Beweis",
+        "untersuchen",
+        "die Reihenfolge",
+        "logisch",
+        "der Schritt",
+        "zusammenpassen",
+        "die Lücke",
+        "der Zusammenhang",
+        "annehmen",
+        "ausschließen",
+        "die Schlussfolgerung"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv030301",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Leibniz studies the manuscript, the ink mark, and listens carefully as Nietzsche explains everything they have learned so far.",
+                "zh": "",
+                "ja": "",
+                "de": "Leibniz studiert das Manuskript, den Tintenfleck, und hört aufmerksam zu, als Nietzsche alles erklärt, was sie bisher gelernt haben.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "Let me organize this logically. First: the notes appeared after midnight, using ink from this room.",
+                "zh": "",
+                "ja": "",
+                "de": "Lassen Sie mich das logisch ordnen. Erstens: Die Notizen erschienen nach Mitternacht, mit Tinte aus diesem Zimmer.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "Second: Hegel left before nine in the evening, so he is an unlikely author, unless he returned secretly.",
+                "zh": "",
+                "ja": "",
+                "de": "Zweitens: Hegel ist vor neun Uhr abends gegangen, also ist er als Verfasser unwahrscheinlich, außer er ist heimlich zurückgekommen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "Third: there is an ink mark shaped like a small paw, both near the desk and on the dog's sleeping cushion.",
+                "zh": "",
+                "ja": "",
+                "de": "Drittens: Es gibt einen Tintenfleck, geformt wie eine kleine Pfote, sowohl in der Nähe des Schreibtischs als auch auf dem Schlafkissen des Hundes.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Yes, that is all correct. But none of this explains who actually wrote coherent philosophical sentences.",
+                "zh": "",
+                "ja": "",
+                "de": "Ja, das ist alles richtig. Aber nichts davon erklärt, wer tatsächlich zusammenhängende philosophische Sätze geschrieben hat.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "Patience! Let us walk the path your dog would walk. From the kitchen, through the hallway, to the desk.",
+                "zh": "",
+                "ja": "",
+                "de": "Geduld! Lassen Sie uns den Weg gehen, den Ihr Hund gehen würde. Von der Küche, durch den Flur, zum Schreibtisch.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "nietzsche",
+              "text": {
+                "en": "There is a small table along that path, with ink and paper for late-night work.",
+                "zh": "",
+                "ja": "",
+                "de": "Es gibt einen kleinen Tisch entlang dieses Weges, mit Tinte und Papier für späte Arbeit.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "Exactly. Now, Herr Schopenhauer, did you yourself leave any paper on that small table recently? Old notes, perhaps, or loose pages?",
+                "zh": "",
+                "ja": "",
+                "de": "Genau. Nun, Herr Schopenhauer, haben Sie selbst kürzlich Papier auf diesem kleinen Tisch liegen lassen? Alte Notizen, vielleicht, oder losen Seiten?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Actually... yes. I had written some loose critical notes to myself, days ago. Disagreements with my own arguments, things I planned to revise later.",
+                "zh": "",
+                "ja": "",
+                "de": "Tatsächlich... ja. Ich hatte mir vor Tagen einige lose kritische Notizen geschrieben. Widersprüche zu meinen eigenen Argumenten, Dinge, die ich später überarbeiten wollte.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "Now we are close to an answer! Where exactly did you leave these notes?",
+                "zh": "",
+                "ja": "",
+                "de": "Jetzt sind wir nahe an einer Antwort! Wo genau haben Sie diese Notizen gelassen?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "On that very small table. I must have forgotten about them.",
+                "zh": "",
+                "ja": "",
+                "de": "Auf genau diesem kleinen Tisch. Ich muss sie vergessen haben.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "nietzsche",
+              "text": {
+                "en": "Herr Leibniz, are you suggesting what I think you are suggesting?",
+                "zh": "",
+                "ja": "",
+                "de": "Herr Leibniz, schlagen Sie vor, was ich denke, dass Sie vorschlagen?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "I am merely connecting facts, young man. Let us go look at that table together, right now.",
+                "zh": "",
+                "ja": "",
+                "de": "Ich verbinde lediglich Fakten, junger Mann. Lassen Sie uns jetzt zusammen zu diesem Tisch gehen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "The three of them walk together down the hallway, toward the small table near the kitchen.",
+                "zh": "",
+                "ja": "",
+                "de": "Die drei gehen gemeinsam den Flur entlang, zu dem kleinen Tisch nahe der Küche.",
+                "es": ""
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "What did Schopenhauer leave on the small table days ago?",
+                "zh": "",
+                "ja": "",
+                "de": "Was hat Schopenhauer vor Tagen auf dem kleinen Tisch liegen lassen?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "His own loose critical notes.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Seine eigenen losen kritischen Notizen.",
+                    "es": ""
+                  },
+                  "correct": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "04",
+      "title": {
+        "en": "Sufficient Reason",
+        "zh": "",
+        "ja": "",
+        "de": "Der hinreichende Grund",
+        "es": ""
+      },
+      "vocab": [
+        "der Grund",
+        "hinreichend",
+        "erklären",
+        "warum",
+        "jedes",
+        "geschehen",
+        "zufällig",
+        "notwendig",
+        "logisch",
+        "nachvollziehen",
+        "verstehen",
+        "die Ursache"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "02a",
+          "title": {
+            "en": "MY OWN SUMMARY (not a quotation) — Leibniz's principle of sufficient reason, in my own words",
+            "zh": "",
+            "ja": "",
+            "de": "MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — Leibniz' Prinzip vom hinreichenden Grund, in meinen eigenen Worten",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "This passage restates, in my own words, one of Leibniz's central philosophical principles (found across his works, including the \"Monadologie,\" 1714): nothing happens without a reason why it is so, and not otherwise. Every event, however strange, fits into a chain of causes that careful thinking can eventually uncover.",
+              "zh": "",
+              "ja": "",
+              "de": "Diese Passage gibt, in meinen eigenen Worten, eines von Leibniz' zentralen philosophischen Prinzipien wieder (zu finden in seinen Werken, einschließlich der „Monadologie\", 1714): Nichts geschieht ohne einen Grund, warum es so ist, und nicht anders. Jedes Ereignis, wie seltsam auch immer, passt in eine Kette von Ursachen, die sorgfältiges Denken letztendlich aufdecken kann.",
+              "es": ""
+            },
+            {
+              "en": "This principle is precisely why Leibniz approaches the manuscript mystery with such calm confidence — for him, an unexplained event is simply an explanation not yet found.",
+              "zh": "",
+              "ja": "",
+              "de": "Genau dieses Prinzip ist der Grund, warum Leibniz dem Manuskript-Rätsel mit solcher ruhiger Zuversicht begegnet — für ihn ist ein unerklärtes Ereignis einfach eine noch nicht gefundene Erklärung.",
+              "es": ""
+            }
+          ]
+        },
+        {
+          "num": "02b",
+          "title": {
+            "en": "Simplified — Everything has a reason",
+            "zh": "",
+            "ja": "",
+            "de": "Vereinfacht — Alles hat einen Grund",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "Leibniz believed something important: nothing happens without a reason.",
+              "zh": "",
+              "ja": "",
+              "de": "Leibniz glaubte etwas Wichtiges: Nichts geschieht ohne einen Grund.",
+              "es": ""
+            },
+            {
+              "en": "Even strange or confusing events have a logical explanation, if we look carefully enough.",
+              "zh": "",
+              "ja": "",
+              "de": "Sogar seltsame oder verwirrende Ereignisse haben eine logische Erklärung, wenn wir sorgfältig genug schauen.",
+              "es": ""
+            },
+            {
+              "en": "This is why Leibniz is not worried by the mystery of the manuscript. He believes the answer is simply waiting to be found.",
+              "zh": "",
+              "ja": "",
+              "de": "Deshalb ist Leibniz nicht besorgt über das Rätsel des Manuskripts. Er glaubt, die Antwort wartet einfach darauf, gefunden zu werden.",
+              "es": ""
+            },
+            {
+              "en": "This calm, logical attitude makes him a very useful detective.",
+              "zh": "",
+              "ja": "",
+              "de": "Diese ruhige, logische Haltung macht ihn zu einem sehr nützlichen Detektiv.",
+              "es": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "05",
+      "title": {
+        "en": "The Solution",
+        "zh": "",
+        "ja": "",
+        "de": "Die Lösung",
+        "es": ""
+      },
+      "vocab": [
+        "die Lösung",
+        "lösen",
+        "verstehen",
+        "der Zufall",
+        "die Bedeutung",
+        "zugeben",
+        "lachen",
+        "erleichtert",
+        "überrascht",
+        "die Ironie",
+        "endlich",
+        "klar"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv030501",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "At the small table, Leibniz examines everything closely: the table, the ink bottle, the floor nearby.",
+                "zh": "",
+                "ja": "",
+                "de": "Am kleinen Tisch untersucht Leibniz alles genau: den Tisch, das Tintenfass, den Boden in der Nähe.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "Look here. The ink bottle stands very close to the edge. And look at these scratches on the floor.",
+                "zh": "",
+                "ja": "",
+                "de": "Schauen Sie hier. Das Tintenfass steht sehr nah am Rand. Und schauen Sie sich diese Kratzer auf dem Boden an.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Those could be from anything.",
+                "zh": "",
+                "ja": "",
+                "de": "Die könnten von allem stammen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "Possibly. But combined with everything else, I believe I understand what happened. May I propose a theory?",
+                "zh": "",
+                "ja": "",
+                "de": "Möglicherweise. Aber zusammen mit allem anderen, glaube ich, verstehe ich, was passiert ist. Darf ich eine Theorie vorschlagen?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Please. I am beyond curious at this point.",
+                "zh": "",
+                "ja": "",
+                "de": "Bitte. Ich bin an diesem Punkt mehr als neugierig.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "Your dog sleeps near the kitchen fire. Something — perhaps a cat from outside, or simply a loud noise — startled him during the night.",
+                "zh": "",
+                "ja": "",
+                "de": "Ihr Hund schläft nahe am Küchenfeuer. Etwas — vielleicht eine Katze von draußen, oder einfach ein lautes Geräusch — hat ihn während der Nacht erschreckt.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "Startled, he ran through the hallway, knocking over the ink bottle on the small table, and stepping in the spilled ink with his paws.",
+                "zh": "",
+                "ja": "",
+                "de": "Erschreckt, lief er durch den Flur, stieß das Tintenfass auf dem kleinen Tisch um, und trat mit seinen Pfoten in die verschüttete Tinte.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "He then ran past your desk, where your own loose notes — your real critical notes, written days ago, in your own hand — were sitting on top of the manuscript pages.",
+                "zh": "",
+                "ja": "",
+                "de": "Dann lief er an Ihrem Schreibtisch vorbei, wo Ihre eigenen losen Notizen — Ihre echten kritischen Notizen, vor Tagen geschrieben, in Ihrer eigenen Handschrift — auf den Manuskriptseiten lagen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "nietzsche",
+              "text": {
+                "en": "Wait. You are saying the \"mysterious\" notes were Schopenhauer's own old notes, simply moved and mixed in with the manuscript by accident?",
+                "zh": "",
+                "ja": "",
+                "de": "Warten Sie. Sie sagen, die „mysteriösen\" Notizen waren Schopenhauers eigene alte Notizen, einfach durch Zufall verschoben und mit dem Manuskript vermischt?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "Precisely! In his sleepy, half-awake state that morning, Herr Schopenhauer did not recognize his own handwriting from a few days earlier. He believed it was new, and a stranger's.",
+                "zh": "",
+                "ja": "",
+                "de": "Genau! In seinem schläfrigen, halbwachen Zustand an jenem Morgen erkannte Herr Schopenhauer seine eigene Handschrift von wenigen Tagen zuvor nicht wieder. Er glaubte, sie sei neu, und von einem Fremden.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "That is... that is absurd. And yet... I did write critical notes to myself last week. I remember now. I had forgotten completely.",
+                "zh": "",
+                "ja": "",
+                "de": "Das ist... das ist absurd. Und doch... ich habe mir letzte Woche kritische Notizen geschrieben. Ich erinnere mich jetzt. Ich hatte es völlig vergessen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "nietzsche",
+              "text": {
+                "en": "So there was no mysterious visitor at all. Only your own forgotten thoughts, and a startled dog with ink on his paws.",
+                "zh": "",
+                "ja": "",
+                "de": "Also gab es überhaupt keinen mysteriösen Besucher. Nur Ihre eigenen vergessenen Gedanken, und einen erschreckten Hund mit Tinte an den Pfoten.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "The world often works this way. What looks like a deep mystery is sometimes simply a small, forgotten, very human moment.",
+                "zh": "",
+                "ja": "",
+                "de": "Die Welt funktioniert oft so. Was wie ein tiefes Rätsel aussieht, ist manchmal einfach ein kleiner, vergessener, sehr menschlicher Moment.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "There is an uncomfortable irony here. I, who pride myself on seeing the world clearly, was fooled by my own forgetfulness and a frightened dog.",
+                "zh": "",
+                "ja": "",
+                "de": "Da ist eine unangenehme Ironie. Ich, der sich rühmt, die Welt klar zu sehen, wurde von meiner eigenen Vergesslichkeit und einem erschreckten Hund getäuscht.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "Even the clearest thinkers are still human, Herr Schopenhauer. Perhaps that, too, fits into the best of all possible worlds.",
+                "zh": "",
+                "ja": "",
+                "de": "Sogar die klarsten Denker sind immer noch Menschen, Herr Schopenhauer. Vielleicht passt sogar das in die beste aller möglichen Welten.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "I will not go that far. But I admit, I am relieved. And a little amused, despite myself.",
+                "zh": "",
+                "ja": "",
+                "de": "So weit werde ich nicht gehen. Aber ich gebe zu, ich bin erleichtert. Und ein bisschen amüsiert, trotz allem.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "nietzsche",
+              "text": {
+                "en": "So my exciting theory about a secret philosophical rival turns out to be... your own forgotten notes and a clumsy dog.",
+                "zh": "",
+                "ja": "",
+                "de": "Also stellt sich meine aufregende Theorie über einen geheimen philosophischen Rivalen heraus als... Ihre eigenen vergessenen Notizen und ein ungeschickter Hund.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leibniz",
+              "text": {
+                "en": "The best mysteries often have the simplest solutions, young man. Remember that, in your own philosophy one day.",
+                "zh": "",
+                "ja": "",
+                "de": "Die besten Rätsel haben oft die einfachsten Lösungen, junger Mann. Denken Sie daran, eines Tages in Ihrer eigenen Philosophie.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Schopenhauer kneels down and scratches his dog's ears. The dog, unaware of the trouble he caused, simply wags his tail happily.",
+                "zh": "",
+                "ja": "",
+                "de": "Schopenhauer kniet sich hin und kratzt seinem Hund die Ohren. Der Hund, sich der Schwierigkeiten, die er verursacht hat, nicht bewusst, wedelt einfach glücklich mit dem Schwanz.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Well. At least one member of this household remains entirely untroubled by philosophy.",
+                "zh": "",
+                "ja": "",
+                "de": "Nun. Wenigstens ein Mitglied dieses Haushalts bleibt von Philosophie völlig unberührt.",
+                "es": ""
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "What really caused the \"mysterious\" notes in the manuscript?",
+                "zh": "",
+                "ja": "",
+                "de": "Was hat die „mysteriösen\" Notizen im Manuskript wirklich verursacht?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "Schopenhauer's own forgotten notes, knocked onto the manuscript by his startled dog.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Schopenhauers eigene vergessene Notizen, von seinem erschreckten Hund auf das Manuskript gestoßen.",
+                    "es": ""
+                  },
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "What do you think of this ending? Did you expect a simpler or a stranger explanation?",
+                "zh": "",
+                "ja": "",
+                "de": "Was hältst du von diesem Ende? Hast du eine einfachere oder eine seltsamere Erklärung erwartet?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "I expected something simpler than this.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Ich habe etwas Einfacheres als das erwartet.",
+                    "es": ""
+                  },
+                  "correct": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    }
+  ]
+}

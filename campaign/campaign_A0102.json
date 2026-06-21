@@ -1,0 +1,2150 @@
+{
+  "meta": {
+    "chapterNum": "02",
+    "chapterTitle": {
+      "en": "First Mission",
+      "zh": "第一个任务",
+      "ja": "最初のミッション",
+      "de": "Erste Mission",
+      "es": "Primera misión"
+    },
+    "level": "N5",
+    "artifact": {
+      "icon": "🕐",
+      "name": "Bronze Clock",
+      "grammar": "Present · Past · Negative · Verbs"
+    },
+    "storyIntro": {
+      "en": "The first mission has arrived from the guild. You must go to a nearby village. Something is happening there.",
+      "zh": "公会的第一个任务来了。你必须去附近的村子。那里发生了一些事情。",
+      "ja": "ギルドから最初のミッションが来た。近くの村に行かなければならない。何かが村で起きている。",
+      "de": "Der erste Auftrag der Gilde ist angekommen. Du musst in ein nahes Dorf gehen. Dort passiert etwas.",
+      "es": "Ha llegado la primera misión del gremio. Debes ir a un pueblo cercano. Allí está pasando algo."
+    },
+    "storyOutro": {
+      "en": "The mission is complete. The villagers are relieved. But the mystery of the crystal remains unsolved.",
+      "zh": "任务完成了。村民们松了口气。但水晶的谜题仍未解决。",
+      "ja": "ミッションを終えた。村の人たちは安心した。でも、クリスタルのことはまだわからない。",
+      "de": "Die Mission ist abgeschlossen. Die Dorfbewohner sind erleichtert. Aber das Rätsel des Kristalls bleibt ungelöst.",
+      "es": "La misión está completada. Los aldeanos están aliviados. Pero el misterio del cristal sigue sin resolverse."
+    }
+  },
+  "sections": [
+    {
+      "num": "01",
+      "title": {
+        "en": "The Mission Scroll",
+        "zh": "任务卷轴",
+        "ja": "ミッションの巻物",
+        "de": "Die Missionsrolle",
+        "es": "El pergamino de la misión"
+      },
+      "vocab": [
+        "いく",
+        "くる",
+        "たべる",
+        "のむ",
+        "みる",
+        "きく　はなす",
+        "よむ",
+        "かく",
+        "まいにち",
+        "いま",
+        "きのう",
+        "きょう",
+        "あした",
+        "なんじ"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "01",
+          "title": {
+            "en": "The Mission Scroll",
+            "zh": "任务卷轴",
+            "ja": "ミッションの巻物",
+            "de": "Die Missionsrolle",
+            "es": "El pergamino de la misión"
+          },
+          "lines": [
+            {
+              "en": "MISSION SCROLL",
+              "zh": "任务卷轴",
+              "ja": "ミッションの巻物",
+              "de": "MISSIONSROLLE",
+              "es": "PERGAMINO DE MISIÓN"
+            },
+            {
+              "en": "From: Guild Master Leon",
+              "zh": "来自：公会长里昂",
+              "ja": "差出人：ギルドマスター レオン",
+              "de": "Von: Gildenmeister Leon",
+              "es": "De: Maestro del gremio León"
+            },
+            {
+              "en": "To: Alex and Emma, Apprentice Adventurers",
+              "zh": "致：阿历克斯和艾玛，见习冒险者",
+              "ja": "宛先：アレックスとエマ、見習い冒険者",
+              "de": "An: Alex und Emma, Lehrlings-Abenteurer",
+              "es": "Para: Alex y Emma, aventureros aprendices"
+            },
+            {
+              "en": "Mission: River Village",
+              "zh": "任务：河边村",
+              "ja": "ミッション：川の村",
+              "de": "Mission: Flussdorf",
+              "es": "Misión: Pueblo del Río"
+            },
+            {
+              "en": "Please go to River Village.",
+              "zh": "请去河边村。",
+              "ja": "川の村に行ってください。",
+              "de": "Bitte geht nach Flussdorf.",
+              "es": "Por favor, id al Pueblo del Río."
+            },
+            {
+              "en": "The village is two hours from Stonehaven.",
+              "zh": "这个村子离石港镇两个小时路程。",
+              "ja": "村はストーンヘイブンから二時間です。",
+              "de": "Das Dorf ist zwei Stunden von Stonehaven entfernt.",
+              "es": "El pueblo está a dos horas de Stonehaven."
+            },
+            {
+              "en": "Walk south. Then walk east at the big tree.",
+              "zh": "向南走。然后在大树处向东走。",
+              "ja": "南へ歩いてください。それから大きな木のところで東へ歩いてください。",
+              "de": "Geht südwärts. Dann geht an dem großen Baum ostwärts.",
+              "es": "Camina hacia el sur. Luego camina hacia el este en el árbol grande."
+            },
+            {
+              "en": "Talk to the people of the village.",
+              "zh": "和村里的人们交谈。",
+              "ja": "村の人たちと話してください。",
+              "de": "Sprecht mit den Menschen des Dorfes.",
+              "es": "Habla con la gente del pueblo."
+            },
+            {
+              "en": "Listen to their problems.",
+              "zh": "听他们的问题。",
+              "ja": "彼らの悩みを聞いてください。",
+              "de": "Hört ihre Probleme.",
+              "es": "Escucha sus problemas."
+            },
+            {
+              "en": "Help them if you can.",
+              "zh": "如果可以的话，帮助他们。",
+              "ja": "できれば助けてください。",
+              "de": "Helft ihnen, wenn ihr könnt.",
+              "es": "Ayúdales si puedes."
+            },
+            {
+              "en": "Please come back before dark.",
+              "zh": "请在天黑前回来。",
+              "ja": "暗くなる前に帰ってきてください。",
+              "de": "Bitte kommt vor der Dunkelheit zurück.",
+              "es": "Por favor, volved antes de que oscurezca."
+            },
+            {
+              "en": "Be safe. I am counting on you.",
+              "zh": "保重。我在依靠你们。",
+              "ja": "気をつけてください。頼んでいます。",
+              "de": "Seid sicher. Ich zähle auf euch.",
+              "es": "Estad seguros. Cuento con vosotros."
+            },
+            {
+              "en": "Leon",
+              "zh": "里昂",
+              "ja": "レオン",
+              "de": "Leon",
+              "es": "León"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "02",
+      "title": {
+        "en": "Emma's Travel Diary",
+        "zh": "艾玛的旅行日记",
+        "ja": "エマの旅日記",
+        "de": "Emmas Reisetagebuch",
+        "es": "El diario de viaje de Emma"
+      },
+      "vocab": [
+        "あるく",
+        "みち　みぎ　ひだり　まっすぐ　きた　みなみ　ひがし　にし　ちかい　とおい　むら　まち"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "02",
+          "title": {
+            "en": "Emma's Travel Diary",
+            "zh": "艾玛的旅行日记",
+            "ja": "エマの旅日記",
+            "de": "Emmas Reisetagebuch",
+            "es": "El diario de viaje de Emma"
+          },
+          "lines": [
+            {
+              "en": "Today is our first mission day!",
+              "zh": "今天是我们第一个任务日！",
+              "ja": "今日は最初のミッションの日です！",
+              "de": "Heute ist unser erster Missionstag!",
+              "es": "¡Hoy es nuestro primer día de misión!"
+            },
+            {
+              "en": "I got up early. I ate breakfast with Alex.",
+              "zh": "我很早起床了。我和阿历克斯一起吃了早饭。",
+              "ja": "早く起きました。アレックスと一緒に朝ごはんを食べました。",
+              "de": "Ich stand früh auf. Ich frühstückte mit Alex.",
+              "es": "Me levanté temprano. Desayuné con Alex."
+            },
+            {
+              "en": "We left the guild at eight in the morning.",
+              "zh": "我们早上八点离开了公会。",
+              "ja": "朝八時にギルドを出発しました。",
+              "de": "Wir verließen die Gilde um acht Uhr morgens.",
+              "es": "Salimos del gremio a las ocho de la mañana."
+            },
+            {
+              "en": "Leon waved to us. He said \"Be safe!\"",
+              "zh": "里昂向我们挥手。他说\"保重！\"",
+              "ja": "レオンさんが手を振ってくれました。「気をつけて！」と言いました。",
+              "de": "Leon winkte uns zu. Er sagte „Seid sicher!\"",
+              "es": "León nos saludó con la mano. Dijo «¡Estad seguros!»"
+            },
+            {
+              "en": "We walked south from the guild.",
+              "zh": "我们从公会向南走。",
+              "ja": "ギルドから南へ歩きました。",
+              "de": "Wir gingen südlich von der Gilde.",
+              "es": "Caminamos hacia el sur desde el gremio."
+            },
+            {
+              "en": "The road was quiet. There were not many people.",
+              "zh": "路上很安静。人不多。",
+              "ja": "道は静かでした。人があまりいませんでした。",
+              "de": "Der Weg war ruhig. Es gab nicht viele Menschen.",
+              "es": "El camino estaba tranquilo. No había mucha gente."
+            },
+            {
+              "en": "We saw a big tree on the left. Then we turned east.",
+              "zh": "我们看到左边有一棵大树。然后我们向东转。",
+              "ja": "左に大きな木が見えました。それから東へ曲がりました。",
+              "de": "Wir sahen einen großen Baum auf der linken Seite. Dann bogen wir nach Osten ab.",
+              "es": "Vimos un árbol grande a la izquierda. Luego giramos hacia el este."
+            },
+            {
+              "en": "After one hour, I was a little tired.",
+              "zh": "一个小时后，我有点累了。",
+              "ja": "一時間後、少し疲れました。",
+              "de": "Nach einer Stunde war ich ein bisschen müde.",
+              "es": "Después de una hora, estaba un poco cansada."
+            },
+            {
+              "en": "But Alex was walking fast. I tried to walk fast too.",
+              "zh": "但阿历克斯走得很快。我也试着走快一点。",
+              "ja": "でも、アレックスは速く歩いていました。わたしも速く歩こうとしました。",
+              "de": "Aber Alex lief schnell. Ich versuchte auch, schnell zu laufen.",
+              "es": "Pero Alex caminaba rápido. Yo también intenté caminar rápido."
+            },
+            {
+              "en": "Then we saw the village. It was small and quiet.",
+              "zh": "然后我们看到了村子。它又小又安静。",
+              "ja": "それから村が見えました。小さくて静かでした。",
+              "de": "Dann sahen wir das Dorf. Es war klein und ruhig.",
+              "es": "Entonces vimos el pueblo. Era pequeño y tranquilo."
+            },
+            {
+              "en": "We arrived at two hours. Good!",
+              "zh": "我们两个小时就到了。太好了！",
+              "ja": "二時間で着きました。よかった！",
+              "de": "Wir kamen in zwei Stunden an. Gut!",
+              "es": "Llegamos en dos horas. ¡Bien!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "03",
+      "title": {
+        "en": "The Village Signpost",
+        "zh": "村子的路标",
+        "ja": "村の道標",
+        "de": "Das Dorfwegzeichen",
+        "es": "El letrero del pueblo"
+      },
+      "vocab": [
+        "むら　かわ　みず　やま　き　みち　はし　いえ　ひと　なんにん"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "03",
+          "title": {
+            "en": "Signs in River Village",
+            "zh": "河边村的标志",
+            "ja": "川の村の標識",
+            "de": "Schilder in Flussdorf",
+            "es": "Letreros en el Pueblo del Río"
+          },
+          "lines": [
+            {
+              "en": "WELCOME TO RIVER VILLAGE",
+              "zh": "欢迎来到河边村",
+              "ja": "川の村へようこそ",
+              "de": "WILLKOMMEN IN FLUSSDORF",
+              "es": "BIENVENIDO AL PUEBLO DEL RÍO"
+            },
+            {
+              "en": "Population: thirty people",
+              "zh": "人口：三十人",
+              "ja": "人口：三十人",
+              "de": "Einwohnerzahl: dreißig Personen",
+              "es": "Población: treinta personas"
+            },
+            {
+              "en": "River Village is a small and quiet village.",
+              "zh": "河边村是一个小而安静的村庄。",
+              "ja": "川の村は小さくて静かな村です。",
+              "de": "Flussdorf ist ein kleines und ruhiges Dorf.",
+              "es": "El Pueblo del Río es un pueblo pequeño y tranquilo."
+            },
+            {
+              "en": "The river is to the east.",
+              "zh": "河流在东边。",
+              "ja": "川は東にあります。",
+              "de": "Der Fluss liegt im Osten.",
+              "es": "El río está al este."
+            },
+            {
+              "en": "The forest is to the north.",
+              "zh": "森林在北边。",
+              "ja": "森は北にあります。",
+              "de": "Der Wald liegt im Norden.",
+              "es": "El bosque está al norte."
+            },
+            {
+              "en": "---",
+              "zh": "---",
+              "ja": "---",
+              "de": "---",
+              "es": "---"
+            },
+            {
+              "en": "The village has:",
+              "zh": "这个村子有：",
+              "ja": "村には：",
+              "de": "Das Dorf hat:",
+              "es": "El pueblo tiene:"
+            },
+            {
+              "en": "One well",
+              "zh": "一口水井",
+              "ja": "井戸が一つ",
+              "de": "Einen Brunnen",
+              "es": "Un pozo"
+            },
+            {
+              "en": "One inn",
+              "zh": "一家旅馆",
+              "ja": "宿屋が一軒",
+              "de": "Eine Herberge",
+              "es": "Una posada"
+            },
+            {
+              "en": "One shop",
+              "zh": "一家商店",
+              "ja": "お店が一軒",
+              "de": "Einen Laden",
+              "es": "Una tienda"
+            },
+            {
+              "en": "Ten houses",
+              "zh": "十栋房子",
+              "ja": "家が十軒",
+              "de": "Zehn Häuser",
+              "es": "Diez casas"
+            },
+            {
+              "en": "---",
+              "zh": "---",
+              "ja": "---",
+              "de": "---",
+              "es": "---"
+            },
+            {
+              "en": "Please do not go into the forest alone.",
+              "zh": "请不要独自进入森林。",
+              "ja": "一人で森に入らないでください。",
+              "de": "Bitte geht nicht alleine in den Wald.",
+              "es": "Por favor, no entres al bosque solo."
+            },
+            {
+              "en": "The forest is dangerous at night.",
+              "zh": "森林在晚上很危险。",
+              "ja": "夜の森は危ないです。",
+              "de": "Der Wald ist nachts gefährlich.",
+              "es": "El bosque es peligroso de noche."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "04",
+      "title": {
+        "en": "A Note Found in the Forest",
+        "zh": "在森林里找到的便条",
+        "ja": "森で見つけたメモ",
+        "de": "Ein im Wald gefundener Zettel",
+        "es": "Una nota encontrada en el bosque"
+      },
+      "vocab": [
+        "こわい　おとうさん　おかあさん　たすける　かえる　まつ　ひとり　なく　さむい　おなか すく"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "04",
+          "title": {
+            "en": "A Note Found in the Forest",
+            "zh": "在森林里找到的便条",
+            "ja": "森で見つけたメモ",
+            "de": "Ein im Wald gefundener Zettel",
+            "es": "Una nota encontrada en el bosque"
+          },
+          "lines": [
+            {
+              "en": "This note was on the ground.",
+              "zh": "这张便条在地上。",
+              "ja": "このメモは地面にありました。",
+              "de": "Dieser Zettel lag auf dem Boden.",
+              "es": "Esta nota estaba en el suelo."
+            },
+            {
+              "en": "The writing is small. It is hard to read.",
+              "zh": "字迹很小。很难读。",
+              "ja": "文字が小さいです。読みにくいです。",
+              "de": "Die Schrift ist klein. Es ist schwer zu lesen.",
+              "es": "La letra es pequeña. Es difícil de leer."
+            },
+            {
+              "en": "---",
+              "zh": "---",
+              "ja": "---",
+              "de": "---",
+              "es": "---"
+            },
+            {
+              "en": "Father and Mother,",
+              "zh": "爸爸妈妈，",
+              "ja": "おとうさん、おかあさんへ",
+              "de": "Vater und Mutter,",
+              "es": "Papá y mamá,"
+            },
+            {
+              "en": "I am in the forest.",
+              "zh": "我在森林里。",
+              "ja": "わたしは森にいます。",
+              "de": "Ich bin im Wald.",
+              "es": "Estoy en el bosque."
+            },
+            {
+              "en": "I came here yesterday to look at the river.",
+              "zh": "我昨天来这里看河流的。",
+              "ja": "昨日、川を見に来ました。",
+              "de": "Ich kam gestern hierher, um den Fluss anzuschauen.",
+              "es": "Vine aquí ayer para ver el río."
+            },
+            {
+              "en": "But now I do not know where I am.",
+              "zh": "但现在我不知道我在哪里。",
+              "ja": "でも今、どこにいるかわかりません。",
+              "de": "Aber jetzt weiß ich nicht, wo ich bin.",
+              "es": "Pero ahora no sé dónde estoy."
+            },
+            {
+              "en": "I am a little scared.",
+              "zh": "我有点害怕。",
+              "ja": "少し怖いです。",
+              "de": "Ich habe ein bisschen Angst.",
+              "es": "Tengo un poco de miedo."
+            },
+            {
+              "en": "I am also hungry.",
+              "zh": "我也饿了。",
+              "ja": "お腹もすいています。",
+              "de": "Ich bin auch hungrig.",
+              "es": "También tengo hambre."
+            },
+            {
+              "en": "I found a small cave. I am sleeping in the cave.",
+              "zh": "我找到了一个小山洞。我在山洞里睡觉。",
+              "ja": "小さな洞窟を見つけました。洞窟の中で寝ています。",
+              "de": "Ich fand eine kleine Höhle. Ich schlafe in der Höhle.",
+              "es": "Encontré una pequeña cueva. Estoy durmiendo en la cueva."
+            },
+            {
+              "en": "Please come and find me.",
+              "zh": "请来找我。",
+              "ja": "来て、見つけてください。",
+              "de": "Bitte kommt und findet mich.",
+              "es": "Por favor, venid a buscarme."
+            },
+            {
+              "en": "I am waiting here.",
+              "zh": "我在这里等。",
+              "ja": "ここで待っています。",
+              "de": "Ich warte hier.",
+              "es": "Estoy esperando aquí."
+            },
+            {
+              "en": "Tom",
+              "zh": "汤姆",
+              "ja": "トム",
+              "de": "Tom",
+              "es": "Tom"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "05",
+      "title": {
+        "en": "Tom's Diary",
+        "zh": "汤姆的日记",
+        "ja": "トムの日記",
+        "de": "Toms Tagebuch",
+        "es": "El diario de Tom"
+      },
+      "vocab": [
+        "もり　むし　とり　はな　みず　かわ　さかな　おおきい　ちいさい　すごい　こわい　たのしい"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "05",
+          "title": {
+            "en": "Tom's Diary",
+            "zh": "汤姆的日记",
+            "ja": "トムの日記",
+            "de": "Toms Tagebuch",
+            "es": "El diario de Tom"
+          },
+          "lines": [
+            {
+              "en": "My name is Tom. I am twelve years old.",
+              "zh": "我叫汤姆。我十二岁。",
+              "ja": "わたしの名前はトムです。十二歳です。",
+              "de": "Mein Name ist Tom. Ich bin zwölf Jahre alt.",
+              "es": "Me llamo Tom. Tengo doce años."
+            },
+            {
+              "en": "I live in River Village. It is a small village.",
+              "zh": "我住在河边村。它是个小村庄。",
+              "ja": "川の村に住んでいます。小さな村です。",
+              "de": "Ich lebe in Flussdorf. Es ist ein kleines Dorf.",
+              "es": "Vivo en el Pueblo del Río. Es un pueblo pequeño."
+            },
+            {
+              "en": "I like the forest. There are many interesting things there.",
+              "zh": "我喜欢森林。那里有很多有趣的东西。",
+              "ja": "森が好きです。おもしろいものがたくさんあります。",
+              "de": "Ich mag den Wald. Dort gibt es viele interessante Dinge.",
+              "es": "Me gusta el bosque. Hay muchas cosas interesantes allí."
+            },
+            {
+              "en": "Yesterday I saw a big bird in the forest.",
+              "zh": "昨天我在森林里看到了一只大鸟。",
+              "ja": "昨日、森で大きな鳥を見ました。",
+              "de": "Gestern sah ich einen großen Vogel im Wald.",
+              "es": "Ayer vi un pájaro grande en el bosque."
+            },
+            {
+              "en": "It was white. It was very beautiful.",
+              "zh": "它是白色的。非常漂亮。",
+              "ja": "白くて、とてもきれいでした。",
+              "de": "Es war weiß. Es war sehr schön.",
+              "es": "Era blanco. Era muy hermoso."
+            },
+            {
+              "en": "I wanted to follow it. So I went deeper into the forest.",
+              "zh": "我想跟着它。所以我走进了更深的森林。",
+              "ja": "追いかけたいと思いました。それで、森の奥に入りました。",
+              "de": "Ich wollte ihm folgen. Also ging ich tiefer in den Wald.",
+              "es": "Quería seguirlo. Así que me adentré más en el bosque."
+            },
+            {
+              "en": "The bird was fast. I ran after it.",
+              "zh": "鸟飞得很快。我追着它跑。",
+              "ja": "鳥は速かったです。追いかけました。",
+              "de": "Der Vogel war schnell. Ich rannte ihm nach.",
+              "es": "El pájaro era rápido. Corrí tras él."
+            },
+            {
+              "en": "Then the bird went away. I stopped.",
+              "zh": "然后鸟飞走了。我停了下来。",
+              "ja": "それから鳥はいなくなりました。止まりました。",
+              "de": "Dann flog der Vogel weg. Ich hielt an.",
+              "es": "Entonces el pájaro se fue. Me detuve."
+            },
+            {
+              "en": "I looked around. I did not know where I was.",
+              "zh": "我环顾四周。我不知道我在哪里。",
+              "ja": "周りを見ました。どこにいるかわかりませんでした。",
+              "de": "Ich schaute mich um. Ich wusste nicht, wo ich war.",
+              "es": "Miré a mi alrededor. No sabía dónde estaba."
+            },
+            {
+              "en": "It was getting dark. I was scared.",
+              "zh": "天色渐暗。我很害怕。",
+              "ja": "暗くなってきました。怖かったです。",
+              "de": "Es wurde dunkel. Ich hatte Angst.",
+              "es": "Se estaba haciendo oscuro. Tenía miedo."
+            },
+            {
+              "en": "I found a cave and went inside. It was cold but safe.",
+              "zh": "我找到了一个山洞，走了进去。很冷但很安全。",
+              "ja": "洞窟を見つけて、中に入りました。寒いですが、安全です。",
+              "de": "Ich fand eine Höhle und ging hinein. Es war kalt, aber sicher.",
+              "es": "Encontré una cueva y entré. Hacía frío pero era seguro."
+            },
+            {
+              "en": "I hope my mother and father are not too worried.",
+              "zh": "我希望我的父母不要太担心。",
+              "ja": "お父さんとお母さんが心配しすぎていないといいです。",
+              "de": "Ich hoffe, meine Mutter und mein Vater machen sich nicht zu viele Sorgen.",
+              "es": "Espero que mi madre y mi padre no estén demasiado preocupados."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "06",
+      "title": {
+        "en": "Walking to the Village",
+        "zh": "走向村子",
+        "ja": "村への道",
+        "de": "Auf dem Weg zum Dorf",
+        "es": "Camino al pueblo"
+      },
+      "vocab": [
+        "あるく　みち　みぎ　ひだり　まっすぐ　きた　みなみ　ひがし　にし　ちかい　とおい"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv010601",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You walk south from the guild. The sun is warm.",
+                "zh": "你从公会向南走。阳光温暖。",
+                "ja": "ギルドから南へ歩いています。太陽があたたかいです。",
+                "de": "Ihr geht südlich von der Gilde. Die Sonne ist warm.",
+                "es": "Caminais hacia el sur desde el gremio. El sol está cálido."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "It is a nice day today! I am happy.",
+                "zh": "今天天气真好！我很高兴。",
+                "ja": "今日はいい天気です！うれしいです。",
+                "de": "Heute ist ein schöner Tag! Ich bin glücklich.",
+                "es": "¡Hoy es un día bonito! Estoy contenta."
+              }
+            },
+            {
+              "type": "choice",
+              "options": [
+                {
+                  "suffix": "a",
+                  "text": {
+                    "en": "Yes. The sun is warm. I am happy too.",
+                    "zh": "是的。阳光温暖。我也很高兴。",
+                    "ja": "そうですね。太陽があたたかいです。わたしもうれしいです。",
+                    "de": "Ja. Die Sonne ist warm. Ich bin auch glücklich.",
+                    "es": "Sí. El sol está cálido. Yo también estoy contento."
+                  },
+                  "response": null
+                },
+                {
+                  "suffix": "b",
+                  "text": {
+                    "en": "Yes. But I am also a little nervous.",
+                    "zh": "是的。但我也有点紧张。",
+                    "ja": "そうですね。でも少し緊張しています。",
+                    "de": "Ja. Aber ich bin auch ein bisschen nervös.",
+                    "es": "Sí. Pero también estoy un poco nervioso."
+                  },
+                  "response": null
+                }
+              ]
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Me too! But let us not worry. We walk together. That is good.",
+                "zh": "我也是！但我们别担心了。我们一起走。这很好。",
+                "ja": "わたしもです！でも心配しないようにしましょう。一緒に歩きます。それはいいです。",
+                "de": "Ich auch! Aber lass uns nicht sorgen. Wir gehen zusammen. Das ist gut.",
+                "es": "¡Yo también! Pero no nos preocupemos. Caminamos juntos. Eso es bueno."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You walk for one hour. You see a big tree on the road.",
+                "zh": "你走了一个小时。你看到路上有一棵大树。",
+                "ja": "一時間歩きました。道に大きな木が見えます。",
+                "de": "Ihr lauft eine Stunde. Ihr seht einen großen Baum auf dem Weg.",
+                "es": "Caminais durante una hora. Veis un árbol grande en el camino."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Look! A big tree! The mission scroll says to turn east here.",
+                "zh": "看！一棵大树！任务卷轴说在这里向东转。",
+                "ja": "見て！大きな木！ミッションの巻物にここで東に曲がると書いてあります。",
+                "de": "Schau! Ein großer Baum! Die Missionsrolle sagt, hier nach Osten abzubiegen.",
+                "es": "¡Mira! ¡Un árbol grande! El pergamino de la misión dice que giremos hacia el este aquí."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "Yes. Let us turn here.",
+                "zh": "是的。我们在这里转。",
+                "ja": "そうですね。ここで曲がりましょう。",
+                "de": "Ja. Lass uns hier abbiegen.",
+                "es": "Sí. Giremos aquí."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You walk east. After thirty minutes, you see a village.",
+                "zh": "你向东走。三十分钟后，你看到了一个村庄。",
+                "ja": "東へ歩きました。三十分後、村が見えます。",
+                "de": "Ihr geht östlich. Nach dreißig Minuten seht ihr ein Dorf.",
+                "es": "Caminais hacia el este. Después de treinta minutos, veis un pueblo."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Is that the village? It is small.",
+                "zh": "那是村庄吗？它很小。",
+                "ja": "あれが村ですか？小さいですね。",
+                "de": "Ist das das Dorf? Es ist klein.",
+                "es": "¿Es ese el pueblo? Es pequeño."
+              }
+            },
+            {
+              "type": "choice",
+              "options": [
+                {
+                  "suffix": "a",
+                  "text": {
+                    "en": "Yes, I think so. Let us go and see.",
+                    "zh": "是的，我想是这样。我们去看看吧。",
+                    "ja": "そうだと思います。行ってみましょう。",
+                    "de": "Ja, ich glaube schon. Lass uns gehen und schauen.",
+                    "es": "Sí, creo que sí. Vamos a ver."
+                  },
+                  "response": null
+                },
+                {
+                  "suffix": "b",
+                  "text": {
+                    "en": "I am not sure. Let us read the sign.",
+                    "zh": "我不确定。我们读一下标志吧。",
+                    "ja": "わかりません。標識を読みましょう。",
+                    "de": "Ich bin nicht sicher. Lass uns das Schild lesen.",
+                    "es": "No estoy seguro. Leamos el letrero."
+                  },
+                  "response": null
+                }
+              ]
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Yes! The sign says \"River Village.\" This is the right place!",
+                "zh": "是的！标志上写着\"河边村\"。这是正确的地方！",
+                "ja": "はい！標識に「川の村」と書いてあります。ここで合っています！",
+                "de": "Ja! Das Schild sagt „Flussdorf\". Das ist der richtige Ort!",
+                "es": "¡Sí! El letrero dice «Pueblo del Río». ¡Este es el lugar correcto!"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "Good. Let us go inside.",
+                "zh": "好。我们进去吧。",
+                "ja": "いいですね。中に入りましょう。",
+                "de": "Gut. Lass uns hineingehen.",
+                "es": "Bien. Entremos."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You enter the village. It is very quiet. You do not see many people.",
+                "zh": "你进入村庄。非常安静。你看不到很多人。",
+                "ja": "村に入りました。とても静かです。人があまり見えません。",
+                "de": "Ihr betretet das Dorf. Es ist sehr still. Ihr seht nicht viele Menschen.",
+                "es": "Entráis al pueblo. Está muy tranquilo. No veis mucha gente."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "It is very quiet here. Where are all the people?",
+                "zh": "这里很安静。所有人都在哪里？",
+                "ja": "とても静かですね。みんなどこにいますか？",
+                "de": "Hier ist es sehr still. Wo sind alle Menschen?",
+                "es": "Aquí está muy tranquilo. ¿Dónde están todas las personas?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "I do not know. Let us find someone to talk to.",
+                "zh": "我不知道。我们找个人说说话吧。",
+                "ja": "わかりません。話せる人を探しましょう。",
+                "de": "Ich weiß es nicht. Lass uns jemanden zum Reden finden.",
+                "es": "No lo sé. Busquemos a alguien con quien hablar."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "A woman comes out of a house. She looks worried.",
+                "zh": "一位女士从房子里走了出来。她看起来很担心。",
+                "ja": "女の人が家から出てきました。心配そうです。",
+                "de": "Eine Frau kommt aus einem Haus. Sie sieht besorgt aus.",
+                "es": "Una mujer sale de una casa. Parece preocupada."
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "Where is the forest?",
+                "zh": "森林在哪里？",
+                "ja": "森はどこにありますか？",
+                "de": "Wo ist der Wald?",
+                "es": "¿Dónde está el bosque?"
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "To the north.",
+                    "zh": "在北边。",
+                    "ja": "北にあります。",
+                    "de": "Im Norden.",
+                    "es": "Al norte."
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "To the south.",
+                    "zh": "在南边。",
+                    "ja": "南にあります。",
+                    "de": "Im Süden.",
+                    "es": "Al sur."
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "To the east.",
+                    "zh": "在东边。",
+                    "ja": "東にあります。",
+                    "de": "Im Osten.",
+                    "es": "Al este."
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "07",
+      "title": {
+        "en": "Meeting the Mother",
+        "zh": "遇见母亲",
+        "ja": "母親との出会い",
+        "de": "Die Mutter treffen",
+        "es": "Conociendo a la madre"
+      },
+      "vocab": [
+        "むすこ　むすめ　おかあさん　おとうさん　こ　こども　しんぱい　たすける　みつける　かえる"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv010701",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "mother",
+              "text": {
+                "en": "Please help me! My son is not here!",
+                "zh": "请帮帮我！我的儿子不在这里！",
+                "ja": "助けてください！息子がいません！",
+                "de": "Bitte helft mir! Mein Sohn ist nicht hier!",
+                "es": "¡Por favor, ayudadme! ¡Mi hijo no está aquí!"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Hello! Please do not worry. We are from the Adventurer Guild.",
+                "zh": "你好！请不要担心。我们来自冒险者公会。",
+                "ja": "こんにちは！心配しないでください。冒険者ギルドから来ました。",
+                "de": "Hallo! Bitte machen Sie sich keine Sorgen. Wir sind von der Abenteurergilde.",
+                "es": "¡Hola! Por favor, no se preocupe. Somos del gremio de aventureros."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "mother",
+              "text": {
+                "en": "Oh! Adventurers! Thank you for coming!",
+                "zh": "哦！冒险者！谢谢你们来！",
+                "ja": "あ！冒険者！来てくれてありがとう！",
+                "de": "Oh! Abenteurer! Danke, dass ihr gekommen seid!",
+                "es": "¡Oh! ¡Aventureros! ¡Gracias por venir!"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "Please tell us. What happened?",
+                "zh": "请告诉我们。发生了什么？",
+                "ja": "話してください。何が起きましたか？",
+                "de": "Bitte erzählt uns. Was ist passiert?",
+                "es": "Por favor, cuéntenos. ¿Qué pasó?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "mother",
+              "text": {
+                "en": "My son is Tom. He is twelve years old.",
+                "zh": "我的儿子叫汤姆。他十二岁。",
+                "ja": "息子はトムです。十二歳です。",
+                "de": "Mein Sohn ist Tom. Er ist zwölf Jahre alt.",
+                "es": "Mi hijo es Tom. Tiene doce años."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "mother",
+              "text": {
+                "en": "Yesterday he went to the forest. He did not come home.",
+                "zh": "昨天他去了森林。他没有回家。",
+                "ja": "昨日、森に行きました。家に帰りませんでした。",
+                "de": "Gestern ging er in den Wald. Er kam nicht nach Hause.",
+                "es": "Ayer fue al bosque. No volvió a casa."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "mother",
+              "text": {
+                "en": "I waited and waited. But he did not come back.",
+                "zh": "我等啊等。但他没有回来。",
+                "ja": "ずっと待ちました。でも帰ってきませんでした。",
+                "de": "Ich wartete und wartete. Aber er kam nicht zurück.",
+                "es": "Esperé y esperé. Pero no volvió."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Is Tom a careful boy?",
+                "zh": "汤姆是个谨慎的孩子吗？",
+                "ja": "トムは注意深い子ですか？",
+                "de": "Ist Tom ein vorsichtiger Junge?",
+                "es": "¿Tom es un niño cuidadoso?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "mother",
+              "text": {
+                "en": "Yes, usually. But he likes the forest very much. Sometimes he forgets the time.",
+                "zh": "是的，通常是这样。但他非常喜欢森林。有时他会忘记时间。",
+                "ja": "はい、ふだんは。でも、森がとても好きです。時々、時間を忘れます。",
+                "de": "Ja, normalerweise. Aber er mag den Wald sehr. Manchmal vergisst er die Zeit.",
+                "es": "Sí, normalmente. Pero le gusta mucho el bosque. A veces olvida la hora."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "I understand. We will go and look for him.",
+                "zh": "我明白了。我们会去找他的。",
+                "ja": "わかりました。探しに行きます。",
+                "de": "Ich verstehe. Wir werden gehen und ihn suchen.",
+                "es": "Entiendo. Iremos a buscarlo."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "mother",
+              "text": {
+                "en": "Thank you! Oh, thank you so much!",
+                "zh": "谢谢！哦，非常感谢！",
+                "ja": "ありがとうございます！ほんとうにありがとうございます！",
+                "de": "Danke! Oh, danke so sehr!",
+                "es": "¡Gracias! ¡Oh, muchas gracias!"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Do not worry. We will find Tom. Which part of the forest did he go to?",
+                "zh": "不要担心。我们会找到汤姆的。他去了森林的哪个部分？",
+                "ja": "心配しないでください。トムを見つけます。森のどこに行きましたか？",
+                "de": "Machen Sie sich keine Sorgen. Wir werden Tom finden. In welchen Teil des Waldes ist er gegangen?",
+                "es": "No se preocupe. Encontraremos a Tom. ¿A qué parte del bosque fue?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "mother",
+              "text": {
+                "en": "The north part. He likes the river there. He often goes to catch fish.",
+                "zh": "北边部分。他喜欢那里的河流。他经常去钓鱼。",
+                "ja": "北の方です。そこの川が好きです。魚を捕まえるためによく行きます。",
+                "de": "Der nördliche Teil. Er mag den Fluss dort. Er geht oft hin, um Fische zu fangen.",
+                "es": "La parte norte. Le gusta el río que hay allí. Suele ir a pescar."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "I see. We will go to the north.",
+                "zh": "我明白了。我们向北走。",
+                "ja": "わかりました。北へ行きます。",
+                "de": "Ich verstehe. Wir gehen nach Norden.",
+                "es": "Entiendo. Iremos al norte."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "mother",
+              "text": {
+                "en": "Please come back safely. Both of you.",
+                "zh": "请平安回来。你们两个都要。",
+                "ja": "無事に帰ってきてください。二人とも。",
+                "de": "Bitte kommt sicher zurück. Ihr beide.",
+                "es": "Por favor, volved sanos y salvos. Los dos."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You go to the north. The forest is dark and quiet.",
+                "zh": "你们向北走。森林又黑暗又安静。",
+                "ja": "北へ行きました。森は暗くて静かです。",
+                "de": "Ihr geht nach Norden. Der Wald ist dunkel und still.",
+                "es": "Vais al norte. El bosque está oscuro y tranquilo."
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "Why did Tom go into the forest?",
+                "zh": "汤姆为什么进入了森林？",
+                "ja": "トムはなぜ森に入ったのですか？",
+                "de": "Warum ging Tom in den Wald?",
+                "es": "¿Por qué Tom entró al bosque?"
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "To catch fish.",
+                    "zh": "去钓鱼。",
+                    "ja": "魚を捕まえるためです。",
+                    "de": "Um Fische zu fangen.",
+                    "es": "Para pescar."
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "To find the crystal.",
+                    "zh": "去找水晶。",
+                    "ja": "クリスタルを見つけるためです。",
+                    "de": "Um das Kristall zu finden.",
+                    "es": "Para encontrar el cristal."
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "To sleep in the forest.",
+                    "zh": "去森林睡觉。",
+                    "ja": "森で寝るためです。",
+                    "de": "Um im Wald zu schlafen.",
+                    "es": "Para dormir en el bosque."
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "08",
+      "title": {
+        "en": "In the Forest",
+        "zh": "在森林里",
+        "ja": "森の中",
+        "de": "Im Wald",
+        "es": "En el bosque"
+      },
+      "vocab": [
+        "もり　き　くさ　みち　おと　きこえる　みえる　こわい　しずか　とり　むし　さがす"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv010801",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You enter the forest. It is quiet. You can hear birds.",
+                "zh": "你进入森林。很安静。你能听到鸟叫声。",
+                "ja": "森に入りました。静かです。鳥の声が聞こえます。",
+                "de": "Ihr betretet den Wald. Es ist still. Ihr könnt Vögel hören.",
+                "es": "Entráis al bosque. Está tranquilo. Podéis escuchar los pájaros."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "It is quiet here. Tom! Tom! Are you here?",
+                "zh": "这里很安静。汤姆！汤姆！你在这里吗？",
+                "ja": "静かですね。トム！トム！ここにいますか？",
+                "de": "Hier ist es still. Tom! Tom! Bist du hier?",
+                "es": "Aquí está tranquilo. ¡Tom! ¡Tom! ¿Estás aquí?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "No answer. You walk deeper into the forest.",
+                "zh": "没有回答。你们走进了更深的森林。",
+                "ja": "返事がありません。もっと奥に歩きます。",
+                "de": "Keine Antwort. Ihr geht tiefer in den Wald.",
+                "es": "No hay respuesta. Camináis más adentro del bosque."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "I cannot see well here. It is dark.",
+                "zh": "在这里我看不清楚。很黑。",
+                "ja": "ここはよく見えません。暗いです。",
+                "de": "Ich kann hier nicht gut sehen. Es ist dunkel.",
+                "es": "No puedo ver bien aquí. Está oscuro."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Yes. I am a little scared. But we must find Tom.",
+                "zh": "是的。我有点害怕。但我们必须找到汤姆。",
+                "ja": "そうですね。少し怖いです。でも、トムを見つけなければなりません。",
+                "de": "Ja. Ich habe ein bisschen Angst. Aber wir müssen Tom finden.",
+                "es": "Sí. Tengo un poco de miedo. Pero debemos encontrar a Tom."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "Yes. Tom is twelve. He must be very scared.",
+                "zh": "是的。汤姆十二岁。他一定非常害怕。",
+                "ja": "そうですね。トムは十二歳です。きっととても怖いでしょう。",
+                "de": "Ja. Tom ist zwölf. Er muss sehr Angst haben.",
+                "es": "Sí. Tom tiene doce años. Debe estar muy asustado."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You walk for twenty minutes. Then you see something on the ground.",
+                "zh": "你走了二十分钟。然后你在地上看到了什么东西。",
+                "ja": "二十分歩きました。それから地面に何かが見えます。",
+                "de": "Ihr lauft zwanzig Minuten. Dann seht ihr etwas auf dem Boden.",
+                "es": "Caminais durante veinte minutos. Entonces veis algo en el suelo."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Look! There is something on the ground. Is that a note?",
+                "zh": "看！地上有什么东西。那是一张便条吗？",
+                "ja": "見て！地面に何かあります。メモですか？",
+                "de": "Schau! Da ist etwas auf dem Boden. Ist das ein Zettel?",
+                "es": "¡Mira! Hay algo en el suelo. ¿Es una nota?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "Yes. Let me read it.",
+                "zh": "是的。让我读一读。",
+                "ja": "はい。読んでみます。",
+                "de": "Ja. Lass mich ihn lesen.",
+                "es": "Sí. Déjame leerla."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You read the note. It is from Tom. He is in a cave.",
+                "zh": "你读了这张便条。是汤姆写的。他在一个山洞里。",
+                "ja": "メモを読みました。トムからです。洞窟にいます。",
+                "de": "Ihr lest den Zettel. Er ist von Tom. Er ist in einer Höhle.",
+                "es": "Leéis la nota. Es de Tom. Está en una cueva."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "A cave! Which cave? There are many trees here.",
+                "zh": "一个山洞！哪个山洞？这里有很多树。",
+                "ja": "洞窟！どの洞窟ですか？ここは木がたくさんあります。",
+                "de": "Eine Höhle! Welche Höhle? Hier gibt es viele Bäume.",
+                "es": "¡Una cueva! ¿Qué cueva? Aquí hay muchos árboles."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "The note says he is near the river. Let us go to the river.",
+                "zh": "便条上说他在河边附近。我们去河边吧。",
+                "ja": "川の近くにいると書いてあります。川へ行きましょう。",
+                "de": "Der Zettel sagt, er ist in der Nähe des Flusses. Lass uns zum Fluss gehen.",
+                "es": "La nota dice que está cerca del río. Vamos al río."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Yes! The river is to the east. Let us go.",
+                "zh": "是的！河流在东边。我们走吧。",
+                "ja": "そうですね！川は東にあります。行きましょう。",
+                "de": "Ja! Der Fluss ist im Osten. Lass uns gehen.",
+                "es": "¡Sí! El río está al este. Vamos."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You walk east. You can hear the sound of water.",
+                "zh": "你向东走。你能听到水声。",
+                "ja": "東へ歩きます。水の音が聞こえます。",
+                "de": "Ihr geht östlich. Ihr könnt das Geräusch von Wasser hören.",
+                "es": "Caminais hacia el este. Podéis escuchar el sonido del agua."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "I can hear the river! We are close.",
+                "zh": "我能听到河流的声音！我们近了。",
+                "ja": "川の音が聞こえます！近いです。",
+                "de": "Ich kann den Fluss hören! Wir sind nah.",
+                "es": "¡Puedo escuchar el río! Estamos cerca."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "Yes. And look. There is a cave near the river.",
+                "zh": "是的。看。河边有一个山洞。",
+                "ja": "そうですね。見て。川の近くに洞窟があります。",
+                "de": "Ja. Und schau. Da ist eine Höhle in der Nähe des Flusses.",
+                "es": "Sí. Y mira. Hay una cueva cerca del río."
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "Where did you find Tom's note?",
+                "zh": "你在哪里找到汤姆的便条的？",
+                "ja": "トムのメモをどこで見つけましたか？",
+                "de": "Wo habt ihr Toms Zettel gefunden?",
+                "es": "¿Dónde encontrasteis la nota de Tom?"
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "On the ground in the forest.",
+                    "zh": "在森林的地上。",
+                    "ja": "森の地面です。",
+                    "de": "Auf dem Boden im Wald.",
+                    "es": "En el suelo del bosque."
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "In the cave.",
+                    "zh": "在山洞里。",
+                    "ja": "洞窟の中です。",
+                    "de": "In der Höhle.",
+                    "es": "En la cueva."
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "Near the river.",
+                    "zh": "在河边附近。",
+                    "ja": "川の近くです。",
+                    "de": "In der Nähe des Flusses.",
+                    "es": "Cerca del río."
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "09",
+      "title": {
+        "en": "Finding Tom",
+        "zh": "找到汤姆",
+        "ja": "トムを見つける",
+        "de": "Tom finden",
+        "es": "Encontrando a Tom"
+      },
+      "vocab": [
+        "みつける　よかった　うれしい　なく　げんき　おなか　すく　さむい　ありがとう　かえる"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv010901",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You go to the cave. You call Tom's name.",
+                "zh": "你们来到洞穴。你们叫汤姆的名字。",
+                "ja": "洞窟に行きました。トムの名前を呼びました。",
+                "de": "Ihr geht zur Höhle. Ihr ruft Toms Namen.",
+                "es": "Vais a la cueva. Llamáis al nombre de Tom."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Tom! Tom! Are you there?",
+                "zh": "汤姆！汤姆！你在那里吗？",
+                "ja": "トム！トム！そこにいますか？",
+                "de": "Tom! Tom! Bist du da?",
+                "es": "¡Tom! ¡Tom! ¿Estás ahí?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "tom",
+              "text": {
+                "en": "Yes! I am here! Is someone there?",
+                "zh": "是的！我在这里！有人在那里吗？",
+                "ja": "はい！ここにいます！誰かいますか？",
+                "de": "Ja! Ich bin hier! Ist jemand da?",
+                "es": "¡Sí! ¡Estoy aquí! ¿Hay alguien ahí?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "Yes! We are adventurers from the guild. We came to find you.",
+                "zh": "是的！我们是公会的冒险者。我们来找你的。",
+                "ja": "はい！ギルドから来た冒険者です。あなたを探しに来ました。",
+                "de": "Ja! Wir sind Abenteurer von der Gilde. Wir kamen, um dich zu finden.",
+                "es": "¡Sí! Somos aventureros del gremio. Venimos a buscarte."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "tom",
+              "text": {
+                "en": "Oh! Thank you! Thank you so much!",
+                "zh": "哦！谢谢！非常感谢！",
+                "ja": "わあ！ありがとうございます！本当にありがとうございます！",
+                "de": "Oh! Danke! Danke so sehr!",
+                "es": "¡Oh! ¡Gracias! ¡Muchísimas gracias!"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "A small boy comes out of the cave. His face is dirty. His eyes are red.",
+                "zh": "一个小男孩从洞穴里走了出来。他的脸很脏。他的眼睛是红的。",
+                "ja": "小さな男の子が洞窟から出てきました。顔が汚れています。目が赤いです。",
+                "de": "Ein kleiner Junge kommt aus der Höhle. Sein Gesicht ist schmutzig. Seine Augen sind rot.",
+                "es": "Un niño pequeño sale de la cueva. Su cara está sucia. Sus ojos están rojos."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Tom, are you okay? Are you hurt?",
+                "zh": "汤姆，你还好吗？你受伤了吗？",
+                "ja": "トム、大丈夫ですか？怪我をしていますか？",
+                "de": "Tom, geht es dir gut? Bist du verletzt?",
+                "es": "Tom, ¿estás bien? ¿Estás herido?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "tom",
+              "text": {
+                "en": "I am okay. I am not hurt. But I am very hungry and cold.",
+                "zh": "我没事。我没有受伤。但我非常饿而且很冷。",
+                "ja": "大丈夫です。怪我はしていません。でも、とてもお腹がすいていて寒いです。",
+                "de": "Mir geht es gut. Ich bin nicht verletzt. Aber ich bin sehr hungrig und kalt.",
+                "es": "Estoy bien. No estoy herido. Pero tengo mucha hambre y frío."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "I have some bread. Please eat.",
+                "zh": "我有些面包。请吃吧。",
+                "ja": "パンがあります。食べてください。",
+                "de": "Ich habe etwas Brot. Bitte iss.",
+                "es": "Tengo un poco de pan. Por favor, come."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "tom",
+              "text": {
+                "en": "Thank you! This is very good.",
+                "zh": "谢谢！这非常好吃。",
+                "ja": "ありがとうございます！とてもおいしいです。",
+                "de": "Danke! Das ist sehr gut.",
+                "es": "¡Gracias! Esto está muy bueno."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Tom, why did you go into the forest?",
+                "zh": "汤姆，你为什么进入森林？",
+                "ja": "トム、なぜ森に入ったのですか？",
+                "de": "Tom, warum bist du in den Wald gegangen?",
+                "es": "Tom, ¿por qué fuiste al bosque?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "tom",
+              "text": {
+                "en": "I saw a big white bird. It was very beautiful. I wanted to follow it.",
+                "zh": "我看到了一只大白鸟。它非常漂亮。我想跟着它。",
+                "ja": "大きな白い鳥を見ました。とてもきれいでした。追いかけたかったです。",
+                "de": "Ich sah einen großen weißen Vogel. Er war sehr schön. Ich wollte ihm folgen.",
+                "es": "Vi un pájaro blanco grande. Era muy hermoso. Quería seguirlo."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "A white bird? That sounds strange. Did you see anything else?",
+                "zh": "一只白色的鸟？听起来很奇怪。你还看到了什么别的东西吗？",
+                "ja": "白い鳥？不思議ですね。他に何か見ましたか？",
+                "de": "Ein weißer Vogel? Das klingt seltsam. Hast du noch etwas anderes gesehen?",
+                "es": "¿Un pájaro blanco? Eso suena extraño. ¿Viste algo más?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "tom",
+              "text": {
+                "en": "Yes. Near the cave, the ground was bright. Like a light. But then it went away.",
+                "zh": "是的。在洞穴附近，地面是亮的。像一道光。但后来它消失了。",
+                "ja": "はい。洞窟の近くで、地面が明るかったです。光みたいでした。でも、消えました。",
+                "de": "Ja. In der Nähe der Höhle war der Boden hell. Wie ein Licht. Aber dann verschwand es.",
+                "es": "Sí. Cerca de la cueva, el suelo estaba brillante. Como una luz. Pero luego desapareció."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "A bright light? Alex, do you think that was...?",
+                "zh": "一道亮光？阿历克斯，你认为那是...？",
+                "ja": "明るい光？アレックス、あれは...？",
+                "de": "Ein helles Licht? Alex, glaubst du, das war...?",
+                "es": "¿Una luz brillante? Alex, ¿crees que eso era...?"
+              }
+            },
+            {
+              "type": "choice",
+              "options": [
+                {
+                  "suffix": "a",
+                  "text": {
+                    "en": "The Crystal of Light! Maybe!",
+                    "zh": "光之水晶！也许！",
+                    "ja": "光のクリスタル！もしかしたら！",
+                    "de": "Das Kristall des Lichts! Vielleicht!",
+                    "es": "¡El Cristal de Luz! ¡Quizás!"
+                  },
+                  "response": null
+                },
+                {
+                  "suffix": "b",
+                  "text": {
+                    "en": "I do not know. Let us think about this later. First, let us take Tom home.",
+                    "zh": "我不知道。我们以后再想这件事吧。首先，让我们把汤姆送回家。",
+                    "ja": "わかりません。後で考えましょう。まず、トムを家に連れて帰りましょう。",
+                    "de": "Ich weiß es nicht. Lass uns das später bedenken. Zuerst bringen wir Tom nach Hause.",
+                    "es": "No lo sé. Pensemos en esto después. Primero, llevemos a Tom a casa."
+                  },
+                  "response": null
+                }
+              ]
+            },
+            {
+              "type": "line",
+              "speaker": "tom",
+              "text": {
+                "en": "Please take me home. I want to see my mother.",
+                "zh": "请带我回家。我想见我妈妈。",
+                "ja": "家に連れて帰ってください。お母さんに会いたいです。",
+                "de": "Bitte bringt mich nach Hause. Ich will meine Mutter sehen.",
+                "es": "Por favor, llevadme a casa. Quiero ver a mi madre."
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "What did Tom see near the cave?",
+                "zh": "汤姆在洞穴附近看到了什么？",
+                "ja": "トムは洞窟の近くで何を見ましたか？",
+                "de": "Was sah Tom in der Nähe der Höhle?",
+                "es": "¿Qué vio Tom cerca de la cueva?"
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "A bright light on the ground.",
+                    "zh": "地面上的亮光。",
+                    "ja": "地面の明るい光です。",
+                    "de": "Ein helles Licht auf dem Boden.",
+                    "es": "Una luz brillante en el suelo."
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "A big snake.",
+                    "zh": "一条大蛇。",
+                    "ja": "大きなヘビです。",
+                    "de": "Eine große Schlange.",
+                    "es": "Una serpiente grande."
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "Another adventurer.",
+                    "zh": "另一个冒险者。",
+                    "ja": "別の冒険者です。",
+                    "de": "Ein anderer Abenteurer.",
+                    "es": "Otro aventurero."
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "10",
+      "title": {
+        "en": "Returning to the Village",
+        "zh": "回到村子",
+        "ja": "村に帰る",
+        "de": "Zurück ins Dorf",
+        "es": "De vuelta al pueblo"
+      },
+      "vocab": [
+        "かえる　よかった　ありがとう　うれしい　つかれた　いえ　はは　ちち　みんな　あんしん"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv011001",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You walk back through the forest with Tom.",
+                "zh": "你们带着汤姆穿过森林走回去。",
+                "ja": "トムと一緒に森を歩いて戻ります。",
+                "de": "Ihr geht mit Tom durch den Wald zurück.",
+                "es": "Caminais de vuelta por el bosque con Tom."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "tom",
+              "text": {
+                "en": "I am sorry. I made everyone worried.",
+                "zh": "对不起。我让大家都担心了。",
+                "ja": "ごめんなさい。みんなを心配させてしまいました。",
+                "de": "Es tut mir leid. Ich habe alle besorgt gemacht.",
+                "es": "Lo siento. Preocupé a todos."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "It is okay, Tom. The important thing is you are safe.",
+                "zh": "没关系，汤姆。重要的是你安全了。",
+                "ja": "大丈夫ですよ、トム。大切なのは安全でいることです。",
+                "de": "Es ist okay, Tom. Das Wichtigste ist, dass du sicher bist.",
+                "es": "Está bien, Tom. Lo importante es que estás a salvo."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "tom",
+              "text": {
+                "en": "Will my mother be angry?",
+                "zh": "我妈妈会生气吗？",
+                "ja": "お母さんは怒りますか？",
+                "de": "Wird meine Mutter wütend sein?",
+                "es": "¿Se enfadará mi madre?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "I do not think so. She will be very happy to see you.",
+                "zh": "我不这么认为。她见到你会非常高兴的。",
+                "ja": "そうは思いません。あなたを見てとても喜ぶでしょう。",
+                "de": "Das glaube ich nicht. Sie wird dich sehr gerne sehen.",
+                "es": "No lo creo. Estará muy contenta de verte."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You arrive at the village. Tom's mother comes out of the house.",
+                "zh": "你们到达村庄。汤姆的妈妈从房子里走了出来。",
+                "ja": "村に着きました。トムのお母さんが家から出てきました。",
+                "de": "Ihr kommt im Dorf an. Toms Mutter kommt aus dem Haus.",
+                "es": "Llegáis al pueblo. La madre de Tom sale de la casa."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "mother",
+              "text": {
+                "en": "TOM! Oh, Tom! You are here! You are safe!",
+                "zh": "汤姆！哦，汤姆！你在这里！你安全了！",
+                "ja": "トム！ああ、トム！いるじゃない！無事だったのね！",
+                "de": "TOM! Oh, Tom! Du bist hier! Du bist sicher!",
+                "es": "¡TOM! ¡Oh, Tom! ¡Estás aquí! ¡Estás a salvo!"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "tom",
+              "text": {
+                "en": "Mother! I am sorry. I was in the forest.",
+                "zh": "妈妈！对不起。我在森林里。",
+                "ja": "お母さん！ごめんなさい。森にいました。",
+                "de": "Mutter! Es tut mir leid. Ich war im Wald.",
+                "es": "¡Mamá! Lo siento. Estaba en el bosque."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "mother",
+              "text": {
+                "en": "I know, I know. But you are safe now. That is good.",
+                "zh": "我知道，我知道。但你现在安全了。那很好。",
+                "ja": "わかってるわ、わかってる。でも無事だった。それでいいの。",
+                "de": "Ich weiß, ich weiß. Aber du bist jetzt sicher. Das ist gut.",
+                "es": "Lo sé, lo sé. Pero ahora estás a salvo. Eso es bueno."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "mother",
+              "text": {
+                "en": "Thank you! Adventurers, thank you so much!",
+                "zh": "谢谢！冒险者们，非常感谢你们！",
+                "ja": "ありがとうございます！冒険者の皆さん、本当にありがとうございます！",
+                "de": "Danke! Abenteurer, danke so sehr!",
+                "es": "¡Gracias! ¡Aventureros, muchas gracias!"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "We are happy Tom is safe.",
+                "zh": "我们很高兴汤姆平安无事。",
+                "ja": "トムが無事でよかったです。",
+                "de": "Wir sind froh, dass Tom sicher ist.",
+                "es": "Nos alegramos de que Tom esté a salvo."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "Tom told us something interesting. He saw a light near the cave.",
+                "zh": "汤姆告诉了我们一件有趣的事。他在洞穴附近看到了一道光。",
+                "ja": "トムが面白いことを話してくれました。洞窟の近くで光を見たそうです。",
+                "de": "Tom erzählte uns etwas Interessantes. Er sah ein Licht in der Nähe der Höhle.",
+                "es": "Tom nos contó algo interesante. Vio una luz cerca de la cueva."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "mother",
+              "text": {
+                "en": "A light? In the forest? That is strange.",
+                "zh": "一道光？在森林里？那很奇怪。",
+                "ja": "光？森の中で？それは不思議ですね。",
+                "de": "Ein Licht? Im Wald? Das ist seltsam.",
+                "es": "¿Una luz? ¿En el bosque? Eso es extraño."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Yes. We will tell Leon about this. He will be interested.",
+                "zh": "是的。我们会把这件事告诉里昂。他会感兴趣的。",
+                "ja": "そうですね。レオンさんに話します。興味を持つでしょう。",
+                "de": "Ja. Wir werden Leon davon erzählen. Er wird interessiert sein.",
+                "es": "Sí. Le contaremos esto a León. Le interesará."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "mother",
+              "text": {
+                "en": "Please take this. It is not much, but it is from our hearts.",
+                "zh": "请拿着这个。这不多，但这是我们的心意。",
+                "ja": "これを持っていってください。たくさんではありませんが、気持ちです。",
+                "de": "Bitte nehmt das. Es ist nicht viel, aber es kommt von Herzen.",
+                "es": "Por favor, tomad esto. No es mucho, pero viene de corazón."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "She gives you bread and vegetables. You say goodbye and walk back to the guild.",
+                "zh": "她给了你们面包和蔬菜。你们道别，走回公会。",
+                "ja": "パンと野菜をもらいました。さよならを言って、ギルドに戻ります。",
+                "de": "Sie gibt euch Brot und Gemüse. Ihr verabschiedet euch und geht zurück zur Gilde.",
+                "es": "Os da pan y verduras. Os despedís y volvéis al gremio."
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "What did Tom's mother give to the adventurers?",
+                "zh": "汤姆的妈妈给了冒险者们什么？",
+                "ja": "トムのお母さんは冒険者たちに何をあげましたか？",
+                "de": "Was gab Toms Mutter den Abenteurern?",
+                "es": "¿Qué le dio la madre de Tom a los aventureros?"
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "Bread and vegetables.",
+                    "zh": "面包和蔬菜。",
+                    "ja": "パンと野菜です。",
+                    "de": "Brot und Gemüse.",
+                    "es": "Pan y verduras."
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "Money.",
+                    "zh": "钱。",
+                    "ja": "お金です。",
+                    "de": "Geld.",
+                    "es": "Dinero."
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "A new bag.",
+                    "zh": "一个新包。",
+                    "ja": "新しいバッグです。",
+                    "de": "Eine neue Tasche.",
+                    "es": "Una bolsa nueva."
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "11",
+      "title": {
+        "en": "Reporting to Leon",
+        "zh": "向里昂汇报",
+        "ja": "レオンへの報告",
+        "de": "Bericht an Leon",
+        "es": "Informe a León"
+      },
+      "vocab": [
+        "かえる　つかれた　むかし　ひかり　めずらしい　しらせる　しろ　とり　あかるい　ちかい　かんがえる"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv011101",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You arrive back at the guild. It is evening. Leon is waiting.",
+                "zh": "你们回到了公会。天色渐晚。里昂在等待。",
+                "ja": "ギルドに戻りました。夕方です。レオンさんが待っています。",
+                "de": "Ihr kommt zurück zur Gilde. Es ist Abend. Leon wartet.",
+                "es": "Volvéis al gremio. Es tarde. León está esperando."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "Welcome back! I was worried. Are you safe?",
+                "zh": "欢迎回来！我很担心。你们平安吗？",
+                "ja": "おかえり！心配していました。無事ですか？",
+                "de": "Willkommen zurück! Ich machte mir Sorgen. Seid ihr sicher?",
+                "es": "¡Bienvenidos! Estaba preocupado. ¿Estáis a salvo?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Yes! We found the boy. His name is Tom. He is safe.",
+                "zh": "是的！我们找到了男孩。他叫汤姆。他平安无事。",
+                "ja": "はい！男の子を見つけました。トムといいます。無事です。",
+                "de": "Ja! Wir haben den Jungen gefunden. Sein Name ist Tom. Er ist sicher.",
+                "es": "¡Sí! Encontramos al niño. Su nombre es Tom. Está a salvo."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "Good! Very good! I am so glad. Tell me everything.",
+                "zh": "好！非常好！我非常高兴。把一切都告诉我。",
+                "ja": "よかった！とてもよかった！うれしいです。全部教えてください。",
+                "de": "Gut! Sehr gut! Ich freue mich sehr. Erzählt mir alles.",
+                "es": "¡Bien! ¡Muy bien! Estoy muy contento. Contadme todo."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "We went to River Village. We met Tom's mother. She was very worried.",
+                "zh": "我们去了河边村。我们见到了汤姆的妈妈。她非常担心。",
+                "ja": "川の村に行きました。トムのお母さんに会いました。とても心配していました。",
+                "de": "Wir gingen nach Flussdorf. Wir trafen Toms Mutter. Sie war sehr besorgt.",
+                "es": "Fuimos al Pueblo del Río. Conocimos a la madre de Tom. Estaba muy preocupada."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "We found a note in the forest. Tom wrote it. He was in a cave near the river.",
+                "zh": "我们在森林里找到了一张便条。是汤姆写的。他在河边附近的一个山洞里。",
+                "ja": "森でメモを見つけました。トムが書きました。川の近くの洞窟にいました。",
+                "de": "Wir fanden einen Zettel im Wald. Tom hat ihn geschrieben. Er war in einer Höhle in der Nähe des Flusses.",
+                "es": "Encontramos una nota en el bosque. La escribió Tom. Estaba en una cueva cerca del río."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "Good work. And Tom is okay?",
+                "zh": "干得好。汤姆还好吗？",
+                "ja": "よくできました。トムは大丈夫ですか？",
+                "de": "Gute Arbeit. Und Tom ist okay?",
+                "es": "Buen trabajo. ¿Y Tom está bien?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "Yes. He was hungry and cold. But he was not hurt.",
+                "zh": "是的。他饿了而且很冷。但他没有受伤。",
+                "ja": "はい。お腹がすいていて寒かったです。でも怪我はしていませんでした。",
+                "de": "Ja. Er war hungrig und kalt. Aber er war nicht verletzt.",
+                "es": "Sí. Tenía hambre y frío. Pero no estaba herido."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "I see. Thank you. Both of you.",
+                "zh": "我明白了。谢谢你们。你们两个。",
+                "ja": "わかりました。ありがとう。二人とも。",
+                "de": "Verstehe. Danke euch. Euch beiden.",
+                "es": "Entiendo. Gracias. A los dos."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Leon, Tom told us something. He said he saw a bright light near the cave.",
+                "zh": "里昂，汤姆告诉了我们一件事。他说他在洞穴附近看到了一道亮光。",
+                "ja": "レオンさん、トムが何かを話してくれました。洞窟の近くで明るい光を見たそうです。",
+                "de": "Leon, Tom erzählte uns etwas. Er sagte, er sah ein helles Licht in der Nähe der Höhle.",
+                "es": "León, Tom nos contó algo. Dijo que vio una luz brillante cerca de la cueva."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "A bright light?! In the forest?",
+                "zh": "一道亮光？！在森林里？",
+                "ja": "明るい光？！森の中で？",
+                "de": "Ein helles Licht?! Im Wald?",
+                "es": "¿Una luz brillante?! ¿En el bosque?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "Yes. He also saw a white bird. The bird went deep into the forest.",
+                "zh": "是的。他还看到了一只白色的鸟。这只鸟飞进了深林。",
+                "ja": "はい。白い鳥も見ました。鳥は森の奥に入りました。",
+                "de": "Ja. Er sah auch einen weißen Vogel. Der Vogel ging tief in den Wald.",
+                "es": "Sí. También vio un pájaro blanco. El pájaro se adentró en el bosque."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "A white bird and a bright light... I think this is important.",
+                "zh": "一只白色的鸟和一道亮光……我认为这很重要。",
+                "ja": "白い鳥と明るい光か…これは大切なことだと思います。",
+                "de": "Ein weißer Vogel und ein helles Licht... Ich denke, das ist wichtig.",
+                "es": "Un pájaro blanco y una luz brillante... Creo que esto es importante."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "The Crystal of Light is small and very bright. Could it be...?",
+                "zh": "光之水晶很小而且非常明亮。会不会是...？",
+                "ja": "光のクリスタルは小さくてとても明るいです。もしかして...？",
+                "de": "Das Kristall des Lichts ist klein und sehr hell. Könnte es sein...?",
+                "es": "El Cristal de Luz es pequeño y muy brillante. ¿Podría ser...?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Is the crystal in the forest?",
+                "zh": "水晶在森林里吗？",
+                "ja": "クリスタルは森にありますか？",
+                "de": "Ist das Kristall im Wald?",
+                "es": "¿El cristal está en el bosque?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "I do not know. But tomorrow, we will go and look. You did very well today.",
+                "zh": "我不知道。但明天，我们要去看看。你们今天做得很好。",
+                "ja": "わかりません。でも明日、見に行きます。今日はとてもよくできました。",
+                "de": "Ich weiß es nicht. Aber morgen werden wir gehen und nachsehen. Ihr habt heute sehr gut gemacht.",
+                "es": "No lo sé. Pero mañana iremos a ver. Hoy lo hicisteis muy bien."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You go to bed. You are tired. But you are also excited. Tomorrow the real adventure begins.",
+                "zh": "你上床睡觉。你很累。但你也很兴奋。明天真正的冒险开始了。",
+                "ja": "ベッドに入りました。疲れました。でも、わくわくしています。明日、本当の冒険が始まります。",
+                "de": "Ihr geht ins Bett. Ihr seid müde. Aber ihr seid auch aufgeregt. Morgen beginnt das echte Abenteuer.",
+                "es": "Os vais a la cama. Estáis cansados. Pero también estáis emocionados. Mañana comienza la verdadera aventura."
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "What does Leon think about the light in the forest?",
+                "zh": "里昂对森林里的光有什么看法？",
+                "ja": "レオンは森の光についてどう思いますか？",
+                "de": "Was denkt Leon über das Licht im Wald?",
+                "es": "¿Qué piensa León sobre la luz en el bosque?"
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "It might be the Crystal of Light.",
+                    "zh": "可能是光之水晶。",
+                    "ja": "光のクリスタルかもしれません。",
+                    "de": "Es könnte das Kristall des Lichts sein.",
+                    "es": "Podría ser el Cristal de Luz."
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "It is not important.",
+                    "zh": "这不重要。",
+                    "ja": "大切ではありません。",
+                    "de": "Es ist nicht wichtig.",
+                    "es": "No es importante."
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "It is a dangerous animal.",
+                    "zh": "这是一种危险的动物。",
+                    "ja": "危ない動物です。",
+                    "de": "Es ist ein gefährliches Tier.",
+                    "es": "Es un animal peligroso."
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    }
+  ]
+}

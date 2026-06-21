@@ -1,0 +1,254 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# adv0203 — Two Philosophers Walk Into a Study · Chapter 03: The Annotated Page
+# ══════════════════════════════════════════════════════════════════════════════
+
+@columns	id	speaker	cmd	en	de
+
+@chapter	03	The Annotated Page	Die kommentierte Seite	A2
+@artifact	🖋️	An Ink-Stained Page	Präteritum · Indirekte Fragen · weil/obwohl
+
+@story_intro	Schopenhauer wakes to a troubling discovery: someone has written critical notes in the margins of his manuscript overnight. No one admits to it. A young, eager visitor named Friedrich Nietzsche arrives just in time to help investigate.	Schopenhauer wacht zu einer beunruhigenden Entdeckung auf: Jemand hat über Nacht kritische Notizen an den Rand seines Manuskripts geschrieben. Niemand gibt es zu. Ein junger, eifriger Besucher namens Friedrich Nietzsche kommt gerade rechtzeitig an, um bei der Untersuchung zu helfen.
+@story_outro	By evening, the mystery remains unsolved. Schopenhauer has a list of suspects, a strange clue involving ink and paw prints, and a new admirer determined to help him find the truth — whatever the truth turns out to be.	Bis zum Abend bleibt das Rätsel ungelöst. Schopenhauer hat eine Liste von Verdächtigen, einen seltsamen Hinweis mit Tinte und Pfotenabdrücken, und einen neuen Bewunderer, der entschlossen ist, ihm zu helfen, die Wahrheit zu finden — was auch immer die Wahrheit sein mag.
+
+
+# ── Monologue 1: A Troubling Discovery ───────────────────────────────────────
+@section	01	A Troubling Discovery	Eine beunruhigende Entdeckung
+@vocab	entdecken	der Rand	schreiben	die Tinte	gestern	heute Morgen	überrascht	wütend	der Verdacht	wer	warum	verstehen
+
+adv020301-01	narrator		Schopenhauer sits at his desk with his manuscript. Something is wrong.	Schopenhauer sitzt an seinem Schreibtisch mit seinem Manuskript. Etwas ist falsch.
+adv020301-02	schopenhauer		What is this? There are notes in the margin. Small, careful handwriting.	Was ist das? Da sind Notizen am Rand. Kleine, sorgfältige Handschrift.
+adv020301-03	schopenhauer		"This claim assumes what it should prove." Someone wrote this. In MY manuscript!	„Diese Behauptung setzt voraus, was sie beweisen sollte." Jemand hat das geschrieben. In MEINEM Manuskript!
+adv020301-04	schopenhauer		I did not write this. I would remember writing this. The handwriting is not mine.	Ich habe das nicht geschrieben. Ich würde mich erinnern, das geschrieben zu haben. Die Handschrift ist nicht meine.
+adv020301-05	schopenhauer		Yesterday evening, I left the manuscript here, on the desk. I went to bed at eleven o'clock.	Gestern Abend habe ich das Manuskript hier auf dem Schreibtisch gelassen. Ich bin um elf Uhr ins Bett gegangen.
+adv020301-06	schopenhauer		This morning, these notes are here. Someone was in my study during the night.	Heute Morgen sind diese Notizen hier. Jemand war während der Nacht in meinem Arbeitszimmer.
+adv020301-07	schopenhauer		There are five more notes like this, on different pages. All of them disagree with my arguments. Cleverly, I must admit.	Es gibt fünf weitere solche Notizen, auf verschiedenen Seiten. Sie alle widersprechen meinen Argumenten. Klug, das muss ich zugeben.
+adv020301-08	schopenhauer		Was it Kant? No, he left two days ago, for Königsberg.	War es Kant? Nein, er ist vor zwei Tagen nach Königsberg abgereist.
+adv020301-09	schopenhauer		Was it Hegel? Possible. He stayed for dinner that night. But would he sneak around like this?	War es Hegel? Möglich. Er ist an jenem Abend zum Essen geblieben. Aber würde er sich so herumschleichen?
+adv020301-10	schopenhauer		I notice something else. There is a small black mark near one note. Is that... an ink stain? Or something else?	Ich bemerke noch etwas. Da ist ein kleiner schwarzer Fleck in der Nähe einer Notiz. Ist das... ein Tintenfleck? Oder etwas anderes?
+adv020301-11	narrator		He looks closer. The mark looks oddly like a small paw print.	Er schaut genauer hin. Der Fleck sieht seltsam wie ein kleiner Pfotenabdruck aus.
+adv020301-12	schopenhauer		A paw print? That makes no sense. Unless... no. That is impossible.	Ein Pfotenabdruck? Das macht keinen Sinn. Außer... nein. Das ist unmöglich.
+adv020301-13	schopenhauer		I will find out who did this. I will ask everyone who was here recently.	Ich werde herausfinden, wer das gemacht hat. Ich werde jeden fragen, der vor kurzem hier war.
+adv020301-14	narrator		There is a knock at the door. Schopenhauer puts the manuscript away quickly.	Es klopft an der Tür. Schopenhauer legt das Manuskript schnell weg.
+
+adv020301-15q	question		What strange mark does Schopenhauer find near one of the notes?	Was für einen seltsamen Fleck findet Schopenhauer in der Nähe einer der Notizen?
+adv020301-16a	option	correct	Something that looks like a paw print.	Etwas, das wie ein Pfotenabdruck aussieht.
+adv020301-17b	option		A torn piece of paper.	Ein abgerissenes Stück Papier.
+adv020301-17c	option		A drawing of an owl.	Eine Zeichnung einer Eule.
+
+
+# ── Dialogue 1: A New Visitor ──────────────────────────────────────────────
+@section	02	A New Visitor	Ein neuer Besucher
+@vocab	jung	bewundern	der Schüler	lesen	beeinflussen	der Lehrer	vorstellen	höflich	begeistert	das Werk	die Philosophie	kennenlernen
+
+adv020401-01	narrator		Schopenhauer opens the door. A young man stands there, looking nervous and excited.	Schopenhauer öffnet die Tür. Ein junger Mann steht da, sieht nervös und aufgeregt aus.
+adv020401-02	nietzsche		Herr Schopenhauer! Forgive my visit without warning. My name is Friedrich Nietzsche.	Herr Schopenhauer! Verzeihen Sie meinen unangemeldeten Besuch. Mein Name ist Friedrich Nietzsche.
+adv020401-03	schopenhauer		Nietzsche. I do not believe we have met before.	Nietzsche. Ich glaube, wir haben uns noch nicht getroffen.
+adv020401-04	nietzsche		No, we have not. But I have read "Die Welt als Wille und Vorstellung" perhaps ten times. Your book changed how I think completely.	Nein, das haben wir nicht. Aber ich habe „Die Welt als Wille und Vorstellung" wohl zehnmal gelesen. Ihr Buch hat mein Denken völlig verändert.
+adv020401-05	schopenhauer		Ten times? That is either great dedication or a serious problem with your free time.	Zehnmal? Das ist entweder große Hingabe oder ein ernstes Problem mit Ihrer Freizeit.
+adv020401-06	nietzsche		Perhaps both! I am a student of philology, but your philosophy taught me more than my professors ever did.	Vielleicht beides! Ich bin Student der Philologie, aber Ihre Philosophie hat mir mehr gelehrt als meine Professoren je taten.
+adv020401-07	schopenhauer		Please, come in. Though I must warn you, I am somewhat distracted this morning.	Bitte, kommen Sie herein. Obwohl ich Sie warnen muss, ich bin heute Morgen etwas abgelenkt.
+adv020401-08	nietzsche		Is something wrong? You look troubled.	Stimmt etwas nicht? Sie sehen besorgt aus.
+adv020401-09	schopenhauer		Someone entered my study last night and wrote critical notes in my manuscript. I do not know who.	Jemand ist letzte Nacht in mein Arbeitszimmer eingedrungen und hat kritische Notizen in mein Manuskript geschrieben. Ich weiß nicht, wer.
+adv020401-10	nietzsche		How exciting! I mean — how troubling! Show me. Perhaps I can help.	Wie aufregend! Ich meine — wie beunruhigend! Zeigen Sie mir das. Vielleicht kann ich helfen.
+adv020401-11	schopenhauer		You want to help solve a mystery, instead of simply admiring my old books?	Sie wollen helfen, ein Rätsel zu lösen, statt einfach meine alten Bücher zu bewundern?
+adv020401-12	nietzsche		Both, if possible! I have always wanted to use logic for something more interesting than homework.	Beides, wenn möglich! Ich wollte immer Logik für etwas Interessanteres als Hausaufgaben benutzen.
+adv020401-13	schopenhauer		Very well. Come, look at this. Tell me what you notice.	Also gut. Kommen Sie, schauen Sie sich das an. Sagen Sie mir, was Sie bemerken.
+adv020401-14	narrator		Schopenhauer shows Nietzsche the manuscript. Nietzsche leans in close, fascinated.	Schopenhauer zeigt Nietzsche das Manuskript. Nietzsche beugt sich fasziniert vor.
+adv020401-15	nietzsche		The handwriting is small and very neat. And look — these arguments are not simple insults. Whoever wrote this understood your philosophy deeply.	Die Handschrift ist klein und sehr ordentlich. Und schauen Sie — diese Argumente sind keine einfachen Beleidigungen. Wer das geschrieben hat, hat Ihre Philosophie tief verstanden.
+adv020401-16	schopenhauer		Yes. That is what troubles me most. This was not an enemy. This was someone who read carefully.	Ja. Das beunruhigt mich am meisten. Das war kein Feind. Das war jemand, der sorgfältig gelesen hat.
+
+adv020401-17q	question		What does Nietzsche notice about the handwritten notes?	Was bemerkt Nietzsche an den handgeschriebenen Notizen?
+adv020401-18a	option	correct	They show deep understanding, not simple insults.	Sie zeigen tiefes Verständnis, keine einfachen Beleidigungen.
+adv020401-18b	option		They are written in a foreign language.	Sie sind in einer Fremdsprache geschrieben.
+adv020401-18c	option		They are very short and unclear.	Sie sind sehr kurz und unklar.
+
+
+# ── Reading Pair 1: No One Can Build the Bridge ──────────────────────────────
+@section	03	No One Can Build the Bridge	Niemand kann die Brücke bauen
+@vocab	die Brücke	bauen	der Fluss	das Leben	allein	der Weg	führen	folgen	selbst	der Lehrer	der Schüler	finden
+
+@passage	01a	GENUINE EXCERPT — Nietzsche, "Schopenhauer als Erzieher" (1874)	ECHTES ZITAT — Nietzsche, „Schopenhauer als Erzieher" (1874)
+
+@passage_line	Direct quotation, from Nietzsche's essay honoring Schopenhauer as his teacher: "Niemand kann dir die Brücke bauen, auf der gerade du über den Fluss des Lebens schreiten musst, niemand außer dir allein."	Direktes Zitat, aus Nietzsches Essay, der Schopenhauer als seinen Lehrer ehrt: „Niemand kann dir die Brücke bauen, auf der gerade du über den Fluss des Lebens schreiten musst, niemand außer dir allein."
+
+@passage	01a2	MY OWN SUMMARY (not a quotation) — what young Nietzsche meant	MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — was der junge Nietzsche meinte
+
+@passage_line	The following is my own restatement, not Nietzsche's wording: he believed that no teacher, however wise, can truly walk a person's path for them. Each person must cross the river of their own life alone, in their own way.	Das Folgende ist meine eigene Wiedergabe, nicht Nietzsches Wortlaut: Er glaubte, dass kein Lehrer, wie weise er auch sei, den Weg eines Menschen wirklich für ihn gehen kann. Jeder Mensch muss den Fluss seines eigenen Lebens allein überschreiten, auf seine eigene Art.
+@passage_line	At this point in his life, young Nietzsche deeply admired Schopenhauer — though he would later develop very different, often opposing ideas.	Zu diesem Zeitpunkt in seinem Leben bewunderte der junge Nietzsche Schopenhauer zutiefst — obwohl er später sehr unterschiedliche, oft entgegengesetzte Ideen entwickeln würde.
+
+@passage	01b	Simplified — Walking your own path	Vereinfacht — Den eigenen Weg gehen
+
+@passage_line	Young Nietzsche wrote: nobody can build your bridge for you. You must cross the river of life by yourself.	Der junge Nietzsche schrieb: Niemand kann deine Brücke für dich bauen. Du musst den Fluss des Lebens allein überschreiten.
+@passage_line	He meant: a good teacher can show you the way, but cannot walk the path for you.	Er meinte: Ein guter Lehrer kann dir den Weg zeigen, aber er kann den Weg nicht für dich gehen.
+@passage_line	At this time, Nietzsche admired Schopenhauer very much and called him his teacher.	Zu dieser Zeit bewunderte Nietzsche Schopenhauer sehr und nannte ihn seinen Lehrer.
+@passage_line	Later in his life, Nietzsche changed many of his ideas and disagreed with Schopenhauer about important things.	Später in seinem Leben änderte Nietzsche viele seiner Ideen und war mit Schopenhauer über wichtige Dinge nicht einverstanden.
+
+
+# ── Dialogue 2: The List of Suspects ─────────────────────────────────────────
+@section	04	The List of Suspects	Die Liste der Verdächtigen
+@vocab	der Verdächtige	der Beweis	der Hinweis	zur gleichen Zeit	das Alibi	zugeben	leugnen	beweisen	überprüfen	logisch	die Reihenfolge
+
+adv020501-01	narrator		Nietzsche takes out a small notebook and begins to write, very seriously.	Nietzsche nimmt ein kleines Notizbuch heraus und beginnt, sehr ernst zu schreiben.
+adv020501-02	nietzsche		Let us think like detectives. Who was in this house in the last two days?	Lassen Sie uns wie Detektive denken. Wer war in den letzten zwei Tagen in diesem Haus?
+adv020501-03	schopenhauer		Kant was here two evenings ago. He left the next day, for Königsberg.	Kant war vor zwei Abenden hier. Er ist am nächsten Tag nach Königsberg abgereist.
+adv020501-04	nietzsche		So Kant is unlikely, unless he wrote the notes very quickly before leaving.	Also ist Kant unwahrscheinlich, außer er hat die Notizen sehr schnell geschrieben, bevor er gegangen ist.
+adv020501-05	schopenhauer		Hegel was here yesterday morning and stayed until evening. We argued, then made dinner, then he left around nine.	Hegel war gestern Morgen hier und blieb bis zum Abend. Wir haben gestritten, dann Abendessen gemacht, dann ist er gegen neun Uhr gegangen.
+adv020501-06	nietzsche		Hegel had time and opportunity. Did he go near your desk at any point?	Hegel hatte Zeit und Gelegenheit. Ist er irgendwann in die Nähe Ihres Schreibtischs gegangen?
+adv020501-07	schopenhauer		Yes, actually. He looked at some books on the shelf, right next to the desk.	Ja, tatsächlich. Er hat sich einige Bücher im Regal angeschaut, direkt neben dem Schreibtisch.
+adv020501-08	nietzsche		Interesting. But the notes were written during the night, you said. Did Hegel stay that late?	Interessant. Aber die Notizen wurden während der Nacht geschrieben, sagten Sie. Ist Hegel so lange geblieben?
+adv020501-09	schopenhauer		No. He left before nine, as I said. The notes appeared sometime after midnight, I believe.	Nein. Er ist vor neun gegangen, wie ich sagte. Die Notizen sind irgendwann nach Mitternacht erschienen, glaube ich.
+adv020501-10	nietzsche		Then Hegel could not have written them himself, unless he returned secretly. That seems unlikely for a respected professor.	Dann kann Hegel sie nicht selbst geschrieben haben, außer er ist heimlich zurückgekommen. Das scheint unwahrscheinlich für einen angesehenen Professor.
+adv020501-11	schopenhauer		Unlikely, yes. Though I would not put it entirely past him.	Unwahrscheinlich, ja. Obwohl ich es ihm nicht völlig zutrauen würde, das nicht zu tun.
+adv020501-12	nietzsche		Who else was in the house? Did you have a housekeeper, a guest, anyone at all?	Wer sonst war im Haus? Hatten Sie eine Haushälterin, einen Gast, irgendjemanden?
+adv020501-13	schopenhauer		No housekeeper that night. Only myself in the house. And, of course, my dog.	Keine Haushälterin in jener Nacht. Nur ich selbst im Haus. Und natürlich mein Hund.
+adv020501-14	nietzsche		Your dog cannot write philosophical arguments, Herr Schopenhauer.	Ihr Hund kann keine philosophischen Argumente schreiben, Herr Schopenhauer.
+adv020501-15	schopenhauer		No. Obviously not. And yet, the paw print troubles me more than I want to admit.	Nein. Offensichtlich nicht. Und doch beunruhigt mich der Pfotenabdruck mehr, als ich zugeben möchte.
+adv020501-16	nietzsche		Let us not rule out anything yet. A good investigation stays open to strange possibilities.	Lassen Sie uns noch nichts ausschließen. Eine gute Untersuchung bleibt offen für seltsame Möglichkeiten.
+
+adv020501-17q	question		Who, besides Schopenhauer, was in the house that night, according to him?	Wer außer Schopenhauer war laut ihm in jener Nacht im Haus?
+adv020501-18a	option	correct	Only his dog.	Nur sein Hund.
+adv020501-18b	option		Hegel.	Hegel.
+adv020501-18c	option		A housekeeper.	Eine Haushälterin.
+
+
+# ── Reading Pair 2: An Unfinished Page ───────────────────────────────────────
+@section	05	An Unfinished Page	Eine unvollendete Seite
+@vocab	unvollendet	der Entwurf	die Seite	durchstreichen	die Notiz	hinzufügen	verändern	das Argument	stark	schwach	verbessern	hinterfragen
+
+@passage	02a	MY OWN WRITING (not a quotation) — a page from Schopenhauer's manuscript, in the style of his arguments	MEINE EIGENE SCHRIFT (kein Zitat) — eine Seite aus Schopenhauers Manuskript, im Stil seiner Argumente
+
+@passage_line	This page is my own invented writing for the story, not a real excerpt from Schopenhauer's actual books. It imagines an unfinished page from his manuscript, with one of the mysterious handwritten notes added beside it.	Diese Seite ist meine eigene erfundene Schrift für die Geschichte, kein echtes Zitat aus Schopenhauers tatsächlichen Büchern. Sie stellt eine unvollendete Seite seines Manuskripts vor, mit einer der mysteriösen handgeschriebenen Notizen daneben.
+@passage_line	Manuscript text (invented): "All striving, once its goal is reached, immediately produces a new and equally restless striving." Margin note (invented, handwriting unknown): "But does the striving ever truly end, or only change its name?"	Manuskripttext (erfunden): „Jedes Streben erzeugt, sobald sein Ziel erreicht ist, sofort ein neues und ebenso unruhiges Streben." Randnotiz (erfunden, Handschrift unbekannt): „Aber endet das Streben jemals wirklich, oder ändert es nur seinen Namen?"
+
+@passage	02b	Simplified — A sharp little question	Vereinfacht — Eine scharfe kleine Frage
+
+@passage_line	Schopenhauer's invented manuscript page says: when we reach a goal, we immediately want something new.	Schopenhauers erfundene Manuskriptseite sagt: Wenn wir ein Ziel erreichen, wollen wir sofort etwas Neues.
+@passage_line	The mystery note asks a clever question: does wanting ever really stop, or does it just get a new name?	Die mysteriöse Notiz stellt eine kluge Frage: Hört das Wollen jemals wirklich auf, oder bekommt es nur einen neuen Namen?
+@passage_line	This question is sharp and fair. It does not insult Schopenhauer. It makes him think more carefully.	Diese Frage ist scharf und fair. Sie beleidigt Schopenhauer nicht. Sie lässt ihn sorgfältiger nachdenken.
+@passage_line	Nietzsche says this proves the writer respected Schopenhauer's ideas, even while challenging them.	Nietzsche sagt, das beweist, dass der Verfasser Schopenhauers Ideen respektierte, auch während er sie herausforderte.
+
+
+# ── Dialogue 3: Examining the Ink ────────────────────────────────────────────
+@section	06	Examining the Ink	Die Tinte untersuchen
+@vocab	die Tinte	die Feder	dunkel	hell	trocken	feucht	der Tropfen	vergleichen	gleich	unterschiedlich	das Werkzeug	der Tisch
+
+adv020701-01	narrator		Nietzsche examines the small black mark closely, holding it up to the light.	Nietzsche untersucht den kleinen schwarzen Fleck genau und hält ihn ins Licht.
+adv020701-02	nietzsche		This is definitely ink. The same ink as the notes, I think. Look at the color.	Das ist definitiv Tinte. Die gleiche Tinte wie die Notizen, denke ich. Schauen Sie sich die Farbe an.
+adv020701-03	schopenhauer		The same ink as my own inkwell, unfortunately. Whoever did this used my own materials.	Die gleiche Tinte wie mein eigenes Tintenfass, leider. Wer das gemacht hat, hat meine eigenen Materialien benutzt.
+adv020701-04	nietzsche		That tells us something important. The writer did not bring their own ink and pen. They found yours, here in this room.	Das sagt uns etwas Wichtiges. Der Verfasser hat nicht eigene Tinte und Feder mitgebracht. Er hat Ihre hier in diesem Zimmer gefunden.
+adv020701-05	schopenhauer		So it was someone already in my study, without preparation. Not someone who planned this carefully in advance.	Also war es jemand, der schon in meinem Arbeitszimmer war, ohne Vorbereitung. Nicht jemand, der das im Voraus sorgfältig geplant hat.
+adv020701-06	nietzsche		Exactly! This was perhaps spontaneous. An impulse, not a plan.	Genau! Das war vielleicht spontan. Ein Impuls, kein Plan.
+adv020701-07	schopenhauer		An impulse fits Hegel poorly. He plans everything, even his arguments, like a general planning a battle.	Ein Impuls passt schlecht zu Hegel. Er plant alles, sogar seine Argumente, wie ein General, der eine Schlacht plant.
+adv020701-08	nietzsche		Then perhaps it was not Hegel after all. Who else has access to this room, even briefly?	Dann war es vielleicht doch nicht Hegel. Wer sonst hat Zugang zu diesem Zimmer, auch nur kurz?
+adv020701-09	schopenhauer		No one, that I can think of. Unless someone climbed through the window, which seems absurd.	Niemand, der mir einfällt. Außer jemand ist durch das Fenster geklettert, was absurd erscheint.
+adv020701-10	narrator		Nietzsche walks to the window and examines it carefully.	Nietzsche geht zum Fenster und untersucht es sorgfältig.
+adv020701-11	nietzsche		The window was open last night?	War das Fenster letzte Nacht offen?
+adv020701-12	schopenhauer		Yes, actually. For fresh air. I often leave it open a little, even in cooler weather.	Ja, tatsächlich. Für frische Luft. Ich lasse es oft ein wenig offen, sogar bei kühlerem Wetter.
+adv020701-13	nietzsche		Then anyone — or anything — small enough could have entered through that gap.	Dann konnte jeder — oder irgendetwas — Kleines genug durch diese Lücke eintreten.
+adv020701-14	schopenhauer		"Anything"? You are not seriously suggesting an animal climbed through my window and wrote philosophical criticism.	„Irgendetwas"? Sie schlagen doch nicht ernsthaft vor, dass ein Tier durch mein Fenster geklettert ist und philosophische Kritik geschrieben hat.
+adv020701-15	nietzsche		Of course not directly. But perhaps something else happened — something we have not yet considered.	Natürlich nicht direkt. Aber vielleicht ist etwas anderes passiert — etwas, das wir noch nicht bedacht haben.
+adv020701-16	schopenhauer		You speak in riddles, young man. I prefer clear answers.	Sie sprechen in Rätseln, junger Mann. Ich bevorzuge klare Antworten.
+adv020701-17	nietzsche		Clear answers will come. But first, more questions. That is how philosophy works, is it not?	Klare Antworten werden kommen. Aber zuerst mehr Fragen. So funktioniert Philosophie doch, oder nicht?
+
+adv020701-18q	question		What does the ink tell Nietzsche and Schopenhauer?	Was sagt ihnen die Tinte?
+adv020701-19a	option	correct	The writer used Schopenhauer's own ink, without preparation.	Der Verfasser benutzte Schopenhauers eigene Tinte, ohne Vorbereitung.
+adv020701-19b	option		The writer brought special ink from far away.	Der Verfasser brachte besondere Tinte von weit her.
+adv020701-19c	option		There was no ink at all, only pencil.	Es gab überhaupt keine Tinte, nur Bleistift.
+
+adv020701-20q	question		Based on the clues so far, who do you suspect wrote the notes?	Basierend auf den bisherigen Hinweisen, wen verdächtigst du, die Notizen geschrieben zu haben?
+adv020701-21a	option	correct	I suspect Hegel.	Ich verdächtige Hegel.
+adv020701-22b	option	correct	I suspect someone or something else entirely.	Ich verdächtige jemanden oder etwas völlig anderes.
+adv020701-23c	option	correct	I am not sure yet.	Ich bin mir noch nicht sicher.
+
+
+# ── Reading Pair 3: On Solitude ───────────────────────────────────────────────
+@section	07	On Solitude	Über die Einsamkeit
+@vocab	die Einsamkeit	allein sein	die Gesellschaft	vermeiden	bevorzugen	ruhig	der Lärm	stören	brauchen	der Gedanke	frei	ungestört
+
+@passage	03a	MY OWN SUMMARY (not a quotation) — Schopenhauer on solitude, in my own words	MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — Schopenhauer über die Einsamkeit, in meinen eigenen Worten
+
+@passage_line	This passage restates, in my own words, a theme found across Schopenhauer's essays on solitude (see "Parerga und Paralipomena" for his actual texts): he believed a thinking person needs time alone, away from the noise and demands of society, in order to develop their own ideas instead of merely repeating others'.	Diese Passage gibt, in meinen eigenen Worten, ein Thema wieder, das sich durch Schopenhauers Essays über die Einsamkeit zieht (siehe „Parerga und Paralipomena" für seine tatsächlichen Texte): Er glaubte, ein denkender Mensch braucht Zeit allein, fern vom Lärm und den Ansprüchen der Gesellschaft, um eigene Ideen zu entwickeln, statt nur die anderer zu wiederholen.
+@passage_line	Ironically, given the events of this chapter, he also worried that solitude could be interrupted — and that even a quiet study is never as private as its owner believes.	Ironischerweise, angesichts der Ereignisse in diesem Kapitel, sorgte er sich auch, dass Einsamkeit unterbrochen werden könnte — und dass selbst ein ruhiges Arbeitszimmer nie so privat ist, wie sein Besitzer glaubt.
+
+@passage	03b	Simplified — Why Schopenhauer liked being alone	Vereinfacht — Warum Schopenhauer gerne allein war
+
+@passage_line	Schopenhauer believed that being alone helps a person think more clearly.	Schopenhauer glaubte, dass Alleinsein einem Menschen hilft, klarer zu denken.
+@passage_line	He thought too much social noise makes it difficult to develop your own ideas.	Er dachte, zu viel sozialer Lärm macht es schwer, eigene Ideen zu entwickeln.
+@passage_line	But this chapter shows an interesting problem: even his quiet study was not as private as he believed!	Aber dieses Kapitel zeigt ein interessantes Problem: Sogar sein ruhiges Arbeitszimmer war nicht so privat, wie er glaubte!
+@passage_line	Sometimes, even the most careful person cannot fully control who — or what — enters their space.	Manchmal kann sogar der vorsichtigste Mensch nicht vollständig kontrollieren, wer — oder was — seinen Raum betritt.
+
+
+# ── Dialogue 4: A New Theory ──────────────────────────────────────────────────
+@section	08	A New Theory	Eine neue Theorie
+@vocab	die Theorie	vorschlagen	vielleicht	unwahrscheinlich	möglich	beweisen	der Zufall	die Erklärung	überlegen	annehmen	bezweifeln	überzeugend
+
+adv020901-01	narrator		Nietzsche paces around the study, deep in thought.	Nietzsche geht im Arbeitszimmer auf und ab, tief in Gedanken.
+adv020901-02	nietzsche		I have a theory, Herr Schopenhauer. You will think it strange.	Ich habe eine Theorie, Herr Schopenhauer. Sie werden sie seltsam finden.
+adv020901-03	schopenhauer		Everything about this morning is already strange. Continue.	Alles an diesem Morgen ist schon seltsam. Fahren Sie fort.
+adv020901-04	nietzsche		What if the notes were not written with full intention? What if something — or someone — accidentally created words that only look intentional?	Was, wenn die Notizen nicht mit voller Absicht geschrieben wurden? Was, wenn etwas — oder jemand — versehentlich Wörter geschaffen hat, die nur absichtlich aussehen?
+adv020901-05	schopenhauer		That sounds nearly impossible. Coherent philosophical sentences do not appear by accident.	Das klingt fast unmöglich. Zusammenhängende philosophische Sätze entstehen nicht durch Zufall.
+adv020901-06	nietzsche		Perhaps not entirely by accident. But consider: what if someone was here, half-asleep, writing without full awareness? People sometimes write strange things when very tired.	Vielleicht nicht ganz durch Zufall. Aber überlegen Sie: Was, wenn jemand hier war, halb schlafend, und ohne volles Bewusstsein geschrieben hat? Menschen schreiben manchmal seltsame Dinge, wenn sie sehr müde sind.
+adv020901-07	schopenhauer		I was asleep at eleven. I did not walk in my sleep to my own desk and criticize my own work.	Ich war um elf Uhr im Schlaf. Ich bin nicht im Schlaf zu meinem eigenen Schreibtisch gegangen und habe meine eigene Arbeit kritisiert.
+adv020901-08	nietzsche		No, not you. But perhaps you are not the only person whose mind was active in this house last night.	Nein, nicht Sie. Aber vielleicht waren Sie nicht die einzige Person, deren Geist letzte Nacht in diesem Haus aktiv war.
+adv020901-09	schopenhauer		You are talking about my dog again, aren't you?	Sie sprechen wieder über meinen Hund, nicht wahr?
+adv020901-10	nietzsche		I am simply keeping an open mind, Herr Schopenhauer! A true philosopher does not reject a possibility just because it sounds unusual.	Ich halte einfach meinen Geist offen, Herr Schopenhauer! Ein wahrer Philosoph lehnt eine Möglichkeit nicht ab, nur weil sie ungewöhnlich klingt.
+adv020901-11	schopenhauer		My dog is intelligent. I have said this myself, more than once. But he cannot hold a pen.	Mein Hund ist intelligent. Das habe ich selbst gesagt, mehr als einmal. Aber er kann keine Feder halten.
+adv020901-12	nietzsche		No. He cannot. But perhaps he was not entirely alone in this room last night.	Nein. Das kann er nicht. Aber vielleicht war er letzte Nacht nicht ganz allein in diesem Zimmer.
+adv020901-13	schopenhauer		What do you mean by that?	Was meinen Sie damit?
+adv020901-14	nietzsche		I do not know yet. But I would like to speak with your dog's usual habits. Where does he sleep? Where does he go at night?	Das weiß ich noch nicht. Aber ich würde gerne mehr über die üblichen Gewohnheiten Ihres Hundes erfahren. Wo schläft er? Wohin geht er nachts?
+adv020901-15	schopenhauer		This is becoming a very unusual investigation, Herr Nietzsche.	Das wird eine sehr ungewöhnliche Untersuchung, Herr Nietzsche.
+adv020901-16	nietzsche		The best investigations usually are.	Die besten Untersuchungen sind das meistens.
+adv020901-17	narrator		Schopenhauer sighs, but leads Nietzsche toward the kitchen, where his dog usually sleeps near the fire.	Schopenhauer seufzt, aber führt Nietzsche zur Küche, wo sein Hund normalerweise nahe am Feuer schläft.
+
+adv020901-18q	question		What does Nietzsche want to investigate next?	Was möchte Nietzsche als Nächstes untersuchen?
+adv020901-19a	option	correct	The dog's usual habits at night.	Die üblichen Gewohnheiten des Hundes in der Nacht.
+adv020901-20b	option		Hegel's handwriting samples.	Hegels Handschriftproben.
+adv020901-21c	option		The contents of the inkwell.	Den Inhalt des Tintenfasses.
+
+
+# ── Reading Pair 4: On Truth and Error ───────────────────────────────────────
+@section	09	On Truth and Error	Über Wahrheit und Irrtum
+@vocab	die Wahrheit	der Irrtum	der Fehler	glauben	zweifeln	sicher	unsicher	beweisen	annehmen	vermuten	der Verdacht	klären
+
+@passage	04a	MY OWN WRITING (not a quotation) — in the spirit of Nietzsche's early notebooks, on appearances and truth	MEINE EIGENE SCHRIFT (kein Zitat) — im Geiste Nietzsches früher Notizbücher, über Schein und Wahrheit
+
+@passage_line	This passage is entirely my own invented writing, not a real Nietzsche quotation. It imagines the kind of note young Nietzsche, fascinated by the case, might have written in his own notebook that day: "A thing that looks intentional is not always intentional; and a thing that looks accidental is not always without meaning. The detective's task, like the philosopher's, is to doubt both assumptions equally."	Diese Passage ist vollständig meine eigene erfundene Schrift, kein echtes Nietzsche-Zitat. Sie stellt sich die Art von Notiz vor, die der junge, vom Fall faszinierte Nietzsche an jenem Tag in sein eigenes Notizbuch hätte schreiben können: „Ein Ding, das absichtlich aussieht, ist nicht immer absichtlich; und ein Ding, das zufällig aussieht, ist nicht immer ohne Bedeutung. Die Aufgabe des Detektivs ist, wie die des Philosophen, beide Annahmen gleich zu bezweifeln."
+
+@passage	04b	Simplified — Don't trust appearances too quickly	Vereinfacht — Vertraue dem Anschein nicht zu schnell
+
+@passage_line	Nietzsche's invented notebook entry makes a simple point: things are not always what they seem.	Nietzsches erfundener Notizbucheintrag macht einen einfachen Punkt: Dinge sind nicht immer das, was sie scheinen.
+@passage_line	Something that looks planned might be an accident. Something that looks accidental might have a hidden meaning.	Etwas, das geplant aussieht, könnte ein Zufall sein. Etwas, das zufällig aussieht, könnte eine versteckte Bedeutung haben.
+@passage_line	A good detective — and a good philosopher — should question both possibilities equally, instead of deciding too quickly.	Ein guter Detektiv — und ein guter Philosoph — sollte beide Möglichkeiten gleich hinterfragen, statt zu schnell zu entscheiden.
+@passage_line	This idea fits the mystery of the manuscript perfectly: nothing is certain yet.	Diese Idee passt perfekt zum Rätsel des Manuskripts: Noch ist nichts sicher.
+
+
+# ── Final Dialogue: A Strange Clue ───────────────────────────────────────────
+@section	10	A Strange Clue	Ein seltsamer Hinweis
+@vocab	der Hinweis	finden	bemerken	überrascht	der Korb	das Kissen	die Pfote	schwarz	die Tatze	untersuchen	folgen	die Spur
+
+adv021001-01	narrator		In the kitchen, Nietzsche examines the dog's sleeping basket near the fireplace.	In der Küche untersucht Nietzsche den Schlafkorb des Hundes nahe am Kamin.
+adv021001-02	nietzsche		Herr Schopenhauer, come look at this.	Herr Schopenhauer, kommen Sie und schauen Sie sich das an.
+adv021001-03	schopenhauer		What is it?	Was ist es?
+adv021001-04	nietzsche		There is a small black mark on this cushion too. The same color as the ink.	Da ist auch ein kleiner schwarzer Fleck auf diesem Kissen. Die gleiche Farbe wie die Tinte.
+adv021001-05	schopenhauer		That is... unexpected. My dog sleeps here every night, far from my desk.	Das ist... unerwartet. Mein Hund schläft hier jede Nacht, weit weg von meinem Schreibtisch.
+adv021001-06	nietzsche		Far from the desk, yes. But is there anything between the desk and the kitchen? A path he might walk?	Weit weg vom Schreibtisch, ja. Aber ist da irgendetwas zwischen dem Schreibtisch und der Küche? Ein Weg, den er gehen könnte?
+adv021001-07	schopenhauer		Only the hallway. And the small table where I sometimes leave my ink and pen, when I work late.	Nur der Flur. Und der kleine Tisch, wo ich manchmal meine Tinte und Feder lasse, wenn ich spät arbeite.
+adv021001-08	nietzsche		A small table. With ink. Along the path between your desk and the kitchen.	Ein kleiner Tisch. Mit Tinte. Entlang des Weges zwischen Ihrem Schreibtisch und der Küche.
+adv021001-09	schopenhauer		You are suggesting my dog walked through spilled ink?	Sie schlagen vor, dass mein Hund durch verschüttete Tinte gelaufen ist?
+adv021001-10	nietzsche		I am suggesting we should examine that small table very carefully tomorrow. Tonight, perhaps, if the light allows.	Ich schlage vor, dass wir diesen kleinen Tisch morgen sehr sorgfältig untersuchen sollten. Heute Abend, vielleicht, wenn das Licht es erlaubt.
+adv021001-11	schopenhauer		This is an absurd theory, Herr Nietzsche. A dog cannot write coherent philosophical objections, ink paws or not.	Das ist eine absurde Theorie, Herr Nietzsche. Ein Hund kann keine zusammenhängenden philosophischen Einwände schreiben, ob mit Tintenpfoten oder nicht.
+adv021001-12	nietzsche		Of course not directly! But perhaps the explanation is stranger and simpler than we think. I have one more idea, but I need more time to test it.	Natürlich nicht direkt! Aber vielleicht ist die Erklärung seltsamer und einfacher, als wir denken. Ich habe noch eine Idee, aber ich brauche mehr Zeit, sie zu prüfen.
+adv021001-13	schopenhauer		Very well. It is getting late. Will you stay the night, and help me continue this strange investigation tomorrow?	Also gut. Es wird spät. Werden Sie über Nacht bleiben und mir morgen helfen, diese seltsame Untersuchung fortzusetzen?
+adv021001-14	nietzsche		I would be honored, Herr Schopenhauer. I came here to learn from you. I did not expect to become your detective partner as well.	Das wäre mir eine Ehre, Herr Schopenhauer. Ich kam hierher, um von Ihnen zu lernen. Ich habe nicht erwartet, auch noch Ihr Detektivpartner zu werden.
+adv021001-15	schopenhauer		Strange days bring strange partnerships, it seems.	Seltsame Tage bringen seltsame Partnerschaften, scheint es.
+adv021001-16	narrator		Night falls over the small study. The mystery remains unsolved — but tomorrow, the truth may finally come to light.	Die Nacht senkt sich über das kleine Arbeitszimmer. Das Rätsel bleibt ungelöst — aber morgen könnte die Wahrheit endlich ans Licht kommen.
+
+adv021001-17q	question		Where does Nietzsche find another ink mark?	Wo findet Nietzsche einen weiteren Tintenfleck?
+adv021001-18a	option	correct	On the dog's sleeping cushion.	Auf dem Schlafkissen des Hundes.
+adv021001-19b	option		On Hegel's coat.	Auf Hegels Mantel.
+adv021001-20c	option		On the front door.	Auf der Eingangstür.
+
+adv021001-21q	question		What do you think really happened? Take a guess before chapter four reveals the answer!	Was glaubst du, ist wirklich passiert? Rate, bevor Kapitel vier die Antwort verrät!
+adv021001-22a	option	correct	I think the dog is somehow involved.	Ich glaube, der Hund ist irgendwie beteiligt.
+adv021001-23b	option	correct	I think Hegel secretly returned.	Ich glaube, Hegel ist heimlich zurückgekommen.
+adv021001-24c	option	correct	I have a completely different theory.	Ich habe eine ganz andere Theorie.

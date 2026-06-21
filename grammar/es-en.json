@@ -1,0 +1,826 @@
+{
+  "id": "es-grammar",
+  "language": "es",
+  "native": "en",
+  "patterns": [
+    {
+      "id": "es-g-001",
+      "level": "A1",
+      "category": "articles",
+      "title": "Definite articles — el, la, los, las",
+      "explanation": "Spanish nouns have gender. Masculine singular: el. Feminine singular: la. Masculine plural: los. Feminine plural: las.",
+      "type": "fill-blank",
+      "template": "___ {[libro:El|mesa:La|estudiantes:Los|ciudad:La|perro:El|gatos:Los]} es/son muy bueno/a.",
+      "hint": "El = masculine singular, la = feminine singular.",
+      "distractors": [
+        "el",
+        "la",
+        "los",
+        "las"
+      ]
+    },
+    {
+      "id": "es-g-002",
+      "level": "A1",
+      "category": "articles",
+      "title": "Indefinite articles — un, una, unos, unas",
+      "explanation": "Indefinite articles: un (masc. sing.), una (fem. sing.), unos (masc. pl.), unas (fem. pl.).",
+      "type": "fill-blank",
+      "template": "Tengo ___ {[libro:un|mesa:una|gato:un|amiga:una|perro:un|manzana:una]}.",
+      "hint": "Un = masculine, una = feminine.",
+      "distractors": [
+        "un",
+        "una",
+        "unos",
+        "unas"
+      ]
+    },
+    {
+      "id": "es-g-003",
+      "level": "A1",
+      "category": "conjugation",
+      "title": "Present tense — ser (to be, permanent)",
+      "explanation": "ser: yo soy, tú eres, él/ella es, nosotros somos, vosotros sois, ellos son. Used for identity, origin, profession, characteristics.",
+      "type": "fill-blank",
+      "template": "{[Yo|Tú|Él|Ella|Nosotros|Ellos]} ___ estudiante.",
+      "hint": "Conjugate ser to match the subject.",
+      "distractors": [
+        "auto:ser-present"
+      ]
+    },
+    {
+      "id": "es-g-004",
+      "level": "A1",
+      "category": "conjugation",
+      "title": "Present tense — estar (to be, temporary)",
+      "explanation": "estar: yo estoy, tú estás, él está, nosotros estamos, vosotros estáis, ellos están. Used for states, locations, feelings.",
+      "type": "fill-blank",
+      "template": "{[Yo|Tú|Él|Nosotros|Ellos]} ___ en casa.",
+      "hint": "Conjugate estar to match the subject.",
+      "distractors": [
+        "auto:estar-present"
+      ]
+    },
+    {
+      "id": "es-g-005",
+      "level": "A1",
+      "category": "ser-estar",
+      "title": "Ser vs estar",
+      "explanation": "ser = permanent/identity (nationality, profession, characteristics). estar = temporary state, location, feelings.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "Ella es profesora.",
+          "correct": true
+        },
+        {
+          "text": "Ella está profesora.",
+          "correct": false,
+          "error": "Professions use ser, not estar."
+        },
+        {
+          "text": "El libro está en la mesa.",
+          "correct": true
+        },
+        {
+          "text": "El libro es en la mesa.",
+          "correct": false,
+          "error": "Location uses estar, not ser."
+        },
+        {
+          "text": "Estoy cansado.",
+          "correct": true
+        },
+        {
+          "text": "Soy cansado.",
+          "correct": false,
+          "error": "Temporary states (tired) use estar."
+        }
+      ]
+    },
+    {
+      "id": "es-g-006",
+      "level": "A1",
+      "category": "conjugation",
+      "title": "Present tense — regular -ar verbs",
+      "explanation": "Regular -ar verbs: hablar → hablo, hablas, habla, hablamos, habláis, hablan. Remove -ar, add endings.",
+      "type": "fill-blank",
+      "template": "Yo ___ {[español:hablo|mucho:estudio|todos los días:trabajo|con mis amigos:hablo]}.",
+      "hint": "Yo form of -ar verbs ends in -o.",
+      "distractors": [
+        "hablo",
+        "hablas",
+        "habla",
+        "hablamos"
+      ]
+    },
+    {
+      "id": "es-g-007",
+      "level": "A1",
+      "category": "conjugation",
+      "title": "Present tense — regular -er and -ir verbs",
+      "explanation": "-er verbs: como, comes, come, comemos, coméis, comen. -ir verbs: vivo, vives, vive, vivimos, vivís, viven.",
+      "type": "fill-blank",
+      "template": "Ella ___ {[en Madrid:vive|mucha fruta:come|libros:lee|agua:bebe]}.",
+      "hint": "Ella form of -er/-ir verbs ends in -e.",
+      "distractors": [
+        "vive",
+        "vives",
+        "vivimos",
+        "viven"
+      ]
+    },
+    {
+      "id": "es-g-008",
+      "level": "A1",
+      "category": "word-order",
+      "title": "Basic sentence order — SVO",
+      "explanation": "Spanish is generally Subject-Verb-Object, but word order is flexible. The subject pronoun is often dropped because the verb ending shows who is acting.",
+      "type": "tile-order",
+      "tiles": [
+        "Yo",
+        "como",
+        "una manzana",
+        "todos los días"
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "note": null
+        },
+        {
+          "order": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "note": "Time adverb can come before or after the object."
+        },
+        {
+          "order": [
+            1,
+            2,
+            3
+          ],
+          "note": "Subject pronoun can be dropped — verb ending shows subject."
+        }
+      ]
+    },
+    {
+      "id": "es-g-009",
+      "level": "A2",
+      "category": "conjugation",
+      "title": "Preterite — regular -ar verbs",
+      "explanation": "Preterite (completed past): hablar → hablé, hablaste, habló, hablamos, hablasteis, hablaron. Note accent on yo and él/ella forms.",
+      "type": "fill-blank",
+      "template": "Ayer yo ___ {[con mi amigo:hablé|mucho:estudié|en el restaurante:comí|la película:vi]}.",
+      "hint": "Yo preterite of -ar verbs ends in -é (with accent).",
+      "distractors": [
+        "hablé",
+        "hablaste",
+        "habló",
+        "hablamos"
+      ]
+    },
+    {
+      "id": "es-g-010",
+      "level": "A2",
+      "category": "conjugation",
+      "title": "Preterite vs imperfect — ser/estar",
+      "explanation": "Preterite: specific completed event. Imperfect: habitual past, background description, ongoing state. fui/estuve = specific occasion. era/estaba = used to be / was (ongoing).",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "Cuando era niño, vivía en Madrid.",
+          "correct": true
+        },
+        {
+          "text": "Cuando era niño, viví en Madrid.",
+          "correct": false,
+          "error": "Habitual/ongoing past states use imperfect (vivía), not preterite."
+        },
+        {
+          "text": "Ayer fui al supermercado.",
+          "correct": true
+        },
+        {
+          "text": "Ayer iba al supermercado.",
+          "correct": false,
+          "error": "Specific completed events use preterite (fui), not imperfect."
+        }
+      ]
+    },
+    {
+      "id": "es-g-011",
+      "level": "A2",
+      "category": "negation",
+      "title": "Negation — no before verb",
+      "explanation": "In Spanish, no comes immediately before the verb. Double negatives are required: no ... nada, no ... nadie, no ... nunca.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "No como carne.",
+          "correct": true
+        },
+        {
+          "text": "No como nada.",
+          "correct": true
+        },
+        {
+          "text": "Como nada.",
+          "correct": false,
+          "error": "With negative words like nada, no must still precede the verb: no como nada."
+        },
+        {
+          "text": "No tengo ningún problema.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "es-g-012",
+      "level": "A2",
+      "category": "verbs",
+      "title": "Reflexive verbs — me, te, se, nos, os, se",
+      "explanation": "Reflexive verbs have a pronoun that refers back to the subject. llamarse (to be called): me llamo, te llamas, se llama...",
+      "type": "fill-blank",
+      "template": "Yo ___ {[llamo Juan:me llamo|levanto a las siete:me levanto|lavo las manos:me lavo|ducho por la mañana:me ducho]}.",
+      "hint": "Reflexive pronoun me agrees with yo.",
+      "distractors": [
+        "me llamo",
+        "te llamas",
+        "se llama",
+        "nos llamamos"
+      ]
+    },
+    {
+      "id": "es-g-013",
+      "level": "A2",
+      "category": "adjectives",
+      "title": "Adjective agreement — gender and number",
+      "explanation": "Adjectives must agree with the noun in gender and number. bueno → buena (fem.), buenos (masc. pl.), buenas (fem. pl.).",
+      "type": "fill-blank",
+      "template": "La película es muy {[buena|interesante|aburrida|larga]}.",
+      "hint": "Adjectives agree with the noun they describe. película is feminine.",
+      "distractors": [
+        "buena",
+        "bueno",
+        "buenos",
+        "buenas"
+      ]
+    },
+    {
+      "id": "es-g-014",
+      "level": "B1",
+      "category": "subjunctive",
+      "title": "Present subjunctive — with querer que",
+      "explanation": "The subjunctive is used after expressions of wish, emotion, doubt, and impersonal expressions. quiero que + subjunctive (different subject).",
+      "type": "fill-blank",
+      "template": "Quiero que tú ___ {[vengas|estudies|comas|hables]}.",
+      "hint": "After querer que with a different subject, use the subjunctive.",
+      "distractors": [
+        "vengas",
+        "vienes",
+        "vendrás",
+        "veniste"
+      ]
+    },
+    {
+      "id": "es-g-015",
+      "level": "B1",
+      "category": "subjunctive",
+      "title": "Subjunctive vs indicative after cuando",
+      "explanation": "cuando + indicative = when (habitual/past). cuando + subjunctive = when (future). E.g. Cuando llegues (future), llámame.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "Cuando llegues, llámame.",
+          "correct": true
+        },
+        {
+          "text": "Cuando llegas, llámame.",
+          "correct": false,
+          "error": "Future 'when' clauses require subjunctive: cuando llegues."
+        },
+        {
+          "text": "Cuando llego a casa, siempre como.",
+          "correct": true
+        },
+        {
+          "text": "Cuando llegue a casa ayer, comí.",
+          "correct": false,
+          "error": "Past 'when' uses indicative: cuando llegué (preterite)."
+        }
+      ]
+    },
+    {
+      "id": "es-g-016",
+      "level": "B1",
+      "category": "verbs",
+      "title": "Ir a + infinitive — near future",
+      "explanation": "ir a + infinitive expresses plans or intentions in the near future, similar to 'going to' in English.",
+      "type": "fill-blank",
+      "template": "Esta tarde voy a ___ {[estudiar|comer|ver una película|salir con amigos]}.",
+      "hint": "voy a + infinitive = I'm going to [do something].",
+      "distractors": [
+        "estudiar",
+        "estudio",
+        "estudié",
+        "estudiaba"
+      ]
+    },
+    {
+      "id": "es-g-017",
+      "level": "B1",
+      "category": "word-order",
+      "title": "Object pronouns — position before verb",
+      "explanation": "Direct and indirect object pronouns come before conjugated verbs: lo veo, le doy. They attach to infinitives and gerunds: verlo, dándole.",
+      "type": "tile-order",
+      "tiles": [
+        "Yo",
+        "lo",
+        "veo",
+        "todos los días"
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "note": null
+        },
+        {
+          "order": [
+            1,
+            2,
+            3
+          ],
+          "note": "Subject pronoun can be dropped."
+        }
+      ]
+    },
+    {
+      "id": "es-g-018",
+      "level": "B1",
+      "category": "conjugation",
+      "title": "Conditional tense — would",
+      "explanation": "Conditional: infinitive + -ía, -ías, -ía, -íamos, -íais, -ían. Used for hypothetical situations and polite requests.",
+      "type": "fill-blank",
+      "template": "Si tuviera tiempo, ___ {[estudiaría más|viajaría por el mundo|leería más libros|aprendería japonés]}.",
+      "hint": "Conditional = infinitive + -ía. Expresses 'would'.",
+      "distractors": [
+        "estudiaría",
+        "estudiaré",
+        "estudiaba",
+        "estudié"
+      ]
+    },
+    {
+      "id": "es-g-019",
+      "level": "B2",
+      "category": "subjunctive",
+      "title": "Imperfect subjunctive — si clauses",
+      "explanation": "Contrary-to-fact conditionals: Si + imperfect subjunctive + conditional. Si tuviera → if I had (but I don't).",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "Si tuviera dinero, viajaría.",
+          "correct": true
+        },
+        {
+          "text": "Si tengo dinero, viajaré.",
+          "correct": true
+        },
+        {
+          "text": "Si tendría dinero, viajaría.",
+          "correct": false,
+          "error": "Never use conditional in the si clause. Use imperfect subjunctive (tuviera) or present indicative (tengo)."
+        },
+        {
+          "text": "Si tuviera dinero, viajaba.",
+          "correct": false,
+          "error": "The result clause needs conditional (viajaría), not imperfect."
+        }
+      ]
+    },
+    {
+      "id": "es-g-020",
+      "level": "B2",
+      "category": "verbs",
+      "title": "Por vs para",
+      "explanation": "para = purpose/goal/recipient/deadline. por = cause/reason/exchange/duration/on behalf of. Often confused.",
+      "type": "fill-blank",
+      "template": "Este regalo es ___ {[ti:para|eso:por|la mañana:por|aprender:para]}.",
+      "hint": "para = for (recipient, purpose). por = because of, in exchange for, during.",
+      "distractors": [
+        "para",
+        "por"
+      ]
+    },
+    {
+      "id": "es-g-021",
+      "level": "B2",
+      "category": "word-order",
+      "title": "Inversion in questions",
+      "explanation": "In Spanish questions, the subject follows the verb (inversion). ¿Habla Juan español? Also used after certain adverbs at the start.",
+      "type": "tile-order",
+      "tiles": [
+        "¿",
+        "habla",
+        "Juan",
+        "español",
+        "?"
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "note": null
+        },
+        {
+          "order": [
+            0,
+            1,
+            3,
+            2,
+            4
+          ],
+          "note": "Object can also precede the subject in questions."
+        }
+      ]
+    },
+    {
+      "id": "es-g-022",
+      "level": "B2",
+      "category": "conjugation",
+      "title": "Present perfect — haber + participio",
+      "explanation": "The present perfect (pretérito perfecto) is formed with haber + past participle. Used for recent past or actions connected to the present. Haber: he, has, ha, hemos, habéis, han.",
+      "type": "fill-blank",
+      "template": "Hoy yo ___ {[he comido|he estudiado|he viajado|he hablado]} mucho.",
+      "hint": "Present perfect = he/has/ha... + participio (-ado/-ido).",
+      "distractors": [
+        "he comido",
+        "comí",
+        "como",
+        "comía"
+      ]
+    },
+    {
+      "id": "es-g-023",
+      "level": "B2",
+      "category": "subjunctive",
+      "title": "Subjuntivo imperfecto — si clauses (review)",
+      "explanation": "Si + imperfecto de subjuntivo + condicional = hipótesis sobre el presente/futuro. Si tuviera → si yo tuviera (no tengo).",
+      "type": "fill-blank",
+      "template": "Si _____ más dinero, viajaría por el mundo.",
+      "hint": "Imperfecto de subjuntivo de 'tener': tuviera.",
+      "distractors": [
+        "tuviera",
+        "tengo",
+        "tendría",
+        "tener"
+      ]
+    },
+    {
+      "id": "es-g-024",
+      "level": "B2",
+      "category": "ser-estar",
+      "title": "Ser vs estar con adjetivos de cambio",
+      "explanation": "Algunos adjetivos cambian de significado según ser o estar: ser aburrido = to be boring (carácter); estar aburrido = to be bored (estado). Igual con: listo, malo, seguro, rico.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "Este libro es muy aburrido.",
+          "correct": true
+        },
+        {
+          "text": "Estoy aburrido esta tarde.",
+          "correct": true
+        },
+        {
+          "text": "Este libro está muy aburrido.",
+          "correct": false,
+          "error": "Para una característica del libro, usa ser: es aburrido."
+        },
+        {
+          "text": "Él es listo — resolvió el problema rápido.",
+          "correct": true
+        },
+        {
+          "text": "¿Estás listo? Podemos irnos.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "es-g-025",
+      "level": "B2",
+      "category": "subjunctive",
+      "title": "Subjuntivo con expresiones de duda y negación",
+      "explanation": "Duda y negación de creer/pensar + que → subjuntivo. No creo que sea verdad. Creo que es verdad → indicativo.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "No creo que tenga razón.",
+          "correct": true
+        },
+        {
+          "text": "No creo que tiene razón.",
+          "correct": false,
+          "error": "Tras 'no creer que' usa subjuntivo: tenga."
+        },
+        {
+          "text": "Creo que tiene razón.",
+          "correct": true
+        },
+        {
+          "text": "Dudo que venga mañana.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "es-g-026",
+      "level": "C1",
+      "category": "subjunctive",
+      "title": "Subjuntivo en oraciones relativas con antecedente indefinido",
+      "explanation": "Si el antecedente del relativo es indefinido o no existe, se usa subjuntivo: Busco a alguien que sepa chino (puede que no exista). vs. Busco a alguien que sabe chino (existe).",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "Busco a alguien que hable ruso.",
+          "correct": true
+        },
+        {
+          "text": "Busco a alguien que habla ruso.",
+          "correct": true
+        },
+        {
+          "text": "No hay nadie que sepa la respuesta.",
+          "correct": true
+        },
+        {
+          "text": "No hay nadie que sabe la respuesta.",
+          "correct": false,
+          "error": "Con 'nadie' (antecedente negativo) siempre se usa subjuntivo: que sepa."
+        }
+      ]
+    },
+    {
+      "id": "es-g-027",
+      "level": "C1",
+      "category": "word-order",
+      "title": "Dislocación — topicalización y foco",
+      "explanation": "En español es posible mover elementos al principio (topicalización) o al final para dar énfasis o contraste. El clítico duplica al objeto dislocado: A María la conozco bien.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "A Juan lo vi ayer.",
+          "correct": true
+        },
+        {
+          "text": "A Juan vi ayer.",
+          "correct": false,
+          "error": "Con dislocación de objeto directo personal, es necesario duplicar con el clítico: A Juan lo vi."
+        },
+        {
+          "text": "Este libro, ya lo he leído.",
+          "correct": true
+        },
+        {
+          "text": "Este libro, ya he leído.",
+          "correct": false,
+          "error": "El objeto dislocado necesita duplicación con el clítico: Este libro, ya lo he leído."
+        }
+      ]
+    },
+    {
+      "id": "es-g-028",
+      "level": "C1",
+      "category": "verbs",
+      "title": "Perífrasis verbales — llevar + gerundio, dejar de + infinitivo",
+      "explanation": "llevar + gerundio = duración hasta el presente. dejar de + inf. = to stop doing. seguir + gerundio = to keep doing.",
+      "type": "fill-blank",
+      "template": "Llevo tres años _____ español.",
+      "hint": "llevar + gerundio expresa duración hasta ahora.",
+      "distractors": [
+        "estudiando",
+        "estudiar",
+        "estudiado",
+        "a estudiar"
+      ]
+    },
+    {
+      "id": "es-g-029",
+      "level": "C1",
+      "category": "grammar-patterns",
+      "title": "Por mucho que + subjuntivo",
+      "explanation": "por mucho que + subjuntivo expresa que algo es cierto a pesar de todo esfuerzo. Equivale a 'however much'. Por mucho que estudies, no aprobarás sin dormir.",
+      "type": "fill-blank",
+      "template": "Por mucho que _____, no podrás cambiar el pasado.",
+      "hint": "por mucho que + subjuntivo. 'Intentar' en subjuntivo presente.",
+      "distractors": [
+        "intentes",
+        "intentas",
+        "intentarás",
+        "intentar"
+      ]
+    },
+    {
+      "id": "es-g-030",
+      "level": "C1",
+      "category": "tense",
+      "title": "Pretérito anterior vs pluscuamperfecto",
+      "explanation": "Pluscuamperfecto (había + participio): pasado anterior a otro pasado, general. Pretérito anterior (hube + participio): inmediatamente antes, muy formal/literario. Apenas hubo terminado, se marchó.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "Cuando llegué, ya habían comido.",
+          "correct": true
+        },
+        {
+          "text": "Apenas hubo llegado, empezó a llover.",
+          "correct": true
+        },
+        {
+          "text": "Cuando llegué, ya hubieron comido.",
+          "correct": false,
+          "error": "El pretérito anterior ('hubieron comido') solo se usa en contextos muy formales/literarios con adverbios como 'apenas', 'en cuanto'. Para uso normal, usa pluscuamperfecto: habían comido."
+        },
+        {
+          "text": "En cuanto hubo terminado, salió.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "es-g-031",
+      "level": "A2",
+      "category": "word-order",
+      "title": "Direct object pronouns — position",
+      "explanation": "Direct object pronouns (lo, la, los, las) come before conjugated verbs. They attach to infinitives and gerunds. Never between two verbs in a periphrasis.",
+      "type": "tile-order",
+      "tiles": [
+        "¿",
+        "lo",
+        "has",
+        "visto",
+        "?"
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "es-g-032",
+      "level": "B1",
+      "category": "verbs",
+      "title": "Preterite vs imperfect contrast",
+      "explanation": "Preterite: completed action with a defined endpoint. Imperfect: ongoing background, description, habit. When both appear, imperfect sets the scene; preterite advances the narrative.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "Llovía cuando salí de casa.",
+          "correct": true
+        },
+        {
+          "text": "Llovió cuando salí de casa.",
+          "correct": false,
+          "error": "La lluvia es el fondo/escenario → imperfecto (llovía). El acto de salir avanza la narración → pretérito (salí)."
+        },
+        {
+          "text": "De niño vivía en Madrid.",
+          "correct": true
+        },
+        {
+          "text": "De niño viví en Madrid.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "es-g-033",
+      "level": "B2",
+      "category": "subjunctive",
+      "title": "Subjunctive after aunque — contrast with indicative",
+      "explanation": "aunque + indicative = admitting a known fact. aunque + subjunctive = hypothetical concession. Aunque llueve = even though it's raining (fact). Aunque llueva = even if it rains (hypothetical).",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "Saldré aunque llueva.",
+          "correct": true
+        },
+        {
+          "text": "Saldré aunque llueve.",
+          "correct": true
+        },
+        {
+          "text": "Aunque no tengo dinero, soy feliz.",
+          "correct": true
+        },
+        {
+          "text": "Aunque no tenga dinero, soy feliz.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "es-g-034",
+      "level": "B2",
+      "category": "word-order",
+      "title": "Sentence focus — new information last",
+      "explanation": "Spanish tends to place new or focused information at the end of the sentence. The subject often follows the verb when it carries new information.",
+      "type": "tile-order",
+      "tiles": [
+        "Llegaron",
+        "tarde",
+        "mis amigos"
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            1,
+            2
+          ],
+          "note": "Subject at end — new information."
+        },
+        {
+          "order": [
+            2,
+            0,
+            1
+          ],
+          "note": "Subject first also possible for contrastive emphasis."
+        }
+      ]
+    },
+    {
+      "id": "es-g-035",
+      "level": "C1",
+      "category": "grammar-patterns",
+      "title": "Si bien — formal concession",
+      "explanation": "Si bien is a formal alternative to aunque for concessive clauses. Si bien es cierto que… = While it is true that… Used mainly in written academic or journalistic register.",
+      "type": "fill-blank",
+      "template": "_____ los resultados son positivos, aún queda mucho por mejorar.",
+      "hint": "Si bien = although / while it is true that (formal).",
+      "distractors": [
+        "Si bien",
+        "Aunque",
+        "Pero",
+        "Sin embargo"
+      ]
+    },
+    {
+      "id": "es-g-036",
+      "level": "C1",
+      "category": "verbs",
+      "title": "Haber que vs tener que",
+      "explanation": "hay que + infinitive = impersonal obligation (one must). tener que + infinitive = personal obligation (I/you must). Hay que estudiar vs Tienes que estudiar.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "Hay que respetar las normas.",
+          "correct": true
+        },
+        {
+          "text": "Tienes que respetar las normas.",
+          "correct": true
+        },
+        {
+          "text": "Hay que yo respetar las normas.",
+          "correct": false,
+          "error": "Hay que es impersonal — no lleva sujeto. Usa: Yo tengo que respetar / Hay que respetar."
+        },
+        {
+          "text": "Tiene que llover esta tarde.",
+          "correct": false,
+          "error": "Para probabilidad usa 'debe de llover' o 'ha de llover'. Tiene que es obligación personal."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+[
+  {
+    "id": "crystal-of-light",
+    "titles": {
+      "en": "The Crystal of Light",
+      "zh": "光之水晶",
+      "ja": "光のクリスタル",
+      "de": "Das Kristall des Lichts",
+      "es": "El Cristal de Luz",
+      "fr": "Le Cristal de Lumière"
+    },
+    "subtitles": {
+      "en": "A beginner adventure — N5 / A1",
+      "zh": "初级冒险 — HSK1",
+      "ja": "初級アドベンチャー — N5",
+      "de": "Ein Anfängerabenteuer — A1",
+      "es": "Una aventura para principiantes — A1",
+      "fr": "Une aventure pour débutants — A1"
+    },
+    "icon": "💎",
+    "totalChapters": 12,
+    "chapters": [
+      {
+        "id": "ch01",
+        "number": 1
+      },
+      {
+        "id": "ch02",
+        "number": 2
+      },
+      {
+        "id": "ch03",
+        "number": 3
+      },
+      {
+        "id": "ch04",
+        "number": 4
+      },
+      {
+        "id": "ch05",
+        "number": 5
+      },
+      {
+        "id": "ch06",
+        "number": 6
+      },
+      {
+        "id": "ch07",
+        "number": 7
+      },
+      {
+        "id": "ch08",
+        "number": 8
+      },
+      {
+        "id": "ch09",
+        "number": 9
+      },
+      {
+        "id": "ch10",
+        "number": 10
+      },
+      {
+        "id": "ch11",
+        "number": 11
+      },
+      {
+        "id": "ch12",
+        "number": 12
+      }
+    ],
+    "key": "A"
+  },
+  {
+    "id": "the-wandering-scholar",
+    "titles": {
+      "en": "Two Philosophers Walk Into a Study",
+      "zh": "游学之路",
+      "ja": "旅する学者",
+      "de": "Zwei Philosophen betreten ein Arbeitszimmer",
+      "es": "El erudito errante",
+      "fr": "L'érudit voyageur"
+    },
+    "subtitles": {
+      "en": "A whimsical look at German philosophy — A1/A2",
+      "zh": "中级冒险 — HSK3",
+      "ja": "中級アドベンチャー — N4",
+      "de": "Ein verspielter Blick auf die deutsche Philosophie — A1/A2",
+      "es": "Una aventura de nivel intermedio — A2",
+      "fr": "Une aventure de niveau intermédiaire — A2"
+    },
+    "icon": "🎩",
+    "totalChapters": 12,
+    "comingSoon": false,
+    "chapters": [
+      {
+        "id": "ch01",
+        "number": 1
+      },
+      {
+        "id": "ch02",
+        "number": 2
+      },
+      {
+        "id": "ch03",
+        "number": 3
+      },
+      {
+        "id": "ch04",
+        "number": 4
+      }
+    ],
+    "key": "B"
+  }
+]

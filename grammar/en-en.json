@@ -1,0 +1,71 @@
+{
+  "id": "en-grammar",
+  "language": "en",
+  "native": "en",
+  "patterns": [
+    {
+      "id": "en-g-001",
+      "level": "A2",
+      "category": "articles",
+      "title": "Definite vs indefinite article",
+      "explanation": "Use 'a/an' when introducing something new or non-specific. Use 'the' when referring to something already known or unique.",
+      "type": "pick-correct",
+      "sentences": [
+        { "text": "I saw a dog in the park.", "correct": true },
+        { "text": "I saw the dog in a park.", "correct": false, "error": "Use 'a' for a non-specific park and 'a' to introduce the dog for the first time." },
+        { "text": "The sun rises in the east.", "correct": true },
+        { "text": "A sun rises in the east.", "correct": false, "error": "There is only one sun — use 'the' for unique nouns." }
+      ]
+    },
+    {
+      "id": "en-g-002",
+      "level": "B1",
+      "category": "tense",
+      "title": "Present perfect vs simple past",
+      "explanation": "Use simple past for completed actions with a specific time. Use present perfect for actions with a connection to the present or no specific time.",
+      "type": "pick-correct",
+      "sentences": [
+        { "text": "I have never been to Japan.", "correct": true },
+        { "text": "I never went to Japan.", "correct": false, "error": "Without a specific time frame, use present perfect: 'I have never been'." },
+        { "text": "She finished the report yesterday.", "correct": true },
+        { "text": "She has finished the report yesterday.", "correct": false, "error": "'Yesterday' is a specific time — use simple past, not present perfect." }
+      ]
+    },
+    {
+      "id": "en-g-003",
+      "level": "B1",
+      "category": "conditionals",
+      "title": "Second conditional — hypothetical present/future",
+      "explanation": "If + past simple, would + infinitive. Used for unlikely or hypothetical situations.",
+      "type": "fill-blank",
+      "template": "If I ___ more time, I would travel the world.",
+      "hint": "Second conditional: if + past simple verb.",
+      "distractors": ["had", "have", "would have", "having"]
+    },
+    {
+      "id": "en-g-004",
+      "level": "B2",
+      "category": "word-order",
+      "title": "Inversion after negative adverbials",
+      "explanation": "When a negative adverb (never, rarely, not only) starts a sentence, subject and auxiliary are inverted.",
+      "type": "tile-order",
+      "tiles": ["Never", "had", "she", "seen", "such", "a", "sight"],
+      "answers": [
+        { "order": [0,1,2,3,4,5,6], "note": null }
+      ]
+    },
+    {
+      "id": "en-g-005",
+      "level": "C1",
+      "category": "grammar-patterns",
+      "title": "Cleft sentences for emphasis",
+      "explanation": "Cleft sentences (It is/was ... that ...) emphasise a particular part of a sentence.",
+      "type": "pick-correct",
+      "sentences": [
+        { "text": "It was the unexpected result that surprised everyone.", "correct": true },
+        { "text": "It was the unexpected result which surprised everyone.", "correct": true },
+        { "text": "It was the unexpected result surprised everyone.", "correct": false, "error": "A cleft sentence needs 'that' or 'which': 'It was X that/which...'." }
+      ]
+    }
+  ]
+}

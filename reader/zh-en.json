@@ -1,0 +1,614 @@
+{
+  "id": "zh-en-reader",
+  "language": "zh",
+  "native": "en",
+  "passages": [
+    {
+      "id": "zh-p1",
+      "title": "我的朋友",
+      "titleTranslation": "My Friend",
+      "level": "HSK1",
+      "series": "我的朋友",
+      "tags": [
+        "fiction",
+        "series:我的朋友",
+        "topic:friendship",
+        "beginner"
+      ],
+      "text": "我有一个好朋友。他是学生。他喜欢吃苹果和喝水。他很快乐。我们每天一起学习。",
+      "translation": "I have a good friend. He is a student. He likes to eat apples and drink water. He is very happy. We study together every day."
+    },
+    {
+      "id": "zh-p1b",
+      "title": "我的好朋友小明",
+      "titleTranslation": "My Good Friend Xiao Ming",
+      "level": "HSK2",
+      "series": "我的朋友",
+      "tags": [
+        "fiction",
+        "series:我的朋友",
+        "topic:friendship",
+        "beginner"
+      ],
+      "text": "我有一个很好的朋友，他叫小明。小明是大学生，学习很努力。他每天早上喝水、吃苹果，然后去图书馆看书。他喜欢学习新东西，也喜欢帮助别人。我很高兴有这样的朋友。",
+      "translation": "I have a very good friend called Xiao Ming. Xiao Ming is a university student and studies very hard. Every morning he drinks water, eats an apple, and then goes to the library to read. He likes learning new things and also likes helping others. I am very happy to have a friend like him."
+    },
+    {
+      "id": "zh-p1c",
+      "title": "友谊的力量",
+      "titleTranslation": "The Power of Friendship",
+      "level": "HSK3",
+      "series": "我的朋友",
+      "tags": [
+        "fiction",
+        "series:我的朋友",
+        "topic:friendship",
+        "intermediate"
+      ],
+      "text": "我和小明认识已经五年了。他是我最好的朋友，尽管我们性格很不一样。他做事认真、有耐心，而我比较活泼、喜欢冒险。正是因为这种差异，我们互相学习、共同成长。遇到困难的时候，我们总是互相支持。我觉得真正的友谊不需要天天在一起，而是在彼此需要的时候能够出现。",
+      "translation": "Xiao Ming and I have known each other for five years already. He is my best friend, even though our personalities are very different. He is careful and patient in everything he does, while I am more lively and like taking risks. It is precisely because of these differences that we learn from each other and grow together. When we face difficulties, we always support each other. I think true friendship doesn't require being together every day, but rather being there when the other person needs you."
+    },
+    {
+      "id": "zh-p1d",
+      "title": "距离与牵挂",
+      "titleTranslation": "Distance and Longing",
+      "level": "HSK4",
+      "series": "我的朋友",
+      "tags": [
+        "fiction",
+        "series:我的朋友",
+        "topic:friendship",
+        "intermediate"
+      ],
+      "text": "毕业之后，小明去了上海工作，而我留在了北京。距离拉开了，见面的机会越来越少，但奇怪的是，我们之间的友谊并没有因此变淡。每隔一段时间，他会发来一条长长的消息，讲述他在新城市里的见闻与感悟；我也会把生活里的琐事和他分享。有时候我们会视频通话，聊到深夜也不觉得累。我渐渐明白，真正的友谊就像一棵深根的树，不会因为季节变换而枯萎，只会随着岁月越长越粗壮。那些年少时一起经历的事情，已经成为我们共同记忆的一部分，任何距离都无法带走。",
+      "translation": "After graduation, Xiao Ming went to Shanghai for work, while I stayed in Beijing. The distance grew, and opportunities to meet became fewer and fewer, but strangely, the friendship between us didn't fade because of it. Every so often he would send a long message recounting his observations and reflections in his new city; I would also share the small details of daily life with him. Sometimes we would video call and chat until late at night without feeling tired. I gradually came to understand that true friendship is like a deep-rooted tree — it won't wither with the changing of seasons, but only grows thicker with the years. The things we experienced together in our youth have already become part of our shared memories, and no distance can take them away."
+    },
+    {
+      "id": "zh-p1e",
+      "title": "友谊与自我认同",
+      "titleTranslation": "Friendship and Self-Identity",
+      "level": "HSK5",
+      "series": "我的朋友",
+      "tags": [
+        "essay",
+        "series:我的朋友",
+        "topic:friendship",
+        "topic:psychology",
+        "advanced"
+      ],
+      "text": "心理学研究表明，我们选择朋友的方式，在很大程度上折射出我们对自身的认知与期待。那些令我们长久心安的友谊，往往既有高度的契合，又有足够的张力——对方能够理解我们，却又不断以不同的视角挑战我们的固有观念。与小明的友谊便是如此。他的沉稳让我学会了在冲动之前停顿片刻，而我的感性也曾在某些时刻帮助他突破自己设定的局限。社会学家将这种关系称为「发展性友谊」：双方不仅是情感的依托，更是彼此成长的催化剂。然而现代社会的高速流动，使深度友谊愈发稀缺。人们在社交媒体上积累着数以百计的「联系人」，却往往难以找到一个真正愿意倾听的人。这不禁让我思考：在这个信息过载的时代，我们究竟是在扩展关系，还是在稀释它？",
+      "translation": "Psychological research shows that the way we choose friends largely reflects our understanding of and expectations for ourselves. The friendships that give us lasting peace of mind tend to be those that have both a high degree of compatibility and sufficient tension — the other person can understand us, yet continuously challenges our fixed ideas from a different perspective. My friendship with Xiao Ming is exactly like this. His steadiness taught me to pause for a moment before acting on impulse, while my emotional nature has at certain moments helped him break through the limits he had set for himself. Sociologists call this kind of relationship a 'developmental friendship': both parties are not just emotional supports, but catalysts for each other's growth. However, the high-speed mobility of modern society makes deep friendship increasingly scarce. People accumulate hundreds of 'contacts' on social media, yet often struggle to find one person who is truly willing to listen. This makes me wonder: in this age of information overload, are we expanding our relationships, or diluting them?"
+    },
+    {
+      "id": "zh-p1f",
+      "title": "论友谊的本质",
+      "titleTranslation": "On the Nature of Friendship",
+      "level": "HSK6",
+      "series": "我的朋友",
+      "tags": [
+        "essay",
+        "series:我的朋友",
+        "topic:friendship",
+        "topic:philosophy",
+        "advanced"
+      ],
+      "text": "亚里士多德在《尼各马可伦理学》中将友谊分为三种：基于利益的友谊、基于快乐的友谊，以及基于美德的友谊。前两者因其所依附的条件消失而瓦解，唯有建立在对彼此品格的欣赏与尊重之上的友谊，方能经受时间的检验。两千余年后，这一洞见依然振聋发聩。当代社会的原子化趋势，使人与人之间的深层联结愈发困难。我们生活在前所未有的物质丰裕之中，却普遍遭受着难以言说的孤独。社会学家罗伯特·帕特南在其著作中详细记录了社会资本的持续衰退，而这一现象在全球范围内都有其对应的镜像。真正的友谊需要时间、脆弱性与共同的历练——这些恰恰是效率至上的现代生活最难以给予的东西。或许，在追求更多连接的同时，我们更需要学习如何在少数关系中投入更深。",
+      "translation": "In his Nicomachean Ethics, Aristotle divided friendship into three kinds: friendship based on utility, friendship based on pleasure, and friendship based on virtue. The first two dissolve when the conditions they depend upon disappear; only friendship built on appreciation and respect for each other's character can withstand the test of time. More than two thousand years later, this insight remains profoundly resonant. The atomising tendencies of contemporary society make deep connections between people increasingly difficult. We live amid unprecedented material abundance, yet suffer from a widespread and ineffable loneliness. Sociologist Robert Putnam documented in detail the sustained decline of social capital, and this phenomenon has its corresponding mirror image globally. True friendship requires time, vulnerability, and shared trial — precisely the things that efficiency-driven modern life is least able to provide. Perhaps, while pursuing more connections, what we need even more is to learn how to invest more deeply in fewer relationships."
+    },
+    {
+      "id": "zh-p2",
+      "title": "我的猫",
+      "titleTranslation": "My Cat",
+      "level": "HSK1",
+      "series": "我的猫",
+      "tags": [
+        "fiction",
+        "series:我的猫",
+        "topic:animals",
+        "topic:pets",
+        "beginner"
+      ],
+      "text": "我有一只猫。她很小，很漂亮。她喜欢喝水，不喜欢吃书。我的狗也很好。猫和狗是好朋友。",
+      "translation": "I have a cat. She is very small and very beautiful. She likes to drink water but does not like to eat books. My dog is also very good. The cat and the dog are good friends."
+    },
+    {
+      "id": "zh-p2b",
+      "title": "小花和大黄",
+      "titleTranslation": "Xiao Hua and Da Huang",
+      "level": "HSK2",
+      "series": "我的猫",
+      "tags": [
+        "fiction",
+        "series:我的猫",
+        "topic:animals",
+        "topic:pets",
+        "beginner"
+      ],
+      "text": "我家有一只猫和一只狗。猫叫小花，狗叫大黄。小花很聪明，喜欢在家里到处跑。大黄很友好，喜欢在院子里玩。起初他们不喜欢对方，常常吵架。但是慢慢地，他们成了好朋友。现在每天晚上，他们一起睡觉，很可爱。",
+      "translation": "My home has a cat and a dog. The cat is called Xiao Hua and the dog is called Da Huang. Xiao Hua is very smart and likes to run around the house. Da Huang is very friendly and likes to play in the yard. At first they didn't like each other and often quarrelled. But gradually they became good friends. Now every evening they sleep together — very adorable."
+    },
+    {
+      "id": "zh-p2c",
+      "title": "动物也有感情",
+      "titleTranslation": "Animals Have Feelings Too",
+      "level": "HSK3",
+      "series": "我的猫",
+      "tags": [
+        "essay",
+        "series:我的猫",
+        "topic:animals",
+        "topic:science",
+        "intermediate"
+      ],
+      "text": "养过宠物的人都知道，动物和人类一样，也有丰富的情感。我家的猫小花和狗大黄就是最好的例子。它们之间从陌生到熟悉、从争吵到和解，经历了一段真实的感情发展过程。科学研究表明，猫和狗都能感受到喜悦、恐惧、嫉妒甚至悲伤。当主人离开时，它们会感到孤独；当主人回来时，它们会表现出真诚的高兴。这让我们思考：也许人类和动物之间的距离，并没有我们想象的那么远。",
+      "translation": "Anyone who has kept a pet knows that animals, like humans, also have rich emotions. My cat Xiao Hua and dog Da Huang are the best example. Their journey from strangers to familiar companions, from quarrelling to reconciliation, went through a genuine process of emotional development. Scientific research shows that both cats and dogs can feel joy, fear, jealousy, and even sadness. When their owner leaves, they feel lonely; when their owner returns, they show genuine happiness. This makes us think: perhaps the distance between humans and animals is not as far as we imagine."
+    },
+    {
+      "id": "zh-p2d",
+      "title": "宠物与现代人的孤独",
+      "titleTranslation": "Pets and Modern Loneliness",
+      "level": "HSK4",
+      "series": "我的猫",
+      "tags": [
+        "essay",
+        "series:我的猫",
+        "topic:animals",
+        "topic:society",
+        "topic:psychology",
+        "intermediate"
+      ],
+      "text": "近年来，中国城市中的宠物数量急剧增加。越来越多的年轻人选择养猫或养狗，有人将其归因于生活压力的增大，也有人认为这反映了独居人口上升的社会趋势。宠物提供的陪伴是无条件的——它们不评判，不要求回报，只是安静地在你身旁。心理学研究发现，与宠物互动能够有效降低皮质醇水平，减轻焦虑情绪。然而，这种关系也引发了一些值得深思的问题：当人们越来越习惯于和动物建立深度联结，是否意味着人与人之间的连接正在变得更加困难？小花和大黄让我快乐，但它们无法替代真正的人类友谊。也许，宠物是一面镜子，映照出我们内心最渴望却又最难以表达的东西——被无条件地接受。",
+      "translation": "In recent years, the number of pets in Chinese cities has grown sharply. More and more young people are choosing to keep cats or dogs; some attribute this to increasing life pressures, while others see it as reflecting the social trend of rising single-person households. The companionship that pets provide is unconditional — they do not judge, do not demand anything in return, but simply stay quietly by your side. Psychological research has found that interacting with pets can effectively lower cortisol levels and reduce anxiety. However, this kind of relationship also raises some questions worth pondering: as people become increasingly accustomed to forming deep bonds with animals, does this mean that connections between people are becoming more difficult to form? Xiao Hua and Da Huang make me happy, but they cannot replace genuine human friendship. Perhaps pets are a mirror, reflecting what we most desire yet find most difficult to express — to be accepted unconditionally."
+    },
+    {
+      "id": "zh-p2e",
+      "title": "跨物种的情感纽带",
+      "titleTranslation": "Emotional Bonds Across Species",
+      "level": "HSK5",
+      "series": "我的猫",
+      "tags": [
+        "essay",
+        "series:我的猫",
+        "topic:animals",
+        "topic:science",
+        "topic:philosophy",
+        "advanced"
+      ],
+      "text": "动物行为学与神经科学的交叉研究，正在颠覆我们对动物意识的传统认知。长期以来，笛卡尔的「动物机器论」为人类对待其他物种的方式提供了哲学依据，认为动物不过是复杂的生物机器，不具备真正的感受能力。然而近几十年来，大量实证研究揭示出截然不同的图景。弗兰斯·德瓦尔等灵长类动物学家记录了黑猩猩之间复杂的同理心行为；神经学研究也证明，哺乳动物共享与情绪处理相关的脑区结构。我的猫和狗之间那段从对立到和解的历程，或许并不只是行为条件反射的结果，而是一种真实情感体验的表达。这一认识不仅改变了我们对宠物的理解，更对动物伦理、工业养殖以及人类中心主义的整个体系提出了深刻挑战。",
+      "translation": "Cross-disciplinary research at the intersection of ethology and neuroscience is overturning our traditional understanding of animal consciousness. For a long time, Descartes' 'animal-machine' theory provided a philosophical basis for how humans treat other species, holding that animals are nothing more than complex biological machines without genuine capacity for feeling. However, over the past few decades, a large body of empirical research has revealed a strikingly different picture. Primatologists such as Frans de Waal have documented complex empathic behaviours among chimpanzees; neurological research has also confirmed that mammals share brain structures associated with emotional processing. The journey of my cat and dog from opposition to reconciliation may not simply be the result of behavioural conditioning, but an expression of genuine emotional experience. This understanding not only changes how we think about pets, but also poses a profound challenge to the entire system of animal ethics, industrial farming, and anthropocentrism."
+    },
+    {
+      "id": "zh-p2f",
+      "title": "论人与动物关系的伦理重建",
+      "titleTranslation": "On the Ethical Reconstruction of the Human-Animal Relationship",
+      "level": "HSK6",
+      "series": "我的猫",
+      "tags": [
+        "essay",
+        "series:我的猫",
+        "topic:animals",
+        "topic:philosophy",
+        "topic:ethics",
+        "advanced"
+      ],
+      "text": "彼得·辛格在《动物解放》中提出的功利主义框架，以及汤姆·里根基于权利论的动物伦理体系，代表着二十世纪末西方哲学界对人与动物关系最系统性的反思。然而，这两种路径在实践层面均面临深层困境：前者因其功利计算的复杂性而难以操作；后者则因赋予动物不可侵犯权利而与众多现实制度产生根本性冲突。与此同时，中国传统哲学中亦不乏对此议题的深刻论述。儒家「仁者爱人，及于禽兽」的理念，道家「万物与我为一」的境界，都提供了不同于西方权利话语的思考维度。在生态危机日益严峻的当下，重新审视人类在生命共同体中的位置，已不再是哲学家书斋中的奢侈思辨，而是关乎整个物种存续的紧迫命题。那只蜷缩在我脚边取暖的猫，或许是最好的提醒：我们对另一个生命的责任，从来就不需要等待哲学的许可。",
+      "translation": "The utilitarian framework proposed by Peter Singer in Animal Liberation, and the rights-based animal ethics system of Tom Regan, represent the most systematic reflection on the human-animal relationship in Western philosophy at the end of the twentieth century. However, both approaches face deep practical difficulties: the former is hard to operationalise due to the complexity of utilitarian calculation; the latter creates fundamental conflicts with many real-world institutions by granting animals inviolable rights. At the same time, traditional Chinese philosophy also contains profound discussions of this issue. The Confucian idea that 'the benevolent person loves people, extending to birds and beasts', and the Taoist realm of 'all things and I are one', both offer dimensions of thought different from the Western discourse of rights. In the face of an increasingly severe ecological crisis, re-examining humanity's place in the community of life is no longer a luxurious speculation confined to philosophers' studies, but an urgent question concerning the survival of our entire species. The cat curled up at my feet for warmth is perhaps the best reminder: our responsibility towards another living being has never needed to wait for philosophy's permission."
+    },
+    {
+      "id": "zh-p3",
+      "title": "在市场买东西",
+      "titleTranslation": "Shopping at the Market",
+      "level": "HSK1",
+      "series": "市场",
+      "tags": [
+        "fiction",
+        "series:市场",
+        "topic:daily-life",
+        "topic:economy",
+        "beginner"
+      ],
+      "text": "今天我去买苹果。苹果很好，不贵。我也买了水。我很高兴。",
+      "translation": "Today I went to buy apples. The apples were very good and not expensive. I also bought water. I was very happy."
+    },
+    {
+      "id": "zh-p3b",
+      "title": "周末去菜市场",
+      "titleTranslation": "Going to the Vegetable Market on the Weekend",
+      "level": "HSK2",
+      "series": "市场",
+      "tags": [
+        "fiction",
+        "series:市场",
+        "topic:daily-life",
+        "topic:economy",
+        "topic:culture",
+        "beginner"
+      ],
+      "text": "每个周末，我都喜欢去附近的菜市场买东西。那里的蔬菜和水果都很新鲜，价格也比超市便宜。今天我买了苹果、西红柿和一些青菜。卖苹果的老奶奶很热情，还多给了我两个苹果。我用了三十块钱，买了很多东西，感觉很划算。回家的路上，我心情很好。",
+      "translation": "Every weekend I like to go to the nearby vegetable market to shop. The vegetables and fruit there are very fresh, and the prices are cheaper than the supermarket too. Today I bought apples, tomatoes, and some green vegetables. The old woman selling apples was very warm and even gave me two extra apples. I spent thirty yuan and bought a lot of things — it felt very good value. On the way home, I was in a great mood."
+    },
+    {
+      "id": "zh-p3c",
+      "title": "消失中的菜市场",
+      "titleTranslation": "The Disappearing Vegetable Market",
+      "level": "HSK3",
+      "series": "市场",
+      "tags": [
+        "essay",
+        "series:市场",
+        "topic:society",
+        "topic:economy",
+        "topic:culture",
+        "intermediate"
+      ],
+      "text": "随着城市化的快速发展，传统的露天菜市场正在逐渐消失，被现代化的超市和网购平台所取代。很多城市居民已经习惯了在手机上点一点，蔬菜就送到家门口。然而，也有越来越多的人开始怀念菜市场里那种独特的生活气息。在那里，你可以和卖菜的大爷聊聊天，可以挑选最新鲜的食材，可以感受到真实的人情味。菜市场不只是一个买卖的地方，更是一个社区文化的载体。失去它，我们失去的不仅仅是一种购物方式。",
+      "translation": "With the rapid development of urbanisation, traditional open-air vegetable markets are gradually disappearing, being replaced by modern supermarkets and online shopping platforms. Many urban residents have become used to tapping their phone and having vegetables delivered to their door. However, more and more people are beginning to miss the unique atmosphere of life found in the vegetable market. There you can chat with the elderly vendor, select the freshest ingredients, and feel genuine human warmth. The vegetable market is not just a place to buy and sell — it is also a carrier of community culture. In losing it, we lose more than just a way of shopping."
+    },
+    {
+      "id": "zh-p3d",
+      "title": "数字经济与传统商业的博弈",
+      "titleTranslation": "The Contest Between the Digital Economy and Traditional Commerce",
+      "level": "HSK4",
+      "series": "市场",
+      "tags": [
+        "essay",
+        "series:市场",
+        "topic:economy",
+        "topic:technology",
+        "topic:society",
+        "intermediate"
+      ],
+      "text": "近年来，以拼多多、美团买菜为代表的生鲜电商平台迅速崛起，深刻改变了中国城市居民的购物习惯。数据显示，2023年中国生鲜电商市场规模已超过五千亿元人民币，年增速保持在两位数以上。这一趋势对传统菜市场造成了巨大冲击——客流量减少、摊主收入下降，部分城市已出现大规模关停现象。然而，市场的演变远非单向。越来越多的城市开始意识到，菜市场承载的不仅仅是经济功能，更是社区生活的精神纽带。一些地方政府开始尝试对传统市场进行现代化改造，引入冷链设施、移动支付和线上预订系统，希望在保留人情味的同时，提升市场的竞争力。传统与现代之间的张力，或许并非必然走向零和对抗，而是可以在创新中寻求共存。",
+      "translation": "In recent years, fresh produce e-commerce platforms represented by Pinduoduo and Meituan Maicai have risen rapidly, profoundly changing the shopping habits of Chinese urban residents. Data shows that in 2023, the scale of China's fresh produce e-commerce market exceeded 500 billion yuan, with annual growth rates maintained at double digits. This trend has dealt a heavy blow to traditional vegetable markets — foot traffic has decreased, vendors' income has fallen, and some cities have seen large-scale closures. However, the evolution of markets is far from one-directional. More and more cities are beginning to realise that vegetable markets carry not just an economic function, but also serve as a spiritual bond of community life. Some local governments have begun attempting to modernise traditional markets, introducing cold-chain facilities, mobile payment, and online reservation systems, hoping to preserve the human warmth while improving market competitiveness. The tension between tradition and modernity may not necessarily lead to zero-sum confrontation — it may be possible to seek coexistence through innovation."
+    },
+    {
+      "id": "zh-p3e",
+      "title": "市场作为文明形态",
+      "titleTranslation": "The Market as a Form of Civilisation",
+      "level": "HSK5",
+      "series": "市场",
+      "tags": [
+        "essay",
+        "series:市场",
+        "topic:economy",
+        "topic:anthropology",
+        "topic:culture",
+        "advanced"
+      ],
+      "text": "人类学家克利福德·格尔茨在对摩洛哥集市的经典研究中指出，市场从来不只是商品交换的场所，更是信息流通、社会关系再生产以及文化意义建构的复合空间。集市中的讨价还价，并非单纯的经济博弈，而是一种仪式化的社会互动，其中蕴含着关于信任、身份与共同体归属的深层编码。中国传统的集市文化同样具有这一特征。从古代的草市、庙市，到近现代的天桥、隍庙市场，这些空间始终是民间社会自我组织的重要载体。当前生鲜电商对传统市场的冲击，从某种意义上说，是一种去社会化的过程：交易被优化为最高效的信息匹配，却剥离了附着其上的人际温度与文化厚度。这并不意味着技术进步必然是文明的倒退，但它确实要求我们在设计新的商业形态时，审慎地考量那些无法被算法量化的社会价值。",
+      "translation": "In his classic study of Moroccan bazaars, anthropologist Clifford Geertz pointed out that markets have never been merely places for the exchange of goods, but are complex spaces for the circulation of information, the reproduction of social relations, and the construction of cultural meaning. Bargaining in the bazaar is not simply economic game-playing, but a ritualised form of social interaction, containing deep codes about trust, identity, and community belonging. China's traditional market culture similarly has this characteristic. From the ancient grass markets and temple fairs to the modern Tianqiao and City God Temple markets, these spaces have always been important carriers of civil society's self-organisation. The current impact of fresh produce e-commerce on traditional markets is, in a certain sense, a process of de-socialisation: transactions are optimised into the most efficient information matching, yet stripped of the interpersonal warmth and cultural depth attached to them. This does not mean that technological progress is necessarily a civilisational regression, but it does require us, when designing new commercial forms, to carefully consider those social values that cannot be quantified by algorithms."
+    },
+    {
+      "id": "zh-p3f",
+      "title": "市场、资本与公共性的悖论",
+      "titleTranslation": "The Market, Capital, and the Paradox of the Public",
+      "level": "HSK6",
+      "series": "市场",
+      "tags": [
+        "essay",
+        "series:市场",
+        "topic:economy",
+        "topic:philosophy",
+        "topic:politics",
+        "advanced"
+      ],
+      "text": "在经济学话语体系中，「市场」是资源配置的机制；在社会学的视野里，它是社会结构的折射；而在政治哲学的层面，围绕市场的论争，始终与公共善、国家权力与个体自由的根本张力纠缠在一起。卡尔·波兰尼在《大转型》中深刻揭示了市场社会的内在矛盾：一旦土地、劳动力与货币被商品化，自我调节的市场便会系统性地侵蚀其赖以运作的社会结构本身，从而催生反向的政治保护运动。这一「双重运动」的逻辑，在当代数字平台经济中以高度压缩的形式再度上演。算法定价、数据垄断与平台权力的扩张，不仅重塑了传统意义上的竞争秩序，更深刻地改变了公共空间与私人资本之间的权力格局。菜市场的消亡，既是微观层面的商业更替，也是宏观层面国家、资本与社会三角关系再调整的缩影。如何在市场效率与公共价值之间寻求动态平衡，是这个时代留给政策制定者与公民社会最迫切的共同课题之一。",
+      "translation": "Within the discourse of economics, the 'market' is a mechanism for resource allocation; in the sociological perspective, it is a refraction of social structure; and at the level of political philosophy, debates surrounding the market are perpetually entangled with the fundamental tension between the public good, state power, and individual freedom. In The Great Transformation, Karl Polanyi profoundly revealed the internal contradictions of market society: once land, labour, and money are commodified, the self-regulating market systematically erodes the very social fabric upon which it depends, thereby generating counter-movements of political protection. The logic of this 'double movement' is being re-enacted in a highly compressed form in the contemporary platform economy. Algorithmic pricing, data monopolies, and the expansion of platform power not only reshape the competitive order in the traditional sense, but profoundly alter the power configuration between public space and private capital. The disappearance of the vegetable market is both a commercial transition at the micro level and a microcosm of the re-adjustment of the triangular relationship between state, capital, and society at the macro level. How to seek a dynamic balance between market efficiency and public values is one of the most pressing shared challenges that this era has left for policy makers and civil society."
+    },
+    {
+      "id": "zh-s1",
+      "title": "第一场雪",
+      "titleTranslation": "The First Snow",
+      "level": "HSK2",
+      "tags": [
+        "fiction",
+        "topic:daily-life",
+        "topic:nature",
+        "beginner"
+      ],
+      "text": "今天早上我起床，看到外面全是白色的。下雪了！这是今年的第一场雪。我很高兴，马上穿上厚衣服跑出去。雪很软，踩上去的声音很好听。我用雪做了一个小雪人，还和邻居的孩子们一起玩雪球。虽然很冷，但是我们都笑得很开心。冬天真好。",
+      "translation": "This morning I got up and saw that everything outside was white. It had snowed! This was the year's first snow. I was very happy and immediately put on thick clothes and ran outside. The snow was very soft and the sound of stepping on it was lovely. I made a little snowman out of snow and played snowballs with the neighbour's children. Even though it was very cold, we were all laughing happily. Winter is really wonderful."
+    },
+    {
+      "id": "zh-s2",
+      "title": "迷路的下午",
+      "titleTranslation": "A Lost Afternoon",
+      "level": "HSK2",
+      "tags": [
+        "fiction",
+        "topic:daily-life",
+        "beginner"
+      ],
+      "text": "上个星期六，我一个人去了一个新的地方。我以为我知道怎么走，但是走了很久还是找不到要去的地方。我有点紧张，因为手机没有电了，不能用地图。我只好向路边的一位老人问路。他非常热心，不但告诉了我怎么走，还陪我走了一段路。最后我找到了目的地，虽然晚了一个小时，但是心里很温暖。",
+      "translation": "Last Saturday, I went to a new place by myself. I thought I knew the way, but after walking for a long time I still couldn't find the place I wanted to go. I was a little nervous because my phone had run out of battery and I couldn't use the map. I had no choice but to ask an elderly man on the roadside for directions. He was extremely helpful — not only did he tell me the way, he also accompanied me for a stretch. In the end I found my destination, though an hour late, but feeling very warm inside."
+    },
+    {
+      "id": "zh-s3",
+      "title": "夜市的味道",
+      "titleTranslation": "The Taste of the Night Market",
+      "level": "HSK3",
+      "tags": [
+        "fiction",
+        "topic:culture",
+        "topic:food",
+        "topic:taiwan",
+        "intermediate"
+      ],
+      "text": "台湾的夜市是世界闻名的。每当夜幕降临，街道两旁的摊位便亮起灯来，空气中弥漫着各种食物的香气。有烤鱿鱼、臭豆腐、珍珠奶茶，还有各种我叫不出名字的小吃。人们摩肩接踵，说笑声此起彼伏。夜市不仅仅是一个吃东西的地方，它代表着一种生活方式和文化认同。对很多台湾人来说，夜市是童年记忆的一部分，是家的味道。即使离家多年，闻到那种熟悉的香气，也会立刻想起从前的时光。",
+      "translation": "Taiwan's night markets are world-famous. Whenever night falls, the stalls on both sides of the street light up, and the air is filled with the fragrance of all kinds of food. There is grilled squid, stinky tofu, bubble milk tea, and all sorts of snacks I can't name. People jostle shoulder to shoulder, and the sounds of talking and laughter rise and fall. The night market is not just a place to eat — it represents a way of life and cultural identity. For many Taiwanese people, the night market is part of childhood memories, the taste of home. Even after many years away, smelling that familiar fragrance immediately brings back memories of the past."
+    },
+    {
+      "id": "zh-s4",
+      "title": "一封没有寄出的信",
+      "titleTranslation": "A Letter Never Sent",
+      "level": "HSK3",
+      "tags": [
+        "fiction",
+        "topic:nostalgia",
+        "topic:family",
+        "intermediate"
+      ],
+      "text": "整理旧物的时候，我发现了一封十年前写的信。那时候我刚刚上大学，非常想念家乡，想念父母。信里写满了心里话，有对未来的期待，也有对离家的不安。但是不知道为什么，这封信最终没有寄出去，就这样被压在了一个旧箱子里。现在读起来，感觉既陌生又亲切。那个十八岁的自己，有那么多的梦想，也有那么多的害怕。我想，也许有些话不需要说出口，只需要写下来，就已经足够了。",
+      "translation": "While sorting through old belongings, I found a letter written ten years ago. At that time I had just started university, and missed my hometown and my parents very much. The letter was full of heartfelt words — hopes for the future and anxiety about leaving home. But for some reason, this letter was never sent and was simply buried in an old box. Reading it now feels both strange and familiar. That eighteen-year-old self had so many dreams and so many fears. I think perhaps some words don't need to be spoken — just writing them down is already enough."
+    },
+    {
+      "id": "zh-s5",
+      "title": "外婆的厨房",
+      "titleTranslation": "Grandmother's Kitchen",
+      "level": "HSK4",
+      "tags": [
+        "fiction",
+        "topic:family",
+        "topic:nostalgia",
+        "topic:food",
+        "intermediate"
+      ],
+      "text": "在我的记忆里，外婆的厨房永远是温暖的。无论外面刮风下雨，只要走进那扇小小的门，扑面而来的总是饭菜的香气和炉火的温度。外婆不识字，但是她有一双神奇的手，能把最普通的食材变成让人念念不忘的味道。她从不用食谱，所有的比例都在她的手感里。每次我问她怎么做，她总是笑着说：「差不多就行了。」后来我才明白，那个「差不多」里面，藏着几十年的经验和对家人无言的爱。外婆去世已经三年了，但是每当我闻到红烧肉的香味，那扇厨房的门就会在我的记忆里缓缓推开。",
+      "translation": "In my memory, grandmother's kitchen was always warm. No matter how the wind blew or the rain fell outside, as soon as you stepped through that small door, you were greeted by the aroma of food and the warmth of the stove. Grandmother couldn't read, but she had a pair of magical hands that could transform the most ordinary ingredients into flavours impossible to forget. She never used a recipe — all the proportions were in the feel of her hands. Every time I asked her how to make something, she would smile and say: 'Just about right will do.' Only later did I understand that within that 'just about right' were hidden decades of experience and a wordless love for her family. Grandmother has been gone for three years, but whenever I smell the fragrance of red-braised pork, that kitchen door slowly opens in my memory."
+    },
+    {
+      "id": "zh-s6",
+      "title": "最后一班地铁",
+      "titleTranslation": "The Last Subway",
+      "level": "HSK4",
+      "tags": [
+        "fiction",
+        "topic:daily-life",
+        "topic:city",
+        "intermediate"
+      ],
+      "text": "那是一个周五的深夜，我加班到十一点半，赶上了这条线路的最后一班地铁。车厢里几乎空无一人，只有零星的几个乘客，各自坐在角落里，表情疲惫。对面坐着一个穿工装的中年男人，头靠在车窗上，已经睡着了。他手里还握着安全帽，嘴角微微上扬，不知道是在做什么梦。我忽然觉得，这节深夜的车厢就像一个小小的庇护所，把所有疲惫的人暂时收容在一起，在城市的地下静静运行。每个人都有自己要回去的地方，每个人都在为某件事努力着。这个念头让我感到一种莫名的温暖。",
+      "translation": "It was late on a Friday night. I had worked overtime until eleven-thirty and just caught the last subway on this line. The carriage was almost empty, with only a scattering of passengers sitting in their respective corners, faces weary. Opposite me sat a middle-aged man in work clothes, his head leaning against the window, already asleep. He was still holding a hard hat in his hands, the corners of his mouth slightly upturned — who knows what he was dreaming of. I suddenly felt that this late-night carriage was like a small shelter, temporarily gathering all the tired people together, running quietly beneath the city. Everyone has somewhere to return to; everyone is working hard for something. This thought gave me an inexplicable sense of warmth."
+    },
+    {
+      "id": "zh-s7",
+      "title": "语言的边界",
+      "titleTranslation": "The Limits of Language",
+      "level": "HSK5",
+      "tags": [
+        "essay",
+        "topic:language",
+        "topic:philosophy",
+        "advanced"
+      ],
+      "text": "维特根斯坦曾说：「我的语言的边界，就是我的世界的边界。」学习一门新的语言，并不只是掌握一套新的词汇和语法规则，而是以一种全新的方式感知和组织现实。日语中的「木漏れ日」，描述阳光透过树叶间隙洒落的景象，这个词在汉语或英语中都没有精准对应的表达。葡萄牙语的「saudade」，指涉一种对缺席之物的深切渴望与忧伤，同样难以翻译。每一种语言都携带着特定文化长期演化所沉淀的认知结构，学习它，某种意义上就是暂时寄居于另一种存在方式之中。这也解释了为什么许多双语者会报告，用不同语言思考时，他们感觉自己像是不同的人。语言不仅是表达思想的工具，更是塑造思想的容器。",
+      "translation": "Wittgenstein once said: 'The limits of my language are the limits of my world.' Learning a new language is not simply a matter of mastering a new set of vocabulary and grammatical rules, but of perceiving and organising reality in an entirely new way. The Japanese word komorebi describes the sight of sunlight falling through the gaps between leaves — a word without a precise equivalent in Chinese or English. The Portuguese word saudade refers to a deep longing and sadness for something absent, and is equally untranslatable. Every language carries the cognitive structures deposited through the long evolution of a particular culture; to learn it is, in a certain sense, to temporarily dwell within another way of being. This also explains why many bilingual people report feeling like different people when thinking in different languages. Language is not merely a tool for expressing thought — it is also the container that shapes thought."
+    },
+    {
+      "id": "zh-s8",
+      "title": "人工智能与人类创造力的边界",
+      "titleTranslation": "Artificial Intelligence and the Boundaries of Human Creativity",
+      "level": "HSK6",
+      "tags": [
+        "essay",
+        "topic:technology",
+        "topic:philosophy",
+        "topic:society",
+        "advanced"
+      ],
+      "text": "生成式人工智能的迅速普及，正在以前所未有的深度重塑人类社会对「创造力」这一概念的理解。当一个语言模型能够在数秒内生成风格娴熟的诗歌、小说乃至学术论文时，「创作」这一行为所承载的人类主体性意义，便遭到了根本性的追问。批评者指出，人工智能的所谓「创造」不过是对既有文本的统计概括与重新排列，缺乏真正的意图性与情感根基，因而只能是创造的表象而非本质。然而，支持者则反驳道：人类的创造力同样建立在对前人作品的模仿、吸收与重组之上，二者在机制层面并无本质差别，区别仅在于规模与速度。这场争论的核心，或许并不在于人工智能究竟「是否」具备创造力，而在于我们究竟为何珍视人类的创作。如果一幅画的价值仅在于其视觉效果，那么机器生成的图像与人手所绘别无二致；但如果艺术的价值在于创作过程中凝结的人类经验、脆弱性与意义寻求，那么二者之间便存在着一道无法简单逾越的鸿沟。这一追问，本质上是一面镜子，迫使我们审视自身存在的独特性究竟安放在何处。",
+      "translation": "The rapid proliferation of generative artificial intelligence is reshaping human society's understanding of the concept of 'creativity' to an unprecedented depth. When a language model can generate stylistically accomplished poetry, fiction, and even academic papers within seconds, the meaning of human subjectivity carried by the act of 'creation' comes under fundamental questioning. Critics point out that what artificial intelligence calls 'creation' is nothing more than a statistical summary and rearrangement of existing texts, lacking genuine intentionality and emotional foundation, and can therefore only be the appearance of creativity rather than its essence. Supporters counter, however, that human creativity is similarly built upon the imitation, absorption, and recombination of predecessors' work, and that the two are not fundamentally different at the mechanistic level, differing only in scale and speed. The core of this debate may not lie in whether artificial intelligence 'does or does not' possess creativity, but in why we value human creation in the first place. If the value of a painting lies solely in its visual effect, then machine-generated images are no different from those painted by human hands; but if the value of art lies in the human experience, vulnerability, and search for meaning crystallised in the creative process, then there exists between the two a gulf that cannot simply be bridged. This question is, in essence, a mirror that forces us to examine where precisely the uniqueness of our own existence resides."
+    },
+    {
+      "id": "zh-nf1",
+      "title": "中国的四大发明",
+      "titleTranslation": "China's Four Great Inventions",
+      "level": "HSK2",
+      "tags": [
+        "non-fiction",
+        "topic:history",
+        "topic:science",
+        "topic:china",
+        "beginner"
+      ],
+      "text": "中国古代有四大发明：造纸术、印刷术、火药和指南针。这四种发明改变了世界的历史。造纸术让人们可以把知识写下来保存。印刷术让书籍可以大量生产，更多人可以读书。火药最初用于庆典，后来被用于战争。指南针帮助人们在海上找到方向，让远洋航行成为可能。这些发明从中国传到了世界各地，对人类文明的发展有很大的贡献。",
+      "translation": "Ancient China had four great inventions: papermaking, printing, gunpowder, and the compass. These four inventions changed the history of the world. Papermaking allowed people to write down and preserve knowledge. Printing allowed books to be produced in large quantities, so more people could read. Gunpowder was initially used for celebrations, and later used in warfare. The compass helped people find direction at sea, making ocean voyages possible. These inventions spread from China to all parts of the world and made great contributions to the development of human civilisation."
+    },
+    {
+      "id": "zh-nf2",
+      "title": "北京：古老与现代的城市",
+      "titleTranslation": "Beijing: A City of the Ancient and the Modern",
+      "level": "HSK2",
+      "tags": [
+        "non-fiction",
+        "topic:geography",
+        "topic:china",
+        "topic:culture",
+        "beginner"
+      ],
+      "text": "北京是中国的首都，也是一座有三千多年历史的古城。这里有很多著名的历史古迹，比如故宫、长城和天坛。故宫是明清两代皇帝居住的地方，里面有九千多个房间。长城从东到西绵延几千公里，是中国最有名的建筑。除了古迹，北京也是一座现代化的大城市，有很多高楼大厦、地铁和购物中心。北京的美食也很有名，最出名的是北京烤鸭。如果你来中国，一定要去北京看看。",
+      "translation": "Beijing is the capital of China and also an ancient city with more than three thousand years of history. There are many famous historical sites here, such as the Forbidden City, the Great Wall, and the Temple of Heaven. The Forbidden City was the residence of emperors of the Ming and Qing dynasties, with more than nine thousand rooms inside. The Great Wall stretches several thousand kilometres from east to west and is China's most famous structure. Besides historical sites, Beijing is also a modern metropolis with many tall buildings, subways, and shopping centres. Beijing's food is also very famous — the most well-known is Peking roast duck. If you come to China, you must go and see Beijing."
+    },
+    {
+      "id": "zh-nf3",
+      "title": "孔子：改变中国的思想家",
+      "titleTranslation": "Confucius: The Thinker Who Changed China",
+      "level": "HSK3",
+      "tags": [
+        "non-fiction",
+        "biography",
+        "topic:history",
+        "topic:philosophy",
+        "topic:china",
+        "intermediate"
+      ],
+      "text": "孔子是中国历史上最伟大的思想家和教育家之一。他生活在两千五百年前的春秋时代，一生致力于推广仁、义、礼等道德观念。孔子认为，一个人应该不断学习、修身养性，才能对社会有所贡献。他的教育思想非常先进，主张根据每个学生的特点进行教学。他的学说被后人整理成《论语》，成为中国几千年来最重要的经典之一。孔子的思想不仅影响了中国，也对日本、韩国、越南等亚洲国家产生了深远的影响。时至今日，儒家思想仍然是理解中华文化的一把钥匙。",
+      "translation": "Confucius is one of the greatest thinkers and educators in Chinese history. He lived in the Spring and Autumn period two thousand five hundred years ago, and devoted his life to promoting moral concepts such as benevolence, righteousness, and ritual propriety. Confucius believed that a person should continuously study and cultivate their character in order to contribute to society. His educational philosophy was very advanced — he advocated teaching each student according to their particular characteristics. His teachings were later compiled by his followers into the Analects, which became one of the most important classics in China for thousands of years. Confucius's ideas influenced not only China but also had a profound impact on Asian countries such as Japan, Korea, and Vietnam. To this day, Confucian thought remains a key to understanding Chinese culture."
+    },
+    {
+      "id": "zh-nf4",
+      "title": "中国的春节",
+      "titleTranslation": "Chinese New Year",
+      "level": "HSK2",
+      "tags": [
+        "non-fiction",
+        "topic:culture",
+        "topic:traditions",
+        "topic:china",
+        "beginner"
+      ],
+      "text": "春节是中国最重要的传统节日，也叫农历新年。每年一月或二月，中国人都会庆祝春节。春节前，人们会打扫房子、买新衣服和准备很多好吃的东西。除夕夜，全家人一起吃年夜饭，看春晚节目。到了新年，孩子们会收到红包，里面有压岁钱。街上有舞龙舞狮，还有很多烟花。春节一般庆祝十五天，最后一天叫元宵节，人们会吃汤圆、看花灯。对中国人来说，春节是回家团圆的时候，是一年中最温暖的时光。",
+      "translation": "The Spring Festival is the most important traditional holiday in China, also called the Lunar New Year. Every year in January or February, Chinese people celebrate the Spring Festival. Before the festival, people clean their houses, buy new clothes, and prepare lots of delicious food. On New Year's Eve, the whole family eats the reunion dinner together and watches the Spring Festival Gala programme. When the New Year arrives, children receive red envelopes containing lucky money. On the streets there are dragon and lion dances, and many fireworks. The Spring Festival is generally celebrated for fifteen days — the last day is called the Lantern Festival, when people eat glutinous rice balls and watch lantern displays. For Chinese people, the Spring Festival is a time to return home and reunite with family, the warmest time of the year."
+    },
+    {
+      "id": "zh-nf5",
+      "title": "屠呦呦：用青蒿素拯救生命",
+      "titleTranslation": "Tu Youyou: Saving Lives with Artemisinin",
+      "level": "HSK3",
+      "tags": [
+        "non-fiction",
+        "biography",
+        "topic:science",
+        "topic:medicine",
+        "topic:china",
+        "intermediate"
+      ],
+      "text": "屠呦呦是中国著名的药学家，也是中国第一位获得诺贝尔生理学或医学奖的科学家。她生于1930年，从小就对医学产生了浓厚的兴趣。二十世纪六七十年代，疟疾在世界各地夺走了大量生命，当时的药物已经无法有效控制这种疾病。屠呦呦带领团队，深入研究中国古代医学典籍，从数百种中草药中寻找线索。经过无数次失败之后，她终于从青蒿中提取出了有效成分——青蒿素。这种药物挽救了数以百万计的生命，尤其是在非洲的儿童中。2015年，她获得了诺贝尔奖，向全世界证明了中医智慧的价值。她的故事告诉我们：坚持与耐心，是科学探索最重要的品质。",
+      "translation": "Tu Youyou is a famous Chinese pharmacologist and the first Chinese scientist to receive the Nobel Prize in Physiology or Medicine. Born in 1930, she developed a strong interest in medicine from a young age. In the 1960s and 70s, malaria was claiming vast numbers of lives around the world, and the drugs available at the time could no longer effectively control the disease. Tu Youyou led a team that studied ancient Chinese medical texts in depth, searching for clues among hundreds of traditional herbs. After countless failures, she finally extracted the active ingredient from sweet wormwood — artemisinin. This drug has saved millions of lives, particularly among children in Africa. In 2015 she received the Nobel Prize, proving to the world the value of traditional Chinese medical wisdom. Her story tells us that perseverance and patience are the most important qualities in scientific exploration."
+    },
+    {
+      "id": "zh-nf6",
+      "title": "长城：历史的见证",
+      "titleTranslation": "The Great Wall: Witness to History",
+      "level": "HSK4",
+      "tags": [
+        "non-fiction",
+        "topic:history",
+        "topic:china",
+        "topic:culture",
+        "intermediate"
+      ],
+      "text": "长城是人类历史上规模最宏大的建筑工程之一，绵延超过两万公里，横跨中国北方多个省份。长城的修建始于春秋战国时期，各诸侯国为抵御北方游牧民族的入侵而分段筑墙。秦始皇统一六国后，将这些分散的墙体连接起来，形成了最早意义上的「万里长城」。此后历经汉、明等朝代的多次修缮与扩建，长城逐渐演变为今天我们所见的规模。然而，长城的意义远不止于军事防御。它是古代中国国家意志的体现，数以百万计的劳工用血汗筑就了这道人类文明史上难以复制的奇迹。如今，长城已成为中国最重要的文化象征之一，每年吸引数千万游客前来参观。然而，随着时间的流逝和人类活动的影响，长城的保护工作面临着日益严峻的挑战。",
+      "translation": "The Great Wall is one of the most monumental construction projects in human history, stretching over twenty thousand kilometres across several provinces in northern China. The construction of the Great Wall began during the Spring and Autumn and Warring States periods, when various feudal states built separate sections of wall to resist the invasions of northern nomadic peoples. After the First Emperor of Qin unified the six states, he connected these scattered sections of wall, forming the earliest version of the Great Wall in the proper sense. Through subsequent repairs and expansions during the Han, Ming, and other dynasties, the Great Wall gradually evolved into the scale we see today. However, the significance of the Great Wall goes far beyond military defence. It is the embodiment of the ancient Chinese state's will; millions of labourers built with their blood and sweat this miracle of human civilisation that is nearly impossible to replicate. Today the Great Wall has become one of China's most important cultural symbols, attracting tens of millions of visitors each year. However, with the passage of time and the impact of human activity, the work of protecting the Wall faces increasingly serious challenges."
+    },
+    {
+      "id": "zh-nf7",
+      "title": "李白：诗仙的传奇人生",
+      "titleTranslation": "Li Bai: The Legendary Life of the Poet Immortal",
+      "level": "HSK4",
+      "tags": [
+        "non-fiction",
+        "biography",
+        "topic:literature",
+        "topic:history",
+        "topic:china",
+        "intermediate"
+      ],
+      "text": "李白（701—762年）是中国文学史上最伟大的诗人之一，被后世尊称为「诗仙」。他出生于盛唐时期，一生游历四方，足迹遍及大半个中国。与同时代的杜甫相比，李白的诗歌更加飘逸奔放，充满了对自然的热爱、对自由的渴望以及对人生无常的深刻感悟。他的代表作《静夜思》、《将进酒》、《望庐山瀑布》等，千百年来传诵不衰，成为中国文化的标志性符号。李白一生仕途坎坷，虽曾短暂供职于唐玄宗宫廷，却因性格豪放不羁、不善逢迎而遭到排挤。他选择回归山水，以酒为友，用诗歌记录自己内心的狂喜与悲愁。据说他最终醉倒于江中，试图捞月而溺水身亡，这个传说本身便是他传奇人生最好的注脚。",
+      "translation": "Li Bai (701-762) is one of the greatest poets in Chinese literary history, revered by posterity as the 'Poet Immortal'. Born during the height of the Tang dynasty, he spent his life wandering the world, leaving his footprints across more than half of China. Compared to his contemporary Du Fu, Li Bai's poetry is more free-spirited and uninhibited, filled with a love of nature, a yearning for freedom, and a profound sense of life's impermanence. His representative works including Quiet Night Thoughts, Bring in the Wine, and Gazing at Lushan Waterfall have been recited for hundreds of years and become iconic symbols of Chinese culture. Li Bai's official career was filled with setbacks; though he briefly served in the court of Emperor Xuanzong of Tang, he was marginalised due to his uninhibited personality and inability to flatter. He chose to return to the mountains and rivers, taking wine as his companion and using poetry to record the wild joy and deep sorrow of his inner world. According to legend, he finally fell drunk into a river, drowned while trying to grasp the reflection of the moon — a legend that is itself the best footnote to his legendary life."
+    },
+    {
+      "id": "zh-nf8",
+      "title": "中国的茶文化",
+      "titleTranslation": "Chinese Tea Culture",
+      "level": "HSK5",
+      "tags": [
+        "non-fiction",
+        "topic:culture",
+        "topic:history",
+        "topic:china",
+        "topic:food",
+        "advanced"
+      ],
+      "text": "茶，作为中国最重要的文化符号之一，其历史可以追溯至四千余年前的神农时代。传说神农尝百草时，偶然发现茶叶具有解毒的功效，由此开启了人类与茶的漫长缘分。然而茶真正进入普通人的日常生活，是在唐代以后。陆羽所著的《茶经》是世界上第一部关于茶的专著，系统阐述了茶的种植、加工、烹煮和品饮之道，将饮茶从单纯的实用行为提升为一种精致的文化艺术。宋代茶文化发展至鼎盛，出现了「斗茶」这一独特的社会风尚。明清两代，泡茶方式逐渐从团茶、末茶转向散茶，奠定了现代中国饮茶方式的基础。时至今日，中国茶文化已涵盖茶道、茶艺、茶叶贸易乃至茶马古道等多个维度，既是日常生活的一部分，也是中国向世界输出文化软实力的重要载体。",
+      "translation": "Tea, as one of China's most important cultural symbols, has a history traceable to more than four thousand years ago during the era of the Divine Farmer. Legend has it that when the Divine Farmer was tasting hundreds of plants, he accidentally discovered that tea leaves had detoxifying properties, thereby beginning humanity's long affinity with tea. However, tea truly entered the daily life of ordinary people only after the Tang dynasty. The Classic of Tea written by Lu Yu is the world's first monograph on tea, systematically expounding the way of cultivating, processing, preparing, and appreciating tea, elevating tea-drinking from a purely utilitarian act to a refined cultural art. Tea culture reached its peak during the Song dynasty, when 'tea competitions' emerged as a unique social custom. During the Ming and Qing dynasties, methods of brewing tea gradually shifted from compressed and powdered tea to loose-leaf tea, laying the foundation for the modern Chinese way of drinking tea. To this day, Chinese tea culture encompasses multiple dimensions including tea ceremony, tea art, the tea trade, and the Ancient Tea Horse Road — it is both a part of daily life and an important vehicle through which China exports cultural soft power to the world."
+    },
+    {
+      "id": "zh-nf9",
+      "title": "改革开放与中国的经济奇迹",
+      "titleTranslation": "Reform and Opening Up and China's Economic Miracle",
+      "level": "HSK5",
+      "tags": [
+        "non-fiction",
+        "topic:history",
+        "topic:economy",
+        "topic:china",
+        "topic:society",
+        "advanced"
+      ],
+      "text": "1978年，邓小平主导推行的改革开放政策，开启了中国历史上最深刻的社会经济转型。在此后四十余年间，中国经济规模从不足全球GDP的百分之二，跃升至约全球GDP的百分之十八，成为世界第二大经济体，数亿人口在这一进程中摆脱了贫困。这一成就在人类历史上没有先例，经济学界将其称为「中国奇迹」。改革开放的核心逻辑，是在坚持社会主义制度框架的前提下，有选择地引入市场机制，以特区为试点，以出口导向为驱动力，逐步将中国整合入全球价值链。深圳从一个小渔村发展为人口超千万的国际化都市，是这一进程最具代表性的缩影。然而，这场高速增长也伴随着区域不平衡加剧、环境压力上升以及贫富差距扩大等一系列深层矛盾。如何在维持发展动能的同时实现更具包容性和可持续性的增长，是中国当前面临的核心政策挑战之一。",
+      "translation": "In 1978, the Reform and Opening Up policy promoted by Deng Xiaoping initiated the most profound socioeconomic transformation in Chinese history. In the more than forty years since, China's economic scale grew from less than two percent of global GDP to approximately eighteen percent, becoming the world's second-largest economy, with hundreds of millions of people lifted out of poverty in the process. This achievement has no precedent in human history, and economists have called it the 'China Miracle'. The core logic of Reform and Opening Up was to selectively introduce market mechanisms within the framework of the socialist system, using special economic zones as pilot projects and export-oriented development as a driving force, gradually integrating China into global value chains. Shenzhen's development from a small fishing village into an international metropolis with a population of over ten million is the most representative microcosm of this process. However, this high-speed growth was also accompanied by a series of deep-rooted contradictions, including widening regional imbalances, rising environmental pressures, and an expanding wealth gap. How to achieve more inclusive and sustainable growth while maintaining development momentum is one of the core policy challenges China currently faces."
+    },
+    {
+      "id": "zh-nf10",
+      "title": "汉字的起源与演变",
+      "titleTranslation": "The Origin and Evolution of Chinese Characters",
+      "level": "HSK6",
+      "tags": [
+        "non-fiction",
+        "topic:language",
+        "topic:history",
+        "topic:china",
+        "topic:culture",
+        "advanced"
+      ],
+      "text": "汉字是世界上唯一从未断绝的古老书写系统，其发展脉络横贯三千余年，承载着中华文明演进的全部记忆。最早的成熟汉字体系见于商代的甲骨文——刻于龟甲与兽骨之上的卜辞文字，距今约三千三百年。这些早期文字已呈现出象形、指事、会意、形声等造字原则的雏形，为后世所沿用的「六书」理论奠定了基础。经过金文、大篆、小篆的演进，汉字在秦代实现了书同文的统一，这一政治举措对中华文明的延续性产生了深远影响。汉字的表意特征使其与拼音文字在认知层面产生根本差异：研究表明，汉字的阅读加工更多依赖右脑的整体识别，而字母文字则更多依赖左脑的线性解码。这种认知差异是否塑造了使用者不同的思维方式，至今仍是语言学与认知科学交叉领域的热门议题。在全球化与数字化的双重语境下，汉字正在经历其历史上又一次深刻的形态演变——表情包、输入法与跨语言传播，正在以古人难以预料的方式重塑这一古老符号系统的生命力。",
+      "translation": "Chinese characters constitute the world's only ancient writing system that has never been interrupted, with a developmental lineage spanning more than three thousand years, bearing the entire memory of the evolution of Chinese civilisation. The earliest mature system of Chinese characters is found in the oracle bone inscriptions of the Shang dynasty — divination texts carved on turtle shells and animal bones dating back approximately 3,300 years. These early characters already displayed the rudimentary forms of the character-formation principles of pictography, ideography, compound ideography, and phono-semantic composition, laying the foundation for the 'Six Scripts' theory applied by later generations. Through the evolution of bronze inscriptions, large seal script, and small seal script, Chinese characters achieved the unification of script under the Qin dynasty, a political measure that had far-reaching implications for the continuity of Chinese civilisation. The logographic nature of Chinese characters creates a fundamental cognitive difference from alphabetic writing: research indicates that reading Chinese relies more on the right brain's holistic pattern recognition, while alphabetic writing relies more on the left brain's linear decoding. Whether this cognitive difference shapes different ways of thinking in its users remains a hot topic at the intersection of linguistics and cognitive science. In the dual context of globalisation and digitalisation, Chinese characters are undergoing yet another profound morphological evolution — emoji, input methods, and cross-linguistic transmission are reshaping the vitality of this ancient symbol system in ways that ancient people could not have anticipated."
+    },
+    {
+      "id": "zh-p37",
+      "title": "风浪板",
+      "titleTranslation": "Windsurfing",
+      "level": "HSK1",
+      "series": "风浪板",
+      "tags": [
+        "non-fiction",
+        "series:风浪板",
+        "topic:sports",
+        "beginner"
+      ],
+      "text": "我喜欢风浪板。风浪板在水上。我站在板上。风很大。我很高兴。\n\n我的朋友也喜欢风浪板。他每天去水边。水很蓝。风很好。我们一起玩。\n\n风浪板很好玩。你喜欢风浪板吗？",
+      "translation": "I like windsurfing. The windsurfing board is on the water. I stand on the board. The wind is strong. I am very happy.\n\nMy friend also likes windsurfing. He goes to the water every day. The water is very blue. The wind is good. We play together.\n\nWindsurfing is a lot of fun. Do you like windsurfing?"
+    },
+    {
+      "id": "zh-p38",
+      "title": "学习风浪板",
+      "titleTranslation": "Learning to Windsurf",
+      "level": "HSK2",
+      "series": "风浪板",
+      "tags": [
+        "non-fiction",
+        "series:风浪板",
+        "topic:sports",
+        "intermediate"
+      ],
+      "text": "我开始学习风浪板。老师说风浪板不难，但是要练习。我每个周末去海边练习。\n\n第一次，我站上板子就掉进水里了。老师说：'没关系，再来一次。'我慢慢学会了站稳。风来的时候，我用手拉住帆。帆很大，风很强。\n\n现在我能在水上走一会儿了。我非常高兴。下个月，我想参加比赛。我的朋友说我进步很快。我每天都想着风浪板。",
+      "translation": "I started learning to windsurf. The teacher said windsurfing is not difficult, but you need to practice. I go to the seaside every weekend to practice.\n\nThe first time, I stepped on the board and fell into the water right away. The teacher said: 'It's okay, try again.' I slowly learned to stand steady. When the wind comes, I hold the sail with my hands. The sail is very big and the wind is strong.\n\nNow I can move on the water for a while. I am very happy. Next month, I want to join a competition. My friend says I am improving quickly. I think about windsurfing every day."
+    },
+    {
+      "id": "zh-p39",
+      "title": "风浪板比赛",
+      "titleTranslation": "A Windsurfing Competition",
+      "level": "HSK3",
+      "series": "风浪板",
+      "tags": [
+        "non-fiction",
+        "series:风浪板",
+        "topic:sports",
+        "intermediate"
+      ],
+      "text": "上个星期六，我参加了一次风浪板比赛。比赛在海边举行，参加的人很多。我有点儿紧张，但是也很兴奋。\n\n比赛开始了。风从北边吹来，速度很快。我努力控制帆，让板子跟着风走。海浪不太高，对我来说比较容易。我慢慢超过了几个对手，感觉非常好。\n\n比赛快结束的时候，突然来了一阵大风。我差点儿掉进水里，但是我站住了。最后，我得了第三名。教练说我的技术进步很大，让我继续努力。我准备下个月再参加一次比赛，这次我想得第一名。",
+      "translation": "Last Saturday, I took part in a windsurfing competition. The competition was held at the seaside, and many people participated. I was a little nervous, but also very excited.\n\nThe competition started. The wind blew from the north and was very fast. I worked hard to control the sail and let the board follow the wind. The waves were not too high, which was easier for me. I slowly overtook several competitors and felt great.\n\nNear the end of the race, a sudden strong gust of wind came. I almost fell into the water, but I held on. In the end, I came in third place. The coach said my technique had improved a lot and told me to keep working hard. I plan to enter another competition next month — this time I want to come in first."
+    }
+  ]
+}

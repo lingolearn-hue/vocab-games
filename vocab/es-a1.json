@@ -1,0 +1,24 @@
+{
+  "id": "es-a1",
+  "language": "es",
+  "native": "en",
+  "level": "A1",
+  "keys": ["entry", "translation"],
+  "entries": [
+    ["hola", "hello"],
+    ["gracias", "thank you"],
+    ["manzana", "apple"],
+    ["agua", "water"],
+    ["libro", "book"],
+    ["gato", "cat"],
+    ["perro", "dog"],
+    ["comer", "to eat"],
+    ["beber", "to drink"],
+    ["grande", "big"],
+    ["pequeño", "small"],
+    ["bueno", "good"],
+    ["persona", "person"],
+    ["amigo", "friend"],
+    ["estudiante", "student"]
+  ]
+}

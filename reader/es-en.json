@@ -1,0 +1,386 @@
+{
+  "id": "es-en-reader",
+  "language": "es",
+  "native": "en",
+  "passages": [
+
+    {
+      "id": "es-p1",
+      "title": "Mi amigo",
+      "titleTranslation": "My Friend",
+      "level": "A1",
+      "series": "Mi amigo",
+      "tags": ["fiction", "series:Mi amigo", "topic:friendship", "beginner"],
+      "text": "Tengo un buen amigo. Es estudiante. Le gusta comer manzanas y beber agua. Es muy feliz. Estudiamos juntos todos los días.",
+      "translation": "I have a good friend. He is a student. He likes to eat apples and drink water. He is very happy. We study together every day."
+    },
+
+    {
+      "id": "es-p1b",
+      "title": "Mi buen amigo Carlos",
+      "titleTranslation": "My Good Friend Carlos",
+      "level": "A2",
+      "series": "Mi amigo",
+      "tags": ["fiction", "series:Mi amigo", "topic:friendship", "beginner"],
+      "text": "Tengo un amigo muy bueno. Se llama Carlos. Carlos estudia en la universidad y trabaja mucho. Cada mañana bebe agua, come una manzana y va a la biblioteca. Le gusta aprender cosas nuevas y también le gusta ayudar a los demás. Me alegro mucho de tener un amigo así.",
+      "translation": "I have a very good friend. His name is Carlos. Carlos studies at university and works very hard. Every morning he drinks water, eats an apple, and goes to the library. He likes learning new things and also likes helping others. I am very glad to have a friend like him."
+    },
+
+    {
+      "id": "es-p1c",
+      "title": "El poder de la amistad",
+      "titleTranslation": "The Power of Friendship",
+      "level": "B1",
+      "series": "Mi amigo",
+      "tags": ["fiction", "series:Mi amigo", "topic:friendship", "intermediate"],
+      "text": "Carlos y yo nos conocemos desde hace cinco años. Es mi mejor amigo, aunque tenemos personalidades muy diferentes. Él es cuidadoso y paciente en todo lo que hace, mientras que yo soy más activo y me gustan los riesgos. Precisamente por estas diferencias aprendemos el uno del otro y crecemos juntos. Cuando tenemos dificultades, siempre nos apoyamos mutuamente. Creo que la verdadera amistad no necesita estar juntos todos los días, sino estar ahí cuando el otro te necesita.",
+      "translation": "Carlos and I have known each other for five years. He is my best friend, even though we have very different personalities. He is careful and patient in everything he does, while I am more active and like taking risks. It is precisely these differences that make us learn from each other and grow together. When we face difficulties, we always support each other. I believe true friendship does not require being together every day, but rather being there when the other person needs you."
+    },
+
+    {
+      "id": "es-p1d",
+      "title": "Distancia y añoranza",
+      "titleTranslation": "Distance and Longing",
+      "level": "B1",
+      "series": "Mi amigo",
+      "tags": ["fiction", "series:Mi amigo", "topic:friendship", "intermediate"],
+      "text": "Después de graduarnos, Carlos se fue a Barcelona a trabajar mientras yo me quedé en Madrid. La distancia creció y las oportunidades de vernos fueron cada vez menos frecuentes, pero extrañamente nuestra amistad no se enfrió. De vez en cuando él enviaba un mensaje largo contando sus experiencias y reflexiones en su nueva ciudad; yo también compartía con él los detalles pequeños de la vida cotidiana. A veces hacíamos videollamadas y hablábamos hasta bien entrada la noche sin cansarnos. Fui entendiendo poco a poco que la verdadera amistad es como un árbol de raíces profundas: no se marchita con el cambio de estaciones, sino que se hace más fuerte con los años. Lo que vivimos juntos en nuestra juventud ya forma parte de nuestros recuerdos compartidos, y ninguna distancia puede llevárselo.",
+      "translation": "After graduating, Carlos went to Barcelona to work while I stayed in Madrid. The distance grew and opportunities to see each other became fewer and fewer, but strangely our friendship did not cool. Every so often he would send a long message recounting his experiences and reflections in his new city; I too would share the small details of daily life with him. Sometimes we would video call and talk until well into the night without getting tired. I gradually came to understand that true friendship is like a deep-rooted tree: it does not wither with the change of seasons, but grows stronger with the years. What we lived through together in our youth has already become part of our shared memories, and no distance can take that away."
+    },
+
+    {
+      "id": "es-p1e",
+      "title": "Amistad e identidad propia",
+      "titleTranslation": "Friendship and Self-Identity",
+      "level": "B2",
+      "series": "Mi amigo",
+      "tags": ["essay", "series:Mi amigo", "topic:friendship", "topic:psychology", "advanced"],
+      "text": "La psicología nos muestra que la manera en que elegimos a nuestros amigos refleja en gran medida nuestra comprensión de nosotros mismos y nuestras expectativas personales. Las amistades que nos dan paz duradera suelen combinar una alta compatibilidad con una tensión suficiente: el otro nos entiende, pero al mismo tiempo desafía continuamente nuestras ideas fijas desde una perspectiva diferente. Mi amistad con Carlos es exactamente así. Su serenidad me enseñó a pausar antes de actuar por impulso, mientras que mi emotividad lo ayudó en algún momento a superar los límites que él mismo se había impuesto. Los sociólogos llaman a este tipo de relación «amistad de desarrollo»: ambas partes no son solo apoyos emocionales, sino también catalizadores del crecimiento mutuo. Sin embargo, la alta movilidad de la sociedad moderna hace que las amistades profundas sean cada vez más escasas. Las personas acumulan cientos de «contactos» en las redes sociales, pero a menudo les cuesta encontrar a alguien que realmente escuche. Esto me hace reflexionar: en esta era de sobrecarga de información, ¿estamos ampliando nuestras relaciones o diluyéndolas?",
+      "translation": "Psychology shows us that the way we choose friends largely reflects our understanding of ourselves and our personal expectations. Friendships that give us lasting peace of mind tend to combine high compatibility with sufficient tension: the other person understands us, yet simultaneously continuously challenges our fixed ideas from a different perspective. My friendship with Carlos is exactly like this. His steadiness taught me to pause before acting on impulse, while my emotionality at certain moments helped him overcome limits he had set for himself. Sociologists call this kind of relationship a 'developmental friendship': both parties are not just emotional supports, but also catalysts for mutual growth. However, the high mobility of modern society makes deep friendships increasingly scarce. People accumulate hundreds of 'contacts' on social networks but often struggle to find someone who truly listens. This makes me reflect: in this age of information overload, are we expanding our relationships or diluting them?"
+    },
+
+    {
+      "id": "es-p1f",
+      "title": "Sobre la naturaleza de la amistad",
+      "titleTranslation": "On the Nature of Friendship",
+      "level": "C1",
+      "series": "Mi amigo",
+      "tags": ["essay", "series:Mi amigo", "topic:friendship", "topic:philosophy", "advanced"],
+      "text": "Aristóteles distinguió en su Ética a Nicómaco tres tipos de amistad: la basada en la utilidad, la basada en el placer y la basada en la virtud. Las dos primeras se disuelven cuando desaparecen las condiciones de las que dependen; solo la amistad fundada en la apreciación mutua y el respeto por el carácter del otro puede resistir el paso del tiempo. Más de dos mil años después, esta reflexión sigue siendo profundamente resonante. Las tendencias atomizadoras de la sociedad contemporánea hacen que las conexiones profundas entre personas sean cada vez más difíciles. Vivimos en una abundancia material sin precedentes y, sin embargo, sufrimos una soledad generalizada e indecible. El sociólogo Robert Putnam documentó detalladamente el declive sostenido del capital social, y este fenómeno tiene su reflejo en todo el mundo. La verdadera amistad requiere tiempo, vulnerabilidad y pruebas compartidas: precisamente lo que la vida moderna orientada a la eficiencia es menos capaz de proporcionar. Quizás, mientras buscamos más conexiones, necesitamos aprender a invertir más profundamente en menos relaciones.",
+      "translation": "In his Nicomachean Ethics, Aristotle distinguished three types of friendship: that based on utility, that based on pleasure, and that based on virtue. The first two dissolve when the conditions on which they depend disappear; only friendship founded on mutual appreciation and respect for the other's character can withstand the test of time. More than two thousand years later, this reflection remains profoundly resonant. The atomising tendencies of contemporary society make deep connections between people increasingly difficult. We live in unprecedented material abundance yet suffer from a widespread and unspeakable loneliness. Sociologist Robert Putnam documented in detail the sustained decline of social capital, and this phenomenon has its reflection throughout the world. True friendship requires time, vulnerability, and shared trials: precisely what efficiency-oriented modern life is least able to provide. Perhaps, while seeking more connections, we need to learn to invest more deeply in fewer relationships."
+    },
+
+    {
+      "id": "es-p2",
+      "title": "Mi gato",
+      "titleTranslation": "My Cat",
+      "level": "A1",
+      "series": "Mi gato",
+      "tags": ["fiction", "series:Mi gato", "topic:animals", "topic:pets", "beginner"],
+      "text": "Tengo un gato. Es muy pequeño y muy bonito. Le gusta beber agua y no le gusta comer libros. Mi perro también es muy bueno. El gato y el perro son buenos amigos.",
+      "translation": "I have a cat. He is very small and very pretty. He likes to drink water and does not like to eat books. My dog is also very good. The cat and the dog are good friends."
+    },
+
+    {
+      "id": "es-p2b",
+      "title": "Luna y Canelo",
+      "titleTranslation": "Luna and Canelo",
+      "level": "A2",
+      "series": "Mi gato",
+      "tags": ["fiction", "series:Mi gato", "topic:animals", "topic:pets", "beginner"],
+      "text": "Tengo un gato y un perro. El gato se llama Luna y el perro se llama Canelo. Luna es muy lista y le gusta correr por toda la casa. Canelo es muy simpático y le gusta jugar en el jardín. Al principio no se querían y se peleaban mucho. Pero poco a poco se hicieron buenos amigos. Ahora duermen juntos todas las noches — es muy tierno.",
+      "translation": "I have a cat and a dog. The cat is called Luna and the dog is called Canelo. Luna is very clever and likes running all through the house. Canelo is very friendly and likes playing in the garden. At first they didn't like each other and fought a lot. But little by little they became good friends. Now they sleep together every night — it is very sweet."
+    },
+
+    {
+      "id": "es-p2c",
+      "title": "Los animales también tienen sentimientos",
+      "titleTranslation": "Animals Have Feelings Too",
+      "level": "B1",
+      "series": "Mi gato",
+      "tags": ["essay", "series:Mi gato", "topic:animals", "topic:science", "intermediate"],
+      "text": "Quien haya tenido una mascota sabe que los animales, igual que los humanos, tienen una vida emocional rica. Mi gato Luna y mi perro Canelo son el mejor ejemplo. Su camino de desconocidos a compañeros familiares, del conflicto a la reconciliación, fue un auténtico proceso de desarrollo emocional. La ciencia demuestra que tanto los gatos como los perros pueden sentir alegría, miedo, celos e incluso tristeza. Cuando su dueño se marcha, se sienten solos; cuando regresa, muestran una alegría genuina. Esto nos hace reflexionar: quizás la distancia entre los humanos y los animales no es tan grande como imaginamos.",
+      "translation": "Anyone who has kept a pet knows that animals, like humans, have a rich emotional life. My cat Luna and my dog Canelo are the best example. Their journey from strangers to familiar companions, from conflict to reconciliation, was a genuine process of emotional development. Science shows that both cats and dogs can feel joy, fear, jealousy, and even sadness. When their owner leaves, they feel lonely; when he returns, they show genuine happiness. This makes us reflect: perhaps the distance between humans and animals is not as great as we imagine."
+    },
+
+    {
+      "id": "es-p2d",
+      "title": "Las mascotas y la soledad moderna",
+      "titleTranslation": "Pets and Modern Loneliness",
+      "level": "B1",
+      "series": "Mi gato",
+      "tags": ["essay", "series:Mi gato", "topic:animals", "topic:society", "topic:psychology", "intermediate"],
+      "text": "En los últimos años, el número de mascotas en las ciudades españolas y latinoamericanas ha aumentado considerablemente. Cada vez más jóvenes eligen tener un gato o un perro; algunos lo atribuyen al aumento del estrés cotidiano, mientras que otros lo ven como reflejo de la tendencia social hacia los hogares unipersonales. Las mascotas ofrecen compañía incondicional: no juzgan, no exigen nada a cambio y simplemente están ahí. La investigación psicológica ha demostrado que interactuar con mascotas puede reducir eficazmente los niveles de cortisol y aliviar la ansiedad. Sin embargo, esta relación también plantea preguntas que merece la pena considerar: a medida que la gente se acostumbra más a establecer vínculos profundos con los animales, ¿significa eso que las conexiones entre personas se están volviendo más difíciles? Luna y Canelo me hacen feliz, pero no pueden sustituir a la verdadera amistad humana. Quizás las mascotas son un espejo que refleja lo que más deseamos y más nos cuesta expresar: ser aceptados incondicionalmente.",
+      "translation": "In recent years, the number of pets in Spanish and Latin American cities has risen considerably. More and more young people are choosing to keep a cat or a dog; some attribute this to increasing everyday stress, while others see it as a reflection of the social trend towards single-person households. Pets offer unconditional companionship: they do not judge, demand nothing in return, and are simply there. Psychological research has shown that interacting with pets can effectively reduce cortisol levels and relieve anxiety. Yet this relationship also raises questions worth considering: as people become more accustomed to forming deep bonds with animals, does that mean connections between people are becoming more difficult? Luna and Canelo make me happy, but they cannot replace true human friendship. Perhaps pets are a mirror reflecting what we most desire and find hardest to express: to be accepted unconditionally."
+    },
+
+    {
+      "id": "es-p2e",
+      "title": "Vínculos emocionales entre especies",
+      "titleTranslation": "Emotional Bonds Across Species",
+      "level": "B2",
+      "series": "Mi gato",
+      "tags": ["essay", "series:Mi gato", "topic:animals", "topic:science", "topic:philosophy", "advanced"],
+      "text": "La investigación interdisciplinaria en la intersección de la etología y la neurociencia está transformando nuestra comprensión tradicional de la conciencia animal. Durante mucho tiempo, la teoría del «animal-máquina» de Descartes proporcionó la base filosófica para el trato humano hacia otras especies, sosteniendo que los animales no son más que máquinas biológicas complejas sin capacidad real para sentir. Sin embargo, en las últimas décadas, una gran cantidad de investigaciones empíricas ha revelado un panorama radicalmente distinto. Primatólogos como Frans de Waal han documentado comportamientos empáticos complejos en los chimpancés; estudios neurológicos han confirmado que los mamíferos comparten estructuras cerebrales asociadas con el procesamiento emocional. El recorrido de mi gato y mi perro desde la rivalidad hasta la reconciliación quizás no sea solo el resultado del condicionamiento conductual, sino la expresión de una experiencia emocional genuina. Este entendimiento no solo cambia nuestra visión de las mascotas, sino que también plantea un profundo desafío al sistema completo de la ética animal, la ganadería industrial y el antropocentrismo.",
+      "translation": "Interdisciplinary research at the intersection of ethology and neuroscience is transforming our traditional understanding of animal consciousness. For a long time, Descartes' theory of the 'animal-machine' provided the philosophical basis for how humans treat other species, maintaining that animals are nothing more than complex biological machines with no real capacity for feeling. However, in recent decades, a large body of empirical research has revealed a radically different picture. Primatologists such as Frans de Waal have documented complex empathic behaviours in chimpanzees; neurological studies have confirmed that mammals share brain structures associated with emotional processing. The journey of my cat and dog from rivalry to reconciliation may not simply be the result of behavioural conditioning, but the expression of a genuine emotional experience. This understanding not only changes our vision of pets, but also poses a profound challenge to the entire system of animal ethics, industrial livestock farming, and anthropocentrism."
+    },
+
+    {
+      "id": "es-p2f",
+      "title": "Sobre la reconstrucción ética de la relación humano-animal",
+      "titleTranslation": "On the Ethical Reconstruction of the Human-Animal Relationship",
+      "level": "C1",
+      "series": "Mi gato",
+      "tags": ["essay", "series:Mi gato", "topic:animals", "topic:philosophy", "topic:ethics", "advanced"],
+      "text": "El marco utilitarista propuesto por Peter Singer en «Liberación Animal» y el sistema de ética animal basado en los derechos de Tom Regan representan la reflexión más sistemática sobre la relación humano-animal en la filosofía occidental de finales del siglo XX. Sin embargo, ambos enfoques se enfrentan a dificultades prácticas profundas: el primero es difícil de operacionalizar por la complejidad del cálculo utilitarista; el segundo entra en conflicto fundamental con muchas instituciones reales al otorgar derechos inviolables a los animales. Ante una crisis ecológica cada vez más grave, reexaminar el lugar de la humanidad en la comunidad de la vida ya no es una especulación filosófica de lujo, sino una pregunta urgente sobre la supervivencia de nuestra especie. El gato acurrucado a mis pies buscando calor es quizás el mejor recordatorio: nuestra responsabilidad hacia otro ser vivo nunca ha necesitado esperar el permiso de la filosofía.",
+      "translation": "The utilitarian framework proposed by Peter Singer in Animal Liberation and the rights-based animal ethics system of Tom Regan represent the most systematic reflection on the human-animal relationship in late twentieth-century Western philosophy. However, both approaches face deep practical difficulties: the first is hard to operationalise due to the complexity of utilitarian calculation; the second comes into fundamental conflict with many real-world institutions by granting animals inviolable rights. In the face of an increasingly severe ecological crisis, re-examining humanity's place in the community of life is no longer luxurious philosophical speculation, but an urgent question about the survival of our species. The cat curled up at my feet seeking warmth is perhaps the best reminder: our responsibility towards another living being has never needed to wait for philosophy's permission."
+    },
+
+    {
+      "id": "es-p3",
+      "title": "Comprando en el mercado",
+      "titleTranslation": "Shopping at the Market",
+      "level": "A1",
+      "series": "El mercado",
+      "tags": ["fiction", "series:El mercado", "topic:daily-life", "topic:economy", "beginner"],
+      "text": "Hoy voy a comprar manzanas. Las manzanas son muy buenas y no son caras. También compro agua. Estoy muy contento.",
+      "translation": "Today I am going to buy apples. The apples are very good and not expensive. I also buy water. I am very happy."
+    },
+
+    {
+      "id": "es-p3b",
+      "title": "El sábado en el mercado",
+      "titleTranslation": "Saturday at the Market",
+      "level": "A2",
+      "series": "El mercado",
+      "tags": ["fiction", "series:El mercado", "topic:daily-life", "topic:economy", "topic:culture", "beginner"],
+      "text": "Todos los sábados me gusta ir al mercado del barrio a hacer la compra. Las verduras y las frutas están muy frescas y los precios son más baratos que en el supermercado. Hoy he comprado manzanas, tomates y un poco de lechuga. La señora que vende manzanas fue muy amable y me dio dos manzanas de regalo. Gasté veinte euros y compré muchas cosas — fue muy buena compra. De camino a casa estaba de muy buen humor.",
+      "translation": "Every Saturday I like to go to the neighbourhood market to do the shopping. The vegetables and fruit are very fresh and the prices are cheaper than in the supermarket. Today I bought apples, tomatoes, and some lettuce. The lady selling apples was very kind and gave me two apples as a gift. I spent twenty euros and bought a lot of things — it was very good value. On the way home I was in a very good mood."
+    },
+
+    {
+      "id": "es-p3c",
+      "title": "El mercado que desaparece",
+      "titleTranslation": "The Disappearing Market",
+      "level": "B1",
+      "series": "El mercado",
+      "tags": ["essay", "series:El mercado", "topic:society", "topic:economy", "topic:culture", "intermediate"],
+      "text": "Con el rápido desarrollo de las ciudades, los mercados tradicionales están desapareciendo poco a poco, sustituidos por supermercados modernos y plataformas de compra en línea. Muchos residentes urbanos ya se han acostumbrado a pedir con el móvil y recibir las verduras en la puerta de casa. Sin embargo, cada vez más personas empiezan a echar de menos el ambiente único de los mercados tradicionales. Allí puedes charlar con los vendedores, elegir los ingredientes más frescos y sentir la calidez humana genuina. El mercado no es solo un lugar para comprar y vender — también es un soporte de la cultura comunitaria. Al perderlo, perdemos algo más que una forma de hacer la compra.",
+      "translation": "With the rapid development of cities, traditional markets are gradually disappearing, replaced by modern supermarkets and online shopping platforms. Many urban residents have already grown used to ordering by phone and receiving vegetables at their door. However, more and more people are beginning to miss the unique atmosphere of traditional markets. There you can chat with the vendors, choose the freshest ingredients, and feel genuine human warmth. The market is not just a place to buy and sell — it is also a carrier of community culture. In losing it, we lose more than just a way of shopping."
+    },
+
+    {
+      "id": "es-p3d",
+      "title": "La economía digital frente al comercio tradicional",
+      "titleTranslation": "The Digital Economy Against Traditional Commerce",
+      "level": "B1",
+      "series": "El mercado",
+      "tags": ["essay", "series:El mercado", "topic:economy", "topic:technology", "topic:society", "intermediate"],
+      "text": "En los últimos años, plataformas de comercio electrónico de alimentación como Mercadona online, Glovo o sus equivalentes han crecido rápidamente y han transformado profundamente los hábitos de compra de muchos ciudadanos. Esta tendencia ha golpeado duramente a los mercados tradicionales: menos afluencia de clientes, ingresos menores para los vendedores y, en algunas ciudades, cierres masivos. Sin embargo, la evolución del comercio no es unidireccional. Cada vez más municipios reconocen que los mercados no solo cumplen una función económica, sino que también son un vínculo espiritual de la vida comunitaria. Algunos ayuntamientos están intentando modernizar los mercados tradicionales incorporando instalaciones de cadena de frío, pago móvil y sistemas de reserva en línea, con la esperanza de conservar la calidez humana mientras mejoran su competitividad. La tensión entre tradición y modernidad no tiene por qué derivar en un conflicto de suma cero — quizás sea posible buscar una convivencia mediante la innovación.",
+      "translation": "In recent years, food e-commerce platforms such as Mercadona online, Glovo, and their equivalents have grown rapidly and profoundly changed the shopping habits of many citizens. This trend has hit traditional markets hard: fewer customers, lower income for vendors, and in some cities large-scale closures. However, the evolution of commerce is not one-directional. More and more municipalities recognise that markets not only fulfil an economic function, but also serve as a spiritual bond of community life. Some town halls are attempting to modernise traditional markets by incorporating cold-chain facilities, mobile payment, and online reservation systems, hoping to preserve human warmth while improving their competitiveness. The tension between tradition and modernity need not lead to zero-sum conflict — perhaps a coexistence through innovation is possible."
+    },
+
+    {
+      "id": "es-p3e",
+      "title": "El mercado como forma de civilización",
+      "titleTranslation": "The Market as a Form of Civilisation",
+      "level": "B2",
+      "series": "El mercado",
+      "tags": ["essay", "series:El mercado", "topic:economy", "topic:anthropology", "topic:culture", "advanced"],
+      "text": "El antropólogo Clifford Geertz señaló en su estudio clásico sobre los bazares marroquíes que los mercados nunca han sido meros lugares de intercambio de bienes, sino espacios complejos para la circulación de información, la reproducción de relaciones sociales y la construcción de significados culturales. El regateo en el bazar no es simplemente un juego económico, sino una forma ritualizada de interacción social que contiene códigos profundos sobre la confianza, la identidad y la pertenencia comunitaria. La cultura tradicional de los mercados en España y América Latina comparte esta característica. Desde los mercados medievales hasta los modernos mercados de abastos, estos espacios siempre han sido importantes soportes de la autoorganización de la sociedad civil. El impacto actual del comercio electrónico de alimentación sobre los mercados tradicionales es, en cierto sentido, un proceso de desocialización: las transacciones se optimizan hacia la coincidencia de información más eficiente, pero despojadas de la calidez interpersonal y la profundidad cultural que les eran propias. Esto no significa que el progreso tecnológico sea necesariamente una regresión civilizatoria, pero sí nos exige que, al diseñar nuevas formas comerciales, consideremos cuidadosamente aquellos valores sociales que no pueden ser cuantificados por algoritmos.",
+      "translation": "The anthropologist Clifford Geertz pointed out in his classic study of Moroccan bazaars that markets have never been mere places for the exchange of goods, but complex spaces for the circulation of information, the reproduction of social relations, and the construction of cultural meanings. Bargaining in the bazaar is not simply an economic game, but a ritualised form of social interaction containing deep codes about trust, identity, and community belonging. The traditional market culture in Spain and Latin America shares this characteristic. From medieval markets to modern covered markets, these spaces have always been important carriers of civil society's self-organisation. The current impact of food e-commerce on traditional markets is, in a certain sense, a process of de-socialisation: transactions are optimised towards the most efficient information matching, but stripped of the interpersonal warmth and cultural depth that were inherent in them. This does not mean that technological progress is necessarily a civilisational regression, but it does require us, when designing new commercial forms, to carefully consider those social values that cannot be quantified by algorithms."
+    },
+
+    {
+      "id": "es-p3f",
+      "title": "El mercado, el capital y la paradoja de lo público",
+      "titleTranslation": "The Market, Capital, and the Paradox of the Public",
+      "level": "C1",
+      "series": "El mercado",
+      "tags": ["essay", "series:El mercado", "topic:economy", "topic:philosophy", "topic:politics", "advanced"],
+      "text": "En el discurso económico, el «mercado» es un mecanismo de asignación de recursos; en la perspectiva sociológica, es un reflejo de la estructura social; y en el nivel de la filosofía política, los debates en torno al mercado están perpetuamente entrelazados con la tensión fundamental entre el bien común, el poder del Estado y la libertad individual. Karl Polanyi reveló en «La Gran Transformación» las contradicciones internas de la sociedad de mercado: una vez que la tierra, el trabajo y el dinero se convierten en mercancías, el mercado autorregulado erosiona sistemáticamente el mismo tejido social del que depende, generando así movimientos de protección política en sentido contrario. La lógica de este «doble movimiento» se está representando de nuevo, de forma muy comprimida, en la economía de plataformas contemporánea. La fijación algorítmica de precios, los monopolios de datos y la expansión del poder de las plataformas no solo reconfiguran el orden competitivo en el sentido tradicional, sino que alteran profundamente el equilibrio de poder entre el espacio público y el capital privado. La desaparición del mercado de barrio es tanto una transición comercial a nivel micro como un microcosmos de la reordenación del triángulo Estado-capital-sociedad a nivel macro.",
+      "translation": "In economic discourse, the 'market' is a mechanism for resource allocation; in sociological perspective, it is a reflection of social structure; and at the level of political philosophy, debates surrounding the market are perpetually intertwined with the fundamental tension between the common good, state power, and individual freedom. Karl Polanyi revealed in The Great Transformation the internal contradictions of market society: once land, labour, and money are turned into commodities, the self-regulating market systematically erodes the very social fabric on which it depends, thereby generating counter-movements of political protection. The logic of this 'double movement' is being re-enacted in very compressed form in the contemporary platform economy. Algorithmic pricing, data monopolies, and the expansion of platform power not only reconfigure the competitive order in the traditional sense, but profoundly alter the balance of power between public space and private capital. The disappearance of the neighbourhood market is both a commercial transition at the micro level and a microcosm of the reordering of the State-capital-society triangle at the macro level."
+    },
+
+    {
+      "id": "es-s1",
+      "title": "La primera nevada",
+      "titleTranslation": "The First Snow",
+      "level": "A2",
+      "tags": ["fiction", "topic:daily-life", "topic:nature", "beginner"],
+      "text": "Esta mañana me levanté y vi que todo estaba blanco fuera. ¡Había nevado! Esta es la primera nevada del año. Estaba muy contento y me puse el abrigo rápidamente para salir corriendo. La nieve era muy suave y me gustó pisarla. Hice un muñeco de nieve y jugué a tirar bolas de nieve con los niños del barrio. Aunque hacía mucho frío, todos nos reímos mucho. El invierno es maravilloso.",
+      "translation": "This morning I got up and saw that everything outside was white. It had snowed! This is the year's first snow. I was very happy and quickly put on my coat to run outside. The snow was very soft and I liked stepping on it. I made a snowman and played snowballs with the children from the neighbourhood. Although it was very cold, we all laughed a lot. Winter is wonderful."
+    },
+
+    {
+      "id": "es-s2",
+      "title": "Una tarde perdida",
+      "titleTranslation": "A Lost Afternoon",
+      "level": "A2",
+      "tags": ["fiction", "topic:daily-life", "beginner"],
+      "text": "El sábado pasado fui solo a un lugar nuevo. Pensé que sabía el camino, pero anduve mucho tiempo y aun así no encontré el lugar al que quería ir. Estaba un poco nervioso porque el móvil se me había quedado sin batería y no podía usar el GPS. No tuve más remedio que preguntar el camino a un señor mayor que estaba en la calle. Fue muy amable: no solo me explicó cómo llegar, sino que también me acompañó un trecho. Al final encontré mi destino, con una hora de retraso, pero con el corazón muy agradecido.",
+      "translation": "Last Saturday I went alone to a new place. I thought I knew the way, but I walked for a long time and still couldn't find the place I wanted to go. I was a little nervous because my phone had run out of battery and I couldn't use the GPS. I had no choice but to ask an elderly gentleman on the street for directions. He was very kind: not only did he explain how to get there, he also walked with me for a stretch. In the end I found my destination, an hour late, but with a very grateful heart."
+    },
+
+    {
+      "id": "es-s3",
+      "title": "El sabor del mercado nocturno",
+      "titleTranslation": "The Taste of the Night Market",
+      "level": "B1",
+      "tags": ["fiction", "topic:culture", "topic:food", "topic:latinamerica", "intermediate"],
+      "text": "Los mercados nocturnos de México y Centroamérica son famosos en todo el mundo. Cuando cae la noche, los puestos a ambos lados de la calle se iluminan y el aire se llena de los aromas de toda clase de comida. Hay tlayudas, tacos, tamales y todo tipo de antojitos que no sabría cómo nombrar. La gente se aprieta hombro con hombro, y el bullicio de las conversaciones y las risas no para. El mercado nocturno no es solo un lugar para comer — representa una forma de vida y una identidad cultural. Para muchos mexicanos, es parte de los recuerdos de la infancia, el sabor de casa. Aunque lleves muchos años fuera, al oler ese aroma familiar enseguida te vienen a la mente los tiempos pasados.",
+      "translation": "The night markets of Mexico and Central America are famous throughout the world. When night falls, the stalls on both sides of the street light up and the air fills with the aromas of all kinds of food. There are tlayudas, tacos, tamales, and all sorts of snacks I wouldn't know how to name. People press shoulder to shoulder, and the noise of conversations and laughter never stops. The night market is not just a place to eat — it represents a way of life and a cultural identity. For many Mexicans it is part of childhood memories, the taste of home. Even after many years away, smelling that familiar aroma immediately brings to mind times gone by."
+    },
+
+    {
+      "id": "es-s4",
+      "title": "Una carta que nunca se envió",
+      "titleTranslation": "A Letter Never Sent",
+      "level": "B1",
+      "tags": ["fiction", "topic:nostalgia", "topic:family", "intermediate"],
+      "text": "Mientras ordenaba cosas viejas, encontré una carta que escribí hace diez años. En aquel momento acababa de empezar la universidad y echaba mucho de menos mi ciudad natal y a mis padres. La carta estaba llena de palabras sinceras: esperanzas para el futuro y angustia por alejarme de casa. Pero no sé por qué, esta carta nunca se envió y quedó enterrada en una caja vieja. Leerla ahora me parece a la vez extraño y familiar. Aquel yo de dieciocho años tenía tantos sueños y tantos miedos. Creo que algunas palabras no hace falta decirlas en voz alta — con escribirlas ya es suficiente.",
+      "translation": "While sorting through old things, I found a letter I had written ten years ago. At that time I had just started university and missed my hometown and my parents a great deal. The letter was full of sincere words: hopes for the future and anguish at leaving home. But for some reason this letter was never sent and remained buried in an old box. Reading it now feels both strange and familiar. That eighteen-year-old self had so many dreams and so many fears. I think some words don't need to be said aloud — writing them down is already enough."
+    },
+
+    {
+      "id": "es-s5",
+      "title": "La cocina de la abuela",
+      "titleTranslation": "Grandmother's Kitchen",
+      "level": "B1",
+      "tags": ["fiction", "topic:family", "topic:nostalgia", "topic:food", "intermediate"],
+      "text": "En mi memoria, la cocina de mi abuela siempre estaba caliente. No importaba cómo soplase el viento ni cómo lloviera fuera: en cuanto cruzabas esa pequeña puerta, te recibían el aroma de la comida y el calor del fogón. Mi abuela no sabía leer, pero tenía unas manos mágicas para transformar los ingredientes más humildes en sabores imposibles de olvidar. Nunca usaba receta; todas las medidas las llevaba en el tacto. Cada vez que le preguntaba cómo preparar algo, sonreía y decía: «A ojo, más o menos». Solo más tarde entendí que en ese «más o menos» se escondían décadas de experiencia y un amor silencioso por la familia. La abuela lleva tres años sin estar, pero cada vez que huelo un guiso a fuego lento, esa puerta de la cocina se abre despacio en mi memoria.",
+      "translation": "In my memory, my grandmother's kitchen was always warm. No matter how the wind blew or the rain fell outside: as soon as you crossed that small door, the aroma of food and the warmth of the stove greeted you. My grandmother couldn't read, but she had magical hands for transforming the humblest ingredients into flavours impossible to forget. She never used a recipe; all the measures were in her sense of touch. Every time I asked her how to prepare something, she would smile and say: 'By eye, more or less.' Only later did I understand that in that 'more or less' lay decades of experience and a silent love for the family. Grandmother has been gone for three years, but every time I smell a slow-cooked stew, that kitchen door slowly opens in my memory."
+    },
+
+    {
+      "id": "es-s6",
+      "title": "El último metro",
+      "titleTranslation": "The Last Metro",
+      "level": "B1",
+      "tags": ["fiction", "topic:daily-life", "topic:city", "intermediate"],
+      "text": "Era un viernes por la noche, muy tarde. Había hecho horas extra hasta las once y media y justo alcancé el último metro de esa línea. El vagón estaba casi vacío; solo había unos pocos pasajeros desperdigados por los rincones, con caras de cansancio. Enfrente se sentaba un hombre de mediana edad con ropa de trabajo, la cabeza apoyada en la ventana y ya dormido. Aún sostenía el casco en la mano, con las comisuras de los labios ligeramente curvadas hacia arriba — quién sabe qué estaría soñando. De repente sentí que este vagón nocturno era como un pequeño refugio que acogía temporalmente a todas las personas cansadas, circulando en silencio por debajo de la ciudad. Todo el mundo tiene un lugar al que volver; todo el mundo está trabajando por algo. Este pensamiento me dio una calidez inexplicable.",
+      "translation": "It was a Friday night, very late. I had worked overtime until half past eleven and just caught the last metro on that line. The carriage was almost empty; there were only a few passengers scattered in the corners, with tired faces. Opposite sat a middle-aged man in work clothes, his head leaning against the window and already asleep. He was still holding his hard hat in his hand, the corners of his lips slightly curved upward — who knows what he was dreaming of. Suddenly I felt that this night carriage was like a small shelter temporarily taking in all the tired people, running silently beneath the city. Everyone has somewhere to return to; everyone is working hard for something. This thought gave me an inexplicable warmth."
+    },
+
+    {
+      "id": "es-s7",
+      "title": "Los límites del lenguaje",
+      "titleTranslation": "The Limits of Language",
+      "level": "B2",
+      "tags": ["essay", "topic:language", "topic:philosophy", "advanced"],
+      "text": "Wittgenstein dijo en cierta ocasión: «Los límites de mi lenguaje son los límites de mi mundo.» Aprender un idioma nuevo no es simplemente dominar un nuevo vocabulario y unas nuevas reglas gramaticales, sino percibir y organizar la realidad de una manera completamente nueva. La palabra japonesa «komorebi» describe la imagen de la luz solar filtrándose entre las hojas de los árboles — una palabra sin equivalente preciso en español o en inglés. La palabra portuguesa «saudade» designa un profundo anhelo y tristeza por algo ausente, e igualmente resulta intraducible. Cada lengua lleva consigo las estructuras cognitivas sedimentadas en la larga evolución de una cultura particular; aprenderla es, en cierto sentido, instalarse temporalmente en otra manera de ser. Esto explica también por qué muchas personas bilingües dicen que se sienten como personas distintas cuando piensan en idiomas diferentes. El lenguaje no es solo una herramienta para expresar pensamientos — es también el recipiente que da forma a los pensamientos.",
+      "translation": "Wittgenstein once said: 'The limits of my language are the limits of my world.' Learning a new language is not simply a matter of mastering a new vocabulary and new grammatical rules, but of perceiving and organising reality in an entirely new way. The Japanese word komorebi describes the image of sunlight filtering through the leaves of trees — a word with no precise equivalent in Spanish or English. The Portuguese word saudade designates a deep longing and sadness for something absent, and is equally untranslatable. Every language carries the cognitive structures deposited in the long evolution of a particular culture; to learn it is, in a certain sense, to install oneself temporarily in another way of being. This also explains why many bilingual people say they feel like different people when thinking in different languages. Language is not merely a tool for expressing thoughts — it is also the container that shapes thoughts."
+    },
+
+    {
+      "id": "es-s8",
+      "title": "La inteligencia artificial y los límites de la creatividad humana",
+      "titleTranslation": "Artificial Intelligence and the Limits of Human Creativity",
+      "level": "C1",
+      "tags": ["essay", "topic:technology", "topic:philosophy", "topic:society", "advanced"],
+      "text": "La rápida proliferación de la inteligencia artificial generativa está reconfigurando la comprensión que tiene la sociedad humana del concepto de «creatividad» a una profundidad sin precedentes. Cuando un modelo de lenguaje puede generar en cuestión de segundos poesía, ficción e incluso artículos académicos de estilo depurado, el significado de la subjetividad humana en el acto de «crear» queda sometido a un cuestionamiento fundamental. Los críticos señalan que lo que la inteligencia artificial llama «creación» no es más que un resumen estadístico y una reorganización de textos existentes, carente de intencionalidad genuina y de fundamento emocional, y que por lo tanto solo puede ser la apariencia de creatividad, no su esencia. Los partidarios contraargumentan, sin embargo, que la creatividad humana se construye igualmente sobre la imitación, la asimilación y la recombinación de las obras de los predecesores, y que ambas no son fundamentalmente diferentes en el plano mecanístico, solo difieren en escala y velocidad. El núcleo de este debate quizás no resida en si la inteligencia artificial «posee o no» creatividad, sino en por qué valoramos la creación humana en primer lugar. Si el valor de un cuadro radica únicamente en su efecto visual, entonces las imágenes generadas por máquinas no se diferencian de las pintadas a mano; pero si el valor del arte reside en la experiencia humana, la vulnerabilidad y la búsqueda de sentido cristalizadas en el proceso creativo, entonces entre ambas existe un abismo que no puede salvarse fácilmente.",
+      "translation": "The rapid proliferation of generative artificial intelligence is reshaping human society's understanding of the concept of 'creativity' to an unprecedented depth. When a language model can generate stylistically accomplished poetry, fiction, and even academic articles within seconds, the significance of human subjectivity in the act of 'creating' comes under fundamental questioning. Critics point out that what artificial intelligence calls 'creation' is nothing more than a statistical summary and rearrangement of existing texts, lacking genuine intentionality and emotional foundation, and that therefore it can only be the appearance of creativity, not its essence. Supporters counter, however, that human creativity is similarly built upon the imitation, assimilation, and recombination of predecessors' works, and that the two are not fundamentally different at the mechanistic level, differing only in scale and speed. The core of this debate may not lie in whether artificial intelligence 'does or does not possess' creativity, but in why we value human creation in the first place. If the value of a painting lies solely in its visual effect, then machine-generated images are no different from those painted by hand; but if the value of art lies in the human experience, vulnerability, and search for meaning crystallised in the creative process, then between the two there exists a gulf that cannot easily be bridged."
+    },
+
+    {
+      "id": "es-nf1",
+      "title": "Los cuatro grandes inventos de China",
+      "titleTranslation": "China's Four Great Inventions",
+      "level": "A2",
+      "tags": ["non-fiction", "topic:history", "topic:science", "topic:china", "beginner"],
+      "text": "La China antigua tuvo cuatro grandes inventos: la fabricación del papel, la imprenta, la pólvora y la brújula. Estos cuatro inventos cambiaron la historia del mundo. La fabricación del papel permitió escribir y conservar el conocimiento. La imprenta posibilitó la producción masiva de libros, de modo que más personas podían leer. La pólvora se usó al principio en celebraciones y más tarde en la guerra. La brújula ayudó a las personas a encontrar la dirección en el mar, haciendo posibles los viajes oceánicos. Estos inventos se extendieron desde China por todo el mundo y contribuyeron enormemente al desarrollo de la civilización humana.",
+      "translation": "Ancient China had four great inventions: papermaking, the printing press, gunpowder, and the compass. These four inventions changed the history of the world. Papermaking made it possible to write down and preserve knowledge. The printing press made the mass production of books possible, so that more people could read. Gunpowder was used at first in celebrations and later in warfare. The compass helped people find direction at sea, making ocean voyages possible. These inventions spread from China throughout the world and contributed enormously to the development of human civilisation."
+    },
+
+    {
+      "id": "es-nf2",
+      "title": "Pekín: una ciudad entre lo antiguo y lo moderno",
+      "titleTranslation": "Beijing: A City Between the Ancient and the Modern",
+      "level": "A2",
+      "tags": ["non-fiction", "topic:geography", "topic:china", "topic:culture", "beginner"],
+      "text": "Pekín es la capital de China y también una ciudad antigua de más de tres mil años de historia. Aquí hay muchos lugares históricos famosos, como la Ciudad Prohibida, la Gran Muralla y el Templo del Cielo. La Ciudad Prohibida era la residencia de los emperadores de las dinastías Ming y Qing y tiene más de nueve mil habitaciones. La Gran Muralla se extiende miles de kilómetros de este a oeste y es la construcción más famosa de China. Además de los monumentos históricos, Pekín es también una gran ciudad moderna con muchos rascacielos, metro y centros comerciales. La gastronomía de Pekín también es muy famosa — el plato más conocido es el pato laqueado. Si vienes a China, tienes que visitar Pekín.",
+      "translation": "Beijing is the capital of China and also an ancient city with more than three thousand years of history. There are many famous historical sites here, such as the Forbidden City, the Great Wall, and the Temple of Heaven. The Forbidden City was the residence of the emperors of the Ming and Qing dynasties and has more than nine thousand rooms. The Great Wall extends thousands of kilometres from east to west and is China's most famous structure. Besides the historical monuments, Beijing is also a large modern city with many skyscrapers, an underground railway, and shopping centres. Beijing's gastronomy is also very famous — the best-known dish is Peking duck. If you come to China, you must visit Beijing."
+    },
+
+    {
+      "id": "es-nf3",
+      "title": "Confucio: el pensador que cambió China",
+      "titleTranslation": "Confucius: The Thinker Who Changed China",
+      "level": "B1",
+      "tags": ["non-fiction", "biography", "topic:history", "topic:philosophy", "topic:china", "intermediate"],
+      "text": "Confucio es uno de los pensadores y educadores más grandes de la historia de China. Vivió hace dos mil quinientos años, en el período de Primaveras y Otoños, y dedicó su vida a difundir valores morales como la benevolencia, la justicia y la rectitud. Confucio creía que una persona debe estudiar continuamente y cultivar su carácter para poder contribuir a la sociedad. Su filosofía educativa era muy avanzada: defendía enseñar a cada alumno según sus características particulares. Sus enseñanzas fueron recopiladas por sus seguidores en las Analectas, una de las obras clásicas más importantes de China durante milenios. Las ideas de Confucio influyeron no solo en China, sino que también tuvieron un profundo impacto en países asiáticos como Japón, Corea y Vietnam. Hoy en día, el pensamiento confuciano sigue siendo una clave para entender la cultura china.",
+      "translation": "Confucius is one of the greatest thinkers and educators in the history of China. He lived two thousand five hundred years ago, in the Spring and Autumn period, and devoted his life to spreading moral values such as benevolence, justice, and rectitude. Confucius believed that a person must continuously study and cultivate their character in order to contribute to society. His educational philosophy was very advanced: he advocated teaching each pupil according to their particular characteristics. His teachings were compiled by his followers into the Analects, one of the most important classical works in China for millennia. The ideas of Confucius influenced not only China but also had a profound impact on Asian countries such as Japan, Korea, and Vietnam. Today, Confucian thought remains a key to understanding Chinese culture."
+    },
+
+    {
+      "id": "es-nf4",
+      "title": "El Año Nuevo Chino",
+      "titleTranslation": "Chinese New Year",
+      "level": "A2",
+      "tags": ["non-fiction", "topic:culture", "topic:traditions", "topic:china", "beginner"],
+      "text": "El Festival de Primavera es la festividad tradicional más importante de China y también se llama Año Nuevo Lunar. Cada enero o febrero, los chinos celebran el Festival de Primavera. Antes de la fiesta, la gente limpia sus casas, compra ropa nueva y prepara mucha comida deliciosa. La noche de Nochevieja, toda la familia cena junta y ve el programa especial de Año Nuevo en televisión. Cuando llega el año nuevo, los niños reciben sobres rojos con dinero de la suerte. En las calles hay danzas del dragón y del león, y muchos fuegos artificiales. El Festival de Primavera se celebra generalmente durante quince días — el último día se llama Festival de los Faroles, cuando la gente come bolas de arroz y ve los desfiles de linternas. Para los chinos, el Festival de Primavera es el momento de volver a casa y reunirse con la familia — la época más cálida del año.",
+      "translation": "The Spring Festival is the most important traditional holiday in China and is also called the Lunar New Year. Every January or February, Chinese people celebrate the Spring Festival. Before the festival, people clean their houses, buy new clothes, and prepare a lot of delicious food. On New Year's Eve, the whole family dines together and watches the special New Year's programme on television. When the new year arrives, children receive red envelopes with lucky money. On the streets there are dragon and lion dances, and many fireworks. The Spring Festival is generally celebrated for fifteen days — the last day is called the Lantern Festival, when people eat rice balls and watch lantern processions. For Chinese people, the Spring Festival is the moment to return home and reunite with the family — the warmest time of the year."
+    },
+
+    {
+      "id": "es-nf5",
+      "title": "Tu Youyou: salvando vidas con la artemisinina",
+      "titleTranslation": "Tu Youyou: Saving Lives with Artemisinin",
+      "level": "B1",
+      "tags": ["non-fiction", "biography", "topic:science", "topic:medicine", "topic:china", "intermediate"],
+      "text": "Tu Youyou es una famosa farmacóloga china y la primera científica china en recibir el Premio Nobel de Fisiología o Medicina. Nació en 1930 y desde pequeña desarrolló un gran interés por la medicina. En los años sesenta y setenta del siglo XX, la malaria se cobró muchísimas vidas en todo el mundo y los medicamentos disponibles ya no podían controlar la enfermedad con eficacia. Tu Youyou lideró un equipo que estudió en profundidad textos médicos chinos antiguos y buscó pistas entre cientos de hierbas medicinales tradicionales. Tras innumerables fracasos, logró por fin extraer el principio activo de la artemisa — la artemisinina. Este medicamento ha salvado millones de vidas, especialmente entre los niños de África. En 2015 recibió el Premio Nobel, demostrando al mundo el valor de la sabiduría de la medicina tradicional china. Su historia nos enseña que la perseverancia y la paciencia son las cualidades más importantes en la exploración científica.",
+      "translation": "Tu Youyou is a famous Chinese pharmacologist and the first Chinese scientist to receive the Nobel Prize in Physiology or Medicine. Born in 1930, she developed a great interest in medicine from a young age. In the 1960s and 70s of the twentieth century, malaria claimed vast numbers of lives around the world and the available drugs could no longer control the disease effectively. Tu Youyou led a team that studied ancient Chinese medical texts in depth and searched for clues among hundreds of traditional medicinal herbs. After countless failures, she finally managed to extract the active ingredient from sweet wormwood — artemisinin. This drug has saved millions of lives, especially among children in Africa. In 2015 she received the Nobel Prize, demonstrating to the world the value of the wisdom of traditional Chinese medicine. Her story teaches us that perseverance and patience are the most important qualities in scientific exploration."
+    },
+
+    {
+      "id": "es-nf6",
+      "title": "La Gran Muralla: testigo de la historia",
+      "titleTranslation": "The Great Wall: Witness to History",
+      "level": "B1",
+      "tags": ["non-fiction", "topic:history", "topic:china", "topic:culture", "intermediate"],
+      "text": "La Gran Muralla china es uno de los proyectos de construcción más monumentales de la historia de la humanidad: se extiende a lo largo de más de veinte mil kilómetros y atraviesa varias provincias del norte de China. La construcción comenzó durante los períodos de Primaveras y Otoños y de los Reinos Combatientes, cuando distintos estados feudales levantaron tramos separados para resistir las invasiones de los pueblos nómadas del norte. Tras unificar los seis estados, el primer emperador de la dinastía Qin conectó estos tramos dispersos para formar la primera Gran Muralla en sentido propio. A través de sucesivas reparaciones y ampliaciones en las dinastías Han y Ming, fue adquiriendo la escala que conocemos hoy. Sin embargo, la importancia de la Muralla va mucho más allá de la defensa militar. Es la encarnación de la voluntad del Estado chino antiguo; millones de trabajadores construyeron con su sangre y sudor esta maravilla de la civilización humana difícilmente reproducible. Hoy, la Gran Muralla es uno de los símbolos culturales más importantes de China y atrae a decenas de millones de turistas cada año.",
+      "translation": "The Great Wall of China is one of the most monumental construction projects in human history: it extends over more than twenty thousand kilometres and crosses several provinces of northern China. Construction began during the Spring and Autumn and Warring States periods, when different feudal states built separate sections to resist the invasions of the nomadic peoples of the north. After unifying the six states, the first emperor of the Qin dynasty connected these scattered sections to form the first Great Wall in the proper sense. Through successive repairs and expansions in the Han and Ming dynasties, it gradually acquired the scale we know today. However, the importance of the Wall goes far beyond military defence. It is the embodiment of the will of the ancient Chinese state; millions of workers built with their blood and sweat this barely reproducible wonder of human civilisation. Today, the Great Wall is one of China's most important cultural symbols and attracts tens of millions of tourists every year."
+    },
+
+    {
+      "id": "es-nf7",
+      "title": "Li Bai: la vida legendaria del inmortal de la poesía",
+      "titleTranslation": "Li Bai: The Legendary Life of the Poetry Immortal",
+      "level": "B1",
+      "tags": ["non-fiction", "biography", "topic:literature", "topic:history", "topic:china", "intermediate"],
+      "text": "Li Bai (701-762) es uno de los más grandes poetas de la historia literaria china y es venerado por la posteridad como el «inmortal de la poesía». Nació en el apogeo de la dinastía Tang y pasó su vida viajando por el mundo; sus huellas se encuentran en más de la mitad de China. Comparada con la de su contemporáneo Du Fu, la poesía de Li Bai es más libre y desinhibida, llena de amor por la naturaleza, anhelo de libertad y un profundo sentido de la fugacidad de la vida. Sus obras representativas — entre ellas «Pensamiento en una noche tranquila», «¡Vamos a beber!» y «Contemplando la cascada del monte Lu» — se han recitado durante siglos y se han convertido en símbolos icónicos de la cultura china. La carrera oficial de Li Bai estuvo marcada por contratiempos; aunque sirvió brevemente en la corte del emperador Xuanzong de Tang, fue marginado por su personalidad desinhibida y su incapacidad para adular. Prefirió volver a la naturaleza, tomar el vino como compañero y registrar la alegría y la tristeza de su corazón en poemas.",
+      "translation": "Li Bai (701-762) is one of the greatest poets in Chinese literary history and is revered by posterity as the 'immortal of poetry'. Born at the height of the Tang dynasty, he spent his life travelling the world; his traces are found across more than half of China. Compared to his contemporary Du Fu, Li Bai's poetry is freer and more uninhibited, filled with love of nature, longing for freedom, and a profound sense of life's transience. His representative works — including Quiet Night Thoughts, Come, Let Us Drink, and Gazing at the Waterfall of Mount Lu — have been recited for centuries and have become iconic symbols of Chinese culture. Li Bai's official career was marked by setbacks; although he briefly served at the court of Emperor Xuanzong of Tang, he was marginalised due to his uninhibited personality and inability to flatter. He preferred to return to nature, take wine as his companion, and record the joy and sorrow of his heart in poetry."
+    },
+
+    {
+      "id": "es-nf8",
+      "title": "La cultura del té en China",
+      "titleTranslation": "Chinese Tea Culture",
+      "level": "B2",
+      "tags": ["non-fiction", "topic:culture", "topic:history", "topic:china", "topic:food", "advanced"],
+      "text": "El té, como uno de los símbolos culturales más importantes de China, tiene una historia que se remonta a más de cuatro mil años atrás, en la época del Agricultor Divino. Según la leyenda, mientras probaba cientos de plantas, descubrió por casualidad las propiedades desintoxicantes de las hojas de té, dando inicio así a la larga afinidad de la humanidad con el té. Sin embargo, el té no entró en la vida cotidiana de la gente corriente hasta después de la dinastía Tang. El «Clásico del Té» de Lu Yu es el primer tratado sobre el té del mundo y expone sistemáticamente el arte del cultivo, procesamiento, preparación y apreciación del té, elevando el acto de beber té de una actividad puramente utilitaria a un arte cultural refinado. La cultura del té alcanzó su apogeo durante la dinastía Song; en las dinastías Ming y Qing, el método de preparación pasó gradualmente del té comprimido y en polvo al té en hoja suelta, sentando las bases del modo moderno chino de beber té. Hasta hoy, la cultura china del té abarca la ceremonia del té, el arte del té, el comercio del té y la Antigua Ruta del Té y los Caballos — es tanto parte de la vida cotidiana como un importante vehículo para la proyección cultural de China hacia el mundo.",
+      "translation": "Tea, as one of China's most important cultural symbols, has a history stretching back more than four thousand years to the era of the Divine Farmer. According to legend, while tasting hundreds of plants, he accidentally discovered the detoxifying properties of tea leaves, thereby beginning humanity's long affinity with tea. However, tea did not enter the daily life of ordinary people until after the Tang dynasty. Lu Yu's Classic of Tea is the world's first treatise on tea and systematically expounds the art of cultivating, processing, preparing, and appreciating tea, elevating the act of drinking tea from a purely utilitarian activity to a refined cultural art. Tea culture reached its peak during the Song dynasty; in the Ming and Qing dynasties, the preparation method gradually shifted from compressed and powdered tea to loose-leaf tea, laying the foundations of the modern Chinese way of drinking tea. To this day, Chinese tea culture encompasses the tea ceremony, tea art, the tea trade, and the Ancient Tea Horse Road — it is both part of daily life and an important vehicle for China's cultural projection to the world."
+    },
+
+    {
+      "id": "es-nf9",
+      "title": "Reforma y apertura: el milagro económico de China",
+      "titleTranslation": "Reform and Opening Up: China's Economic Miracle",
+      "level": "B2",
+      "tags": ["non-fiction", "topic:history", "topic:economy", "topic:china", "topic:society", "advanced"],
+      "text": "En 1978, la política de Reforma y Apertura impulsada por Deng Xiaoping inició la transformación socioeconómica más profunda en la historia de China. En los más de cuarenta años siguientes, la economía china creció de menos del dos por ciento del PIB mundial a aproximadamente el dieciocho por ciento, convirtiéndose en la segunda economía más grande del mundo, y cientos de millones de personas salieron de la pobreza en ese proceso. Este logro no tiene precedentes en la historia de la humanidad, y los economistas lo denominan el «milagro chino». La lógica central de la Reforma y Apertura consistió en introducir selectivamente mecanismos de mercado dentro del marco del sistema socialista, utilizando las zonas económicas especiales como proyectos piloto y el desarrollo orientado a la exportación como motor, integrando gradualmente a China en las cadenas de valor globales. El desarrollo de Shenzhen de un pequeño pueblo de pescadores a una metrópoli internacional de más de diez millones de habitantes es el microcosmos más representativo de este proceso. Sin embargo, este rápido crecimiento también estuvo acompañado de profundas contradicciones: desigualdades regionales crecientes, presiones medioambientales en aumento y una creciente brecha entre ricos y pobres.",
+      "translation": "In 1978, the Reform and Opening Up policy promoted by Deng Xiaoping initiated the most profound socioeconomic transformation in Chinese history. In the more than forty years that followed, China's economy grew from less than two percent of world GDP to approximately eighteen percent, becoming the world's second-largest economy, and hundreds of millions of people were lifted out of poverty in that process. This achievement has no precedent in human history, and economists call it the 'China miracle'. The central logic of Reform and Opening Up was to selectively introduce market mechanisms within the framework of the socialist system, using special economic zones as pilot projects and export-oriented development as the driving force, gradually integrating China into global value chains. Shenzhen's development from a small fishing village to an international metropolis of more than ten million inhabitants is the most representative microcosm of this process. However, this rapid growth was also accompanied by deep contradictions: growing regional inequalities, rising environmental pressures, and a widening gap between rich and poor."
+    },
+
+    {
+      "id": "es-nf10",
+      "title": "El origen y la evolución de los caracteres chinos",
+      "titleTranslation": "The Origin and Evolution of Chinese Characters",
+      "level": "C1",
+      "tags": ["non-fiction", "topic:language", "topic:history", "topic:china", "topic:culture", "advanced"],
+      "text": "Los caracteres chinos constituyen el único sistema de escritura antiguo del mundo que nunca se ha interrumpido, con una trayectoria evolutiva que abarca más de tres mil años y que lleva consigo toda la memoria de la evolución de la civilización china. El primer sistema maduro de caracteres chinos se encuentra en las inscripciones en huesos oraculares de la dinastía Shang — textos de adivinación grabados en caparazones de tortuga y huesos de animales que datan de hace aproximadamente tres mil trescientos años. Estos caracteres tempranos ya mostraban los rudimentos de los principios de formación de la pictografía, la ideografía, los ideogramas compuestos y la composición fonético-semántica, sentando las bases de la teoría de los «Seis Tipos de Escritura» aplicada por generaciones posteriores. La naturaleza logográfica de los caracteres chinos crea una diferencia cognitiva fundamental respecto a la escritura alfabética: las investigaciones indican que la lectura de los caracteres chinos depende más del reconocimiento holístico de patrones del hemisferio derecho, mientras que la escritura alfabética depende más de la decodificación lineal del hemisferio izquierdo. Si esta diferencia cognitiva moldea distintas formas de pensar en sus usuarios sigue siendo un tema muy debatido en la intersección de la lingüística y la ciencia cognitiva.",
+      "translation": "Chinese characters constitute the world's only ancient writing system that has never been interrupted, with an evolutionary trajectory spanning more than three thousand years that carries within it the entire memory of the evolution of Chinese civilisation. The first mature system of Chinese characters is found in the oracle bone inscriptions of the Shang dynasty — divination texts engraved on tortoise shells and animal bones dating back approximately three thousand three hundred years. These early characters already showed the rudiments of the character-formation principles of pictography, ideography, compound ideograms, and phonetic-semantic composition, laying the foundations of the theory of the 'Six Types of Writing' applied by subsequent generations. The logographic nature of Chinese characters creates a fundamental cognitive difference from alphabetic writing: research indicates that reading Chinese characters depends more on the holistic pattern recognition of the right hemisphere, while alphabetic writing depends more on the linear decoding of the left hemisphere. Whether this cognitive difference shapes different ways of thinking in its users remains a much-debated topic at the intersection of linguistics and cognitive science."
+    }
+
+  ]
+}

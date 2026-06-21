@@ -1,0 +1,2308 @@
+{
+  "meta": {
+    "chapterNum": "01",
+    "chapterTitle": {
+      "en": "The Will and the Lamp",
+      "zh": "",
+      "ja": "",
+      "de": "Der Wille und die Lampe",
+      "es": ""
+    },
+    "level": "A1-A2",
+    "artifact": {
+      "icon": "🕯️",
+      "name": "A Worn Pipe",
+      "grammar": "Modalverben · Perfekt · Nebensätze mit weil/dass"
+    },
+    "storyIntro": {
+      "en": "In a quiet study in Frankfurt, an old philosopher sits alone with his pipe and his thoughts. He talks mostly to himself. Later, a visitor from Königsberg will knock on the door.",
+      "zh": "",
+      "ja": "",
+      "de": "In einem ruhigen Arbeitszimmer in Frankfurt sitzt ein alter Philosoph allein mit seiner Pfeife und seinen Gedanken. Er spricht meistens mit sich selbst. Später wird ein Besucher aus Königsberg an die Tür klopfen.",
+      "es": ""
+    },
+    "storyOutro": {
+      "en": "The evening ends. Two very different minds have shared one room, one lamp, and a little bit of tea. Neither has convinced the other of anything. Both seem pleased about that.",
+      "zh": "",
+      "ja": "",
+      "de": "Der Abend endet. Zwei sehr unterschiedliche Köpfe haben sich ein Zimmer, eine Lampe und ein wenig Tee geteilt. Keiner hat den anderen von irgendetwas überzeugt. Beide scheinen damit zufrieden zu sein.",
+      "es": ""
+    }
+  },
+  "sections": [
+    {
+      "num": "01",
+      "title": {
+        "en": "The World as Will",
+        "zh": "",
+        "ja": "",
+        "de": "Die Welt als Wille",
+        "es": ""
+      },
+      "vocab": [
+        "die Welt",
+        "denken",
+        "die Vorstellung",
+        "das Auge",
+        "sehen",
+        "wissen",
+        "der Mensch",
+        "das Leben",
+        "wollen",
+        "der Wille",
+        "der Gedanke",
+        "allein"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "01a",
+          "title": {
+            "en": "GENUINE EXCERPT — Schopenhauer, \"Die Welt als Wille und Vorstellung\" (1819)",
+            "zh": "",
+            "ja": "",
+            "de": "ECHTES ZITAT — Schopenhauer, „Die Welt als Wille und Vorstellung\" (1819)",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "Direct quotation (source: zeno.org, public domain text): \"Die Welt ist meine Vorstellung.\"",
+              "zh": "",
+              "ja": "",
+              "de": "Direktes Zitat (Quelle: zeno.org, gemeinfreier Text): „Die Welt ist meine Vorstellung.\"",
+              "es": ""
+            }
+          ]
+        },
+        {
+          "num": "01a2",
+          "title": {
+            "en": "MY OWN SUMMARY (not a quotation) — what Schopenhauer argues next",
+            "zh": "",
+            "ja": "",
+            "de": "MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — was Schopenhauer als Nächstes argumentiert",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "The following is my own restatement, not Schopenhauer's wording: everything we believe we know about the world reaches us only through our own senses. The eye reports, the mind sorts, and we call the result \"reality\" — but it is really just our picture of things.",
+              "zh": "",
+              "ja": "",
+              "de": "Das Folgende ist meine eigene Wiedergabe, nicht Schopenhauers Wortlaut: Alles, was wir über die Welt zu wissen glauben, erreicht uns nur durch unsere eigenen Sinne. Das Auge meldet, der Geist ordnet, und wir nennen das Ergebnis „Wirklichkeit\" — aber es ist eigentlich nur unser Bild der Dinge.",
+              "es": ""
+            },
+            {
+              "en": "Behind this picture, Schopenhauer claims, works a second, darker force: the Will — a blind, endless drive that has no real goal, only itself, again and again.",
+              "zh": "",
+              "ja": "",
+              "de": "Hinter diesem Bild, behauptet Schopenhauer, wirkt eine zweite, dunklere Kraft: der Wille — ein blinder, endloser Drang, der kein wirkliches Ziel hat, nur sich selbst, immer wieder.",
+              "es": ""
+            }
+          ]
+        },
+        {
+          "num": "01b",
+          "title": {
+            "en": "Simplified — What does this mean?",
+            "zh": "",
+            "ja": "",
+            "de": "Vereinfacht — Was bedeutet das?",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "Schopenhauer wrote a famous sentence: \"The world is my idea.\"",
+              "zh": "",
+              "ja": "",
+              "de": "Schopenhauer hat einen berühmten Satz geschrieben: „Die Welt ist meine Vorstellung.\"",
+              "es": ""
+            },
+            {
+              "en": "He means: We do not see the world directly. We only see it with our eyes and our brain.",
+              "zh": "",
+              "ja": "",
+              "de": "Er meint: Wir sehen die Welt nicht direkt. Wir sehen sie nur mit unseren Augen und unserem Gehirn.",
+              "es": ""
+            },
+            {
+              "en": "So the world that we know is really a picture in our head.",
+              "zh": "",
+              "ja": "",
+              "de": "Also ist die Welt, die wir kennen, wirklich ein Bild in unserem Kopf.",
+              "es": ""
+            },
+            {
+              "en": "But Schopenhauer also says there is something else. He calls it \"the Will.\"",
+              "zh": "",
+              "ja": "",
+              "de": "Aber Schopenhauer sagt auch: Es gibt noch etwas anderes. Er nennt es „der Wille\".",
+              "es": ""
+            },
+            {
+              "en": "The Will is a strong force inside every living thing. It wants and wants, but it has no real goal.",
+              "zh": "",
+              "ja": "",
+              "de": "Der Wille ist eine starke Kraft in jedem Lebewesen. Er will und will, aber er hat kein wirkliches Ziel.",
+              "es": ""
+            },
+            {
+              "en": "This idea is the center of his whole philosophy.",
+              "zh": "",
+              "ja": "",
+              "de": "Diese Idee ist das Zentrum seiner ganzen Philosophie.",
+              "es": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "02",
+      "title": {
+        "en": "Schopenhauer Alone with His Pipe",
+        "zh": "",
+        "ja": "",
+        "de": "Schopenhauer allein mit seiner Pfeife",
+        "es": ""
+      },
+      "vocab": [
+        "allein",
+        "denken",
+        "die Pfeife",
+        "der Abend",
+        "müde",
+        "der Mensch",
+        "das Leben",
+        "schwer",
+        "die Ruhe",
+        "leise",
+        "sprechen",
+        "rauchen"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv020201",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "It is evening. Schopenhauer sits alone in his study. He has a pipe and a cup of tea.",
+                "zh": "",
+                "ja": "",
+                "de": "Es ist Abend. Schopenhauer sitzt allein in seinem Arbeitszimmer. Er hat eine Pfeife und eine Tasse Tee.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Ah. Finally quiet. The whole day, people, noise, questions. Now: only me.",
+                "zh": "",
+                "ja": "",
+                "de": "Ah. Endlich Ruhe. Den ganzen Tag Menschen, Lärm, Fragen. Jetzt: nur ich.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "I think people talk too much. And they think too little.",
+                "zh": "",
+                "ja": "",
+                "de": "Ich finde, die Menschen sprechen zu viel. Und sie denken zu wenig.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "My pipe is good. My tea is good. My books are good. What more does a person need?",
+                "zh": "",
+                "ja": "",
+                "de": "Meine Pfeife ist gut. Mein Tee ist gut. Meine Bücher sind gut. Was braucht ein Mensch mehr?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Today I worked on my book again. It is difficult work. But it is important work.",
+                "zh": "",
+                "ja": "",
+                "de": "Heute habe ich wieder an meinem Buch gearbeitet. Es ist schwere Arbeit. Aber es ist wichtige Arbeit.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "I want to explain why life is so heavy for so many people.",
+                "zh": "",
+                "ja": "",
+                "de": "Ich möchte erklären, warum das Leben für so viele Menschen so schwer ist.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "My answer is: the Will. We always want something. And when we have it, we want something new.",
+                "zh": "",
+                "ja": "",
+                "de": "Meine Antwort ist: der Wille. Wir wollen immer etwas. Und wenn wir es haben, wollen wir etwas Neues.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "So we are never really happy for long. That is sad, but I think it is true.",
+                "zh": "",
+                "ja": "",
+                "de": "Also sind wir nie wirklich lange glücklich. Das ist traurig, aber ich glaube, es ist wahr.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "My dog does not have this problem. He is happy with his food and his walk.",
+                "zh": "",
+                "ja": "",
+                "de": "Mein Hund hat dieses Problem nicht. Er ist glücklich mit seinem Essen und seinem Spaziergang.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Sometimes I think my dog is wiser than most professors.",
+                "zh": "",
+                "ja": "",
+                "de": "Manchmal denke ich, mein Hund ist klüger als die meisten Professoren.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Music helps me too. When I listen to music, I forget the Will for a moment.",
+                "zh": "",
+                "ja": "",
+                "de": "Musik hilft mir auch. Wenn ich Musik höre, vergesse ich für einen Moment den Willen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "That is a good feeling. A rare, good feeling.",
+                "zh": "",
+                "ja": "",
+                "de": "Das ist ein gutes Gefühl. Ein seltenes, gutes Gefühl.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Tonight, I think I will read instead of write. My eyes are tired.",
+                "zh": "",
+                "ja": "",
+                "de": "Heute Abend, glaube ich, werde ich lesen statt schreiben. Meine Augen sind müde.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Schopenhauer takes a book from the shelf. Outside, it is starting to rain.",
+                "zh": "",
+                "ja": "",
+                "de": "Schopenhauer nimmt ein Buch aus dem Regal. Draußen fängt es an zu regnen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Good. Rain is calm. Rain does not ask questions.",
+                "zh": "",
+                "ja": "",
+                "de": "Gut. Regen ist ruhig. Regen stellt keine Fragen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "He sits back in his chair. For a moment, everything is quiet.",
+                "zh": "",
+                "ja": "",
+                "de": "Er lehnt sich in seinem Stuhl zurück. Für einen Moment ist alles ruhig.",
+                "es": ""
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "Why does Schopenhauer say people are never happy for long?",
+                "zh": "",
+                "ja": "",
+                "de": "Warum sagt Schopenhauer, dass Menschen nie lange glücklich sind?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "Because the Will always wants something new.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Weil der Wille immer etwas Neues will.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "Because the weather is bad.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Weil das Wetter schlecht ist.",
+                    "es": ""
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "Because his dog is sad.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Weil sein Hund traurig ist.",
+                    "es": ""
+                  },
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "Do you think it's true that we are never happy for long? What do you think makes people truly happy?",
+                "zh": "",
+                "ja": "",
+                "de": "Glaubst du, es ist wahr, dass wir nie lange glücklich sind? Was, denkst du, macht Menschen wirklich glücklich?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "I have my own opinion about this.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Ich habe meine eigene Meinung dazu.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "I'm not sure, but it's an interesting question.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Ich bin nicht sicher, aber es ist eine interessante Frage.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "I disagree with Schopenhauer here.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Ich bin hier nicht mit Schopenhauer einverstanden.",
+                    "es": ""
+                  },
+                  "correct": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "03",
+      "title": {
+        "en": "The Suffering World",
+        "zh": "",
+        "ja": "",
+        "de": "Die leidende Welt",
+        "es": ""
+      },
+      "vocab": [
+        "das Leiden",
+        "der Schmerz",
+        "das Glück",
+        "kurz",
+        "lang",
+        "das Tier",
+        "der Mensch",
+        "leben",
+        "sterben",
+        "die Zeit",
+        "warten",
+        "hoffen"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "02a",
+          "title": {
+            "en": "MY OWN SUMMARY (not a quotation) — Schopenhauer's view of suffering, in my own words",
+            "zh": "",
+            "ja": "",
+            "de": "MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — Schopenhauers Sicht auf das Leiden, in meinen eigenen Worten",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "This entire passage is my own writing, not a quotation. It restates a theme found across Schopenhauer's work on suffering (see \"Die Welt als Wille und Vorstellung,\" Book 4, and \"Parerga und Paralipomena,\" for his actual texts): a person's life, he argues, is a constant struggle — against want, against boredom, against time itself.",
+              "zh": "",
+              "ja": "",
+              "de": "Diese ganze Passage ist meine eigene Schrift, kein Zitat. Sie gibt ein Thema wieder, das sich durch Schopenhauers Werk über das Leiden zieht (siehe „Die Welt als Wille und Vorstellung,\" Viertes Buch, und „Parerga und Paralipomena\" für seine tatsächlichen Texte): Das Leben eines Menschen, so argumentiert er, ist ein ständiger Kampf — gegen Mangel, gegen Langeweile, gegen die Zeit selbst.",
+              "es": ""
+            },
+            {
+              "en": "Happiness, in this view, resembles a fleeting guest who barely crosses the threshold before hurrying back out the door; suffering, by contrast, is the faithful tenant who stays without ever being invited.",
+              "zh": "",
+              "ja": "",
+              "de": "Glück, in dieser Sichtweise, gleicht einem flüchtigen Gast, der kaum die Schwelle überschreitet, bevor er schon wieder zur Tür eilt; Leiden hingegen ist der treue Mieter, der bleibt, ohne je eingeladen worden zu sein.",
+              "es": ""
+            }
+          ]
+        },
+        {
+          "num": "02b",
+          "title": {
+            "en": "Simplified — Happiness and suffering",
+            "zh": "",
+            "ja": "",
+            "de": "Vereinfacht — Glück und Leiden",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "Schopenhauer thinks: a person's life is difficult from beginning to end.",
+              "zh": "",
+              "ja": "",
+              "de": "Schopenhauer denkt: Das Leben eines Menschen ist schwer, von Anfang bis Ende.",
+              "es": ""
+            },
+            {
+              "en": "We fight against problems. We fight against being bored. We fight against time.",
+              "zh": "",
+              "ja": "",
+              "de": "Wir kämpfen gegen Probleme. Wir kämpfen gegen Langeweile. Wir kämpfen gegen die Zeit.",
+              "es": ""
+            },
+            {
+              "en": "Happiness, he says, is like a guest who comes for a short visit and then leaves quickly.",
+              "zh": "",
+              "ja": "",
+              "de": "Glück, sagt er, ist wie ein Gast, der für einen kurzen Besuch kommt und dann schnell wieder geht.",
+              "es": ""
+            },
+            {
+              "en": "But suffering is different. Suffering stays for a long time. Nobody invited it, but it does not leave.",
+              "zh": "",
+              "ja": "",
+              "de": "Aber Leiden ist anders. Leiden bleibt lange. Niemand hat es eingeladen, aber es geht nicht weg.",
+              "es": ""
+            },
+            {
+              "en": "This is one of Schopenhauer's most famous and most pessimistic ideas.",
+              "zh": "",
+              "ja": "",
+              "de": "Das ist eine von Schopenhauers berühmtesten und pessimistischsten Ideen.",
+              "es": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "04",
+      "title": {
+        "en": "A Letter He Never Sends",
+        "zh": "",
+        "ja": "",
+        "de": "Ein Brief, den er nie schickt",
+        "es": ""
+      },
+      "vocab": [
+        "der Brief",
+        "schreiben",
+        "schicken",
+        "die Meinung",
+        "der Freund",
+        "der Feind",
+        "das Problem",
+        "verstehen",
+        "die Philosophie",
+        "die Universität",
+        "der Kollege"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv020401",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Schopenhauer is writing a letter. He stops often. He does not look happy.",
+                "zh": "",
+                "ja": "",
+                "de": "Schopenhauer schreibt einen Brief. Er hält oft an. Er sieht nicht glücklich aus.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Dear colleague. No. Dear so-called colleague.",
+                "zh": "",
+                "ja": "",
+                "de": "Lieber Kollege. Nein. Lieber sogenannter Kollege.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "I have read your book. I have some questions. Actually, I have many questions.",
+                "zh": "",
+                "ja": "",
+                "de": "Ich habe Ihr Buch gelesen. Ich habe ein paar Fragen. Eigentlich habe ich viele Fragen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Why do you write such long sentences? Why is everything so complicated?",
+                "zh": "",
+                "ja": "",
+                "de": "Warum schreiben Sie so lange Sätze? Warum ist alles so kompliziert?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "A good idea does not need ten pages. A good idea needs one clear sentence.",
+                "zh": "",
+                "ja": "",
+                "de": "Eine gute Idee braucht keine zehn Seiten. Eine gute Idee braucht einen klaren Satz.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "I think you write difficult sentences because you want to look intelligent.",
+                "zh": "",
+                "ja": "",
+                "de": "Ich glaube, Sie schreiben schwierige Sätze, weil Sie intelligent aussehen wollen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "But a clever reader sees through this immediately.",
+                "zh": "",
+                "ja": "",
+                "de": "Aber ein kluger Leser sieht das sofort.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "He stops writing. He looks out the window for a moment.",
+                "zh": "",
+                "ja": "",
+                "de": "Er hört auf zu schreiben. Er schaut für einen Moment aus dem Fenster.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Maybe I should not send this letter. It is perhaps too direct.",
+                "zh": "",
+                "ja": "",
+                "de": "Vielleicht sollte ich diesen Brief nicht schicken. Er ist vielleicht zu direkt.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "But honesty is important. Even when it is not friendly.",
+                "zh": "",
+                "ja": "",
+                "de": "Aber Ehrlichkeit ist wichtig. Auch wenn sie nicht freundlich ist.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Hmm. I will read it again tomorrow. Maybe with calmer eyes.",
+                "zh": "",
+                "ja": "",
+                "de": "Hmm. Ich lese ihn morgen noch einmal. Vielleicht mit ruhigeren Augen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "He puts the letter in a drawer. There are many letters in this drawer.",
+                "zh": "",
+                "ja": "",
+                "de": "Er legt den Brief in eine Schublade. Es sind viele Briefe in dieser Schublade.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Most of my letters stay in this drawer. Perhaps that is for the best.",
+                "zh": "",
+                "ja": "",
+                "de": "Die meisten meiner Briefe bleiben in dieser Schublade. Vielleicht ist das das Beste.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "The world does not need every thought I have. Only the good ones.",
+                "zh": "",
+                "ja": "",
+                "de": "Die Welt braucht nicht jeden Gedanken, den ich habe. Nur die guten.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "He closes the drawer and returns to his book.",
+                "zh": "",
+                "ja": "",
+                "de": "Er schließt die Schublade und kehrt zu seinem Buch zurück.",
+                "es": ""
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "Where does Schopenhauer put the letter?",
+                "zh": "",
+                "ja": "",
+                "de": "Wohin legt Schopenhauer den Brief?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "In a drawer.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "In eine Schublade.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "In the fire.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Ins Feuer.",
+                    "es": ""
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "On the table.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Auf den Tisch.",
+                    "es": ""
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "05",
+      "title": {
+        "en": "On Books and Reading",
+        "zh": "",
+        "ja": "",
+        "de": "Über Bücher und Lesen",
+        "es": ""
+      },
+      "vocab": [
+        "das Buch",
+        "lesen",
+        "der Leser",
+        "der Gedanke",
+        "eigen",
+        "fremd",
+        "denken",
+        "der Kopf",
+        "voll",
+        "leer",
+        "wichtig",
+        "wenig",
+        "viel"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "03a",
+          "title": {
+            "en": "MY OWN SUMMARY (not a quotation) — Schopenhauer on reading too much, in my own words",
+            "zh": "",
+            "ja": "",
+            "de": "MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — Schopenhauer über zu viel Lesen, in meinen eigenen Worten",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "This entire passage is my own writing, not a quotation. It restates a recurring theme from Schopenhauer's essay \"Über Lesen und Bücher\" (in \"Parerga und Paralipomena,\" where his actual text can be found): if we read all day, the mind grows used to walking along other people's paths, and forgets how to find its own — like a rider who is always led, and at the end no longer knows how to hold the reins alone.",
+              "zh": "",
+              "ja": "",
+              "de": "Diese ganze Passage ist meine eigene Schrift, kein Zitat. Sie gibt ein wiederkehrendes Thema aus Schopenhauers Essay „Über Lesen und Bücher\" wieder (in „Parerga und Paralipomena,\" wo sein tatsächlicher Text zu finden ist): Wenn wir den ganzen Tag lesen, gewöhnt sich der Geist daran, auf fremden Wegen zu wandeln, und verlernt, seine eigenen zu finden — wie ein Reiter, der immer geführt wird und am Ende nicht mehr weiß, wie man die Zügel allein hält.",
+              "es": ""
+            },
+            {
+              "en": "People who read very much, he suggests, are often not the cleverest minds, just the fullest — their head becomes a storehouse of other people's thoughts, leaving no room for their own.",
+              "zh": "",
+              "ja": "",
+              "de": "Vielleser, so deutet er an, sind oft nicht die klügsten Köpfe, sondern nur die vollsten — ihr Kopf wird zu einem Lagerhaus fremder Gedanken, in dem kein Platz für die eigenen bleibt.",
+              "es": ""
+            }
+          ]
+        },
+        {
+          "num": "03b",
+          "title": {
+            "en": "Simplified — Too many books, too few thoughts",
+            "zh": "",
+            "ja": "",
+            "de": "Vereinfacht — Zu viele Bücher, zu wenig Gedanken",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "Schopenhauer says: If we read all day, we forget how to think for ourselves.",
+              "zh": "",
+              "ja": "",
+              "de": "Schopenhauer sagt: Wenn wir den ganzen Tag lesen, vergessen wir, selbst zu denken.",
+              "es": ""
+            },
+            {
+              "en": "He compares this to a rider who is always led by someone else. In the end, the rider cannot ride alone.",
+              "zh": "",
+              "ja": "",
+              "de": "Er vergleicht das mit einem Reiter, der immer von jemand anderem geführt wird. Am Ende kann der Reiter nicht alleine reiten.",
+              "es": ""
+            },
+            {
+              "en": "People who read very much are not always the most intelligent people.",
+              "zh": "",
+              "ja": "",
+              "de": "Menschen, die sehr viel lesen, sind nicht immer die intelligentesten Menschen.",
+              "es": ""
+            },
+            {
+              "en": "Sometimes their head is just full of other people's ideas. There is no room left for their own ideas.",
+              "zh": "",
+              "ja": "",
+              "de": "Manchmal ist ihr Kopf einfach voll mit den Ideen anderer Leute. Es ist kein Platz mehr für eigene Ideen.",
+              "es": ""
+            },
+            {
+              "en": "Schopenhauer's advice: read less, but think more.",
+              "zh": "",
+              "ja": "",
+              "de": "Schopenhauers Rat: Lies weniger, aber denke mehr.",
+              "es": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "06",
+      "title": {
+        "en": "A Knock at the Door",
+        "zh": "",
+        "ja": "",
+        "de": "Ein Klopfen an der Tür",
+        "es": ""
+      },
+      "vocab": [
+        "klopfen",
+        "die Tür",
+        "der Besuch",
+        "der Besucher",
+        "hereinkommen",
+        "setzen",
+        "der Tee",
+        "anbieten",
+        "kennen",
+        "begrüßen",
+        "höflich"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv020601",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "There is a knock at the door. Schopenhauer looks up, surprised.",
+                "zh": "",
+                "ja": "",
+                "de": "Es klopft an der Tür. Schopenhauer schaut überrascht auf.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "A visitor? At this hour? How strange.",
+                "zh": "",
+                "ja": "",
+                "de": "Ein Besucher? Zu dieser Stunde? Wie seltsam.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "He opens the door. An older man in a simple coat stands outside.",
+                "zh": "",
+                "ja": "",
+                "de": "Er öffnet die Tür. Ein älterer Mann in einem einfachen Mantel steht draußen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "Good evening. Forgive the late hour. My name is Immanuel Kant.",
+                "zh": "",
+                "ja": "",
+                "de": "Guten Abend. Verzeihen Sie die späte Stunde. Mein Name ist Immanuel Kant.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Kant! From Königsberg? I have read all your books. Please, come in.",
+                "zh": "",
+                "ja": "",
+                "de": "Kant! Aus Königsberg? Ich habe alle Ihre Bücher gelesen. Bitte, kommen Sie herein.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "Thank you. I am traveling and heard that a famous philosopher lives here.",
+                "zh": "",
+                "ja": "",
+                "de": "Danke. Ich bin auf Reisen und habe gehört, dass hier ein berühmter Philosoph lebt.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Famous is a big word. But please, sit down. Would you like some tea?",
+                "zh": "",
+                "ja": "",
+                "de": "Berühmt ist ein großes Wort. Aber bitte, setzen Sie sich. Möchten Sie etwas Tee?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "Yes, thank you. Tea is good for clear thinking.",
+                "zh": "",
+                "ja": "",
+                "de": "Ja, danke. Tee ist gut für klares Denken.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "I agree completely. I drink tea every evening, before I write.",
+                "zh": "",
+                "ja": "",
+                "de": "Da stimme ich völlig zu. Ich trinke jeden Abend Tee, bevor ich schreibe.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Schopenhauer brings two cups of tea. He sits across from Kant.",
+                "zh": "",
+                "ja": "",
+                "de": "Schopenhauer bringt zwei Tassen Tee. Er setzt sich gegenüber von Kant.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "Your study is very quiet. I like that. Quiet is good for the mind.",
+                "zh": "",
+                "ja": "",
+                "de": "Ihr Arbeitszimmer ist sehr ruhig. Das gefällt mir. Ruhe ist gut für den Geist.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Yes. I avoid noise and people whenever I can.",
+                "zh": "",
+                "ja": "",
+                "de": "Ja. Ich vermeide Lärm und Menschen, wann immer ich kann.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "I understand that very well. I myself live a very regular life. Always the same walk, every day.",
+                "zh": "",
+                "ja": "",
+                "de": "Das verstehe ich sehr gut. Ich selbst lebe ein sehr regelmäßiges Leben. Immer der gleiche Spaziergang, jeden Tag.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "A regular life is a wise life, I think.",
+                "zh": "",
+                "ja": "",
+                "de": "Ein regelmäßiges Leben ist ein kluges Leben, denke ich.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "Tell me, what are you working on at the moment?",
+                "zh": "",
+                "ja": "",
+                "de": "Sagen Sie mir, woran arbeiten Sie gerade?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "A book about the Will. I believe it is the deepest force in every living thing.",
+                "zh": "",
+                "ja": "",
+                "de": "Ein Buch über den Willen. Ich glaube, er ist die tiefste Kraft in jedem Lebewesen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "Interesting. I have thought much about reason, but less about will. Please, tell me more.",
+                "zh": "",
+                "ja": "",
+                "de": "Interessant. Ich habe viel über die Vernunft nachgedacht, aber weniger über den Willen. Bitte, erzählen Sie mir mehr.",
+                "es": ""
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "What does Kant ask for, before they begin their conversation?",
+                "zh": "",
+                "ja": "",
+                "de": "Worum bittet Kant, bevor sie ihr Gespräch beginnen?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "Tea.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Tee.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "Bread.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Brot.",
+                    "es": ""
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "A book.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Ein Buch.",
+                    "es": ""
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "07",
+      "title": {
+        "en": "Kant on the Starry Sky",
+        "zh": "",
+        "ja": "",
+        "de": "Kant über den gestirnten Himmel",
+        "es": ""
+      },
+      "vocab": [
+        "der Himmel",
+        "der Stern",
+        "das Gesetz",
+        "innen",
+        "außen",
+        "denken",
+        "bewundern",
+        "das Herz",
+        "die Pflicht",
+        "die Moral",
+        "die Vernunft"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "04a",
+          "title": {
+            "en": "GENUINE EXCERPT — Kant, \"Kritik der praktischen Vernunft\" (1788)",
+            "zh": "",
+            "ja": "",
+            "de": "ECHTES ZITAT — Kant, „Kritik der praktischen Vernunft\" (1788)",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "Direct quotation, the famous closing line of the work: \"Zwei Dinge erfüllen das Gemüt mit immer neuer und zunehmender Bewunderung und Achtung, je öfter und anhaltender man über sie nachdenkt: der gestirnte Himmel über mir, und das moralische Gesetz in mir.\"",
+              "zh": "",
+              "ja": "",
+              "de": "Direktes Zitat, die berühmte Schlusszeile des Werks: „Zwei Dinge erfüllen das Gemüt mit immer neuer und zunehmender Bewunderung und Achtung, je öfter und anhaltender man über sie nachdenkt: der gestirnte Himmel über mir, und das moralische Gesetz in mir.\"",
+              "es": ""
+            }
+          ]
+        },
+        {
+          "num": "04a2",
+          "title": {
+            "en": "MY OWN SUMMARY (not a quotation) — what this line means",
+            "zh": "",
+            "ja": "",
+            "de": "MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — was diese Zeile bedeutet",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "The following is my own restatement, not Kant's wording: this single thought, he explains, shows him his place in a universe of immense size, while also showing him that something lives within him that acts according to its own law, independent of nature's vastness.",
+              "zh": "",
+              "ja": "",
+              "de": "Das Folgende ist meine eigene Wiedergabe, nicht Kants Wortlaut: Dieser eine Gedanke, erklärt er, zeigt ihm seinen Platz in einem Universum von immenser Größe, während er ihm zugleich zeigt, dass etwas in ihm lebt, das nach seinem eigenen Gesetz handelt, unabhängig von der Weite der Natur.",
+              "es": ""
+            }
+          ]
+        },
+        {
+          "num": "04b",
+          "title": {
+            "en": "Simplified — Two things Kant admires",
+            "zh": "",
+            "ja": "",
+            "de": "Vereinfacht — Zwei Dinge, die Kant bewundert",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "Kant wrote: Two things fill me with wonder. The starry sky above me, and the moral law inside me.",
+              "zh": "",
+              "ja": "",
+              "de": "Kant hat geschrieben: Zwei Dinge erfüllen mich mit Bewunderung. Der gestirnte Himmel über mir, und das moralische Gesetz in mir.",
+              "es": ""
+            },
+            {
+              "en": "The sky shows him how small he is in a very, very big universe.",
+              "zh": "",
+              "ja": "",
+              "de": "Der Himmel zeigt ihm, wie klein er in einem sehr, sehr großen Universum ist.",
+              "es": ""
+            },
+            {
+              "en": "But the moral law shows him something different. Inside every person there is a sense of right and wrong.",
+              "zh": "",
+              "ja": "",
+              "de": "Aber das moralische Gesetz zeigt ihm etwas anderes. In jedem Menschen gibt es ein Gefühl für richtig und falsch.",
+              "es": ""
+            },
+            {
+              "en": "This inner law does not come from the stars or from nature. It comes from reason itself.",
+              "zh": "",
+              "ja": "",
+              "de": "Dieses innere Gesetz kommt nicht von den Sternen oder von der Natur. Es kommt von der Vernunft selbst.",
+              "es": ""
+            },
+            {
+              "en": "For Kant, both things — the huge sky and the small voice inside us — are equally amazing.",
+              "zh": "",
+              "ja": "",
+              "de": "Für Kant sind beide Dinge — der riesige Himmel und die kleine Stimme in uns — gleich erstaunlich.",
+              "es": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "08",
+      "title": {
+        "en": "Will Against Reason",
+        "zh": "",
+        "ja": "",
+        "de": "Wille gegen Vernunft",
+        "es": ""
+      },
+      "vocab": [
+        "der Wille",
+        "die Vernunft",
+        "die Pflicht",
+        "folgen",
+        "stark",
+        "schwach",
+        "bestimmen",
+        "frei",
+        "die Freiheit",
+        "entscheiden",
+        "der Unterschied"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv020801",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Kant and Schopenhauer drink their tea. The conversation becomes more serious.",
+                "zh": "",
+                "ja": "",
+                "de": "Kant und Schopenhauer trinken ihren Tee. Das Gespräch wird ernster.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "So you say the Will controls everything? Even our reason?",
+                "zh": "",
+                "ja": "",
+                "de": "Sie sagen also, der Wille kontrolliert alles? Sogar unsere Vernunft?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Yes, exactly. Reason is only a tool. The Will is the master.",
+                "zh": "",
+                "ja": "",
+                "de": "Ja, genau. Die Vernunft ist nur ein Werkzeug. Der Wille ist der Herr.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "I cannot agree. For me, reason is not a servant. Reason can be free.",
+                "zh": "",
+                "ja": "",
+                "de": "Da kann ich nicht zustimmen. Für mich ist die Vernunft kein Diener. Die Vernunft kann frei sein.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Free? With respect, I think that is an illusion.",
+                "zh": "",
+                "ja": "",
+                "de": "Frei? Mit allem Respekt, ich glaube, das ist eine Illusion.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "Let me explain. I believe a person can act because of duty. Not only because of desire.",
+                "zh": "",
+                "ja": "",
+                "de": "Lassen Sie mich erklären. Ich glaube, ein Mensch kann aus Pflicht handeln. Nicht nur aus Begierde.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Duty... but where does duty come from? Does it not also come from a kind of wanting?",
+                "zh": "",
+                "ja": "",
+                "de": "Pflicht... aber woher kommt die Pflicht? Kommt sie nicht auch aus einer Art von Wollen?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "No. Duty comes from reason. When I help someone because it is right, that is not desire. That is moral law.",
+                "zh": "",
+                "ja": "",
+                "de": "Nein. Die Pflicht kommt aus der Vernunft. Wenn ich jemandem helfe, weil es richtig ist, ist das keine Begierde. Das ist moralisches Gesetz.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "An interesting thought. But I see it differently. I think true morality comes from feeling, not from cold reason.",
+                "zh": "",
+                "ja": "",
+                "de": "Ein interessanter Gedanke. Aber ich sehe es anders. Ich glaube, wahre Moral kommt aus dem Gefühl, nicht aus kalter Vernunft.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "When I see someone suffering, and I feel their pain as if it were my own — that is morality. Not a rule in my head.",
+                "zh": "",
+                "ja": "",
+                "de": "Wenn ich jemanden leiden sehe und seinen Schmerz fühle, als wäre er mein eigener — das ist Moral. Keine Regel in meinem Kopf.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "Compassion is important, I agree. But feelings can be unreliable. They change. A rule of reason does not change.",
+                "zh": "",
+                "ja": "",
+                "de": "Mitgefühl ist wichtig, da stimme ich zu. Aber Gefühle können unzuverlässig sein. Sie ändern sich. Eine Regel der Vernunft ändert sich nicht.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Perhaps we are both right, in a way. You build with reason. I build with the heart.",
+                "zh": "",
+                "ja": "",
+                "de": "Vielleicht haben wir beide auf unsere Weise recht. Sie bauen mit der Vernunft. Ich baue mit dem Herzen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "That is a fair way to put it. We may never fully agree. But I respect your thinking, Herr Schopenhauer.",
+                "zh": "",
+                "ja": "",
+                "de": "Das ist fair ausgedrückt. Wir werden vielleicht nie ganz übereinstimmen. Aber ich respektiere Ihr Denken, Herr Schopenhauer.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "And I respect yours, Herr Kant. Even when I disagree loudly.",
+                "zh": "",
+                "ja": "",
+                "de": "Und ich respektiere das Ihre, Herr Kant. Auch wenn ich laut widerspreche.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Both men smile. Outside, the rain continues quietly.",
+                "zh": "",
+                "ja": "",
+                "de": "Beide Männer lächeln. Draußen regnet es weiter, leise.",
+                "es": ""
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "According to Kant, where does duty come from?",
+                "zh": "",
+                "ja": "",
+                "de": "Wonach kommt die Pflicht laut Kant?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "From reason.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Aus der Vernunft.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "From the Will.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Aus dem Willen.",
+                    "es": ""
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "From the stars.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Aus den Sternen.",
+                    "es": ""
+                  },
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "Whose view do you find more convincing — Schopenhauer's (morality from feeling) or Kant's (morality from reason)? Why?",
+                "zh": "",
+                "ja": "",
+                "de": "Wessen Ansicht findest du überzeugender — Schopenhauers (Moral aus Gefühl) oder Kants (Moral aus Vernunft)? Warum?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "I find Schopenhauer's view more convincing.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Ich finde Schopenhauers Ansicht überzeugender.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "I find Kant's view more convincing.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Ich finde Kants Ansicht überzeugender.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "I think both have a good point.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Ich finde, beide haben einen guten Punkt.",
+                    "es": ""
+                  },
+                  "correct": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "09",
+      "title": {
+        "en": "Kant on Enlightenment",
+        "zh": "",
+        "ja": "",
+        "de": "Kant über die Aufklärung",
+        "es": ""
+      },
+      "vocab": [
+        "die Aufklärung",
+        "der Mut",
+        "der Verstand",
+        "denken",
+        "führen",
+        "die Freiheit",
+        "allein",
+        "selbst",
+        "der Fehler",
+        "die Angst",
+        "bequem"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "05a",
+          "title": {
+            "en": "MY OWN SUMMARY (not a quotation) — how Kant defines enlightenment, in my own words",
+            "zh": "",
+            "ja": "",
+            "de": "MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — wie Kant Aufklärung definiert, in meinen eigenen Worten",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "This is my own restatement of Kant's opening definition in \"Beantwortung der Frage: Was ist Aufklärung?\" (1784) — not his wording. He defines enlightenment as a person's emergence from a self-caused immaturity — an inability to use one's own understanding without someone else's guidance.",
+              "zh": "",
+              "ja": "",
+              "de": "Dies ist meine eigene Wiedergabe von Kants Eröffnungsdefinition in „Beantwortung der Frage: Was ist Aufklärung?\" (1784) — nicht sein Wortlaut. Er definiert Aufklärung als den Ausgang des Menschen aus einer selbstverschuldeten Unmündigkeit — der Unfähigkeit, den eigenen Verstand ohne die Führung eines anderen zu benutzen.",
+              "es": ""
+            }
+          ]
+        },
+        {
+          "num": "05a2",
+          "title": {
+            "en": "GENUINE EXCERPT — Kant's famous motto",
+            "zh": "",
+            "ja": "",
+            "de": "ECHTES ZITAT — Kants berühmtes Motto",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "Direct quotation (source: Berlinische Monatsschrift, December 1784): \"Sapere aude! Habe Mut, dich deines eigenen Verstandes zu bedienen!\"",
+              "zh": "",
+              "ja": "",
+              "de": "Direktes Zitat (Quelle: Berlinische Monatsschrift, Dezember 1784): „Sapere aude! Habe Mut, dich deines eigenen Verstandes zu bedienen!\"",
+              "es": ""
+            }
+          ]
+        },
+        {
+          "num": "05b",
+          "title": {
+            "en": "Simplified — Dare to know",
+            "zh": "",
+            "ja": "",
+            "de": "Vereinfacht — Wage zu wissen",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "Kant defines \"Enlightenment\" simply: it means leaving a state where you cannot think for yourself.",
+              "zh": "",
+              "ja": "",
+              "de": "Kant definiert „Aufklärung\" einfach: Es bedeutet, einen Zustand zu verlassen, in dem man nicht selbst denken kann.",
+              "es": ""
+            },
+            {
+              "en": "He gives a famous motto: \"Sapere aude!\" In German: \"Have courage to use your own understanding!\"",
+              "zh": "",
+              "ja": "",
+              "de": "Er gibt ein berühmtes Motto: „Sapere aude!\" Auf Deutsch: „Habe Mut, deinen eigenen Verstand zu benutzen!\"",
+              "es": ""
+            },
+            {
+              "en": "Kant says many people could think for themselves, but they do not.",
+              "zh": "",
+              "ja": "",
+              "de": "Kant sagt, viele Menschen könnten selbst denken, aber sie tun es nicht.",
+              "es": ""
+            },
+            {
+              "en": "Why not? Kant says: laziness and fear. It is easier to let other people think for you.",
+              "zh": "",
+              "ja": "",
+              "de": "Warum nicht? Kant sagt: Faulheit und Angst. Es ist einfacher, andere Leute für sich denken zu lassen.",
+              "es": ""
+            },
+            {
+              "en": "True enlightenment means having the courage to think and decide for yourself.",
+              "zh": "",
+              "ja": "",
+              "de": "Wahre Aufklärung bedeutet, den Mut zu haben, selbst zu denken und zu entscheiden.",
+              "es": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "10",
+      "title": {
+        "en": "On Pessimism and Optimism",
+        "zh": "",
+        "ja": "",
+        "de": "Über Pessimismus und Optimismus",
+        "es": ""
+      },
+      "vocab": [
+        "der Pessimist",
+        "der Optimist",
+        "hoffen",
+        "die Hoffnung",
+        "besser",
+        "schlechter",
+        "die Zukunft",
+        "glauben",
+        "der Fortschritt",
+        "verbessern",
+        "die Welt"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv021001",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "May I ask something personal, Herr Schopenhauer?",
+                "zh": "",
+                "ja": "",
+                "de": "Darf ich etwas Persönliches fragen, Herr Schopenhauer?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Of course. I am rarely shy about difficult questions.",
+                "zh": "",
+                "ja": "",
+                "de": "Natürlich. Ich bin selten schüchtern bei schwierigen Fragen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "People say you are a pessimist. Is that true?",
+                "zh": "",
+                "ja": "",
+                "de": "Die Leute sagen, Sie seien ein Pessimist. Ist das wahr?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "It is true, and I am proud of it. I think this world is not the best of all possible worlds.",
+                "zh": "",
+                "ja": "",
+                "de": "Es ist wahr, und ich bin stolz darauf. Ich glaube, diese Welt ist nicht die beste aller möglichen Welten.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "That is a strong statement. Do you have no hope for a better future?",
+                "zh": "",
+                "ja": "",
+                "de": "Das ist eine starke Aussage. Haben Sie keine Hoffnung auf eine bessere Zukunft?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Hope is a nice word, but I am careful with it. I think suffering is part of life, always.",
+                "zh": "",
+                "ja": "",
+                "de": "Hoffnung ist ein schönes Wort, aber ich bin vorsichtig damit. Ich glaube, Leiden ist immer ein Teil des Lebens.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "I understand your view, but I think differently. I believe in progress. Slowly, humanity can become better.",
+                "zh": "",
+                "ja": "",
+                "de": "Ich verstehe Ihre Sicht, aber ich denke anders. Ich glaube an Fortschritt. Langsam kann die Menschheit besser werden.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Progress in science, yes. But progress in happiness? I am doubtful.",
+                "zh": "",
+                "ja": "",
+                "de": "Fortschritt in der Wissenschaft, ja. Aber Fortschritt im Glück? Ich bin zweifelhaft.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "Perhaps happiness is not the only goal. Perhaps becoming morally better is also a kind of progress.",
+                "zh": "",
+                "ja": "",
+                "de": "Vielleicht ist Glück nicht das einzige Ziel. Vielleicht ist es auch ein Fortschritt, moralisch besser zu werden.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "That I can accept more easily. Moral improvement, yes, perhaps that is possible.",
+                "zh": "",
+                "ja": "",
+                "de": "Das kann ich leichter akzeptieren. Moralische Verbesserung, ja, vielleicht ist das möglich.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "So we find a small piece of agreement after all!",
+                "zh": "",
+                "ja": "",
+                "de": "Also finden wir doch noch ein kleines Stück Übereinstimmung!",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "A small piece. I will not promise more than that.",
+                "zh": "",
+                "ja": "",
+                "de": "Ein kleines Stück. Mehr werde ich nicht versprechen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "That is enough for one evening, I think.",
+                "zh": "",
+                "ja": "",
+                "de": "Das ist genug für einen Abend, denke ich.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Both philosophers laugh quietly. The tea is now cold, but neither minds.",
+                "zh": "",
+                "ja": "",
+                "de": "Beide Philosophen lachen leise. Der Tee ist jetzt kalt, aber das stört keinen von beiden.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Would you like more tea, Herr Kant? I can make a fresh pot.",
+                "zh": "",
+                "ja": "",
+                "de": "Möchten Sie mehr Tee, Herr Kant? Ich kann eine frische Kanne machen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "Yes, please. And perhaps you can tell me more about your dog.",
+                "zh": "",
+                "ja": "",
+                "de": "Ja, bitte. Und vielleicht können Sie mir mehr über Ihren Hund erzählen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "What does Schopenhauer accept might be possible?",
+                "zh": "",
+                "ja": "",
+                "de": "Was akzeptiert Schopenhauer als möglich?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "Moral improvement.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Moralische Verbesserung.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "Eternal happiness.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Ewiges Glück.",
+                    "es": ""
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "A world without suffering.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Eine Welt ohne Leiden.",
+                    "es": ""
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "11",
+      "title": {
+        "en": "On the Pipe and Simple Pleasures",
+        "zh": "",
+        "ja": "",
+        "de": "Über die Pfeife und einfache Freuden",
+        "es": ""
+      },
+      "vocab": [
+        "einfach",
+        "die Freude",
+        "genug",
+        "zufrieden",
+        "brauchen",
+        "wünschen",
+        "der Reichtum",
+        "das Geld",
+        "besitzen",
+        "der Wunsch",
+        "klein",
+        "groß"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "06a",
+          "title": {
+            "en": "MY OWN WRITING (not a quotation) — in the style of Schopenhauer, on wanting little",
+            "zh": "",
+            "ja": "",
+            "de": "MEINE EIGENE SCHRIFT (kein Zitat) — im Stil Schopenhauers, über das Wenig-Wollen",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "This entire passage is my own writing in an old-fashioned style, not a quotation from Schopenhauer. It approximates a theme from his \"Aphorismen zur Lebensweisheit\" (in \"Parerga und Paralipomena\"), where his actual text can be found: a person who needs little is missing little; and whoever becomes aware that their wishes are not all necessary has already gone halfway toward calm — while the greedy person, even surrounded by abundance, is chased by an unfillable emptiness.",
+              "zh": "",
+              "ja": "",
+              "de": "Diese ganze Passage ist meine eigene Schrift in altmodischem Stil, kein Zitat von Schopenhauer. Sie nähert sich einem Thema aus seinen „Aphorismen zur Lebensweisheit\" (in „Parerga und Paralipomena\", wo sein tatsächlicher Text zu finden ist): Wer wenig bedarf, dem fehlt es an wenig; und wer sich bewusst wird, dass seine Wünsche nicht alle notwendig sind, hat schon den halben Weg zur Gelassenheit zurückgelegt — während der Gierige, selbst inmitten des Überflusses, von einer unstillbaren Leere verfolgt wird.",
+              "es": ""
+            }
+          ]
+        },
+        {
+          "num": "06b",
+          "title": {
+            "en": "Simplified — Wanting less, having enough",
+            "zh": "",
+            "ja": "",
+            "de": "Vereinfacht — Weniger wollen, genug haben",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "A person who needs little does not miss much.",
+              "zh": "",
+              "ja": "",
+              "de": "Ein Mensch, der wenig braucht, verpasst nicht viel.",
+              "es": ""
+            },
+            {
+              "en": "If you understand that your wishes are not always necessary, you can feel calmer.",
+              "zh": "",
+              "ja": "",
+              "de": "Wenn du verstehst, dass deine Wünsche nicht immer notwendig sind, kannst du dich ruhiger fühlen.",
+              "es": ""
+            },
+            {
+              "en": "A person who always wants more money or more things often feels empty, even when they have a lot.",
+              "zh": "",
+              "ja": "",
+              "de": "Ein Mensch, der immer mehr Geld oder mehr Dinge will, fühlt sich oft leer, sogar wenn er viel hat.",
+              "es": ""
+            },
+            {
+              "en": "This is similar to Schopenhauer's ideas about happiness. He often wrote that simple pleasures, like a good book or a quiet evening, can be enough.",
+              "zh": "",
+              "ja": "",
+              "de": "Das ähnelt Schopenhauers Ideen über Glück. Er hat oft geschrieben, dass einfache Freuden, wie ein gutes Buch oder ein ruhiger Abend, genug sein können.",
+              "es": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "12",
+      "title": {
+        "en": "Goodnight",
+        "zh": "",
+        "ja": "",
+        "de": "Gute Nacht",
+        "es": ""
+      },
+      "vocab": [
+        "gute Nacht",
+        "der Abschied",
+        "sich verabschieden",
+        "wiedersehen",
+        "der Besuch",
+        "danken",
+        "angenehm",
+        "der Abend",
+        "spät",
+        "gehen",
+        "bleiben"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv021201",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "It is late. Kant stands up and takes his coat.",
+                "zh": "",
+                "ja": "",
+                "de": "Es ist spät. Kant steht auf und nimmt seinen Mantel.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "I should go now. Thank you for this evening, Herr Schopenhauer. It was very pleasant.",
+                "zh": "",
+                "ja": "",
+                "de": "Ich sollte jetzt gehen. Danke für diesen Abend, Herr Schopenhauer. Er war sehr angenehm.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Thank you for visiting. I do not have many guests. This was a nice exception.",
+                "zh": "",
+                "ja": "",
+                "de": "Danke für Ihren Besuch. Ich habe nicht viele Gäste. Das war eine schöne Ausnahme.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "We disagree about many things. But I enjoyed our conversation very much.",
+                "zh": "",
+                "ja": "",
+                "de": "Wir sind über viele Dinge nicht einer Meinung. Aber ich habe unser Gespräch sehr genossen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Disagreement can be interesting. Agreement is often boring.",
+                "zh": "",
+                "ja": "",
+                "de": "Uneinigkeit kann interessant sein. Einigkeit ist oft langweilig.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "A very Schopenhauer-like thing to say.",
+                "zh": "",
+                "ja": "",
+                "de": "Eine sehr schopenhauerische Aussage.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "I will take that as a compliment.",
+                "zh": "",
+                "ja": "",
+                "de": "Das nehme ich als Kompliment.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Schopenhauer walks Kant to the door. Outside, the rain has stopped.",
+                "zh": "",
+                "ja": "",
+                "de": "Schopenhauer begleitet Kant zur Tür. Draußen hat der Regen aufgehört.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "The sky is clear now. Look at the stars.",
+                "zh": "",
+                "ja": "",
+                "de": "Der Himmel ist jetzt klar. Schauen Sie sich die Sterne an.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Yes. Beautiful. And completely indifferent to our small conversation tonight.",
+                "zh": "",
+                "ja": "",
+                "de": "Ja. Schön. Und völlig gleichgültig gegenüber unserem kleinen Gespräch heute Abend.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "Perhaps. But the conversation mattered to us. That is enough.",
+                "zh": "",
+                "ja": "",
+                "de": "Vielleicht. Aber das Gespräch war für uns wichtig. Das ist genug.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Safe travels, Herr Kant. Perhaps we will speak again.",
+                "zh": "",
+                "ja": "",
+                "de": "Gute Reise, Herr Kant. Vielleicht sprechen wir uns wieder.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "I would like that. Goodnight, Herr Schopenhauer.",
+                "zh": "",
+                "ja": "",
+                "de": "Das würde mir gefallen. Gute Nacht, Herr Schopenhauer.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Goodnight.",
+                "zh": "",
+                "ja": "",
+                "de": "Gute Nacht.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Kant disappears into the dark street. Schopenhauer closes the door and returns to his lamp.",
+                "zh": "",
+                "ja": "",
+                "de": "Kant verschwindet in der dunklen Straße. Schopenhauer schließt die Tür und kehrt zu seiner Lampe zurück.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "An interesting man. Wrong about many things. But interesting.",
+                "zh": "",
+                "ja": "",
+                "de": "Ein interessanter Mann. Bei vielen Dingen falsch. Aber interessant.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "He sits down again with his pipe. The lamp burns quietly into the night.",
+                "zh": "",
+                "ja": "",
+                "de": "Er setzt sich wieder mit seiner Pfeife. Die Lampe brennt leise in die Nacht hinein.",
+                "es": ""
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "What does Kant point at before he leaves?",
+                "zh": "",
+                "ja": "",
+                "de": "Worauf zeigt Kant, bevor er geht?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "The stars.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Die Sterne.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "The clock.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Die Uhr.",
+                    "es": ""
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "A book.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Ein Buch.",
+                    "es": ""
+                  },
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "If you could ask Schopenhauer or Kant one question, what would it be?",
+                "zh": "",
+                "ja": "",
+                "de": "Wenn du Schopenhauer oder Kant eine Frage stellen könntest, welche wäre das?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "I would ask Schopenhauer something.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Ich würde Schopenhauer etwas fragen.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "I would ask Kant something.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Ich würde Kant etwas fragen.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "I would ask them both the same question.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Ich würde beiden die gleiche Frage stellen.",
+                    "es": ""
+                  },
+                  "correct": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    }
+  ]
+}

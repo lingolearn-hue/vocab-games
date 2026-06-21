@@ -1,0 +1,2007 @@
+{
+  "meta": {
+    "chapterNum": "01",
+    "chapterTitle": {
+      "en": "Guild Initiation",
+      "zh": "公会入团",
+      "ja": "ギルドへの入団",
+      "de": "Gildeneintritt",
+      "es": "Iniciación en el gremio"
+    },
+    "level": "N5",
+    "artifact": {
+      "icon": "🏅",
+      "name": "Apprentice Badge",
+      "grammar": "は・です・か・も"
+    },
+    "storyIntro": {
+      "en": "The Crystal of Light has disappeared. Strange things are happening. The Adventurer Guild is looking for a new apprentice. That is you.",
+      "zh": "光之水晶消失了。奇怪的事情正在发生。冒险者公会在寻找新学徒。那就是你。",
+      "ja": "光のクリスタルが消えた。王国では不思議なことが起きている。冒険者ギルドが新しい見習いを探している。それが、あなただ。",
+      "de": "Das Kristall des Lichts ist verschwunden. Seltsame Dinge geschehen. Die Abenteurergilde sucht einen neuen Lehrling. Das bist du.",
+      "es": "El Cristal de Luz ha desaparecido. Cosas extrañas están sucediendo. El gremio de aventureros busca un nuevo aprendiz. Ese eres tú."
+    },
+    "storyOutro": {
+      "en": "You have become a guild apprentice. You still know nothing. But the journey has already begun.",
+      "zh": "你成为了公会的学徒。你还什么都不知道。但旅程已经开始了。",
+      "ja": "あなたはギルドの見習いになった。まだ何もわからない。でも、旅はもう始まっている。",
+      "de": "Du bist ein Gildenlehrling geworden. Du weißt noch nichts. Aber die Reise hat bereits begonnen.",
+      "es": "Te has convertido en aprendiz del gremio. Todavía no sabes nada. Pero el viaje ya ha comenzado."
+    }
+  },
+  "sections": [
+    {
+      "num": "01",
+      "title": {
+        "en": "The Letter of Invitation",
+        "zh": "邀请信",
+        "ja": "招待状",
+        "de": "Der Einladungsbrief",
+        "es": "La carta de invitación"
+      },
+      "vocab": [
+        "こんにちは",
+        "ありがとう",
+        "はい",
+        "いいえ",
+        "わたし",
+        "なまえ",
+        "ひと",
+        "がくせい",
+        "せんせい",
+        "ともだち",
+        "にほん",
+        "どこ",
+        "なに",
+        "いくら",
+        "おはようございます",
+        "こんばんは",
+        "すみません",
+        "はじめまして"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "01",
+          "title": {
+            "en": "Letter from the Guild Master",
+            "zh": "来自公会长的信",
+            "ja": "公会マスターからの手紙",
+            "de": "Brief vom Gildenmeister",
+            "es": "Carta del maestro del gremio"
+          },
+          "lines": [
+            {
+              "en": "Dear Adventurer,",
+              "zh": "亲爱的冒险者，",
+              "ja": "冒険者へ、",
+              "de": "Lieber Abenteurer,",
+              "es": "Querido aventurero,"
+            },
+            {
+              "en": "My name is Leon. I am the Guild Master of the Adventurer Guild.",
+              "zh": "我叫里昂。我是冒险者公会的公会长。",
+              "ja": "わたしの名前はレオンです。冒険者ギルドのギルドマスターです。",
+              "de": "Mein Name ist Leon. Ich bin der Gildenmeister der Abenteurergilde.",
+              "es": "Mi nombre es León. Soy el maestro del gremio de aventureros."
+            },
+            {
+              "en": "The Adventurer Guild is a good place.",
+              "zh": "冒险者公会是个好地方。",
+              "ja": "冒険者ギルドはいい所です。",
+              "de": "Die Abenteurergilde ist ein guter Ort.",
+              "es": "El gremio de aventureros es un buen lugar."
+            },
+            {
+              "en": "There are many adventurers here.",
+              "zh": "这里有很多冒险者。",
+              "ja": "ここには冒険者がたくさんいます。",
+              "de": "Hier gibt es viele Abenteurer.",
+              "es": "Aquí hay muchos aventureros."
+            },
+            {
+              "en": "We help people every day.",
+              "zh": "我们每天帮助人们。",
+              "ja": "わたしたちは毎日人を助けます。",
+              "de": "Wir helfen jeden Tag Menschen.",
+              "es": "Ayudamos a la gente todos los días."
+            },
+            {
+              "en": "I am looking for a new apprentice.",
+              "zh": "我在寻找新学徒。",
+              "ja": "わたしは新しい見習いを探しています。",
+              "de": "Ich suche einen neuen Lehrling.",
+              "es": "Estoy buscando un nuevo aprendiz."
+            },
+            {
+              "en": "Are you an adventurer? Please come to our guild.",
+              "zh": "你是冒险者吗？请来我们公会。",
+              "ja": "あなたは冒険者ですか？ぜひ、ギルドへ来てください。",
+              "de": "Bist du ein Abenteurer? Bitte komm zu unserer Gilde.",
+              "es": "¿Eres un aventurero? Por favor, ven a nuestro gremio."
+            },
+            {
+              "en": "Our guild is in the town of Stonehaven.",
+              "zh": "我们的公会在石港镇。",
+              "ja": "わたしたちのギルドはストーンヘイブンの町にあります。",
+              "de": "Unsere Gilde befindet sich in der Stadt Stonehaven.",
+              "es": "Nuestro gremio está en la ciudad de Stonehaven."
+            },
+            {
+              "en": "The town is not big. But it is a nice town.",
+              "zh": "这个镇不大。但它是个好镇。",
+              "ja": "その町は大きくありません。でも、いい町です。",
+              "de": "Die Stadt ist nicht groß. Aber sie ist eine schöne Stadt.",
+              "es": "La ciudad no es grande. Pero es una ciudad bonita."
+            },
+            {
+              "en": "I am waiting for you. Please come soon.",
+              "zh": "我在等你。请快来。",
+              "ja": "待っています。すぐ来てください。",
+              "de": "Ich warte auf dich. Bitte komm bald.",
+              "es": "Te estoy esperando. Por favor, ven pronto."
+            },
+            {
+              "en": "From Leon, Guild Master",
+              "zh": "来自公会长里昂",
+              "ja": "公会マスター レオンより",
+              "de": "Von Leon, Gildenmeister",
+              "es": "De León, maestro del gremio"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "02",
+      "title": {
+        "en": "The Guild Noticeboard",
+        "zh": "公会公告栏",
+        "ja": "ギルドの掲示板",
+        "de": "Das Gildenbrett",
+        "es": "El tablón del gremio"
+      },
+      "vocab": [
+        "ひかり",
+        "クリスタル",
+        "ここ",
+        "あります",
+        "いません",
+        "たいせつ",
+        "いっしょ",
+        "さがす",
+        "おおきい",
+        "まち",
+        "ひと",
+        "みんな",
+        "きてください",
+        "おねがい"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "02",
+          "title": {
+            "en": "Notices on the Guild Board",
+            "zh": "公会公告栏上的通知",
+            "ja": "ギルドの掲示板の通知",
+            "de": "Mitteilungen am Gildenbrett",
+            "es": "Avisos en el tablón del gremio"
+          },
+          "lines": [
+            {
+              "en": "IMPORTANT NOTICE",
+              "zh": "重要通知",
+              "ja": "重要なお知らせ",
+              "de": "WICHTIGE MITTEILUNG",
+              "es": "AVISO IMPORTANTE"
+            },
+            {
+              "en": "The Crystal of Light is not here.",
+              "zh": "光之水晶不在这里。",
+              "ja": "光のクリスタルはここにありません。",
+              "de": "Das Kristall des Lichts ist nicht hier.",
+              "es": "El Cristal de Luz no está aquí."
+            },
+            {
+              "en": "This is a big problem.",
+              "zh": "这是个大问题。",
+              "ja": "これは大きな問題です。",
+              "de": "Das ist ein großes Problem.",
+              "es": "Este es un gran problema."
+            },
+            {
+              "en": "Please help us find it.",
+              "zh": "请帮助我们找到它。",
+              "ja": "一緒に探してください。",
+              "de": "Bitte helft uns, es zu finden.",
+              "es": "Por favor, ayúdanos a encontrarlo."
+            },
+            {
+              "en": "Guild Master Leon",
+              "zh": "公会长里昂",
+              "ja": "ギルドマスター レオン",
+              "de": "Gildenmeister Leon",
+              "es": "Maestro del gremio León"
+            },
+            {
+              "en": "---",
+              "zh": "---",
+              "ja": "---",
+              "de": "---",
+              "es": "---"
+            },
+            {
+              "en": "WELCOME NEW APPRENTICES",
+              "zh": "欢迎新学徒",
+              "ja": "新しい見習いへようこそ",
+              "de": "WILLKOMMEN NEUE LEHRLINGE",
+              "es": "BIENVENIDOS NUEVOS APRENDICES"
+            },
+            {
+              "en": "My name is Emma. I am also a new apprentice.",
+              "zh": "我叫艾玛。我也是新学徒。",
+              "ja": "わたしの名前はエマです。わたしも新しい見習いです。",
+              "de": "Mein Name ist Emma. Ich bin auch ein neuer Lehrling.",
+              "es": "Me llamo Emma. Yo también soy una nueva aprendiz."
+            },
+            {
+              "en": "Please come and say hello!",
+              "zh": "请来打招呼！",
+              "ja": "ぜひ、声をかけてください！",
+              "de": "Bitte kommt und sagt Hallo!",
+              "es": "¡Por favor, venid a saludar!"
+            },
+            {
+              "en": "---",
+              "zh": "---",
+              "ja": "---",
+              "de": "---",
+              "es": "---"
+            },
+            {
+              "en": "MISSION: River Village",
+              "zh": "任务：河边村",
+              "ja": "ミッション：川の村",
+              "de": "MISSION: Flussdorf",
+              "es": "MISIÓN: Pueblo del Río"
+            },
+            {
+              "en": "The village people need help.",
+              "zh": "村里的人需要帮助。",
+              "ja": "村の人たちが助けを必要としています。",
+              "de": "Die Dorfbewohner brauchen Hilfe.",
+              "es": "La gente del pueblo necesita ayuda."
+            },
+            {
+              "en": "Please go to River Village.",
+              "zh": "请去河边村。",
+              "ja": "川の村に行ってください。",
+              "de": "Bitte geht nach Flussdorf.",
+              "es": "Por favor, id al Pueblo del Río."
+            },
+            {
+              "en": "It is one day from here.",
+              "zh": "从这里走一天。",
+              "ja": "ここから一日かかります。",
+              "de": "Es ist einen Tag von hier.",
+              "es": "Está a un día de aquí."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "03",
+      "title": {
+        "en": "The Book of the Crystal",
+        "zh": "水晶之书",
+        "ja": "クリスタルの本",
+        "de": "Das Buch des Kristalls",
+        "es": "El libro del cristal"
+      },
+      "vocab": [
+        "ほん",
+        "よむ",
+        "むかし",
+        "おうこく",
+        "ひかり",
+        "まほう",
+        "まもる",
+        "おおきい",
+        "ちいさい",
+        "しろ",
+        "くろ",
+        "あかい",
+        "あおい",
+        "きれい"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "03",
+          "title": {
+            "en": "From the Book of the Crystal",
+            "zh": "摘自水晶之书",
+            "ja": "クリスタルの本より",
+            "de": "Aus dem Buch des Kristalls",
+            "es": "Del libro del cristal"
+          },
+          "lines": [
+            {
+              "en": "This is an old book.",
+              "zh": "这是一本古老的书。",
+              "ja": "これは古い本です。",
+              "de": "Das ist ein altes Buch.",
+              "es": "Este es un libro antiguo."
+            },
+            {
+              "en": "The name of the book is \"The Crystal of Light.\"",
+              "zh": "这本书的名字是《光之水晶》。",
+              "ja": "この本の名前は「光のクリスタル」です。",
+              "de": "Der Name des Buches ist „Das Kristall des Lichts\".",
+              "es": "El nombre del libro es «El Cristal de Luz»."
+            },
+            {
+              "en": "Long ago, there was a crystal.",
+              "zh": "很久以前，有一块水晶。",
+              "ja": "むかし、クリスタルがありました。",
+              "de": "Vor langer Zeit gab es ein Kristall.",
+              "es": "Hace mucho tiempo, había un cristal."
+            },
+            {
+              "en": "The crystal was white and beautiful.",
+              "zh": "水晶是白色的，很漂亮。",
+              "ja": "クリスタルは白くて、きれいでした。",
+              "de": "Das Kristall war weiß und schön.",
+              "es": "El cristal era blanco y hermoso."
+            },
+            {
+              "en": "It was in the middle of the kingdom.",
+              "zh": "它在王国的中心。",
+              "ja": "王国の真ん中にありました。",
+              "de": "Es befand sich in der Mitte des Königreichs.",
+              "es": "Estaba en el centro del reino."
+            },
+            {
+              "en": "The crystal gave light to the people.",
+              "zh": "水晶给人们带来光明。",
+              "ja": "クリスタルは人々に光をあたえました。",
+              "de": "Das Kristall gab den Menschen Licht.",
+              "es": "El cristal daba luz a la gente."
+            },
+            {
+              "en": "With the crystal, the kingdom was safe.",
+              "zh": "有了水晶，王国就安全了。",
+              "ja": "クリスタルがあれば、王国は安全でした。",
+              "de": "Mit dem Kristall war das Königreich sicher.",
+              "es": "Con el cristal, el reino estaba seguro."
+            },
+            {
+              "en": "Without the crystal, strange things happen.",
+              "zh": "没有水晶，奇怪的事情就会发生。",
+              "ja": "クリスタルがなければ、不思議なことが起きます。",
+              "de": "Ohne das Kristall passieren seltsame Dinge.",
+              "es": "Sin el cristal, ocurren cosas extrañas."
+            },
+            {
+              "en": "The crystal is not big. It is small.",
+              "zh": "水晶不大。它很小。",
+              "ja": "クリスタルは大きくありません。小さいです。",
+              "de": "Das Kristall ist nicht groß. Es ist klein.",
+              "es": "El cristal no es grande. Es pequeño."
+            },
+            {
+              "en": "But it is very important.",
+              "zh": "但它非常重要。",
+              "ja": "でも、とても大切です。",
+              "de": "Aber es ist sehr wichtig.",
+              "es": "Pero es muy importante."
+            },
+            {
+              "en": "The adventurers must find the crystal.",
+              "zh": "冒险者们必须找到水晶。",
+              "ja": "冒険者たちはクリスタルを見つけなければなりません。",
+              "de": "Die Abenteurer müssen das Kristall finden.",
+              "es": "Los aventureros deben encontrar el cristal."
+            },
+            {
+              "en": "Please find it soon.",
+              "zh": "请快点找到它。",
+              "ja": "早く見つけてください。",
+              "de": "Bitte findet es bald.",
+              "es": "Por favor, encuéntralo pronto."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "04",
+      "title": {
+        "en": "Emma's Diary",
+        "zh": "艾玛的日记",
+        "ja": "エマの日記",
+        "de": "Emmas Tagebuch",
+        "es": "El diario de Emma"
+      },
+      "vocab": [
+        "きょう",
+        "あした",
+        "きのう",
+        "まいにち",
+        "ともだち",
+        "うれしい",
+        "たのしい",
+        "こわい",
+        "しんぱい",
+        "おもう",
+        "はじめて",
+        "であう"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "04",
+          "title": {
+            "en": "Emma's Diary — First Day",
+            "zh": "艾玛的日记——第一天",
+            "ja": "エマの日記　最初の日",
+            "de": "Emmas Tagebuch — Erster Tag",
+            "es": "El diario de Emma — Primer día"
+          },
+          "lines": [
+            {
+              "en": "Today is my first day at the guild.",
+              "zh": "今天是我在公会的第一天。",
+              "ja": "今日はギルドの最初の日です。",
+              "de": "Heute ist mein erster Tag in der Gilde.",
+              "es": "Hoy es mi primer día en el gremio."
+            },
+            {
+              "en": "My name is Emma. I am a new apprentice.",
+              "zh": "我叫艾玛。我是新学徒。",
+              "ja": "わたしの名前はエマです。新しい見習いです。",
+              "de": "Mein Name ist Emma. Ich bin ein neuer Lehrling.",
+              "es": "Me llamo Emma. Soy una nueva aprendiz."
+            },
+            {
+              "en": "The guild is big. There are many rooms.",
+              "zh": "公会很大。有很多房间。",
+              "ja": "ギルドは大きいです。部屋がたくさんあります。",
+              "de": "Die Gilde ist groß. Es gibt viele Zimmer.",
+              "es": "El gremio es grande. Hay muchas habitaciones."
+            },
+            {
+              "en": "The Guild Master is Leon. He is a kind person.",
+              "zh": "公会长是里昂。他是个善良的人。",
+              "ja": "ギルドマスターはレオンです。やさしい人です。",
+              "de": "Der Gildenmeister ist Leon. Er ist ein freundlicher Mensch.",
+              "es": "El maestro del gremio es León. Es una persona amable."
+            },
+            {
+              "en": "Today I met another new apprentice.",
+              "zh": "今天我遇到了另一个新学徒。",
+              "ja": "今日、もう一人の新しい見習いに会いました。",
+              "de": "Heute habe ich einen anderen neuen Lehrling getroffen.",
+              "es": "Hoy conocí a otro nuevo aprendiz."
+            },
+            {
+              "en": "I do not know their name yet.",
+              "zh": "我还不知道他们的名字。",
+              "ja": "まだ名前を知りません。",
+              "de": "Ich weiß ihren Namen noch nicht.",
+              "es": "Todavía no sé su nombre."
+            },
+            {
+              "en": "But they seem like a good person.",
+              "zh": "但他们看起来是个好人。",
+              "ja": "でも、いい人だと思います。",
+              "de": "Aber sie scheinen ein guter Mensch zu sein.",
+              "es": "Pero parecen una buena persona."
+            },
+            {
+              "en": "Tomorrow we will go on a mission together.",
+              "zh": "明天我们将一起去执行任务。",
+              "ja": "明日、一緒にミッションに行きます。",
+              "de": "Morgen werden wir gemeinsam auf Mission gehen.",
+              "es": "Mañana iremos juntos a una misión."
+            },
+            {
+              "en": "I am a little scared. But I am happy too.",
+              "zh": "我有点害怕。但我也很高兴。",
+              "ja": "少し怖いです。でも、うれしいです。",
+              "de": "Ich habe ein bisschen Angst. Aber ich bin auch glücklich.",
+              "es": "Tengo un poco de miedo. Pero también estoy contenta."
+            },
+            {
+              "en": "I think every day will be interesting.",
+              "zh": "我想每天都会很有趣。",
+              "ja": "毎日、おもしろいと思います。",
+              "de": "Ich denke, jeder Tag wird interessant sein.",
+              "es": "Creo que cada día será interesante."
+            },
+            {
+              "en": "Goodnight, diary.",
+              "zh": "晚安，日记。",
+              "ja": "おやすみなさい、日記。",
+              "de": "Gute Nacht, Tagebuch.",
+              "es": "Buenas noches, diario."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "05",
+      "title": {
+        "en": "The Guild Rules",
+        "zh": "公会规则",
+        "ja": "ギルドの規則",
+        "de": "Die Gildenregeln",
+        "es": "Las reglas del gremio"
+      },
+      "vocab": [
+        "きまり",
+        "まもる",
+        "たべる",
+        "のむ",
+        "ねる",
+        "おきる",
+        "ごご",
+        "ごぜん",
+        "じかん",
+        "まいにち",
+        "しごと",
+        "やすむ"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "05",
+          "title": {
+            "en": "The Guild Rules",
+            "zh": "公会规则",
+            "ja": "ギルドの規則",
+            "de": "Die Gildenregeln",
+            "es": "Las reglas del gremio"
+          },
+          "lines": [
+            {
+              "en": "These are the rules of the Adventurer Guild.",
+              "zh": "以下是冒险者公会的规则。",
+              "ja": "これは冒険者ギルドのきまりです。",
+              "de": "Das sind die Regeln der Abenteurergilde.",
+              "es": "Estas son las reglas del gremio de aventureros."
+            },
+            {
+              "en": "Rule one: Please say good morning every day.",
+              "zh": "第一条：请每天说早上好。",
+              "ja": "きまり一：毎日おはようございますと言ってください。",
+              "de": "Regel eins: Bitte sagt jeden Tag guten Morgen.",
+              "es": "Regla uno: Por favor, di buenos días cada día."
+            },
+            {
+              "en": "Rule two: Please eat breakfast every morning.",
+              "zh": "第二条：请每天早上吃早饭。",
+              "ja": "きまり二：毎朝、朝ごはんを食べてください。",
+              "de": "Regel zwei: Bitte esst jeden Morgen Frühstück.",
+              "es": "Regla dos: Por favor, desayuna cada mañana."
+            },
+            {
+              "en": "Rule three: Please come back before evening.",
+              "zh": "第三条：请在傍晚之前回来。",
+              "ja": "きまり三：夕方までに帰ってきてください。",
+              "de": "Regel drei: Bitte kommt vor dem Abend zurück.",
+              "es": "Regla tres: Por favor, volved antes del atardecer."
+            },
+            {
+              "en": "Rule four: Please help your friends.",
+              "zh": "第四条：请帮助你的朋友们。",
+              "ja": "きまり四：友達を助けてください。",
+              "de": "Regel vier: Bitte helft euren Freunden.",
+              "es": "Regla cuatro: Por favor, ayuda a tus amigos."
+            },
+            {
+              "en": "Rule five: Please be kind to the people in town.",
+              "zh": "第五条：请对镇上的人们友善。",
+              "ja": "きまり五：町の人にやさしくしてください。",
+              "de": "Regel fünf: Bitte seid freundlich zu den Menschen in der Stadt.",
+              "es": "Regla cinco: Por favor, sé amable con la gente del pueblo."
+            },
+            {
+              "en": "Rule six: Please do not go to dangerous places alone.",
+              "zh": "第六条：请不要独自去危险的地方。",
+              "ja": "きまり六：一人で危ない所に行かないでください。",
+              "de": "Regel sechs: Bitte geht nicht alleine an gefährliche Orte.",
+              "es": "Regla seis: Por favor, no vayas solo a lugares peligrosos."
+            },
+            {
+              "en": "Rule seven: Please ask the Guild Master when you have questions.",
+              "zh": "第七条：有问题请问公会长。",
+              "ja": "きまり七：わからないことはギルドマスターに聞いてください。",
+              "de": "Regel sieben: Bitte fragt den Gildenmeister, wenn ihr Fragen habt.",
+              "es": "Regla siete: Por favor, pregunta al maestro del gremio cuando tengas dudas."
+            },
+            {
+              "en": "These rules are important.",
+              "zh": "这些规则很重要。",
+              "ja": "これらのきまりは大切です。",
+              "de": "Diese Regeln sind wichtig.",
+              "es": "Estas reglas son importantes."
+            },
+            {
+              "en": "Please follow them every day.",
+              "zh": "请每天遵守它们。",
+              "ja": "毎日守ってください。",
+              "de": "Bitte befolgt sie jeden Tag.",
+              "es": "Por favor, síguelas cada día."
+            },
+            {
+              "en": "Welcome to the Adventurer Guild!",
+              "zh": "欢迎来到冒险者公会！",
+              "ja": "冒険者ギルドへようこそ！",
+              "de": "Willkommen in der Abenteurergilde!",
+              "es": "¡Bienvenido al gremio de aventureros!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "06",
+      "title": {
+        "en": "Meeting the Guild Master",
+        "zh": "与公会长见面",
+        "ja": "ギルドマスターとの出会い",
+        "de": "Treffen mit dem Gildenmeister",
+        "es": "Conociendo al maestro del gremio"
+      },
+      "vocab": [
+        "こんにちは",
+        "ありがとう",
+        "はい",
+        "いいえ",
+        "わたし",
+        "なまえ",
+        "ひと",
+        "がくせい",
+        "せんせい",
+        "ともだち",
+        "にほん",
+        "どこ",
+        "なに",
+        "おはようございます",
+        "こんばんは",
+        "すみません",
+        "はじめまして"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv010601",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You arrive at the guild. It is a big building.",
+                "zh": "你来到了公会。这是一栋大建筑。",
+                "ja": "ギルドに着きました。大きな建物です。",
+                "de": "Du kommst bei der Gilde an. Es ist ein großes Gebäude.",
+                "es": "Llegas al gremio. Es un edificio grande."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "A man comes out. He is tall and has a kind face.",
+                "zh": "一个男人走了出来。他高大，面容和蔼。",
+                "ja": "男の人が出てきました。背が高くて、やさしい顔をしています。",
+                "de": "Ein Mann kommt heraus. Er ist groß und hat ein freundliches Gesicht.",
+                "es": "Un hombre sale. Es alto y tiene una cara amable."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "Hello! Welcome to the Adventurer Guild.",
+                "zh": "你好！欢迎来到冒险者公会。",
+                "ja": "こんにちは！冒険者ギルドへようこそ。",
+                "de": "Hallo! Willkommen in der Abenteurergilde.",
+                "es": "¡Hola! Bienvenido al gremio de aventureros."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "My name is Leon. I am the Guild Master.",
+                "zh": "我叫里昂。我是公会长。",
+                "ja": "わたしの名前はレオンです。ギルドマスターです。",
+                "de": "Mein Name ist Leon. Ich bin der Gildenmeister.",
+                "es": "Me llamo León. Soy el maestro del gremio."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "Are you the new apprentice?",
+                "zh": "你是新学徒吗？",
+                "ja": "あなたは新しい見習いですか？",
+                "de": "Bist du der neue Lehrling?",
+                "es": "¿Eres el nuevo aprendiz?"
+              }
+            },
+            {
+              "type": "choice",
+              "options": [
+                {
+                  "suffix": "a",
+                  "text": {
+                    "en": "Yes. My name is Alex.",
+                    "zh": "是的。我叫阿历克斯。",
+                    "ja": "はい。わたしの名前はアレックスです。",
+                    "de": "Ja. Mein Name ist Alex.",
+                    "es": "Sí. Me llamo Alex."
+                  },
+                  "response": {
+                    "en": "Alex! That is a good name. Nice to meet you too.",
+                    "zh": "阿历克斯！这是个好名字。我也很高兴认识你。",
+                    "ja": "アレックス！いい名前です。こちらこそ、はじめまして。",
+                    "de": "Alex! Das ist ein guter Name. Schön, dich auch kennenzulernen.",
+                    "es": "¡Alex! Es un buen nombre. Encantado de conocerte también."
+                  }
+                },
+                {
+                  "suffix": "b",
+                  "text": {
+                    "en": "Yes. Nice to meet you.",
+                    "zh": "是的。很高兴认识你。",
+                    "ja": "はい。はじめまして。",
+                    "de": "Ja. Schön, Sie kennenzulernen.",
+                    "es": "Sí. Encantado de conocerle."
+                  },
+                  "response": {
+                    "en": "Nice to meet you too. Welcome.",
+                    "zh": "我也很高兴认识你。欢迎。",
+                    "ja": "こちらこそ、はじめまして。ようこそ。",
+                    "de": "Schön, dich auch kennenzulernen. Willkommen.",
+                    "es": "Encantado de conocerte también. Bienvenido."
+                  }
+                }
+              ]
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "Please come inside. I will show you the guild.",
+                "zh": "请进来。我来带你参观公会。",
+                "ja": "どうぞ中に入ってください。ギルドを案内します。",
+                "de": "Bitte komm herein. Ich zeige dir die Gilde.",
+                "es": "Por favor, entra. Te mostraré el gremio."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You go inside. The guild is big. There are many people.",
+                "zh": "你走了进去。公会很大。里面有很多人。",
+                "ja": "中に入りました。ギルドは大きいです。人がたくさんいます。",
+                "de": "Du gehst hinein. Die Gilde ist groß. Es gibt viele Menschen.",
+                "es": "Entras. El gremio es grande. Hay mucha gente."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "This is the main hall. We eat here every morning.",
+                "zh": "这是大厅。我们每天早上在这里吃饭。",
+                "ja": "ここはホールです。毎朝ここで食事をします。",
+                "de": "Das ist die Haupthalle. Wir essen hier jeden Morgen.",
+                "es": "Esta es la sala principal. Aquí comemos cada mañana."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "This is the notice board. Please read it every day.",
+                "zh": "这是公告栏。请每天读它。",
+                "ja": "これは掲示板です。毎日読んでください。",
+                "de": "Das ist das Schwarze Brett. Bitte lest es jeden Tag.",
+                "es": "Este es el tablón de anuncios. Por favor, léelo cada día."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "And this is your room. It is small, but it is comfortable.",
+                "zh": "这是你的房间。它很小，但很舒适。",
+                "ja": "これがあなたの部屋です。小さいですが、きれいですよ。",
+                "de": "Und das ist dein Zimmer. Es ist klein, aber gemütlich.",
+                "es": "Y esta es tu habitación. Es pequeña, pero cómoda."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "Do you have any questions?",
+                "zh": "你有什么问题吗？",
+                "ja": "何か質問はありますか？",
+                "de": "Hast du irgendwelche Fragen?",
+                "es": "¿Tienes alguna pregunta?"
+              }
+            },
+            {
+              "type": "choice",
+              "options": [
+                {
+                  "suffix": "a",
+                  "text": {
+                    "en": "Where is the dining room?",
+                    "zh": "餐厅在哪里？",
+                    "ja": "食堂はどこですか？",
+                    "de": "Wo ist der Speisesaal?",
+                    "es": "¿Dónde está el comedor?"
+                  },
+                  "response": {
+                    "en": "The dining room is downstairs. Breakfast is at seven.",
+                    "zh": "餐厅在楼下。早饭在七点。",
+                    "ja": "食堂は下の階です。朝ごはんは七時です。",
+                    "de": "Der Speisesaal ist unten. Frühstück ist um sieben Uhr.",
+                    "es": "El comedor está abajo. El desayuno es a las siete."
+                  }
+                },
+                {
+                  "suffix": "b",
+                  "text": {
+                    "en": "No. Thank you very much.",
+                    "zh": "没有。非常感谢。",
+                    "ja": "いいえ。ありがとうございます。",
+                    "de": "Nein. Vielen Dank.",
+                    "es": "No. Muchas gracias."
+                  },
+                  "response": {
+                    "en": "Good. Please rest well tonight.",
+                    "zh": "好。请今晚好好休息。",
+                    "ja": "いいです。今夜はゆっくり休んでください。",
+                    "de": "Gut. Bitte ruh dich heute Nacht gut aus.",
+                    "es": "Bien. Por favor, descansa bien esta noche."
+                  }
+                }
+              ]
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "What time is breakfast?",
+                "zh": "早饭是几点？",
+                "ja": "朝ごはんは何時ですか？",
+                "de": "Um wie viel Uhr ist das Frühstück?",
+                "es": "¿A qué hora es el desayuno?"
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "At seven.",
+                    "zh": "在七点。",
+                    "ja": "七時です。",
+                    "de": "Um sieben Uhr.",
+                    "es": "A las siete."
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "At eight.",
+                    "zh": "在八点。",
+                    "ja": "八時です。",
+                    "de": "Um acht Uhr.",
+                    "es": "A las ocho."
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "At nine.",
+                    "zh": "在九点。",
+                    "ja": "九時です。",
+                    "de": "Um neun Uhr.",
+                    "es": "A las nueve."
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "07",
+      "title": {
+        "en": "Meeting Emma",
+        "zh": "认识艾玛",
+        "ja": "エマとの出会い",
+        "de": "Emma kennenlernen",
+        "es": "Conociendo a Emma"
+      },
+      "vocab": [
+        "ともだち",
+        "いっしょ",
+        "うれしい",
+        "たのしい",
+        "はじめまして",
+        "よろしく",
+        "どこから",
+        "いつ",
+        "なんさい"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv010701",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You are in your room. There is a knock on the door.",
+                "zh": "你在你的房间里。有人敲门。",
+                "ja": "自分の部屋にいます。ドアをノックする音がします。",
+                "de": "Du bist in deinem Zimmer. Es klopft an der Tür.",
+                "es": "Estás en tu habitación. Alguien llama a la puerta."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Hello! Are you the new apprentice?",
+                "zh": "你好！你是新学徒吗？",
+                "ja": "こんにちは！新しい見習いですか？",
+                "de": "Hallo! Bist du der neue Lehrling?",
+                "es": "¡Hola! ¿Eres el nuevo aprendiz?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "My name is Emma. I am also a new apprentice. Nice to meet you!",
+                "zh": "我叫艾玛。我也是新学徒。很高兴认识你！",
+                "ja": "わたしの名前はエマです。わたしも新しい見習いです。はじめまして！",
+                "de": "Mein Name ist Emma. Ich bin auch ein neuer Lehrling. Schön, dich kennenzulernen!",
+                "es": "Me llamo Emma. Yo también soy una nueva aprendiz. ¡Encantada de conocerte!"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "Nice to meet you, Emma. My name is Alex.",
+                "zh": "很高兴认识你，艾玛。我叫阿历克斯。",
+                "ja": "はじめまして、エマさん。わたしの名前はアレックスです。",
+                "de": "Schön, dich kennenzulernen, Emma. Mein Name ist Alex.",
+                "es": "Encantado de conocerte, Emma. Me llamo Alex."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Alex! Nice name. Are you from far away?",
+                "zh": "阿历克斯！好名字。你是从远方来的吗？",
+                "ja": "アレックス！いい名前ですね。遠くから来たんですか？",
+                "de": "Alex! Schöner Name. Bist du von weit weg?",
+                "es": "¡Alex! Bonito nombre. ¿Vienes de lejos?"
+              }
+            },
+            {
+              "type": "choice",
+              "options": [
+                {
+                  "suffix": "a",
+                  "text": {
+                    "en": "Yes. I am from a small village.",
+                    "zh": "是的。我来自一个小村庄。",
+                    "ja": "はい。小さな村から来ました。",
+                    "de": "Ja. Ich komme aus einem kleinen Dorf.",
+                    "es": "Sí. Vengo de un pueblo pequeño."
+                  },
+                  "response": null
+                },
+                {
+                  "suffix": "b",
+                  "text": {
+                    "en": "Not so far. I am from the next town.",
+                    "zh": "不太远。我来自邻镇。",
+                    "ja": "そんなに遠くありません。隣の町から来ました。",
+                    "de": "Nicht so weit. Ich komme aus der Nachbarstadt.",
+                    "es": "No tan lejos. Vengo de la ciudad de al lado."
+                  },
+                  "response": null
+                }
+              ]
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "I see! I am from the northern village.",
+                "zh": "原来如此！我来自北边的村庄。",
+                "ja": "そうですか！わたしは北の村から来ました。",
+                "de": "Verstehe! Ich komme aus dem nördlichen Dorf.",
+                "es": "¡Ya veo! Yo vengo del pueblo del norte."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "It was a long journey. I was very tired.",
+                "zh": "那是一段漫长的旅程。我非常累。",
+                "ja": "長い旅でした。とても疲れました。",
+                "de": "Es war eine lange Reise. Ich war sehr müde.",
+                "es": "Fue un largo viaje. Estaba muy cansada."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "But I am happy now. This guild looks very interesting!",
+                "zh": "但我现在很高兴。这个公会看起来很有趣！",
+                "ja": "でも今はうれしいです。このギルドはとてもおもしろそうです！",
+                "de": "Aber jetzt bin ich glücklich. Diese Gilde sieht sehr interessant aus!",
+                "es": "¡Pero ahora estoy contenta. ¡Este gremio parece muy interesante!"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "Yes. I think so too. Leon is a good person.",
+                "zh": "是的。我也这么认为。里昂是个好人。",
+                "ja": "そうですね。わたしもそう思います。レオンさんはいい人ですね。",
+                "de": "Ja. Das denke ich auch. Leon ist ein guter Mensch.",
+                "es": "Sí. Yo también lo creo. León es una buena persona."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Yes! He is very kind. And this building is big!",
+                "zh": "是的！他非常善良。而且这栋建筑很大！",
+                "ja": "そうです！とてもやさしいですね。それに、この建物は大きいですね！",
+                "de": "Ja! Er ist sehr freundlich. Und dieses Gebäude ist groß!",
+                "es": "¡Sí! Es muy amable. ¡Y este edificio es grande!"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Are you hungry? Let us go and eat dinner.",
+                "zh": "你饿了吗？我们去吃晚饭吧。",
+                "ja": "お腹がすきましたか？夕ごはんを食べに行きましょう。",
+                "de": "Bist du hungrig? Lass uns Abendessen gehen.",
+                "es": "¿Tienes hambre? Vamos a cenar."
+              }
+            },
+            {
+              "type": "choice",
+              "options": [
+                {
+                  "suffix": "a",
+                  "text": {
+                    "en": "Yes! I am very hungry. Let us go.",
+                    "zh": "是的！我很饿。我们走吧。",
+                    "ja": "はい！とてもお腹がすいています。行きましょう。",
+                    "de": "Ja! Ich habe sehr großen Hunger. Lass uns gehen.",
+                    "es": "¡Sí! Tengo mucha hambre. Vamos."
+                  },
+                  "response": null
+                },
+                {
+                  "suffix": "b",
+                  "text": {
+                    "en": "Just a moment. I will wash my hands first.",
+                    "zh": "等一下。我先洗手。",
+                    "ja": "少し待ってください。まず手を洗います。",
+                    "de": "Einen Moment. Ich wasche zuerst meine Hände.",
+                    "es": "Un momento. Primero me lavo las manos."
+                  },
+                  "response": null
+                }
+              ]
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Good. The dining room is downstairs. I know the way.",
+                "zh": "好。餐厅在楼下。我知道路。",
+                "ja": "いいですよ。食堂は下の階です。わたしは道がわかります。",
+                "de": "Gut. Der Speisesaal ist unten. Ich kenne den Weg.",
+                "es": "Bien. El comedor está abajo. Yo conozco el camino."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You go to dinner with Emma. It is a good start.",
+                "zh": "你和艾玛去吃晚饭。这是个好的开始。",
+                "ja": "エマと夕ごはんを食べに行きました。いいスタートです。",
+                "de": "Du gehst mit Emma zum Abendessen. Das ist ein guter Anfang.",
+                "es": "Vas a cenar con Emma. Es un buen comienzo."
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "Where is Emma from?",
+                "zh": "艾玛来自哪里？",
+                "ja": "エマはどこから来ましたか？",
+                "de": "Woher kommt Emma?",
+                "es": "¿De dónde es Emma?"
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "The northern village.",
+                    "zh": "北边的村庄。",
+                    "ja": "北の村です。",
+                    "de": "Das nördliche Dorf.",
+                    "es": "El pueblo del norte."
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "The southern city.",
+                    "zh": "南边的城市。",
+                    "ja": "南の町です。",
+                    "de": "Die südliche Stadt.",
+                    "es": "La ciudad del sur."
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "Stonehaven.",
+                    "zh": "石港镇。",
+                    "ja": "ストーンヘイブンです。",
+                    "de": "Stonehaven.",
+                    "es": "Stonehaven."
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "08",
+      "title": {
+        "en": "Dinner at the Guild",
+        "zh": "公会的晚餐",
+        "ja": "ギルドの夕食",
+        "de": "Abendessen in der Gilde",
+        "es": "Cena en el gremio"
+      },
+      "vocab": [
+        "たべる",
+        "のむ",
+        "おいしい",
+        "からい",
+        "あまい",
+        "まずい",
+        "たくさん",
+        "すこし",
+        "もっと",
+        "おなか　いっぱい"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv010801",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "The dining room is big. There are many adventurers here.",
+                "zh": "餐厅很大。这里有很多冒险者。",
+                "ja": "食堂は大きいです。冒険者がたくさんいます。",
+                "de": "Der Speisesaal ist groß. Hier gibt es viele Abenteurer.",
+                "es": "El comedor es grande. Aquí hay muchos aventureros."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You sit down at a table with Emma.",
+                "zh": "你和艾玛坐在一张桌子旁。",
+                "ja": "エマと一緒にテーブルに座りました。",
+                "de": "Du setzt dich mit Emma an einen Tisch.",
+                "es": "Te sientas en una mesa con Emma."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "The food here is very good! I eat here every day.",
+                "zh": "这里的食物非常好！我每天都在这里吃。",
+                "ja": "ここの食べ物はとてもおいしいです！毎日ここで食べます。",
+                "de": "Das Essen hier ist sehr gut! Ich esse jeden Tag hier.",
+                "es": "¡La comida aquí es muy buena! Como aquí cada día."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "This is my first time here.",
+                "zh": "这是我第一次来这里。",
+                "ja": "ここに来たのは初めてです。",
+                "de": "Das ist mein erstes Mal hier.",
+                "es": "Esta es mi primera vez aquí."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Please try the soup. It is very good.",
+                "zh": "请尝尝汤。它非常好喝。",
+                "ja": "スープを食べてみてください。とてもおいしいですよ。",
+                "de": "Bitte probiere die Suppe. Sie ist sehr gut.",
+                "es": "Por favor, prueba la sopa. Es muy buena."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "adventurer_a",
+              "text": {
+                "en": "Hello, new person! My name is Marco. I am an adventurer.",
+                "zh": "你好，新来的！我叫马可。我是冒险者。",
+                "ja": "こんにちは、新しい人！わたしの名前はマルコです。冒険者です。",
+                "de": "Hallo, neuer Mensch! Mein Name ist Marco. Ich bin ein Abenteurer.",
+                "es": "¡Hola, nuevo! Me llamo Marco. Soy un aventurero."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "Hello, Marco. My name is Alex. Nice to meet you.",
+                "zh": "你好，马可。我叫阿历克斯。很高兴认识你。",
+                "ja": "こんにちは、マルコさん。わたしの名前はアレックスです。はじめまして。",
+                "de": "Hallo, Marco. Mein Name ist Alex. Schön, dich kennenzulernen.",
+                "es": "Hola, Marco. Me llamo Alex. Encantado de conocerte."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "adventurer_a",
+              "text": {
+                "en": "Alex and Emma. You are both new apprentices, yes?",
+                "zh": "阿历克斯和艾玛。你们都是新学徒，对吧？",
+                "ja": "アレックスとエマ。二人とも新しい見習いですね？",
+                "de": "Alex und Emma. Ihr seid beide neue Lehrlinge, ja?",
+                "es": "Alex y Emma. Sois nuevos aprendices, ¿verdad?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Yes! This is our first day.",
+                "zh": "是的！这是我们的第一天。",
+                "ja": "はい！今日が最初の日です。",
+                "de": "Ja! Das ist unser erster Tag.",
+                "es": "¡Sí! Este es nuestro primer día."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "adventurer_a",
+              "text": {
+                "en": "Good. This guild is a good place. Leon is a great Guild Master.",
+                "zh": "好。这个公会是个好地方。里昂是个很好的公会长。",
+                "ja": "いいですね。このギルドはいい所です。レオンさんはすごいギルドマスターです。",
+                "de": "Gut. Diese Gilde ist ein guter Ort. Leon ist ein großartiger Gildenmeister.",
+                "es": "Bien. Este gremio es un buen lugar. León es un gran maestro del gremio."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "adventurer_a",
+              "text": {
+                "en": "But these days are strange. The crystal is gone.",
+                "zh": "但这些天很奇怪。水晶不见了。",
+                "ja": "でも、最近は変です。クリスタルがなくなりました。",
+                "de": "Aber diese Tage sind seltsam. Das Kristall ist weg.",
+                "es": "Pero estos días son extraños. El cristal ha desaparecido."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Is that very bad?",
+                "zh": "那很糟糕吗？",
+                "ja": "それはとても悪いことですか？",
+                "de": "Ist das sehr schlimm?",
+                "es": "¿Es eso muy malo?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "adventurer_a",
+              "text": {
+                "en": "Yes. Without the crystal, the kingdom is in danger. Leon is worried.",
+                "zh": "是的。没有水晶，王国就有危险。里昂很担心。",
+                "ja": "はい。クリスタルがなければ、王国は危ないです。レオンさんは心配しています。",
+                "de": "Ja. Ohne das Kristall ist das Königreich in Gefahr. Leon macht sich Sorgen.",
+                "es": "Sí. Sin el cristal, el reino está en peligro. León está preocupado."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "We will help find it.",
+                "zh": "我们会帮助找到它的。",
+                "ja": "一緒に探します。",
+                "de": "Wir werden helfen, es zu finden.",
+                "es": "Nosotros le ayudaremos a encontrarlo."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "adventurer_a",
+              "text": {
+                "en": "Good. I think you are good adventurers. Welcome!",
+                "zh": "好。我认为你们是好冒险者。欢迎！",
+                "ja": "いいですね。あなたたちはいい冒険者だと思います。ようこそ！",
+                "de": "Gut. Ich denke, ihr seid gute Abenteurer. Willkommen!",
+                "es": "Bien. Creo que sois buenos aventureros. ¡Bienvenidos!"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You eat dinner and talk with the other adventurers. It is a warm evening.",
+                "zh": "你吃晚饭并与其他冒险者交谈。这是个温暖的夜晚。",
+                "ja": "夕ごはんを食べて、他の冒険者と話しました。あたたかい夜です。",
+                "de": "Du isst Abendessen und sprichst mit den anderen Abenteurern. Es ist ein warmer Abend.",
+                "es": "Cenas y hablas con los otros aventureros. Es una noche cálida."
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "Who is worried about the missing crystal?",
+                "zh": "谁在担心失踪的水晶？",
+                "ja": "誰がなくなったクリスタルのことを心配していますか？",
+                "de": "Wer macht sich Sorgen um das verschwundene Kristall?",
+                "es": "¿Quién está preocupado por el cristal desaparecido?"
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "Leon.",
+                    "zh": "里昂。",
+                    "ja": "レオンさんです。",
+                    "de": "Leon.",
+                    "es": "León."
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "Marco.",
+                    "zh": "马可。",
+                    "ja": "マルコさんです。",
+                    "de": "Marco.",
+                    "es": "Marco."
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "Emma.",
+                    "zh": "艾玛。",
+                    "ja": "エマさんです。",
+                    "de": "Emma.",
+                    "es": "Emma."
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "09",
+      "title": {
+        "en": "Leon Explains the Crystal",
+        "zh": "里昂解释水晶",
+        "ja": "レオンがクリスタルを説明する",
+        "de": "Leon erklärt das Kristall",
+        "es": "León explica el cristal"
+      },
+      "vocab": [
+        "せつめいする",
+        "わかる",
+        "しる",
+        "たいせつ",
+        "きけん",
+        "まもる",
+        "さがす",
+        "なぜ",
+        "いつ",
+        "どこ"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv010901",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "After dinner, Leon calls you and Emma.",
+                "zh": "晚饭后，里昂叫来了你和艾玛。",
+                "ja": "夕ごはんの後、レオンさんがあなたとエマを呼びました。",
+                "de": "Nach dem Abendessen ruft Leon dich und Emma.",
+                "es": "Después de cenar, León os llama a ti y a Emma."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "Thank you for coming. Please sit down.",
+                "zh": "谢谢你们来。请坐。",
+                "ja": "来てくれてありがとう。座ってください。",
+                "de": "Danke fürs Kommen. Bitte setzt euch.",
+                "es": "Gracias por venir. Por favor, sentaos."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "I want to tell you about the Crystal of Light.",
+                "zh": "我想告诉你们关于光之水晶的事。",
+                "ja": "光のクリスタルについて話したいです。",
+                "de": "Ich möchte euch über das Kristall des Lichts erzählen.",
+                "es": "Quiero hablaros sobre el Cristal de Luz."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "The Crystal of Light is very old. It has been in this kingdom for many years.",
+                "zh": "光之水晶非常古老。它已经在这个王国存在了很多年了。",
+                "ja": "光のクリスタルはとても古いです。王国に長い間ありました。",
+                "de": "Das Kristall des Lichts ist sehr alt. Es war viele Jahre in diesem Königreich.",
+                "es": "El Cristal de Luz es muy antiguo. Ha estado en este reino durante muchos años."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Is it important?",
+                "zh": "它很重要吗？",
+                "ja": "大切ですか？",
+                "de": "Ist es wichtig?",
+                "es": "¿Es importante?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "Yes. It is very important. Without it, the kingdom is not safe.",
+                "zh": "是的。它非常重要。没有它，王国就不安全了。",
+                "ja": "はい。とても大切です。クリスタルがなければ、王国は安全ではありません。",
+                "de": "Ja. Es ist sehr wichtig. Ohne es ist das Königreich nicht sicher.",
+                "es": "Sí. Es muy importante. Sin él, el reino no está seguro."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "One week ago, the crystal was here. Now it is not here.",
+                "zh": "一周前，水晶还在这里。现在不在了。",
+                "ja": "一週間前、クリスタルはここにありました。今はありません。",
+                "de": "Vor einer Woche war das Kristall hier. Jetzt ist es nicht mehr hier.",
+                "es": "Hace una semana, el cristal estaba aquí. Ahora no está."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "Where did it go?",
+                "zh": "它去哪了？",
+                "ja": "どこへ行きましたか？",
+                "de": "Wohin ist es gegangen?",
+                "es": "¿Adónde fue?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "I do not know. That is the problem. We must find it.",
+                "zh": "我不知道。这就是问题。我们必须找到它。",
+                "ja": "わかりません。それが問題です。見つけなければなりません。",
+                "de": "Ich weiß es nicht. Das ist das Problem. Wir müssen es finden.",
+                "es": "No lo sé. Ese es el problema. Debemos encontrarlo."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "How big is the crystal?",
+                "zh": "水晶有多大？",
+                "ja": "クリスタルはどのくらい大きいですか？",
+                "de": "Wie groß ist das Kristall?",
+                "es": "¿Qué tan grande es el cristal?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "It is small. It fits in your hand. But it is very bright.",
+                "zh": "它很小。可以放在手心里。但它非常明亮。",
+                "ja": "小さいです。手のひらに収まります。でも、とても明るいです。",
+                "de": "Es ist klein. Es passt in deine Hand. Aber es ist sehr hell.",
+                "es": "Es pequeño. Cabe en la palma de tu mano. Pero es muy brillante."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "If you see it, you will know. It shines like the sun.",
+                "zh": "如果你看到它，你会知道的。它像太阳一样闪耀。",
+                "ja": "見たらわかります。太陽のように輝きます。",
+                "de": "Wenn du es siehst, wirst du es wissen. Es leuchtet wie die Sonne.",
+                "es": "Si lo ves, lo sabrás. Brilla como el sol."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "That sounds beautiful.",
+                "zh": "听起来很漂亮。",
+                "ja": "きれいそうですね。",
+                "de": "Das klingt schön.",
+                "es": "Eso suena hermoso."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "Yes. But now I am worried. Strange things are happening in the villages nearby.",
+                "zh": "是的。但现在我很担心。附近村庄里发生了奇怪的事情。",
+                "ja": "はい。でも今は心配です。近くの村で変なことが起きています。",
+                "de": "Ja. Aber jetzt mache ich mir Sorgen. In den nahen Dörfern passieren seltsame Dinge.",
+                "es": "Sí. Pero ahora estoy preocupado. Están ocurriendo cosas extrañas en los pueblos cercanos."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "Tomorrow, I want you two to go to River Village.",
+                "zh": "明天，我想让你们两个去河边村。",
+                "ja": "明日、二人に川の村に行ってほしいです。",
+                "de": "Morgen möchte ich, dass ihr beide nach Flussdorf geht.",
+                "es": "Mañana, quiero que vosotros dos vayáis al Pueblo del Río."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "Talk to the people there. See what is happening.",
+                "zh": "和那里的人们交谈。看看发生了什么。",
+                "ja": "そこの人たちと話してください。何が起きているか見てください。",
+                "de": "Sprecht mit den Menschen dort. Schaut, was passiert.",
+                "es": "Habla con la gente de allí. Mira qué está pasando."
+              }
+            },
+            {
+              "type": "choice",
+              "options": [
+                {
+                  "suffix": "a",
+                  "text": {
+                    "en": "Yes! We will go tomorrow.",
+                    "zh": "好的！我们明天就去。",
+                    "ja": "はい！明日行きます。",
+                    "de": "Ja! Wir werden morgen gehen.",
+                    "es": "¡Sí! Iremos mañana."
+                  },
+                  "response": {
+                    "en": "Good. Please be careful. Come back safely.",
+                    "zh": "好。请小心。平安回来。",
+                    "ja": "いいです。気をつけてください。無事に帰ってきてください。",
+                    "de": "Gut. Bitte seid vorsichtig. Kommt sicher zurück.",
+                    "es": "Bien. Por favor, tened cuidado. Volved sanos y salvos."
+                  }
+                },
+                {
+                  "suffix": "b",
+                  "text": {
+                    "en": "Is it dangerous?",
+                    "zh": "这危险吗？",
+                    "ja": "危ないですか？",
+                    "de": "Ist es gefährlich?",
+                    "es": "¿Es peligroso?"
+                  },
+                  "response": {
+                    "en": "I do not think so. But please be careful. You will not be alone. Emma will go with you.",
+                    "zh": "我不这么认为。但请小心。你不会是一个人。艾玛会和你一起去。",
+                    "ja": "そうは思いません。でも気をつけてください。一人ではありません。エマも一緒に行きます。",
+                    "de": "Das glaube ich nicht. Aber seid vorsichtig. Ihr seid nicht allein. Emma geht mit euch.",
+                    "es": "No lo creo. Pero tened cuidado. No estaréis solos. Emma irá con vosotros."
+                  }
+                }
+              ]
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "How long ago did the crystal disappear?",
+                "zh": "水晶消失多久了？",
+                "ja": "クリスタルはどのくらい前になくなりましたか？",
+                "de": "Vor wie langer Zeit verschwand das Kristall?",
+                "es": "¿Hace cuánto tiempo desapareció el cristal?"
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "One week ago.",
+                    "zh": "一周前。",
+                    "ja": "一週間前です。",
+                    "de": "Vor einer Woche.",
+                    "es": "Hace una semana."
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "One month ago.",
+                    "zh": "一个月前。",
+                    "ja": "一ヶ月前です。",
+                    "de": "Vor einem Monat.",
+                    "es": "Hace un mes."
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "One day ago.",
+                    "zh": "一天前。",
+                    "ja": "一日前です。",
+                    "de": "Vor einem Tag.",
+                    "es": "Hace un día."
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "10",
+      "title": {
+        "en": "Morning Before Departure",
+        "zh": "出发前的早晨",
+        "ja": "出発前の朝",
+        "de": "Morgen vor dem Aufbruch",
+        "es": "La mañana antes de la partida"
+      },
+      "vocab": [
+        "おはようございます",
+        "あさ　ごはん",
+        "まだ　ねている",
+        "じゅんびする",
+        "もつ　もの　かばん　てぶくろ　くつ"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv011001",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "The next morning. It is early. The sun is rising.",
+                "zh": "第二天早晨。时间很早。太阳正在升起。",
+                "ja": "翌朝。早いです。太陽が昇っています。",
+                "de": "Der nächste Morgen. Es ist früh. Die Sonne geht auf.",
+                "es": "La mañana siguiente. Es temprano. El sol está saliendo."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Good morning! Did you sleep well?",
+                "zh": "早上好！你睡得好吗？",
+                "ja": "おはようございます！よく眠れましたか？",
+                "de": "Guten Morgen! Hast du gut geschlafen?",
+                "es": "¡Buenos días! ¿Has dormido bien?"
+              }
+            },
+            {
+              "type": "choice",
+              "options": [
+                {
+                  "suffix": "a",
+                  "text": {
+                    "en": "Yes, very well. And you?",
+                    "zh": "是的，非常好。你呢？",
+                    "ja": "はい、よく眠れました。あなたは？",
+                    "de": "Ja, sehr gut. Und du?",
+                    "es": "Sí, muy bien. ¿Y tú?"
+                  },
+                  "response": null
+                },
+                {
+                  "suffix": "b",
+                  "text": {
+                    "en": "A little. I was excited.",
+                    "zh": "有一点。我很兴奋。",
+                    "ja": "少し。わくわくしていました。",
+                    "de": "Ein bisschen. Ich war aufgeregt.",
+                    "es": "Un poco. Estaba emocionado."
+                  },
+                  "response": null
+                }
+              ]
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Me too! I was excited and a little nervous.",
+                "zh": "我也是！我既兴奋又有点紧张。",
+                "ja": "わたしもです！わくわくして、少し緊張しました。",
+                "de": "Ich auch! Ich war aufgeregt und ein bisschen nervös.",
+                "es": "¡Yo también! Estaba emocionada y un poco nerviosa."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You go to breakfast together. Leon is already there.",
+                "zh": "你们一起去吃早饭。里昂已经在那里了。",
+                "ja": "一緒に朝ごはんを食べに行きました。レオンさんはもういます。",
+                "de": "Ihr geht gemeinsam zum Frühstück. Leon ist schon da.",
+                "es": "Vais juntos al desayuno. León ya está allí."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "Good morning! Please eat well. Today is an important day.",
+                "zh": "早上好！请好好吃饭。今天是重要的一天。",
+                "ja": "おはようございます！よく食べてください。今日は大切な日です。",
+                "de": "Guten Morgen! Bitte esst gut. Heute ist ein wichtiger Tag.",
+                "es": "¡Buenos días! Por favor, comed bien. Hoy es un día importante."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Yes! We are going to River Village today!",
+                "zh": "是的！我们今天要去河边村！",
+                "ja": "はい！今日は川の村に行きます！",
+                "de": "Ja! Wir gehen heute nach Flussdorf!",
+                "es": "¡Sí! ¡Hoy vamos al Pueblo del Río!"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "Yes. Please be careful. The road is not long but watch your feet.",
+                "zh": "是的。请小心。路不长，但要注意脚下。",
+                "ja": "そうです。気をつけてください。道は長くありませんが、足元に注意してください。",
+                "de": "Ja. Seid bitte vorsichtig. Der Weg ist nicht lang, aber achtet auf eure Füße.",
+                "es": "Sí. Por favor, tened cuidado. El camino no es largo, pero tened cuidado con los pies."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "adventurer_a",
+              "text": {
+                "en": "Good morning! Going on your first mission today?",
+                "zh": "早上好！今天要去执行第一个任务吗？",
+                "ja": "おはようございます！今日、初めてのミッションに行くんですか？",
+                "de": "Guten Morgen! Geht ihr heute auf eure erste Mission?",
+                "es": "¡Buenos días! ¿Vais hoy a vuestra primera misión?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Yes! We are going to River Village.",
+                "zh": "是的！我们要去河边村。",
+                "ja": "はい！川の村に行きます。",
+                "de": "Ja! Wir gehen nach Flussdorf.",
+                "es": "¡Sí! Vamos al Pueblo del Río."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "adventurer_a",
+              "text": {
+                "en": "River Village is good. The people there are kind.",
+                "zh": "河边村很好。那里的人很善良。",
+                "ja": "川の村はいい所です。あそこの人たちはやさしいです。",
+                "de": "Flussdorf ist gut. Die Menschen dort sind freundlich.",
+                "es": "El Pueblo del Río es bueno. La gente de allí es amable."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "player",
+              "text": {
+                "en": "Do you know the village?",
+                "zh": "你认识那个村子吗？",
+                "ja": "その村を知っていますか？",
+                "de": "Kennst du das Dorf?",
+                "es": "¿Conoces el pueblo?"
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "adventurer_a",
+              "text": {
+                "en": "Yes. I went there last month. It is about two hours on foot.",
+                "zh": "是的。我上个月去过那里。步行大约两个小时。",
+                "ja": "はい。先月そこに行きました。歩いて約二時間です。",
+                "de": "Ja. Ich war letzten Monat dort. Es sind etwa zwei Stunden zu Fuß.",
+                "es": "Sí. Fui allí el mes pasado. Son unas dos horas a pie."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "emma",
+              "text": {
+                "en": "Two hours! Let us start soon.",
+                "zh": "两个小时！我们快点出发吧。",
+                "ja": "二時間！早く出発しましょう。",
+                "de": "Zwei Stunden! Lass uns bald aufbrechen.",
+                "es": "¡Dos horas! Partamos pronto."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "leon",
+              "text": {
+                "en": "Yes, go soon. And come back before dark. Take care of each other.",
+                "zh": "是的，快去吧。天黑前回来。互相照顾。",
+                "ja": "そうです。早く行ってください。暗くなる前に帰ってきてください。お互いに気をつけてください。",
+                "de": "Ja, geht bald. Und kommt vor der Dunkelheit zurück. Passt aufeinander auf.",
+                "es": "Sí, id pronto. Y volved antes de que oscurezca. Cuidaos el uno al otro."
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "You finish breakfast. You pick up your bag. Today the adventure begins.",
+                "zh": "你吃完早饭。你拿起你的包。今天冒险开始了。",
+                "ja": "朝ごはんを食べ終わりました。バッグを持ちました。今日、冒険が始まります。",
+                "de": "Du beendest das Frühstück. Du nimmst deinen Rucksack. Heute beginnt das Abenteuer.",
+                "es": "Terminas el desayuno. Coges tu mochila. Hoy comienza la aventura."
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "How long is the walk to River Village?",
+                "zh": "步行到河边村需要多久？",
+                "ja": "川の村まで歩いてどのくらいかかりますか？",
+                "de": "Wie lange ist der Fußweg nach Flussdorf?",
+                "es": "¿Cuánto tiempo se tarda a pie hasta el Pueblo del Río?"
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "About two hours.",
+                    "zh": "大约两个小时。",
+                    "ja": "約二時間です。",
+                    "de": "Etwa zwei Stunden.",
+                    "es": "Unas dos horas."
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "About one hour.",
+                    "zh": "大约一个小时。",
+                    "ja": "約一時間です。",
+                    "de": "Etwa eine Stunde.",
+                    "es": "Unas una hora."
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "About four hours.",
+                    "zh": "大约四个小时。",
+                    "ja": "約四時間です。",
+                    "de": "Etwa vier Stunden.",
+                    "es": "Unas cuatro horas."
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    }
+  ]
+}
