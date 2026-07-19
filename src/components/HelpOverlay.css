@@ -1,0 +1,172 @@
+.help-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 300;
+}
+
+.help-panel {
+  width: 100%;
+  max-width: 480px;
+  max-height: 85vh;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.help-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid #eee;
+  flex-shrink: 0;
+}
+
+.help-panel-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.help-close {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: #999;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+}
+.help-close:hover { color: #111; }
+
+.help-panel-body {
+  padding: 1rem 1.2rem 1.6rem;
+  overflow-y: auto;
+}
+
+.help-description {
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: #444;
+  margin: 0 0 1rem;
+}
+
+.help-section {
+  margin-bottom: 1.2rem;
+}
+
+.help-section-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.help-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.help-button-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.help-button-icon {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 50%;
+  font-size: 0.95rem;
+  background: #fafafa;
+}
+
+.help-button-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.help-button-label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.help-button-desc {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.help-boxes-intro, .help-boxes-footer {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: #555;
+  margin: 0 0 0.7rem;
+}
+
+.help-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.help-box-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.help-box-badge {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.help-box-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.help-box-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.help-box-desc {
+  font-size: 0.78rem;
+  color: #777;
+}
+
+[data-theme="dark"] .help-panel { background: #1e1e1e; }
+[data-theme="dark"] .help-panel-header { border-color: #333; }
+[data-theme="dark"] .help-panel-title { color: #f0f0f0; }
+[data-theme="dark"] .help-close { color: #888; }
+[data-theme="dark"] .help-close:hover { color: #eee; }
+[data-theme="dark"] .help-description { color: #ccc; }
+[data-theme="dark"] .help-section-title { color: #999; }
+[data-theme="dark"] .help-button-icon { background: #2a2a2a; border-color: #3a3a3a; }
+[data-theme="dark"] .help-button-label { color: #f0f0f0; }
+[data-theme="dark"] .help-button-desc { color: #999; }
+[data-theme="dark"] .help-boxes-intro, [data-theme="dark"] .help-boxes-footer { color: #bbb; }
+[data-theme="dark"] .help-box-desc { color: #999; }

@@ -127,7 +127,6 @@
   flex-direction: column;
   gap: 0.6rem;
   flex-shrink: 0;
-  margin-top: auto;
 }
 
 .ty-input-wrap {
@@ -188,6 +187,8 @@
 .ty-answer-reveal.wrong {
   background: #fff0ef;
 }
+[data-theme="dark"] .ty-answer-reveal.correct { background: #182d24; color: #6fcf9e; }
+[data-theme="dark"] .ty-answer-reveal.wrong   { background: #2d1a18; }
 
 .ty-correct-msg {
   font-weight: 600;
@@ -312,23 +313,7 @@
   .ty-settings-btn { border-color: #e0e0e0; }
 }
 
-@media (prefers-color-scheme: dark) {
-  .ty-screen   { background: #111; }
-  .ty-screen.correct { background: #0d1f16; }
-  .ty-screen.wrong   { background: #1f0d0d; }
-  .ty-card     { background: #1e1e1e; box-shadow: 0 6px 24px rgba(0,0,0,0.3); }
-  .ty-input    { background: #1e1e1e; border-color: #333; color: #eee; }
-  .ty-input.correct { background: #182d24; }
-  .ty-input.wrong   { background: #2d1a19; }
-  .ty-input.ty-retype { border-color: #7a5200; }
-  .ty-back:hover { color: #eee; }
-  .ty-score    { color: #eee; }
-  .ty-dot      { background: #333; }
-  .ty-answer-text { color: #ddd; }
-  .ty-btn-skip { background: #2a2a2a; color: #666; }
-  .ty-btn-skip:hover { background: #333; }
-  .ty-settings-btn { border-color: #333; }
-}
+
 [data-theme="dark"] .ty-screen   { background: #111; }
 [data-theme="dark"] .ty-screen.correct { background: #0d1f16; }
 [data-theme="dark"] .ty-screen.wrong   { background: #1f0d0d; }

@@ -49,15 +49,26 @@ def _get_lemmatize():
             _lemmatize_fn = lambda *a, **k: {}
     return _lemmatize_fn
 
-LANG_ORDER = ['en', 'zh', 'ja', 'de', 'es']
+LANG_ORDER = ['en', 'zh', 'ja', 'de', 'es']  # full known set; actual per-file order/subset comes from @columns
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
-def get_lang(cells, start):
-    """Extract {en, zh, ja, de, es} from cells starting at index `start`."""
-    return {l: cells[start + i].strip() if start + i < len(cells) else ''
-            for i, l in enumerate(LANG_ORDER)}
+def get_lang(cells, start, active_langs=None):
+    """
+    Extract a {lang: text} dict from cells starting at index `start`.
+    `active_langs` is the ordered list of languages actually present in this file
+    (derived from the @columns directive). Cells beyond the declared languages,
+    or missing entirely, are left out (not defaulted to the wrong language).
+    Any language in LANG_ORDER not present in active_langs is set to '' so
+    downstream code can still safely look up data[lang] and fall back to .en.
+    """
+    langs = active_langs or LANG_ORDER
+    result = {l: '' for l in LANG_ORDER}
+    for i, l in enumerate(langs):
+        if start + i < len(cells):
+            result[l] = cells[start + i].strip()
+    return result
 
 
 def split_id(id_):
@@ -173,6 +184,7 @@ def parse_tsv(tsv_text):
 
     lines = tsv_text.split('\n')
     columns = None
+    active_langs = LANG_ORDER  # ordered list of languages actually used in this file; set from @columns
     out = {'meta': {}, 'sections': []}
 
     current_section = None
@@ -219,11 +231,16 @@ def parse_tsv(tsv_text):
 
         if tag == '@columns':
             columns = {n.strip(): i for i, n in enumerate(cells[1:])}
+            non_lang = {'id', 'speaker', 'cmd'}
+            active_langs = [l for l in sorted(columns, key=columns.get) if l not in non_lang and l in LANG_ORDER]
+            if not active_langs:
+                active_langs = LANG_ORDER
 
         elif tag == '@chapter':
             out['meta']['chapterNum']   = cells[1].strip() if len(cells) > 1 else ''
-            out['meta']['chapterTitle'] = get_lang(cells, 2)
-            out['meta']['level']        = cells[7].strip() if len(cells) > 7 else ''
+            out['meta']['chapterTitle'] = get_lang(cells, 2, active_langs)
+            level_idx = 2 + len(active_langs)
+            out['meta']['level']        = cells[level_idx].strip() if len(cells) > level_idx else ''
 
         elif tag == '@artifact':
             out['meta']['artifact'] = {
@@ -233,17 +250,17 @@ def parse_tsv(tsv_text):
             }
 
         elif tag == '@story_intro':
-            out['meta']['storyIntro'] = get_lang(cells, 1)
+            out['meta']['storyIntro'] = get_lang(cells, 1, active_langs)
 
         elif tag == '@story_outro':
-            out['meta']['storyOutro'] = get_lang(cells, 1)
+            out['meta']['storyOutro'] = get_lang(cells, 1, active_langs)
 
         elif tag == '@section':
             flush_dialogue()
             flush_passage()
             current_section = {
                 'num':       cells[1].strip() if len(cells) > 1 else '',
-                'title':     get_lang(cells, 2),
+                'title':     get_lang(cells, 2, active_langs),
                 'vocab':     [],
                 'grammar':   [],
                 'dialogues': [],
@@ -264,13 +281,13 @@ def parse_tsv(tsv_text):
             flush_passage()
             current_passage = {
                 'num':   cells[1].strip() if len(cells) > 1 else '',
-                'title': get_lang(cells, 2),
+                'title': get_lang(cells, 2, active_langs),
                 'lines': [],
             }
 
         elif tag == '@passage_line':
             if current_passage is not None:
-                current_passage['lines'].append(get_lang(cells, 1))
+                current_passage['lines'].append(get_lang(cells, 1, active_langs))
 
         # ── Dialogue row ──────────────────────────────────────────────────────
 

@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
 import { useApp } from '../context/AppContext'
 import { buildLookup } from '../engine/reader'
 import { loadChapterJSON } from '../engine/campaignLoader'
@@ -9,15 +9,9 @@ import './AdventureChapter.css'
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
-function resolveWordIds(wordIds, activeEntries) {
-  if (!wordIds?.length) return []
-  const byEntry = new Map(activeEntries.map(e => [e.entry, e]))
-  return wordIds.map(id => byEntry.get(id)).filter(Boolean)
-}
-
 // ── Vocab Phase ───────────────────────────────────────────────────────────────
 
-function VocabPhase({ chapter, entries, language, onBack }) {
+function VocabPhase({ chapter, entries, language }) {
   const { setScreen, setSessionEntries } = useApp()
 
   function launchGame(game) {
@@ -28,7 +22,6 @@ function VocabPhase({ chapter, entries, language, onBack }) {
   return (
     <div className="advc-phase">
       <div className="advc-phase-header">
-        <button className="advc-back-small" onClick={onBack}>← Back</button>
         <div className="advc-phase-icon">📚</div>
         <h2 className="advc-phase-title">{chapter.vocabLesson?.title ?? 'Vocabulary'}</h2>
       </div>
@@ -62,7 +55,7 @@ function VocabPhase({ chapter, entries, language, onBack }) {
 
 // ── Grammar Phase ─────────────────────────────────────────────────────────────
 
-function GrammarPhase({ chapter, onBack }) {
+function GrammarPhase({ chapter }) {
   const [doneIds, setDoneIds] = useState(new Set())
   const [showDict, setShowDict] = useState(false)
   const patterns = chapter.grammarLesson?.patterns ?? []
@@ -72,7 +65,6 @@ function GrammarPhase({ chapter, onBack }) {
   return (
     <div className="advc-phase">
       <div className="advc-phase-header">
-        <button className="advc-back-small" onClick={onBack}>← Back</button>
         <div className="advc-phase-icon">📐</div>
         <h2 className="advc-phase-title">{chapter.grammarLesson?.title ?? 'Grammar'}</h2>
       </div>
@@ -158,7 +150,7 @@ function GrammarPatternCard({ pattern, done, onDone }) {
 
 // ── Dialogue Phase ────────────────────────────────────────────────────────────
 
-function DialoguePhase({ dialogue, language, lookup, scores, showReading, surfaceForms, onBack, onDone }) {
+function DialoguePhase({ dialogue, language, lookup, scores, showReading, surfaceForms, onDone, isLastItem }) {
   const [questionState, setQuestionState] = useState({})
   const [choiceState, setChoiceState]     = useState({})
   const [turnIndex, setTurnIndex]         = useState(0)
@@ -214,7 +206,6 @@ function DialoguePhase({ dialogue, language, lookup, scores, showReading, surfac
   return (
     <div className="advc-phase advc-phase--dialogue">
       <div className="advc-dialogue-header">
-        <button className="advc-back-small" onClick={onBack}>← Back</button>
         <div>
           <h2 className="advc-phase-title">{dialogue.title}</h2>
           {dialogue.titleTranslation && <p className="advc-phase-sub">{dialogue.titleTranslation}</p>}
@@ -323,7 +314,7 @@ function DialoguePhase({ dialogue, language, lookup, scores, showReading, surfac
 
       {/* Tap zone at bottom — advances to next line, or shows Continue when done */}
       {allDone ? (
-        <button className="advc-continue-btn" onClick={onDone}>Continue →</button>
+        <button className="advc-continue-btn" onClick={onDone}>{isLastItem ? 'End Chapter →' : 'Continue →'}</button>
       ) : !isInteractive ? (
         <button className="advc-tap-next" onClick={advance}>
           <span className="advc-tap-hint">tap to continue</span>
@@ -336,96 +327,162 @@ function DialoguePhase({ dialogue, language, lookup, scores, showReading, surfac
 
 // ── Passage Phase ─────────────────────────────────────────────────────────────
 
-function PassagePhase({ passage, language, lookup, scores, showReading, surfaceForms, onBack, onDone }) {
-  const [showTrans, setShowTrans] = useState(false)
+function PassagePhase({ passage, language, lookup, scores, showReading, surfaceForms, onDone, isLastItem }) {
+  const parts = passage.parts ?? [passage]  // fall back to single-part shape for any legacy callers
+  const [revealedCount, setRevealedCount] = useState(1)  // how many parts are shown so far
+  const [shownTrans, setShownTrans] = useState(new Set())
+  const bottomRef = useRef(null)
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' })
+  }, [revealedCount])
+
+  function toggleTrans(i) {
+    setShownTrans(prev => {
+      const next = new Set(prev)
+      next.has(i) ? next.delete(i) : next.add(i)
+      return next
+    })
+  }
+
+  function advance() {
+    if (revealedCount < parts.length) setRevealedCount(c => c + 1)
+  }
+
+  const allRevealed = revealedCount >= parts.length
+  const headerTitle = typeof passage.title === 'string' ? passage.title : (passage.title?.[language] || passage.title?.en || '')
+
   return (
     <div className="advc-phase">
       <div className="advc-phase-header">
-        <button className="advc-back-small" onClick={onBack}>← Back</button>
         <div className="advc-phase-icon">📖</div>
-        <h2 className="advc-phase-title">{passage.title}</h2>
+        <h2 className="advc-phase-title">{headerTitle}</h2>
       </div>
-      <div className="advc-passage-controls">
-        <button className={`advc-trans-toggle ${showTrans ? 'active' : ''}`} onClick={() => setShowTrans(t => !t)}>EN</button>
-        <SpeakButton text={passage.text} language={language} size="sm" />
+
+      <div className="advc-passage-parts">
+        {parts.slice(0, revealedCount).map((part, i) => (
+          <div key={i} className="advc-passage-part">
+            <div className="advc-passage-part-header">
+              <span className="advc-passage-part-title">{part.title}</span>
+              <div className="advc-passage-controls">
+                <button className={`advc-trans-toggle ${shownTrans.has(i) ? 'active' : ''}`} onClick={() => toggleTrans(i)}>EN</button>
+                <SpeakButton text={part.text} language={language} size="sm" />
+              </div>
+            </div>
+            <div className="advc-passage-text">
+              <TextWithLookup text={part.text} language={language} lookup={lookup} scores={scores} showReading={showReading} surfaceForms={surfaceForms} />
+            </div>
+            {shownTrans.has(i) && <div className="advc-passage-trans">{part.translation}</div>}
+          </div>
+        ))}
+        <div ref={bottomRef} />
       </div>
-      <div className="advc-passage-text">
-        <TextWithLookup text={passage.text} language={language} lookup={lookup} scores={scores} showReading={showReading} surfaceForms={surfaceForms} />
-      </div>
-      {showTrans && <div className="advc-passage-trans">{passage.translation}</div>}
-      <button className="advc-continue-btn" onClick={onDone}>Complete Chapter →</button>
+
+      {/* Tap zone at bottom — reveals next part, or shows Continue/End Chapter when all parts shown */}
+      {allRevealed ? (
+        <button className="advc-continue-btn" onClick={onDone}>{isLastItem ? 'End Chapter →' : 'Continue →'}</button>
+      ) : (
+        <button className="advc-tap-next" onClick={advance}>
+          <span className="advc-tap-hint">tap to continue</span>
+          <span className="advc-tap-arrow">▼</span>
+        </button>
+      )}
     </div>
   )
 }
 
 // ── Complete Phase ────────────────────────────────────────────────────────────
 
-function CompletePhase({ chapter, chapterTitle, artifact, onMap }) {
-  return (
-    <div className="advc-phase advc-phase--complete">
-      <div className="advc-complete-star">⭐</div>
-      <h2 className="advc-complete-title">Chapter Complete!</h2>
-      <p className="advc-complete-chapter">{chapterTitle ?? chapter.titleTranslation ?? chapter.title}</p>
-      {artifact && (
-        <div className="advc-artifact">
-          <span className="advc-artifact-icon">{artifact.icon}</span>
-          <div>
-            <div className="advc-artifact-name">{artifact.name}</div>
-            <div className="advc-artifact-grammar">{artifact.grammar}</div>
-          </div>
-        </div>
-      )}
-      <p className="advc-outro">{chapter.storyOutro}</p>
-      <p className="advc-outro-trans">{chapter.storyOutroTranslation}</p>
-      <button className="advc-map-btn" onClick={onMap}>← Chapter Map</button>
-    </div>
-  )
-}
-
 // ── Chapter Overview Hub ──────────────────────────────────────────────────────
 
-function ChapterHub({ chapter, chapterTitle, chapterLevel, storyIntro, storyIntroTranslation, wordEntries, dialogues, passages, artifact, surfaceForms, language, lookup, scores, showReading, currentPhase, onPhaseAdvance, onComplete, onBack }) {
-  const [activeView, setActiveView] = useState(null)
-  const [doneParts, setDoneParts]   = useState(new Set())
+function ChapterHub({ chapter, storyIntro, storyIntroTranslation, wordEntries, contentItems, surfaceForms, language, lookup, scores, showReading, currentPhase, onPhaseAdvance, onComplete, activeView, setActiveView }) {
+  const [doneParts, setDoneParts]   = useState(new Set())       // 'vocab' / 'grammar' — single-item phases
+  const [doneItems, setDoneItems]   = useState(new Set())       // individual content item indices (dialogue/passage)
+  const [pendingItem, setPendingItem] = useState(null)  // item awaiting vocab-overlay dismissal before opening
 
   const isComplete = currentPhase === 'complete'
-  const chArtifact = artifact ?? chapter.grammarArtifact
   const phaseOrder = ['vocab','grammar','dialogue','passage','complete']
-  const phaseDone  = p =>
-    phaseOrder.indexOf(currentPhase) > phaseOrder.indexOf(p) ||
-    currentPhase === 'complete' || doneParts.has(p)
 
-  function markPartDone(part) {
-    setDoneParts(prev => new Set([...prev, part]))
-    const idx    = phaseOrder.indexOf(part)
-    const curIdx = phaseOrder.indexOf(currentPhase ?? 'vocab')
-    if (idx >= curIdx) onPhaseAdvance(phaseOrder[Math.min(idx + 1, phaseOrder.length - 2)])
-    setActiveView(null)
+  const dialogueItems = contentItems.filter(c => c.type === 'dialogue')
+  const passageItems  = contentItems.filter(c => c.type === 'passage')
+  const allDialoguesDone = dialogueItems.length === 0 ||
+    contentItems.every((c, i) => c.type !== 'dialogue' || doneItems.has(i))
+  const allPassagesDone = passageItems.length === 0 ||
+    contentItems.every((c, i) => c.type !== 'passage' || doneItems.has(i))
+
+  const phaseDone  = p => {
+    if (phaseOrder.indexOf(currentPhase) > phaseOrder.indexOf(p) || currentPhase === 'complete') return true
+    if (p === 'dialogue') return allDialoguesDone && dialogueItems.length > 0
+    if (p === 'passage')  return allPassagesDone && passageItems.length > 0
+    return doneParts.has(p)
   }
 
-  // Active sub-view — always has its own ← Back to hub
+  // Mark a single dialogue/passage item done by index; advance overall phase only
+  // once every item of that type has been completed. Then jump straight to the
+  // next content item (going through its vocab overlay if it has one), or back
+  // to the hub if this was the last item.
+  function markItemDone(itemIdx, itemType) {
+    setDoneItems(prev => new Set([...prev, itemIdx]))
+    const willAllBeDone = contentItems.every((c, i) =>
+      c.type !== itemType || i === itemIdx || doneItems.has(i)
+    )
+    if (willAllBeDone) {
+      const idx    = phaseOrder.indexOf(itemType)
+      const curIdx = phaseOrder.indexOf(currentPhase ?? 'vocab')
+      if (idx >= curIdx) onPhaseAdvance(phaseOrder[Math.min(idx + 1, phaseOrder.length - 2)])
+    }
+    const nextIdx = itemIdx + 1
+    if (nextIdx < contentItems.length) {
+      openItem(contentItems[nextIdx], nextIdx)
+    } else {
+      setActiveView(null)
+    }
+  }
+
+  // Open a content item (dialogue or passage). If it has section vocab, show the
+  // overlay first; the overlay's dismissal then opens the actual content. Clearing
+  // activeView here is essential — the overlay only renders in the hub-layout JSX,
+  // so any current dialogue/passage view must be cleared for that JSX to be reached.
+  function openItem(item, idx) {
+    const view = item.type === 'dialogue' ? { type: 'dialogue', idx } : { type: 'passage', idx }
+    if (item.sectionVocab?.length) {
+      setActiveView(null)
+      setPendingItem({ view, vocab: item.sectionVocab })
+    } else {
+      setActiveView(view)
+    }
+  }
+
+  function dismissOverlay() {
+    if (pendingItem) {
+      setActiveView(pendingItem.view)
+      setPendingItem(null)
+    }
+  }
+
+  // Active sub-view — top-level header (in AdventureChapter) handles back navigation now
   if (activeView === 'vocab') return (
-    <VocabPhase chapter={chapter} entries={wordEntries} language={language} onBack={() => setActiveView(null)} />
+    <VocabPhase chapter={chapter} entries={wordEntries} language={language} />
   )
   if (activeView === 'grammar') return (
-    <GrammarPhase chapter={chapter} onBack={() => setActiveView(null)} />
+    <GrammarPhase chapter={chapter} />
   )
   if (activeView?.type === 'dialogue') {
-    const dl = dialogues[activeView.idx]
+    const dl = contentItems[activeView.idx]?.data
     if (!dl) { setActiveView(null); return null }
     return (
       <DialoguePhase
         dialogue={dl} language={language} lookup={lookup} scores={scores} showReading={showReading} surfaceForms={surfaceForms}
-        onBack={() => setActiveView(null)}
-        onDone={() => markPartDone('dialogue')}
+        onDone={() => markItemDone(activeView.idx, 'dialogue')}
+        isLastItem={activeView.idx === contentItems.length - 1}
       />
     )
   }
   if (activeView?.type === 'passage') return (
     <PassagePhase
-      passage={passages[activeView?.idx ?? 0] ?? passages[0]} language={language} lookup={lookup} scores={scores} showReading={showReading} surfaceForms={surfaceForms}
-      onBack={() => setActiveView(null)}
-      onDone={() => markPartDone('passage')}
+      passage={contentItems[activeView.idx]?.data} language={language} lookup={lookup} scores={scores} showReading={showReading} surfaceForms={surfaceForms}
+      onDone={() => markItemDone(activeView.idx, 'passage')}
+      isLastItem={activeView.idx === contentItems.length - 1}
     />
   )
   // ── Hub layout ──
@@ -454,48 +511,76 @@ function ChapterHub({ chapter, chapterTitle, chapterLevel, storyIntro, storyIntr
           </button>
         </div>
 
-        {/* Right: dialogues + passage */}
+        {/* Right: ordered dialogue + passage content */}
         <div className="advc-hub-right">
-          <div className="advc-hub-section-label">Dialogues</div>
-          {dialogues.length === 0 && (
-            <p className="advc-hub-empty">No dialogues loaded.</p>
+          {contentItems.length === 0 && (
+            <p className="advc-hub-empty">No content loaded.</p>
           )}
-          {dialogues.map((dl, i) => (
-            <button key={dl.id} className="advc-hub-content-btn" onClick={() => setActiveView({ type: 'dialogue', idx: i })}>
-              <span className="advc-hub-content-icon">💬</span>
-              <div className="advc-hub-content-info">
-                <span className="advc-hub-content-title">{dl.title}</span>
-                <span className="advc-hub-content-meta">{dl.turns?.filter(t => t.type === 'line').length ?? 0} lines</span>
-              </div>
-              {phaseDone('dialogue') && <span className="advc-hub-check">✓</span>}
-            </button>
-          ))}
-
-          {passages.length > 0 && (
-            <>
-              <div className="advc-hub-section-label" style={{ marginTop: dialogues.length ? '0.8rem' : 0 }}>Reading</div>
-              {passages.map((p, i) => (
-                <button key={i} className={`advc-hub-content-btn ${phaseDone('passage') ? 'is-done' : ''}`} onClick={() => setActiveView({ type: 'passage', idx: i })}>
-                  <span className="advc-hub-content-icon">📖</span>
-                  <div className="advc-hub-content-info">
-                    <span className="advc-hub-content-title">{p.title}</span>
-                    <span className="advc-hub-content-meta">{p.titleTranslation}</span>
-                  </div>
-                  {phaseDone('passage') && <span className="advc-hub-check">✓</span>}
-                </button>
-              ))}
-            </>
-          )}
+          {contentItems.map((item, i) => {
+            const title = item.type === 'dialogue'
+              ? item.data.title
+              : (typeof item.data.title === 'string' ? item.data.title : (item.data.title?.[language] || item.data.title?.en || ''))
+            const meta = item.type === 'dialogue'
+              ? `${item.data.turns?.filter(t => t.type === 'line').length ?? 0} lines`
+              : `${item.data.parts?.length ?? 1} part${(item.data.parts?.length ?? 1) === 1 ? '' : 's'}`
+            return (
+              <button
+                key={i}
+                className={`advc-hub-content-btn ${doneItems.has(i) ? 'is-done' : ''}`}
+                onClick={() => openItem(item, i)}
+              >
+                <span className="advc-hub-content-icon">{item.type === 'dialogue' ? '💬' : '📖'}</span>
+                <div className="advc-hub-content-info">
+                  <span className="advc-hub-content-title">{title}</span>
+                  <span className="advc-hub-content-meta">{meta}</span>
+                </div>
+                {doneItems.has(i) && <span className="advc-hub-check">✓</span>}
+              </button>
+            )
+          })}
 
           {/* Complete / completed status */}
           {isComplete ? (
             <div className="advc-hub-complete-badge">⭐ Chapter Complete</div>
-          ) : (phaseDone('dialogue') || dialogues.length === 0) && (passages.length === 0 || phaseDone('passage')) ? (
+          ) : (phaseDone('dialogue') || !contentItems.some(c => c.type === 'dialogue')) &&
+             (!contentItems.some(c => c.type === 'passage') || phaseDone('passage')) ? (
             <button className="advc-hub-complete-btn" onClick={onComplete}>
               ⭐ Complete Chapter
             </button>
           ) : null}
         </div>
+      </div>
+
+      {/* Vocab overlay — shown before entering a dialogue/passage that has section vocab */}
+      {pendingItem && (
+        <VocabOverlay vocab={pendingItem.vocab} language={language} onDismiss={dismissOverlay} />
+      )}
+    </div>
+  )
+}
+
+// ── Vocab Overlay ──────────────────────────────────────────────────────────────
+// Shown as a blurred-background overlay before a dialogue/passage, listing that
+// section's vocab words. Dismissed by a single tap anywhere on the overlay.
+
+function VocabOverlay({ vocab, language, onDismiss }) {
+  return (
+    <div className="advc-vocab-overlay" onClick={onDismiss}>
+      <div className="advc-vocab-overlay-card" onClick={e => e.stopPropagation()}>
+        <div className="advc-vocab-overlay-header">📚 Vocabulary</div>
+        <div className="advc-vocab-overlay-list">
+          {vocab.map((e, i) => (
+            <div key={e.id ?? i} className="advc-vocab-overlay-item">
+              <span className="advc-vocab-overlay-word">
+                {e.entry}
+                {e.reading && <span className="advc-vocab-overlay-reading"> {e.reading}</span>}
+              </span>
+              <span className="advc-vocab-overlay-trans">{e.translation?.[0]}</span>
+              <SpeakButton text={e.entry} language={language} size="sm" />
+            </div>
+          ))}
+        </div>
+        <div className="advc-vocab-overlay-hint">tap to continue</div>
       </div>
     </div>
   )
@@ -510,8 +595,7 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
   const lookup = useMemo(() => buildLookup(activeEntries), [activeEntries])
 
   // All content loaded from TSV — no campaign JSON needed
-  const [dialogues,   setDialogues]   = useState([])
-  const [passages,    setPassages]    = useState([])
+  const [contentItems, setContentItems] = useState([])  // ordered list: {type, data, sectionVocab}
   const [wordEntries, setWordEntries] = useState([])
   const [tsvMeta,     setTsvMeta]     = useState(null)
   const [surfaceForms, setSurfaceForms] = useState({})
@@ -521,8 +605,26 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
       if (!data) return
       const { meta, sections } = data
       setTsvMeta(meta)
-      setDialogues(sections.flatMap(s => s.dialogues))
-      setPassages(sections.flatMap(s => s.passages))
+      // Build a single ordered list of content items (dialogues + passages interleaved
+      // in the order they appear in the source TSV), each tagged with its own section's
+      // vocab — resolved to full entry objects (word + translation) for the overlay.
+      const byEntry = new Map(activeEntries.map(e => [e.entry, e]))
+      const items = []
+      for (const s of sections) {
+        const sectionVocabEntries = (s.vocab ?? []).map(w => byEntry.get(w)).filter(Boolean)
+        for (const dl of s.dialogues) items.push({ type: 'dialogue', data: dl, sectionVocab: sectionVocabEntries })
+        // Group all passage blocks within a section into ONE combined reading item
+        // (e.g. genuine excerpt + simplified version travel together as one entry,
+        // not as separate clickable list rows).
+        if (s.passages?.length) {
+          items.push({
+            type: 'passage',
+            data: { title: s.title, parts: s.passages },
+            sectionVocab: sectionVocabEntries,
+          })
+        }
+      }
+      setContentItems(items)
       // Merge surfaceForms from all sections
       const merged = {}
       for (const s of sections) {
@@ -533,7 +635,6 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
       setSurfaceForms(merged)
       const allVocab = [...new Set(sections.flatMap(s => s.vocab))]
       if (allVocab.length) {
-        const byEntry = new Map(activeEntries.map(e => [e.entry, e]))
         setWordEntries(allVocab.map(w => byEntry.get(w)).filter(Boolean))
       }
     })
@@ -543,18 +644,26 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
   const chapterTitle  = (tsvMeta?.chapterTitle ?? tsvMeta?.titles)?.[language] ?? (tsvMeta?.chapterTitle ?? tsvMeta?.titles)?.en ?? chapter.title ?? chapter.titleTranslation
   const chapterLevel  = tsvMeta?.level               ?? chapter.level
   const storyIntro    = tsvMeta?.storyIntro?.[language] ?? tsvMeta?.storyIntro?.en ?? chapter.storyIntro ?? ''
-  const storyOutro    = tsvMeta?.storyOutro?.[language] ?? tsvMeta?.storyOutro?.en ?? chapter.storyOutro ?? ''
-  const artifact      = tsvMeta?.artifact ?? chapter.grammarArtifact
 
   // Phase step bar
   const phaseOrder = ['vocab', 'grammar', 'dialogue', 'passage', 'complete']
   const PHASE_LABELS = { vocab: '📚', grammar: '📐', dialogue: '💬', passage: '📖', complete: '⭐' }
   const currentIdx = phaseOrder.indexOf(currentPhase === 'complete' ? 'complete' : (currentPhase ?? 'vocab'))
 
+  // Sub-phase view state lives here so the header can tell whether we're inside a
+  // sub-phase (vocab/grammar/dialogue/passage) or at the chapter hub itself, and
+  // adjust the single back button's label/action accordingly:
+  //  - inside a sub-phase → "← Chapter" goes to the hub (direct parent)
+  //  - at the hub          → "← Map" goes to the campaign list (the real onBack)
+  const [activeView, setActiveView] = useState(null)
+  const atHub = activeView === null
+
   return (
     <div className="advc-screen">
       <div className="advc-header">
-        <button className="advc-back" onClick={onBack}>← Map</button>
+        <button className="advc-back" onClick={atHub ? onBack : () => setActiveView(null)}>
+          {atHub ? '← Map' : '← Chapter'}
+        </button>
         <div className="advc-header-center">
           <span className="advc-chapter-num">Chapter {chapter.number}</span>
           <span className="advc-chapter-name">{chapterTitle}</span>
@@ -578,9 +687,7 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
           storyIntro={storyIntro}
           storyIntroTranslation={tsvMeta?.storyIntro?.en ?? ''}
           wordEntries={wordEntries}
-          dialogues={dialogues}
-          passages={passages}
-          artifact={artifact}
+          contentItems={contentItems}
           language={language}
           lookup={lookup}
           scores={scores}
@@ -590,6 +697,8 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
           onPhaseAdvance={onPhaseAdvance}
           onComplete={onComplete}
           onBack={onBack}
+          activeView={activeView}
+          setActiveView={setActiveView}
         />
       </div>
     </div>

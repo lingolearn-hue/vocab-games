@@ -308,10 +308,8 @@ function formatSpeaker(s) {
 
 // ── CLI: node tools/tsv-to-json.js public/campaign/campaign0101.tsv ──────────
 if (typeof process !== 'undefined' && process.argv[2]) {
-  const fs = require('fs')
   const inPath  = process.argv[2]
   const outPath = inPath.replace('.tsv', '.json')
-  const tsv     = fs.readFileSync(inPath, 'utf8')
   // parseTSV is an ES module export — for CLI use the Python version is simpler
   console.log(`Convert ${inPath} → ${outPath} using: python3 tools/convert_tsv.py ${inPath}`)
 }

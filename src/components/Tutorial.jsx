@@ -1,21 +1,20 @@
 import { useState } from 'react'
+import { BOX_HELP_STEPS } from './HelpOverlay'
 import './Tutorial.css'
 
-const BOX_STEPS = [
-  { box: '○', label: 'New', color: '#999',    desc: 'Words waiting to be learned' },
-  { box: 'B1', label: 'Box 1', color: '#4f7ef8', desc: 'Practiced every round' },
-  { box: 'B2', label: 'Box 2', color: '#22a06b', desc: 'Every 2nd round' },
-  { box: 'B3', label: 'Box 3', color: '#f0a500', desc: 'Every 4th round' },
-  { box: 'B4', label: 'Box 4', color: '#e05cb0', desc: 'Every 8th round' },
-  { box: '★',  label: 'Mastered', color: '#22a06b', desc: 'You know this word!' },
-]
-
+/**
+ * Two-page onboarding tutorial. Shown automatically on first launch
+ * (see App.jsx's TutorialGate) and reopenable any time via the front
+ * page's "?" button (see Setup.jsx) — in the reopened case there's no
+ * `onDone` side effect beyond closing, so it's safe to show repeatedly.
+ */
 export default function Tutorial({ onDone }) {
   const [page, setPage] = useState(0)  // 0 = warning, 1 = box system
 
   return (
     <div className="tut-screen">
       <div className="tut-panel">
+        <button className="tut-close" onClick={onDone}>✕</button>
 
         {page === 0 && (
           <>
@@ -47,11 +46,11 @@ export default function Tutorial({ onDone }) {
               <h2 className="tut-title tut-title--sm">How learning works</h2>
               <p className="tut-subtitle">
                 Words move through boxes based on how well you know them.
-                Get it right → advance. Get it wrong → back to Box 1.
+                Get it right → move up a box. Get it wrong → move down a box.
               </p>
 
               <div className="tut-boxes">
-                {BOX_STEPS.map((s, i) => (
+                {BOX_HELP_STEPS.map((s, i) => (
                   <div key={i} className="tut-box-row">
                     <div className="tut-box-badge" style={{ borderColor: s.color, color: s.color }}>
                       {s.box}
@@ -60,7 +59,7 @@ export default function Tutorial({ onDone }) {
                       <span className="tut-box-label" style={{ color: s.color }}>{s.label}</span>
                       <span className="tut-box-desc">{s.desc}</span>
                     </div>
-                    {i < BOX_STEPS.length - 1 && (
+                    {i < BOX_HELP_STEPS.length - 1 && (
                       <div className="tut-box-arrow">↓</div>
                     )}
                   </div>
@@ -68,9 +67,10 @@ export default function Tutorial({ onDone }) {
               </div>
 
               <p className="tut-rhythm">
-                Box 1 opens <strong>every round</strong>.
-                Box 2 opens <strong>every 2nd</strong>.
-                Box 3 every <strong>4th</strong>, Box 4 every <strong>8th</strong>.
+                Each day, the <strong>highest box with cards</strong> opens automatically.
+                Once it's empty, the next box down opens. You can also
+                <strong> tap any box</strong> — including Mastered — to practice it directly,
+                any time.
               </p>
             </div>
 

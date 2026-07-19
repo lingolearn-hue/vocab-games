@@ -9,7 +9,7 @@ export default function ReadingToggle() {
       onClick={() => setShowReading(r => !r)}
       title={showReading ? 'Hide reading' : 'Show reading'}
     >
-      {showReading ? 'A' : 'ふ'}
+      {showReading ? 'ふ' : '子'}
     </button>
   )
 }

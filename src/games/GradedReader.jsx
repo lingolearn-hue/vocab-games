@@ -2,6 +2,8 @@ import { useState, useEffect, useMemo, useRef } from 'react'
 import { useApp } from '../context/AppContext'
 import { buildLookup, tokenise, loadReaderPassages } from '../engine/reader'
 import { TextWithLookup } from '../components/TextWithLookup'
+import LevelChooser from '../components/LevelChooser'
+import HelpButton from '../components/HelpButton'
 import './GradedReader.css'
 
 // Tags that get a display label; others shown as-is
@@ -15,14 +17,6 @@ const TAG_LABELS = {
   'advanced':    'Advanced',
 }
 
-// Tag display order for the filter bar (priority groups)
-const TAG_GROUPS = [
-  { label: 'Type',  prefix: null,     tags: ['fiction','non-fiction','biography','essay'] },
-  { label: 'Level', prefix: null,     tags: ['beginner','intermediate','advanced'] },
-  { label: 'Topic', prefix: 'topic:', tags: null },
-  { label: 'Series',prefix: 'series:',tags: null },
-]
-
 function tagLabel(tag) {
   if (TAG_LABELS[tag]) return TAG_LABELS[tag]
   if (tag.startsWith('topic:'))  return tag.slice(6).replace(/-/g, ' ')
@@ -31,7 +25,7 @@ function tagLabel(tag) {
 }
 
 export default function GradedReader() {
-  const { activeEntries, loadedLists, selectedIds, showReading, scores, setScreen, goBack, activeLanguage } = useApp()
+  const { activeEntries, loadedLists, selectedIds, showReading, scores, goBack, activeLanguage } = useApp()
 
   const [passages,        setPassages]        = useState([])
   const [loading,         setLoading]         = useState(true)
@@ -55,6 +49,7 @@ export default function GradedReader() {
 
   useEffect(() => {
     if (!activeLanguage) return
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- kicks off an async fetch on language change
     setLoading(true)
     loadReaderPassages(`${activeLanguage}-en`).then(data => {
       setPassages(data?.passages ?? [])
@@ -65,8 +60,8 @@ export default function GradedReader() {
   // Derive available levels and tags from passages
   const availableLevels = useMemo(() => {
     const s = new Set(passages.map(p => p.level).filter(Boolean))
-    // Sort: A1<A2<B1<B2<C1<C2, then N5<N4<N3<N2<N1, then HSK1..6
-    const order = ['A1','A2','B1','B2','C1','C2','N5','N4','N3','N2','N1','HSK1','HSK2','HSK3','HSK4','HSK5','HSK6']
+    // Sort: A1<A2<B1<B2<C1<C2, then N5<N4<N3<N2<N1, then HSK1..7(7-9)
+    const order = ['A1','A2','B1','B2','C1','C2','N5','N4','N3','N2','N1','HSK1','HSK2','HSK3','HSK4','HSK5','HSK6','HSK7']
     return [...s].sort((a,b) => {
       const ai = order.indexOf(a), bi = order.indexOf(b)
       if (ai >= 0 && bi >= 0) return ai - bi
@@ -83,13 +78,13 @@ export default function GradedReader() {
     return [...typeTags, ...topicTags]
   }, [passages])
 
-  // Active level (single selection) + active tags (multi)
-  const [activeLevel, setActiveLevel] = useState(null)
+  // Active levels (multi-select, same null=all pattern as the rest of the app) + active tags (multi)
+  const [activeLevels, setActiveLevels] = useState(null)
 
   const filteredPassages = useMemo(() => {
     const q = search.trim().toLowerCase()
     return passages.filter(p => {
-      if (activeLevel && p.level !== activeLevel) return false
+      if (activeLevels && !activeLevels.includes(p.level)) return false
       if (activeTags.size > 0) {
         const ptags = new Set(p.tags ?? [])
         if (![...activeTags].every(t => ptags.has(t))) return false
@@ -101,7 +96,7 @@ export default function GradedReader() {
       }
       return true
     })
-  }, [passages, activeLevel, activeTags, search])
+  }, [passages, activeLevels, activeTags, search])
 
   function toggleTag(tag) {
     setActiveTags(prev => {
@@ -137,6 +132,10 @@ export default function GradedReader() {
             <button className={`gr-tab ${mode === 'library' ? 'active' : ''}`} onClick={() => setMode('library')}>Library</button>
             <button className={`gr-tab ${mode === 'paste'   ? 'active' : ''}`} onClick={() => setMode('paste')}>Paste</button>
           </div>
+          <HelpButton
+            title="Graded Reader"
+            description="Read short passages at your level. Tap any word for its translation, and toggle the EN button while reading for a full translation."
+          />
         </div>
 
         {mode === 'library' ? (
@@ -157,17 +156,7 @@ export default function GradedReader() {
                   return (
                     <div className="gr-filters">
                       {availableLevels.length > 0 && (
-                        <div className="gr-filter-levels">
-                          {availableLevels.map(level => (
-                            <button
-                              key={level}
-                              className={`gr-level-chip ${activeLevel === level ? 'active' : ''}`}
-                              onClick={() => setActiveLevel(l => l === level ? null : level)}
-                            >
-                              {level}
-                            </button>
-                          ))}
-                        </div>
+                        <LevelChooser levels={availableLevels} value={activeLevels} onChange={setActiveLevels} className="gr-filter-levels" />
                       )}
                       {(typeTags.length > 0 || topicTags.length > 0) && (
                         <div className="gr-filter-tags">
@@ -197,8 +186,8 @@ export default function GradedReader() {
                           )}
                         </div>
                       )}
-                      {(activeTags.size > 0 || activeLevel) && (
-                        <button className="gr-tag-clear" onClick={() => { setActiveTags(new Set()); setActiveLevel(null) }}>✕ Clear filters</button>
+                      {(activeTags.size > 0 || activeLevels) && (
+                        <button className="gr-tag-clear" onClick={() => { setActiveTags(new Set()); setActiveLevels(null) }}>✕ Clear filters</button>
                       )}
                       <div className="gr-search-row">
                         <input
@@ -313,6 +302,10 @@ export default function GradedReader() {
         {currentPassage.translation && (
           <button className={`gr-trans-toggle ${showTranslation ? 'active' : ''}`} onClick={() => setShowTranslation(t => !t)}>EN</button>
         )}
+        <HelpButton
+          title="Graded Reader"
+          description="Read short passages at your level. Tap any word for its translation, and toggle the EN button while reading for a full translation."
+        />
       </div>
 
       <div className="gr-body gr-reading-body">

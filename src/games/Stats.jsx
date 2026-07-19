@@ -14,26 +14,51 @@ const SCORE_CONFIG = [
   { score: 5, label: 'Mastered', color: '#22a06b' },
 ]
 
+function useScoreDist(activeEntries, scores) {
+  return useMemo(() => {
+    const d = [0, 0, 0, 0, 0, 0]
+    for (const e of activeEntries) d[Math.min(scores[e.id] ?? 0, 5)]++
+    return d
+  }, [activeEntries, scores])
+}
+
+function GameScoreSection({ label, dist, total }) {
+  return (
+    <>
+      <div className="stats-game-label">{label}</div>
+      <div className="stats-score-grid">
+        {SCORE_CONFIG.map(({ score, color }) => {
+          const count = dist[score] ?? 0
+          const pct   = total > 0 ? Math.round((count / total) * 100) : 0
+          return (
+            <div key={score} className="stats-score-box" style={{ '--box-color': color }}>
+              <div className="stats-score-count">{count}</div>
+              <div className="stats-score-pct">{pct}%</div>
+            </div>
+          )
+        })}
+      </div>
+      <div className="stats-score-label-row">
+        {SCORE_CONFIG.map(({ score, label, color }) => (
+          <div key={score} className="stats-score-label-item" style={{ '--label-color': color }}>{label}</div>
+        ))}
+      </div>
+    </>
+  )
+}
+
 export default function Stats() {
   const { goBack, getEntriesForGame } = useApp()
   const { entries: activeEntries } = getEntriesForGame('flashcard')
 
   const fcScores = getAllScores('flashcard')
   const soScores = getAllScores('stroke')
-
+  const pmScores = getAllScores('pairmatch')
 
   // Score distribution for active entries
-  const fcDist = useMemo(() => {
-    const d = [0, 0, 0, 0, 0, 0]
-    for (const e of activeEntries) d[Math.min(fcScores[e.id] ?? 0, 5)]++
-    return d
-  }, [activeEntries, fcScores])
-
-  const soDist = useMemo(() => {
-    const d = [0, 0, 0, 0, 0, 0]
-    for (const e of activeEntries) d[Math.min(soScores[e.id] ?? 0, 5)]++
-    return d
-  }, [activeEntries, soScores])
+  const fcDist = useScoreDist(activeEntries, fcScores)
+  const soDist = useScoreDist(activeEntries, soScores)
+  const pmDist = useScoreDist(activeEntries, pmScores)
 
   const total = activeEntries.length
 
@@ -52,45 +77,9 @@ export default function Stats() {
           {/* ── Level filter chips ── */}
           <LevelChips />
 
-          {/* ── Flashcard score boxes ── */}
-          <div className="stats-game-label">Flashcard</div>
-          <div className="stats-score-grid">
-            {SCORE_CONFIG.map(({ score, color }) => {
-              const count = fcDist[score] ?? 0
-              const pct   = total > 0 ? Math.round((count / total) * 100) : 0
-              return (
-                <div key={score} className="stats-score-box" style={{ '--box-color': color }}>
-                  <div className="stats-score-count">{count}</div>
-                  <div className="stats-score-pct">{pct}%</div>
-                </div>
-              )
-            })}
-          </div>
-          <div className="stats-score-label-row">
-            {SCORE_CONFIG.map(({ score, label, color }) => (
-              <div key={score} className="stats-score-label-item" style={{ '--label-color': color }}>{label}</div>
-            ))}
-          </div>
-
-          {/* ── Stroke score boxes ── */}
-          <div className="stats-game-label">Stroke Order</div>
-          <div className="stats-score-grid">
-            {SCORE_CONFIG.map(({ score, color }) => {
-              const count = soDist[score] ?? 0
-              const pct   = total > 0 ? Math.round((count / total) * 100) : 0
-              return (
-                <div key={score} className="stats-score-box" style={{ '--box-color': color }}>
-                  <div className="stats-score-count">{count}</div>
-                  <div className="stats-score-pct">{pct}%</div>
-                </div>
-              )
-            })}
-          </div>
-          <div className="stats-score-label-row">
-            {SCORE_CONFIG.map(({ score, label, color }) => (
-              <div key={score} className="stats-score-label-item" style={{ '--label-color': color }}>{label}</div>
-            ))}
-          </div>
+          <GameScoreSection label="Flashcard"    dist={fcDist} total={total} />
+          <GameScoreSection label="Matching"      dist={pmDist} total={total} />
+          <GameScoreSection label="Stroke Order"  dist={soDist} total={total} />
 
           <div className="stats-total">{total} words in active selection</div>
 

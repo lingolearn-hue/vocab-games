@@ -1,8 +1,8 @@
 import { useState, useEffect, useMemo, useCallback } from 'react'
 import { useApp } from '../context/AppContext'
 import { getAllGrammarScores, recordGrammarCorrect, recordGrammarWrong } from '../engine/grammar'
-import RubyText from '../components/RubyText'
 import SpeakButton from '../components/SpeakButton'
+import HelpButton from '../components/HelpButton'
 import './MatchingDrills.css'
 
 // ── Tone parsing ──────────────────────────────────────────────────────────────
@@ -63,6 +63,7 @@ function useQuiz(entries, getAnswer, getOptions, scoreKey) {
   }, [entries, scoreKey])
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- rebuilds the drill queue when entries/cycle change
     if (entries.length > 0) setQueue(buildQueue())
   }, [entries, cycleCount])
 
@@ -121,7 +122,7 @@ const GENDER_NAMES = {
 }
 
 export function GenderDrill() {
-  const { activeEntries, showReading, setScreen, activeLanguage, loadedLists, selectedIds } = useApp()
+  const { activeEntries, showReading, activeLanguage, loadedLists, selectedIds } = useApp()
   const language = activeLanguage ?? loadedLists[selectedIds[0]]?.language ?? 'de'
 
   // Only nouns with gender
@@ -212,7 +213,7 @@ function stripTone(syl) {
 }
 
 export function ToneDrill() {
-  const { activeEntries, setScreen, goBack, activeLanguage } = useApp()
+  const { activeEntries, activeLanguage } = useApp()
   const language = activeLanguage ?? 'zh'
   const [showPinyin, setShowPinyin] = useState(true)
 
@@ -451,7 +452,7 @@ const DRILL_TYPES = {
 }
 
 export default function MatchingDrills() {
-  const { setScreen, goBack, activeLanguage } = useApp()
+  const { setScreen, activeLanguage } = useApp()
   const [activeDrill, setActiveDrill] = useState(null)
 
   // Determine which drills are relevant for the active language
@@ -477,7 +478,10 @@ export default function MatchingDrills() {
         <span className="md-title">
           {activeDrill ? DRILL_TYPES[activeDrill]?.label : 'Matching Drills'}
         </span>
-        <button className="md-gear" onClick={() => setScreen('settings')} title="Settings">⚙️</button>
+        <HelpButton
+          title="Matching Drills"
+          description="Practice grammar patterns such as gender, tone, or measure words by matching or choosing the correct form."
+        />
       </div>
 
       <div className="md-body">

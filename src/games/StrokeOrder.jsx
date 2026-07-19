@@ -2,12 +2,14 @@ import { useState, useEffect, useRef, useMemo } from 'react'
 import { useApp } from '../context/AppContext'
 import HanziWriter from 'hanzi-writer'
 import {
-  initSession, getBoxCounts, getPassState,
+  initSession, getBoxCounts, getPassState, openBox,
   recordCorrect as leitnerCorrect,
   recordWrong   as leitnerWrong,
   recordMaster  as leitnerMaster,
   getBox,
 } from '../engine/leitner'
+import LeitnerBar from '../components/LeitnerBar'
+import HelpButton from '../components/HelpButton'
 import './StrokeOrder.css'
 
 const CJK_RE = /[\u4e00-\u9fff\u3040-\u30ff\u3400-\u4dbf]/
@@ -53,7 +55,7 @@ function CharWriter({ char, showOutline, showHanzi, showGrid, size = 260, onComp
   useEffect(() => {
     if (!containerRef.current || !char) return
     if (writerRef.current) {
-      try { writerRef.current.cancelQuiz(); writerRef.current.cancelAnimation() } catch {}
+      try { writerRef.current.cancelQuiz(); writerRef.current.cancelAnimation() } catch { /* already disposed */ }
       containerRef.current.innerHTML = ''
       writerRef.current = null
     }
@@ -84,7 +86,7 @@ function CharWriter({ char, showOutline, showHanzi, showGrid, size = 260, onComp
     })
     setPhase('quiz')
     writerRef.current = writer
-    return () => { try { writer.cancelQuiz(); writer.cancelAnimation() } catch {} }
+    return () => { try { writer.cancelQuiz(); writer.cancelAnimation() } catch { /* already disposed */ } }
   }, [char, size, showOutline])
 
   return (
@@ -107,10 +109,9 @@ function CharWriter({ char, showOutline, showHanzi, showGrid, size = 260, onComp
 // ── Practice card — one entry ─────────────────────────────────────────────────
 
 function PracticeCard({ entry, entryIds, showHanzi, showGrid, onToggleHanzi, onToggleGrid, onAdvance }) {
-  if (!entry) return null
-  const box         = getBox(entry.id, 'stroke')
+  const box         = entry ? getBox(entry.id, 'stroke') : 0
   const showOutline = box <= 1
-  const chars       = getChars(entry)
+  const chars       = entry ? getChars(entry) : []
 
   const [doneChars, setDoneChars] = useState(new Set())
   const [mistaken,  setMistaken]  = useState(false)
@@ -121,18 +122,21 @@ function PracticeCard({ entry, entryIds, showHanzi, showGrid, onToggleHanzi, onT
   const activeChar = chars.findIndex((_, i) => !doneChars.has(i))
 
   useEffect(() => {
+    if (!entry) return
     if (allDone) {
       resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
     } else if (activeChar >= 0 && charRefs.current[activeChar]) {
       charRefs.current[activeChar].scrollIntoView({ behavior: 'smooth', block: 'center' })
     }
-  }, [doneChars, allDone, activeChar])
+  }, [doneChars, allDone, activeChar, entry])
 
   function handleResult(correct) {
     if (correct) leitnerCorrect(entry.id, entryIds, 'stroke')
     else         leitnerWrong(entry.id, entryIds, 'stroke')
     onAdvance()
   }
+
+  if (!entry) return null
 
   return (
     <div className="so-practice">
@@ -194,7 +198,7 @@ export default function StrokeOrder() {
   const entryIds   = useMemo(() => cjkEntries.map(e => e.id), [cjkEntries])
 
   const [boxCounts,  setBoxCounts]  = useState([0,0,0,0,0,0])
-  const [passState,  setPassState]  = useState({ b1PassCount:0, currentPass:1, passDone:0, passTotal:0, barFills:{1:0,2:0,3:0,4:0} })
+  const [passState,  setPassState]  = useState({ b1PassCount:0, currentPass:0, passDone:0, passTotal:0, barFills:{0:0,1:0,2:0,3:0,4:0,5:0} })
   const [deck,       setDeck]       = useState([])   // [{entry, box}]
   const [deckIndex,  setDeckIndex]  = useState(0)
   const [showHanzi,  setShowHanzi]  = useState(true)
@@ -207,19 +211,32 @@ export default function StrokeOrder() {
     setPassState(getPassState('stroke'))
   }
 
-  // Init session and build deck from pass queue
-  useEffect(() => {
-    if (cjkEntries.length === 0) return
-    initSession(cjkEntries, 'stroke')
+  function buildDeckFromPass(ps) {
     const entryMap = new Map(cjkEntries.map(e => [e.id, e]))
-    const ps = getPassState('stroke')
-    setPassState(ps)
-    setBoxCounts(getBoxCounts(entryIds, 'stroke'))
     const d = (ps.passQueue ?? [])
       .map(id => ({ entry: entryMap.get(id), box: ps.currentPass }))
       .filter(s => s.entry)
     setDeck(d)
     setDeckIndex(0)
+  }
+
+  function handleOpenBox(box) {
+    const ps = openBox(box, 'stroke')
+    if (!ps) return
+    setPassState(ps)
+    setBoxCounts(getBoxCounts(entryIds, 'stroke'))
+    buildDeckFromPass(ps)
+  }
+
+  // Init session and build deck from pass queue
+  useEffect(() => {
+    if (cjkEntries.length === 0) return
+    initSession(cjkEntries, 'stroke')
+    const ps = getPassState('stroke')
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- rebuilds deck/pass state whenever the entry set changes
+    setPassState(ps)
+    setBoxCounts(getBoxCounts(entryIds, 'stroke'))
+    buildDeckFromPass(ps)
   }, [entriesKey])
 
   function handleAdvance() {
@@ -227,13 +244,7 @@ export default function StrokeOrder() {
     const nextIndex = deckIndex + 1
     if (nextIndex >= deck.length) {
       // Pass complete — rebuild from new pass queue
-      const ps = getPassState('stroke')
-      const entryMap = new Map(cjkEntries.map(e => [e.id, e]))
-      const newDeck = (ps.passQueue ?? [])
-        .map(id => ({ entry: entryMap.get(id), box: ps.currentPass }))
-        .filter(s => s.entry)
-      setDeck(newDeck)
-      setDeckIndex(0)
+      buildDeckFromPass(getPassState('stroke'))
     } else {
       setDeckIndex(nextIndex)
     }
@@ -241,7 +252,6 @@ export default function StrokeOrder() {
 
   const currentItem  = deck[deckIndex] ?? null
   const currentEntry = currentItem?.entry ?? null
-  const currentBox   = passState.currentPass
 
   return (
     <div className="so-screen">
@@ -250,22 +260,19 @@ export default function StrokeOrder() {
         <button className="so-back" onClick={goBack}>← Back</button>
         <span className="so-title">Stroke Order</span>
         <span className="so-progress">{deck.length > 0 ? `${deckIndex + 1} / ${deck.length}` : ''}</span>
+        <HelpButton
+          title="Stroke Order"
+          description="Trace or recall each character stroke by stroke. Toggle the character on/off to test recall from memory, and the grid for stroke alignment guides."
+          buttons={[
+            { icon: '字', label: 'Show character', desc: 'Toggle the character on/off (test recall from memory)' },
+            { icon: '⊞', label: 'Grid',            desc: 'Toggle the alignment grid' },
+          ]}
+          showBoxes
+        />
       </div>
 
-      {/* Leitner box bar — mirrors Flashcard */}
-      <div className="so-leitner-bar">
-        {[0,1,2,3,4,5].map(b => (
-          <div key={b} className={`so-leitner-box ${currentBox === b ? 'active' : ''} ${b === 0 ? 'box-unseen' : b === 5 ? 'box-mastered' : ''}`}>
-            <span className="so-leitner-label">{b === 0 ? '○' : b === 5 ? '★' : `B${b}`}</span>
-            <span className="so-leitner-count">{boxCounts[b] ?? 0}</span>
-            {b >= 1 && b <= 4 && (
-              <div className="so-leitner-progress">
-                <div className="so-leitner-fill" style={{ width: `${((passState.barFills?.[b] ?? 0) * 100).toFixed(1)}%` }} />
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
+      {/* Leitner box bar — shared with Flashcard and PairMatch */}
+      <LeitnerBar boxCounts={boxCounts} passState={passState} onOpenBox={handleOpenBox} />
 
       {/* Content */}
       {cjkEntries.length === 0 ? (

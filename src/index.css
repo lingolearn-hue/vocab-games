@@ -27,11 +27,50 @@ button:focus:not(:focus-visible) { outline: none; }
   .level-warning { background: #fff8e0; }
 }
 
-@media (prefers-color-scheme: dark) {
-  body { background: #111; color: #eee; }
-}
+
 [data-theme="dark"] body { background: #111; color: #eee; }
 [data-theme="light"] body { background: #fafafa; color: #111; }
+
+/* ── Shared level chip — used by every level chooser across the app ──────── */
+.level-chip {
+  padding: calc(0.3rem * var(--chip-row-scale, 1)) calc(0.7rem * var(--chip-row-scale, 1));
+  border: calc(1.5px * var(--chip-row-scale, 1)) solid #e0e0e0;
+  border-radius: 20px;
+  background: #f5f5f5;
+  font-size: calc(0.75rem * var(--chip-row-scale, 1));
+  font-weight: 700;
+  color: #555;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.15;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+.level-chip.active {
+  background: #4f7ef8;
+  border-color: #4f7ef8;
+  color: #fff;
+}
+.level-chip:focus:not(:focus-visible) { outline: none; }
+.level-chip:hover:not(.active) { border-color: #4f7ef8; color: #4f7ef8; background: #f0f4ff; }
+
+[data-theme="dark"] .level-chip { background: #1e1e1e; border-color: #333; color: #b0b0b0; }
+[data-theme="dark"] .level-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
+[data-theme="dark"] .level-chip:hover:not(.active) { border-color: #4f7ef8; color: #4f7ef8; }
+
+/* Clear-filter chip (category topic filter) — visually distinct from topic
+   chips (dashed border, no fill, smaller) so it doesn't read as just
+   another option and doesn't dominate the row it sits in */
+.category-clear-chip {
+  background: transparent;
+  border-style: dashed;
+  color: #999;
+  font-weight: 900;
+  padding: calc(0.2rem * var(--chip-row-scale, 1)) calc(0.5rem * var(--chip-row-scale, 1));
+  font-size: calc(0.65rem * var(--chip-row-scale, 1));
+}
+.category-clear-chip:hover { border-color: #e05252; color: #e05252; background: #fff0f0; }
+[data-theme="dark"] .category-clear-chip { color: #777; }
+[data-theme="dark"] .category-clear-chip:hover { border-color: #e05252; color: #e05252; background: #2a1414; }
 
 /* Shared level-filter warning banner */
 .level-warning {
@@ -47,9 +86,7 @@ button:focus:not(:focus-visible) { outline: none; }
 }
 .level-warning strong { font-weight: 700; }
 
-@media (prefers-color-scheme: dark) {
-  .level-warning { background: #2d2510; border-color: #5c4a1a; color: #c9a227; }
-}
+
 [data-theme="dark"] .level-warning { background: #2d2510; border-color: #5c4a1a; color: #c9a227; }
 
 /* Remove tap/click focus rings on touch devices — keep keyboard focus for a11y */
@@ -72,8 +109,6 @@ button:focus:not(:focus-visible) { outline: none; }
   --dt1: #f0f0f0;   /* primary on dark */
   --dt2: #b0b0b0;   /* secondary on dark */
 }
-@media (prefers-color-scheme: dark) {
-  :root { --t1: #f0f0f0; --t2: #b0b0b0; }
-}
+
 [data-theme="dark"]  { --t1: #f0f0f0; --t2: #b0b0b0; }
 [data-theme="light"] { --t1: #111;     --t2: #555; }

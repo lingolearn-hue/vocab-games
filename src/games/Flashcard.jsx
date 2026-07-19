@@ -1,22 +1,31 @@
-import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { useApp } from '../context/AppContext'
-import { srsPickDistinct } from '../engine/srs'
-import { initSession, getBoxCounts, getPassState, recordCorrect as leitnerCorrect, recordWrong as leitnerWrong, recordMaster as leitnerMaster, getBox } from '../engine/leitner'
+import { initSession, getBoxCounts, getPassState, recordCorrect as leitnerCorrect, recordWrong as leitnerWrong, recordMasterAll, openBox } from '../engine/leitner'
 import { displayEntry } from '../engine/vocab'
 import { getMnemonic, setMnemonic, getAllMnemonics } from '../engine/mnemonics'
+import { getExampleSentence } from '../engine/examples'
+import { resolveFacet } from '../engine/facets'
 import { buildLookup } from '../engine/reader'
 import { TextWithLookup } from '../components/TextWithLookup'
 import RubyText from '../components/RubyText'
 import SpeakButton from '../components/SpeakButton'
 import ReadingToggle from '../components/ReadingToggle'
+import DirectionToggle from '../components/DirectionToggle'
+import ReadingOnlyToggle from '../components/ReadingOnlyToggle'
+import FacetsByBoxToggle from '../components/FacetsByBoxToggle'
+import AutoExampleToggle from '../components/AutoExampleToggle'
+import HelpButton from '../components/HelpButton'
+import LeitnerBar from '../components/LeitnerBar'
 import './Flashcard.css'
 
 const SWIPE_THRESHOLD    =  60
 const SWIPE_UP_THRESHOLD = -80
 const SWIPE_DOWN_THRESHOLD = 80
+const DETAIL_PREVIEW_MIN_DY = 12   // px of downward drag before the detail panel starts previewing
+const DETAIL_PREVIEW_FADE   = 45   // px of downward drag to reach full preview opacity (fast, "almost immediately")
 
 export default function Flashcard() {
-  const { activeEntries: allEntries, direction, showReading, scoreActions, scores, settings, setScreen, goBack, activeLanguage, loadedLists, selectedIds, getEntriesForGame, vocabLoading } = useApp()
+  const { activeEntries: allEntries, direction, showReading, readingOnly, facetsByBox, autoExampleOnUnknown, scoreActions, scores, settings, goBack, activeLanguage, loadedLists, selectedIds, getEntriesForGame, vocabLoading } = useApp()
   const { entries: activeEntries, isEmpty: levelEmpty } = getEntriesForGame('flashcard')
   const swipeSens = settings.flashcard.swipeSensitivity
 
@@ -35,6 +44,10 @@ export default function Flashcard() {
   const [deckIndex,  setDeckIndex]  = useState(0)
   const [detailOpen, setDetailOpen] = useState(false)
   const [boxCounts,  setBoxCounts]  = useState([0,0,0,0,0,0])
+  // Set when Unknown was answered with autoExampleOnUnknown active — the
+  // score is already recorded, we're just pausing on the detail panel so
+  // the person can read the example before moving to the next card.
+  const [pendingAdvance, setPendingAdvance] = useState(false)
 
   // Flip state as a ref — direct DOM write, no React render cycle
   const flipRef      = useRef(null)   // ref to the fc-card-flip div
@@ -57,7 +70,6 @@ export default function Flashcard() {
   }
   const [swipeDir,   setSwipeDir]   = useState(null)
   const [animating,  setAnimating]  = useState(false)
-  const [feedback,   setFeedback]   = useState(null)
 
   // Mnemonic edit state
   const [mnemonicText, setMnemonicText] = useState('')
@@ -68,6 +80,11 @@ export default function Flashcard() {
   const touchStart  = useRef(null)
   const cardRef     = useRef(null)
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
+
+  // While dragging down (before release), preview the detail panel almost
+  // immediately — used both to gate the example-sentence fetch effect below
+  // and to render the panel itself with a fast fade-in during render.
+  const previewingDetail = !detailOpen && dragOffset.y > DETAIL_PREVIEW_MIN_DY && Math.abs(dragOffset.x) < dragOffset.y
   const isDragging  = useRef(false)
 
   const entryIds = useMemo(() => activeEntries.map(e => e.id), [activeEntries])
@@ -76,22 +93,15 @@ export default function Flashcard() {
   const entriesKey = entryIds.join(',')
 
   // Pass state
-  const [passState, setPassState] = useState(() => ({ passIndex:0, currentPass:1, passDone:0, passTotal:0, barFills:{1:0,2:0,3:0,4:0} }))
+  const [passState, setPassState] = useState(() => ({ passIndex:0, currentPass:0, passDone:0, passTotal:0, barFills:{0:0,1:0,2:0,3:0,4:0,5:0} }))
 
   function refreshState() {
     setBoxCounts(getBoxCounts(entryIds, 'flashcard'))
     setPassState(getPassState('flashcard'))
   }
 
-  // Leitner: init session and build first pass
-  useEffect(() => {
-    if (activeEntries.length === 0) return
-    initSession(activeEntries, 'flashcard')
+  function buildDeckFromPass(ps) {
     const entryMap = new Map(activeEntries.map(e => [e.id, e]))
-    const ps = getPassState('flashcard')
-    setPassState(ps)
-    setBoxCounts(getBoxCounts(entryIds, 'flashcard'))
-    // Build deck from pass queue
     const deck = ps.passQueue
       ? ps.passQueue.map(id => ({ entry: entryMap.get(id), box: ps.currentPass })).filter(s => s.entry)
       : []
@@ -99,23 +109,50 @@ export default function Flashcard() {
     setDeckIndex(0)
     setFlip(false, false)
     setDetailOpen(false)
+    setPendingAdvance(false)
+  }
+
+  function handleOpenBox(box) {
+    const ps = openBox(box, 'flashcard')
+    if (!ps) return
+    setPassState(ps)
+    setBoxCounts(getBoxCounts(entryIds, 'flashcard'))
+    buildDeckFromPass(ps)
+  }
+
+  // Leitner: init session and build first pass
+  useEffect(() => {
+    if (activeEntries.length === 0) return
+    initSession(activeEntries, 'flashcard')
+    const ps = getPassState('flashcard')
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- rebuilds deck/pass state whenever the entry set changes
+    setPassState(ps)
+    setBoxCounts(getBoxCounts(entryIds, 'flashcard'))
+    buildDeckFromPass(ps)
   }, [entriesKey])
 
   const currentItem  = deck[deckIndex] ?? null
   const currentEntry = currentItem?.entry ?? null
   const currentBox   = currentItem?.box ?? passState.currentPass
 
+  // When facetsByBox is on, the card's own box drives direction/reading
+  // instead of the manual toggles (see engine/facets.js).
+  const facet = facetsByBox ? resolveFacet(currentBox, language) : null
+  const effDirection   = facet ? facet.direction   : direction
+  const effShowReading = facet ? facet.showReading : showReading
+  const effReadingOnly = facet ? facet.readingOnly : readingOnly
+
   const [autoPlay,   setAutoPlay]   = useState(() => localStorage.getItem('fc-autoplay') === 'true')
 
   // Auto-play audio when card changes
   useEffect(() => {
     if (autoPlay && currentEntry) {
-      const text = direction === 'entry->translation' ? currentEntry.entry : currentEntry.translation?.[0]
+      const text = effDirection === 'entry->translation' ? currentEntry.entry : currentEntry.translation?.[0]
       if (text) {
         import('../engine/speech').then(({ speak }) => speak(text, language))
       }
     }
-  }, [currentEntry?.id, autoPlay])
+  }, [currentEntry?.id, autoPlay, effDirection])
 
   function toggleAutoPlay() {
     const next = !autoPlay
@@ -124,20 +161,46 @@ export default function Flashcard() {
   }
   useEffect(() => {
     if (currentEntry) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- syncs mnemonic editor state to the current card
       setMnemonicText(getMnemonic(currentEntry.id))
       setEditingMnemonic(false)
     }
   }, [currentEntry?.id])
+
+  // Fetch example sentence for the current entry (lazy, only when detail
+  // panel is open or previewing — avoids loading the examples file at all
+  // otherwise)
+  const [exampleSentence, setExampleSentence] = useState(null)
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- clears stale sentence when detail panel closes or entry changes
+    if ((!detailOpen && !previewingDetail) || !currentEntry) { setExampleSentence(null); return }
+    let cancelled = false
+    setExampleSentence(null)
+    getExampleSentence(currentEntry.listId, currentEntry.entry, currentEntry.pos).then(sentence => {
+      if (!cancelled) setExampleSentence(sentence)
+    })
+    return () => { cancelled = true }
+  }, [detailOpen, previewingDetail, currentEntry?.listId, currentEntry?.entry, currentEntry?.pos])
+
 
   // Focus mnemonic input when edit mode opens
   useEffect(() => {
     if (editingMnemonic) mnemonicInputRef.current?.focus()
   }, [editingMnemonic])
 
+  function entryDisplayText(entry) {
+    if (effReadingOnly && (language === 'zh' || language === 'ja') && entry.reading) return entry.reading
+    return displayEntry(entry, language)
+  }
+
   function getPrompt(entry) {
     if (!entry) return { main: '', sub: null }
-    if (direction === 'entry->translation') {
-      return { main: displayEntry(entry, language), sub: showReading && entry.reading ? entry.reading : null }
+    if (effDirection === 'entry->translation') {
+      const main = entryDisplayText(entry)
+      // Skip the ruby (furigana) annotation when already showing reading-only —
+      // there's no character to annotate.
+      const usingReadingOnly = effReadingOnly && (language === 'zh' || language === 'ja') && entry.reading
+      return { main, sub: !usingReadingOnly && effShowReading && entry.reading ? entry.reading : null }
     } else {
       return { main: entry.translation[0], sub: null }
     }
@@ -145,41 +208,72 @@ export default function Flashcard() {
 
   function getAnswer(entry) {
     if (!entry) return ''
-    return direction === 'entry->translation' ? entry.translation[0] : displayEntry(entry, language)
+    return effDirection === 'entry->translation' ? entry.translation[0] : entryDisplayText(entry)
+  }
+
+  // Moves to the next card (or rebuilds the deck if the pass just finished).
+  // Shared by the normal swipe-animation path and the "continue after
+  // reviewing the example" path.
+  function goToNextCard() {
+    const nextIndex = deckIndex + 1
+    if (nextIndex >= deck.length) {
+      // Pass complete — rebuild deck from new pass queue
+      const ps = getPassState('flashcard')
+      const entryMap = new Map(activeEntries.map(e => [e.id, e]))
+      const newDeck = (ps.passQueue ?? [])
+        .map(id => ({ entry: entryMap.get(id), box: ps.currentPass }))
+        .filter(s => s.entry)
+      setDeck(newDeck)
+      setDeckIndex(0)
+    } else {
+      setDeckIndex(nextIndex)
+    }
+    setFlip(false, false)   // instant, no animation — new card starts face-up
+    setDetailOpen(false)
+    setSwipeDir(null)
+    setDragOffset({ x: 0, y: 0 })
+    setAnimating(false)
   }
 
   function advance(action) {
     if (animating || !currentEntry) return
+
+    // Pause on Unknown so the person can read the example sentence first —
+    // score is recorded immediately, only the deck-advance is deferred.
+    if (action === 'unknown' && autoExampleOnUnknown) {
+      setAnimating(true)
+      leitnerWrong(currentEntry.id, entryIds, 'flashcard')
+      refreshState()
+      setDetailOpen(true)
+      setPendingAdvance(true)
+      setAnimating(false)
+      return
+    }
+
     setAnimating(true)
 
     if (action === 'known')   leitnerCorrect(currentEntry.id, entryIds, 'flashcard')
     if (action === 'unknown') leitnerWrong(currentEntry.id, entryIds, 'flashcard')
-    if (action === 'master')  leitnerMaster(currentEntry.id, entryIds, 'flashcard')
+    if (action === 'master') {
+      recordMasterAll(currentEntry.id, allEntries)
+      scoreActions.master(currentEntry.id)  // sets the shared 'global' mastered flag RaceCar's picker checks, and refreshes app-wide scores
+    }
     refreshState()
 
     setSwipeDir(action === 'unknown' ? 'left' : action === 'known' ? 'right' : 'up')
 
-    setTimeout(() => {
-      const nextIndex = deckIndex + 1
-      if (nextIndex >= deck.length) {
-        // Pass complete — rebuild deck from new pass queue
-        const ps = getPassState('flashcard')
-        const entryMap = new Map(activeEntries.map(e => [e.id, e]))
-        const newDeck = (ps.passQueue ?? [])
-          .map(id => ({ entry: entryMap.get(id), box: ps.currentPass }))
-          .filter(s => s.entry)
-        setDeck(newDeck)
-        setDeckIndex(0)
-      } else {
-        setDeckIndex(nextIndex)
-      }
-      setFlip(false, false)   // instant, no animation — new card starts face-up
+    setTimeout(goToNextCard, 350)
+  }
+
+  // Closes the detail panel. If it was opened via the auto-example-on-Unknown
+  // pause (score already recorded), this also advances to the next card.
+  function closeDetail() {
+    if (pendingAdvance) {
+      setPendingAdvance(false)
+      goToNextCard()
+    } else {
       setDetailOpen(false)
-      setSwipeDir(null)
-      setDragOffset({ x: 0, y: 0 })
-      setAnimating(false)
-      setFeedback(null)
-    }, 350)
+    }
   }
 
   function saveMnemonic() {
@@ -203,7 +297,7 @@ export default function Flashcard() {
     setDragOffset({ x: dx, y: dy })
   }
 
-  function onPointerUp(e) {
+  function onPointerUp() {
     if (!isDragging.current) return
     isDragging.current = false
     const dx = dragOffset.x
@@ -219,6 +313,11 @@ export default function Flashcard() {
     // Swipe left/right → unknown/known (always allowed)
     } else if (Math.abs(dx) > SWIPE_THRESH) {
       advance(dx > 0 ? 'known' : 'unknown')
+    // Short downward pull, released before reaching the open threshold —
+    // the detail preview was showing (see previewingDetail below); just
+    // snap it back closed rather than treating this as a tap-to-flip.
+    } else if (dy > DETAIL_PREVIEW_MIN_DY && Math.abs(dx) < dy) {
+      setDragOffset({ x: 0, y: 0 })
     } else {
       // Tap — toggle reveal
       setFlip(!revealedRef.current)
@@ -231,7 +330,7 @@ export default function Flashcard() {
     function onKey(e) {
       if (animating) return
       if (editingMnemonic) return
-      if (e.key === 'Escape') { if (detailOpen) setDetailOpen(false); else goBack(); return }
+      if (e.key === 'Escape') { if (detailOpen) closeDetail(); else goBack(); return }
 
       if (e.key === ' ' || e.key === 'Enter') {
         setFlip(!revealedRef.current); return
@@ -268,6 +367,11 @@ export default function Flashcard() {
   const masterOpacity  = Math.max(0, Math.min(1, -dragOffset.y / Math.abs(SWIPE_UP_THRESH)))
   const detailOpacity  = Math.max(0, Math.min(1,  dragOffset.y / SWIPE_DN_THRESH))
 
+  // While dragging down (before release), preview the detail panel almost
+  // immediately with a fast opacity ramp — separate from detailOpacity above,
+  // which drives the small "ℹ Detail" hint fade using the full swipe distance.
+  const previewOpacity   = Math.max(0, Math.min(1, dragOffset.y / DETAIL_PREVIEW_FADE))
+
   const savedMnemonic  = getMnemonic(currentEntry.id)
   const mnemonicRecord = getAllMnemonics()[currentEntry.id]
   const isSeeded       = mnemonicRecord?.seeded ?? false
@@ -278,7 +382,23 @@ export default function Flashcard() {
       <div className="fc-header">
         <button className="fc-back" onClick={goBack}>← Back</button>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-          <button className="fc-gear" onClick={() => setScreen('settings')} title="Settings">⚙️</button>
+          {(language === 'zh' || language === 'ja') && <ReadingOnlyToggle />}
+          <DirectionToggle />
+          <ReadingToggle />
+          <FacetsByBoxToggle />
+          <AutoExampleToggle />
+          <HelpButton
+            title="Flashcard"
+            description="Swipe through cards to learn vocabulary. Swipe right for Known, left for Unknown, up to Master a word instantly, or down to see word details, a mnemonic, and an example sentence."
+            buttons={[
+              { icon: '⇵',  label: 'Reading only', desc: '(zh/ja) Show reading instead of hanzi/kanji' },
+              { icon: '⇄',  label: 'Direction',    desc: 'Swap which side is the prompt — word or translation' },
+              { icon: 'ふ/子', label: 'Reading',    desc: 'Show or hide the furigana/pinyin annotation' },
+              { icon: '🧩', label: 'Train all facets', desc: "Each box drives its own display (translation flip, no reading, reading-only) so one card trains every facet of a word" },
+              { icon: '📝', label: 'Auto-example', desc: 'Automatically show the example sentence when marking a card Unknown' },
+            ]}
+            showBoxes
+          />
         </div>
       </div>
 
@@ -289,19 +409,7 @@ export default function Flashcard() {
       )}
 
       {/* Leitner box display */}
-      <div className="fc-leitner-bar">
-        {[0,1,2,3,4,5].map(b => (
-          <div key={b} className={`fc-leitner-box ${passState.currentPass === b ? 'active' : ''} ${b === 0 ? 'box-unseen' : b === 5 ? 'box-mastered' : ''}`}>
-            <span className="fc-leitner-label">{b === 0 ? '○' : b === 5 ? '★' : `B${b}`}</span>
-            <span className="fc-leitner-count">{boxCounts[b] ?? 0}</span>
-            {b >= 1 && b <= 4 && (
-              <div className="fc-leitner-progress">
-                <div className="fc-leitner-fill" style={{ width: `${((passState.barFills?.[b] ?? 0) * 100).toFixed(1)}%` }} />
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
+      <LeitnerBar boxCounts={boxCounts} passState={passState} onOpenBox={handleOpenBox} facetsByBox={facetsByBox} language={language} />
 
       {/* Card area */}
       <div className="fc-stage">
@@ -347,8 +455,8 @@ export default function Flashcard() {
                 <div className="fc-divider" />
                 <RubyText
                   text={answer}
-                  reading={direction === 'translation->entry' && showReading ? currentEntry.reading : null}
-                  visible={showReading}
+                  reading={effDirection === 'translation->entry' && effShowReading && !(effReadingOnly && (language === 'zh' || language === 'ja')) ? currentEntry.reading : null}
+                  visible={effShowReading}
                   size="lg"
                 />
               </div>
@@ -396,8 +504,12 @@ export default function Flashcard() {
       )}
 
       {/* ── Detail panel ── */}
-      {detailOpen && (
-        <div className="fc-detail-overlay" onClick={e => { if (e.target === e.currentTarget) setDetailOpen(false) }}>
+      {(detailOpen || previewingDetail) && (
+        <div
+          className="fc-detail-overlay"
+          style={previewingDetail ? { opacity: previewOpacity, pointerEvents: 'none' } : undefined}
+          onClick={e => { if (e.target === e.currentTarget) closeDetail() }}
+        >
           <div className="fc-detail-panel">
             <div className="fc-detail-header">
               <RubyText
@@ -406,7 +518,7 @@ export default function Flashcard() {
                 visible={showReading}
                 size="md"
               />
-              <button className="fc-detail-close" onClick={() => setDetailOpen(false)}>✕</button>
+              <button className="fc-detail-close" onClick={closeDetail}>✕</button>
             </div>
 
             {/* All translations */}
@@ -426,6 +538,16 @@ export default function Flashcard() {
                 {currentEntry.level && <span className="fc-detail-level">{currentEntry.level}</span>}
               </div>
             )}
+
+            {/* Example sentence */}
+            <div className="fc-detail-section">
+              <span className="fc-detail-label">📝 Example</span>
+              {exampleSentence
+                ? <div className="fc-detail-example">{exampleSentence}</div>
+                : <span className="fc-detail-example-empty">No example sentence yet.</span>
+              }
+            </div>
+
 
             {/* Mnemonic */}
             <div className="fc-detail-section">
@@ -470,7 +592,13 @@ export default function Flashcard() {
             </div>
 
             {/* Action buttons inside detail */}
-            {isRevealed && (
+            {pendingAdvance ? (
+              <div className="fc-detail-actions">
+                <button className="fc-btn fc-btn-continue" onClick={closeDetail}>
+                  Continue →
+                </button>
+              </div>
+            ) : isRevealed && (
               <div className="fc-detail-actions">
                 <button className="fc-btn fc-btn-unknown" onClick={() => { setDetailOpen(false); advance('unknown') }}>
                   ✗<span>Unknown</span>

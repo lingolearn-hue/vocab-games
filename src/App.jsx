@@ -55,7 +55,7 @@ function FirstLaunchOverlay() {
 }
 
 function Router() {
-  const { screen, setScreen, goBack } = useApp()
+  const { screen, goBack } = useApp()
 
   // Global Escape: always goes back to previous screen
   useEffect(() => {

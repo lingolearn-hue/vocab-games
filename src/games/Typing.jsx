@@ -1,7 +1,13 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useApp } from '../context/AppContext'
-import { srsPick } from '../engine/srs'
+import { srsPick, getScore } from '../engine/srs'
+import { resolveFacet } from '../engine/facets'
 import RubyText from '../components/RubyText'
+import DirectionToggle from '../components/DirectionToggle'
+import ReadingToggle from '../components/ReadingToggle'
+import ReadingOnlyToggle from '../components/ReadingOnlyToggle'
+import FacetsByBoxToggle from '../components/FacetsByBoxToggle'
+import HelpButton from '../components/HelpButton'
 import './Typing.css'
 
 // Normalise a string for loose comparison:
@@ -32,7 +38,7 @@ function isCorrect(input, entry, direction) {
 }
 
 export default function Typing() {
-  const { activeEntries: allEntries, direction, showReading, scoreActions, scores, settings, setScreen, goBack, getEntriesForGame, vocabLoading } = useApp()
+  const { direction, showReading, readingOnly, facetsByBox, scoreActions, scores, settings, goBack, getEntriesForGame } = useApp()
   const language = useApp().activeLanguage ?? 'zh'
   const { entries: activeEntries, isEmpty: levelEmpty } = getEntriesForGame('typing')
   const { requireCorrect, skipEnabled } = settings.typing
@@ -69,6 +75,7 @@ export default function Typing() {
   const entriesKey = activeEntries.map(e => e.id).join(',')
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- advances to a fresh entry whenever the pool changes
     if (activeEntries.length > 0) nextEntry()
   }, [entriesKey])
 
@@ -78,20 +85,34 @@ export default function Typing() {
     if (mustRetype) retypeRef.current?.focus()
   }, [feedback, mustRetype])
 
+  // When facetsByBox is on, this word's own score (0-5, same scale as the
+  // Leitner boxes) drives its display facet instead of the manual toggles.
+  const entryBox       = entry ? getScore(entry.id, 'typing') : 0
+  const facet          = facetsByBox ? resolveFacet(entryBox, language) : null
+  const effDirection   = facet ? facet.direction   : direction
+  const effShowReading = facet ? facet.showReading : showReading
+  const effReadingOnly = facet ? facet.readingOnly : readingOnly
+
   function getPromptText() {
     if (!entry) return ''
-    return direction === 'entry->translation' ? entry.entry : entry.translation[0]
+    if (effDirection === 'entry->translation') {
+      if (effReadingOnly && (language === 'zh' || language === 'ja') && entry.reading) return entry.reading
+      return entry.entry
+    }
+    return entry.translation[0]
   }
 
   function getPromptReading() {
-    if (!entry || direction !== 'entry->translation') return null
-    return showReading ? entry.reading : null
+    if (!entry || effDirection !== 'entry->translation') return null
+    if (effReadingOnly && (language === 'zh' || language === 'ja') && entry.reading) return null  // already showing reading as the main text
+    return effShowReading ? entry.reading : null
   }
 
   function getAcceptedAnswers() {
     if (!entry) return []
-    if (direction === 'entry->translation') return entry.translation
-    return [entry.entry, ...entry.translation]
+    const readingAlt = (effReadingOnly && (language === 'zh' || language === 'ja') && entry.reading) ? [entry.reading] : []
+    if (effDirection === 'entry->translation') return entry.translation
+    return [entry.entry, ...readingAlt, ...entry.translation]
   }
 
   function submit() {
@@ -186,7 +207,20 @@ export default function Typing() {
           {total > 0 && <span className="ty-acc">{accuracy}%</span>}
         </div>
         <div className="ty-header-right">
-          <button className="ty-settings-btn" onClick={() => setScreen('settings')} title="Settings">⚙️</button>
+          {(language === 'zh' || language === 'ja') && <ReadingOnlyToggle />}
+          <DirectionToggle />
+          <ReadingToggle />
+          <FacetsByBoxToggle />
+          <HelpButton
+            title="Typing"
+            description="Type the correct answer from memory and press Enter to check. Getting it wrong may ask you to retype the correct answer before moving on."
+            buttons={[
+              { icon: '⇵', label: 'Reading only', desc: '(zh/ja) Show reading instead of hanzi/kanji' },
+              { icon: '⇄', label: 'Direction',    desc: 'Swap which side is the prompt — word or translation' },
+              { icon: 'ふ/子', label: 'Reading',  desc: 'Show or hide the furigana/pinyin annotation' },
+              { icon: '🧩', label: 'Train all facets', desc: "Each word's own score drives its display (translation flip, no reading, reading-only) so it's trained on every facet over time" },
+            ]}
+          />
         </div>
       </div>
 
@@ -231,7 +265,7 @@ export default function Typing() {
               ref={inputRef}
               className={`ty-input ${feedback || ''}`}
               type="text"
-              placeholder={direction === 'entry->translation' ? 'Type the translation…' : 'Type the word…'}
+              placeholder={effDirection === 'entry->translation' ? 'Type the translation…' : 'Type the word…'}
               value={input}
               onChange={e => setInput(e.target.value)}
               onKeyDown={onKeyDown}

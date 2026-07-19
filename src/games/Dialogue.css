@@ -203,34 +203,7 @@
 .dl-finish-btn:hover { background: #3a6ae0; }
 
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
-  .dl-screen { background: #111; }
-  .dl-header  { border-color: #222; }
-  .dl-title   { color: #ddd; }
-  .dl-back    { color: #b0b0b0; }
-  .dl-filter-bar { border-color: #222; }
-  .dl-chip    { background: #1e1e1e; border-color: #333; color: #555; }
-  .dl-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
-  .dl-card    { background: #1e1e1e; border-color: #2a2a2a; }
-  .dl-card:hover { background: #1a2340; border-color: #4f7ef8; }
-  .dl-card-title { color: #ddd; }
-  .dl-bubble  { background: #1e1e1e; }
-  .dl-bubble-text { color: #ddd; }
-  .dl-question { background: #1a1d30; border-color: #2a2f55; }
-  .dl-question-prompt { color: #b0b0b0; }
-  .dl-option  { background: #1e1e1e; border-color: #333; }
-  .dl-option:hover { background: #1a2340; border-color: #4f7ef8; }
-  .dl-option-text { color: #ccc; }
-  .dl-choice  { background: #1a1d30; border-color: #2a2f55; }
-  .dl-choice-prompt { color: #ccc; }
-  .dl-choice-option { background: #1e1e1e; border-color: #2a2f55; }
-  .dl-choice-option:hover { background: #1a2340; border-color: #4f7ef8; }
-  .dl-choice-option-text { color: #ddd; }
-  .dl-choice-response { background: #1e1e1e; border-color: #2a2a2a; }
-  .dl-choice-response-text { color: #ddd; }
-  .dl-finish  { background: #1a1d30; border-color: #2a2f55; }
-  .dl-finish-title { color: #ddd; }
-}
+
 [data-theme="dark"] .dl-screen { background: #111; }
 [data-theme="dark"] .dl-header  { border-color: #222; }
 [data-theme="dark"] .dl-title   { color: #f0f0f0; }
@@ -286,4 +259,6 @@
 [data-theme="light"] .dl-finish { background: #f8f9ff; border-color: #dde3ff; }
 [data-theme="light"] .dl-finish-title { color: #111; }
 [data-theme="light"] .dl-answered-text.correct { background: #f0faf5; color: #22a06b; }
+[data-theme="dark"] .dl-answered-text.correct { background: #182d24; color: #6fcf9e; }
+[data-theme="dark"] .dl-feedback--correct { background: #182d24; color: #6fcf9e; }
 [data-theme="light"] .dl-answered-text.wrong   { background: #fff0ef; color: #e5534b; }

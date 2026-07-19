@@ -242,7 +242,7 @@ export function buildPickCorrectOptions(sentences) {
 
 // ── Filter by level ───────────────────────────────────────────────────────────
 
-const LEVEL_ORDER = ['HSK1','HSK2','HSK3','HSK4','HSK5','HSK6','A1','A2','B1','B2','C1','C2']
+const LEVEL_ORDER = ['HSK1','HSK2','HSK3','HSK4','HSK5','HSK6','HSK7','A1','A2','B1','B2','C1','C2']
 
 export function filterPatternsByLevel(patterns, selectedLevels) {
   if (!selectedLevels || selectedLevels.length === 0) return patterns

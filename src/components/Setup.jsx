@@ -1,19 +1,13 @@
 import { useState, useMemo } from 'react'
 import { useApp } from '../context/AppContext'
+import { filterByLevel } from '../engine/settings'
 import LevelChips from './LevelChips'
+import CategoryChips from './CategoryChips'
+import Tutorial from './Tutorial'
 import './Setup.css'
+import './ReadingToggle.css'
 
 const LANGUAGE_FLAGS = { zh: '🇨🇳', es: '🇪🇸', de: '🇩🇪', ja: '🇯🇵', en: '🇬🇧', fr: '🇫🇷' }
-
-// Level order per language family
-const LEVEL_ORDER = {
-  zh: ['HSK1','HSK2','HSK3','HSK4','HSK5','HSK6'],
-  ja: ['N5','N4','N3','N2','N1'],
-  de: ['A1','A2','B1','B2','C1','C2'],
-  es: ['A1','A2','B1','B2','C1','C2'],
-  en: ['A1','A2','B1','B2','C1','C2'],
-  fr: ['A1','A2','B1','B2','C1','C2'],
-}
 
 const DRILL_GAMES = [
   { id: 'flashcard', label: '🃏 Flashcard',  desc: 'Swipe to learn' },
@@ -30,7 +24,7 @@ const GRAMMAR_GAMES = [
   { id: 'grammar',  label: '📐 Grammar Patterns', desc: 'Fill blanks, word order, pick correct' },
   { id: 'matching', label: '🎯 Matching Drills',   desc: 'Gender, tones, measure words' },
 ]
-const SCORE_GAMES = ['racecar', 'pairmatch', 'flashcard', 'gapfill', 'typing']
+const STATS_BAR_SCORE_GAME = 'flashcard'
 
 function getLanguages(availableLists) {
   const seen = new Set()
@@ -82,57 +76,43 @@ function GroupCard({ title, subtitle, icon, games, canStart, setScreen, isOpen, 
 
 export default function Setup() {
   const {
-    availableLists, scores, activeEntries, setScreen,
-    activeLanguage, setActiveLanguage, settings, updateSettings,
+    availableLists, scores, activeEntries, visibleEntries, vulgarFilteredEntries, setScreen,
+    activeLanguage, setActiveLanguage, settings,
   } = useApp()
 
   const [langPickerOpen, setLangPickerOpen] = useState(false)
   const [openGroup,      setOpenGroup]      = useState('drills')
+  const [tutorialOpen,   setTutorialOpen]   = useState(false)
+
+  // Filtered by the same global level selection LevelChips drives, so the
+  // stats-bar count matches what's actually shown/playable, not the full list.
+  // Uses visibleEntries (vulgar-content filtered) rather than raw activeEntries.
+  const filteredEntries = useMemo(
+    () => filterByLevel(visibleEntries, settings.levels?.global ?? null),
+    [visibleEntries, settings.levels?.global]
+  )
+
+  // Same level scope, but WITHOUT the category filter applied — this is what
+  // CategoryChips needs to see so its own chips don't vanish the moment a
+  // category gets selected (it must know everything available at this level,
+  // not just what's currently passing the category filter).
+  const categoryScopeEntries = useMemo(
+    () => filterByLevel(vulgarFilteredEntries, settings.levels?.global ?? null),
+    [vulgarFilteredEntries, settings.levels?.global]
+  )
 
   const languages   = getLanguages(availableLists)
   const canStart    = activeEntries.length >= 3
   const currentFlag = activeLanguage ? LANGUAGE_FLAGS[activeLanguage] ?? '🌐' : '🌐'
   const currentLangLabel = languages.find(l => l.language === activeLanguage)?.label ?? 'Choose language'
 
-  // Levels available in current language
-  const orderedLevels = useMemo(() => {
-    const order = LEVEL_ORDER[activeLanguage] ?? []
-    const present = new Set(activeEntries.map(e => e.level).filter(Boolean))
-    return order.filter(l => present.has(l))
-  }, [activeLanguage, activeEntries])
-
-  // Active level filter (stored in settings.levels.global)
-  const activeLevels = settings.levels?.global ?? null // null = all
-
-  function toggleLevel(level) {
-    updateSettings(s => {
-      const cur = s.levels?.global ?? null
-      let next
-      if (!cur) {
-        next = [level]
-      } else if (cur.includes(level)) {
-        const filtered = cur.filter(l => l !== level)
-        next = filtered.length === 0 ? null : filtered
-      } else {
-        const merged = [...cur, level]
-        next = merged.length === orderedLevels.length ? null : merged
-      }
-      return { ...s, levels: { ...s.levels, global: next } }
-    })
-  }
-
-  function isLevelActive(level) {
-    return !activeLevels || activeLevels.includes(level)
-  }
-
   function avgScore() {
-    if (activeEntries.length === 0) return 0
-    const total = activeEntries.reduce((s, e) => {
+    if (filteredEntries.length === 0) return 0
+    const total = filteredEntries.reduce((s, e) => {
       const rec = scores[e.id]
-      const avg = SCORE_GAMES.reduce((gs, g) => gs + (rec?.[g]?.score ?? 0), 0) / SCORE_GAMES.length
-      return s + avg
+      return s + (rec?.[STATS_BAR_SCORE_GAME]?.score ?? 0)
     }, 0)
-    return (total / activeEntries.length).toFixed(1)
+    return (total / filteredEntries.length).toFixed(1)
   }
 
   function toggleGroup(id) {
@@ -152,6 +132,7 @@ export default function Setup() {
           <button className="setup-nav-btn setup-nav-btn--adventure" onClick={() => setScreen('adventure')} title="Adventure Mode">⚔️</button>
           <button className="setup-nav-btn" onClick={() => setScreen('stats')}    title="Stats">📊</button>
           <button className="setup-nav-btn" onClick={() => setScreen('settings')} title="Settings">⚙️</button>
+          <button className="reading-toggle" onClick={() => setTutorialOpen(true)} title="Help">?</button>
         </div>
       </div>
 
@@ -174,10 +155,13 @@ export default function Setup() {
       {/* Level filter */}
       <LevelChips />
 
+      {/* Category filter */}
+      <CategoryChips entries={categoryScopeEntries} />
+
       {/* Status bar */}
       {canStart && (
         <div className="stats-bar">
-          {activeEntries.length} words · avg {avgScore()} / 5
+          {filteredEntries.length} words · avg {avgScore()} / 5
         </div>
       )}
 
@@ -227,7 +211,9 @@ export default function Setup() {
         <p className="hint">{activeLanguage ? 'Loading vocabulary…' : 'Tap the flag above to choose a language.'}</p>
       )}
 
-      <div className="setup-version">v0.63</div>
+      <div className="setup-version">v0.64</div>
+
+      {tutorialOpen && <Tutorial onDone={() => setTutorialOpen(false)} />}
     </div>
   )
 }

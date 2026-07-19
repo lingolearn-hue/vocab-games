@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState, useCallback, useMemo } from 'react'
 import { loadList, mergeLists, loadSentences } from '../engine/vocab'
 import { getAllScores, setScore, recordCorrect, recordWrong, recordMaster, resetToLearning } from '../engine/srs'
-import { loadSettings, saveSettings, applyDarkMode, getGameLevels, filterByLevel } from '../engine/settings'
+import { loadSettings, saveSettings, applyDarkMode, getGameLevels, filterByLevel, filterByCategory, LEVEL_ORDER } from '../engine/settings'
 import { seedMnemonics } from '../engine/mnemonics'
 
 const AVAILABLE_LISTS = [
@@ -24,7 +24,7 @@ export function AppProvider({ children }) {
   // Adventure mode: when set, games use these entries instead of activeEntries
   const [sessionEntries,  setSessionEntries]  = useState(null)
   const [screen,          setScreenRaw]       = useState('setup')
-  const [screenHistory,   setScreenHistory]   = useState(['setup'])
+  const [, setScreenHistory]   = useState(['setup'])
 
   // setScreen with history tracking
   const setScreen = useCallback((next) => {
@@ -81,6 +81,7 @@ export function AppProvider({ children }) {
   // On mount: if a language was previously selected, load it
   useEffect(() => {
     const saved = localStorage.getItem('activeLanguage')
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time restore of persisted selection on mount
     if (saved) setActiveLanguage(saved)
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -91,7 +92,52 @@ export function AppProvider({ children }) {
     return 'entry->translation'
   }, [settings.answerFields])
   const showReading  = settings.showReading
-  const setShowReading = (v) => updateSettings(s => ({ ...s, showReading: typeof v === 'function' ? v(s.showReading) : v }))
+  const setShowReading = (v) => updateSettings(s => ({
+    ...s,
+    showReading: typeof v === 'function' ? v(s.showReading) : v,
+    facetsByBox: false,  // manual toggle takes over — box-driven facets would fight it
+  }))
+
+  const readingOnly  = settings.readingOnly ?? false
+  const setReadingOnly = (v) => updateSettings(s => ({
+    ...s,
+    readingOnly: typeof v === 'function' ? v(s.readingOnly) : v,
+    facetsByBox: false,
+  }))
+
+  const autoExampleOnUnknown = settings.autoExampleOnUnknown ?? false
+  const setAutoExampleOnUnknown = (v) => updateSettings(s => ({ ...s, autoExampleOnUnknown: typeof v === 'function' ? v(s.autoExampleOnUnknown) : v }))
+
+  // "Train all facets" mode: each box (2/3/4/5) drives its own display facet
+  // for that card (see engine/facets.js) instead of the manual toggles.
+  // Turning it on resets direction/reading/readingOnly to their defaults so
+  // there's no leftover manual state fighting the box-driven facet; turning
+  // any manual toggle back on (above) turns this back off.
+  const facetsByBox = settings.facetsByBox ?? false
+  const setFacetsByBox = (v) => updateSettings(s => {
+    const next = typeof v === 'function' ? v(s.facetsByBox ?? false) : v
+    if (!next) return { ...s, facetsByBox: false }
+    return {
+      ...s,
+      facetsByBox: true,
+      showReading: true,
+      readingOnly: false,
+      answerFields: { ...s.answerFields, global: { prompt: 'entry', answer: 'translation' } },
+    }
+  })
+
+  // Quick swap of prompt/answer direction — writes straight to the same
+  // answerFields.global settings the Settings screen uses, so it's a
+  // persisted global toggle, not a per-session override.
+  function toggleDirection() {
+    updateSettings(s => {
+      const cur = s.answerFields?.global ?? { prompt: 'entry', answer: 'translation' }
+      const swapped = cur.prompt === 'translation' || cur.answer === 'entry'
+        ? { prompt: 'entry', answer: 'translation' }
+        : { prompt: 'translation', answer: 'entry' }
+      return { ...s, answerFields: { ...s.answerFields, global: swapped }, facetsByBox: false }
+    })
+  }
 
   function updateSettings(updater) {
     setSettingsState(prev => {
@@ -117,28 +163,47 @@ export function AppProvider({ children }) {
 
   useEffect(() => {
     const selected = selectedIds.map(id => loadedLists[id]).filter(Boolean)
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- syncs derived entries when selection/lists change
     setActiveEntries(mergeLists(selected))
   }, [selectedIds, loadedLists])
 
   // Helper used by each game to get level-filtered entries
   // When sessionEntries is set (adventure mode), use those instead
+
+  const showVulgar = settings.showVulgar ?? false
+  const setShowVulgar = (v) => updateSettings(s => ({ ...s, showVulgar: typeof v === 'function' ? v(s.showVulgar ?? false) : v }))
+
+  // activeEntries stays the raw merged list (used internally, e.g. so
+  // recordMasterAll always sees the full word set regardless of the filter).
+  // visibleEntries is what display/browsing screens (Setup stats, Vocab
+  // Browser, Stats) should show — same vulgar-content filtering
+  // getEntriesForGame applies for the games themselves.
+  const vulgarFilteredEntries = useMemo(
+    () => showVulgar ? activeEntries : activeEntries.filter(e => !e.categories?.includes('vulgar')),
+    [activeEntries, showVulgar]
+  )
+
+  const visibleEntries = useMemo(
+    () => filterByCategory(vulgarFilteredEntries, settings.categories?.global),
+    [vulgarFilteredEntries, settings.categories]
+  )
+
+  // Filters out entries tagged 'vulgar' (profanity/sensitive-biological terms;
+  // see TODO.md / chat history) unless the person has opted in via Settings.
+  // Identity-based slurs were removed from the vocab data outright instead
+  // of being tag-filterable — this toggle only ever gates profanity/mature
+  // content, not slurs.
   const getEntriesForGame = useCallback((game) => {
     const base = sessionEntries ?? activeEntries
+    const clean = showVulgar ? base : base.filter(e => !e.categories?.includes('vulgar'))
+    const withCategory = filterByCategory(clean, settings.categories?.global)
     const levels = sessionEntries ? null : getGameLevels(settings, game)
-    const filtered = filterByLevel(base, levels)
-    return { entries: filtered.length > 0 ? filtered : base, isEmpty: filtered.length === 0 && levels !== null }
-  }, [activeEntries, sessionEntries, settings])
+    const filtered = filterByLevel(withCategory, levels)
+    return { entries: filtered.length > 0 ? filtered : withCategory, isEmpty: filtered.length === 0 && levels !== null }
+  }, [activeEntries, sessionEntries, settings, showVulgar])
 
   // Sorted unique levels present in the active entries — canonical order per language
   const availableLevels = useMemo(() => {
-    const LEVEL_ORDER = {
-      zh: ['HSK1','HSK2','HSK3','HSK4','HSK5','HSK6'],
-      ja: ['N5','N4','N3','N2','N1'],
-      de: ['A1','A2','B1','B2','C1','C2'],
-      es: ['A1','A2','B1','B2','C1','C2'],
-      en: ['A1','A2','B1','B2','C1','C2'],
-  fr: ['A1','A2','B1','B2','C1','C2'],
-    }
     const set = new Set(activeEntries.map(e => e.level).filter(Boolean))
     const order = LEVEL_ORDER[activeLanguage] ?? []
     const ordered = order.filter(l => set.has(l))
@@ -177,14 +242,21 @@ export function AppProvider({ children }) {
       selectedIds, setSelectedIds,
       ensureLoaded,
       activeEntries, sessionEntries, setSessionEntries, vocabLoading,
+      visibleEntries,
+      vulgarFilteredEntries,
       activeSentences,
       direction,
       showReading, setShowReading,
+      readingOnly, setReadingOnly,
+      facetsByBox, setFacetsByBox,
+      autoExampleOnUnknown, setAutoExampleOnUnknown,
+      toggleDirection,
       screen, setScreen, goBack,
       scores, scoreActions,
       settings, updateSettings,
       activeLanguage, setActiveLanguage,
       getEntriesForGame, availableLevels,
+      showVulgar, setShowVulgar,
     }}>
       {children}
     </AppContext.Provider>

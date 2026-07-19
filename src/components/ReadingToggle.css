@@ -38,9 +38,6 @@
   .reading-toggle.active { color: #4f7ef8; }
 }
 
-@media (prefers-color-scheme: dark) {
-  .reading-toggle { border-color: #333; color: #555; }
-  .reading-toggle.active { color: #4f7ef8; border-color: #4f7ef8; background: #0d1a3a; }
-}
+
 [data-theme="dark"] .reading-toggle { border-color: #333; color: #555; }
 [data-theme="dark"] .reading-toggle.active { color: #4f7ef8; border-color: #4f7ef8; background: #0d1a3a; }

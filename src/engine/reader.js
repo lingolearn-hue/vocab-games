@@ -227,13 +227,13 @@ function tokeniseCJK(text, lookup, language) {
 
 function tokeniseSpaced(text, lookup) {
   const spans = []
-  const parts = text.split(/(\s+|[.,!?;:"""''()\[\]{}—–\-\/\\])/)
+  const parts = text.split(/(\s+|[.,!?;:"""''()[\]{}—–\-/\\])/)
   const words = []
   let pos = 0
   for (const part of parts) {
     words.push({
       text: part,
-      isWord: /\S/.test(part) && !/^[.,!?;:"""''()\[\]{}—–\-\/\\]$/.test(part),
+      isWord: /\S/.test(part) && !/^[.,!?;:"""''()[\]{}—–\-/\\]$/.test(part),
       pos,
     })
     pos += part.length

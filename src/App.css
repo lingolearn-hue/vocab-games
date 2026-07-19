@@ -73,13 +73,7 @@
   .fl-lang-name { color: #111; }
 }
 
-@media (prefers-color-scheme: dark) {
-  .fl-panel { background: #1e1e1e; }
-  .fl-title  { color: #eee; }
-  .fl-lang-btn { background: #252525; border-color: #333; }
-  .fl-lang-btn:hover { background: #1a2340; border-color: #4f7ef8; }
-  .fl-lang-name { color: #ddd; }
-}
+
 [data-theme="dark"] .fl-panel { background: #1e1e1e; }
 [data-theme="dark"] .fl-title  { color: #f0f0f0; }
 [data-theme="dark"] .fl-lang-btn { background: #252525; border-color: #333; }

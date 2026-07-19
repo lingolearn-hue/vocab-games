@@ -30,33 +30,10 @@
 .so-toggle.active { border-color: #4f7ef8; color: #4f7ef8; background: #eef2ff; }
 .so-toggle:focus:not(:focus-visible) { outline: none; }
 
-/* Leitner bar — mirrors Flashcard */
-.so-leitner-bar {
-  display: flex; gap: 0.3rem; padding: 0.4rem 1rem;
-  justify-content: center; border-bottom: 1px solid #e0e0e0; flex-shrink: 0;
-}
-.so-leitner-box {
-  display: flex; flex-direction: column; align-items: center; gap: 0.1rem;
-  padding: 0.25rem 0.4rem; border-radius: 8px; border: 1.5px solid #ddd; min-width: 2.4rem;
-}
-.so-leitner-box.active       { border-color: #4f7ef8; background: #eef2ff; }
-.so-leitner-box.box-unseen   { border-color: #e0e0e0; opacity: 0.5; }
-.so-leitner-box.box-mastered { border-color: #22a06b; background: #f0faf5; }
-.so-leitner-label { font-size: 0.65rem; font-weight: 700; color: #555; }
-.so-leitner-count { font-size: 0.78rem; font-weight: 700; color: #111; }
-.so-leitner-box.active .so-leitner-label,
-.so-leitner-box.active .so-leitner-count { color: #4f7ef8; }
-.so-leitner-box.box-mastered .so-leitner-label,
-.so-leitner-box.box-mastered .so-leitner-count { color: #22a06b; }
-
-/* Progress bar */
-.so-leitner-progress {
-  width: 100%; height: 3px; background: #e0e0e0;
-  border-radius: 2px; margin-top: 2px; overflow: hidden;
-}
-.so-leitner-fill {
-  height: 100%; background: #4f7ef8;
-  border-radius: 2px; transition: width 0.3s ease;
+/* Leitner bar — shared component (see src/components/LeitnerBar.css); just add the border-bottom this screen uses */
+.so-screen .lb-bar {
+  border-bottom: 1px solid #e0e0e0;
+  flex-shrink: 0;
 }
 
 .so-scroll { flex: 1; overflow-y: auto; }
@@ -107,37 +84,10 @@
 }
 
 /* ── Dark mode ────────────────────────────────────────────────────────────── */
-@media (prefers-color-scheme: dark) {
-  .so-screen      { background: #111; }
-  .so-header      { border-color: #222; }
-  .so-leitner-bar { border-color: #222; }
-  .so-leitner-box { border-color: #333; }
-  .so-leitner-label { color: #b0b0b0; }
-  .so-leitner-count { color: #f0f0f0; }
-  .so-leitner-box.active { background: #1a1a30; }
-  .so-leitner-box.box-mastered { background: #182d24; }
-  .so-leitner-progress { background: #333; }
-  .so-back        { color: #b0b0b0; }
-  .so-back:hover  { color: #f0f0f0; }
-  .so-title       { color: #f0f0f0; }
-  .so-practice-word { color: #f0f0f0; }
-  .so-practice-header { border-color: #222; }
-  .so-toggle      { border-color: #333; color: #666; }
-  .so-toggle.active { background: #1a1a30; border-color: #4f7ef8; color: #4f7ef8; }
-  .so-canvas      { background: #f5f5f5; border-color: #333; }
-  .so-char-glyph  { color: #222; }
-  .so-result-row  { background: #1a1a1a; }
-  .so-result-msg  { color: #b0b0b0; }
-}
+
 [data-theme="dark"] .so-screen    { background: #111; }
 [data-theme="dark"] .so-header    { border-color: #222; }
-[data-theme="dark"] .so-leitner-bar { border-color: #222; }
-[data-theme="dark"] .so-leitner-box { border-color: #333; }
-[data-theme="dark"] .so-leitner-label { color: #b0b0b0; }
-[data-theme="dark"] .so-leitner-count { color: #f0f0f0; }
-[data-theme="dark"] .so-leitner-box.active { background: #1a1a30; }
-[data-theme="dark"] .so-leitner-box.box-mastered { background: #182d24; }
-[data-theme="dark"] .so-leitner-progress { background: #333; }
+[data-theme="dark"] .so-screen .lb-bar { border-bottom-color: #222; }
 [data-theme="dark"] .so-back     { color: #b0b0b0; }
 [data-theme="dark"] .so-title    { color: #f0f0f0; }
 [data-theme="dark"] .so-practice-word { color: #f0f0f0; }

@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useMemo } from 'react'
 import { useApp } from '../context/AppContext'
 import { parseFixedSentence } from '../engine/vocab'
-import RubyText from '../components/RubyText'
+import HelpButton from '../components/HelpButton'
 import './GapFill.css'
 
 function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5) }
@@ -10,7 +10,7 @@ const FEEDBACK_DURATION = 900
 
 export default function GapFill() {
   const {
-    activeSentences, settings, setScreen, goBack, activeLanguage, vocabLoading
+    activeSentences, settings, goBack, vocabLoading
   } = useApp()
 
   // Level filter — use global level setting
@@ -25,8 +25,6 @@ export default function GapFill() {
   const [question,    setQuestion]    = useState(null)
   const [chosen,      setChosen]      = useState(null)
   const [feedback,    setFeedback]    = useState(null)  // null | 'correct' | 'wrong'
-  const [score,       setScore]       = useState(0)
-  const [streak,      setStreak]      = useState(0)
   const [total,       setTotal]       = useState(0)
   const [correct,     setCorrect]     = useState(0)
   const [usedIndices, setUsedIndices] = useState(new Set())
@@ -70,6 +68,7 @@ export default function GapFill() {
   // Reset when sentences change (language / level change)
   const sentencesKey = sentences.map((_, i) => i).join(',') + sentences.length
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- resets quiz state when the sentence pool changes
     setUsedIndices(new Set())
     setQuestion(null)
     if (sentences.length > 0) {
@@ -86,11 +85,7 @@ export default function GapFill() {
     setTotal(t => t + 1)
     if (isCorrect) {
       setCorrect(c => c + 1)
-      setScore(s => s + 1)
-      setStreak(s => s + 1)
       setTimeout(() => nextQuestion(), FEEDBACK_DURATION)
-    } else {
-      setStreak(0)
     }
   }
 
@@ -119,7 +114,10 @@ export default function GapFill() {
           {total > 0 && (
             <span className="gf-session">{correct}/{total}{accuracy !== null ? ` · ${accuracy}%` : ''}</span>
           )}
-          <button className="gf-gear" onClick={() => setScreen('settings')} title="Settings">⚙️</button>
+          <HelpButton
+            title="Gap Fill"
+            description="Read the sentence and tap the missing word to fill the gap. Score and accuracy for this session are shown at the top."
+          />
         </div>
       </div>
 

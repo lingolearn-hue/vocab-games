@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useMemo } from 'react'
 import { useApp } from '../context/AppContext'
 import { buildLookup } from '../engine/reader'
 import { TextWithLookup } from '../components/TextWithLookup'
+import HelpButton from '../components/HelpButton'
 import './Dialogue.css'
 
 async function loadDialogues(languageId) {
@@ -174,7 +175,7 @@ function ChoiceTurn({ turn, turnIdx, chosen, onChoose, showTranslation }) {
 // ── Main component ─────────────────────────────────────────────────────────
 
 export default function Dialogue() {
-  const { activeEntries, showReading, scores, setScreen, goBack, activeLanguage, loadedLists, selectedIds } = useApp()
+  const { activeEntries, showReading, scores, goBack, activeLanguage, loadedLists, selectedIds } = useApp()
 
   const [dialogues,        setDialogues]        = useState([])
   const [loading,          setLoading]          = useState(true)
@@ -183,7 +184,6 @@ export default function Dialogue() {
   const [turnIndex,        setTurnIndex]        = useState(0)
   const [questionState,    setQuestionState]    = useState({})  // { [idx]: { chosen, correct } }
   const [choiceState,      setChoiceState]      = useState({})  // { [idx]: chosenOptionIndex }
-  const [finished,         setFinished]         = useState(false)
   const [correct,          setCorrect]          = useState(0)
   const [total,            setTotal]            = useState(0)
   const [showTranslations, setShowTranslations] = useState(false)
@@ -199,6 +199,7 @@ export default function Dialogue() {
 
   useEffect(() => {
     if (!activeLanguage) return
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- kicks off an async fetch on language change
     setLoading(true)
     loadDialogues(activeLanguage).then(data => {
       setDialogues(data?.dialogues ?? [])
@@ -266,7 +267,6 @@ export default function Dialogue() {
     setTurnIndex(0)       // start at first turn, reveal progressively
     setQuestionState({})
     setChoiceState({})
-    setFinished(false)
     setCorrect(0)
     setTotal(0)
     setShowTranslations(false)
@@ -308,6 +308,10 @@ export default function Dialogue() {
         <div className="dl-header">
           <button className="dl-back" onClick={goBack}>← Back</button>
           <span className="dl-title">Dialogue</span>
+          <HelpButton
+            title="Dialogue"
+            description="Follow a conversation turn by turn — tap to continue, answer questions along the way, and toggle EN per line for a translation."
+          />
         </div>
         {!loading && allTags.size > 0 && (
           <FilterChips allTags={allTags} activeTags={activeTags} onToggle={toggleTag} onClear={() => setActiveTags(new Set())} />
@@ -362,6 +366,10 @@ export default function Dialogue() {
             onClick={() => setShowTranslations(t => !t)} title="Show/hide translations">EN</button>
           {total > 0 && <span className="dl-acc">{accuracy}%</span>}
         </div>
+        <HelpButton
+          title="Dialogue"
+          description="Follow a conversation turn by turn — tap to continue, answer questions along the way, and toggle EN per line for a translation."
+        />
       </div>
 
       <div className="dl-body dl-reading-body" ref={bodyRef}>

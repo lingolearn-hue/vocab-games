@@ -1,38 +1,48 @@
 /**
- * Leitner SRS engine — pass-based, score-seeded box system.
+ * Leitner SRS engine — score-seeded box system, day-based box selection.
  *
  * Score: persistent (0–5). 0=unseen, 1–4=active, 5=mastered.
  *   correct → score+1 (max 5)
- *   wrong   → score=1
+ *   wrong   → score-1 (min 0)
+ *   master  → score=5
  *
- * Session boxes (rebuilt from scores on open):
- *   box 1: up to 20 cards (filled from score-1, then score-0)
- *   box 2–4: up to 10 cards each (from score-N)
- *   stack: overflow + score-0 remainder
+ * Box membership is derived directly from score — no separate box bookkeeping,
+ * no per-box size caps, no overflow stack. Boxes 0-4 map 1:1 to score 0-4
+ * (box 0 = unseen, treated as a normal box, not folded into box 1). Score 5
+ * = mastered, excluded from all boxes.
  *
- * Pass rhythm (1-2-4-8):
- *   pass 0: B1  pass 1: B1  pass 2: B2  pass 3: B1
- *   pass 4: B1  pass 5: B2  pass 6: B3  pass 7: B1 ...
- *
- *   Each pass = ALL cards in that box.
- *   Box 1 refills to 20 BEFORE each B1 pass opens.
- *   Wrong answers during a pass go to next B1 pass, not current.
+ * Box selection ("day system"):
+ *   The highest non-empty box (4 → 3 → 2 → 1 → 0) auto-opens the first time
+ *   the game is entered on a given calendar day (local date) — box 0 opens
+ *   last, once every other box is empty. Within that same day, re-entering
+ *   the game does NOT re-pick — whatever box is currently active stays
+ *   active. Answering a card immediately moves it to its new box (removed
+ *   from the current pass right away); when the pass empties, the next
+ *   non-empty box below it opens (same day). Boxes can be opened manually at
+ *   any time via openBox(), regardless of the day lock.
  *
  * Storage:
- *   'leitnerScores'  → { id: 0-5 }            (persistent)
- *   'leitnerSession' → { boxes, stack,          (rebuilt each app open)
- *                        passIndex,             (which pass we're on)
- *                        currentPass,           (which box is active: 1-4)
- *                        passQueue: [id,...],   (cards remaining in current pass)
- *                        passDone: number,      (cards done in current pass)
- *                        passTotal: number }    (total cards when pass opened)
+ *   'leitnerScores_<game>'  → { id: 0-5 }                  (persistent)
+ *   'leitnerSession_<game>' → { entryIds, day, currentPass,  (rebuilt as needed)
+ *                               passQueue, passDone, passTotal }
  */
 
 const SCORES_KEY  = (game='flashcard') => `leitnerScores_${game}`
 const SESSION_KEY = (game='flashcard') => `leitnerSession_${game}`
-const BOX1_MAX    = 20
-const BOXN_MAX    = 10
 const MAX_SCORE   = 5
+
+// Games sharing this box/pass engine. 'stroke' (StrokeOrder) is excluded from
+// recordMasterAll: writing strokes is a distinct skill from recognizing a
+// word, so mastering recognition shouldn't silently mark stroke practice done.
+export const LEITNER_GAMES = ['flashcard', 'pairmatch', 'stroke']
+const RECOGNITION_GAMES = LEITNER_GAMES.filter(g => g !== 'stroke')
+
+// Single source of truth for every localStorage key this engine writes.
+// Backup/export/import/reset logic MUST use this instead of a hardcoded
+// list — new games added to LEITNER_GAMES are picked up automatically.
+export function leitnerStorageKeys() {
+  return LEITNER_GAMES.flatMap(g => [SCORES_KEY(g), SESSION_KEY(g)])
+}
 
 // ── Persistence ───────────────────────────────────────────────────────────────
 
@@ -44,8 +54,8 @@ function writeScores(s, game='flashcard') { localStorage.setItem(SCORES_KEY(game
 function readSession(game='flashcard') {
   try {
     const s = JSON.parse(localStorage.getItem(SESSION_KEY(game)) || 'null')
-    if (s?.boxes && Array.isArray(s.stack)) return s
-  } catch {}
+    if (s?.entryIds && Array.isArray(s.entryIds)) return s
+  } catch { /* corrupt/missing session data — fall through to null */ }
   return null
 }
 function writeSession(s, game='flashcard') { localStorage.setItem(SESSION_KEY(game), JSON.stringify(s)) }
@@ -62,6 +72,47 @@ export function getScoreCounts(entryIds, game='flashcard') {
   return counts
 }
 
+// ── Box helpers (derived from score) ──────────────────────────────────────────
+
+function _boxOf(score) {
+  if (score >= 5) return 5
+  if (score <= 0) return 0
+  return score
+}
+
+function _boxCounts(entryIds, scores) {
+  const counts = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0}
+  for (const id of entryIds) {
+    const b = _boxOf(scores[id] ?? 0)
+    counts[b]++
+  }
+  return counts
+}
+
+/** Highest non-empty box (4→3→2→1→0), or null if all boxes 0-4 are empty. */
+function _pickHighestBox(entryIds, scores) {
+  const counts = _boxCounts(entryIds, scores)
+  for (const b of [4,3,2,1,0]) if (counts[b] > 0) return b
+  return null
+}
+
+/** Picks the next box to open when the current one empties: searches
+ *  downward (current-1 → 0) first, matching the documented "next box
+ *  below opens" design, so a card just promoted upward isn't immediately
+ *  re-served. Falls back upward only if nothing remains below. */
+function _pickNextBoxBelow(entryIds, scores, current) {
+  const counts = _boxCounts(entryIds, scores)
+  for (let b = current - 1; b >= 0; b--) if (counts[b] > 0) return b
+  for (let b = current + 1; b <= 4; b++) if (counts[b] > 0) return b
+  return null
+}
+
+/** Local calendar-date string (YYYY-MM-DD) used for the day lock. */
+function _today() {
+  const d = new Date()
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`
+}
+
 // ── Session init ──────────────────────────────────────────────────────────────
 
 export function initSession(entries, game='flashcard') {
@@ -72,118 +123,90 @@ export function initSession(entries, game='flashcard') {
       const old = localStorage.getItem(OLD_KEY)
       localStorage.setItem('leitnerScores_flashcard', old)
       localStorage.removeItem(OLD_KEY)
-    } catch {}
+    } catch { /* migration best-effort — ignore failures, old key stays untouched */ }
   }
 
   const scores = readScores(game)
 
-  // Seed missing entries at score 0
-  // Never delete scores for other entries — they may belong to other languages
+  // Seed missing entries at score 0. Never delete scores for other entries —
+  // they may belong to other languages.
   let changed = false
   for (const e of entries) {
     if (!(e.id in scores)) { scores[e.id] = 0; changed = true }
   }
   if (changed) writeScores(scores, game)
 
-  // Group by score
-  const byScore = {0:[],1:[],2:[],3:[],4:[],5:[]}
-  for (const e of entries) {
-    const s = Math.min(scores[e.id]??0, 5)
-    byScore[s].push(e.id)
-  }
-  for (const arr of Object.values(byScore)) shuffle(arr)
-
-  // Seed boxes
-  const boxes = {}
-  const stack = [...byScore[0]]
-
-  for (const s of [1,2,3,4]) {
-    const limit = s === 1 ? BOX1_MAX : BOXN_MAX
-    const words = byScore[s]
-    for (const id of words.slice(0, limit))  boxes[id] = s
-    stack.push(...words.slice(limit))
-  }
-
-  // Top up box 1 from score-0 stack
-  _topUpBox1(boxes, stack, scores)
-
-  // Open the first pass (B1)
+  const entryIds = entries.map(e => e.id)
   const session = {
-    boxes, stack,
-    b1PassCount:  0,
-    passSchedule: [],
-    currentPass:  1,
-    passQueue:    [],
-    passDone:     0,
-    passTotal:    0,
-    pendingWrong: [],
+    entryIds,
+    day: _today(),
+    currentPass: _pickHighestBox(entryIds, scores) ?? 0,
+    passQueue: [],
+    passDone: 0,
+    passTotal: 0,
   }
-  _openPass(session, scores, game)
+  _openPass(session, scores)
   writeSession(session, game)
   return session
-  // game stored for session writes
 }
 
 export function getSession(entries, game='flashcard') {
-  return readSession(game) ?? initSession(entries, game)
+  const existing = readSession(game)
+  if (!existing) return initSession(entries, game)
+
+  // Keep entryIds fresh if the entry set changed (e.g. filters/level changed)
+  const entryIds = entries.map(e => e.id)
+  const idsChanged = entryIds.length !== existing.entryIds.length
+    || entryIds.some((id, i) => id !== existing.entryIds[i])
+  if (idsChanged) existing.entryIds = entryIds
+
+  // Day lock: only re-pick the auto-opened box on first entry of a new
+  // calendar day. Same-day re-entries keep whatever box is currently active.
+  const today = _today()
+  const isNewDay = existing.day !== today
+  if (isNewDay) {
+    const scores = readScores(game)
+    existing.day = today
+    existing.currentPass = _pickHighestBox(entryIds, scores) ?? existing.currentPass ?? 0
+    _openPass(existing, scores)
+  }
+
+  if (isNewDay || idsChanged) writeSession(existing, game)
+  return existing
 }
 
 // ── Box/pass accessors ────────────────────────────────────────────────────────
 
 export function getBox(entryId, game='flashcard') {
-  const s = readSession(game)
-  if (!s) return 0
-  return s.boxes[entryId] ?? 0
+  return _boxOf(readScores(game)[entryId] ?? 0)
 }
 
 export function getBoxCounts(entryIds, game='flashcard') {
-  const session = readSession(game)
-  const scores  = readScores(game)
-  if (!session) return [0,0,0,0,0,0]
+  const scores = readScores(game)
   const counts = [0,0,0,0,0,0]
-  for (const id of entryIds) {
-    const box = session.boxes[id]
-    if (box >= 1 && box <= 4) { counts[box]++; continue }
-    if ((scores[id]??0) === 5)  { counts[5]++; continue }
-    counts[0]++
-  }
+  for (const id of entryIds) counts[Math.min(scores[id]??0,5)]++
   return counts
 }
 
 /**
  * Returns pass progress for the status bar display.
  * {
- *   passIndex,     // 0-based global pass count
- *   currentPass,   // which box is active (1-4)
+ *   currentPass,   // which box is active (0-4)
  *   passDone,      // cards done in current pass
  *   passTotal,     // total cards in current pass
- *   barFills: {    // 0-1 fill for each box's status bar
- *     1: 0.6,      // within-pass progress for active box, inter-pass for others
- *     2: 0.5,
- *     3: 0.25,
- *     4: 0.125,
- *   }
+ *   barFills: { 0: 0, 1: 0.6, 2: 0, 3: 0, 4: 0 }  // within-pass fill for active box only
  * }
  */
 export function getPassState(game='flashcard') {
   const s = readSession(game)
-  if (!s) return { b1PassCount:0, currentPass:1, passDone:0, passTotal:0, barFills:{1:0,2:0,3:0,4:0}, passQueue:[], game }
+  if (!s) return { currentPass:0, passDone:0, passTotal:0, barFills:{0:0,1:0,2:0,3:0,4:0,5:0}, passQueue:[], game }
 
-  const { b1PassCount = 0, currentPass, passDone, passTotal } = s
+  const { currentPass, passDone, passTotal } = s
   const withinFill = passTotal > 0 ? passDone / passTotal : 0
+  const barFills = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0}
+  barFills[currentPass] = withinFill
 
-  const barFills = {}
-  for (const b of [1,2,3,4]) {
-    if (b === currentPass) {
-      barFills[b] = withinFill
-    } else {
-      // How far through the inter-pass interval for this box
-      const period = Math.pow(2, b - 1)   // B2=2, B3=4, B4=8
-      barFills[b] = (b1PassCount % period) / period
-    }
-  }
-
-  return { b1PassCount, currentPass, passDone, passTotal, barFills, passQueue: s.passQueue ?? [] }
+  return { currentPass, passDone, passTotal, barFills, passQueue: s.passQueue ?? [] }
 }
 
 // ── Card answering ────────────────────────────────────────────────────────────
@@ -200,7 +223,7 @@ export function nextCard(entryMap) {
 }
 
 /**
- * Record correct answer. Advances score and box. Removes from pass queue.
+ * Record correct answer. Advances score. Removes from pass queue.
  * Returns true if pass is now complete.
  */
 export function recordCorrect(entryId, allEntryIds, game='flashcard') {
@@ -208,28 +231,21 @@ export function recordCorrect(entryId, allEntryIds, game='flashcard') {
   const session = readSession(game)
   if (!session) return false
 
-  // Remove from pass queue
   session.passQueue = session.passQueue.filter(id => id !== entryId)
   session.passDone++
 
-  // Score + box advance
   const oldScore = scores[entryId] ?? 0
   scores[entryId] = Math.min(oldScore + 1, MAX_SCORE)
   writeScores(scores, game)
 
-  const oldBox = session.boxes[entryId] ?? 0
-  const newBox = Math.min(oldBox + 1, MAX_SCORE)
-  if (newBox === MAX_SCORE) delete session.boxes[entryId]
-  else session.boxes[entryId] = newBox
-
   const passComplete = session.passQueue.length === 0
-  if (passComplete) _advancePass(session, scores, allEntryIds, game)
+  if (passComplete) _advancePass(session, scores, allEntryIds)
   writeSession(session, game)
   return passComplete
 }
 
 /**
- * Record wrong answer. Score→1. Card deferred to next B1 pass.
+ * Record wrong answer. Score-1 (min 0). Removes from pass queue.
  * Returns true if pass is now complete.
  */
 export function recordWrong(entryId, allEntryIds, game='flashcard') {
@@ -240,18 +256,12 @@ export function recordWrong(entryId, allEntryIds, game='flashcard') {
   session.passQueue = session.passQueue.filter(id => id !== entryId)
   session.passDone++
 
-  scores[entryId] = 1
+  const oldScore = scores[entryId] ?? 0
+  scores[entryId] = Math.max(oldScore - 1, 0)
   writeScores(scores, game)
 
-  // Keep in box 1 (or move to box 1 if it was higher)
-  session.boxes[entryId] = 1
-  // Defer to next B1 pass
-  if (!session.pendingWrong.includes(entryId)) {
-    session.pendingWrong.push(entryId)
-  }
-
   const passComplete = session.passQueue.length === 0
-  if (passComplete) _advancePass(session, scores, allEntryIds, game)
+  if (passComplete) _advancePass(session, scores, allEntryIds)
   writeSession(session, game)
   return passComplete
 }
@@ -269,7 +279,6 @@ export function recordMaster(entryId, allEntryIds, game='flashcard') {
 
   scores[entryId] = MAX_SCORE
   writeScores(scores, game)
-  delete session.boxes[entryId]
 
   const passComplete = session.passQueue.length === 0
   if (passComplete) _advancePass(session, scores, allEntryIds)
@@ -277,111 +286,67 @@ export function recordMaster(entryId, allEntryIds, game='flashcard') {
   return passComplete
 }
 
+/**
+ * Master a card across every recognition game (flashcard, pairmatch — not
+ * stroke), as a deliberate "I know this word, stop showing it to me in
+ * recognition games" action. Initializes a session for any recognition game
+ * that hasn't been opened yet, so mastery still applies even if the person
+ * has never played that game.
+ */
+export function recordMasterAll(entryId, allEntries) {
+  const allEntryIds = allEntries.map(e => e.id)
+  for (const game of RECOGNITION_GAMES) {
+    if (!readSession(game)) initSession(allEntries, game)
+    recordMaster(entryId, allEntryIds, game)
+  }
+}
+
 export function resetAll(game='flashcard') {
   localStorage.removeItem(SCORES_KEY(game))
   localStorage.removeItem(SESSION_KEY(game))
 }
 
-// ── Internal ──────────────────────────────────────────────────────────────────
-
 /**
- * After completing b1PassCount B1 passes, which higher boxes are due?
- * B2 due every 2nd B1 pass, B3 every 4th, B4 every 8th.
- * Returns array of box numbers due (may be empty, or [2], or [2,3], etc.)
+ * Manually open a specific box (0-5) on demand, e.g. when the person taps it
+ * in the LeitnerBar UI, overriding the engine's automatic pick. All boxes
+ * behave the same way once opened — including box 5 (mastered): it can be
+ * reviewed manually like any other, a correct answer keeps it at 5, a wrong
+ * answer drops it to 4. The only thing special about box 5 is that
+ * _pickHighestBox() never selects it automatically. Returns the updated
+ * pass state, or null if there's no active session or the requested box has
+ * no cards.
  */
-function _higherBoxesDue(b1PassCount) {
-  const due = []
-  if (b1PassCount > 0 && b1PassCount % 2 === 0) due.push(2)
-  if (b1PassCount > 0 && b1PassCount % 4 === 0) due.push(3)
-  if (b1PassCount > 0 && b1PassCount % 8 === 0) due.push(4)
-  return due
+export function openBox(box, game='flashcard') {
+  if (box < 0 || box > 5) return null
+  const session = readSession(game)
+  if (!session) return null
+
+  const scores = readScores(game)
+  const count = _boxCounts(session.entryIds, scores)[box]
+  if (count === 0) return null  // nothing to open
+
+  session.currentPass = box
+  _openPass(session, scores)
+  writeSession(session, game)
+  return getPassState(game)
 }
 
-function _openPass(session, scores, game='flashcard') {
+// ── Internal ──────────────────────────────────────────────────────────────────
+
+function _openPass(session, scores) {
   const box = session.currentPass
-  let cards
-
-  if (box === 1) {
-    _topUpBox1(session.boxes, session.stack, scores)
-    writeScores(scores, game)  // persist score=1 for newly promoted cards
-    for (const id of session.pendingWrong) {
-      if (!session.boxes[id]) session.boxes[id] = 1
-    }
-    session.pendingWrong = []
-    cards = Object.entries(session.boxes)
-      .filter(([,b]) => b === 1)
-      .map(([id]) => id)
-  } else {
-    cards = Object.entries(session.boxes)
-      .filter(([,b]) => b === box)
-      .map(([id]) => id)
-  }
-
+  const cards = session.entryIds.filter(id => _boxOf(scores[id] ?? 0) === box)
   shuffle(cards)
   session.passQueue = cards
   session.passDone  = 0
   session.passTotal = cards.length
 }
 
-function _advancePass(session, scores, allEntryIds, game='flashcard') {
-  // Ensure passSchedule exists (handles old localStorage sessions)
-  if (!Array.isArray(session.passSchedule)) session.passSchedule = []
-  if (typeof session.b1PassCount !== 'number') session.b1PassCount = 0
-
-  // If schedule is empty, we just finished a B1 pass — build next schedule
-  if (session.passSchedule.length === 0) {
-    session.b1PassCount++
-    const due = _higherBoxesDue(session.b1PassCount)
-    // Queue: any due higher boxes (non-empty), then B1
-    for (const b of due) {
-      const count = Object.values(session.boxes).filter(x => x === b).length
-      if (count > 0) session.passSchedule.push(b)
-    }
-    session.passSchedule.push(1)
-  }
-
-  // Take next box from schedule
-  let next = session.passSchedule.shift()
-
-  // Skip empty boxes — find next non-empty one
-  for (let safety = 0; safety < 8; safety++) {
-    if (next === undefined) { next = 1; break }
-    const count = next === 1
-      ? Object.values(session.boxes).filter(b => b === 1).length + (session.pendingWrong?.length ?? 0)
-      : Object.values(session.boxes).filter(b => b === next).length
-    if (count > 0) break
-    // Empty — try next in schedule, or default to B1
-    next = session.passSchedule.length > 0 ? session.passSchedule.shift() : 1
-  }
-
-  session.currentPass = next ?? 1
-  _openPass(session, scores, game)
-}
-
-function _topUpBox1(boxes, stack, scores) {
-  const b1count = Object.values(boxes).filter(b => b === 1).length
-  if (b1count >= BOX1_MAX) return
-  const slots = BOX1_MAX - b1count
-
-  // Prefer score-1 words, then score-0
-  let candidates = stack.filter(id => (scores[id]??0) === 1)
-  if (candidates.length < slots) {
-    candidates = candidates.concat(
-      stack.filter(id => (scores[id]??0) === 0)
-    )
-  }
-  shuffle(candidates)
-
-  let promoted = 0
-  for (const id of candidates) {
-    if (promoted >= slots) break
-    boxes[id] = 1
-    // Set score to 1 when entering box 1 for the first time
-    if ((scores[id] ?? 0) === 0) scores[id] = 1
-    const idx = stack.indexOf(id)
-    if (idx >= 0) stack.splice(idx, 1)
-    promoted++
-  }
+function _advancePass(session, scores, allEntryIds) {
+  const ids = allEntryIds ?? session.entryIds
+  const next = _pickNextBoxBelow(ids, scores, session.currentPass)
+  session.currentPass = next ?? session.currentPass
+  _openPass(session, scores)
 }
 
 function shuffle(arr) {

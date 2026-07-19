@@ -1,7 +1,13 @@
 import RubyText from '../components/RubyText'
+import DirectionToggle from '../components/DirectionToggle'
+import ReadingToggle from '../components/ReadingToggle'
+import ReadingOnlyToggle from '../components/ReadingOnlyToggle'
+import FacetsByBoxToggle from '../components/FacetsByBoxToggle'
+import HelpButton from '../components/HelpButton'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useApp } from '../context/AppContext'
-import { srsPick, srsPickDistinct } from '../engine/srs'
+import { srsPick, srsPickDistinct, getScore } from '../engine/srs'
+import { resolveFacet } from '../engine/facets'
 import './RaceCar.css'
 
 function truncate(text) {
@@ -31,7 +37,7 @@ function makeTile(entry, isCorrect, lane, y) {
 }
 
 export default function RaceCar() {
-  const { activeEntries: allEntries, direction, showReading, scoreActions, scores, settings, updateSettings, setScreen, goBack, getEntriesForGame, vocabLoading } = useApp()
+  const { direction, showReading, readingOnly, facetsByBox, scoreActions, settings, updateSettings, setScreen, goBack, getEntriesForGame, activeLanguage } = useApp()
   const { entries: activeEntries, isEmpty: levelEmpty } = getEntriesForGame('racecar')
   const { defaultSpeed, boostEnabled } = settings.racecar
   const speedRef = useRef(defaultSpeed)
@@ -59,6 +65,7 @@ export default function RaceCar() {
   const scoreRef      = useRef(score)
   const lastTimeRef   = useRef(null)
   const rafRef        = useRef(null)
+  const gameLoopRef   = useRef(null)
   const screenHeight  = useRef(window.innerHeight)
   const activeRef     = useRef(activeEntries)
   const lanesRef      = useRef(null)
@@ -193,14 +200,18 @@ export default function RaceCar() {
       spawnTiles(promptRef.current)
     }
 
-    rafRef.current = requestAnimationFrame(gameLoop)
+    rafRef.current = requestAnimationFrame(t => gameLoopRef.current?.(t))
   }, [checkCollisions, spawnTiles])
+
+  // Keep the ref pointed at the latest gameLoop so the RAF recursion below
+  // (and the one in the start-game effect) never calls a stale closure.
+  useEffect(() => { gameLoopRef.current = gameLoop }, [gameLoop])
 
   // Start game
   useEffect(() => {
     if (activeEntries.length < 3) return
     nextPrompt()
-    rafRef.current = requestAnimationFrame(gameLoop)
+    rafRef.current = requestAnimationFrame(t => gameLoopRef.current?.(t))
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
     }
@@ -306,8 +317,20 @@ export default function RaceCar() {
   }
 
   const laneWidth = 100 / LANE_COUNT
+  const isCJKLang = activeLanguage === 'zh' || activeLanguage === 'ja'
+
+  // When facetsByBox is on, this word's own score (0-5, same scale as the
+  // Leitner boxes) drives its display facet instead of the manual toggles.
+  const promptBox      = prompt ? getScore(prompt.id, 'racecar') : 0
+  const facet           = facetsByBox ? resolveFacet(promptBox, activeLanguage) : null
+  const effDirection    = facet ? facet.direction    : direction
+  const effShowReading  = facet ? facet.showReading  : showReading
+  const effReadingOnly  = facet ? facet.readingOnly  : readingOnly
+
   const promptText = prompt
-    ? (direction === 'entry->translation' ? prompt.translation[0] : prompt.entry)
+    ? (effDirection === 'entry->translation'
+        ? prompt.translation[0]
+        : (effReadingOnly && isCJKLang && prompt.reading ? prompt.reading : prompt.entry))
     : '…'
 
   const seenPct = activeEntries.length > 0 ? Math.round((seenCount / activeEntries.length) * 100) : 0
@@ -334,7 +357,20 @@ export default function RaceCar() {
           <span className="rc-streak">{streak > 1 ? `🔥 ${streak}` : `High ${highScore}`}</span>
         </div>
         <div className="rc-header-right">
-          <button className="rc-gear" onClick={() => setScreen('settings')} title="Settings">⚙️</button>
+          {(activeLanguage === 'zh' || activeLanguage === 'ja') && <ReadingOnlyToggle />}
+          <DirectionToggle />
+          <ReadingToggle />
+          <FacetsByBoxToggle />
+          <HelpButton
+            title="Race Car"
+            description="Steer into the lane with the correct answer before it reaches you. Faster, correct answers build your streak; wrong lanes or running out of time end it."
+            buttons={[
+              { icon: '⇵', label: 'Reading only', desc: '(zh/ja) Show reading instead of hanzi/kanji' },
+              { icon: '⇄', label: 'Direction',    desc: 'Swap which side is the prompt — word or translation' },
+              { icon: 'ふ/子', label: 'Reading',  desc: 'Show or hide the furigana/pinyin annotation' },
+              { icon: '🧩', label: 'Train all facets', desc: "Each word's own score drives its display (translation flip, no reading, reading-only) so it's trained on every facet over time" },
+            ]}
+          />
         </div>
       </div>
 
@@ -346,7 +382,7 @@ export default function RaceCar() {
       {/* Prompt */}
       <div className="rc-prompt-area">
         <div className="rc-prompt">{promptText}</div>
-        {showReading && prompt?.reading && direction === 'translation->entry' && (
+        {effShowReading && prompt?.reading && effDirection === 'translation->entry' && !(effReadingOnly && isCJKLang) && (
           <div className="rc-prompt-reading">{prompt.reading}</div>
         )}
       </div>
@@ -384,9 +420,11 @@ export default function RaceCar() {
 
         {/* Tiles */}
         {tiles.map(tile => {
-          const rawLabel  = direction === 'entry->translation' ? tile.entry.entry : tile.entry.translation[0]
+          const rawLabel  = effDirection === 'entry->translation'
+            ? (effReadingOnly && isCJKLang && tile.entry.reading ? tile.entry.reading : tile.entry.entry)
+            : tile.entry.translation[0]
           const tileLabel = truncate(rawLabel)
-          const tileSub   = showReading && tile.entry.reading && direction === 'entry->translation' ? tile.entry.reading : null
+          const tileSub   = effShowReading && tile.entry.reading && effDirection === 'entry->translation' && !(effReadingOnly && isCJKLang) ? tile.entry.reading : null
           // Pick size: CJK glyphs are compact; long Latin words need smaller font
           const isCJK = /[\u4e00-\u9fff\u3040-\u30ff]/.test(tileLabel)
           const tileSize = isCJK ? 'md' : tileLabel.length > 10 ? 'sm' : 'md'
@@ -406,13 +444,19 @@ export default function RaceCar() {
           )
         })}
 
-        {/* Car — position updated directly via carRef for smooth 60fps movement */}
+        {/* Car — position updated directly via carRef for smooth 60fps movement.
+            The ref read below only sets the initial mount position; every
+            subsequent move writes to carRef.current.style.left directly,
+            bypassing React re-renders on purpose (keyboard/drag handlers
+            above). Converting this to state would reintroduce per-frame
+            re-renders and defeat that optimization. */}
         <div
           ref={carRef}
           className={`rc-car ${crash ? 'rc-car-crash' : ''}`}
           style={{
             position: 'absolute',
             bottom: '3%',
+            // eslint-disable-next-line react-hooks/refs -- intentional, see comment above
             left: `calc(${carLaneRef.current * laneWidth + laneWidth/2}% - 24px)`,
           }}
         >

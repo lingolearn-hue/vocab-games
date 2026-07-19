@@ -74,25 +74,42 @@
   {
     "id": "the-wandering-scholar",
     "titles": {
-      "en": "The Wandering Scholar",
+      "en": "Two Philosophers Walk Into a Study",
       "zh": "游学之路",
       "ja": "旅する学者",
-      "de": "Der wandernde Gelehrte",
+      "de": "Zwei Philosophen betreten ein Arbeitszimmer",
       "es": "El erudito errante",
       "fr": "L'érudit voyageur"
     },
     "subtitles": {
-      "en": "An intermediate adventure — N4 / A2",
+      "en": "A whimsical look at German philosophy — A1/A2",
       "zh": "中级冒险 — HSK3",
       "ja": "中級アドベンチャー — N4",
-      "de": "Ein Mittelstufen-Abenteuer — A2",
+      "de": "Ein verspielter Blick auf die deutsche Philosophie — A1/A2",
       "es": "Una aventura de nivel intermedio — A2",
       "fr": "Une aventure de niveau intermédiaire — A2"
     },
-    "icon": "📚",
+    "icon": "🎩",
     "totalChapters": 12,
-    "comingSoon": true,
-    "chapters": [],
+    "comingSoon": false,
+    "chapters": [
+      {
+        "id": "ch01",
+        "number": 1
+      },
+      {
+        "id": "ch02",
+        "number": 2
+      },
+      {
+        "id": "ch03",
+        "number": 3
+      },
+      {
+        "id": "ch04",
+        "number": 4
+      }
+    ],
     "key": "B"
   }
 ]

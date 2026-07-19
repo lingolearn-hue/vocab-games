@@ -1,0 +1,12 @@
+.chip-row-outer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.chip-row-inner {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  white-space: nowrap;
+  width: max-content;
+}

@@ -1,5 +1,8 @@
 import { useState, useMemo, useEffect } from 'react'
 import { useApp } from '../context/AppContext'
+import LevelChooser from '../components/LevelChooser'
+import ChoiceChips from '../components/ChoiceChips'
+import HelpButton from '../components/HelpButton'
 import './GrammarDictionary.css'
 
 async function loadGrammar(language) {
@@ -12,7 +15,7 @@ async function loadGrammar(language) {
 
 const LEVEL_ORDER = {
   ja: ['N5','N4','N3','N2','N1'],
-  zh: ['HSK1','HSK2','HSK3','HSK4','HSK5','HSK6'],
+  zh: ['HSK1','HSK2','HSK3','HSK4','HSK5','HSK6','HSK7'],
   de: ['A1','A2','B1','B2','C1'],
   es: ['A1','A2','B1','B2','C1'],
   en: ['A1','A2','B1','B2','C1'],
@@ -80,13 +83,14 @@ export default function GrammarDictionary({ patterns: chapterPatterns, onBack })
   const [allPatterns, setAllPatterns] = useState([])
   const [loading, setLoading] = useState(false)
   const [search, setSearch] = useState('')
-  const [levelFilter, setLevelFilter] = useState(null)
-  const [categoryFilter, setCategoryFilter] = useState(null)
+  const [activeLevels, setActiveLevels] = useState(null)  // multi-select, null = all
+  const [activeCategories, setActiveCategories] = useState(null)  // multi-select, null = all
   const [showChapterOnly, setShowChapterOnly] = useState(!!chapterPatterns?.length)
 
   // Load global grammar file
   useEffect(() => {
     if (!activeLanguage) return
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- kicks off an async fetch on language change
     setLoading(true)
     loadGrammar(activeLanguage).then(data => {
       setAllPatterns(data?.patterns ?? [])
@@ -99,7 +103,6 @@ export default function GrammarDictionary({ patterns: chapterPatterns, onBack })
   // Merge chapter patterns with global — chapter patterns shown with ★
   const mergedPatterns = useMemo(() => {
     const chapterIds = new Set((chapterPatterns ?? []).map(p => p.id))
-    const chapterMap = new Map((chapterPatterns ?? []).map(p => [p.id, p]))
     const global = allPatterns.map(p => ({ ...p, isChapter: chapterIds.has(p.id) }))
     // Add chapter-only patterns not in global list
     const extras = (chapterPatterns ?? [])
@@ -111,14 +114,14 @@ export default function GrammarDictionary({ patterns: chapterPatterns, onBack })
   const filtered = useMemo(() => {
     let p = mergedPatterns
     if (showChapterOnly && chapterPatterns?.length) p = p.filter(x => x.isChapter)
-    if (levelFilter) p = p.filter(x => x.level === levelFilter)
-    if (categoryFilter) p = p.filter(x => x.category === categoryFilter)
+    if (activeLevels) p = p.filter(x => activeLevels.includes(x.level))
+    if (activeCategories) p = p.filter(x => activeCategories.includes(x.category))
     if (search.trim()) {
       const q = search.toLowerCase()
       p = p.filter(x => x.title.toLowerCase().includes(q) || x.explanation.toLowerCase().includes(q))
     }
     return p
-  }, [mergedPatterns, showChapterOnly, levelFilter, categoryFilter, search, chapterPatterns])
+  }, [mergedPatterns, showChapterOnly, activeLevels, activeCategories, search, chapterPatterns])
 
   const levels = useMemo(() => {
     const s = new Set(mergedPatterns.map(p => p.level))
@@ -134,6 +137,12 @@ export default function GrammarDictionary({ patterns: chapterPatterns, onBack })
       <div className="gd-header">
         {<button className="gd-back" onClick={handleBack}>← Back</button>}
         <span className="gd-title-main">Grammar Dictionary</span>
+        <div style={{ marginLeft: 'auto' }}>
+          <HelpButton
+            title="Grammar Dictionary"
+            description="Search and browse grammar patterns for the active language, with explanations and examples."
+          />
+        </div>
       </div>
 
       {/* Search */}
@@ -159,26 +168,19 @@ export default function GrammarDictionary({ patterns: chapterPatterns, onBack })
         )}
         <div className="gd-filter-row">
           <span className="gd-filter-label">Level</span>
-          {levels.map(l => (
-            <button
-              key={l}
-              className={`gd-chip ${levelFilter === l ? 'active' : ''}`}
-              onClick={() => setLevelFilter(f => f === l ? null : l)}
-            >{l}</button>
-          ))}
+          <LevelChooser levels={levels} value={activeLevels} onChange={setActiveLevels} className="gd-level-filter" />
         </div>
         {categories.length > 0 && (
           <div className="gd-filter-row gd-filter-row--cats">
             <span className="gd-filter-label">Category</span>
-            <div className="gd-filter-chips-wrap">
-              {categories.map(c => (
-                <button
-                  key={c}
-                  className={`gd-chip gd-chip--sm ${categoryFilter === c ? 'active' : ''}`}
-                  onClick={() => setCategoryFilter(f => f === c ? null : c)}
-                >{c.replace(/-/g,' ')}</button>
-              ))}
-            </div>
+            <ChoiceChips
+              options={categories}
+              value={activeCategories}
+              onChange={setActiveCategories}
+              getLabel={c => c.replace(/-/g, ' ')}
+              chipClassName="gd-chip gd-chip--sm"
+              className="gd-category-filter"
+            />
           </div>
         )}
       </div>

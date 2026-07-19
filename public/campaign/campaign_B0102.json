@@ -1,0 +1,2249 @@
+{
+  "meta": {
+    "chapterNum": "02",
+    "chapterTitle": {
+      "en": "The Owl of Minerva",
+      "zh": "",
+      "ja": "",
+      "de": "Die Eule der Minerva",
+      "es": ""
+    },
+    "level": "A2",
+    "artifact": {
+      "icon": "🦉",
+      "name": "A Small Owl Figurine",
+      "grammar": "Komparativ · Superlativ · Relativsätze"
+    },
+    "storyIntro": {
+      "en": "The next morning. Schopenhauer is still drinking his coffee when there is a knock at the door — much earlier than expected. A third philosopher has arrived, and he has strong opinions about almost everything.",
+      "zh": "",
+      "ja": "",
+      "de": "Am nächsten Morgen. Schopenhauer trinkt noch seinen Kaffee, als es an der Tür klopft — viel früher als erwartet. Ein dritter Philosoph ist angekommen, und er hat zu fast allem eine starke Meinung.",
+      "es": ""
+    },
+    "storyOutro": {
+      "en": "Kant has gone home to Königsberg. Schopenhauer and Hegel remain — two men who agree on almost nothing, sharing one small study and a great deal of stubbornness. The owl figurine watches them both, saying nothing.",
+      "zh": "",
+      "ja": "",
+      "de": "Kant ist nach Königsberg zurückgereist. Schopenhauer und Hegel bleiben — zwei Männer, die sich über fast nichts einig sind, in einem kleinen Arbeitszimmer und mit sehr viel Hartnäckigkeit. Die Eulenfigur beobachtet beide, ohne etwas zu sagen.",
+      "es": ""
+    }
+  },
+  "sections": [
+    {
+      "num": "01",
+      "title": {
+        "en": "An Early Visitor",
+        "zh": "",
+        "ja": "",
+        "de": "Ein früher Besucher",
+        "es": ""
+      },
+      "vocab": [
+        "früh",
+        "klopfen",
+        "überraschen",
+        "der Besucher",
+        "vorstellen",
+        "bekannt",
+        "der Professor",
+        "die Universität",
+        "Berlin",
+        "wichtig",
+        "denken über"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv020201",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "It is early morning. Schopenhauer is drinking coffee when there is a loud knock at the door.",
+                "zh": "",
+                "ja": "",
+                "de": "Es ist früher Morgen. Schopenhauer trinkt Kaffee, als es laut an der Tür klopft.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Already? It is barely eight o'clock. Who could that be?",
+                "zh": "",
+                "ja": "",
+                "de": "Schon? Es ist kaum acht Uhr. Wer könnte das sein?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "He opens the door. A confident-looking man in fine clothes stands there.",
+                "zh": "",
+                "ja": "",
+                "de": "Er öffnet die Tür. Ein selbstbewusst aussehender Mann in feiner Kleidung steht da.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "Good morning. I am Georg Wilhelm Friedrich Hegel, professor in Berlin. I believe you know my work.",
+                "zh": "",
+                "ja": "",
+                "de": "Guten Morgen. Ich bin Georg Wilhelm Friedrich Hegel, Professor in Berlin. Ich glaube, Sie kennen meine Arbeit.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Hegel. Yes. I know your work very well.",
+                "zh": "",
+                "ja": "",
+                "de": "Hegel. Ja. Ich kenne Ihre Arbeit sehr gut.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Schopenhauer's face does not look especially happy. But he opens the door wider.",
+                "zh": "",
+                "ja": "",
+                "de": "Schopenhauers Gesicht sieht nicht besonders glücklich aus. Aber er öffnet die Tür weiter.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Please, come in. I have a guest already — Herr Kant from Königsberg.",
+                "zh": "",
+                "ja": "",
+                "de": "Bitte, kommen Sie herein. Ich habe schon einen Gast — Herr Kant aus Königsberg.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "Kant! Even better. I have many thoughts about his philosophy too.",
+                "zh": "",
+                "ja": "",
+                "de": "Kant! Noch besser. Ich habe auch viele Gedanken über seine Philosophie.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Kant comes into the hallway, surprised to see a third person.",
+                "zh": "",
+                "ja": "",
+                "de": "Kant kommt in den Flur, überrascht, eine dritte Person zu sehen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "Herr Hegel. We have not met, but I have read some of your newer writings.",
+                "zh": "",
+                "ja": "",
+                "de": "Herr Hegel. Wir haben uns nicht getroffen, aber ich habe einige Ihrer neueren Schriften gelesen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "An honor, Herr Kant. Your philosophy was an important first step. I believe my work continues where yours stops.",
+                "zh": "",
+                "ja": "",
+                "de": "Eine Ehre, Herr Kant. Ihre Philosophie war ein wichtiger erster Schritt. Ich glaube, meine Arbeit setzt fort, wo Ihre aufhört.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "\"An important first step.\" How generous of you.",
+                "zh": "",
+                "ja": "",
+                "de": "„Ein wichtiger erster Schritt.\" Wie großzügig von Ihnen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "I only mean that philosophy develops, Herr Schopenhauer. Nothing stays still. Not even great ideas.",
+                "zh": "",
+                "ja": "",
+                "de": "Ich meine nur, dass Philosophie sich entwickelt, Herr Schopenhauer. Nichts bleibt stehen. Nicht einmal große Ideen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Some ideas are more lasting than others, I think. But please, sit down. Would you like coffee?",
+                "zh": "",
+                "ja": "",
+                "de": "Manche Ideen sind dauerhafter als andere, denke ich. Aber bitte, setzen Sie sich. Möchten Sie Kaffee?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "Yes, thank you. Strong, if possible. I think best with strong coffee.",
+                "zh": "",
+                "ja": "",
+                "de": "Ja, danke. Stark, wenn möglich. Ich denke am besten mit starkem Kaffee.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Three philosophers now sit in one small study. The morning suddenly feels more complicated.",
+                "zh": "",
+                "ja": "",
+                "de": "Drei Philosophen sitzen jetzt in einem kleinen Arbeitszimmer. Der Morgen fühlt sich plötzlich komplizierter an.",
+                "es": ""
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "Where is Hegel a professor?",
+                "zh": "",
+                "ja": "",
+                "de": "Wo ist Hegel Professor?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "In Berlin.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "In Berlin.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "In Königsberg.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "In Königsberg.",
+                    "es": ""
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "In Frankfurt.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "In Frankfurt.",
+                    "es": ""
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "02",
+      "title": {
+        "en": "The True Is the Whole",
+        "zh": "",
+        "ja": "",
+        "de": "Das Wahre ist das Ganze",
+        "es": ""
+      },
+      "vocab": [
+        "wahr",
+        "das Ganze",
+        "der Teil",
+        "die Entwicklung",
+        "das System",
+        "verstehen",
+        "zusammen",
+        "getrennt",
+        "denken",
+        "die Idee",
+        "die Geschichte"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "01a",
+          "title": {
+            "en": "GENUINE EXCERPT — Hegel, \"Phänomenologie des Geistes,\" Preface (1807)",
+            "zh": "",
+            "ja": "",
+            "de": "ECHTES ZITAT — Hegel, „Phänomenologie des Geistes,\" Vorrede (1807)",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "Direct quotation, one of Hegel's most famous lines: \"Das Wahre ist das Ganze.\"",
+              "zh": "",
+              "ja": "",
+              "de": "Direktes Zitat, eine von Hegels berühmtesten Zeilen: „Das Wahre ist das Ganze.\"",
+              "es": ""
+            }
+          ]
+        },
+        {
+          "num": "01a2",
+          "title": {
+            "en": "MY OWN SUMMARY (not a quotation) — what this means",
+            "zh": "",
+            "ja": "",
+            "de": "MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — was das bedeutet",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "The following is my own explanation, not Hegel's wording: he means that a single fact, alone, is not the full truth. Only when we see how all the parts connect and develop together do we understand the whole truth.",
+              "zh": "",
+              "ja": "",
+              "de": "Das Folgende ist meine eigene Erklärung, nicht Hegels Wortlaut: Er meint, dass eine einzelne Tatsache, allein, nicht die volle Wahrheit ist. Erst wenn wir sehen, wie alle Teile zusammenhängen und sich gemeinsam entwickeln, verstehen wir die ganze Wahrheit.",
+              "es": ""
+            },
+            {
+              "en": "For Hegel, history and ideas are not separate, fixed things. They are a process — always moving toward a fuller understanding.",
+              "zh": "",
+              "ja": "",
+              "de": "Für Hegel sind Geschichte und Ideen keine getrennten, festen Dinge. Sie sind ein Prozess — der sich immer zu einem volleren Verständnis hin bewegt.",
+              "es": ""
+            }
+          ]
+        },
+        {
+          "num": "01b",
+          "title": {
+            "en": "Simplified — A small example",
+            "zh": "",
+            "ja": "",
+            "de": "Vereinfacht — Ein kleines Beispiel",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "Imagine a single puzzle piece. Alone, it does not show you the full picture.",
+              "zh": "",
+              "ja": "",
+              "de": "Stell dir ein einzelnes Puzzleteil vor. Allein zeigt es dir nicht das ganze Bild.",
+              "es": ""
+            },
+            {
+              "en": "Hegel says truth is like the whole puzzle, not just one piece.",
+              "zh": "",
+              "ja": "",
+              "de": "Hegel sagt, Wahrheit ist wie das ganze Puzzle, nicht nur ein Teil.",
+              "es": ""
+            },
+            {
+              "en": "He also believed that history moves forward, step by step, like a long story with chapters.",
+              "zh": "",
+              "ja": "",
+              "de": "Er glaubte auch, dass die Geschichte sich Schritt für Schritt vorwärts bewegt, wie eine lange Geschichte mit Kapiteln.",
+              "es": ""
+            },
+            {
+              "en": "Every old idea helps create a newer, better idea. This process never really stops.",
+              "zh": "",
+              "ja": "",
+              "de": "Jede alte Idee hilft, eine neuere, bessere Idee zu schaffen. Dieser Prozess hört nie wirklich auf.",
+              "es": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "03",
+      "title": {
+        "en": "Schopenhauer's Private Opinion",
+        "zh": "",
+        "ja": "",
+        "de": "Schopenhauers private Meinung",
+        "es": ""
+      },
+      "vocab": [
+        "die Meinung",
+        "denken über",
+        "schwierig",
+        "klar",
+        "einfach",
+        "verstehen",
+        "der Stil",
+        "schreiben",
+        "der Satz",
+        "lang",
+        "kurz",
+        "überzeugen"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv020301",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Hegel has gone to wash his hands. For a moment, Schopenhauer is alone in the kitchen, making more coffee.",
+                "zh": "",
+                "ja": "",
+                "de": "Hegel ist gegangen, um sich die Hände zu waschen. Für einen Moment ist Schopenhauer allein in der Küche und macht mehr Kaffee.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "\"An important first step.\" Unbelievable. The man has no humility at all.",
+                "zh": "",
+                "ja": "",
+                "de": "„Ein wichtiger erster Schritt.\" Unglaublich. Der Mann hat überhaupt keine Demut.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "I have read his book. Three times, actually, because the sentences are so long that I forgot the beginning by the end.",
+                "zh": "",
+                "ja": "",
+                "de": "Ich habe sein Buch gelesen. Tatsächlich dreimal, weil die Sätze so lang sind, dass ich den Anfang bis zum Ende vergessen habe.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "He writes about \"Spirit\" and \"the Absolute\" as if these words explain everything. They explain nothing.",
+                "zh": "",
+                "ja": "",
+                "de": "Er schreibt über „Geist\" und „das Absolute\", als ob diese Wörter alles erklären. Sie erklären nichts.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "A clear thought needs a clear sentence. I believe this completely.",
+                "zh": "",
+                "ja": "",
+                "de": "Ein klarer Gedanke braucht einen klaren Satz. Das glaube ich vollkommen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "But perhaps I am too harsh this morning. The coffee is not even ready yet.",
+                "zh": "",
+                "ja": "",
+                "de": "Aber vielleicht bin ich heute Morgen zu hart. Der Kaffee ist noch nicht einmal fertig.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Still, I will be polite. A guest is a guest, even a difficult one.",
+                "zh": "",
+                "ja": "",
+                "de": "Trotzdem werde ich höflich sein. Ein Gast ist ein Gast, auch ein schwieriger.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "He pours three cups. He takes a deep breath before returning to the study.",
+                "zh": "",
+                "ja": "",
+                "de": "Er schenkt drei Tassen ein. Er atmet tief ein, bevor er ins Arbeitszimmer zurückkehrt.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Today will be a long day. I can already feel it.",
+                "zh": "",
+                "ja": "",
+                "de": "Heute wird ein langer Tag. Das fühle ich schon jetzt.",
+                "es": ""
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "What does Schopenhauer think about Hegel's sentences?",
+                "zh": "",
+                "ja": "",
+                "de": "Was denkt Schopenhauer über Hegels Sätze?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "They are too long and unclear.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Sie sind zu lang und unklar.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "They are too short.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Sie sind zu kurz.",
+                    "es": ""
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "They are perfect.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Sie sind perfekt.",
+                    "es": ""
+                  },
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "Do you prefer simple, short writing or complex, detailed writing? Why?",
+                "zh": "",
+                "ja": "",
+                "de": "Bevorzugst du einfaches, kurzes Schreiben oder komplexes, ausführliches Schreiben? Warum?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "I prefer simple, short writing.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Ich bevorzuge einfaches, kurzes Schreiben.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "I prefer complex, detailed writing.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Ich bevorzuge komplexes, ausführliches Schreiben.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "It depends on the topic.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Es kommt auf das Thema an.",
+                    "es": ""
+                  },
+                  "correct": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "04",
+      "title": {
+        "en": "Thesis, Antithesis, Synthesis",
+        "zh": "",
+        "ja": "",
+        "de": "These, Antithese, Synthese",
+        "es": ""
+      },
+      "vocab": [
+        "der Gegensatz",
+        "die Veränderung",
+        "die Lösung",
+        "der Streit",
+        "zusammenpassen",
+        "entwickeln",
+        "der Schritt",
+        "die Stufe",
+        "das Ergebnis",
+        "folgen",
+        "führen zu"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv020401",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Back in the study, Hegel begins to explain his most famous idea.",
+                "zh": "",
+                "ja": "",
+                "de": "Zurück im Arbeitszimmer beginnt Hegel, seine berühmteste Idee zu erklären.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "Let me explain my method simply. Every idea, a thesis, eventually meets its opposite, an antithesis.",
+                "zh": "",
+                "ja": "",
+                "de": "Lassen Sie mich meine Methode einfach erklären. Jede Idee, eine These, trifft schließlich auf ihr Gegenteil, eine Antithese.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "And then what happens?",
+                "zh": "",
+                "ja": "",
+                "de": "Und was passiert dann?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "Then comes a synthesis — a new, higher idea that combines parts of both. This new idea becomes the next thesis, and the process continues.",
+                "zh": "",
+                "ja": "",
+                "de": "Dann kommt eine Synthese — eine neue, höhere Idee, die Teile von beiden verbindet. Diese neue Idee wird zur nächsten These, und der Prozess geht weiter.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "So history is just an endless argument that never really finishes?",
+                "zh": "",
+                "ja": "",
+                "de": "Also ist die Geschichte nur ein endloser Streit, der nie wirklich endet?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "Not an argument without purpose. Each step brings more understanding. History has direction. It moves toward freedom and self-knowledge.",
+                "zh": "",
+                "ja": "",
+                "de": "Kein Streit ohne Zweck. Jeder Schritt bringt mehr Verständnis. Die Geschichte hat eine Richtung. Sie bewegt sich auf Freiheit und Selbsterkenntnis zu.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Direction toward what, exactly? I see mostly suffering and repetition, not progress toward some great goal.",
+                "zh": "",
+                "ja": "",
+                "de": "Richtung wohin, genau? Ich sehe meistens Leiden und Wiederholung, keinen Fortschritt zu einem großen Ziel.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "That is because you look too closely at single moments. Step back, and you will see the larger pattern.",
+                "zh": "",
+                "ja": "",
+                "de": "Das liegt daran, dass Sie zu genau auf einzelne Momente schauen. Treten Sie zurück, und Sie werden das größere Muster sehen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "I have stepped back many times, Herr Hegel. I still see the same pattern: wanting, suffering, wanting again.",
+                "zh": "",
+                "ja": "",
+                "de": "Ich bin schon oft zurückgetreten, Herr Hegel. Ich sehe immer noch das gleiche Muster: Wollen, Leiden, wieder Wollen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "Perhaps both of you are looking at different parts of the same large picture.",
+                "zh": "",
+                "ja": "",
+                "de": "Vielleicht schauen Sie beide auf verschiedene Teile desselben großen Bildes.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "A fair thought, Herr Kant. Though I believe my picture is, in the end, the more complete one.",
+                "zh": "",
+                "ja": "",
+                "de": "Ein fairer Gedanke, Herr Kant. Obwohl ich glaube, dass mein Bild am Ende das vollständigere ist.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Of course you do.",
+                "zh": "",
+                "ja": "",
+                "de": "Natürlich glauben Sie das.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Kant smiles quietly into his coffee. This will be an interesting morning.",
+                "zh": "",
+                "ja": "",
+                "de": "Kant lächelt leise in seinen Kaffee. Das wird ein interessanter Morgen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "According to Hegel, what comes after a thesis and an antithesis?",
+                "zh": "",
+                "ja": "",
+                "de": "Was kommt laut Hegel nach einer These und einer Antithese?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "A synthesis.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Eine Synthese.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "A new thesis without change.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Eine neue These ohne Veränderung.",
+                    "es": ""
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "Nothing. The process stops.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Nichts. Der Prozess stoppt.",
+                    "es": ""
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "05",
+      "title": {
+        "en": "The Owl of Minerva",
+        "zh": "",
+        "ja": "",
+        "de": "Die Eule der Minerva",
+        "es": ""
+      },
+      "vocab": [
+        "die Eule",
+        "der Flug",
+        "die Dämmerung",
+        "verstehen",
+        "zu spät",
+        "die Weisheit",
+        "rückwärts",
+        "schauen",
+        "das Leben",
+        "die Zeit",
+        "erkennen"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "02a",
+          "title": {
+            "en": "GENUINE EXCERPT — Hegel, \"Grundlinien der Philosophie des Rechts,\" Preface (1820)",
+            "zh": "",
+            "ja": "",
+            "de": "ECHTES ZITAT — Hegel, „Grundlinien der Philosophie des Rechts,\" Vorrede (1820)",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "Direct quotation, a famous closing image from the preface: \"...die Eule der Minerva beginnt erst mit der einbrechenden Dämmerung ihren Flug.\"",
+              "zh": "",
+              "ja": "",
+              "de": "Direktes Zitat, ein berühmtes Schlussbild aus der Vorrede: „...die Eule der Minerva beginnt erst mit der einbrechenden Dämmerung ihren Flug.\"",
+              "es": ""
+            }
+          ]
+        },
+        {
+          "num": "02a2",
+          "title": {
+            "en": "MY OWN SUMMARY (not a quotation) — what this image means",
+            "zh": "",
+            "ja": "",
+            "de": "MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — was dieses Bild bedeutet",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "The following is my own explanation, not Hegel's wording: Minerva's owl, a symbol of wisdom, only flies out at dusk — after the day's events are already finished.",
+              "zh": "",
+              "ja": "",
+              "de": "Das Folgende ist meine eigene Erklärung, nicht Hegels Wortlaut: Die Eule der Minerva, ein Symbol der Weisheit, fliegt erst in der Dämmerung aus — nachdem die Ereignisse des Tages schon vorbei sind.",
+              "es": ""
+            },
+            {
+              "en": "Hegel means: philosophy understands a time period only after that time period is already over. Wisdom looks backward, not forward.",
+              "zh": "",
+              "ja": "",
+              "de": "Hegel meint: Philosophie versteht eine Zeitperiode erst, nachdem diese Zeitperiode schon vorbei ist. Weisheit schaut rückwärts, nicht vorwärts.",
+              "es": ""
+            }
+          ]
+        },
+        {
+          "num": "02b",
+          "title": {
+            "en": "Simplified — Wisdom comes late",
+            "zh": "",
+            "ja": "",
+            "de": "Vereinfacht — Weisheit kommt spät",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "Hegel compared philosophy to an owl. An owl flies at night, not during the day.",
+              "zh": "",
+              "ja": "",
+              "de": "Hegel hat die Philosophie mit einer Eule verglichen. Eine Eule fliegt nachts, nicht am Tag.",
+              "es": ""
+            },
+            {
+              "en": "He meant: we usually understand events only after they have already happened.",
+              "zh": "",
+              "ja": "",
+              "de": "Er meinte: Wir verstehen Ereignisse meistens erst, nachdem sie schon passiert sind.",
+              "es": ""
+            },
+            {
+              "en": "For example, people often understand why something was important only many years later.",
+              "zh": "",
+              "ja": "",
+              "de": "Zum Beispiel verstehen Menschen oft erst viele Jahre später, warum etwas wichtig war.",
+              "es": ""
+            },
+            {
+              "en": "This is a humble idea: philosophy explains the past well, but it cannot easily predict the future.",
+              "zh": "",
+              "ja": "",
+              "de": "Das ist eine bescheidene Idee: Philosophie erklärt die Vergangenheit gut, aber sie kann die Zukunft nicht leicht vorhersagen.",
+              "es": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "06",
+      "title": {
+        "en": "Kant's Last Morning",
+        "zh": "",
+        "ja": "",
+        "de": "Kants letzter Morgen",
+        "es": ""
+      },
+      "vocab": [
+        "abreisen",
+        "die Reise",
+        "zurückkehren",
+        "sich verabschieden",
+        "danken",
+        "der Gastgeber",
+        "angenehm",
+        "vermissen",
+        "besuchen",
+        "die Postkutsche",
+        "pünktlich"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv020601",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "After the coffee, Kant looks at his pocket watch and stands up.",
+                "zh": "",
+                "ja": "",
+                "de": "Nach dem Kaffee schaut Kant auf seine Taschenuhr und steht auf.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "Gentlemen, I am sorry, but I must leave soon. My coach to Königsberg departs at noon, and I am a very punctual man.",
+                "zh": "",
+                "ja": "",
+                "de": "Meine Herren, es tut mir leid, aber ich muss bald gehen. Meine Kutsche nach Königsberg fährt um zwölf Uhr ab, und ich bin ein sehr pünktlicher Mann.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Already? I was hoping for at least one more good argument before lunch.",
+                "zh": "",
+                "ja": "",
+                "de": "Schon? Ich hatte auf wenigstens noch einen guten Streit vor dem Mittagessen gehofft.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "There will be other mornings, Herr Schopenhauer. Philosophy is patient. My coach is not.",
+                "zh": "",
+                "ja": "",
+                "de": "Es wird andere Morgen geben, Herr Schopenhauer. Die Philosophie ist geduldig. Meine Kutsche ist es nicht.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "Safe travels, Herr Kant. Our conversation this morning was valuable to me, even where we disagreed.",
+                "zh": "",
+                "ja": "",
+                "de": "Gute Reise, Herr Kant. Unser Gespräch heute Morgen war wertvoll für mich, auch dort, wo wir nicht einig waren.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "Disagreement between thinkers is healthy, Herr Hegel. I hope you two continue your conversation without me.",
+                "zh": "",
+                "ja": "",
+                "de": "Uneinigkeit zwischen Denkern ist gesund, Herr Hegel. Ich hoffe, Sie beide setzen Ihr Gespräch ohne mich fort.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Oh, I am sure we will. Whether Herr Hegel wants to or not.",
+                "zh": "",
+                "ja": "",
+                "de": "Oh, ich bin sicher, wir werden das. Ob Herr Hegel will oder nicht.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "I always enjoy a good discussion, Herr Schopenhauer, even a difficult one with you.",
+                "zh": "",
+                "ja": "",
+                "de": "Ich genieße immer eine gute Diskussion, Herr Schopenhauer, auch eine schwierige mit Ihnen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Schopenhauer walks Kant to the door. The morning sun is now higher in the sky.",
+                "zh": "",
+                "ja": "",
+                "de": "Schopenhauer begleitet Kant zur Tür. Die Morgensonne steht jetzt höher im Himmel.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "kant",
+              "text": {
+                "en": "Thank you for your hospitality, Herr Schopenhauer. And good luck with Herr Hegel. You will need it.",
+                "zh": "",
+                "ja": "",
+                "de": "Danke für Ihre Gastfreundschaft, Herr Schopenhauer. Und viel Glück mit Herrn Hegel. Sie werden es brauchen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "I appreciate the warning. Safe travels, old friend.",
+                "zh": "",
+                "ja": "",
+                "de": "Ich schätze die Warnung. Gute Reise, alter Freund.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Kant climbs into a waiting coach. He waves once, then is gone down the street.",
+                "zh": "",
+                "ja": "",
+                "de": "Kant steigt in eine wartende Kutsche. Er winkt einmal, dann ist er die Straße hinunter verschwunden.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Well, Herr Hegel. It seems it is only the two of us now.",
+                "zh": "",
+                "ja": "",
+                "de": "Nun, Herr Hegel. Es scheint, jetzt sind nur wir beide.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "So it seems. Shall we continue where we left off?",
+                "zh": "",
+                "ja": "",
+                "de": "So scheint es. Sollen wir dort weitermachen, wo wir aufgehört haben?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "If we must.",
+                "zh": "",
+                "ja": "",
+                "de": "Wenn es sein muss.",
+                "es": ""
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "Why does Kant need to leave?",
+                "zh": "",
+                "ja": "",
+                "de": "Warum muss Kant gehen?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "His coach to Königsberg departs at noon.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Seine Kutsche nach Königsberg fährt um zwölf Uhr ab.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "He is tired.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Er ist müde.",
+                    "es": ""
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "He does not like Hegel.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Er mag Hegel nicht.",
+                    "es": ""
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "07",
+      "title": {
+        "en": "World Spirit",
+        "zh": "",
+        "ja": "",
+        "de": "Der Weltgeist",
+        "es": ""
+      },
+      "vocab": [
+        "der Geist",
+        "die Welt",
+        "die Geschichte",
+        "wichtig",
+        "groß",
+        "die Person",
+        "die Nation",
+        "führen",
+        "der Krieg",
+        "der Held",
+        "die Zeit"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "03a",
+          "title": {
+            "en": "MY OWN SUMMARY (not a quotation) — Hegel's idea of the \"World Spirit,\" in my own words",
+            "zh": "",
+            "ja": "",
+            "de": "MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — Hegels Idee vom „Weltgeist\", in meinen eigenen Worten",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "This entire passage is my own restatement, not Hegel's wording. He used the term \"Weltgeist\" (World Spirit) to describe a kind of larger historical force, moving through nations, wars, and great individuals, slowly working toward more freedom and self-understanding for humanity.",
+              "zh": "",
+              "ja": "",
+              "de": "Diese ganze Passage ist meine eigene Wiedergabe, nicht Hegels Wortlaut. Er benutzte den Begriff „Weltgeist\", um eine Art größerer historischer Kraft zu beschreiben, die sich durch Nationen, Kriege und große Einzelpersonen bewegt und langsam auf mehr Freiheit und Selbstverständnis für die Menschheit hinarbeitet.",
+              "es": ""
+            },
+            {
+              "en": "For Hegel, even great individuals — kings, generals, revolutionaries — are partly tools of this larger spirit, often without fully understanding their own role in it.",
+              "zh": "",
+              "ja": "",
+              "de": "Für Hegel sind sogar große Einzelpersonen — Könige, Generäle, Revolutionäre — teilweise Werkzeuge dieses größeren Geistes, oft ohne ihre eigene Rolle darin vollständig zu verstehen.",
+              "es": ""
+            }
+          ]
+        },
+        {
+          "num": "03b",
+          "title": {
+            "en": "Simplified — A spirit moving through history",
+            "zh": "",
+            "ja": "",
+            "de": "Vereinfacht — Ein Geist, der sich durch die Geschichte bewegt",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "Hegel had an interesting idea. He called it the \"World Spirit.\"",
+              "zh": "",
+              "ja": "",
+              "de": "Hegel hatte eine interessante Idee. Er nannte sie den „Weltgeist\".",
+              "es": ""
+            },
+            {
+              "en": "He believed that history is not random. A bigger force moves through nations and important people.",
+              "zh": "",
+              "ja": "",
+              "de": "Er glaubte, dass die Geschichte nicht zufällig ist. Eine größere Kraft bewegt sich durch Nationen und wichtige Menschen.",
+              "es": ""
+            },
+            {
+              "en": "Even kings and famous leaders, he said, do not fully understand their role in this bigger story.",
+              "zh": "",
+              "ja": "",
+              "de": "Sogar Könige und berühmte Anführer, sagte er, verstehen ihre Rolle in dieser größeren Geschichte nicht vollständig.",
+              "es": ""
+            },
+            {
+              "en": "Step by step, this spirit moves the world toward more freedom.",
+              "zh": "",
+              "ja": "",
+              "de": "Schritt für Schritt bewegt dieser Geist die Welt zu mehr Freiheit.",
+              "es": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "08",
+      "title": {
+        "en": "An Argument About Suffering",
+        "zh": "",
+        "ja": "",
+        "de": "Ein Streit über das Leiden",
+        "es": ""
+      },
+      "vocab": [
+        "das Leiden",
+        "der Sinn",
+        "notwendig",
+        "unnötig",
+        "der Fortschritt",
+        "der Preis",
+        "bezahlen",
+        "wert",
+        "rechtfertigen",
+        "persönlich",
+        "allgemein"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv020801",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Alone now, Schopenhauer and Hegel sit across from each other. The room feels smaller.",
+                "zh": "",
+                "ja": "",
+                "de": "Jetzt allein, sitzen Schopenhauer und Hegel sich gegenüber. Der Raum fühlt sich kleiner an.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "Tell me honestly, Herr Schopenhauer. Do you really believe there is no meaning at all in human suffering?",
+                "zh": "",
+                "ja": "",
+                "de": "Sagen Sie mir ehrlich, Herr Schopenhauer. Glauben Sie wirklich, dass menschliches Leiden überhaupt keinen Sinn hat?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "I believe suffering simply is. It does not need a grand purpose to be real.",
+                "zh": "",
+                "ja": "",
+                "de": "Ich glaube, Leiden ist einfach da. Es braucht keinen großen Zweck, um real zu sein.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "But surely you see how suffering can lead to growth? A nation suffers through war, and afterward, builds something better.",
+                "zh": "",
+                "ja": "",
+                "de": "Aber Sie sehen doch, wie Leiden zu Wachstum führen kann? Eine Nation leidet durch einen Krieg, und danach baut sie etwas Besseres.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Sometimes. And sometimes a nation simply suffers, and nothing better comes. History is full of senseless pain too.",
+                "zh": "",
+                "ja": "",
+                "de": "Manchmal. Und manchmal leidet eine Nation einfach, und nichts Besseres kommt. Die Geschichte ist auch voll von sinnlosem Schmerz.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "I cannot accept that view. If suffering has no purpose at all, why continue to study history?",
+                "zh": "",
+                "ja": "",
+                "de": "Diese Ansicht kann ich nicht akzeptieren. Wenn Leiden überhaupt keinen Zweck hat, warum die Geschichte überhaupt studieren?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "To understand it. Not to justify it. Understanding and justifying are different things, Herr Hegel.",
+                "zh": "",
+                "ja": "",
+                "de": "Um sie zu verstehen. Nicht um sie zu rechtfertigen. Verstehen und Rechtfertigen sind unterschiedliche Dinge, Herr Hegel.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "A clever distinction. But a cold one, I think.",
+                "zh": "",
+                "ja": "",
+                "de": "Eine kluge Unterscheidung. Aber eine kalte, glaube ich.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Perhaps. The world is often cold. I prefer to describe it honestly rather than warmly.",
+                "zh": "",
+                "ja": "",
+                "de": "Vielleicht. Die Welt ist oft kalt. Ich beschreibe sie lieber ehrlich als warmherzig.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "And I prefer to find the larger pattern, even in difficult times. Otherwise, what is the point of philosophy at all?",
+                "zh": "",
+                "ja": "",
+                "de": "Und ich finde lieber das größere Muster, auch in schwierigen Zeiten. Sonst, was ist überhaupt der Sinn der Philosophie?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Perhaps the point is simply to see clearly. Even when the view is not comforting.",
+                "zh": "",
+                "ja": "",
+                "de": "Vielleicht ist der Sinn einfach, klar zu sehen. Auch wenn die Sicht nicht tröstlich ist.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "We will not agree on this today, Herr Schopenhauer.",
+                "zh": "",
+                "ja": "",
+                "de": "Wir werden uns heute darüber nicht einig werden, Herr Schopenhauer.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "No. Probably never. But the coffee is still warm, at least.",
+                "zh": "",
+                "ja": "",
+                "de": "Nein. Wahrscheinlich nie. Aber der Kaffee ist wenigstens noch warm.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Both men sit in silence for a moment. Outside, a bird sings, indifferent to philosophy entirely.",
+                "zh": "",
+                "ja": "",
+                "de": "Beide Männer sitzen einen Moment lang schweigend da. Draußen singt ein Vogel, völlig gleichgültig gegenüber der Philosophie.",
+                "es": ""
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "What does Schopenhauer say is the goal of studying history?",
+                "zh": "",
+                "ja": "",
+                "de": "Was sagt Schopenhauer, ist das Ziel, Geschichte zu studieren?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "To understand it, not to justify it.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Sie zu verstehen, nicht sie zu rechtfertigen.",
+                    "es": ""
+                  },
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "Whose approach to suffering and history makes more sense to you — Schopenhauer's honest description or Hegel's search for larger meaning?",
+                "zh": "",
+                "ja": "",
+                "de": "Welcher Ansatz zu Leiden und Geschichte erscheint dir sinnvoller — Schopenhauers ehrliche Beschreibung oder Hegels Suche nach größerem Sinn?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "Schopenhauer's approach makes more sense to me.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Schopenhauers Ansatz erscheint mir sinnvoller.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "Hegel's approach makes more sense to me.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Hegels Ansatz erscheint mir sinnvoller.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "I see value in both approaches.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Ich sehe Wert in beiden Ansätzen.",
+                    "es": ""
+                  },
+                  "correct": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "09",
+      "title": {
+        "en": "On Reason and Reality",
+        "zh": "",
+        "ja": "",
+        "de": "Über Vernunft und Wirklichkeit",
+        "es": ""
+      },
+      "vocab": [
+        "vernünftig",
+        "wirklich",
+        "die Wirklichkeit",
+        "die Vernunft",
+        "verstehen",
+        "akzeptieren",
+        "die Welt",
+        "logisch",
+        "der Zusammenhang",
+        "erklären",
+        "zweifeln"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "04a",
+          "title": {
+            "en": "MY OWN SUMMARY (not a quotation) — a famous Hegel idea, in my own words",
+            "zh": "",
+            "ja": "",
+            "de": "MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — eine berühmte Hegel-Idee, in meinen eigenen Worten",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "This passage restates, in my own words, an idea closely associated with Hegel's \"Grundlinien der Philosophie des Rechts\" (1820), often summarized as \"what is rational is real, and what is real is rational.\" Hegel meant that the structures of our world — laws, states, institutions — are not random; they are expressions of reason working itself out through history.",
+              "zh": "",
+              "ja": "",
+              "de": "Diese Passage gibt, in meinen eigenen Worten, eine Idee wieder, die eng mit Hegels „Grundlinien der Philosophie des Rechts\" (1820) verbunden ist, oft zusammengefasst als „was vernünftig ist, ist wirklich, und was wirklich ist, ist vernünftig\". Hegel meinte, dass die Strukturen unserer Welt — Gesetze, Staaten, Institutionen — nicht zufällig sind; sie sind Ausdrücke der Vernunft, die sich durch die Geschichte entfaltet.",
+              "es": ""
+            },
+            {
+              "en": "This idea was controversial even in his own time, since it seemed to suggest that whatever currently exists must somehow be justified simply by existing.",
+              "zh": "",
+              "ja": "",
+              "de": "Diese Idee war schon zu seiner eigenen Zeit umstritten, da sie nahezulegen schien, dass alles, was gerade existiert, irgendwie allein dadurch gerechtfertigt sein muss, dass es existiert.",
+              "es": ""
+            }
+          ]
+        },
+        {
+          "num": "04b",
+          "title": {
+            "en": "Simplified — Is the world reasonable?",
+            "zh": "",
+            "ja": "",
+            "de": "Vereinfacht — Ist die Welt vernünftig?",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "Hegel believed the world makes sense, even when it looks confusing at first.",
+              "zh": "",
+              "ja": "",
+              "de": "Hegel glaubte, die Welt macht Sinn, auch wenn sie zuerst verwirrend aussieht.",
+              "es": ""
+            },
+            {
+              "en": "He thought that laws, governments, and societies developed for understandable reasons, even complicated ones.",
+              "zh": "",
+              "ja": "",
+              "de": "Er dachte, dass Gesetze, Regierungen und Gesellschaften aus verständlichen, wenn auch komplizierten Gründen entstanden sind.",
+              "es": ""
+            },
+            {
+              "en": "Some people did not like this idea. They asked: does this mean everything that exists is automatically good?",
+              "zh": "",
+              "ja": "",
+              "de": "Manche Menschen mochten diese Idee nicht. Sie fragten: Bedeutet das, dass alles, was existiert, automatisch gut ist?",
+              "es": ""
+            },
+            {
+              "en": "This question caused many arguments among philosophers after Hegel.",
+              "zh": "",
+              "ja": "",
+              "de": "Diese Frage verursachte viele Streitigkeiten unter Philosophen nach Hegel.",
+              "es": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "10",
+      "title": {
+        "en": "A Small Truce",
+        "zh": "",
+        "ja": "",
+        "de": "Ein kleiner Waffenstillstand",
+        "es": ""
+      },
+      "vocab": [
+        "der Streit",
+        "beenden",
+        "zustimmen",
+        "respektieren",
+        "unterschiedlich",
+        "gemeinsam",
+        "der Punkt",
+        "einverstanden",
+        "freundlich",
+        "zugeben",
+        "versöhnen"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv021001",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "It is now afternoon. The two men have argued for hours. Both look a little tired.",
+                "zh": "",
+                "ja": "",
+                "de": "Es ist jetzt Nachmittag. Die zwei Männer haben stundenlang gestritten. Beide sehen ein bisschen müde aus.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "I admit, Herr Hegel, you argue better than I expected.",
+                "zh": "",
+                "ja": "",
+                "de": "Ich gebe zu, Herr Hegel, Sie argumentieren besser, als ich erwartet hatte.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "And I admit your pessimism is more carefully reasoned than people say. I expected only complaints. I found actual arguments.",
+                "zh": "",
+                "ja": "",
+                "de": "Und ich gebe zu, Ihr Pessimismus ist sorgfältiger durchdacht, als die Leute sagen. Ich habe nur Beschwerden erwartet. Ich habe wirkliche Argumente gefunden.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "High praise, from you.",
+                "zh": "",
+                "ja": "",
+                "de": "Hohes Lob, von Ihnen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "We disagree about almost everything. The Will, the Spirit, the meaning of suffering, even the best way to write a sentence.",
+                "zh": "",
+                "ja": "",
+                "de": "Wir sind uns über fast alles uneinig. Den Willen, den Geist, den Sinn des Leidens, sogar die beste Art, einen Satz zu schreiben.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Almost everything, yes. But perhaps not everything.",
+                "zh": "",
+                "ja": "",
+                "de": "Fast alles, ja. Aber vielleicht nicht alles.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "What do we agree on, then?",
+                "zh": "",
+                "ja": "",
+                "de": "Worüber sind wir uns dann einig?",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "We both think carefully. We both take ideas seriously, even when we reach different answers.",
+                "zh": "",
+                "ja": "",
+                "de": "Wir denken beide sorgfältig. Wir nehmen beide Ideen ernst, auch wenn wir zu unterschiedlichen Antworten kommen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "That is true. And we both clearly enjoy a good argument more than agreement.",
+                "zh": "",
+                "ja": "",
+                "de": "Das ist wahr. Und wir genießen beide eindeutig einen guten Streit mehr als Übereinstimmung.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Much more, in my case.",
+                "zh": "",
+                "ja": "",
+                "de": "Viel mehr, in meinem Fall.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "Then perhaps we have found our one point of agreement after all.",
+                "zh": "",
+                "ja": "",
+                "de": "Dann haben wir vielleicht doch unseren einen Punkt der Übereinstimmung gefunden.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Both men laugh, surprising themselves a little.",
+                "zh": "",
+                "ja": "",
+                "de": "Beide Männer lachen, ein bisschen überrascht über sich selbst.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Will you stay for dinner, Herr Hegel? I am told I am a passable cook, when I try.",
+                "zh": "",
+                "ja": "",
+                "de": "Bleiben Sie zum Abendessen, Herr Hegel? Man sagt mir, ich sei ein annehmbarer Koch, wenn ich es versuche.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "I would like that. Perhaps over dinner, you can finally explain to me why you dislike my sentences so much.",
+                "zh": "",
+                "ja": "",
+                "de": "Das würde mir gefallen. Vielleicht können Sie mir beim Abendessen endlich erklären, warum Sie meine Sätze so sehr nicht mögen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Dinner is not long enough for that conversation. But I will try.",
+                "zh": "",
+                "ja": "",
+                "de": "Das Abendessen ist nicht lang genug für dieses Gespräch. Aber ich werde es versuchen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "What do Schopenhauer and Hegel finally agree they have in common?",
+                "zh": "",
+                "ja": "",
+                "de": "Worin stimmen Schopenhauer und Hegel am Ende überein, dass sie es gemeinsam haben?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "They both enjoy a good argument.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Sie genießen beide einen guten Streit.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "They both like the same food.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Sie mögen beide das gleiche Essen.",
+                    "es": ""
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "They both agree about the Will.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Sie sind sich beide über den Willen einig.",
+                    "es": ""
+                  },
+                  "correct": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    },
+    {
+      "num": "11",
+      "title": {
+        "en": "Two Tombstones",
+        "zh": "",
+        "ja": "",
+        "de": "Zwei Grabsteine",
+        "es": ""
+      },
+      "vocab": [
+        "der Tod",
+        "sterben",
+        "das Grab",
+        "der Grabstein",
+        "das Erbe",
+        "die Zukunft",
+        "erinnern",
+        "der Einfluss",
+        "berühmt",
+        "bis heute",
+        "die Philosophie"
+      ],
+      "grammar": [],
+      "dialogues": [],
+      "passages": [
+        {
+          "num": "05a",
+          "title": {
+            "en": "MY OWN SUMMARY (not a quotation) — how both philosophers are remembered today, in my own words",
+            "zh": "",
+            "ja": "",
+            "de": "MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — wie beide Philosophen heute erinnert werden, in meinen eigenen Worten",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "This passage is entirely my own writing, reflecting on history rather than quoting either philosopher. Hegel died in 1831, greatly respected during his lifetime, his influence shaping later thinkers from Marx to Sartre. Schopenhauer, largely ignored for decades, became famous only late in his life, after the publication of \"Parerga und Paralipomena\" in 1851, and influenced figures such as Nietzsche and Wagner.",
+              "zh": "",
+              "ja": "",
+              "de": "Diese Passage ist vollständig meine eigene Schrift, eine Reflexion über Geschichte statt ein Zitat von einem der beiden Philosophen. Hegel starb 1831, zu Lebzeiten sehr angesehen, sein Einfluss prägte spätere Denker von Marx bis Sartre. Schopenhauer, jahrzehntelang weitgehend ignoriert, wurde erst spät in seinem Leben berühmt, nach der Veröffentlichung von „Parerga und Paralipomena\" 1851, und beeinflusste Persönlichkeiten wie Nietzsche und Wagner.",
+              "es": ""
+            },
+            {
+              "en": "It is one of philosophy's small ironies that the more optimistic, systematic thinker and the more pessimistic, individualist one both left lasting marks — just on very different paths of thought.",
+              "zh": "",
+              "ja": "",
+              "de": "Es ist eine der kleinen Ironien der Philosophie, dass sowohl der optimistischere, systematischere Denker als auch der pessimistischere, individualistischere bleibende Spuren hinterließen — nur auf sehr unterschiedlichen Gedankenwegen.",
+              "es": ""
+            }
+          ]
+        },
+        {
+          "num": "05b",
+          "title": {
+            "en": "Simplified — Both became famous, in different ways",
+            "zh": "",
+            "ja": "",
+            "de": "Vereinfacht — Beide wurden berühmt, auf unterschiedliche Weise",
+            "es": ""
+          },
+          "lines": [
+            {
+              "en": "Hegel was already famous and respected while he was alive. He died in 1831.",
+              "zh": "",
+              "ja": "",
+              "de": "Hegel war schon berühmt und respektiert, während er noch lebte. Er starb 1831.",
+              "es": ""
+            },
+            {
+              "en": "Schopenhauer was not famous for a long time. He became famous only near the end of his life.",
+              "zh": "",
+              "ja": "",
+              "de": "Schopenhauer war lange nicht berühmt. Er wurde erst gegen Ende seines Lebens berühmt.",
+              "es": ""
+            },
+            {
+              "en": "Both philosophers influenced many later thinkers, artists, and writers.",
+              "zh": "",
+              "ja": "",
+              "de": "Beide Philosophen beeinflussten viele spätere Denker, Künstler und Schriftsteller.",
+              "es": ""
+            },
+            {
+              "en": "Today, people still read and discuss both of them, even though they disagreed about almost everything.",
+              "zh": "",
+              "ja": "",
+              "de": "Heute lesen und diskutieren die Menschen immer noch beide, obwohl sie über fast alles uneinig waren.",
+              "es": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "num": "12",
+      "title": {
+        "en": "Dinner and the Owl",
+        "zh": "",
+        "ja": "",
+        "de": "Abendessen und die Eule",
+        "es": ""
+      },
+      "vocab": [
+        "das Abendessen",
+        "kochen",
+        "der Tisch",
+        "das Geschenk",
+        "die Figur",
+        "stehen",
+        "beobachten",
+        "schweigen",
+        "der Abend",
+        "gemeinsam",
+        "der Respekt"
+      ],
+      "grammar": [],
+      "dialogues": [
+        {
+          "id": "adv021201",
+          "dialogueNum": 1,
+          "turns": [
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Evening. Schopenhauer has cooked a simple meal. Both men sit at the table.",
+                "zh": "",
+                "ja": "",
+                "de": "Abend. Schopenhauer hat eine einfache Mahlzeit gekocht. Beide Männer sitzen am Tisch.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "This is good, actually. Better than I expected.",
+                "zh": "",
+                "ja": "",
+                "de": "Das ist tatsächlich gut. Besser, als ich erwartet hatte.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Another compliment. Be careful, Herr Hegel, or I might start to like you.",
+                "zh": "",
+                "ja": "",
+                "de": "Noch ein Kompliment. Vorsicht, Herr Hegel, sonst mag ich Sie am Ende noch.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "A terrible risk for both of us, I am sure.",
+                "zh": "",
+                "ja": "",
+                "de": "Ein furchtbares Risiko für uns beide, da bin ich sicher.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Hegel notices a small owl figurine on the shelf.",
+                "zh": "",
+                "ja": "",
+                "de": "Hegel bemerkt eine kleine Eulenfigur im Regal.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "An owl. Fitting, for a philosopher's study.",
+                "zh": "",
+                "ja": "",
+                "de": "Eine Eule. Passend, für das Arbeitszimmer eines Philosophen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Yes. Though I think your owl flies a little too late for my taste. I prefer to understand things while they are still happening.",
+                "zh": "",
+                "ja": "",
+                "de": "Ja. Obwohl ich finde, dass Ihre Eule für meinen Geschmack ein bisschen zu spät fliegt. Ich verstehe Dinge lieber, während sie noch passieren.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "Perhaps that is simply not possible for anyone, fast or slow. We are always a little late to understand our own time.",
+                "zh": "",
+                "ja": "",
+                "de": "Vielleicht ist das für niemanden möglich, schnell oder langsam. Wir verstehen unsere eigene Zeit immer ein bisschen zu spät.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "A humble thought, for once, from you.",
+                "zh": "",
+                "ja": "",
+                "de": "Ein bescheidener Gedanke, für einmal, von Ihnen.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "Even I have a few of those, Herr Schopenhauer.",
+                "zh": "",
+                "ja": "",
+                "de": "Sogar ich habe ein paar davon, Herr Schopenhauer.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "They eat in comfortable silence for a while. The owl watches from the shelf, saying nothing, as owls do.",
+                "zh": "",
+                "ja": "",
+                "de": "Sie essen eine Weile in angenehmem Schweigen. Die Eule beobachtet vom Regal aus, ohne etwas zu sagen, wie Eulen es tun.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "I should go soon. I have a lecture early tomorrow in Berlin.",
+                "zh": "",
+                "ja": "",
+                "de": "Ich sollte bald gehen. Ich habe morgen früh eine Vorlesung in Berlin.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Of course you do. The Spirit of History waits for no one, apparently.",
+                "zh": "",
+                "ja": "",
+                "de": "Natürlich haben Sie das. Der Geist der Geschichte wartet offenbar auf niemanden.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "Now you are mocking me.",
+                "zh": "",
+                "ja": "",
+                "de": "Jetzt necken Sie mich.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "A little. But honestly — thank you for the conversation today. It was better than I expected.",
+                "zh": "",
+                "ja": "",
+                "de": "Ein bisschen. Aber ehrlich — danke für das Gespräch heute. Es war besser, als ich erwartet hatte.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "hegel",
+              "text": {
+                "en": "For me too, Herr Schopenhauer. Perhaps disagreement, done carefully, is its own kind of respect.",
+                "zh": "",
+                "ja": "",
+                "de": "Für mich auch, Herr Schopenhauer. Vielleicht ist Uneinigkeit, sorgfältig betrieben, eine eigene Art von Respekt.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "narrator",
+              "text": {
+                "en": "Hegel leaves into the night. Schopenhauer stays at the table a little longer, looking at the small owl.",
+                "zh": "",
+                "ja": "",
+                "de": "Hegel geht in die Nacht hinaus. Schopenhauer bleibt noch etwas länger am Tisch und schaut die kleine Eule an.",
+                "es": ""
+              }
+            },
+            {
+              "type": "line",
+              "speaker": "schopenhauer",
+              "text": {
+                "en": "Difficult man. Wrong about almost everything, I still think. But difficult in an interesting way.",
+                "zh": "",
+                "ja": "",
+                "de": "Schwieriger Mann. Bei fast allem falsch, glaube ich immer noch. Aber schwierig auf eine interessante Art.",
+                "es": ""
+              }
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "What does Hegel have early the next morning?",
+                "zh": "",
+                "ja": "",
+                "de": "Was hat Hegel am nächsten Morgen früh?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "A lecture in Berlin.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Eine Vorlesung in Berlin.",
+                    "es": ""
+                  },
+                  "correct": true
+                },
+                {
+                  "text": {
+                    "en": "A coach to Königsberg.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Eine Kutsche nach Königsberg.",
+                    "es": ""
+                  },
+                  "correct": false
+                },
+                {
+                  "text": {
+                    "en": "Another dinner with Schopenhauer.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Ein weiteres Abendessen mit Schopenhauer.",
+                    "es": ""
+                  },
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "type": "question",
+              "prompt": {
+                "en": "After reading about both chapters, which philosopher's ideas do you find more interesting so far — Schopenhauer's, Kant's, or Hegel's?",
+                "zh": "",
+                "ja": "",
+                "de": "Nach beiden Kapiteln, welche Ideen findest du bisher interessanter — Schopenhauers, Kants oder Hegels?",
+                "es": ""
+              },
+              "options": [
+                {
+                  "text": {
+                    "en": "Schopenhauer's ideas interest me most.",
+                    "zh": "",
+                    "ja": "",
+                    "de": "Schopenhauers Ideen interessieren mich am meisten.",
+                    "es": ""
+                  },
+                  "correct": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "passages": []
+    }
+  ]
+}

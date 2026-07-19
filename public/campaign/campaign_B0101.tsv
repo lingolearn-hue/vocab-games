@@ -1,0 +1,305 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# adv0201 — Two Philosophers Walk Into a Study · Chapter 01: The Will and the Lamp
+# ══════════════════════════════════════════════════════════════════════════════
+
+@columns	id	speaker	cmd	en	de
+
+@chapter	01	The Will and the Lamp	Der Wille und die Lampe	A1-A2
+@artifact	🕯️	A Worn Pipe	Modalverben · Perfekt · Nebensätze mit weil/dass
+
+@story_intro	In a quiet study in Frankfurt, an old philosopher sits alone with his pipe and his thoughts. He talks mostly to himself. Later, a visitor from Königsberg will knock on the door.	In einem ruhigen Arbeitszimmer in Frankfurt sitzt ein alter Philosoph allein mit seiner Pfeife und seinen Gedanken. Er spricht meistens mit sich selbst. Später wird ein Besucher aus Königsberg an die Tür klopfen.
+@story_outro	The evening ends. Two very different minds have shared one room, one lamp, and a little bit of tea. Neither has convinced the other of anything. Both seem pleased about that.	Der Abend endet. Zwei sehr unterschiedliche Köpfe haben sich ein Zimmer, eine Lampe und ein wenig Tee geteilt. Keiner hat den anderen von irgendetwas überzeugt. Beide scheinen damit zufrieden zu sein.
+
+
+# ── Reading Pair 1: The World as Will ────────────────────────────────────────
+@section	01	The World as Will	Die Welt als Wille
+@vocab	die Welt	denken	die Vorstellung	das Auge	sehen	wissen	der Mensch	das Leben	wollen	der Wille	der Gedanke	allein
+
+@passage	01a	GENUINE EXCERPT — Schopenhauer, "Die Welt als Wille und Vorstellung" (1819)	ECHTES ZITAT — Schopenhauer, „Die Welt als Wille und Vorstellung" (1819)
+
+@passage_line	Direct quotation (source: zeno.org, public domain text): "Die Welt ist meine Vorstellung."	Direktes Zitat (Quelle: zeno.org, gemeinfreier Text): „Die Welt ist meine Vorstellung."
+
+@passage	01a2	MY OWN SUMMARY (not a quotation) — what Schopenhauer argues next	MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — was Schopenhauer als Nächstes argumentiert
+
+@passage_line	The following is my own restatement, not Schopenhauer's wording: everything we believe we know about the world reaches us only through our own senses. The eye reports, the mind sorts, and we call the result "reality" — but it is really just our picture of things.	Das Folgende ist meine eigene Wiedergabe, nicht Schopenhauers Wortlaut: Alles, was wir über die Welt zu wissen glauben, erreicht uns nur durch unsere eigenen Sinne. Das Auge meldet, der Geist ordnet, und wir nennen das Ergebnis „Wirklichkeit" — aber es ist eigentlich nur unser Bild der Dinge.
+@passage_line	Behind this picture, Schopenhauer claims, works a second, darker force: the Will — a blind, endless drive that has no real goal, only itself, again and again.	Hinter diesem Bild, behauptet Schopenhauer, wirkt eine zweite, dunklere Kraft: der Wille — ein blinder, endloser Drang, der kein wirkliches Ziel hat, nur sich selbst, immer wieder.
+
+@passage	01b	Simplified — What does this mean?	Vereinfacht — Was bedeutet das?
+
+@passage_line	Schopenhauer wrote a famous sentence: "The world is my idea."	Schopenhauer hat einen berühmten Satz geschrieben: „Die Welt ist meine Vorstellung."
+@passage_line	He means: We do not see the world directly. We only see it with our eyes and our brain.	Er meint: Wir sehen die Welt nicht direkt. Wir sehen sie nur mit unseren Augen und unserem Gehirn.
+@passage_line	So the world that we know is really a picture in our head.	Also ist die Welt, die wir kennen, wirklich ein Bild in unserem Kopf.
+@passage_line	But Schopenhauer also says there is something else. He calls it "the Will."	Aber Schopenhauer sagt auch: Es gibt noch etwas anderes. Er nennt es „der Wille".
+@passage_line	The Will is a strong force inside every living thing. It wants and wants, but it has no real goal.	Der Wille ist eine starke Kraft in jedem Lebewesen. Er will und will, aber er hat kein wirkliches Ziel.
+@passage_line	This idea is the center of his whole philosophy.	Diese Idee ist das Zentrum seiner ganzen Philosophie.
+
+
+# ── Monologue 1: Schopenhauer Alone with His Pipe ────────────────────────────
+@section	02	Schopenhauer Alone with His Pipe	Schopenhauer allein mit seiner Pfeife
+@vocab	allein	denken	die Pfeife	der Abend	müde	der Mensch	das Leben	schwer	die Ruhe	leise	sprechen	rauchen
+
+adv020201-01	narrator		It is evening. Schopenhauer sits alone in his study. He has a pipe and a cup of tea.	Es ist Abend. Schopenhauer sitzt allein in seinem Arbeitszimmer. Er hat eine Pfeife und eine Tasse Tee.
+adv020201-02	schopenhauer		Ah. Finally quiet. The whole day, people, noise, questions. Now: only me.	Ah. Endlich Ruhe. Den ganzen Tag Menschen, Lärm, Fragen. Jetzt: nur ich.
+adv020201-03	schopenhauer		I think people talk too much. And they think too little.	Ich finde, die Menschen sprechen zu viel. Und sie denken zu wenig.
+adv020201-04	schopenhauer		My pipe is good. My tea is good. My books are good. What more does a person need?	Meine Pfeife ist gut. Mein Tee ist gut. Meine Bücher sind gut. Was braucht ein Mensch mehr?
+adv020201-05	schopenhauer		Today I worked on my book again. It is difficult work. But it is important work.	Heute habe ich wieder an meinem Buch gearbeitet. Es ist schwere Arbeit. Aber es ist wichtige Arbeit.
+adv020201-06	schopenhauer		I want to explain why life is so heavy for so many people.	Ich möchte erklären, warum das Leben für so viele Menschen so schwer ist.
+adv020201-07	schopenhauer		My answer is: the Will. We always want something. And when we have it, we want something new.	Meine Antwort ist: der Wille. Wir wollen immer etwas. Und wenn wir es haben, wollen wir etwas Neues.
+adv020201-08	schopenhauer		So we are never really happy for long. That is sad, but I think it is true.	Also sind wir nie wirklich lange glücklich. Das ist traurig, aber ich glaube, es ist wahr.
+adv020201-09	schopenhauer		My dog does not have this problem. He is happy with his food and his walk.	Mein Hund hat dieses Problem nicht. Er ist glücklich mit seinem Essen und seinem Spaziergang.
+adv020201-10	schopenhauer		Sometimes I think my dog is wiser than most professors.	Manchmal denke ich, mein Hund ist klüger als die meisten Professoren.
+adv020201-11	schopenhauer		Music helps me too. When I listen to music, I forget the Will for a moment.	Musik hilft mir auch. Wenn ich Musik höre, vergesse ich für einen Moment den Willen.
+adv020201-12	schopenhauer		That is a good feeling. A rare, good feeling.	Das ist ein gutes Gefühl. Ein seltenes, gutes Gefühl.
+adv020201-13	schopenhauer		Tonight, I think I will read instead of write. My eyes are tired.	Heute Abend, glaube ich, werde ich lesen statt schreiben. Meine Augen sind müde.
+adv020201-14	narrator		Schopenhauer takes a book from the shelf. Outside, it is starting to rain.	Schopenhauer nimmt ein Buch aus dem Regal. Draußen fängt es an zu regnen.
+adv020201-15	schopenhauer		Good. Rain is calm. Rain does not ask questions.	Gut. Regen ist ruhig. Regen stellt keine Fragen.
+adv020201-16	narrator		He sits back in his chair. For a moment, everything is quiet.	Er lehnt sich in seinem Stuhl zurück. Für einen Moment ist alles ruhig.
+
+adv020201-17q	question		Why does Schopenhauer say people are never happy for long?	Warum sagt Schopenhauer, dass Menschen nie lange glücklich sind?
+adv020201-18a	option	correct	Because the Will always wants something new.	Weil der Wille immer etwas Neues will.
+adv020201-18b	option		Because the weather is bad.	Weil das Wetter schlecht ist.
+adv020201-18c	option		Because his dog is sad.	Weil sein Hund traurig ist.
+
+adv020201-19q	question		Do you think it's true that we are never happy for long? What do you think makes people truly happy?	Glaubst du, es ist wahr, dass wir nie lange glücklich sind? Was, denkst du, macht Menschen wirklich glücklich?
+adv020201-20a	option	correct	I have my own opinion about this.	Ich habe meine eigene Meinung dazu.
+adv020201-20b	option	correct	I'm not sure, but it's an interesting question.	Ich bin nicht sicher, aber es ist eine interessante Frage.
+adv020201-20c	option	correct	I disagree with Schopenhauer here.	Ich bin hier nicht mit Schopenhauer einverstanden.
+
+
+# ── Reading Pair 2: The Suffering World ──────────────────────────────────────
+@section	03	The Suffering World	Die leidende Welt
+@vocab	das Leiden	der Schmerz	das Glück	kurz	lang	das Tier	der Mensch	leben	sterben	die Zeit	warten	hoffen
+
+@passage	02a	MY OWN SUMMARY (not a quotation) — Schopenhauer's view of suffering, in my own words	MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — Schopenhauers Sicht auf das Leiden, in meinen eigenen Worten
+
+@passage_line	This entire passage is my own writing, not a quotation. It restates a theme found across Schopenhauer's work on suffering (see "Die Welt als Wille und Vorstellung," Book 4, and "Parerga und Paralipomena," for his actual texts): a person's life, he argues, is a constant struggle — against want, against boredom, against time itself.	Diese ganze Passage ist meine eigene Schrift, kein Zitat. Sie gibt ein Thema wieder, das sich durch Schopenhauers Werk über das Leiden zieht (siehe „Die Welt als Wille und Vorstellung," Viertes Buch, und „Parerga und Paralipomena" für seine tatsächlichen Texte): Das Leben eines Menschen, so argumentiert er, ist ein ständiger Kampf — gegen Mangel, gegen Langeweile, gegen die Zeit selbst.
+@passage_line	Happiness, in this view, resembles a fleeting guest who barely crosses the threshold before hurrying back out the door; suffering, by contrast, is the faithful tenant who stays without ever being invited.	Glück, in dieser Sichtweise, gleicht einem flüchtigen Gast, der kaum die Schwelle überschreitet, bevor er schon wieder zur Tür eilt; Leiden hingegen ist der treue Mieter, der bleibt, ohne je eingeladen worden zu sein.
+
+@passage	02b	Simplified — Happiness and suffering	Vereinfacht — Glück und Leiden
+
+@passage_line	Schopenhauer thinks: a person's life is difficult from beginning to end.	Schopenhauer denkt: Das Leben eines Menschen ist schwer, von Anfang bis Ende.
+@passage_line	We fight against problems. We fight against being bored. We fight against time.	Wir kämpfen gegen Probleme. Wir kämpfen gegen Langeweile. Wir kämpfen gegen die Zeit.
+@passage_line	Happiness, he says, is like a guest who comes for a short visit and then leaves quickly.	Glück, sagt er, ist wie ein Gast, der für einen kurzen Besuch kommt und dann schnell wieder geht.
+@passage_line	But suffering is different. Suffering stays for a long time. Nobody invited it, but it does not leave.	Aber Leiden ist anders. Leiden bleibt lange. Niemand hat es eingeladen, aber es geht nicht weg.
+@passage_line	This is one of Schopenhauer's most famous and most pessimistic ideas.	Das ist eine von Schopenhauers berühmtesten und pessimistischsten Ideen.
+
+
+# ── Monologue 2: A Letter Schopenhauer Never Sends ───────────────────────────
+@section	04	A Letter He Never Sends	Ein Brief, den er nie schickt
+@vocab	der Brief	schreiben	schicken	die Meinung	der Freund	der Feind	das Problem	verstehen	die Philosophie	die Universität	der Kollege
+
+adv020401-01	narrator		Schopenhauer is writing a letter. He stops often. He does not look happy.	Schopenhauer schreibt einen Brief. Er hält oft an. Er sieht nicht glücklich aus.
+adv020401-02	schopenhauer		Dear colleague. No. Dear so-called colleague.	Lieber Kollege. Nein. Lieber sogenannter Kollege.
+adv020401-03	schopenhauer		I have read your book. I have some questions. Actually, I have many questions.	Ich habe Ihr Buch gelesen. Ich habe ein paar Fragen. Eigentlich habe ich viele Fragen.
+adv020401-04	schopenhauer		Why do you write such long sentences? Why is everything so complicated?	Warum schreiben Sie so lange Sätze? Warum ist alles so kompliziert?
+adv020401-05	schopenhauer		A good idea does not need ten pages. A good idea needs one clear sentence.	Eine gute Idee braucht keine zehn Seiten. Eine gute Idee braucht einen klaren Satz.
+adv020401-06	schopenhauer		I think you write difficult sentences because you want to look intelligent.	Ich glaube, Sie schreiben schwierige Sätze, weil Sie intelligent aussehen wollen.
+adv020401-07	schopenhauer		But a clever reader sees through this immediately.	Aber ein kluger Leser sieht das sofort.
+adv020401-08	narrator		He stops writing. He looks out the window for a moment.	Er hört auf zu schreiben. Er schaut für einen Moment aus dem Fenster.
+adv020401-09	schopenhauer		Maybe I should not send this letter. It is perhaps too direct.	Vielleicht sollte ich diesen Brief nicht schicken. Er ist vielleicht zu direkt.
+adv020401-10	schopenhauer		But honesty is important. Even when it is not friendly.	Aber Ehrlichkeit ist wichtig. Auch wenn sie nicht freundlich ist.
+adv020401-11	schopenhauer		Hmm. I will read it again tomorrow. Maybe with calmer eyes.	Hmm. Ich lese ihn morgen noch einmal. Vielleicht mit ruhigeren Augen.
+adv020401-12	narrator		He puts the letter in a drawer. There are many letters in this drawer.	Er legt den Brief in eine Schublade. Es sind viele Briefe in dieser Schublade.
+adv020401-13	schopenhauer		Most of my letters stay in this drawer. Perhaps that is for the best.	Die meisten meiner Briefe bleiben in dieser Schublade. Vielleicht ist das das Beste.
+adv020401-14	schopenhauer		The world does not need every thought I have. Only the good ones.	Die Welt braucht nicht jeden Gedanken, den ich habe. Nur die guten.
+adv020401-15	narrator		He closes the drawer and returns to his book.	Er schließt die Schublade und kehrt zu seinem Buch zurück.
+
+adv020401-16q	question		Where does Schopenhauer put the letter?	Wohin legt Schopenhauer den Brief?
+adv020401-17a	option	correct	In a drawer.	In eine Schublade.
+adv020401-17b	option		In the fire.	Ins Feuer.
+adv020401-17c	option		On the table.	Auf den Tisch.
+
+
+# ── Reading Pair 3: On Books and Reading ─────────────────────────────────────
+@section	05	On Books and Reading	Über Bücher und Lesen
+@vocab	das Buch	lesen	der Leser	der Gedanke	eigen	fremd	denken	der Kopf	voll	leer	wichtig	wenig	viel
+
+@passage	03a	MY OWN SUMMARY (not a quotation) — Schopenhauer on reading too much, in my own words	MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — Schopenhauer über zu viel Lesen, in meinen eigenen Worten
+
+@passage_line	This entire passage is my own writing, not a quotation. It restates a recurring theme from Schopenhauer's essay "Über Lesen und Bücher" (in "Parerga und Paralipomena," where his actual text can be found): if we read all day, the mind grows used to walking along other people's paths, and forgets how to find its own — like a rider who is always led, and at the end no longer knows how to hold the reins alone.	Diese ganze Passage ist meine eigene Schrift, kein Zitat. Sie gibt ein wiederkehrendes Thema aus Schopenhauers Essay „Über Lesen und Bücher" wieder (in „Parerga und Paralipomena," wo sein tatsächlicher Text zu finden ist): Wenn wir den ganzen Tag lesen, gewöhnt sich der Geist daran, auf fremden Wegen zu wandeln, und verlernt, seine eigenen zu finden — wie ein Reiter, der immer geführt wird und am Ende nicht mehr weiß, wie man die Zügel allein hält.
+@passage_line	People who read very much, he suggests, are often not the cleverest minds, just the fullest — their head becomes a storehouse of other people's thoughts, leaving no room for their own.	Vielleser, so deutet er an, sind oft nicht die klügsten Köpfe, sondern nur die vollsten — ihr Kopf wird zu einem Lagerhaus fremder Gedanken, in dem kein Platz für die eigenen bleibt.
+
+@passage	03b	Simplified — Too many books, too few thoughts	Vereinfacht — Zu viele Bücher, zu wenig Gedanken
+
+@passage_line	Schopenhauer says: If we read all day, we forget how to think for ourselves.	Schopenhauer sagt: Wenn wir den ganzen Tag lesen, vergessen wir, selbst zu denken.
+@passage_line	He compares this to a rider who is always led by someone else. In the end, the rider cannot ride alone.	Er vergleicht das mit einem Reiter, der immer von jemand anderem geführt wird. Am Ende kann der Reiter nicht alleine reiten.
+@passage_line	People who read very much are not always the most intelligent people.	Menschen, die sehr viel lesen, sind nicht immer die intelligentesten Menschen.
+@passage_line	Sometimes their head is just full of other people's ideas. There is no room left for their own ideas.	Manchmal ist ihr Kopf einfach voll mit den Ideen anderer Leute. Es ist kein Platz mehr für eigene Ideen.
+@passage_line	Schopenhauer's advice: read less, but think more.	Schopenhauers Rat: Lies weniger, aber denke mehr.
+
+
+# ── Dialogue 1: A Knock at the Door ───────────────────────────────────────────
+@section	06	A Knock at the Door	Ein Klopfen an der Tür
+@vocab	klopfen	die Tür	der Besuch	der Besucher	hereinkommen	setzen	der Tee	anbieten	kennen	begrüßen	höflich
+
+adv020601-01	narrator		There is a knock at the door. Schopenhauer looks up, surprised.	Es klopft an der Tür. Schopenhauer schaut überrascht auf.
+adv020601-02	schopenhauer		A visitor? At this hour? How strange.	Ein Besucher? Zu dieser Stunde? Wie seltsam.
+adv020601-03	narrator		He opens the door. An older man in a simple coat stands outside.	Er öffnet die Tür. Ein älterer Mann in einem einfachen Mantel steht draußen.
+adv020601-04	kant		Good evening. Forgive the late hour. My name is Immanuel Kant.	Guten Abend. Verzeihen Sie die späte Stunde. Mein Name ist Immanuel Kant.
+adv020601-05	schopenhauer		Kant! From Königsberg? I have read all your books. Please, come in.	Kant! Aus Königsberg? Ich habe alle Ihre Bücher gelesen. Bitte, kommen Sie herein.
+adv020601-06	kant		Thank you. I am traveling and heard that a famous philosopher lives here.	Danke. Ich bin auf Reisen und habe gehört, dass hier ein berühmter Philosoph lebt.
+adv020601-07	schopenhauer		Famous is a big word. But please, sit down. Would you like some tea?	Berühmt ist ein großes Wort. Aber bitte, setzen Sie sich. Möchten Sie etwas Tee?
+adv020601-08	kant		Yes, thank you. Tea is good for clear thinking.	Ja, danke. Tee ist gut für klares Denken.
+adv020601-09	schopenhauer		I agree completely. I drink tea every evening, before I write.	Da stimme ich völlig zu. Ich trinke jeden Abend Tee, bevor ich schreibe.
+adv020601-10	narrator		Schopenhauer brings two cups of tea. He sits across from Kant.	Schopenhauer bringt zwei Tassen Tee. Er setzt sich gegenüber von Kant.
+adv020601-11	kant		Your study is very quiet. I like that. Quiet is good for the mind.	Ihr Arbeitszimmer ist sehr ruhig. Das gefällt mir. Ruhe ist gut für den Geist.
+adv020601-12	schopenhauer		Yes. I avoid noise and people whenever I can.	Ja. Ich vermeide Lärm und Menschen, wann immer ich kann.
+adv020601-13	kant		I understand that very well. I myself live a very regular life. Always the same walk, every day.	Das verstehe ich sehr gut. Ich selbst lebe ein sehr regelmäßiges Leben. Immer der gleiche Spaziergang, jeden Tag.
+adv020601-14	schopenhauer		A regular life is a wise life, I think.	Ein regelmäßiges Leben ist ein kluges Leben, denke ich.
+adv020601-15	kant		Tell me, what are you working on at the moment?	Sagen Sie mir, woran arbeiten Sie gerade?
+adv020601-16	schopenhauer		A book about the Will. I believe it is the deepest force in every living thing.	Ein Buch über den Willen. Ich glaube, er ist die tiefste Kraft in jedem Lebewesen.
+adv020601-17	kant		Interesting. I have thought much about reason, but less about will. Please, tell me more.	Interessant. Ich habe viel über die Vernunft nachgedacht, aber weniger über den Willen. Bitte, erzählen Sie mir mehr.
+
+adv020601-18q	question		What does Kant ask for, before they begin their conversation?	Worum bittet Kant, bevor sie ihr Gespräch beginnen?
+adv020601-19a	option	correct	Tea.	Tee.
+adv020601-19b	option		Bread.	Brot.
+adv020601-19c	option		A book.	Ein Buch.
+
+
+# ── Reading Pair 4: Kant on the Starry Sky ───────────────────────────────────
+@section	07	Kant on the Starry Sky	Kant über den gestirnten Himmel
+@vocab	der Himmel	der Stern	das Gesetz	innen	außen	denken	bewundern	das Herz	die Pflicht	die Moral	die Vernunft
+
+@passage	04a	GENUINE EXCERPT — Kant, "Kritik der praktischen Vernunft" (1788)	ECHTES ZITAT — Kant, „Kritik der praktischen Vernunft" (1788)
+
+@passage_line	Direct quotation, the famous closing line of the work: "Zwei Dinge erfüllen das Gemüt mit immer neuer und zunehmender Bewunderung und Achtung, je öfter und anhaltender man über sie nachdenkt: der gestirnte Himmel über mir, und das moralische Gesetz in mir."	Direktes Zitat, die berühmte Schlusszeile des Werks: „Zwei Dinge erfüllen das Gemüt mit immer neuer und zunehmender Bewunderung und Achtung, je öfter und anhaltender man über sie nachdenkt: der gestirnte Himmel über mir, und das moralische Gesetz in mir."
+
+@passage	04a2	MY OWN SUMMARY (not a quotation) — what this line means	MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — was diese Zeile bedeutet
+
+@passage_line	The following is my own restatement, not Kant's wording: this single thought, he explains, shows him his place in a universe of immense size, while also showing him that something lives within him that acts according to its own law, independent of nature's vastness.	Das Folgende ist meine eigene Wiedergabe, nicht Kants Wortlaut: Dieser eine Gedanke, erklärt er, zeigt ihm seinen Platz in einem Universum von immenser Größe, während er ihm zugleich zeigt, dass etwas in ihm lebt, das nach seinem eigenen Gesetz handelt, unabhängig von der Weite der Natur.
+
+@passage	04b	Simplified — Two things Kant admires	Vereinfacht — Zwei Dinge, die Kant bewundert
+
+@passage_line	Kant wrote: Two things fill me with wonder. The starry sky above me, and the moral law inside me.	Kant hat geschrieben: Zwei Dinge erfüllen mich mit Bewunderung. Der gestirnte Himmel über mir, und das moralische Gesetz in mir.
+@passage_line	The sky shows him how small he is in a very, very big universe.	Der Himmel zeigt ihm, wie klein er in einem sehr, sehr großen Universum ist.
+@passage_line	But the moral law shows him something different. Inside every person there is a sense of right and wrong.	Aber das moralische Gesetz zeigt ihm etwas anderes. In jedem Menschen gibt es ein Gefühl für richtig und falsch.
+@passage_line	This inner law does not come from the stars or from nature. It comes from reason itself.	Dieses innere Gesetz kommt nicht von den Sternen oder von der Natur. Es kommt von der Vernunft selbst.
+@passage_line	For Kant, both things — the huge sky and the small voice inside us — are equally amazing.	Für Kant sind beide Dinge — der riesige Himmel und die kleine Stimme in uns — gleich erstaunlich.
+
+
+# ── Dialogue 2: Will Against Reason ───────────────────────────────────────────
+@section	08	Will Against Reason	Wille gegen Vernunft
+@vocab	der Wille	die Vernunft	die Pflicht	folgen	stark	schwach	bestimmen	frei	die Freiheit	entscheiden	der Unterschied
+
+adv020801-01	narrator		Kant and Schopenhauer drink their tea. The conversation becomes more serious.	Kant und Schopenhauer trinken ihren Tee. Das Gespräch wird ernster.
+adv020801-02	kant		So you say the Will controls everything? Even our reason?	Sie sagen also, der Wille kontrolliert alles? Sogar unsere Vernunft?
+adv020801-03	schopenhauer		Yes, exactly. Reason is only a tool. The Will is the master.	Ja, genau. Die Vernunft ist nur ein Werkzeug. Der Wille ist der Herr.
+adv020801-04	kant		I cannot agree. For me, reason is not a servant. Reason can be free.	Da kann ich nicht zustimmen. Für mich ist die Vernunft kein Diener. Die Vernunft kann frei sein.
+adv020801-05	schopenhauer		Free? With respect, I think that is an illusion.	Frei? Mit allem Respekt, ich glaube, das ist eine Illusion.
+adv020801-06	kant		Let me explain. I believe a person can act because of duty. Not only because of desire.	Lassen Sie mich erklären. Ich glaube, ein Mensch kann aus Pflicht handeln. Nicht nur aus Begierde.
+adv020801-07	schopenhauer		Duty... but where does duty come from? Does it not also come from a kind of wanting?	Pflicht... aber woher kommt die Pflicht? Kommt sie nicht auch aus einer Art von Wollen?
+adv020801-08	kant		No. Duty comes from reason. When I help someone because it is right, that is not desire. That is moral law.	Nein. Die Pflicht kommt aus der Vernunft. Wenn ich jemandem helfe, weil es richtig ist, ist das keine Begierde. Das ist moralisches Gesetz.
+adv020801-09	schopenhauer		An interesting thought. But I see it differently. I think true morality comes from feeling, not from cold reason.	Ein interessanter Gedanke. Aber ich sehe es anders. Ich glaube, wahre Moral kommt aus dem Gefühl, nicht aus kalter Vernunft.
+adv020801-10	schopenhauer		When I see someone suffering, and I feel their pain as if it were my own — that is morality. Not a rule in my head.	Wenn ich jemanden leiden sehe und seinen Schmerz fühle, als wäre er mein eigener — das ist Moral. Keine Regel in meinem Kopf.
+adv020801-11	kant		Compassion is important, I agree. But feelings can be unreliable. They change. A rule of reason does not change.	Mitgefühl ist wichtig, da stimme ich zu. Aber Gefühle können unzuverlässig sein. Sie ändern sich. Eine Regel der Vernunft ändert sich nicht.
+adv020801-12	schopenhauer		Perhaps we are both right, in a way. You build with reason. I build with the heart.	Vielleicht haben wir beide auf unsere Weise recht. Sie bauen mit der Vernunft. Ich baue mit dem Herzen.
+adv020801-13	kant		That is a fair way to put it. We may never fully agree. But I respect your thinking, Herr Schopenhauer.	Das ist fair ausgedrückt. Wir werden vielleicht nie ganz übereinstimmen. Aber ich respektiere Ihr Denken, Herr Schopenhauer.
+adv020801-14	schopenhauer		And I respect yours, Herr Kant. Even when I disagree loudly.	Und ich respektiere das Ihre, Herr Kant. Auch wenn ich laut widerspreche.
+adv020801-15	narrator		Both men smile. Outside, the rain continues quietly.	Beide Männer lächeln. Draußen regnet es weiter, leise.
+
+adv020801-16q	question		According to Kant, where does duty come from?	Wonach kommt die Pflicht laut Kant?
+adv020801-17a	option	correct	From reason.	Aus der Vernunft.
+adv020801-17b	option		From the Will.	Aus dem Willen.
+adv020801-17c	option		From the stars.	Aus den Sternen.
+
+adv020801-18q	question		Whose view do you find more convincing — Schopenhauer's (morality from feeling) or Kant's (morality from reason)? Why?	Wessen Ansicht findest du überzeugender — Schopenhauers (Moral aus Gefühl) oder Kants (Moral aus Vernunft)? Warum?
+adv020801-19a	option	correct	I find Schopenhauer's view more convincing.	Ich finde Schopenhauers Ansicht überzeugender.
+adv020801-19b	option	correct	I find Kant's view more convincing.	Ich finde Kants Ansicht überzeugender.
+adv020801-19c	option	correct	I think both have a good point.	Ich finde, beide haben einen guten Punkt.
+
+
+# ── Reading Pair 5: Kant on Enlightenment ────────────────────────────────────
+@section	09	Kant on Enlightenment	Kant über die Aufklärung
+@vocab	die Aufklärung	der Mut	der Verstand	denken	führen	die Freiheit	allein	selbst	der Fehler	die Angst	bequem
+
+@passage	05a	MY OWN SUMMARY (not a quotation) — how Kant defines enlightenment, in my own words	MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — wie Kant Aufklärung definiert, in meinen eigenen Worten
+
+@passage_line	This is my own restatement of Kant's opening definition in "Beantwortung der Frage: Was ist Aufklärung?" (1784) — not his wording. He defines enlightenment as a person's emergence from a self-caused immaturity — an inability to use one's own understanding without someone else's guidance.	Dies ist meine eigene Wiedergabe von Kants Eröffnungsdefinition in „Beantwortung der Frage: Was ist Aufklärung?" (1784) — nicht sein Wortlaut. Er definiert Aufklärung als den Ausgang des Menschen aus einer selbstverschuldeten Unmündigkeit — der Unfähigkeit, den eigenen Verstand ohne die Führung eines anderen zu benutzen.
+
+@passage	05a2	GENUINE EXCERPT — Kant's famous motto	ECHTES ZITAT — Kants berühmtes Motto
+
+@passage_line	Direct quotation (source: Berlinische Monatsschrift, December 1784): "Sapere aude! Habe Mut, dich deines eigenen Verstandes zu bedienen!"	Direktes Zitat (Quelle: Berlinische Monatsschrift, Dezember 1784): „Sapere aude! Habe Mut, dich deines eigenen Verstandes zu bedienen!"
+
+@passage	05b	Simplified — Dare to know	Vereinfacht — Wage zu wissen
+
+@passage_line	Kant defines "Enlightenment" simply: it means leaving a state where you cannot think for yourself.	Kant definiert „Aufklärung" einfach: Es bedeutet, einen Zustand zu verlassen, in dem man nicht selbst denken kann.
+@passage_line	He gives a famous motto: "Sapere aude!" In German: "Have courage to use your own understanding!"	Er gibt ein berühmtes Motto: „Sapere aude!" Auf Deutsch: „Habe Mut, deinen eigenen Verstand zu benutzen!"
+@passage_line	Kant says many people could think for themselves, but they do not.	Kant sagt, viele Menschen könnten selbst denken, aber sie tun es nicht.
+@passage_line	Why not? Kant says: laziness and fear. It is easier to let other people think for you.	Warum nicht? Kant sagt: Faulheit und Angst. Es ist einfacher, andere Leute für sich denken zu lassen.
+@passage_line	True enlightenment means having the courage to think and decide for yourself.	Wahre Aufklärung bedeutet, den Mut zu haben, selbst zu denken und zu entscheiden.
+
+
+# ── Dialogue 3: On Pessimism and Optimism ────────────────────────────────────
+@section	10	On Pessimism and Optimism	Über Pessimismus und Optimismus
+@vocab	der Pessimist	der Optimist	hoffen	die Hoffnung	besser	schlechter	die Zukunft	glauben	der Fortschritt	verbessern	die Welt
+
+adv021001-01	kant		May I ask something personal, Herr Schopenhauer?	Darf ich etwas Persönliches fragen, Herr Schopenhauer?
+adv021001-02	schopenhauer		Of course. I am rarely shy about difficult questions.	Natürlich. Ich bin selten schüchtern bei schwierigen Fragen.
+adv021001-03	kant		People say you are a pessimist. Is that true?	Die Leute sagen, Sie seien ein Pessimist. Ist das wahr?
+adv021001-04	schopenhauer		It is true, and I am proud of it. I think this world is not the best of all possible worlds.	Es ist wahr, und ich bin stolz darauf. Ich glaube, diese Welt ist nicht die beste aller möglichen Welten.
+adv021001-05	kant		That is a strong statement. Do you have no hope for a better future?	Das ist eine starke Aussage. Haben Sie keine Hoffnung auf eine bessere Zukunft?
+adv021001-06	schopenhauer		Hope is a nice word, but I am careful with it. I think suffering is part of life, always.	Hoffnung ist ein schönes Wort, aber ich bin vorsichtig damit. Ich glaube, Leiden ist immer ein Teil des Lebens.
+adv021001-07	kant		I understand your view, but I think differently. I believe in progress. Slowly, humanity can become better.	Ich verstehe Ihre Sicht, aber ich denke anders. Ich glaube an Fortschritt. Langsam kann die Menschheit besser werden.
+adv021001-08	schopenhauer		Progress in science, yes. But progress in happiness? I am doubtful.	Fortschritt in der Wissenschaft, ja. Aber Fortschritt im Glück? Ich bin zweifelhaft.
+adv021001-09	kant		Perhaps happiness is not the only goal. Perhaps becoming morally better is also a kind of progress.	Vielleicht ist Glück nicht das einzige Ziel. Vielleicht ist es auch ein Fortschritt, moralisch besser zu werden.
+adv021001-10	schopenhauer		That I can accept more easily. Moral improvement, yes, perhaps that is possible.	Das kann ich leichter akzeptieren. Moralische Verbesserung, ja, vielleicht ist das möglich.
+adv021001-11	kant		So we find a small piece of agreement after all!	Also finden wir doch noch ein kleines Stück Übereinstimmung!
+adv021001-12	schopenhauer		A small piece. I will not promise more than that.	Ein kleines Stück. Mehr werde ich nicht versprechen.
+adv021001-13	kant		That is enough for one evening, I think.	Das ist genug für einen Abend, denke ich.
+adv021001-14	narrator		Both philosophers laugh quietly. The tea is now cold, but neither minds.	Beide Philosophen lachen leise. Der Tee ist jetzt kalt, aber das stört keinen von beiden.
+adv021001-15	schopenhauer		Would you like more tea, Herr Kant? I can make a fresh pot.	Möchten Sie mehr Tee, Herr Kant? Ich kann eine frische Kanne machen.
+adv021001-16	kant		Yes, please. And perhaps you can tell me more about your dog.	Ja, bitte. Und vielleicht können Sie mir mehr über Ihren Hund erzählen.
+
+adv021001-17q	question		What does Schopenhauer accept might be possible?	Was akzeptiert Schopenhauer als möglich?
+adv021001-18a	option	correct	Moral improvement.	Moralische Verbesserung.
+adv021001-18b	option		Eternal happiness.	Ewiges Glück.
+adv021001-18c	option		A world without suffering.	Eine Welt ohne Leiden.
+
+
+# ── Reading Pair 6: On the Pipe and Simple Pleasures ─────────────────────────
+@section	11	On the Pipe and Simple Pleasures	Über die Pfeife und einfache Freuden
+@vocab	einfach	die Freude	genug	zufrieden	brauchen	wünschen	der Reichtum	das Geld	besitzen	der Wunsch	klein	groß
+
+@passage	06a	MY OWN WRITING (not a quotation) — in the style of Schopenhauer, on wanting little	MEINE EIGENE SCHRIFT (kein Zitat) — im Stil Schopenhauers, über das Wenig-Wollen
+
+@passage_line	This entire passage is my own writing in an old-fashioned style, not a quotation from Schopenhauer. It approximates a theme from his "Aphorismen zur Lebensweisheit" (in "Parerga und Paralipomena"), where his actual text can be found: a person who needs little is missing little; and whoever becomes aware that their wishes are not all necessary has already gone halfway toward calm — while the greedy person, even surrounded by abundance, is chased by an unfillable emptiness.	Diese ganze Passage ist meine eigene Schrift in altmodischem Stil, kein Zitat von Schopenhauer. Sie nähert sich einem Thema aus seinen „Aphorismen zur Lebensweisheit" (in „Parerga und Paralipomena", wo sein tatsächlicher Text zu finden ist): Wer wenig bedarf, dem fehlt es an wenig; und wer sich bewusst wird, dass seine Wünsche nicht alle notwendig sind, hat schon den halben Weg zur Gelassenheit zurückgelegt — während der Gierige, selbst inmitten des Überflusses, von einer unstillbaren Leere verfolgt wird.
+
+@passage	06b	Simplified — Wanting less, having enough	Vereinfacht — Weniger wollen, genug haben
+
+@passage_line	A person who needs little does not miss much.	Ein Mensch, der wenig braucht, verpasst nicht viel.
+@passage_line	If you understand that your wishes are not always necessary, you can feel calmer.	Wenn du verstehst, dass deine Wünsche nicht immer notwendig sind, kannst du dich ruhiger fühlen.
+@passage_line	A person who always wants more money or more things often feels empty, even when they have a lot.	Ein Mensch, der immer mehr Geld oder mehr Dinge will, fühlt sich oft leer, sogar wenn er viel hat.
+@passage_line	This is similar to Schopenhauer's ideas about happiness. He often wrote that simple pleasures, like a good book or a quiet evening, can be enough.	Das ähnelt Schopenhauers Ideen über Glück. Er hat oft geschrieben, dass einfache Freuden, wie ein gutes Buch oder ein ruhiger Abend, genug sein können.
+
+
+# ── Final Dialogue: Goodnight ──────────────────────────────────────────────
+@section	12	Goodnight	Gute Nacht
+@vocab	gute Nacht	der Abschied	sich verabschieden	wiedersehen	der Besuch	danken	angenehm	der Abend	spät	gehen	bleiben
+
+adv021201-01	narrator		It is late. Kant stands up and takes his coat.	Es ist spät. Kant steht auf und nimmt seinen Mantel.
+adv021201-02	kant		I should go now. Thank you for this evening, Herr Schopenhauer. It was very pleasant.	Ich sollte jetzt gehen. Danke für diesen Abend, Herr Schopenhauer. Er war sehr angenehm.
+adv021201-03	schopenhauer		Thank you for visiting. I do not have many guests. This was a nice exception.	Danke für Ihren Besuch. Ich habe nicht viele Gäste. Das war eine schöne Ausnahme.
+adv021201-04	kant		We disagree about many things. But I enjoyed our conversation very much.	Wir sind über viele Dinge nicht einer Meinung. Aber ich habe unser Gespräch sehr genossen.
+adv021201-05	schopenhauer		Disagreement can be interesting. Agreement is often boring.	Uneinigkeit kann interessant sein. Einigkeit ist oft langweilig.
+adv021201-06	kant		A very Schopenhauer-like thing to say.	Eine sehr schopenhauerische Aussage.
+adv021201-07	schopenhauer		I will take that as a compliment.	Das nehme ich als Kompliment.
+adv021201-08	narrator		Schopenhauer walks Kant to the door. Outside, the rain has stopped.	Schopenhauer begleitet Kant zur Tür. Draußen hat der Regen aufgehört.
+adv021201-09	kant		The sky is clear now. Look at the stars.	Der Himmel ist jetzt klar. Schauen Sie sich die Sterne an.
+adv021201-10	schopenhauer		Yes. Beautiful. And completely indifferent to our small conversation tonight.	Ja. Schön. Und völlig gleichgültig gegenüber unserem kleinen Gespräch heute Abend.
+adv021201-11	kant		Perhaps. But the conversation mattered to us. That is enough.	Vielleicht. Aber das Gespräch war für uns wichtig. Das ist genug.
+adv021201-12	schopenhauer		Safe travels, Herr Kant. Perhaps we will speak again.	Gute Reise, Herr Kant. Vielleicht sprechen wir uns wieder.
+adv021201-13	kant		I would like that. Goodnight, Herr Schopenhauer.	Das würde mir gefallen. Gute Nacht, Herr Schopenhauer.
+adv021201-14	schopenhauer		Goodnight.	Gute Nacht.
+adv021201-15	narrator		Kant disappears into the dark street. Schopenhauer closes the door and returns to his lamp.	Kant verschwindet in der dunklen Straße. Schopenhauer schließt die Tür und kehrt zu seiner Lampe zurück.
+adv021201-16	schopenhauer		An interesting man. Wrong about many things. But interesting.	Ein interessanter Mann. Bei vielen Dingen falsch. Aber interessant.
+adv021201-17	narrator		He sits down again with his pipe. The lamp burns quietly into the night.	Er setzt sich wieder mit seiner Pfeife. Die Lampe brennt leise in die Nacht hinein.
+
+adv021201-18q	question		What does Kant point at before he leaves?	Worauf zeigt Kant, bevor er geht?
+adv021201-19a	option	correct	The stars.	Die Sterne.
+adv021201-19b	option		The clock.	Die Uhr.
+adv021201-19c	option		A book.	Ein Buch.
+
+adv021201-20q	question		If you could ask Schopenhauer or Kant one question, what would it be?	Wenn du Schopenhauer oder Kant eine Frage stellen könntest, welche wäre das?
+adv021201-21a	option	correct	I would ask Schopenhauer something.	Ich würde Schopenhauer etwas fragen.
+adv021201-21b	option	correct	I would ask Kant something.	Ich würde Kant etwas fragen.
+adv021201-21c	option	correct	I would ask them both the same question.	Ich würde beiden die gleiche Frage stellen.

@@ -1,12 +1,14 @@
-import { useState, useEffect, useMemo, useCallback } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { useApp } from '../context/AppContext'
 import {
   loadGrammarPatterns, sortPatternsByPriority, filterPatternsByLevel,
   getLevelsFromPatterns, getCategoriesFromPatterns,
-  instantiateTemplate, buildOptions, buildPickCorrectOptions,
+  instantiateTemplate, buildPickCorrectOptions,
   checkTileOrder, getAlternatives,
   recordGrammarCorrect, recordGrammarWrong, getAllGrammarScores,
 } from '../engine/grammar'
+import LevelChooser from '../components/LevelChooser'
+import HelpButton from '../components/HelpButton'
 import './GrammarTrainer.css'
 
 const TYPE_META = {
@@ -30,7 +32,7 @@ const CATEGORY_LABELS = {
 // ── Exercise components ────────────────────────────────────────────────────────
 
 function FillBlank({ pattern, onResult }) {
-  const { text, correctAnswer, chosenOption } = useMemo(
+  const { text } = useMemo(
     () => instantiateTemplate(pattern.template), [pattern.id]
   )
 
@@ -271,8 +273,7 @@ function TileOrder({ pattern, onResult }) {
 
 // ── Type-selection screen ──────────────────────────────────────────────────────
 
-function TypeSelector({ patterns, onSelect, activeLevels, activeCategories,
-  availableLevels, availableCategories, toggleLevel, toggleCategory, scores }) {
+function TypeSelector({ patterns, onSelect, scores }) {
 
   const typeCount = type => patterns.filter(p => p.type === type).length
 
@@ -311,10 +312,10 @@ function TypeSelector({ patterns, onSelect, activeLevels, activeCategories,
 // ── Main component ─────────────────────────────────────────────────────────────
 
 export default function GrammarTrainer() {
-  const { setScreen, goBack, activeLanguage } = useApp()
+  const { goBack, activeLanguage } = useApp()
 
   const [allPatterns,       setAllPatterns]       = useState([])
-  const [activeLevels,      setActiveLevels]       = useState([])
+  const [activeLevels,      setActiveLevels]       = useState(null)
   const [activeCategories,  setActiveCategories]   = useState([])
   const [selectedType,      setSelectedType]       = useState(null) // null = type selector
   const [streamIndex,       setStreamIndex]        = useState(0)    // position in stream
@@ -339,7 +340,7 @@ export default function GrammarTrainer() {
   // All filtered patterns regardless of type (for type selector counts)
   const filteredPatterns = useMemo(() => {
     let ps = allPatterns
-    if (activeLevels.length > 0)    ps = filterPatternsByLevel(ps, activeLevels)
+    if (activeLevels)     ps = filterPatternsByLevel(ps, activeLevels)
     if (activeCategories.length > 0) ps = ps.filter(p => activeCategories.includes(p.category))
     return ps
   }, [allPatterns, activeLevels, activeCategories])
@@ -365,10 +366,8 @@ export default function GrammarTrainer() {
     setStreamIndex(nextIndex)
   }
 
-  function toggleLevel(level) {
-    setActiveLevels(prev =>
-      prev.includes(level) ? prev.filter(l => l !== level) : [...prev, level]
-    )
+  function handleLevelsChange(next) {
+    setActiveLevels(next)
     setStreamIndex(0)
     setSelectedType(null)
   }
@@ -402,22 +401,17 @@ export default function GrammarTrainer() {
           {sessionTotal > 0 && (
             <span className="gt-session-score">{sessionCorrect}/{sessionTotal}{accuracy !== null ? ` · ${accuracy}%` : ''}</span>
           )}
-          <button className="gt-gear" onClick={() => setScreen('settings')} title="Settings">⚙️</button>
+          <HelpButton
+            title="Grammar Drills"
+            description="Practice grammar patterns for the selected category — fill in blanks or choose the correct form. Filter by level or category using the chips below."
+          />
         </div>
       </div>
 
       {/* Filter bar — always visible */}
       <div className="gt-filter-bar">
         <div className="gt-filter-chips">
-          {availableLevels.map(level => (
-            <button
-              key={level}
-              className={`gt-chip ${activeLevels.includes(level) ? 'active' : ''}`}
-              onClick={() => toggleLevel(level)}
-            >
-              {level}
-            </button>
-          ))}
+          <LevelChooser levels={availableLevels} value={activeLevels} onChange={handleLevelsChange} className="gt-level-filter" />
           {availableCategories.map(cat => (
             <button
               key={cat}
@@ -427,8 +421,8 @@ export default function GrammarTrainer() {
               {CATEGORY_LABELS[cat] ?? cat}
             </button>
           ))}
-          {(activeLevels.length > 0 || activeCategories.length > 0) && (
-            <button className="gt-chip-clear" onClick={() => { setActiveLevels([]); setActiveCategories([]); setSelectedType(null) }}>
+          {(activeLevels || activeCategories.length > 0) && (
+            <button className="gt-chip-clear" onClick={() => { setActiveLevels(null); setActiveCategories([]); setSelectedType(null) }}>
               ✕ Clear
             </button>
           )}
@@ -445,12 +439,6 @@ export default function GrammarTrainer() {
             patterns={filteredPatterns}
             onSelect={type => { setSelectedType(type); setStreamIndex(0); setCycleCount(0) }}
             scores={scores}
-            activeLevels={activeLevels}
-            activeCategories={activeCategories}
-            availableLevels={availableLevels}
-            availableCategories={availableCategories}
-            toggleLevel={toggleLevel}
-            toggleCategory={toggleCategory}
           />
         ) : !currentPattern ? (
           <div className="gt-empty">No patterns of this type match the filters.</div>

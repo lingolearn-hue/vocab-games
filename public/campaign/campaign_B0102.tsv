@@ -1,0 +1,296 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# adv0202 — Two Philosophers Walk Into a Study · Chapter 02: The Owl of Minerva
+# ══════════════════════════════════════════════════════════════════════════════
+
+@columns	id	speaker	cmd	en	de
+
+@chapter	02	The Owl of Minerva	Die Eule der Minerva	A2
+@artifact	🦉	A Small Owl Figurine	Komparativ · Superlativ · Relativsätze
+
+@story_intro	The next morning. Schopenhauer is still drinking his coffee when there is a knock at the door — much earlier than expected. A third philosopher has arrived, and he has strong opinions about almost everything.	Am nächsten Morgen. Schopenhauer trinkt noch seinen Kaffee, als es an der Tür klopft — viel früher als erwartet. Ein dritter Philosoph ist angekommen, und er hat zu fast allem eine starke Meinung.
+@story_outro	Kant has gone home to Königsberg. Schopenhauer and Hegel remain — two men who agree on almost nothing, sharing one small study and a great deal of stubbornness. The owl figurine watches them both, saying nothing.	Kant ist nach Königsberg zurückgereist. Schopenhauer und Hegel bleiben — zwei Männer, die sich über fast nichts einig sind, in einem kleinen Arbeitszimmer und mit sehr viel Hartnäckigkeit. Die Eulenfigur beobachtet beide, ohne etwas zu sagen.
+
+
+# ── Dialogue 1: An Early Visitor ──────────────────────────────────────────────
+@section	01	An Early Visitor	Ein früher Besucher
+@vocab	früh	klopfen	überraschen	der Besucher	vorstellen	bekannt	der Professor	die Universität	Berlin	wichtig	denken über
+
+adv020201-01	narrator		It is early morning. Schopenhauer is drinking coffee when there is a loud knock at the door.	Es ist früher Morgen. Schopenhauer trinkt Kaffee, als es laut an der Tür klopft.
+adv020201-02	schopenhauer		Already? It is barely eight o'clock. Who could that be?	Schon? Es ist kaum acht Uhr. Wer könnte das sein?
+adv020201-03	narrator		He opens the door. A confident-looking man in fine clothes stands there.	Er öffnet die Tür. Ein selbstbewusst aussehender Mann in feiner Kleidung steht da.
+adv020201-04	hegel		Good morning. I am Georg Wilhelm Friedrich Hegel, professor in Berlin. I believe you know my work.	Guten Morgen. Ich bin Georg Wilhelm Friedrich Hegel, Professor in Berlin. Ich glaube, Sie kennen meine Arbeit.
+adv020201-05	schopenhauer		Hegel. Yes. I know your work very well.	Hegel. Ja. Ich kenne Ihre Arbeit sehr gut.
+adv020201-06	narrator		Schopenhauer's face does not look especially happy. But he opens the door wider.	Schopenhauers Gesicht sieht nicht besonders glücklich aus. Aber er öffnet die Tür weiter.
+adv020201-07	schopenhauer		Please, come in. I have a guest already — Herr Kant from Königsberg.	Bitte, kommen Sie herein. Ich habe schon einen Gast — Herr Kant aus Königsberg.
+adv020201-08	hegel		Kant! Even better. I have many thoughts about his philosophy too.	Kant! Noch besser. Ich habe auch viele Gedanken über seine Philosophie.
+adv020201-09	narrator		Kant comes into the hallway, surprised to see a third person.	Kant kommt in den Flur, überrascht, eine dritte Person zu sehen.
+adv020201-10	kant		Herr Hegel. We have not met, but I have read some of your newer writings.	Herr Hegel. Wir haben uns nicht getroffen, aber ich habe einige Ihrer neueren Schriften gelesen.
+adv020201-11	hegel		An honor, Herr Kant. Your philosophy was an important first step. I believe my work continues where yours stops.	Eine Ehre, Herr Kant. Ihre Philosophie war ein wichtiger erster Schritt. Ich glaube, meine Arbeit setzt fort, wo Ihre aufhört.
+adv020201-12	schopenhauer		"An important first step." How generous of you.	„Ein wichtiger erster Schritt." Wie großzügig von Ihnen.
+adv020201-13	hegel		I only mean that philosophy develops, Herr Schopenhauer. Nothing stays still. Not even great ideas.	Ich meine nur, dass Philosophie sich entwickelt, Herr Schopenhauer. Nichts bleibt stehen. Nicht einmal große Ideen.
+adv020201-14	schopenhauer		Some ideas are more lasting than others, I think. But please, sit down. Would you like coffee?	Manche Ideen sind dauerhafter als andere, denke ich. Aber bitte, setzen Sie sich. Möchten Sie Kaffee?
+adv020201-15	hegel		Yes, thank you. Strong, if possible. I think best with strong coffee.	Ja, danke. Stark, wenn möglich. Ich denke am besten mit starkem Kaffee.
+adv020201-16	narrator		Three philosophers now sit in one small study. The morning suddenly feels more complicated.	Drei Philosophen sitzen jetzt in einem kleinen Arbeitszimmer. Der Morgen fühlt sich plötzlich komplizierter an.
+
+adv020201-17q	question		Where is Hegel a professor?	Wo ist Hegel Professor?
+adv020201-18a	option	correct	In Berlin.	In Berlin.
+adv020201-18b	option		In Königsberg.	In Königsberg.
+adv020201-18c	option		In Frankfurt.	In Frankfurt.
+
+
+# ── Reading Pair 1: The True Is the Whole ────────────────────────────────────
+@section	02	The True Is the Whole	Das Wahre ist das Ganze
+@vocab	wahr	das Ganze	der Teil	die Entwicklung	das System	verstehen	zusammen	getrennt	denken	die Idee	die Geschichte
+
+@passage	01a	GENUINE EXCERPT — Hegel, "Phänomenologie des Geistes," Preface (1807)	ECHTES ZITAT — Hegel, „Phänomenologie des Geistes," Vorrede (1807)
+
+@passage_line	Direct quotation, one of Hegel's most famous lines: "Das Wahre ist das Ganze."	Direktes Zitat, eine von Hegels berühmtesten Zeilen: „Das Wahre ist das Ganze."
+
+@passage	01a2	MY OWN SUMMARY (not a quotation) — what this means	MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — was das bedeutet
+
+@passage_line	The following is my own explanation, not Hegel's wording: he means that a single fact, alone, is not the full truth. Only when we see how all the parts connect and develop together do we understand the whole truth.	Das Folgende ist meine eigene Erklärung, nicht Hegels Wortlaut: Er meint, dass eine einzelne Tatsache, allein, nicht die volle Wahrheit ist. Erst wenn wir sehen, wie alle Teile zusammenhängen und sich gemeinsam entwickeln, verstehen wir die ganze Wahrheit.
+@passage_line	For Hegel, history and ideas are not separate, fixed things. They are a process — always moving toward a fuller understanding.	Für Hegel sind Geschichte und Ideen keine getrennten, festen Dinge. Sie sind ein Prozess — der sich immer zu einem volleren Verständnis hin bewegt.
+
+@passage	01b	Simplified — A small example	Vereinfacht — Ein kleines Beispiel
+
+@passage_line	Imagine a single puzzle piece. Alone, it does not show you the full picture.	Stell dir ein einzelnes Puzzleteil vor. Allein zeigt es dir nicht das ganze Bild.
+@passage_line	Hegel says truth is like the whole puzzle, not just one piece.	Hegel sagt, Wahrheit ist wie das ganze Puzzle, nicht nur ein Teil.
+@passage_line	He also believed that history moves forward, step by step, like a long story with chapters.	Er glaubte auch, dass die Geschichte sich Schritt für Schritt vorwärts bewegt, wie eine lange Geschichte mit Kapiteln.
+@passage_line	Every old idea helps create a newer, better idea. This process never really stops.	Jede alte Idee hilft, eine neuere, bessere Idee zu schaffen. Dieser Prozess hört nie wirklich auf.
+
+
+# ── Monologue: Schopenhauer's Private Opinion ────────────────────────────────
+@section	03	Schopenhauer's Private Opinion	Schopenhauers private Meinung
+@vocab	die Meinung	denken über	schwierig	klar	einfach	verstehen	der Stil	schreiben	der Satz	lang	kurz	überzeugen
+
+adv020301-01	narrator		Hegel has gone to wash his hands. For a moment, Schopenhauer is alone in the kitchen, making more coffee.	Hegel ist gegangen, um sich die Hände zu waschen. Für einen Moment ist Schopenhauer allein in der Küche und macht mehr Kaffee.
+adv020301-02	schopenhauer		"An important first step." Unbelievable. The man has no humility at all.	„Ein wichtiger erster Schritt." Unglaublich. Der Mann hat überhaupt keine Demut.
+adv020301-03	schopenhauer		I have read his book. Three times, actually, because the sentences are so long that I forgot the beginning by the end.	Ich habe sein Buch gelesen. Tatsächlich dreimal, weil die Sätze so lang sind, dass ich den Anfang bis zum Ende vergessen habe.
+adv020301-04	schopenhauer		He writes about "Spirit" and "the Absolute" as if these words explain everything. They explain nothing.	Er schreibt über „Geist" und „das Absolute", als ob diese Wörter alles erklären. Sie erklären nichts.
+adv020301-05	schopenhauer		A clear thought needs a clear sentence. I believe this completely.	Ein klarer Gedanke braucht einen klaren Satz. Das glaube ich vollkommen.
+adv020301-06	schopenhauer		But perhaps I am too harsh this morning. The coffee is not even ready yet.	Aber vielleicht bin ich heute Morgen zu hart. Der Kaffee ist noch nicht einmal fertig.
+adv020301-07	schopenhauer		Still, I will be polite. A guest is a guest, even a difficult one.	Trotzdem werde ich höflich sein. Ein Gast ist ein Gast, auch ein schwieriger.
+adv020301-08	narrator		He pours three cups. He takes a deep breath before returning to the study.	Er schenkt drei Tassen ein. Er atmet tief ein, bevor er ins Arbeitszimmer zurückkehrt.
+adv020301-09	schopenhauer		Today will be a long day. I can already feel it.	Heute wird ein langer Tag. Das fühle ich schon jetzt.
+
+adv020301-10q	question		What does Schopenhauer think about Hegel's sentences?	Was denkt Schopenhauer über Hegels Sätze?
+adv020301-11a	option	correct	They are too long and unclear.	Sie sind zu lang und unklar.
+adv020301-11b	option		They are too short.	Sie sind zu kurz.
+adv020301-11c	option		They are perfect.	Sie sind perfekt.
+
+adv020301-12q	question		Do you prefer simple, short writing or complex, detailed writing? Why?	Bevorzugst du einfaches, kurzes Schreiben oder komplexes, ausführliches Schreiben? Warum?
+adv020301-13a	option	correct	I prefer simple, short writing.	Ich bevorzuge einfaches, kurzes Schreiben.
+adv020301-13b	option	correct	I prefer complex, detailed writing.	Ich bevorzuge komplexes, ausführliches Schreiben.
+adv020301-13c	option	correct	It depends on the topic.	Es kommt auf das Thema an.
+
+
+# ── Dialogue 2: Thesis, Antithesis, Synthesis ────────────────────────────────
+@section	04	Thesis, Antithesis, Synthesis	These, Antithese, Synthese
+@vocab	der Gegensatz	die Veränderung	die Lösung	der Streit	zusammenpassen	entwickeln	der Schritt	die Stufe	das Ergebnis	folgen	führen zu
+
+adv020401-01	narrator		Back in the study, Hegel begins to explain his most famous idea.	Zurück im Arbeitszimmer beginnt Hegel, seine berühmteste Idee zu erklären.
+adv020401-02	hegel		Let me explain my method simply. Every idea, a thesis, eventually meets its opposite, an antithesis.	Lassen Sie mich meine Methode einfach erklären. Jede Idee, eine These, trifft schließlich auf ihr Gegenteil, eine Antithese.
+adv020401-03	kant		And then what happens?	Und was passiert dann?
+adv020401-04	hegel		Then comes a synthesis — a new, higher idea that combines parts of both. This new idea becomes the next thesis, and the process continues.	Dann kommt eine Synthese — eine neue, höhere Idee, die Teile von beiden verbindet. Diese neue Idee wird zur nächsten These, und der Prozess geht weiter.
+adv020401-05	schopenhauer		So history is just an endless argument that never really finishes?	Also ist die Geschichte nur ein endloser Streit, der nie wirklich endet?
+adv020401-06	hegel		Not an argument without purpose. Each step brings more understanding. History has direction. It moves toward freedom and self-knowledge.	Kein Streit ohne Zweck. Jeder Schritt bringt mehr Verständnis. Die Geschichte hat eine Richtung. Sie bewegt sich auf Freiheit und Selbsterkenntnis zu.
+adv020401-07	schopenhauer		Direction toward what, exactly? I see mostly suffering and repetition, not progress toward some great goal.	Richtung wohin, genau? Ich sehe meistens Leiden und Wiederholung, keinen Fortschritt zu einem großen Ziel.
+adv020401-08	hegel		That is because you look too closely at single moments. Step back, and you will see the larger pattern.	Das liegt daran, dass Sie zu genau auf einzelne Momente schauen. Treten Sie zurück, und Sie werden das größere Muster sehen.
+adv020401-09	schopenhauer		I have stepped back many times, Herr Hegel. I still see the same pattern: wanting, suffering, wanting again.	Ich bin schon oft zurückgetreten, Herr Hegel. Ich sehe immer noch das gleiche Muster: Wollen, Leiden, wieder Wollen.
+adv020401-10	kant		Perhaps both of you are looking at different parts of the same large picture.	Vielleicht schauen Sie beide auf verschiedene Teile desselben großen Bildes.
+adv020401-11	hegel		A fair thought, Herr Kant. Though I believe my picture is, in the end, the more complete one.	Ein fairer Gedanke, Herr Kant. Obwohl ich glaube, dass mein Bild am Ende das vollständigere ist.
+adv020401-12	schopenhauer		Of course you do.	Natürlich glauben Sie das.
+adv020401-13	narrator		Kant smiles quietly into his coffee. This will be an interesting morning.	Kant lächelt leise in seinen Kaffee. Das wird ein interessanter Morgen.
+
+adv020401-14q	question		According to Hegel, what comes after a thesis and an antithesis?	Was kommt laut Hegel nach einer These und einer Antithese?
+adv020401-15a	option	correct	A synthesis.	Eine Synthese.
+adv020401-15b	option		A new thesis without change.	Eine neue These ohne Veränderung.
+adv020401-15c	option		Nothing. The process stops.	Nichts. Der Prozess stoppt.
+
+
+# ── Reading Pair 2: The Owl of Minerva ───────────────────────────────────────
+@section	05	The Owl of Minerva	Die Eule der Minerva
+@vocab	die Eule	der Flug	die Dämmerung	verstehen	zu spät	die Weisheit	rückwärts	schauen	das Leben	die Zeit	erkennen
+
+@passage	02a	GENUINE EXCERPT — Hegel, "Grundlinien der Philosophie des Rechts," Preface (1820)	ECHTES ZITAT — Hegel, „Grundlinien der Philosophie des Rechts," Vorrede (1820)
+
+@passage_line	Direct quotation, a famous closing image from the preface: "...die Eule der Minerva beginnt erst mit der einbrechenden Dämmerung ihren Flug."	Direktes Zitat, ein berühmtes Schlussbild aus der Vorrede: „...die Eule der Minerva beginnt erst mit der einbrechenden Dämmerung ihren Flug."
+
+@passage	02a2	MY OWN SUMMARY (not a quotation) — what this image means	MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — was dieses Bild bedeutet
+
+@passage_line	The following is my own explanation, not Hegel's wording: Minerva's owl, a symbol of wisdom, only flies out at dusk — after the day's events are already finished.	Das Folgende ist meine eigene Erklärung, nicht Hegels Wortlaut: Die Eule der Minerva, ein Symbol der Weisheit, fliegt erst in der Dämmerung aus — nachdem die Ereignisse des Tages schon vorbei sind.
+@passage_line	Hegel means: philosophy understands a time period only after that time period is already over. Wisdom looks backward, not forward.	Hegel meint: Philosophie versteht eine Zeitperiode erst, nachdem diese Zeitperiode schon vorbei ist. Weisheit schaut rückwärts, nicht vorwärts.
+
+@passage	02b	Simplified — Wisdom comes late	Vereinfacht — Weisheit kommt spät
+
+@passage_line	Hegel compared philosophy to an owl. An owl flies at night, not during the day.	Hegel hat die Philosophie mit einer Eule verglichen. Eine Eule fliegt nachts, nicht am Tag.
+@passage_line	He meant: we usually understand events only after they have already happened.	Er meinte: Wir verstehen Ereignisse meistens erst, nachdem sie schon passiert sind.
+@passage_line	For example, people often understand why something was important only many years later.	Zum Beispiel verstehen Menschen oft erst viele Jahre später, warum etwas wichtig war.
+@passage_line	This is a humble idea: philosophy explains the past well, but it cannot easily predict the future.	Das ist eine bescheidene Idee: Philosophie erklärt die Vergangenheit gut, aber sie kann die Zukunft nicht leicht vorhersagen.
+
+
+# ── Dialogue 3: Kant's Last Morning ──────────────────────────────────────────
+@section	06	Kant's Last Morning	Kants letzter Morgen
+@vocab	abreisen	die Reise	zurückkehren	sich verabschieden	danken	der Gastgeber	angenehm	vermissen	besuchen	die Postkutsche	pünktlich
+
+adv020601-01	narrator		After the coffee, Kant looks at his pocket watch and stands up.	Nach dem Kaffee schaut Kant auf seine Taschenuhr und steht auf.
+adv020601-02	kant		Gentlemen, I am sorry, but I must leave soon. My coach to Königsberg departs at noon, and I am a very punctual man.	Meine Herren, es tut mir leid, aber ich muss bald gehen. Meine Kutsche nach Königsberg fährt um zwölf Uhr ab, und ich bin ein sehr pünktlicher Mann.
+adv020601-03	schopenhauer		Already? I was hoping for at least one more good argument before lunch.	Schon? Ich hatte auf wenigstens noch einen guten Streit vor dem Mittagessen gehofft.
+adv020601-04	kant		There will be other mornings, Herr Schopenhauer. Philosophy is patient. My coach is not.	Es wird andere Morgen geben, Herr Schopenhauer. Die Philosophie ist geduldig. Meine Kutsche ist es nicht.
+adv020601-05	hegel		Safe travels, Herr Kant. Our conversation this morning was valuable to me, even where we disagreed.	Gute Reise, Herr Kant. Unser Gespräch heute Morgen war wertvoll für mich, auch dort, wo wir nicht einig waren.
+adv020601-06	kant		Disagreement between thinkers is healthy, Herr Hegel. I hope you two continue your conversation without me.	Uneinigkeit zwischen Denkern ist gesund, Herr Hegel. Ich hoffe, Sie beide setzen Ihr Gespräch ohne mich fort.
+adv020601-07	schopenhauer		Oh, I am sure we will. Whether Herr Hegel wants to or not.	Oh, ich bin sicher, wir werden das. Ob Herr Hegel will oder nicht.
+adv020601-08	hegel		I always enjoy a good discussion, Herr Schopenhauer, even a difficult one with you.	Ich genieße immer eine gute Diskussion, Herr Schopenhauer, auch eine schwierige mit Ihnen.
+adv020601-09	narrator		Schopenhauer walks Kant to the door. The morning sun is now higher in the sky.	Schopenhauer begleitet Kant zur Tür. Die Morgensonne steht jetzt höher im Himmel.
+adv020601-10	kant		Thank you for your hospitality, Herr Schopenhauer. And good luck with Herr Hegel. You will need it.	Danke für Ihre Gastfreundschaft, Herr Schopenhauer. Und viel Glück mit Herrn Hegel. Sie werden es brauchen.
+adv020601-11	schopenhauer		I appreciate the warning. Safe travels, old friend.	Ich schätze die Warnung. Gute Reise, alter Freund.
+adv020601-12	narrator		Kant climbs into a waiting coach. He waves once, then is gone down the street.	Kant steigt in eine wartende Kutsche. Er winkt einmal, dann ist er die Straße hinunter verschwunden.
+adv020601-13	schopenhauer		Well, Herr Hegel. It seems it is only the two of us now.	Nun, Herr Hegel. Es scheint, jetzt sind nur wir beide.
+adv020601-14	hegel		So it seems. Shall we continue where we left off?	So scheint es. Sollen wir dort weitermachen, wo wir aufgehört haben?
+adv020601-15	schopenhauer		If we must.	Wenn es sein muss.
+
+adv020601-16q	question		Why does Kant need to leave?	Warum muss Kant gehen?
+adv020601-17a	option	correct	His coach to Königsberg departs at noon.	Seine Kutsche nach Königsberg fährt um zwölf Uhr ab.
+adv020601-17b	option		He is tired.	Er ist müde.
+adv020601-17c	option		He does not like Hegel.	Er mag Hegel nicht.
+
+
+# ── Reading Pair 3: World Spirit ──────────────────────────────────────────────
+@section	07	World Spirit	Der Weltgeist
+@vocab	der Geist	die Welt	die Geschichte	wichtig	groß	die Person	die Nation	führen	der Krieg	der Held	die Zeit
+
+@passage	03a	MY OWN SUMMARY (not a quotation) — Hegel's idea of the "World Spirit," in my own words	MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — Hegels Idee vom „Weltgeist", in meinen eigenen Worten
+
+@passage_line	This entire passage is my own restatement, not Hegel's wording. He used the term "Weltgeist" (World Spirit) to describe a kind of larger historical force, moving through nations, wars, and great individuals, slowly working toward more freedom and self-understanding for humanity.	Diese ganze Passage ist meine eigene Wiedergabe, nicht Hegels Wortlaut. Er benutzte den Begriff „Weltgeist", um eine Art größerer historischer Kraft zu beschreiben, die sich durch Nationen, Kriege und große Einzelpersonen bewegt und langsam auf mehr Freiheit und Selbstverständnis für die Menschheit hinarbeitet.
+@passage_line	For Hegel, even great individuals — kings, generals, revolutionaries — are partly tools of this larger spirit, often without fully understanding their own role in it.	Für Hegel sind sogar große Einzelpersonen — Könige, Generäle, Revolutionäre — teilweise Werkzeuge dieses größeren Geistes, oft ohne ihre eigene Rolle darin vollständig zu verstehen.
+
+@passage	03b	Simplified — A spirit moving through history	Vereinfacht — Ein Geist, der sich durch die Geschichte bewegt
+
+@passage_line	Hegel had an interesting idea. He called it the "World Spirit."	Hegel hatte eine interessante Idee. Er nannte sie den „Weltgeist".
+@passage_line	He believed that history is not random. A bigger force moves through nations and important people.	Er glaubte, dass die Geschichte nicht zufällig ist. Eine größere Kraft bewegt sich durch Nationen und wichtige Menschen.
+@passage_line	Even kings and famous leaders, he said, do not fully understand their role in this bigger story.	Sogar Könige und berühmte Anführer, sagte er, verstehen ihre Rolle in dieser größeren Geschichte nicht vollständig.
+@passage_line	Step by step, this spirit moves the world toward more freedom.	Schritt für Schritt bewegt dieser Geist die Welt zu mehr Freiheit.
+
+
+# ── Dialogue 4: An Argument About Suffering ──────────────────────────────────
+@section	08	An Argument About Suffering	Ein Streit über das Leiden
+@vocab	das Leiden	der Sinn	notwendig	unnötig	der Fortschritt	der Preis	bezahlen	wert	rechtfertigen	persönlich	allgemein
+
+adv020801-01	narrator		Alone now, Schopenhauer and Hegel sit across from each other. The room feels smaller.	Jetzt allein, sitzen Schopenhauer und Hegel sich gegenüber. Der Raum fühlt sich kleiner an.
+adv020801-02	hegel		Tell me honestly, Herr Schopenhauer. Do you really believe there is no meaning at all in human suffering?	Sagen Sie mir ehrlich, Herr Schopenhauer. Glauben Sie wirklich, dass menschliches Leiden überhaupt keinen Sinn hat?
+adv020801-03	schopenhauer		I believe suffering simply is. It does not need a grand purpose to be real.	Ich glaube, Leiden ist einfach da. Es braucht keinen großen Zweck, um real zu sein.
+adv020801-04	hegel		But surely you see how suffering can lead to growth? A nation suffers through war, and afterward, builds something better.	Aber Sie sehen doch, wie Leiden zu Wachstum führen kann? Eine Nation leidet durch einen Krieg, und danach baut sie etwas Besseres.
+adv020801-05	schopenhauer		Sometimes. And sometimes a nation simply suffers, and nothing better comes. History is full of senseless pain too.	Manchmal. Und manchmal leidet eine Nation einfach, und nichts Besseres kommt. Die Geschichte ist auch voll von sinnlosem Schmerz.
+adv020801-06	hegel		I cannot accept that view. If suffering has no purpose at all, why continue to study history?	Diese Ansicht kann ich nicht akzeptieren. Wenn Leiden überhaupt keinen Zweck hat, warum die Geschichte überhaupt studieren?
+adv020801-07	schopenhauer		To understand it. Not to justify it. Understanding and justifying are different things, Herr Hegel.	Um sie zu verstehen. Nicht um sie zu rechtfertigen. Verstehen und Rechtfertigen sind unterschiedliche Dinge, Herr Hegel.
+adv020801-08	hegel		A clever distinction. But a cold one, I think.	Eine kluge Unterscheidung. Aber eine kalte, glaube ich.
+adv020801-09	schopenhauer		Perhaps. The world is often cold. I prefer to describe it honestly rather than warmly.	Vielleicht. Die Welt ist oft kalt. Ich beschreibe sie lieber ehrlich als warmherzig.
+adv020801-10	hegel		And I prefer to find the larger pattern, even in difficult times. Otherwise, what is the point of philosophy at all?	Und ich finde lieber das größere Muster, auch in schwierigen Zeiten. Sonst, was ist überhaupt der Sinn der Philosophie?
+adv020801-11	schopenhauer		Perhaps the point is simply to see clearly. Even when the view is not comforting.	Vielleicht ist der Sinn einfach, klar zu sehen. Auch wenn die Sicht nicht tröstlich ist.
+adv020801-12	hegel		We will not agree on this today, Herr Schopenhauer.	Wir werden uns heute darüber nicht einig werden, Herr Schopenhauer.
+adv020801-13	schopenhauer		No. Probably never. But the coffee is still warm, at least.	Nein. Wahrscheinlich nie. Aber der Kaffee ist wenigstens noch warm.
+adv020801-14	narrator		Both men sit in silence for a moment. Outside, a bird sings, indifferent to philosophy entirely.	Beide Männer sitzen einen Moment lang schweigend da. Draußen singt ein Vogel, völlig gleichgültig gegenüber der Philosophie.
+
+adv020801-15q	question		What does Schopenhauer say is the goal of studying history?	Was sagt Schopenhauer, ist das Ziel, Geschichte zu studieren?
+adv020801-16a	option	correct	To understand it, not to justify it.	Sie zu verstehen, nicht sie zu rechtfertigen.
+adv020801-17b	option		To make people happier.	Die Menschen glücklicher zu machen.
+adv020801-17c	option		To predict the future exactly.	Die Zukunft genau vorherzusagen.
+
+adv020801-18q	question		Whose approach to suffering and history makes more sense to you — Schopenhauer's honest description or Hegel's search for larger meaning?	Welcher Ansatz zu Leiden und Geschichte erscheint dir sinnvoller — Schopenhauers ehrliche Beschreibung oder Hegels Suche nach größerem Sinn?
+adv020801-19a	option	correct	Schopenhauer's approach makes more sense to me.	Schopenhauers Ansatz erscheint mir sinnvoller.
+adv020801-19b	option	correct	Hegel's approach makes more sense to me.	Hegels Ansatz erscheint mir sinnvoller.
+adv020801-19c	option	correct	I see value in both approaches.	Ich sehe Wert in beiden Ansätzen.
+
+
+# ── Reading Pair 4: On Reason and Reality ────────────────────────────────────
+@section	09	On Reason and Reality	Über Vernunft und Wirklichkeit
+@vocab	vernünftig	wirklich	die Wirklichkeit	die Vernunft	verstehen	akzeptieren	die Welt	logisch	der Zusammenhang	erklären	zweifeln
+
+@passage	04a	MY OWN SUMMARY (not a quotation) — a famous Hegel idea, in my own words	MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — eine berühmte Hegel-Idee, in meinen eigenen Worten
+
+@passage_line	This passage restates, in my own words, an idea closely associated with Hegel's "Grundlinien der Philosophie des Rechts" (1820), often summarized as "what is rational is real, and what is real is rational." Hegel meant that the structures of our world — laws, states, institutions — are not random; they are expressions of reason working itself out through history.	Diese Passage gibt, in meinen eigenen Worten, eine Idee wieder, die eng mit Hegels „Grundlinien der Philosophie des Rechts" (1820) verbunden ist, oft zusammengefasst als „was vernünftig ist, ist wirklich, und was wirklich ist, ist vernünftig". Hegel meinte, dass die Strukturen unserer Welt — Gesetze, Staaten, Institutionen — nicht zufällig sind; sie sind Ausdrücke der Vernunft, die sich durch die Geschichte entfaltet.
+@passage_line	This idea was controversial even in his own time, since it seemed to suggest that whatever currently exists must somehow be justified simply by existing.	Diese Idee war schon zu seiner eigenen Zeit umstritten, da sie nahezulegen schien, dass alles, was gerade existiert, irgendwie allein dadurch gerechtfertigt sein muss, dass es existiert.
+
+@passage	04b	Simplified — Is the world reasonable?	Vereinfacht — Ist die Welt vernünftig?
+
+@passage_line	Hegel believed the world makes sense, even when it looks confusing at first.	Hegel glaubte, die Welt macht Sinn, auch wenn sie zuerst verwirrend aussieht.
+@passage_line	He thought that laws, governments, and societies developed for understandable reasons, even complicated ones.	Er dachte, dass Gesetze, Regierungen und Gesellschaften aus verständlichen, wenn auch komplizierten Gründen entstanden sind.
+@passage_line	Some people did not like this idea. They asked: does this mean everything that exists is automatically good?	Manche Menschen mochten diese Idee nicht. Sie fragten: Bedeutet das, dass alles, was existiert, automatisch gut ist?
+@passage_line	This question caused many arguments among philosophers after Hegel.	Diese Frage verursachte viele Streitigkeiten unter Philosophen nach Hegel.
+
+
+# ── Dialogue 5: A Small Truce ─────────────────────────────────────────────────
+@section	10	A Small Truce	Ein kleiner Waffenstillstand
+@vocab	der Streit	beenden	zustimmen	respektieren	unterschiedlich	gemeinsam	der Punkt	einverstanden	freundlich	zugeben	versöhnen
+
+adv021001-01	narrator		It is now afternoon. The two men have argued for hours. Both look a little tired.	Es ist jetzt Nachmittag. Die zwei Männer haben stundenlang gestritten. Beide sehen ein bisschen müde aus.
+adv021001-02	schopenhauer		I admit, Herr Hegel, you argue better than I expected.	Ich gebe zu, Herr Hegel, Sie argumentieren besser, als ich erwartet hatte.
+adv021001-03	hegel		And I admit your pessimism is more carefully reasoned than people say. I expected only complaints. I found actual arguments.	Und ich gebe zu, Ihr Pessimismus ist sorgfältiger durchdacht, als die Leute sagen. Ich habe nur Beschwerden erwartet. Ich habe wirkliche Argumente gefunden.
+adv021001-04	schopenhauer		High praise, from you.	Hohes Lob, von Ihnen.
+adv021001-05	hegel		We disagree about almost everything. The Will, the Spirit, the meaning of suffering, even the best way to write a sentence.	Wir sind uns über fast alles uneinig. Den Willen, den Geist, den Sinn des Leidens, sogar die beste Art, einen Satz zu schreiben.
+adv021001-06	schopenhauer		Almost everything, yes. But perhaps not everything.	Fast alles, ja. Aber vielleicht nicht alles.
+adv021001-07	hegel		What do we agree on, then?	Worüber sind wir uns dann einig?
+adv021001-08	schopenhauer		We both think carefully. We both take ideas seriously, even when we reach different answers.	Wir denken beide sorgfältig. Wir nehmen beide Ideen ernst, auch wenn wir zu unterschiedlichen Antworten kommen.
+adv021001-09	hegel		That is true. And we both clearly enjoy a good argument more than agreement.	Das ist wahr. Und wir genießen beide eindeutig einen guten Streit mehr als Übereinstimmung.
+adv021001-10	schopenhauer		Much more, in my case.	Viel mehr, in meinem Fall.
+adv021001-11	hegel		Then perhaps we have found our one point of agreement after all.	Dann haben wir vielleicht doch unseren einen Punkt der Übereinstimmung gefunden.
+adv021001-12	narrator		Both men laugh, surprising themselves a little.	Beide Männer lachen, ein bisschen überrascht über sich selbst.
+adv021001-13	schopenhauer		Will you stay for dinner, Herr Hegel? I am told I am a passable cook, when I try.	Bleiben Sie zum Abendessen, Herr Hegel? Man sagt mir, ich sei ein annehmbarer Koch, wenn ich es versuche.
+adv021001-14	hegel		I would like that. Perhaps over dinner, you can finally explain to me why you dislike my sentences so much.	Das würde mir gefallen. Vielleicht können Sie mir beim Abendessen endlich erklären, warum Sie meine Sätze so sehr nicht mögen.
+adv021001-15	schopenhauer		Dinner is not long enough for that conversation. But I will try.	Das Abendessen ist nicht lang genug für dieses Gespräch. Aber ich werde es versuchen.
+
+adv021001-16q	question		What do Schopenhauer and Hegel finally agree they have in common?	Worin stimmen Schopenhauer und Hegel am Ende überein, dass sie es gemeinsam haben?
+adv021001-17a	option	correct	They both enjoy a good argument.	Sie genießen beide einen guten Streit.
+adv021001-17b	option		They both like the same food.	Sie mögen beide das gleiche Essen.
+adv021001-17c	option		They both agree about the Will.	Sie sind sich beide über den Willen einig.
+
+
+# ── Reading Pair 5: Two Tombstones ───────────────────────────────────────────
+@section	11	Two Tombstones	Zwei Grabsteine
+@vocab	der Tod	sterben	das Grab	der Grabstein	das Erbe	die Zukunft	erinnern	der Einfluss	berühmt	bis heute	die Philosophie
+
+@passage	05a	MY OWN SUMMARY (not a quotation) — how both philosophers are remembered today, in my own words	MEINE EIGENE ZUSAMMENFASSUNG (kein Zitat) — wie beide Philosophen heute erinnert werden, in meinen eigenen Worten
+
+@passage_line	This passage is entirely my own writing, reflecting on history rather than quoting either philosopher. Hegel died in 1831, greatly respected during his lifetime, his influence shaping later thinkers from Marx to Sartre. Schopenhauer, largely ignored for decades, became famous only late in his life, after the publication of "Parerga und Paralipomena" in 1851, and influenced figures such as Nietzsche and Wagner.	Diese Passage ist vollständig meine eigene Schrift, eine Reflexion über Geschichte statt ein Zitat von einem der beiden Philosophen. Hegel starb 1831, zu Lebzeiten sehr angesehen, sein Einfluss prägte spätere Denker von Marx bis Sartre. Schopenhauer, jahrzehntelang weitgehend ignoriert, wurde erst spät in seinem Leben berühmt, nach der Veröffentlichung von „Parerga und Paralipomena" 1851, und beeinflusste Persönlichkeiten wie Nietzsche und Wagner.
+@passage_line	It is one of philosophy's small ironies that the more optimistic, systematic thinker and the more pessimistic, individualist one both left lasting marks — just on very different paths of thought.	Es ist eine der kleinen Ironien der Philosophie, dass sowohl der optimistischere, systematischere Denker als auch der pessimistischere, individualistischere bleibende Spuren hinterließen — nur auf sehr unterschiedlichen Gedankenwegen.
+
+@passage	05b	Simplified — Both became famous, in different ways	Vereinfacht — Beide wurden berühmt, auf unterschiedliche Weise
+
+@passage_line	Hegel was already famous and respected while he was alive. He died in 1831.	Hegel war schon berühmt und respektiert, während er noch lebte. Er starb 1831.
+@passage_line	Schopenhauer was not famous for a long time. He became famous only near the end of his life.	Schopenhauer war lange nicht berühmt. Er wurde erst gegen Ende seines Lebens berühmt.
+@passage_line	Both philosophers influenced many later thinkers, artists, and writers.	Beide Philosophen beeinflussten viele spätere Denker, Künstler und Schriftsteller.
+@passage_line	Today, people still read and discuss both of them, even though they disagreed about almost everything.	Heute lesen und diskutieren die Menschen immer noch beide, obwohl sie über fast alles uneinig waren.
+
+
+# ── Final Dialogue: Dinner and the Owl ───────────────────────────────────────
+@section	12	Dinner and the Owl	Abendessen und die Eule
+@vocab	das Abendessen	kochen	der Tisch	das Geschenk	die Figur	stehen	beobachten	schweigen	der Abend	gemeinsam	der Respekt
+
+adv021201-01	narrator		Evening. Schopenhauer has cooked a simple meal. Both men sit at the table.	Abend. Schopenhauer hat eine einfache Mahlzeit gekocht. Beide Männer sitzen am Tisch.
+adv021201-02	hegel		This is good, actually. Better than I expected.	Das ist tatsächlich gut. Besser, als ich erwartet hatte.
+adv021201-03	schopenhauer		Another compliment. Be careful, Herr Hegel, or I might start to like you.	Noch ein Kompliment. Vorsicht, Herr Hegel, sonst mag ich Sie am Ende noch.
+adv021201-04	hegel		A terrible risk for both of us, I am sure.	Ein furchtbares Risiko für uns beide, da bin ich sicher.
+adv021201-05	narrator		Hegel notices a small owl figurine on the shelf.	Hegel bemerkt eine kleine Eulenfigur im Regal.
+adv021201-06	hegel		An owl. Fitting, for a philosopher's study.	Eine Eule. Passend, für das Arbeitszimmer eines Philosophen.
+adv021201-07	schopenhauer		Yes. Though I think your owl flies a little too late for my taste. I prefer to understand things while they are still happening.	Ja. Obwohl ich finde, dass Ihre Eule für meinen Geschmack ein bisschen zu spät fliegt. Ich verstehe Dinge lieber, während sie noch passieren.
+adv021201-08	hegel		Perhaps that is simply not possible for anyone, fast or slow. We are always a little late to understand our own time.	Vielleicht ist das für niemanden möglich, schnell oder langsam. Wir verstehen unsere eigene Zeit immer ein bisschen zu spät.
+adv021201-09	schopenhauer		A humble thought, for once, from you.	Ein bescheidener Gedanke, für einmal, von Ihnen.
+adv021201-10	hegel		Even I have a few of those, Herr Schopenhauer.	Sogar ich habe ein paar davon, Herr Schopenhauer.
+adv021201-11	narrator		They eat in comfortable silence for a while. The owl watches from the shelf, saying nothing, as owls do.	Sie essen eine Weile in angenehmem Schweigen. Die Eule beobachtet vom Regal aus, ohne etwas zu sagen, wie Eulen es tun.
+adv021201-12	hegel		I should go soon. I have a lecture early tomorrow in Berlin.	Ich sollte bald gehen. Ich habe morgen früh eine Vorlesung in Berlin.
+adv021201-13	schopenhauer		Of course you do. The Spirit of History waits for no one, apparently.	Natürlich haben Sie das. Der Geist der Geschichte wartet offenbar auf niemanden.
+adv021201-14	hegel		Now you are mocking me.	Jetzt necken Sie mich.
+adv021201-15	schopenhauer		A little. But honestly — thank you for the conversation today. It was better than I expected.	Ein bisschen. Aber ehrlich — danke für das Gespräch heute. Es war besser, als ich erwartet hatte.
+adv021201-16	hegel		For me too, Herr Schopenhauer. Perhaps disagreement, done carefully, is its own kind of respect.	Für mich auch, Herr Schopenhauer. Vielleicht ist Uneinigkeit, sorgfältig betrieben, eine eigene Art von Respekt.
+adv021201-17	narrator		Hegel leaves into the night. Schopenhauer stays at the table a little longer, looking at the small owl.	Hegel geht in die Nacht hinaus. Schopenhauer bleibt noch etwas länger am Tisch und schaut die kleine Eule an.
+adv021201-18	schopenhauer		Difficult man. Wrong about almost everything, I still think. But difficult in an interesting way.	Schwieriger Mann. Bei fast allem falsch, glaube ich immer noch. Aber schwierig auf eine interessante Art.
+
+adv021201-19q	question		What does Hegel have early the next morning?	Was hat Hegel am nächsten Morgen früh?
+adv021201-20a	option	correct	A lecture in Berlin.	Eine Vorlesung in Berlin.
+adv021201-20b	option		A coach to Königsberg.	Eine Kutsche nach Königsberg.
+adv021201-20c	option		Another dinner with Schopenhauer.	Ein weiteres Abendessen mit Schopenhauer.
+
+adv021201-21q	question		After reading about both chapters, which philosopher's ideas do you find more interesting so far — Schopenhauer's, Kant's, or Hegel's?	Nach beiden Kapiteln, welche Ideen findest du bisher interessanter — Schopenhauers, Kants oder Hegels?
+adv021201-22a	option	correct	Schopenhauer's ideas interest me most.	Schopenhauers Ideen interessieren mich am meisten.
+adv021201-23b	option	correct	Kant's ideas interest me most.	Kants Ideen interessieren mich am meisten.
+adv021201-24c	option	correct	Hegel's ideas interest me most.	Hegels Ideen interessieren mich am meisten.

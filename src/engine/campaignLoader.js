@@ -3,8 +3,6 @@
  * Loads pre-converted chapter JSON files from public/campaign/
  */
 
-const LANG_ORDER = ['en', 'zh', 'ja', 'de', 'es']
-
 export async function loadCampaignIndex() {
   try {
     const res = await fetch('./campaign/campaigns.json')
@@ -54,19 +52,19 @@ function resolveChapter(data, language) {
     vocab: s.vocab ?? [],
     grammar: s.grammar ?? [],
     surfaceForms: s.surfaceForms ?? {},   // {lang: {surface: lemma}}
-    dialogues: (s.dialogues ?? []).map(dl => resolveDialogue(dl, lang)),
+    dialogues: (s.dialogues ?? []).map(dl => resolveDialogue(dl, lang, t(s.title))),
     passages: (s.passages ?? []).map(p => resolvePassage(p, lang)),
   }))
 
   return { meta, sections }
 }
 
-function resolveDialogue(dl, lang) {
+function resolveDialogue(dl, lang, sectionTitle) {
   function t(obj) { return (obj && typeof obj === 'object') ? (obj[lang] || obj.en || '') : (obj ?? '') }
 
   return {
     ...dl,
-    title: `Dialogue ${dl.dialogueNum ?? 1}`,
+    title: sectionTitle || `Dialogue ${dl.dialogueNum ?? 1}`,
     turns: (dl.turns ?? []).map(turn => {
       if (turn.type === 'line') return {
         type: 'line',

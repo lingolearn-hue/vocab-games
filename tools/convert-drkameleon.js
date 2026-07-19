@@ -38,7 +38,6 @@
  */
 
 import fs from 'fs'
-import path from 'path'
 
 // ── CLI argument parsing ──────────────────────────────────────────────────────
 
@@ -114,7 +113,7 @@ const CATEGORY_KEYWORDS = [
   { keywords: ['person','people','friend','man','woman','child','name'], cat: 'people' },
 ]
 
-function inferCategories(meanings, pos) {
+function inferCategories(meanings) {
   const text = (meanings ?? []).join(' ').toLowerCase()
   const cats = []
   for (const { keywords, cat } of CATEGORY_KEYWORDS) {
@@ -183,7 +182,7 @@ for (const entry of entries) {
   if (meanings.length === 0) { skipped++; continue }
 
   const pos        = mapPos(entry.p)
-  const categories = inferCategories(entry.m, pos)
+  const categories = inferCategories(entry.m)
   const reading    = entry.r ?? null
   // Take first classifier if available
   const measureWord = entry.c && entry.c.length > 0 ? entry.c[0] : null

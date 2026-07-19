@@ -1,13 +1,13 @@
-import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
 import { useApp } from '../context/AppContext'
-import { GAME_META, resetToLearning } from '../engine/srs'
 import { getAllScores } from '../engine/leitner'
 import { getAllMnemonics } from '../engine/mnemonics'
 import { displayEntry } from '../engine/vocab'
+import { CATEGORY_TREE, resolveLabel } from '../engine/categories'
 import RubyText from '../components/RubyText'
+import HelpButton from '../components/HelpButton'
 import './VocabBrowser.css'
 
-const GAMES = ['racecar', 'pairmatch', 'flashcard', 'gapfill', 'typing']
 const GLOBAL_COLORS = {
   unseen:   '#bbb',
   learning: '#f0a500',
@@ -15,12 +15,19 @@ const GLOBAL_COLORS = {
 }
 
 export default function VocabBrowser() {
-  const { activeEntries, activeLanguage, loadedLists, selectedIds, showReading, setScreen, goBack, scoreActions, scores } = useApp()
+  // Intentionally vulgarFilteredEntries, not visibleEntries: the Browser is a
+  // reference tool and shouldn't inherit the Setup screen's global topic
+  // filter — it gets its own independent category dropdowns below. It does
+  // still respect the vulgar-content toggle, since that's a safety setting
+  // rather than a topic filter.
+  const { vulgarFilteredEntries: activeEntries, activeLanguage, showReading, setScreen, goBack, scoreActions, scores } = useApp()
 
   const [search,       setSearch]       = useState('')
   const [filterLevel,  setFilterLevel]  = useState('all')
   const [filterPos,    setFilterPos]    = useState('all')
   const [filterStatus, setFilterStatus] = useState('all')
+  const [filterParent, setFilterParent] = useState('all')
+  const [filterLeaf,    setFilterLeaf]   = useState('all')
   const [showTrans,    setShowTrans]    = useState(true)
   const [showScores,   setShowScores]   = useState(true)
   const [expandedId,   setExpandedId]   = useState(null)  // entry id with mnemonic expanded
@@ -46,11 +53,40 @@ export default function VocabBrowser() {
     return ['all', ...[...s].sort()]
   }, [activeEntries])
 
+  // Parents/leaves actually present in this entry set, mirroring
+  // CategoryChooser's own presence-filtering logic.
+  const presentLeafIds = useMemo(() => {
+    const set = new Set()
+    for (const e of activeEntries) for (const c of (e.categories ?? [])) set.add(c)
+    return set
+  }, [activeEntries])
+
+  const categoryParents = useMemo(
+    () => CATEGORY_TREE
+      .map(p => ({ ...p, leaves: p.leaves.filter(l => presentLeafIds.has(l.id)) }))
+      .filter(p => p.leaves.length > 0),
+    [presentLeafIds]
+  )
+
+  const activeParentObj = categoryParents.find(p => p.id === filterParent) ?? null
+
+  // Reset the leaf dropdown whenever the parent changes out from under it
+  // eslint-disable-next-line react-hooks/set-state-in-effect -- leaf choice only makes sense for its own parent
+  useEffect(() => { setFilterLeaf('all') }, [filterParent])
+
+  // Flat leaf-id filter CategoryChooser/filterByCategory-style consumers expect
+  const filterCategory = useMemo(() => {
+    if (!activeParentObj) return null
+    if (filterLeaf !== 'all') return [filterLeaf]
+    return activeParentObj.leaves.map(l => l.id)
+  }, [activeParentObj, filterLeaf])
+
   const filtered = useMemo(() => {
     const q = search.toLowerCase()
     return activeEntries.filter(e => {
       if (filterLevel !== 'all' && e.level !== filterLevel) return false
       if (filterPos   !== 'all' && e.pos   !== filterPos)   return false
+      if (filterCategory && !filterCategory.some(c => e.categories?.includes(c))) return false
 
       const lScore = leitnerScores[e.id] ?? 0
       const status = lScore === 0 ? 'unseen' : lScore >= 5 ? 'mastered' : 'learning'
@@ -64,9 +100,10 @@ export default function VocabBrowser() {
       }
       return true
     })
-  }, [activeEntries, scores, search, filterLevel, filterPos, filterStatus])
+  }, [activeEntries, scores, search, filterLevel, filterPos, filterStatus, filterCategory])
 
   // Reset window when filtered list changes
+  // eslint-disable-next-line react-hooks/set-state-in-effect -- resets pagination whenever the filtered list changes
   useEffect(() => { setDisplayCount(100) }, [filtered])
 
   // Load more when sentinel scrolls into view
@@ -93,7 +130,10 @@ export default function VocabBrowser() {
         <button className="vb-back" onClick={goBack}>← Back</button>
         <span className="vb-title">Vocab ({filtered.length})</span>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-          <button className="vb-gear" onClick={() => setScreen('settings')} title="Settings">⚙️</button>
+          <HelpButton
+            title="Vocab Browser"
+            description="Browse every word in the current list, search by entry, reading, or translation, and see your progress at a glance."
+          />
         </div>
       </div>
 
@@ -122,6 +162,16 @@ export default function VocabBrowser() {
         <select className="vb-select" value={filterPos} onChange={e => setFilterPos(e.target.value)}>
           {posOptions.map(p => <option key={p} value={p}>{p === 'all' ? 'All POS' : p}</option>)}
         </select>
+        <select className="vb-select" value={filterParent} onChange={e => setFilterParent(e.target.value)}>
+          <option value="all">All topics</option>
+          {categoryParents.map(p => <option key={p.id} value={p.id}>{resolveLabel(p.labels, activeLanguage)}</option>)}
+        </select>
+        {activeParentObj && (
+          <select className="vb-select" value={filterLeaf} onChange={e => setFilterLeaf(e.target.value)}>
+            <option value="all">All {resolveLabel(activeParentObj.labels, activeLanguage)}</option>
+            {activeParentObj.leaves.map(l => <option key={l.id} value={l.id}>{resolveLabel(l.labels, activeLanguage)}</option>)}
+          </select>
+        )}
       </div>
 
       {/* Display toggles */}
