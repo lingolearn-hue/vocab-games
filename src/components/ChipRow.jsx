@@ -33,7 +33,10 @@ export default function ChipRow({ className = '', children }) {
     const inner = innerRef.current
     if (!outer || !inner) return
 
+    let rafId = null
+
     function measure() {
+      rafId = null
       const cs = getComputedStyle(outer)
       const hPadding = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight)
       const available = outer.clientWidth - hPadding
@@ -50,13 +53,33 @@ export default function ChipRow({ className = '', children }) {
       const naturalNeeded = neededAtCurrentScale / currentScale
       const raw = available / naturalNeeded
       const next = Math.min(MAX_SCALE, Math.max(MIN_SCALE, raw))
-      setScale(prev => (Math.abs(prev - next) < 0.01 ? prev : next))
+      // Threshold wide enough to absorb sub-pixel rounding noise from
+      // WebViews with looser layout precision than desktop Chrome (WeChat's
+      // in-app browser in particular) — too tight a threshold here lets a
+      // scale-change -> resize-observer -> re-measure loop oscillate
+      // between two near-identical values forever, which reads as the row
+      // visibly vibrating horizontally rather than ever settling.
+      setScale(prev => (Math.abs(prev - next) < 0.02 ? prev : next))
     }
 
-    measure()
-    const ro = new ResizeObserver(measure)
+    // Coalesce bursts of ResizeObserver callbacks (including ones caused by
+    // our own scale change re-triggering the observer) into a single
+    // measurement per animation frame, rather than measuring — and
+    // potentially committing a new scale — synchronously for every single
+    // callback. This is what actually breaks the feedback loop; the
+    // threshold above alone isn't reliably enough on flakier WebViews.
+    function scheduleMeasure() {
+      if (rafId != null) return
+      rafId = requestAnimationFrame(measure)
+    }
+
+    scheduleMeasure()
+    const ro = new ResizeObserver(scheduleMeasure)
     ro.observe(outer)
-    return () => ro.disconnect()
+    return () => {
+      ro.disconnect()
+      if (rafId != null) cancelAnimationFrame(rafId)
+    }
   }, [children])
 
   return (

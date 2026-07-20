@@ -170,17 +170,22 @@ export function AppProvider({ children }) {
   // Helper used by each game to get level-filtered entries
   // When sessionEntries is set (adventure mode), use those instead
 
-  const showVulgar = settings.showVulgar ?? false
-  const setShowVulgar = (v) => updateSettings(s => ({ ...s, showVulgar: typeof v === 'function' ? v(s.showVulgar ?? false) : v }))
-
   // activeEntries stays the raw merged list (used internally, e.g. so
   // recordMasterAll always sees the full word set regardless of the filter).
   // visibleEntries is what display/browsing screens (Setup stats, Vocab
   // Browser, Stats) should show — same vulgar-content filtering
   // getEntriesForGame applies for the games themselves.
+  //
+  // Words tagged 'vulgar' (profanity/sensitive-biological terms; see
+  // TODO.md / chat history) are always filtered out — this used to be a
+  // user-facing toggle in Settings, removed for now since we're just
+  // hiding this vocabulary rather than exposing it as an option. Identity-
+  // based slurs were removed from the vocab data outright instead of being
+  // tag-filterable, so this only ever affected profanity/mature content,
+  // never slurs.
   const vulgarFilteredEntries = useMemo(
-    () => showVulgar ? activeEntries : activeEntries.filter(e => !e.categories?.includes('vulgar')),
-    [activeEntries, showVulgar]
+    () => activeEntries.filter(e => !e.categories?.includes('vulgar')),
+    [activeEntries]
   )
 
   const visibleEntries = useMemo(
@@ -188,19 +193,14 @@ export function AppProvider({ children }) {
     [vulgarFilteredEntries, settings.categories]
   )
 
-  // Filters out entries tagged 'vulgar' (profanity/sensitive-biological terms;
-  // see TODO.md / chat history) unless the person has opted in via Settings.
-  // Identity-based slurs were removed from the vocab data outright instead
-  // of being tag-filterable — this toggle only ever gates profanity/mature
-  // content, not slurs.
   const getEntriesForGame = useCallback((game) => {
     const base = sessionEntries ?? activeEntries
-    const clean = showVulgar ? base : base.filter(e => !e.categories?.includes('vulgar'))
+    const clean = base.filter(e => !e.categories?.includes('vulgar'))
     const withCategory = filterByCategory(clean, settings.categories?.global)
     const levels = sessionEntries ? null : getGameLevels(settings, game)
     const filtered = filterByLevel(withCategory, levels)
     return { entries: filtered.length > 0 ? filtered : withCategory, isEmpty: filtered.length === 0 && levels !== null }
-  }, [activeEntries, sessionEntries, settings, showVulgar])
+  }, [activeEntries, sessionEntries, settings])
 
   // Sorted unique levels present in the active entries — canonical order per language
   const availableLevels = useMemo(() => {
@@ -256,7 +256,6 @@ export function AppProvider({ children }) {
       settings, updateSettings,
       activeLanguage, setActiveLanguage,
       getEntriesForGame, availableLevels,
-      showVulgar, setShowVulgar,
     }}>
       {children}
     </AppContext.Provider>

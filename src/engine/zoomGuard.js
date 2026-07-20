@@ -12,6 +12,7 @@
 
 const RESET_DELAY_MS = 250  // wait briefly after the gesture ends before resetting, so we don't fight an intentional pinch mid-gesture
 const ZOOM_THRESHOLD  = 1.02  // small tolerance for floating-point/rounding noise
+const RESET_COOLDOWN_MS = 1000  // ignore further triggers for a bit after a reset, since the reset itself is a viewport change that can re-fire the listeners below
 
 export function installZoomGuard() {
   if (typeof window === 'undefined') return
@@ -20,6 +21,8 @@ export function installZoomGuard() {
   if (!viewportMeta) return
 
   let resetTimer = null
+  let lastResetAt = 0
+  let pendingConfirmation = false
 
   function isZoomedIn() {
     // visualViewport.scale is the most direct signal where supported
@@ -33,6 +36,7 @@ export function installZoomGuard() {
   }
 
   function resetZoom() {
+    lastResetAt = Date.now()
     // Re-applying the same viewport content forces most engines to
     // recompute and snap the visual viewport back to scale 1.0.
     const original = viewportMeta.getAttribute('content')
@@ -43,9 +47,29 @@ export function installZoomGuard() {
   }
 
   function scheduleCheck() {
+    // Some WebViews (WeChat's in particular) report visualViewport.scale
+    // noisily right around the threshold, and the reset itself is a
+    // viewport change that can re-trigger these same listeners — without
+    // a cooldown and a two-reading confirmation, that combination can
+    // oscillate indefinitely, which shows up as the page visibly
+    // vibrating vertically rather than the zoom guard ever settling.
+    if (Date.now() - lastResetAt < RESET_COOLDOWN_MS) return
     clearTimeout(resetTimer)
     resetTimer = setTimeout(() => {
-      if (isZoomedIn()) resetZoom()
+      if (!isZoomedIn()) {
+        pendingConfirmation = false
+        return
+      }
+      if (!pendingConfirmation) {
+        // First reading of "zoomed in" — wait for a second, independent
+        // confirmation before acting, rather than trusting a single
+        // possibly-noisy sample.
+        pendingConfirmation = true
+        scheduleCheck()
+        return
+      }
+      pendingConfirmation = false
+      resetZoom()
     }, RESET_DELAY_MS)
   }
 

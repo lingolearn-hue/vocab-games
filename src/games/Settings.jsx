@@ -23,7 +23,7 @@ export default function Settings() {
     })
   }
 
-  const BACKUP_KEYS = ['vocabScores', 'vocabSettings', 'vocabMnemonics', 'vocabMnemonicsSeeded', 'grammarScores', 'activeLanguage', 'rc-high', 'adventureProgress', ...leitnerStorageKeys()]
+  const BACKUP_KEYS = ['vocabScores', 'vocabSettings', 'vocabMnemonics', 'vocabMnemonicsSeeded', 'grammarScores', 'activeLanguage', 'rc-high', 'adventureProgress', 'vocabCustomPassage', ...leitnerStorageKeys()]
 
   function exportBackup() {
     const data = {}
@@ -87,24 +87,6 @@ export default function Settings() {
             ))}
           </div>
         </div>
-
-        {/* ── Content ── */}
-        <div className="st-section-label">Content</div>
-        <div className="st-row st-row--padded">
-          <span className="st-label">Mature vocabulary</span>
-          <div className="st-seg">
-            {[false, true].map(v => (
-              <button key={String(v)} className={`st-seg-btn ${(cfg.showVulgar ?? false) === v ? 'active' : ''}`}
-                onClick={() => set('showVulgar', v)}>
-                {v ? 'Show' : 'Hide'}
-              </button>
-            ))}
-          </div>
-        </div>
-        <p className="st-help-text">
-          Some words are tagged as profanity or explicit biological terms.
-          Hidden by default — turn on to include them in vocabulary lists and games.
-        </p>
 
         {/* ── Data ── */}
         <div className="st-section-label">Data</div>

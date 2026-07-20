@@ -24,20 +24,40 @@ function tagLabel(tag) {
   return tag
 }
 
+const CUSTOM_PASSAGE_KEY = 'vocabCustomPassage'
+
+function loadSavedCustomPassage() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(CUSTOM_PASSAGE_KEY) || 'null')
+    return saved && typeof saved === 'object' ? saved : { title: '', text: '' }
+  } catch {
+    return { title: '', text: '' }
+  }
+}
+
 export default function GradedReader() {
   const { activeEntries, loadedLists, selectedIds, showReading, scores, goBack, activeLanguage } = useApp()
 
   const [passages,        setPassages]        = useState([])
   const [loading,         setLoading]         = useState(true)
   const [activePassage,   setActivePassage]   = useState(null)
-  const [pastedText,      setPastedText]      = useState('')
-  const [pastedTitle,     setPastedTitle]     = useState('')
+  const [pastedText,      setPastedText]      = useState(() => loadSavedCustomPassage().text)
+  const [pastedTitle,     setPastedTitle]     = useState(() => loadSavedCustomPassage().title)
   const [mode,            setMode]            = useState('library')
   const [customPassage,   setCustomPassage]   = useState(null)
   const [showTranslation, setShowTranslation] = useState(false)
   const [activeTags,      setActiveTags]      = useState(new Set())
   const [search,          setSearch]          = useState('')
   const textAreaRef = useRef(null)
+
+  // Persist the pasted/custom text as the user types, so it survives a
+  // refresh or navigating away — this was previously pure in-memory state
+  // and got silently lost. Debounced by a tick via the effect dependency
+  // array rather than on every keystroke's own handler, but still cheap
+  // since it's just localStorage.setItem with a small JSON blob.
+  useEffect(() => {
+    localStorage.setItem(CUSTOM_PASSAGE_KEY, JSON.stringify({ title: pastedTitle, text: pastedText }))
+  }, [pastedTitle, pastedText])
 
   const language = useMemo(() => {
     if (activeLanguage) return activeLanguage
