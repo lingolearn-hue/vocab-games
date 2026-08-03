@@ -20,6 +20,9 @@ const CONTEXT_GAMES = [
   { id: 'reader',   label: '📖 Graded Reader',   desc: 'Tap words to look up' },
   { id: 'dialogue', label: '💬 Dialogue',         desc: 'Comprehension questions' },
 ]
+const LISTENING_GAMES = [
+  { id: 'listening', label: '🎧 Listening', desc: 'Hands-free audio review, box by box' },
+]
 const GRAMMAR_GAMES = [
   { id: 'grammar',  label: '📐 Grammar Patterns', desc: 'Fill blanks, word order, pick correct' },
   { id: 'matching', label: '🎯 Matching Drills',   desc: 'Gender, tones, measure words' },
@@ -199,6 +202,9 @@ export default function Setup() {
           extraButton={['zh','ja'].includes(activeLanguage) ? {
             id: 'stroke-order', label: '✍️ Stroke Order', desc: 'Write characters stroke by stroke'
           } : null} />
+        <GroupCard title="Listening" subtitle="Hands-free audio review"
+          icon="🎧" games={LISTENING_GAMES} canStart={canStart} setScreen={setScreen}
+          isOpen={openGroup === 'listening'} onOpen={() => toggleGroup('listening')} />
         <GroupCard title="Language in Context" subtitle="Gap Fill · Reader · Dialogue"
           icon="📚" games={CONTEXT_GAMES} canStart={canStart} setScreen={setScreen}
           isOpen={openGroup === 'context'} onOpen={() => toggleGroup('context')} />
@@ -211,7 +217,7 @@ export default function Setup() {
         <p className="hint">{activeLanguage ? 'Loading vocabulary…' : 'Tap the flag above to choose a language.'}</p>
       )}
 
-      <div className="setup-version">v0.65</div>
+      <div className="setup-version">v0.66</div>
 
       {tutorialOpen && <Tutorial onDone={() => setTutorialOpen(false)} />}
     </div>

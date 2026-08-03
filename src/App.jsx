@@ -16,6 +16,7 @@ import GrammarTrainer from './games/GrammarTrainer'
 import MatchingDrills from './games/MatchingDrills'
 import Adventure from './games/Adventure'
 import GrammarDictionary from './games/GrammarDictionary'
+import Listening from './games/Listening'
 import Tutorial from './components/Tutorial'
 import './App.css'
 
@@ -60,7 +61,7 @@ function Router() {
   // Global Escape: always goes back to previous screen
   useEffect(() => {
     const GAME_SCREENS = new Set(['racecar','pairmatch','flashcard','gapfill','typing',
-      'reader','dialogue','grammar','matching','vocab','stats','settings','adventure','grammar-dict'])
+      'reader','dialogue','grammar','matching','vocab','stats','settings','adventure','grammar-dict','listening'])
     function onKey(e) {
       if (e.key === 'Escape' && GAME_SCREENS.has(screen)) goBack()
     }
@@ -83,6 +84,7 @@ function Router() {
     case 'matching':  return <MatchingDrills />
     case 'adventure':     return <Adventure />
     case 'grammar-dict':  return <GrammarDictionary />
+    case 'listening':     return <Listening />
     case 'stroke-order':  return <StrokeOrder />
     default:              return <Setup />
   }

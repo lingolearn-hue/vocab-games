@@ -43,10 +43,20 @@ function _load(listId) {
  * Get the hardcoded example sentence for a word, if one exists.
  * Returns null if none is available (caller should fall back to a
  * template-generated sentence, or show nothing).
+ *
+ * Tries the real-pos key first, then falls back to the '::unknown' key.
+ * The fallback matters for Japanese specifically: its example sentences
+ * were extracted before Japanese vocab had real pos tags (that tagging
+ * pass came later — see chat history), so every stored key there is
+ * '<lemma>::unknown' even though vocab entries now carry a real pos. Without
+ * this fallback every single Japanese sentence lookup silently returns
+ * null, since the key built from the current (real) pos never matches.
+ * Harmless no-op for other languages, whose sentences were already keyed
+ * with real pos by the time they were generated.
  */
 export async function getExampleSentence(listId, lemma, pos) {
   const sentences = await _load(listId)
-  return sentences[_key(lemma, pos)] ?? null
+  return sentences[_key(lemma, pos)] ?? sentences[_key(lemma, null)] ?? null
 }
 
 /** Preload a list's sentences in the background without needing the result yet. */

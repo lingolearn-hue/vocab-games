@@ -10,7 +10,7 @@ import './ChipRow.css'
  * drill from "Nature" down to just "Animals".
  *
  * `value` is the flat array of selected LEAF ids (or null = no filter) —
- * the same shape filterByCategory/settings.categories.global expects.
+ * the same shape filterByCategory/settings.categories[language] expects.
  * `lang` selects which language the chip labels are shown in (the target
  * language being studied), falling back to English if untranslated.
  *

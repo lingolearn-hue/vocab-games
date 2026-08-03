@@ -73,6 +73,11 @@ export const DEFAULTS = {
   readingOnly: false,
   facetsByBox: false,
   autoExampleOnUnknown: false,
+  // Playback order for the Listening game — a sequence of 'word' |
+  // 'translation' | 'sentence' tokens, repeats and omissions both allowed
+  // (e.g. ['word','word','translation'] to hear the word twice before the
+  // translation, or ['word','translation'] to skip sentences entirely).
+  listeningSequence: ['word', 'translation', 'sentence'],
   answerFields: {
     global:    { prompt: 'entry', answer: 'translation' },
     flashcard: null,

@@ -189,18 +189,18 @@ export function AppProvider({ children }) {
   )
 
   const visibleEntries = useMemo(
-    () => filterByCategory(vulgarFilteredEntries, settings.categories?.global),
-    [vulgarFilteredEntries, settings.categories]
+    () => filterByCategory(vulgarFilteredEntries, settings.categories?.[activeLanguage]),
+    [vulgarFilteredEntries, settings.categories, activeLanguage]
   )
 
   const getEntriesForGame = useCallback((game) => {
     const base = sessionEntries ?? activeEntries
     const clean = base.filter(e => !e.categories?.includes('vulgar'))
-    const withCategory = filterByCategory(clean, settings.categories?.global)
+    const withCategory = filterByCategory(clean, settings.categories?.[activeLanguage])
     const levels = sessionEntries ? null : getGameLevels(settings, game)
     const filtered = filterByLevel(withCategory, levels)
     return { entries: filtered.length > 0 ? filtered : withCategory, isEmpty: filtered.length === 0 && levels !== null }
-  }, [activeEntries, sessionEntries, settings])
+  }, [activeEntries, sessionEntries, settings, activeLanguage])
 
   // Sorted unique levels present in the active entries — canonical order per language
   const availableLevels = useMemo(() => {

@@ -1,9 +1,11 @@
 import { useState, useMemo, useEffect, useRef } from 'react'
+import * as wanakana from 'wanakana'
 import { useApp } from '../context/AppContext'
 import { getAllScores } from '../engine/leitner'
 import { getAllMnemonics } from '../engine/mnemonics'
 import { displayEntry } from '../engine/vocab'
 import { CATEGORY_TREE, resolveLabel } from '../engine/categories'
+import { LEVEL_ORDER } from '../engine/settings'
 import RubyText from '../components/RubyText'
 import HelpButton from '../components/HelpButton'
 import './VocabBrowser.css'
@@ -12,6 +14,49 @@ const GLOBAL_COLORS = {
   unseen:   '#bbb',
   learning: '#f0a500',
   mastered: '#22a06b',
+}
+
+// Search normalization: case, whitespace, and accent marks (ä→a, é→e,
+// pinyin tone marks ā→a, etc.) are treated as insignificant — a learner
+// typing "cafe" should still find "café", "xue" should still find "xué".
+// NFD + stripping combining marks (U+0300-036F) is the standard trick for
+// accent-insensitive matching: it decomposes "é" into "e" + a separate
+// combining-acute-accent codepoint, which the regex then removes.
+function stripDiacritics(str) {
+  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+}
+function normalizeSearch(str) {
+  if (!str) return ''
+  return stripDiacritics(str).replace(/\s+/g, '').toLowerCase()
+}
+// Same, but strips a leading "to " (infinitive marker) first — so
+// "to run" and "run" normalize to the same thing for matching purposes,
+// letting a search for "run" recognize "to run" as the exact/prefix hit
+// it actually is. Whitespace-stripping happens after, so "to " with its
+// trailing space is still detectable at this point.
+function normalizeTranslation(str) {
+  if (!str) return ''
+  const lower = stripDiacritics(str).toLowerCase().trim()
+  const withoutTo = lower.startsWith('to ') ? lower.slice(3) : lower
+  return withoutTo.replace(/\s+/g, '')
+}
+
+// Search relevance ranking, best (0) to worst. An exact match on either
+// field always wins regardless of which field it's on — otherwise a
+// coincidental substring/prefix match (e.g. German "rund"/"runter" when
+// searching English "run") would outrank the actual translation match
+// ("laufen" = "to run") just because entry-prefix was checked first.
+// Level only breaks ties within the same tier. Operates on the
+// pre-normalized fields from the searchIndex, not raw entry text.
+function matchTier(idx, q) {
+  if (idx.nEntry === q || idx.nTrans0Stripped === q) return 0
+  if (idx.nEntry.startsWith(q))         return 1
+  if (idx.nTrans0Stripped.startsWith(q)) return 2
+  if (idx.nReading.startsWith(q) || idx.nRomaji.startsWith(q)) return 3
+  if (idx.nTrans0.includes(q))          return 4
+  if (idx.nEntry.includes(q))           return 5
+  if (idx.nReading.includes(q) || idx.nRomaji.includes(q)) return 6
+  return 7  // only matched via a translation other than the first
 }
 
 export default function VocabBrowser() {
@@ -81,9 +126,27 @@ export default function VocabBrowser() {
     return activeParentObj.leaves.map(l => l.id)
   }, [activeParentObj, filterLeaf])
 
+  // Precomputed once per entry list (not per keystroke) — normalizing ~20k
+  // entries' worth of text on every character typed would add up. Includes
+  // a romanized form of the reading for Japanese, so typing "sakura" (or
+  // "sakura" with no macrons) can find 桜 (さくら) without the user needing
+  // to type kana at all.
+  const searchIndex = useMemo(() => {
+    return activeEntries.map(e => ({
+      e,
+      nEntry:          normalizeSearch(e.entry),
+      nReading:        normalizeSearch(e.reading),
+      nRomaji:         activeLanguage === 'ja' && e.reading ? normalizeSearch(wanakana.toRomaji(e.reading)) : '',
+      nTrans:          e.translation.map(normalizeSearch),
+      nTrans0:         normalizeSearch(e.translation[0]),
+      nTrans0Stripped: normalizeTranslation(e.translation[0]),
+    }))
+  }, [activeEntries, activeLanguage])
+
   const filtered = useMemo(() => {
-    const q = search.toLowerCase()
-    return activeEntries.filter(e => {
+    const q = normalizeSearch(search)
+    const matches = searchIndex.filter(idx => {
+      const e = idx.e
       if (filterLevel !== 'all' && e.level !== filterLevel) return false
       if (filterPos   !== 'all' && e.pos   !== filterPos)   return false
       if (filterCategory && !filterCategory.some(c => e.categories?.includes(c))) return false
@@ -93,14 +156,30 @@ export default function VocabBrowser() {
       if (filterStatus !== 'all' && status !== filterStatus) return false
 
       if (q) {
-        const inEntry  = e.entry.toLowerCase().includes(q)
-        const inRead   = e.reading?.toLowerCase().includes(q)
-        const inTrans  = e.translation.some(t => t.toLowerCase().includes(q))
+        const inEntry  = idx.nEntry.includes(q)
+        const inRead   = idx.nReading.includes(q) || idx.nRomaji.includes(q)
+        const inTrans  = idx.nTrans.some(t => t.includes(q))
         if (!inEntry && !inRead && !inTrans) return false
       }
       return true
     })
-  }, [activeEntries, scores, search, filterLevel, filterPos, filterStatus, filterCategory])
+
+    if (!q) return matches.map(idx => idx.e)
+
+    // Best-match-first ranking: relevance tier (see matchTier), then level
+    // (simpler/lower levels first) as a tiebreaker within the same tier —
+    // e.g. searching "run" should show an A1 "to run" before a C1 word
+    // whose translation merely contains "run" as one of several senses.
+    const levelOrder = LEVEL_ORDER[activeLanguage] ?? []
+    const levelIndex = level => {
+      const i = levelOrder.indexOf(level)
+      return i === -1 ? levelOrder.length : i
+    }
+    return matches
+      .map(idx => ({ idx, tier: matchTier(idx, q), lvl: levelIndex(idx.e.level) }))
+      .sort((a, b) => a.tier - b.tier || a.lvl - b.lvl)
+      .map(s => s.idx.e)
+  }, [searchIndex, scores, search, filterLevel, filterPos, filterStatus, filterCategory, activeLanguage])
 
   // Reset window when filtered list changes
   // eslint-disable-next-line react-hooks/set-state-in-effect -- resets pagination whenever the filtered list changes
@@ -146,6 +225,16 @@ export default function VocabBrowser() {
           value={search}
           onChange={e => setSearch(e.target.value)}
         />
+        {search && (
+          <button
+            className="vb-search-clear"
+            onClick={() => setSearch('')}
+            aria-label="Clear search"
+            title="Clear search"
+          >
+            ✕
+          </button>
+        )}
       </div>
 
       {/* Filters */}

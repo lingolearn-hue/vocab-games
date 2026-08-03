@@ -29,3 +29,52 @@
 .speak-btn--sm { font-size: 0.85rem; }
 .speak-btn--md { font-size: 1.1rem;  }
 .speak-btn--lg { font-size: 1.4rem;  }
+
+.speak-btn.unsupported {
+  opacity: 0.28;
+  filter: grayscale(1);
+}
+.speak-btn.unsupported:hover { opacity: 0.4; }
+.speak-btn.unsupported:active { transform: none; }
+
+.speak-btn-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.speak-btn-hint {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 20;
+  margin-top: 0.4rem;
+  width: 15rem;
+  max-width: 70vw;
+  background: #fff;
+  color: #222;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  padding: 0.7rem 0.8rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  text-align: left;
+  white-space: normal;
+}
+.speak-btn-hint strong { display: block; margin-bottom: 0.3rem; font-size: 0.8rem; }
+.speak-btn-hint ul { margin: 0.3rem 0 0.5rem; padding-left: 1.1rem; }
+.speak-btn-hint li { margin-bottom: 0.2rem; }
+.speak-btn-hint-close {
+  display: block;
+  margin-left: auto;
+  background: #4f7ef8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+[data-theme="dark"] .speak-btn-hint { background: #222; color: #eee; border-color: #444; }
