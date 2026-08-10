@@ -1,0 +1,783 @@
+{
+  "id": "ja-grammar",
+  "language": "ja",
+  "native": "en",
+  "patterns": [
+    {
+      "id": "ja-g-001",
+      "level": "N5",
+      "category": "particles",
+      "title": "Topic particle は (wa)",
+      "explanation": "は marks the topic of the sentence — what the sentence is about. It often replaces が or を when something is the topic rather than just the subject or object.",
+      "type": "fill-blank",
+      "template": "わたし___ がくせいです。",
+      "hint": "は marks the topic of the sentence.",
+      "distractors": [
+        "は",
+        "が",
+        "を",
+        "に"
+      ]
+    },
+    {
+      "id": "ja-g-002",
+      "level": "N5",
+      "category": "particles",
+      "title": "Subject particle が (ga)",
+      "explanation": "が marks the grammatical subject, especially in new information, questions, and with certain verbs like ある, いる, わかる, すき.",
+      "type": "fill-blank",
+      "template": "あそこに {[ねこ|いぬ|ひと|こども]}___ います。",
+      "hint": "が marks the subject of existence verbs like います/あります.",
+      "distractors": [
+        "が",
+        "は",
+        "を",
+        "で"
+      ]
+    },
+    {
+      "id": "ja-g-003",
+      "level": "N5",
+      "category": "particles",
+      "title": "Object particle を (wo)",
+      "explanation": "を marks the direct object — the thing that the action is done to.",
+      "type": "fill-blank",
+      "template": "わたしは {[りんご|みず|ほん|にほんご]}___ {[たべます|のみます|よみます|べんきょうします]}。",
+      "hint": "を marks the direct object of action verbs.",
+      "distractors": [
+        "を",
+        "が",
+        "は",
+        "に"
+      ]
+    },
+    {
+      "id": "ja-g-004",
+      "level": "N5",
+      "category": "particles",
+      "title": "Location particle に (ni) vs で (de)",
+      "explanation": "に marks existence location (います/あります) and destination. で marks the location where an action takes place.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "がっこうで べんきょうします。",
+          "correct": true
+        },
+        {
+          "text": "がっこうに べんきょうします。",
+          "correct": false,
+          "error": "Action location uses で, not に."
+        },
+        {
+          "text": "へやに ねこが います。",
+          "correct": true
+        },
+        {
+          "text": "へやで ねこが います。",
+          "correct": false,
+          "error": "Existence (います) uses に for location, not で."
+        }
+      ]
+    },
+    {
+      "id": "ja-g-005",
+      "level": "N5",
+      "category": "verbs",
+      "title": "Polite present/future — ます form",
+      "explanation": "The ます form is the polite non-past form. It expresses present habits, states, and future intentions.",
+      "type": "fill-blank",
+      "template": "わたしは まいにち にほんご___ {[べんきょうします|たべます|のみます|はたらきます]}。",
+      "hint": "The ます form is used for polite present/future statements.",
+      "distractors": [
+        "べんきょうします",
+        "べんきょうした",
+        "べんきょうしない",
+        "べんきょうして"
+      ]
+    },
+    {
+      "id": "ja-g-006",
+      "level": "N5",
+      "category": "verbs",
+      "title": "Polite negative — ません",
+      "explanation": "The polite negative is formed by replacing ます with ません. E.g. たべます → たべません.",
+      "type": "fill-blank",
+      "template": "わたしは にく___ {[たべません|のみません|かいません|すきじゃありません]}。",
+      "hint": "ません is the polite negative ending.",
+      "distractors": [
+        "たべません",
+        "たべます",
+        "たべない",
+        "たべなかった"
+      ]
+    },
+    {
+      "id": "ja-g-007",
+      "level": "N5",
+      "category": "verbs",
+      "title": "Polite past — ました",
+      "explanation": "The polite past is formed by replacing ます with ました. E.g. たべます → たべました.",
+      "type": "fill-blank",
+      "template": "きのう えいがを {[みました|たべました|かいました|よみました]}。",
+      "hint": "ました is the polite past ending.",
+      "distractors": [
+        "みました",
+        "みます",
+        "みません",
+        "みて"
+      ]
+    },
+    {
+      "id": "ja-g-008",
+      "level": "N5",
+      "category": "adjectives",
+      "title": "い-adjective in predicate",
+      "explanation": "い-adjectives directly precede nouns or end sentences. In polite speech, add です after the adjective. Negative: remove い, add くないです.",
+      "type": "fill-blank",
+      "template": "このりんごは {[おいしい|たかい|やすい|おおきい]}___ です。",
+      "hint": "い-adjectives end in い before です.",
+      "distractors": [
+        "おいしい",
+        "おいしく",
+        "おいしくない",
+        "おいしくて"
+      ]
+    },
+    {
+      "id": "ja-g-009",
+      "level": "N5",
+      "category": "adjectives",
+      "title": "な-adjective",
+      "explanation": "な-adjectives need な before a noun (しずかな へや) and だ/です at the end of a sentence (しずかです).",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "しずかな へやです。",
+          "correct": true
+        },
+        {
+          "text": "しずかい へやです。",
+          "correct": false,
+          "error": "しずか is a な-adjective — add な before nouns, not い."
+        },
+        {
+          "text": "このへやは しずかです。",
+          "correct": true
+        },
+        {
+          "text": "このへやは しずかいです。",
+          "correct": false,
+          "error": "な-adjectives don't add い. Use しずかです."
+        }
+      ]
+    },
+    {
+      "id": "ja-g-010",
+      "level": "N5",
+      "category": "word-order",
+      "title": "Basic SOV word order",
+      "explanation": "Japanese is Subject-Object-Verb. The verb always comes last. Modifiers come before what they modify.",
+      "type": "tile-order",
+      "tiles": [
+        "わたしは",
+        "りんごを",
+        "たべます"
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            1,
+            2
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "ja-g-011",
+      "level": "N5",
+      "category": "word-order",
+      "title": "Time and place before verb",
+      "explanation": "Time and place expressions come before the verb. Time usually comes before place.",
+      "type": "tile-order",
+      "tiles": [
+        "わたしは",
+        "まいにち",
+        "がっこうで",
+        "にほんごを",
+        "べんきょうします"
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "note": null
+        },
+        {
+          "order": [
+            0,
+            2,
+            1,
+            3,
+            4
+          ],
+          "note": "Place before time is also acceptable in Japanese."
+        }
+      ]
+    },
+    {
+      "id": "ja-g-012",
+      "level": "N4",
+      "category": "te-form",
+      "title": "て-form — connecting actions",
+      "explanation": "The て-form connects sequential actions (and then...) or simultaneous states. It is also used for requests (〜てください) and permission (〜てもいい).",
+      "type": "fill-blank",
+      "template": "あさ おきて、かおを {[あらって|たべて|のんで|よんで]}、がっこうへ いきます。",
+      "hint": "て-form connects sequential actions: first wash face, then go to school.",
+      "distractors": [
+        "あらって",
+        "あらいます",
+        "あらった",
+        "あらう"
+      ]
+    },
+    {
+      "id": "ja-g-013",
+      "level": "N4",
+      "category": "te-form",
+      "title": "〜てください — polite request",
+      "explanation": "て-form + ください makes a polite request. E.g. みてください = please look.",
+      "type": "fill-blank",
+      "template": "ちょっと まって___。",
+      "hint": "〜てください = please do [verb].",
+      "distractors": [
+        "ください",
+        "ます",
+        "です",
+        "ました"
+      ]
+    },
+    {
+      "id": "ja-g-014",
+      "level": "N4",
+      "category": "grammar-patterns",
+      "title": "〜たい — want to do",
+      "explanation": "To express wanting to do something: verb stem + たい(です). たい conjugates like an い-adjective: たくない (don't want to), たかった (wanted to).",
+      "type": "fill-blank",
+      "template": "にほんに {[いきたい|たべたい|みたい|かいたい]} です。",
+      "hint": "Verb stem + たい expresses desire to do the action.",
+      "distractors": [
+        "いきたい",
+        "いきます",
+        "いきたかった",
+        "いきたくない"
+      ]
+    },
+    {
+      "id": "ja-g-015",
+      "level": "N4",
+      "category": "grammar-patterns",
+      "title": "〜ことができる — can / be able to",
+      "explanation": "Dictionary form + ことができる expresses ability. Polite: ことができます. E.g. およぐことができます = I can swim.",
+      "type": "fill-blank",
+      "template": "わたしは にほんご___ {[はなすことができます|よむことができます|かくことができます|わかります]}。",
+      "hint": "Dictionary form + ことができます = can do [verb].",
+      "distractors": [
+        "はなすことができます",
+        "はなします",
+        "はなせます",
+        "はなしたい"
+      ]
+    },
+    {
+      "id": "ja-g-016",
+      "level": "N4",
+      "category": "grammar-patterns",
+      "title": "〜なければならない — must / have to",
+      "explanation": "Negative conditional (〜なければ) + ならない expresses obligation. Casual: 〜なきゃ. E.g. いかなければなりません = must go.",
+      "type": "fill-blank",
+      "template": "しゅくだいを {[しなければなりません|やらなければなりません|かかなければなりません]}。",
+      "hint": "〜なければなりません means 'must do'. Verb negative stem + なければなりません.",
+      "distractors": [
+        "しなければなりません",
+        "します",
+        "しましょう",
+        "してください"
+      ]
+    },
+    {
+      "id": "ja-g-017",
+      "level": "N4",
+      "category": "particles",
+      "title": "Particle も (mo) — also / too",
+      "explanation": "も replaces は, が, or を to mean 'also' or 'too'. わたしもです = me too. Two or more もs = both/neither.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "わたしも にほんごが すきです。",
+          "correct": true
+        },
+        {
+          "text": "わたしは も にほんごが すきです。",
+          "correct": false,
+          "error": "も replaces は — they cannot appear together."
+        },
+        {
+          "text": "ねこも いぬも すきです。",
+          "correct": true
+        },
+        {
+          "text": "ねこはも いぬはも すきです。",
+          "correct": false,
+          "error": "も replaces は, not follows it."
+        }
+      ]
+    },
+    {
+      "id": "ja-g-018",
+      "level": "N3",
+      "category": "grammar-patterns",
+      "title": "〜てしまう — completion / regret",
+      "explanation": "て-form + しまう indicates completion, often with a nuance of regret or that something happened beyond control. Casual: 〜ちゃう.",
+      "type": "fill-blank",
+      "template": "さいふを {[わすれてしまいました|なくしてしまいました|たべてしまいました|よんでしまいました]}。",
+      "hint": "〜てしまいました expresses completion, often with regret.",
+      "distractors": [
+        "わすれてしまいました",
+        "わすれました",
+        "わすれていました",
+        "わすれておきました"
+      ]
+    },
+    {
+      "id": "ja-g-019",
+      "level": "N3",
+      "category": "grammar-patterns",
+      "title": "〜ている — ongoing action or resultant state",
+      "explanation": "て-form + いる has two uses: an action in progress (たべています = eating) or a resultant state (けっこんしています = is married [result of marrying]).",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "かれは いま ほんを よんでいます。",
+          "correct": true
+        },
+        {
+          "text": "かれは にほんに すんでいます。",
+          "correct": true
+        },
+        {
+          "text": "かれは きのう たべています。",
+          "correct": false,
+          "error": "〜ている describes ongoing/resultant states, not completed past actions. Use たべていました or たべました."
+        },
+        {
+          "text": "かれは けっこんしています。",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "ja-g-020",
+      "level": "N3",
+      "category": "conditionals",
+      "title": "〜たら — conditional (if/when, past-based)",
+      "explanation": "Past form + ら makes the たら conditional. Used for one-time conditions, discovery upon completion, and hypotheticals. E.g. うちにかえったら、でんわします。",
+      "type": "fill-blank",
+      "template": "うちに {[かえったら|つきたら|おきたら|たべたら]}、れんらくしてください。",
+      "hint": "〜たら = if/when [action is completed]. Past form + ら.",
+      "distractors": [
+        "かえったら",
+        "かえれば",
+        "かえると",
+        "かえるなら"
+      ]
+    },
+    {
+      "id": "ja-g-021",
+      "level": "N3",
+      "category": "conditionals",
+      "title": "Four conditionals — と、ば、たら、なら",
+      "explanation": "と = natural/automatic result. ば = general condition. たら = if/when completed. なら = given that (based on new info). Each has different nuances.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "はるに なると、さくらが さきます。",
+          "correct": true
+        },
+        {
+          "text": "はるに なれば、さくらが さきます。",
+          "correct": true
+        },
+        {
+          "text": "にほんに いくなら、きょうとに いったほうがいい。",
+          "correct": true
+        },
+        {
+          "text": "にほんに いくと、きょうとに いったほうがいい。",
+          "correct": false,
+          "error": "と is for automatic/natural results, not advice. Use なら for advice based on a premise."
+        }
+      ]
+    },
+    {
+      "id": "ja-g-022",
+      "level": "N2",
+      "category": "grammar-patterns",
+      "title": "〜にもかかわらず — despite / regardless of",
+      "explanation": "Formal expression meaning 'despite' or 'in spite of'. More formal than のに. Noun/adjective/verb + にもかかわらず.",
+      "type": "fill-blank",
+      "template": "たくさん べんきょうした___ 、しけんに おちてしまった。",
+      "hint": "〜にもかかわらず means 'despite' — the expected result did not occur.",
+      "distractors": [
+        "にもかかわらず",
+        "のに",
+        "けれども",
+        "ので"
+      ]
+    },
+    {
+      "id": "ja-g-023",
+      "level": "N2",
+      "category": "honorifics",
+      "title": "Honorific verbs — いらっしゃる",
+      "explanation": "いらっしゃる is the honorific form of いる (to be), いく (to go), and くる (to come). Used to show respect for the subject's actions.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "せんせいは いま きょうしつに いらっしゃいます。",
+          "correct": true
+        },
+        {
+          "text": "わたしは いま きょうしつに いらっしゃいます。",
+          "correct": false,
+          "error": "いらっしゃる elevates the subject. Don't use it for yourself — use います instead."
+        },
+        {
+          "text": "おきゃくさまが いらっしゃいました。",
+          "correct": true
+        },
+        {
+          "text": "わたしが いらっしゃいました。",
+          "correct": false,
+          "error": "Honorifics are never used for the speaker's own actions."
+        }
+      ]
+    },
+    {
+      "id": "ja-g-024",
+      "level": "N2",
+      "category": "grammar-patterns",
+      "title": "〜にもかかわらず — despite (review + usage)",
+      "explanation": "〜にもかかわらず means 'despite' and is more formal than のに. Used after noun/verb/adjective. The expected result did not occur.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "努力したにもかかわらず、失敗してしまった。",
+          "correct": true
+        },
+        {
+          "text": "努力したのに、失敗してしまった。",
+          "correct": true
+        },
+        {
+          "text": "努力したので、失敗してしまった。",
+          "correct": false,
+          "error": "ので is causal (because). Use にもかかわらず or のに for contrast."
+        },
+        {
+          "text": "努力にもかかわらず、失敗した。",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "ja-g-025",
+      "level": "N2",
+      "category": "grammar-patterns",
+      "title": "〜ようにする — make an effort to / try to",
+      "explanation": "〜ようにする = to make a conscious effort, to try to make a habit. Different from ようになる (gradual change of state) and ように (purpose).",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "毎日野菜を食べるようにしています。",
+          "correct": true
+        },
+        {
+          "text": "毎日野菜を食べるようになっています。",
+          "correct": false,
+          "error": "ようになる describes a state that changed naturally. ようにする = you consciously make the effort."
+        },
+        {
+          "text": "遅れないようにしてください。",
+          "correct": true
+        },
+        {
+          "text": "泳げるようになりました。",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "ja-g-026",
+      "level": "N2",
+      "category": "conditionals",
+      "title": "〜さえ〜ば — if only … then",
+      "explanation": "〜さえ〜ば emphasises a single sufficient condition: if only X, then everything will be fine. さえ follows the key noun/verb, ば follows the conditional form.",
+      "type": "fill-blank",
+      "template": "お金さえ___、旅行できるのに。",
+      "hint": "さえ〜ば: お金さえあれば = if only I had money.",
+      "distractors": [
+        "あれば",
+        "あったら",
+        "あるなら",
+        "あっても"
+      ]
+    },
+    {
+      "id": "ja-g-027",
+      "level": "N1",
+      "category": "grammar-patterns",
+      "title": "〜に反して — contrary to, against",
+      "explanation": "〜に反して means 'contrary to' expectations, rules, or wishes. More formal than に反する. Noun + に反して.",
+      "type": "fill-blank",
+      "template": "予想に___、試験は簡単だった。",
+      "hint": "〜に反して = contrary to [noun].",
+      "distractors": [
+        "反して",
+        "よって",
+        "対して",
+        "沿って"
+      ]
+    },
+    {
+      "id": "ja-g-028",
+      "level": "N1",
+      "category": "grammar-patterns",
+      "title": "〜を余儀なくされる — be forced to, be compelled to",
+      "explanation": "を余儀なくされる is a formal passive expression meaning 'to be forced to [do something] against one's will' due to circumstances. It implies no choice was available.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "悪天候により、試合の中止を余儀なくされた。",
+          "correct": true
+        },
+        {
+          "text": "彼は仕事を辞めることを余儀なくされた。",
+          "correct": true
+        },
+        {
+          "text": "彼は自由に旅行することを余儀なくされた。",
+          "correct": false,
+          "error": "余儀なくされる implies compulsion against one's will — it's odd to be forced to travel freely."
+        },
+        {
+          "text": "会社の倒産により、多くの従業員が解雇を余儀なくされた。",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "ja-g-029",
+      "level": "N1",
+      "category": "grammar-patterns",
+      "title": "〜ならではの — unique to, only possible with",
+      "explanation": "〜ならではの means something is unique to or characteristic of X — it can't be found elsewhere. Noun + ならではの + Noun.",
+      "type": "fill-blank",
+      "template": "これは日本___の職人技だ。",
+      "hint": "〜ならではの = uniquely characteristic of [noun].",
+      "distractors": [
+        "ならでは",
+        "だけ",
+        "のみ",
+        "こそ"
+      ]
+    },
+    {
+      "id": "ja-g-030",
+      "level": "N1",
+      "category": "honorifics",
+      "title": "謙譲語 — humble verbs いたす、申す、参る",
+      "explanation": "謙譲語 (humble language) lowers the speaker's own actions to show respect. いたす (do), 申す (say), 参る (go/come) are key forms.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "私が担当いたします。",
+          "correct": true
+        },
+        {
+          "text": "先生が担当いたします。",
+          "correct": false,
+          "error": "謙譲語 lowers the speaker's actions, not others'. For the teacher, use 尊敬語: 先生がご担当されます / 担当なさいます."
+        },
+        {
+          "text": "私はスズキと申します。",
+          "correct": true
+        },
+        {
+          "text": "後ほど参ります。",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "ja-g-031",
+      "level": "N1",
+      "category": "grammar-patterns",
+      "title": "〜に至っては — when it comes to (extreme case)",
+      "explanation": "〜に至っては presents an extreme example within a topic, often with a critical nuance. It singles out the most extreme case and comments on it.",
+      "type": "fill-blank",
+      "template": "他の部署も大変だが、営業部___に至っては休日も出勤している。",
+      "hint": "〜に至っては highlights the most extreme case.",
+      "distractors": [
+        "に至っては",
+        "においては",
+        "に関しては",
+        "については"
+      ]
+    },
+    {
+      "id": "ja-g-032",
+      "level": "N5",
+      "category": "word-order",
+      "title": "Adjective before noun — 形容詞の位置",
+      "explanation": "In Japanese, adjectives always come before the noun they modify. い-adjectives: 大きいいぬ. な-adjectives: きれいなはな. Unlike English, there are no postpositive adjectives.",
+      "type": "tile-order",
+      "tiles": [
+        "あの",
+        "たかい",
+        "たてものは",
+        "ぎんこうです"
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "ja-g-033",
+      "level": "N4",
+      "category": "grammar-patterns",
+      "title": "〜と思っています vs 〜と思います",
+      "explanation": "〜と思います = I think (right now, a current judgment). 〜と思っています = I have been thinking / it is my ongoing view. The progressive form implies a more considered or standing opinion.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "来年、日本に行こうと思っています。",
+          "correct": true
+        },
+        {
+          "text": "来年、日本に行こうと思います。",
+          "correct": true
+        },
+        {
+          "text": "このレポートは難しいと思います。",
+          "correct": true
+        },
+        {
+          "text": "結婚しようと思います。",
+          "correct": false,
+          "error": "結婚などの重大な決断や長期的な計画には と思っています が自然。思います は即興的な発言に近い。"
+        }
+      ]
+    },
+    {
+      "id": "ja-g-034",
+      "level": "N3",
+      "category": "grammar-patterns",
+      "title": "〜ために vs 〜ように",
+      "explanation": "ために after a volitional verb = purpose (in order to). ように after a potential/stative verb or negative = aim/hope (so that). 勉強するために (in order to study) vs 合格できるように (so that I can pass).",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "日本語を話せるように練習しています。",
+          "correct": true
+        },
+        {
+          "text": "日本語を話すために練習しています。",
+          "correct": true
+        },
+        {
+          "text": "忘れないように書きました。",
+          "correct": true
+        },
+        {
+          "text": "忘れないために書きました。",
+          "correct": false,
+          "error": "否定形+ために は不自然。否定の目的には ように を使う：忘れないように書きました。"
+        }
+      ]
+    },
+    {
+      "id": "ja-g-035",
+      "level": "N3",
+      "category": "grammar-patterns",
+      "title": "〜ばかりか〜も — not only…but also",
+      "explanation": "ばかりか adds an additional, often stronger point beyond what was already stated. 彼は日本語ばかりか中国語も話せる。Not only Japanese but also Chinese.",
+      "type": "fill-blank",
+      "template": "彼女は歌ばかりか、ダンス___ とても上手だ。",
+      "hint": "ばかりか…も = not only…but also.",
+      "distractors": [
+        "も",
+        "が",
+        "は",
+        "で"
+      ]
+    },
+    {
+      "id": "ja-g-036",
+      "level": "N2",
+      "category": "grammar-patterns",
+      "title": "〜としては vs 〜にしては",
+      "explanation": "としては = in the capacity of / for something in its role. にしては = considering / given the circumstances, often implying unexpectedness. 学生としては優秀 (as a student) vs 学生にしては上手すぎる (too good for a student).",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "医者としては、健康が一番大切だと思います。",
+          "correct": true
+        },
+        {
+          "text": "初めてにしては、上手ですね。",
+          "correct": true
+        },
+        {
+          "text": "初めてとしては、上手ですね。",
+          "correct": false,
+          "error": "初めて+にしては = considering it's the first time (unexpectedness). としては は役割・立場に使う。"
+        },
+        {
+          "text": "彼女は外国人にしては、日本語が上手だ。",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "ja-g-037",
+      "level": "N1",
+      "category": "grammar-patterns",
+      "title": "〜ないまでも — even if not…at least",
+      "explanation": "ないまでも acknowledges that the ideal is impossible but sets a lower acceptable standard. 毎日ないまでも、週に一度は運動すべきだ。Even if not every day, at least once a week.",
+      "type": "fill-blank",
+      "template": "完璧で___までも、ある程度の品質は保つべきだ。",
+      "hint": "〜ないまでも = even if not [ideal], at least…",
+      "distractors": [
+        "ない",
+        "ある",
+        "いる",
+        "する"
+      ]
+    }
+  ]
+}

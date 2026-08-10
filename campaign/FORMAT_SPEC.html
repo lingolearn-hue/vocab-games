@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vocab Games — Dialogue TSV Format Specification</title>
+<style>
+  :root {
+    --blue: #4f7ef8; --green: #22a06b; --amber: #f0a500; --red: #e5534b;
+    --bg: #fff; --bg2: #f8f9ff; --bg3: #f0f4ff; --border: #e0e8ff;
+    --text: #111; --text2: #444; --text3: #666;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 15px; color: var(--text); background: var(--bg);
+  }
+  body { max-width: 860px; margin: 0 auto; padding: 1.5rem 1.2rem 4rem; }
+  h1   { font-size: 1.5rem; color: var(--blue); margin-bottom: 0.2rem; }
+  h2   { font-size: 1.05rem; font-weight: 700; margin: 1.6rem 0 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+  h3   { font-size: 0.92rem; font-weight: 700; margin: 1rem 0 0.3rem; }
+  p, li { color: var(--text2); line-height: 1.65; }
+  ul, ol { padding-left: 1.4rem; }
+  li   { margin-bottom: 0.25rem; }
+  code { background: #f4f4f8; border-radius: 4px; padding: 0.1em 0.4em; font-size: 0.85em; font-family: 'SF Mono','Fira Code',monospace; }
+  pre  { background: #f4f4f8; border-radius: 10px; padding: 1rem; overflow-x: auto; font-size: 0.8em; line-height: 1.7; border: 1px solid var(--border); tab-size: 20; }
+  .subtitle { color: var(--text3); font-size: 0.88rem; margin-bottom: 2rem; }
+  .note  { background: #fff8e0; border-left: 3px solid var(--amber); border-radius: 6px; padding: 0.6rem 0.9rem; font-size: 0.85rem; color: #555; margin: 0.8rem 0; }
+  .rule  { background: var(--bg3); border-left: 3px solid var(--blue);  border-radius: 6px; padding: 0.6rem 0.9rem; font-size: 0.85rem; color: #333; margin: 0.5rem 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 0.8rem 0; }
+  th    { text-align: left; padding: 0.45rem 0.7rem; background: var(--bg3); color: var(--blue); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  td    { padding: 0.4rem 0.7rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  .col-id       { color: #8b5cf6; font-weight: 600; }
+  .col-speaker  { color: var(--blue); font-weight: 600; }
+  .col-cmd      { color: var(--amber); font-weight: 600; }
+  .col-lang     { color: var(--green); }
+  .badge { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 20px; font-size: 0.72rem; font-weight: 700; margin-right: 0.2rem; }
+  .badge-blue   { background: var(--bg3); color: var(--blue); }
+  .badge-green  { background: #f0faf5; color: var(--green); }
+  .badge-amber  { background: #fff8e0; color: var(--amber); }
+  .badge-purple { background: #f5f0ff; color: #8b5cf6; }
+  details { border: 1.5px solid var(--border); border-radius: 10px; margin: 0.5rem 0; }
+  summary { padding: 0.7rem 1rem; cursor: pointer; font-weight: 600; font-size: 0.9rem; list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  details[open] summary { border-bottom: 1px solid var(--border); }
+  .details-body { padding: 0.8rem 1rem; }
+</style>
+</head>
+<body>
+
+<h1>Dialogue TSV Format Specification</h1>
+<p class="subtitle">Vocab Games · Adventure &amp; Scene Dialogues · v1.0</p>
+
+<h2>1. Overview</h2>
+<p>Dialogues are stored as tab-separated value (TSV) files. Each file contains one or more dialogues for a chapter or scene set, in all five supported languages simultaneously. The format is designed to be edited directly in a spreadsheet application or plain text editor.</p>
+
+<div class="note">
+  <strong>Design principle:</strong> all dialogue text is in the <em>target language</em> by default.
+  Translation to the native language (English) is available on demand via a tap/click on each line —
+  it is never shown automatically. This keeps the learner immersed in the target language.
+</div>
+
+<h2>2. File Naming</h2>
+<table>
+  <tr><th>Pattern</th><th>Meaning</th><th>Example</th></tr>
+  <tr><td><code>adv</code><em>LLCC</em><code>.tsv</code></td><td>Adventure campaign, level LL, chapter CC</td><td><code>adv0102.tsv</code> — Level 01, Chapter 02</td></tr>
+  <tr><td><code>scn</code><em>NN</em><code>.tsv</code></td><td>Standalone scene set NN (all languages)</td><td><code>scn01.tsv</code> — Scene set 01</td></tr>
+</table>
+<p>Files live under <code>public/dialogues/tsv/</code>. The existing JSON files under <code>public/dialogues/</code> remain for legacy content and are not replaced.</p>
+
+<h2>3. File Structure</h2>
+<pre># adv0102 — Adventure Campaign, Level 01, Chapter 02: First Mission
+# Comment lines start with #. Ignored by parser.
+
+@columns	id	speaker	cmd	en	zh	ja	de	es
+
+# ── Dialogue 1 title comment ─────────
+adv010201-01	guild_master		Welcome!	欢迎！	ようこそ！	Willkommen!	¡Bienvenido!
+…
+
+# ── Dialogue 2 title comment ─────────
+adv010202-01	narrator		…</pre>
+
+<div class="rule">A <code>@columns</code> header line must appear exactly once, before any data rows. It defines the column order for the entire file.</div>
+
+<h2>4. Column Specification</h2>
+<table>
+  <tr><th>#</th><th>Name</th><th>Required</th><th>Description</th></tr>
+  <tr><td>1</td><td><span class="col-id">id</span></td><td>Yes</td><td>Unique line identifier — see §5</td></tr>
+  <tr><td>2</td><td><span class="col-speaker">speaker</span></td><td>Yes</td><td>Speaker role — see §6</td></tr>
+  <tr><td>3</td><td><span class="col-cmd">cmd</span></td><td>No</td><td>Command / flag — see §7. Leave empty (two tabs) if unused.</td></tr>
+  <tr><td>4</td><td><span class="col-lang">en</span></td><td>Yes</td><td>English — always present; used as native-language translation</td></tr>
+  <tr><td>5</td><td><span class="col-lang">zh</span></td><td>No</td><td>Chinese (Mandarin, simplified)</td></tr>
+  <tr><td>6</td><td><span class="col-lang">ja</span></td><td>No</td><td>Japanese</td></tr>
+  <tr><td>7</td><td><span class="col-lang">de</span></td><td>No</td><td>German</td></tr>
+  <tr><td>8</td><td><span class="col-lang">es</span></td><td>No</td><td>Spanish</td></tr>
+</table>
+<div class="note">Empty language cells are represented by two consecutive tab characters (an empty column). The parser skips empty cells gracefully — a line without a target-language value is not displayed for that language.</div>
+<p>Language columns may be extended in the future (Korean, French…) by appending columns and updating the <code>@columns</code> header. No other changes are needed.</p>
+
+<h2>5. ID Format</h2>
+<pre><span class="col-id">adv010201-03a</span>
+└─┬─┘└┬┘└┬┘└┬┘└┬┘ └┬─┘└┬┘
+  │   │  │  │  │    │   └── Branch suffix: a, b, c … (optional)
+  │   │  │  │  │    └────── Line number within dialogue: 01, 02 …
+  │   │  │  │  └─────────── Dialogue number within chapter: 01, 02 …
+  │   │  │  └────────────── Chapter number: 01, 02 …
+  │   │  └───────────────── Level number: 01, 02 …
+  │   └──────────────────── Campaign/set identifier digits
+  └──────────────────────── Prefix: adv (adventure) or scn (scene)</pre>
+
+<div class="rule">
+  <strong>Ordering rule:</strong> lines are displayed in ascending ID order — numerically by line number, then alphabetically by suffix (a → b → c).
+  The file may be written in any order; the parser always sorts before rendering.
+</div>
+
+<h3>ID examples</h3>
+<table>
+  <tr><th>ID</th><th>Meaning</th></tr>
+  <tr><td><code>adv010201-01</code></td><td>Adventure, level 01, chapter 02, dialogue 01, line 01 — unconditional</td></tr>
+  <tr><td><code>adv010201-04a</code></td><td>Same chapter/dialogue, line 04, branch a</td></tr>
+  <tr><td><code>adv010201-04b</code></td><td>Same chapter/dialogue, line 04, branch b (alternative to 04a)</td></tr>
+  <tr><td><code>scn010101-02</code></td><td>Scene set 01, scene 01 (level/chapter reuse the slot), line 02</td></tr>
+</table>
+
+<h2>6. Speaker Values</h2>
+<table>
+  <tr><th>Value</th><th>Render style</th><th>Notes</th></tr>
+  <tr><td><code>narrator</code></td><td>Centred italic text, no bubble</td><td>Scene-setting prose. Not attributed to a character.</td></tr>
+  <tr><td><code>guild_master</code>, <code>leon</code>, <code>emma</code>, <code>villager</code>, …</td><td>Left bubble, speaker name above</td><td>Any NPC name. Colour assigned per unique speaker name.</td></tr>
+  <tr><td><code>player</code></td><td>Right bubble (user side)</td><td>Unconditional line: displayed as-is. With branch suffix: rendered as a choice option.</td></tr>
+  <tr><td><code>question</code></td><td>Question prompt box</td><td>Text in <strong>target language</strong> (each language column filled). English column used as translation on tap. No auto-display of English.</td></tr>
+  <tr><td><code>option</code></td><td>Answer button</td><td>One of several options for the preceding question. Text in all languages.</td></tr>
+</table>
+
+<h2>7. Command Column (cmd)</h2>
+<p>Currently only one value is used. The column is reserved for future jump and flag commands.</p>
+<table>
+  <tr><th>Value</th><th>Used on</th><th>Effect</th></tr>
+  <tr><td><code>correct</code></td><td><code>option</code> line</td><td>Marks this option as the correct answer to the preceding question. Exactly one option per question block must carry this flag.</td></tr>
+  <tr><td>(empty)</td><td>any</td><td>No command. Leave two consecutive tabs.</td></tr>
+</table>
+<div class="note">Future reserved values (not yet implemented): <code>jump:ID</code> to skip to a specific line, <code>set:FLAG</code> to record a story flag, <code>if:FLAG</code> to conditionally show a line.</div>
+
+<h2>8. Branching Logic</h2>
+<p>Branches are encoded entirely through the ID suffix. No explicit markup is needed.</p>
+
+<h3>Player choice branches</h3>
+<p>When two or more consecutive <code>player</code> lines share the same line number but differ in suffix (<code>04a</code>, <code>04b</code>), they are rendered as choice buttons. The player picks one.</p>
+<p>NPC lines that <em>follow</em> a branch carry the matching suffix: <code>05a</code> is the NPC response to choice <code>04a</code>, <code>05b</code> responds to <code>04b</code>. A line without a suffix after a branch means the conversation has converged — it is always shown regardless of which branch was taken.</p>
+
+<pre>adv010201-04a	player		Let's go together.	…
+adv010201-04b	player		I prefer to go alone.	…
+
+adv010201-05a	emma		Great! I know a shortcut.	…   ← only shown if player chose 04a
+adv010201-05b	emma		Be careful out there.	…    ← only shown if player chose 04b
+
+adv010201-06	guild_master		Good luck.	…           ← always shown (no suffix)</pre>
+
+<h3>Question / answer blocks</h3>
+<p>A <code>question</code> line is followed immediately by <code>option</code> lines. Options share the same line number as each other (e.g. all are line 07), differentiated by suffix (a, b, c). The option with <code>cmd=correct</code> is the right answer. On a wrong answer, the question is re-displayed. On a correct answer, the dialogue advances to the next line.</p>
+
+<pre>adv010201-06q	question		クリスタルは何ですか？	…
+adv010201-07a	option	correct	光のクリスタル	The Crystal of Light	…
+adv010201-07b	option		ギルドの剣	The guild's sword	…
+adv010201-07c	option		村人の子ども	The villager's child	…</pre>
+
+<div class="rule">The <code>q</code> suffix on the question line is optional but recommended for clarity. Any non-numeric suffix that is not <code>a</code>–<code>z</code> is treated as a label, not a branch.</div>
+
+<h2>9. Translation (Tap to Reveal)</h2>
+<p>All text in every line — including questions and answer options — is written in the <strong>target language</strong>. A small 🌐 button on each line reveals the English translation on tap. It is never shown automatically.</p>
+<table>
+  <tr><th>Line type</th><th>Target language shows</th><th>Tap reveals</th></tr>
+  <tr><td>NPC / narrator</td><td>Target language text</td><td>English column</td></tr>
+  <tr><td>Player choice option</td><td>Target language option text</td><td>English option text</td></tr>
+  <tr><td>Question prompt</td><td>Target language question</td><td>English question</td></tr>
+  <tr><td>Answer option</td><td>Target language answer</td><td>English answer</td></tr>
+</table>
+<div class="rule">The English column is the <em>only</em> column ever used as a translation. It is never the primary display language (unless the learner is studying English, in which case another language serves as the translation).</div>
+
+<h2>10. Language Scope &amp; Difficulty</h2>
+<div class="note">
+  <strong>Critical for adventure mode:</strong> each dialogue is tagged to a chapter level. All text in that dialogue must stay within the vocabulary and grammar scope unlocked by that chapter and all previous chapters. A player who has just completed Chapter 1 (は・です・か・も, greetings, professions) should be able to read every line in that chapter's dialogue without encountering unknown grammar or vocabulary. Simpler is always better than authentic.
+</div>
+<p>Practical guidelines per JLPT level:</p>
+<table>
+  <tr><th>Level</th><th>Max sentence length</th><th>Grammar</th><th>Vocabulary</th></tr>
+  <tr><td>N5 Ch 1–3</td><td>8–10 words</td><td>Only grammar introduced in that chapter and prior</td><td>Only words from chapters 1 through current</td></tr>
+  <tr><td>N5 Ch 4–8</td><td>10–15 words</td><td>Building grammar compounding allowed</td><td>Chapter vocabulary + common N5 only</td></tr>
+  <tr><td>N5 Ch 9–12</td><td>15–20 words</td><td>Full N5 grammar</td><td>Full N5 vocabulary</td></tr>
+</table>
+
+<h2>10b. Writing for Absolute Beginners</h2>
+<div class="note">
+  <strong>The most common mistake</strong> when writing adventure dialogues is writing natural-sounding language
+  rather than level-appropriate language. These are very different things at N5/A1.
+  A line that sounds perfectly natural to a native speaker may contain three unknown grammar points
+  and five unknown words for a chapter-1 learner. <strong>Simpler is always better.</strong>
+</div>
+
+<h3>The core rule</h3>
+<p>Every word and every grammar structure in a dialogue line must appear in the chapter's vocabulary list
+or grammar patterns, or in any previous chapter. If a word is not in the list, cut it or replace it.</p>
+
+<h3>Concrete before / after — N5 Chapter 1</h3>
+<table>
+  <tr><th>❌ Too hard</th><th>✓ Level-appropriate</th><th>Why</th></tr>
+  <tr>
+    <td>北の村で困ったことが起きています。不思議なことが起きているようです。</td>
+    <td>村で、変なことがあります。</td>
+    <td>Original uses ようです (N4), 困った (not in ch1 vocab), 起きている (te-form, not yet taught)</td>
+  </tr>
+  <tr>
+    <td>あなたの最初のミッションです。村へ行って、何が起きているか調べてください。</td>
+    <td>村へ行ってください。</td>
+    <td>か indirect question and 調べる are N4+. Ch1 only needs simple requests.</td>
+  </tr>
+  <tr>
+    <td>私はギルドマスターのレオンだ。よろしく。</td>
+    <td>わたしはレオンです。ギルドマスターです。</td>
+    <td>だ is plain form (style mismatch for early learners). Split compound sentences.</td>
+  </tr>
+</table>
+
+<h3>Chapter 1 sentence checklist</h3>
+<ul>
+  <li>Maximum one clause per sentence — no て-form chaining, no から/ので, no けど</li>
+  <li>Only です/ます form — no plain form, no だ</li>
+  <li>No relative clauses (の, という, など)</li>
+  <li>No indirect speech, no reported speech</li>
+  <li>Subject always explicit (わたしは, これは) — no ellipsis</li>
+  <li>5–8 words per sentence maximum</li>
+  <li>Every noun and verb must be in the chapter word list</li>
+</ul>
+
+<h3>Progression guideline</h3>
+<table>
+  <tr><th>Chapter</th><th>Max length</th><th>Grammar allowed</th><th>Example</th></tr>
+  <tr><td>N5 Ch 1–2</td><td>5–8 words</td><td>は、です、か、も、を、に、が</td><td>わたしはアレックスです。</td></tr>
+  <tr><td>N5 Ch 3–4</td><td>8–12 words</td><td>+ movement verbs, て-form (go and do)</td><td>村へ行って、子どもを探します。</td></tr>
+  <tr><td>N5 Ch 5–6</td><td>10–15 words</td><td>+ adjectives, たい, ている</td><td>あの子は小さくて、かわいいです。</td></tr>
+  <tr><td>N5 Ch 7–9</td><td>12–18 words</td><td>+ ある/いる, location, requests</td><td>テーブルの上に、クリスタルがあります。</td></tr>
+  <tr><td>N5 Ch 10–12</td><td>15–22 words</td><td>Full N5 grammar</td><td>クリスタルは竜が守っていたのです。</td></tr>
+</table>
+
+<h2>11. Complete Minimal Example</h2>
+<pre># adv0101 — Adventure, Level 01, Chapter 01: Guild Initiation
+@columns	id	speaker	cmd	en	zh	ja	de	es
+
+adv010101-01	guild_master		I am Leon.	我是里昂。	わたしはレオンです。	Ich bin Leon.	Soy León.
+adv010101-02	guild_master		Are you the new apprentice?	你是新来的学徒吗？	あなたは新しい見習いですか？	Bist du der neue Lehrling?	¿Eres el nuevo aprendiz?
+
+adv010101-03a	player		Yes. I am Alex.	是的。我是阿历克斯。	はい。わたしはアレックスです。	Ja. Ich bin Alex.	Sí. Soy Alex.
+adv010101-03b	player		...	……	…	…	…
+
+adv010101-04a	guild_master		Alex! Welcome to the guild.	阿历克斯！欢迎来到公会。	アレックス！ギルドへようこそ。	Alex! Willkommen in der Gilde.	¡Alex! Bienvenido al gremio.
+adv010101-04b	guild_master		That is fine too. Welcome.	这也没关系。欢迎。	それもいいですね。ようこそ。	Das ist auch gut. Willkommen.	Eso también está bien. Bienvenido.
+
+adv010101-05	guild_master		This is the guild. There are many adventurers here.	这是公会。这里有很多冒险者。	ここはギルドです。冒険者がたくさんいます。	Das ist die Gilde. Hier gibt es viele Abenteurer.	Este es el gremio. Aquí hay muchos aventureros.
+
+adv010101-06q	question			你现在どこにいますか？	あなたは今どこにいますか？	Wo bist du jetzt?	¿Dónde estás ahora?
+adv010101-07a	option	correct	At the guild.	在公会。	ギルドにいます。	In der Gilde.	En el gremio.
+adv010101-07b	option		At the market.	在市场。	市場にいます。	Auf dem Markt.	En el mercado.
+adv010101-07c	option		At home.	在家。	家にいます。	Zuhause.	En casa.
+</pre>
+
+<h2>12. Parser Notes (for implementation)</h2>
+<ul>
+  <li>Lines starting with <code>#</code> are comments — skip entirely</li>
+  <li>Lines starting with <code>@columns</code> define column names — parse once</li>
+  <li>Blank lines are ignored</li>
+  <li>Columns are separated by a single tab character (<code>\t</code>)</li>
+  <li>Sort all data rows by ID before processing: numeric part ascending, then suffix alphabetically</li>
+  <li>A <code>player</code> line with a suffix is a <em>choice option</em>; without a suffix it is a <em>statement</em> (display only)</li>
+  <li>Branch state persists within a single dialogue playthrough; resets on replay</li>
+  <li>The active language is determined by <code>activeLanguage</code> from app context — pick the corresponding column</li>
+  <li>If the target-language cell is empty, skip rendering that line for that language (do not show an empty bubble)</li>
+</ul>
+
+<hr style="margin:2rem 0; border-color: #f0f0f0"/>
+<p style="font-size:0.75rem; color:#aaa; text-align:center">Vocab Games · Dialogue TSV Format Spec v1.0 · See also: DESIGN_SPEC.html</p>
+
+</body>
+</html>

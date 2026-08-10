@@ -1,0 +1,24 @@
+{
+  "id": "en-en-dialogues",
+  "language": "en",
+  "native": "en",
+  "dialogues": [
+    {
+      "id": "en-d1",
+      "title": "At the Café",
+      "level": "A2",
+      "speakers": ["Barista", "Customer"],
+      "lines": [
+        { "speaker": "Barista", "text": "Good morning! What can I get you?" },
+        { "speaker": "Customer", "text": "A large coffee, please. And do you have any pastries?" },
+        { "speaker": "Barista", "text": "We have croissants and muffins today." },
+        { "speaker": "Customer", "text": "I'll take a croissant. How much is that?" },
+        { "speaker": "Barista", "text": "That's four fifty, please." }
+      ],
+      "questions": [
+        { "question": "What does the customer order?", "options": ["Tea and a muffin", "Coffee and a croissant", "Coffee and a muffin", "Tea and a croissant"], "answer": 1 },
+        { "question": "How much does the customer pay?", "options": ["£3.50", "£4.00", "£4.50", "£5.00"], "answer": 2 }
+      ]
+    }
+  ]
+}

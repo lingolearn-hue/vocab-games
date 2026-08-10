@@ -1,0 +1,281 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# adv0102 — The Crystal of Light · Chapter 02: First Mission
+# ══════════════════════════════════════════════════════════════════════════════
+
+@columns	id	speaker	cmd	en	zh	ja	de	es
+
+@chapter	02	First Mission	第一个任务	最初のミッション	Erste Mission	Primera misión	N5
+@artifact	🕐	Bronze Clock	Present · Past · Negative · Verbs
+
+@story_intro	The first mission has arrived from the guild. You must go to a nearby village. Something is happening there.	公会的第一个任务来了。你必须去附近的村子。那里发生了一些事情。	ギルドから最初のミッションが来た。近くの村に行かなければならない。何かが村で起きている。	Der erste Auftrag der Gilde ist angekommen. Du musst in ein nahes Dorf gehen. Dort passiert etwas.	Ha llegado la primera misión del gremio. Debes ir a un pueblo cercano. Allí está pasando algo.
+@story_outro	The mission is complete. The villagers are relieved. But the mystery of the crystal remains unsolved.	任务完成了。村民们松了口气。但水晶的谜题仍未解决。	ミッションを終えた。村の人たちは安心した。でも、クリスタルのことはまだわからない。	Die Mission ist abgeschlossen. Die Dorfbewohner sind erleichtert. Aber das Rätsel des Kristalls bleibt ungelöst.	La misión está completada. Los aldeanos están aliviados. Pero el misterio del cristal sigue sin resolverse.
+
+
+# ── Section 1: The Mission Scroll ────────────────────────────────────────────
+@section	01	The Mission Scroll	任务卷轴	ミッションの巻物	Die Missionsrolle	El pergamino de la misión
+@vocab	いく	くる	たべる	のむ	みる	きく　はなす	よむ	かく	まいにち	いま	きのう	きょう	あした	なんじ
+
+@passage	01	The Mission Scroll	任务卷轴	ミッションの巻物	Die Missionsrolle	El pergamino de la misión
+
+@passage_line	MISSION SCROLL	任务卷轴	ミッションの巻物	MISSIONSROLLE	PERGAMINO DE MISIÓN
+@passage_line	From: Guild Master Leon	来自：公会长里昂	差出人：ギルドマスター レオン	Von: Gildenmeister Leon	De: Maestro del gremio León
+@passage_line	To: Alex and Emma, Apprentice Adventurers	致：阿历克斯和艾玛，见习冒险者	宛先：アレックスとエマ、見習い冒険者	An: Alex und Emma, Lehrlings-Abenteurer	Para: Alex y Emma, aventureros aprendices
+@passage_line	Mission: River Village	任务：河边村	ミッション：川の村	Mission: Flussdorf	Misión: Pueblo del Río
+@passage_line	Please go to River Village.	请去河边村。	川の村に行ってください。	Bitte geht nach Flussdorf.	Por favor, id al Pueblo del Río.
+@passage_line	The village is two hours from Stonehaven.	这个村子离石港镇两个小时路程。	村はストーンヘイブンから二時間です。	Das Dorf ist zwei Stunden von Stonehaven entfernt.	El pueblo está a dos horas de Stonehaven.
+@passage_line	Walk south. Then walk east at the big tree.	向南走。然后在大树处向东走。	南へ歩いてください。それから大きな木のところで東へ歩いてください。	Geht südwärts. Dann geht an dem großen Baum ostwärts.	Camina hacia el sur. Luego camina hacia el este en el árbol grande.
+@passage_line	Talk to the people of the village.	和村里的人们交谈。	村の人たちと話してください。	Sprecht mit den Menschen des Dorfes.	Habla con la gente del pueblo.
+@passage_line	Listen to their problems.	听他们的问题。	彼らの悩みを聞いてください。	Hört ihre Probleme.	Escucha sus problemas.
+@passage_line	Help them if you can.	如果可以的话，帮助他们。	できれば助けてください。	Helft ihnen, wenn ihr könnt.	Ayúdales si puedes.
+@passage_line	Please come back before dark.	请在天黑前回来。	暗くなる前に帰ってきてください。	Bitte kommt vor der Dunkelheit zurück.	Por favor, volved antes de que oscurezca.
+@passage_line	Be safe. I am counting on you.	保重。我在依靠你们。	気をつけてください。頼んでいます。	Seid sicher. Ich zähle auf euch.	Estad seguros. Cuento con vosotros.
+@passage_line	Leon	里昂	レオン	Leon	León
+
+
+# ── Section 2: Emma's Travel Diary ───────────────────────────────────────────
+@section	02	Emma's Travel Diary	艾玛的旅行日记	エマの旅日記	Emmas Reisetagebuch	El diario de viaje de Emma
+@vocab	あるく	みち　みぎ　ひだり　まっすぐ　きた　みなみ　ひがし　にし　ちかい　とおい　むら　まち
+
+@passage	02	Emma's Travel Diary	艾玛的旅行日记	エマの旅日記	Emmas Reisetagebuch	El diario de viaje de Emma
+
+@passage_line	Today is our first mission day!	今天是我们第一个任务日！	今日は最初のミッションの日です！	Heute ist unser erster Missionstag!	¡Hoy es nuestro primer día de misión!
+@passage_line	I got up early. I ate breakfast with Alex.	我很早起床了。我和阿历克斯一起吃了早饭。	早く起きました。アレックスと一緒に朝ごはんを食べました。	Ich stand früh auf. Ich frühstückte mit Alex.	Me levanté temprano. Desayuné con Alex.
+@passage_line	We left the guild at eight in the morning.	我们早上八点离开了公会。	朝八時にギルドを出発しました。	Wir verließen die Gilde um acht Uhr morgens.	Salimos del gremio a las ocho de la mañana.
+@passage_line	Leon waved to us. He said "Be safe!"	里昂向我们挥手。他说"保重！"	レオンさんが手を振ってくれました。「気をつけて！」と言いました。	Leon winkte uns zu. Er sagte „Seid sicher!"	León nos saludó con la mano. Dijo «¡Estad seguros!»
+@passage_line	We walked south from the guild.	我们从公会向南走。	ギルドから南へ歩きました。	Wir gingen südlich von der Gilde.	Caminamos hacia el sur desde el gremio.
+@passage_line	The road was quiet. There were not many people.	路上很安静。人不多。	道は静かでした。人があまりいませんでした。	Der Weg war ruhig. Es gab nicht viele Menschen.	El camino estaba tranquilo. No había mucha gente.
+@passage_line	We saw a big tree on the left. Then we turned east.	我们看到左边有一棵大树。然后我们向东转。	左に大きな木が見えました。それから東へ曲がりました。	Wir sahen einen großen Baum auf der linken Seite. Dann bogen wir nach Osten ab.	Vimos un árbol grande a la izquierda. Luego giramos hacia el este.
+@passage_line	After one hour, I was a little tired.	一个小时后，我有点累了。	一時間後、少し疲れました。	Nach einer Stunde war ich ein bisschen müde.	Después de una hora, estaba un poco cansada.
+@passage_line	But Alex was walking fast. I tried to walk fast too.	但阿历克斯走得很快。我也试着走快一点。	でも、アレックスは速く歩いていました。わたしも速く歩こうとしました。	Aber Alex lief schnell. Ich versuchte auch, schnell zu laufen.	Pero Alex caminaba rápido. Yo también intenté caminar rápido.
+@passage_line	Then we saw the village. It was small and quiet.	然后我们看到了村子。它又小又安静。	それから村が見えました。小さくて静かでした。	Dann sahen wir das Dorf. Es war klein und ruhig.	Entonces vimos el pueblo. Era pequeño y tranquilo.
+@passage_line	We arrived at two hours. Good!	我们两个小时就到了。太好了！	二時間で着きました。よかった！	Wir kamen in zwei Stunden an. Gut!	Llegamos en dos horas. ¡Bien!
+
+
+# ── Section 3: The Village Signpost ──────────────────────────────────────────
+@section	03	The Village Signpost	村子的路标	村の道標	Das Dorfwegzeichen	El letrero del pueblo
+@vocab	むら　かわ　みず　やま　き　みち　はし　いえ　ひと　なんにん
+
+@passage	03	Signs in River Village	河边村的标志	川の村の標識	Schilder in Flussdorf	Letreros en el Pueblo del Río
+
+@passage_line	WELCOME TO RIVER VILLAGE	欢迎来到河边村	川の村へようこそ	WILLKOMMEN IN FLUSSDORF	BIENVENIDO AL PUEBLO DEL RÍO
+@passage_line	Population: thirty people	人口：三十人	人口：三十人	Einwohnerzahl: dreißig Personen	Población: treinta personas
+@passage_line	River Village is a small and quiet village.	河边村是一个小而安静的村庄。	川の村は小さくて静かな村です。	Flussdorf ist ein kleines und ruhiges Dorf.	El Pueblo del Río es un pueblo pequeño y tranquilo.
+@passage_line	The river is to the east.	河流在东边。	川は東にあります。	Der Fluss liegt im Osten.	El río está al este.
+@passage_line	The forest is to the north.	森林在北边。	森は北にあります。	Der Wald liegt im Norden.	El bosque está al norte.
+@passage_line	---	---	---	---	---
+@passage_line	The village has:	这个村子有：	村には：	Das Dorf hat:	El pueblo tiene:
+@passage_line	One well	一口水井	井戸が一つ	Einen Brunnen	Un pozo
+@passage_line	One inn	一家旅馆	宿屋が一軒	Eine Herberge	Una posada
+@passage_line	One shop	一家商店	お店が一軒	Einen Laden	Una tienda
+@passage_line	Ten houses	十栋房子	家が十軒	Zehn Häuser	Diez casas
+@passage_line	---	---	---	---	---
+@passage_line	Please do not go into the forest alone.	请不要独自进入森林。	一人で森に入らないでください。	Bitte geht nicht alleine in den Wald.	Por favor, no entres al bosque solo.
+@passage_line	The forest is dangerous at night.	森林在晚上很危险。	夜の森は危ないです。	Der Wald ist nachts gefährlich.	El bosque es peligroso de noche.
+
+
+# ── Section 4: A Note Found in the Forest ────────────────────────────────────
+@section	04	A Note Found in the Forest	在森林里找到的便条	森で見つけたメモ	Ein im Wald gefundener Zettel	Una nota encontrada en el bosque
+@vocab	こわい　おとうさん　おかあさん　たすける　かえる　まつ　ひとり　なく　さむい　おなか すく
+
+@passage	04	A Note Found in the Forest	在森林里找到的便条	森で見つけたメモ	Ein im Wald gefundener Zettel	Una nota encontrada en el bosque
+
+@passage_line	This note was on the ground.	这张便条在地上。	このメモは地面にありました。	Dieser Zettel lag auf dem Boden.	Esta nota estaba en el suelo.
+@passage_line	The writing is small. It is hard to read.	字迹很小。很难读。	文字が小さいです。読みにくいです。	Die Schrift ist klein. Es ist schwer zu lesen.	La letra es pequeña. Es difícil de leer.
+@passage_line	---	---	---	---	---
+@passage_line	Father and Mother,	爸爸妈妈，	おとうさん、おかあさんへ	Vater und Mutter,	Papá y mamá,
+@passage_line	I am in the forest.	我在森林里。	わたしは森にいます。	Ich bin im Wald.	Estoy en el bosque.
+@passage_line	I came here yesterday to look at the river.	我昨天来这里看河流的。	昨日、川を見に来ました。	Ich kam gestern hierher, um den Fluss anzuschauen.	Vine aquí ayer para ver el río.
+@passage_line	But now I do not know where I am.	但现在我不知道我在哪里。	でも今、どこにいるかわかりません。	Aber jetzt weiß ich nicht, wo ich bin.	Pero ahora no sé dónde estoy.
+@passage_line	I am a little scared.	我有点害怕。	少し怖いです。	Ich habe ein bisschen Angst.	Tengo un poco de miedo.
+@passage_line	I am also hungry.	我也饿了。	お腹もすいています。	Ich bin auch hungrig.	También tengo hambre.
+@passage_line	I found a small cave. I am sleeping in the cave.	我找到了一个小山洞。我在山洞里睡觉。	小さな洞窟を見つけました。洞窟の中で寝ています。	Ich fand eine kleine Höhle. Ich schlafe in der Höhle.	Encontré una pequeña cueva. Estoy durmiendo en la cueva.
+@passage_line	Please come and find me.	请来找我。	来て、見つけてください。	Bitte kommt und findet mich.	Por favor, venid a buscarme.
+@passage_line	I am waiting here.	我在这里等。	ここで待っています。	Ich warte hier.	Estoy esperando aquí.
+@passage_line	Tom	汤姆	トム	Tom	Tom
+
+
+# ── Section 5: Tom's Diary ────────────────────────────────────────────────────
+@section	05	Tom's Diary	汤姆的日记	トムの日記	Toms Tagebuch	El diario de Tom
+@vocab	もり　むし　とり　はな　みず　かわ　さかな　おおきい　ちいさい　すごい　こわい　たのしい
+
+@passage	05	Tom's Diary	汤姆的日记	トムの日記	Toms Tagebuch	El diario de Tom
+
+@passage_line	My name is Tom. I am twelve years old.	我叫汤姆。我十二岁。	わたしの名前はトムです。十二歳です。	Mein Name ist Tom. Ich bin zwölf Jahre alt.	Me llamo Tom. Tengo doce años.
+@passage_line	I live in River Village. It is a small village.	我住在河边村。它是个小村庄。	川の村に住んでいます。小さな村です。	Ich lebe in Flussdorf. Es ist ein kleines Dorf.	Vivo en el Pueblo del Río. Es un pueblo pequeño.
+@passage_line	I like the forest. There are many interesting things there.	我喜欢森林。那里有很多有趣的东西。	森が好きです。おもしろいものがたくさんあります。	Ich mag den Wald. Dort gibt es viele interessante Dinge.	Me gusta el bosque. Hay muchas cosas interesantes allí.
+@passage_line	Yesterday I saw a big bird in the forest.	昨天我在森林里看到了一只大鸟。	昨日、森で大きな鳥を見ました。	Gestern sah ich einen großen Vogel im Wald.	Ayer vi un pájaro grande en el bosque.
+@passage_line	It was white. It was very beautiful.	它是白色的。非常漂亮。	白くて、とてもきれいでした。	Es war weiß. Es war sehr schön.	Era blanco. Era muy hermoso.
+@passage_line	I wanted to follow it. So I went deeper into the forest.	我想跟着它。所以我走进了更深的森林。	追いかけたいと思いました。それで、森の奥に入りました。	Ich wollte ihm folgen. Also ging ich tiefer in den Wald.	Quería seguirlo. Así que me adentré más en el bosque.
+@passage_line	The bird was fast. I ran after it.	鸟飞得很快。我追着它跑。	鳥は速かったです。追いかけました。	Der Vogel war schnell. Ich rannte ihm nach.	El pájaro era rápido. Corrí tras él.
+@passage_line	Then the bird went away. I stopped.	然后鸟飞走了。我停了下来。	それから鳥はいなくなりました。止まりました。	Dann flog der Vogel weg. Ich hielt an.	Entonces el pájaro se fue. Me detuve.
+@passage_line	I looked around. I did not know where I was.	我环顾四周。我不知道我在哪里。	周りを見ました。どこにいるかわかりませんでした。	Ich schaute mich um. Ich wusste nicht, wo ich war.	Miré a mi alrededor. No sabía dónde estaba.
+@passage_line	It was getting dark. I was scared.	天色渐暗。我很害怕。	暗くなってきました。怖かったです。	Es wurde dunkel. Ich hatte Angst.	Se estaba haciendo oscuro. Tenía miedo.
+@passage_line	I found a cave and went inside. It was cold but safe.	我找到了一个山洞，走了进去。很冷但很安全。	洞窟を見つけて、中に入りました。寒いですが、安全です。	Ich fand eine Höhle und ging hinein. Es war kalt, aber sicher.	Encontré una cueva y entré. Hacía frío pero era seguro.
+@passage_line	I hope my mother and father are not too worried.	我希望我的父母不要太担心。	お父さんとお母さんが心配しすぎていないといいです。	Ich hoffe, meine Mutter und mein Vater machen sich nicht zu viele Sorgen.	Espero que mi madre y mi padre no estén demasiado preocupados.
+
+
+# ── Dialogue 1: Walking to the Village ───────────────────────────────────────
+@section	06	Walking to the Village	走向村子	村への道	Auf dem Weg zum Dorf	Camino al pueblo
+@vocab	あるく　みち　みぎ　ひだり　まっすぐ　きた　みなみ　ひがし　にし　ちかい　とおい
+
+adv010601-01	narrator		You walk south from the guild. The sun is warm.	你从公会向南走。阳光温暖。	ギルドから南へ歩いています。太陽があたたかいです。	Ihr geht südlich von der Gilde. Die Sonne ist warm.	Caminais hacia el sur desde el gremio. El sol está cálido.
+adv010601-02	emma		It is a nice day today! I am happy.	今天天气真好！我很高兴。	今日はいい天気です！うれしいです。	Heute ist ein schöner Tag! Ich bin glücklich.	¡Hoy es un día bonito! Estoy contenta.
+adv010601-03a	player		Yes. The sun is warm. I am happy too.	是的。阳光温暖。我也很高兴。	そうですね。太陽があたたかいです。わたしもうれしいです。	Ja. Die Sonne ist warm. Ich bin auch glücklich.	Sí. El sol está cálido. Yo también estoy contento.
+adv010601-03b	player		Yes. But I am also a little nervous.	是的。但我也有点紧张。	そうですね。でも少し緊張しています。	Ja. Aber ich bin auch ein bisschen nervös.	Sí. Pero también estoy un poco nervioso.
+adv010601-04	emma		Me too! But let us not worry. We walk together. That is good.	我也是！但我们别担心了。我们一起走。这很好。	わたしもです！でも心配しないようにしましょう。一緒に歩きます。それはいいです。	Ich auch! Aber lass uns nicht sorgen. Wir gehen zusammen. Das ist gut.	¡Yo también! Pero no nos preocupemos. Caminamos juntos. Eso es bueno.
+adv010601-05	narrator		You walk for one hour. You see a big tree on the road.	你走了一个小时。你看到路上有一棵大树。	一時間歩きました。道に大きな木が見えます。	Ihr lauft eine Stunde. Ihr seht einen großen Baum auf dem Weg.	Caminais durante una hora. Veis un árbol grande en el camino.
+adv010601-06	emma		Look! A big tree! The mission scroll says to turn east here.	看！一棵大树！任务卷轴说在这里向东转。	見て！大きな木！ミッションの巻物にここで東に曲がると書いてあります。	Schau! Ein großer Baum! Die Missionsrolle sagt, hier nach Osten abzubiegen.	¡Mira! ¡Un árbol grande! El pergamino de la misión dice que giremos hacia el este aquí.
+adv010601-07	player		Yes. Let us turn here.	是的。我们在这里转。	そうですね。ここで曲がりましょう。	Ja. Lass uns hier abbiegen.	Sí. Giremos aquí.
+adv010601-08	narrator		You walk east. After thirty minutes, you see a village.	你向东走。三十分钟后，你看到了一个村庄。	東へ歩きました。三十分後、村が見えます。	Ihr geht östlich. Nach dreißig Minuten seht ihr ein Dorf.	Caminais hacia el este. Después de treinta minutos, veis un pueblo.
+adv010601-09	emma		Is that the village? It is small.	那是村庄吗？它很小。	あれが村ですか？小さいですね。	Ist das das Dorf? Es ist klein.	¿Es ese el pueblo? Es pequeño.
+adv010601-10a	player		Yes, I think so. Let us go and see.	是的，我想是这样。我们去看看吧。	そうだと思います。行ってみましょう。	Ja, ich glaube schon. Lass uns gehen und schauen.	Sí, creo que sí. Vamos a ver.
+adv010601-10b	player		I am not sure. Let us read the sign.	我不确定。我们读一下标志吧。	わかりません。標識を読みましょう。	Ich bin nicht sicher. Lass uns das Schild lesen.	No estoy seguro. Leamos el letrero.
+adv010601-11	emma		Yes! The sign says "River Village." This is the right place!	是的！标志上写着"河边村"。这是正确的地方！	はい！標識に「川の村」と書いてあります。ここで合っています！	Ja! Das Schild sagt „Flussdorf". Das ist der richtige Ort!	¡Sí! El letrero dice «Pueblo del Río». ¡Este es el lugar correcto!
+adv010601-12	player		Good. Let us go inside.	好。我们进去吧。	いいですね。中に入りましょう。	Gut. Lass uns hineingehen.	Bien. Entremos.
+adv010601-13	narrator		You enter the village. It is very quiet. You do not see many people.	你进入村庄。非常安静。你看不到很多人。	村に入りました。とても静かです。人があまり見えません。	Ihr betretet das Dorf. Es ist sehr still. Ihr seht nicht viele Menschen.	Entráis al pueblo. Está muy tranquilo. No veis mucha gente.
+adv010601-14	emma		It is very quiet here. Where are all the people?	这里很安静。所有人都在哪里？	とても静かですね。みんなどこにいますか？	Hier ist es sehr still. Wo sind alle Menschen?	Aquí está muy tranquilo. ¿Dónde están todas las personas?
+adv010601-15	player		I do not know. Let us find someone to talk to.	我不知道。我们找个人说说话吧。	わかりません。話せる人を探しましょう。	Ich weiß es nicht. Lass uns jemanden zum Reden finden.	No lo sé. Busquemos a alguien con quien hablar.
+adv010601-16	narrator		A woman comes out of a house. She looks worried.	一位女士从房子里走了出来。她看起来很担心。	女の人が家から出てきました。心配そうです。	Eine Frau kommt aus einem Haus. Sie sieht besorgt aus.	Una mujer sale de una casa. Parece preocupada.
+
+adv010601-17q	question		Where is the forest?	森林在哪里？	森はどこにありますか？	Wo ist der Wald?	¿Dónde está el bosque?
+adv010601-18a	option	correct	To the north.	在北边。	北にあります。	Im Norden.	Al norte.
+adv010601-18b	option		To the south.	在南边。	南にあります。	Im Süden.	Al sur.
+adv010601-18c	option		To the east.	在东边。	東にあります。	Im Osten.	Al este.
+
+
+# ── Dialogue 2: Meeting the Mother ───────────────────────────────────────────
+@section	07	Meeting the Mother	遇见母亲	母親との出会い	Die Mutter treffen	Conociendo a la madre
+@vocab	むすこ　むすめ　おかあさん　おとうさん　こ　こども　しんぱい　たすける　みつける　かえる
+
+adv010701-01	mother		Please help me! My son is not here!	请帮帮我！我的儿子不在这里！	助けてください！息子がいません！	Bitte helft mir! Mein Sohn ist nicht hier!	¡Por favor, ayudadme! ¡Mi hijo no está aquí!
+adv010701-02	emma		Hello! Please do not worry. We are from the Adventurer Guild.	你好！请不要担心。我们来自冒险者公会。	こんにちは！心配しないでください。冒険者ギルドから来ました。	Hallo! Bitte machen Sie sich keine Sorgen. Wir sind von der Abenteurergilde.	¡Hola! Por favor, no se preocupe. Somos del gremio de aventureros.
+adv010701-03	mother		Oh! Adventurers! Thank you for coming!	哦！冒险者！谢谢你们来！	あ！冒険者！来てくれてありがとう！	Oh! Abenteurer! Danke, dass ihr gekommen seid!	¡Oh! ¡Aventureros! ¡Gracias por venir!
+adv010701-04	player		Please tell us. What happened?	请告诉我们。发生了什么？	話してください。何が起きましたか？	Bitte erzählt uns. Was ist passiert?	Por favor, cuéntenos. ¿Qué pasó?
+adv010701-05	mother		My son is Tom. He is twelve years old.	我的儿子叫汤姆。他十二岁。	息子はトムです。十二歳です。	Mein Sohn ist Tom. Er ist zwölf Jahre alt.	Mi hijo es Tom. Tiene doce años.
+adv010701-06	mother		Yesterday he went to the forest. He did not come home.	昨天他去了森林。他没有回家。	昨日、森に行きました。家に帰りませんでした。	Gestern ging er in den Wald. Er kam nicht nach Hause.	Ayer fue al bosque. No volvió a casa.
+adv010701-07	mother		I waited and waited. But he did not come back.	我等啊等。但他没有回来。	ずっと待ちました。でも帰ってきませんでした。	Ich wartete und wartete. Aber er kam nicht zurück.	Esperé y esperé. Pero no volvió.
+adv010701-08	emma		Is Tom a careful boy?	汤姆是个谨慎的孩子吗？	トムは注意深い子ですか？	Ist Tom ein vorsichtiger Junge?	¿Tom es un niño cuidadoso?
+adv010701-09	mother		Yes, usually. But he likes the forest very much. Sometimes he forgets the time.	是的，通常是这样。但他非常喜欢森林。有时他会忘记时间。	はい、ふだんは。でも、森がとても好きです。時々、時間を忘れます。	Ja, normalerweise. Aber er mag den Wald sehr. Manchmal vergisst er die Zeit.	Sí, normalmente. Pero le gusta mucho el bosque. A veces olvida la hora.
+adv010701-10	player		I understand. We will go and look for him.	我明白了。我们会去找他的。	わかりました。探しに行きます。	Ich verstehe. Wir werden gehen und ihn suchen.	Entiendo. Iremos a buscarlo.
+adv010701-11	mother		Thank you! Oh, thank you so much!	谢谢！哦，非常感谢！	ありがとうございます！ほんとうにありがとうございます！	Danke! Oh, danke so sehr!	¡Gracias! ¡Oh, muchas gracias!
+adv010701-12	emma		Do not worry. We will find Tom. Which part of the forest did he go to?	不要担心。我们会找到汤姆的。他去了森林的哪个部分？	心配しないでください。トムを見つけます。森のどこに行きましたか？	Machen Sie sich keine Sorgen. Wir werden Tom finden. In welchen Teil des Waldes ist er gegangen?	No se preocupe. Encontraremos a Tom. ¿A qué parte del bosque fue?
+adv010701-13	mother		The north part. He likes the river there. He often goes to catch fish.	北边部分。他喜欢那里的河流。他经常去钓鱼。	北の方です。そこの川が好きです。魚を捕まえるためによく行きます。	Der nördliche Teil. Er mag den Fluss dort. Er geht oft hin, um Fische zu fangen.	La parte norte. Le gusta el río que hay allí. Suele ir a pescar.
+adv010701-14	player		I see. We will go to the north.	我明白了。我们向北走。	わかりました。北へ行きます。	Ich verstehe. Wir gehen nach Norden.	Entiendo. Iremos al norte.
+adv010701-15	mother		Please come back safely. Both of you.	请平安回来。你们两个都要。	無事に帰ってきてください。二人とも。	Bitte kommt sicher zurück. Ihr beide.	Por favor, volved sanos y salvos. Los dos.
+adv010701-16	narrator		You go to the north. The forest is dark and quiet.	你们向北走。森林又黑暗又安静。	北へ行きました。森は暗くて静かです。	Ihr geht nach Norden. Der Wald ist dunkel und still.	Vais al norte. El bosque está oscuro y tranquilo.
+
+adv010701-17q	question		Why did Tom go into the forest?	汤姆为什么进入了森林？	トムはなぜ森に入ったのですか？	Warum ging Tom in den Wald?	¿Por qué Tom entró al bosque?
+adv010701-18a	option	correct	To catch fish.	去钓鱼。	魚を捕まえるためです。	Um Fische zu fangen.	Para pescar.
+adv010701-18b	option		To find the crystal.	去找水晶。	クリスタルを見つけるためです。	Um das Kristall zu finden.	Para encontrar el cristal.
+adv010701-18c	option		To sleep in the forest.	去森林睡觉。	森で寝るためです。	Um im Wald zu schlafen.	Para dormir en el bosque.
+
+
+# ── Dialogue 3: In the Forest ─────────────────────────────────────────────────
+@section	08	In the Forest	在森林里	森の中	Im Wald	En el bosque
+@vocab	もり　き　くさ　みち　おと　きこえる　みえる　こわい　しずか　とり　むし　さがす
+
+adv010801-01	narrator		You enter the forest. It is quiet. You can hear birds.	你进入森林。很安静。你能听到鸟叫声。	森に入りました。静かです。鳥の声が聞こえます。	Ihr betretet den Wald. Es ist still. Ihr könnt Vögel hören.	Entráis al bosque. Está tranquilo. Podéis escuchar los pájaros.
+adv010801-02	emma		It is quiet here. Tom! Tom! Are you here?	这里很安静。汤姆！汤姆！你在这里吗？	静かですね。トム！トム！ここにいますか？	Hier ist es still. Tom! Tom! Bist du hier?	Aquí está tranquilo. ¡Tom! ¡Tom! ¿Estás aquí?
+adv010801-03	narrator		No answer. You walk deeper into the forest.	没有回答。你们走进了更深的森林。	返事がありません。もっと奥に歩きます。	Keine Antwort. Ihr geht tiefer in den Wald.	No hay respuesta. Camináis más adentro del bosque.
+adv010801-04	player		I cannot see well here. It is dark.	在这里我看不清楚。很黑。	ここはよく見えません。暗いです。	Ich kann hier nicht gut sehen. Es ist dunkel.	No puedo ver bien aquí. Está oscuro.
+adv010801-05	emma		Yes. I am a little scared. But we must find Tom.	是的。我有点害怕。但我们必须找到汤姆。	そうですね。少し怖いです。でも、トムを見つけなければなりません。	Ja. Ich habe ein bisschen Angst. Aber wir müssen Tom finden.	Sí. Tengo un poco de miedo. Pero debemos encontrar a Tom.
+adv010801-06	player		Yes. Tom is twelve. He must be very scared.	是的。汤姆十二岁。他一定非常害怕。	そうですね。トムは十二歳です。きっととても怖いでしょう。	Ja. Tom ist zwölf. Er muss sehr Angst haben.	Sí. Tom tiene doce años. Debe estar muy asustado.
+adv010801-07	narrator		You walk for twenty minutes. Then you see something on the ground.	你走了二十分钟。然后你在地上看到了什么东西。	二十分歩きました。それから地面に何かが見えます。	Ihr lauft zwanzig Minuten. Dann seht ihr etwas auf dem Boden.	Caminais durante veinte minutos. Entonces veis algo en el suelo.
+adv010801-08	emma		Look! There is something on the ground. Is that a note?	看！地上有什么东西。那是一张便条吗？	見て！地面に何かあります。メモですか？	Schau! Da ist etwas auf dem Boden. Ist das ein Zettel?	¡Mira! Hay algo en el suelo. ¿Es una nota?
+adv010801-09	player		Yes. Let me read it.	是的。让我读一读。	はい。読んでみます。	Ja. Lass mich ihn lesen.	Sí. Déjame leerla.
+adv010801-10	narrator		You read the note. It is from Tom. He is in a cave.	你读了这张便条。是汤姆写的。他在一个山洞里。	メモを読みました。トムからです。洞窟にいます。	Ihr lest den Zettel. Er ist von Tom. Er ist in einer Höhle.	Leéis la nota. Es de Tom. Está en una cueva.
+adv010801-11	emma		A cave! Which cave? There are many trees here.	一个山洞！哪个山洞？这里有很多树。	洞窟！どの洞窟ですか？ここは木がたくさんあります。	Eine Höhle! Welche Höhle? Hier gibt es viele Bäume.	¡Una cueva! ¿Qué cueva? Aquí hay muchos árboles.
+adv010801-12	player		The note says he is near the river. Let us go to the river.	便条上说他在河边附近。我们去河边吧。	川の近くにいると書いてあります。川へ行きましょう。	Der Zettel sagt, er ist in der Nähe des Flusses. Lass uns zum Fluss gehen.	La nota dice que está cerca del río. Vamos al río.
+adv010801-13	emma		Yes! The river is to the east. Let us go.	是的！河流在东边。我们走吧。	そうですね！川は東にあります。行きましょう。	Ja! Der Fluss ist im Osten. Lass uns gehen.	¡Sí! El río está al este. Vamos.
+adv010801-14	narrator		You walk east. You can hear the sound of water.	你向东走。你能听到水声。	東へ歩きます。水の音が聞こえます。	Ihr geht östlich. Ihr könnt das Geräusch von Wasser hören.	Caminais hacia el este. Podéis escuchar el sonido del agua.
+adv010801-15	emma		I can hear the river! We are close.	我能听到河流的声音！我们近了。	川の音が聞こえます！近いです。	Ich kann den Fluss hören! Wir sind nah.	¡Puedo escuchar el río! Estamos cerca.
+adv010801-16	player		Yes. And look. There is a cave near the river.	是的。看。河边有一个山洞。	そうですね。見て。川の近くに洞窟があります。	Ja. Und schau. Da ist eine Höhle in der Nähe des Flusses.	Sí. Y mira. Hay una cueva cerca del río.
+
+adv010801-17q	question		Where did you find Tom's note?	你在哪里找到汤姆的便条的？	トムのメモをどこで見つけましたか？	Wo habt ihr Toms Zettel gefunden?	¿Dónde encontrasteis la nota de Tom?
+adv010801-18a	option	correct	On the ground in the forest.	在森林的地上。	森の地面です。	Auf dem Boden im Wald.	En el suelo del bosque.
+adv010801-18b	option		In the cave.	在山洞里。	洞窟の中です。	In der Höhle.	En la cueva.
+adv010801-18c	option		Near the river.	在河边附近。	川の近くです。	In der Nähe des Flusses.	Cerca del río.
+
+
+# ── Dialogue 4: Finding Tom ───────────────────────────────────────────────────
+@section	09	Finding Tom	找到汤姆	トムを見つける	Tom finden	Encontrando a Tom
+@vocab	みつける　よかった　うれしい　なく　げんき　おなか　すく　さむい　ありがとう　かえる
+
+adv010901-01	narrator		You go to the cave. You call Tom's name.	你们来到洞穴。你们叫汤姆的名字。	洞窟に行きました。トムの名前を呼びました。	Ihr geht zur Höhle. Ihr ruft Toms Namen.	Vais a la cueva. Llamáis al nombre de Tom.
+adv010901-02	emma		Tom! Tom! Are you there?	汤姆！汤姆！你在那里吗？	トム！トム！そこにいますか？	Tom! Tom! Bist du da?	¡Tom! ¡Tom! ¿Estás ahí?
+adv010901-03	tom		Yes! I am here! Is someone there?	是的！我在这里！有人在那里吗？	はい！ここにいます！誰かいますか？	Ja! Ich bin hier! Ist jemand da?	¡Sí! ¡Estoy aquí! ¿Hay alguien ahí?
+adv010901-04	player		Yes! We are adventurers from the guild. We came to find you.	是的！我们是公会的冒险者。我们来找你的。	はい！ギルドから来た冒険者です。あなたを探しに来ました。	Ja! Wir sind Abenteurer von der Gilde. Wir kamen, um dich zu finden.	¡Sí! Somos aventureros del gremio. Venimos a buscarte.
+adv010901-05	tom		Oh! Thank you! Thank you so much!	哦！谢谢！非常感谢！	わあ！ありがとうございます！本当にありがとうございます！	Oh! Danke! Danke so sehr!	¡Oh! ¡Gracias! ¡Muchísimas gracias!
+adv010901-06	narrator		A small boy comes out of the cave. His face is dirty. His eyes are red.	一个小男孩从洞穴里走了出来。他的脸很脏。他的眼睛是红的。	小さな男の子が洞窟から出てきました。顔が汚れています。目が赤いです。	Ein kleiner Junge kommt aus der Höhle. Sein Gesicht ist schmutzig. Seine Augen sind rot.	Un niño pequeño sale de la cueva. Su cara está sucia. Sus ojos están rojos.
+adv010901-07	emma		Tom, are you okay? Are you hurt?	汤姆，你还好吗？你受伤了吗？	トム、大丈夫ですか？怪我をしていますか？	Tom, geht es dir gut? Bist du verletzt?	Tom, ¿estás bien? ¿Estás herido?
+adv010901-08	tom		I am okay. I am not hurt. But I am very hungry and cold.	我没事。我没有受伤。但我非常饿而且很冷。	大丈夫です。怪我はしていません。でも、とてもお腹がすいていて寒いです。	Mir geht es gut. Ich bin nicht verletzt. Aber ich bin sehr hungrig und kalt.	Estoy bien. No estoy herido. Pero tengo mucha hambre y frío.
+adv010901-09	player		I have some bread. Please eat.	我有些面包。请吃吧。	パンがあります。食べてください。	Ich habe etwas Brot. Bitte iss.	Tengo un poco de pan. Por favor, come.
+adv010901-10	tom		Thank you! This is very good.	谢谢！这非常好吃。	ありがとうございます！とてもおいしいです。	Danke! Das ist sehr gut.	¡Gracias! Esto está muy bueno.
+adv010901-11	emma		Tom, why did you go into the forest?	汤姆，你为什么进入森林？	トム、なぜ森に入ったのですか？	Tom, warum bist du in den Wald gegangen?	Tom, ¿por qué fuiste al bosque?
+adv010901-12	tom		I saw a big white bird. It was very beautiful. I wanted to follow it.	我看到了一只大白鸟。它非常漂亮。我想跟着它。	大きな白い鳥を見ました。とてもきれいでした。追いかけたかったです。	Ich sah einen großen weißen Vogel. Er war sehr schön. Ich wollte ihm folgen.	Vi un pájaro blanco grande. Era muy hermoso. Quería seguirlo.
+adv010901-13	player		A white bird? That sounds strange. Did you see anything else?	一只白色的鸟？听起来很奇怪。你还看到了什么别的东西吗？	白い鳥？不思議ですね。他に何か見ましたか？	Ein weißer Vogel? Das klingt seltsam. Hast du noch etwas anderes gesehen?	¿Un pájaro blanco? Eso suena extraño. ¿Viste algo más?
+adv010901-14	tom		Yes. Near the cave, the ground was bright. Like a light. But then it went away.	是的。在洞穴附近，地面是亮的。像一道光。但后来它消失了。	はい。洞窟の近くで、地面が明るかったです。光みたいでした。でも、消えました。	Ja. In der Nähe der Höhle war der Boden hell. Wie ein Licht. Aber dann verschwand es.	Sí. Cerca de la cueva, el suelo estaba brillante. Como una luz. Pero luego desapareció.
+adv010901-15	emma		A bright light? Alex, do you think that was...?	一道亮光？阿历克斯，你认为那是...？	明るい光？アレックス、あれは...？	Ein helles Licht? Alex, glaubst du, das war...?	¿Una luz brillante? Alex, ¿crees que eso era...?
+adv010901-16a	player		The Crystal of Light! Maybe!	光之水晶！也许！	光のクリスタル！もしかしたら！	Das Kristall des Lichts! Vielleicht!	¡El Cristal de Luz! ¡Quizás!
+adv010901-16b	player		I do not know. Let us think about this later. First, let us take Tom home.	我不知道。我们以后再想这件事吧。首先，让我们把汤姆送回家。	わかりません。後で考えましょう。まず、トムを家に連れて帰りましょう。	Ich weiß es nicht. Lass uns das später bedenken. Zuerst bringen wir Tom nach Hause.	No lo sé. Pensemos en esto después. Primero, llevemos a Tom a casa.
+adv010901-17	tom		Please take me home. I want to see my mother.	请带我回家。我想见我妈妈。	家に連れて帰ってください。お母さんに会いたいです。	Bitte bringt mich nach Hause. Ich will meine Mutter sehen.	Por favor, llevadme a casa. Quiero ver a mi madre.
+
+adv010901-18q	question		What did Tom see near the cave?	汤姆在洞穴附近看到了什么？	トムは洞窟の近くで何を見ましたか？	Was sah Tom in der Nähe der Höhle?	¿Qué vio Tom cerca de la cueva?
+adv010901-19a	option	correct	A bright light on the ground.	地面上的亮光。	地面の明るい光です。	Ein helles Licht auf dem Boden.	Una luz brillante en el suelo.
+adv010901-19b	option		A big snake.	一条大蛇。	大きなヘビです。	Eine große Schlange.	Una serpiente grande.
+adv010901-19c	option		Another adventurer.	另一个冒险者。	別の冒険者です。	Ein anderer Abenteurer.	Otro aventurero.
+
+
+# ── Dialogue 5: Returning to the Village ─────────────────────────────────────
+@section	10	Returning to the Village	回到村子	村に帰る	Zurück ins Dorf	De vuelta al pueblo
+@vocab	かえる　よかった　ありがとう　うれしい　つかれた　いえ　はは　ちち　みんな　あんしん
+
+adv011001-01	narrator		You walk back through the forest with Tom.	你们带着汤姆穿过森林走回去。	トムと一緒に森を歩いて戻ります。	Ihr geht mit Tom durch den Wald zurück.	Caminais de vuelta por el bosque con Tom.
+adv011001-02	tom		I am sorry. I made everyone worried.	对不起。我让大家都担心了。	ごめんなさい。みんなを心配させてしまいました。	Es tut mir leid. Ich habe alle besorgt gemacht.	Lo siento. Preocupé a todos.
+adv011001-03	emma		It is okay, Tom. The important thing is you are safe.	没关系，汤姆。重要的是你安全了。	大丈夫ですよ、トム。大切なのは安全でいることです。	Es ist okay, Tom. Das Wichtigste ist, dass du sicher bist.	Está bien, Tom. Lo importante es que estás a salvo.
+adv011001-04	tom		Will my mother be angry?	我妈妈会生气吗？	お母さんは怒りますか？	Wird meine Mutter wütend sein?	¿Se enfadará mi madre?
+adv011001-05	player		I do not think so. She will be very happy to see you.	我不这么认为。她见到你会非常高兴的。	そうは思いません。あなたを見てとても喜ぶでしょう。	Das glaube ich nicht. Sie wird dich sehr gerne sehen.	No lo creo. Estará muy contenta de verte.
+adv011001-06	narrator		You arrive at the village. Tom's mother comes out of the house.	你们到达村庄。汤姆的妈妈从房子里走了出来。	村に着きました。トムのお母さんが家から出てきました。	Ihr kommt im Dorf an. Toms Mutter kommt aus dem Haus.	Llegáis al pueblo. La madre de Tom sale de la casa.
+adv011001-07	mother		TOM! Oh, Tom! You are here! You are safe!	汤姆！哦，汤姆！你在这里！你安全了！	トム！ああ、トム！いるじゃない！無事だったのね！	TOM! Oh, Tom! Du bist hier! Du bist sicher!	¡TOM! ¡Oh, Tom! ¡Estás aquí! ¡Estás a salvo!
+adv011001-08	tom		Mother! I am sorry. I was in the forest.	妈妈！对不起。我在森林里。	お母さん！ごめんなさい。森にいました。	Mutter! Es tut mir leid. Ich war im Wald.	¡Mamá! Lo siento. Estaba en el bosque.
+adv011001-09	mother		I know, I know. But you are safe now. That is good.	我知道，我知道。但你现在安全了。那很好。	わかってるわ、わかってる。でも無事だった。それでいいの。	Ich weiß, ich weiß. Aber du bist jetzt sicher. Das ist gut.	Lo sé, lo sé. Pero ahora estás a salvo. Eso es bueno.
+adv011001-10	mother		Thank you! Adventurers, thank you so much!	谢谢！冒险者们，非常感谢你们！	ありがとうございます！冒険者の皆さん、本当にありがとうございます！	Danke! Abenteurer, danke so sehr!	¡Gracias! ¡Aventureros, muchas gracias!
+adv011001-11	emma		We are happy Tom is safe.	我们很高兴汤姆平安无事。	トムが無事でよかったです。	Wir sind froh, dass Tom sicher ist.	Nos alegramos de que Tom esté a salvo.
+adv011001-12	player		Tom told us something interesting. He saw a light near the cave.	汤姆告诉了我们一件有趣的事。他在洞穴附近看到了一道光。	トムが面白いことを話してくれました。洞窟の近くで光を見たそうです。	Tom erzählte uns etwas Interessantes. Er sah ein Licht in der Nähe der Höhle.	Tom nos contó algo interesante. Vio una luz cerca de la cueva.
+adv011001-13	mother		A light? In the forest? That is strange.	一道光？在森林里？那很奇怪。	光？森の中で？それは不思議ですね。	Ein Licht? Im Wald? Das ist seltsam.	¿Una luz? ¿En el bosque? Eso es extraño.
+adv011001-14	emma		Yes. We will tell Leon about this. He will be interested.	是的。我们会把这件事告诉里昂。他会感兴趣的。	そうですね。レオンさんに話します。興味を持つでしょう。	Ja. Wir werden Leon davon erzählen. Er wird interessiert sein.	Sí. Le contaremos esto a León. Le interesará.
+adv011001-15	mother		Please take this. It is not much, but it is from our hearts.	请拿着这个。这不多，但这是我们的心意。	これを持っていってください。たくさんではありませんが、気持ちです。	Bitte nehmt das. Es ist nicht viel, aber es kommt von Herzen.	Por favor, tomad esto. No es mucho, pero viene de corazón.
+adv011001-16	narrator		She gives you bread and vegetables. You say goodbye and walk back to the guild.	她给了你们面包和蔬菜。你们道别，走回公会。	パンと野菜をもらいました。さよならを言って、ギルドに戻ります。	Sie gibt euch Brot und Gemüse. Ihr verabschiedet euch und geht zurück zur Gilde.	Os da pan y verduras. Os despedís y volvéis al gremio.
+
+adv011001-17q	question		What did Tom's mother give to the adventurers?	汤姆的妈妈给了冒险者们什么？	トムのお母さんは冒険者たちに何をあげましたか？	Was gab Toms Mutter den Abenteurern?	¿Qué le dio la madre de Tom a los aventureros?
+adv011001-18a	option	correct	Bread and vegetables.	面包和蔬菜。	パンと野菜です。	Brot und Gemüse.	Pan y verduras.
+adv011001-18b	option		Money.	钱。	お金です。	Geld.	Dinero.
+adv011001-18c	option		A new bag.	一个新包。	新しいバッグです。	Eine neue Tasche.	Una bolsa nueva.
+
+
+# ── Dialogue 6-10: Reporting Back to Leon ────────────────────────────────────
+@section	11	Reporting to Leon	向里昂汇报	レオンへの報告	Bericht an Leon	Informe a León
+@vocab	かえる　つかれた　むかし　ひかり　めずらしい　しらせる　しろ　とり　あかるい　ちかい　かんがえる
+
+adv011101-01	narrator		You arrive back at the guild. It is evening. Leon is waiting.	你们回到了公会。天色渐晚。里昂在等待。	ギルドに戻りました。夕方です。レオンさんが待っています。	Ihr kommt zurück zur Gilde. Es ist Abend. Leon wartet.	Volvéis al gremio. Es tarde. León está esperando.
+adv011101-02	leon		Welcome back! I was worried. Are you safe?	欢迎回来！我很担心。你们平安吗？	おかえり！心配していました。無事ですか？	Willkommen zurück! Ich machte mir Sorgen. Seid ihr sicher?	¡Bienvenidos! Estaba preocupado. ¿Estáis a salvo?
+adv011101-03	emma		Yes! We found the boy. His name is Tom. He is safe.	是的！我们找到了男孩。他叫汤姆。他平安无事。	はい！男の子を見つけました。トムといいます。無事です。	Ja! Wir haben den Jungen gefunden. Sein Name ist Tom. Er ist sicher.	¡Sí! Encontramos al niño. Su nombre es Tom. Está a salvo.
+adv011101-04	leon		Good! Very good! I am so glad. Tell me everything.	好！非常好！我非常高兴。把一切都告诉我。	よかった！とてもよかった！うれしいです。全部教えてください。	Gut! Sehr gut! Ich freue mich sehr. Erzählt mir alles.	¡Bien! ¡Muy bien! Estoy muy contento. Contadme todo.
+adv011101-05	player		We went to River Village. We met Tom's mother. She was very worried.	我们去了河边村。我们见到了汤姆的妈妈。她非常担心。	川の村に行きました。トムのお母さんに会いました。とても心配していました。	Wir gingen nach Flussdorf. Wir trafen Toms Mutter. Sie war sehr besorgt.	Fuimos al Pueblo del Río. Conocimos a la madre de Tom. Estaba muy preocupada.
+adv011101-06	emma		We found a note in the forest. Tom wrote it. He was in a cave near the river.	我们在森林里找到了一张便条。是汤姆写的。他在河边附近的一个山洞里。	森でメモを見つけました。トムが書きました。川の近くの洞窟にいました。	Wir fanden einen Zettel im Wald. Tom hat ihn geschrieben. Er war in einer Höhle in der Nähe des Flusses.	Encontramos una nota en el bosque. La escribió Tom. Estaba en una cueva cerca del río.
+adv011101-07	leon		Good work. And Tom is okay?	干得好。汤姆还好吗？	よくできました。トムは大丈夫ですか？	Gute Arbeit. Und Tom ist okay?	Buen trabajo. ¿Y Tom está bien?
+adv011101-08	player		Yes. He was hungry and cold. But he was not hurt.	是的。他饿了而且很冷。但他没有受伤。	はい。お腹がすいていて寒かったです。でも怪我はしていませんでした。	Ja. Er war hungrig und kalt. Aber er war nicht verletzt.	Sí. Tenía hambre y frío. Pero no estaba herido.
+adv011101-09	leon		I see. Thank you. Both of you.	我明白了。谢谢你们。你们两个。	わかりました。ありがとう。二人とも。	Verstehe. Danke euch. Euch beiden.	Entiendo. Gracias. A los dos.
+adv011101-10	emma		Leon, Tom told us something. He said he saw a bright light near the cave.	里昂，汤姆告诉了我们一件事。他说他在洞穴附近看到了一道亮光。	レオンさん、トムが何かを話してくれました。洞窟の近くで明るい光を見たそうです。	Leon, Tom erzählte uns etwas. Er sagte, er sah ein helles Licht in der Nähe der Höhle.	León, Tom nos contó algo. Dijo que vio una luz brillante cerca de la cueva.
+adv011101-11	leon		A bright light?! In the forest?	一道亮光？！在森林里？	明るい光？！森の中で？	Ein helles Licht?! Im Wald?	¿Una luz brillante?! ¿En el bosque?
+adv011101-12	player		Yes. He also saw a white bird. The bird went deep into the forest.	是的。他还看到了一只白色的鸟。这只鸟飞进了深林。	はい。白い鳥も見ました。鳥は森の奥に入りました。	Ja. Er sah auch einen weißen Vogel. Der Vogel ging tief in den Wald.	Sí. También vio un pájaro blanco. El pájaro se adentró en el bosque.
+adv011101-13	leon		A white bird and a bright light... I think this is important.	一只白色的鸟和一道亮光……我认为这很重要。	白い鳥と明るい光か…これは大切なことだと思います。	Ein weißer Vogel und ein helles Licht... Ich denke, das ist wichtig.	Un pájaro blanco y una luz brillante... Creo que esto es importante.
+adv011101-14	leon		The Crystal of Light is small and very bright. Could it be...?	光之水晶很小而且非常明亮。会不会是...？	光のクリスタルは小さくてとても明るいです。もしかして...？	Das Kristall des Lichts ist klein und sehr hell. Könnte es sein...?	El Cristal de Luz es pequeño y muy brillante. ¿Podría ser...?
+adv011101-15	emma		Is the crystal in the forest?	水晶在森林里吗？	クリスタルは森にありますか？	Ist das Kristall im Wald?	¿El cristal está en el bosque?
+adv011101-16	leon		I do not know. But tomorrow, we will go and look. You did very well today.	我不知道。但明天，我们要去看看。你们今天做得很好。	わかりません。でも明日、見に行きます。今日はとてもよくできました。	Ich weiß es nicht. Aber morgen werden wir gehen und nachsehen. Ihr habt heute sehr gut gemacht.	No lo sé. Pero mañana iremos a ver. Hoy lo hicisteis muy bien.
+adv011101-17	narrator		You go to bed. You are tired. But you are also excited. Tomorrow the real adventure begins.	你上床睡觉。你很累。但你也很兴奋。明天真正的冒险开始了。	ベッドに入りました。疲れました。でも、わくわくしています。明日、本当の冒険が始まります。	Ihr geht ins Bett. Ihr seid müde. Aber ihr seid auch aufgeregt. Morgen beginnt das echte Abenteuer.	Os vais a la cama. Estáis cansados. Pero también estáis emocionados. Mañana comienza la verdadera aventura.
+
+adv011101-18q	question		What does Leon think about the light in the forest?	里昂对森林里的光有什么看法？	レオンは森の光についてどう思いますか？	Was denkt Leon über das Licht im Wald?	¿Qué piensa León sobre la luz en el bosque?
+adv011101-19a	option	correct	It might be the Crystal of Light.	可能是光之水晶。	光のクリスタルかもしれません。	Es könnte das Kristall des Lichts sein.	Podría ser el Cristal de Luz.
+adv011101-19b	option		It is not important.	这不重要。	大切ではありません。	Es ist nicht wichtig.	No es importante.
+adv011101-19c	option		It is a dangerous animal.	这是一种危险的动物。	危ない動物です。	Es ist ein gefährliches Tier.	Es un animal peligroso.

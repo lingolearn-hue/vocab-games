@@ -1,0 +1,33 @@
+Campaign Converter — Setup Instructions
+========================================
+
+Run these commands once on your machine before using --lemmatize.
+
+1. Install Python packages
+--------------------------
+pip install spacy fugashi unidic-lite jieba
+
+2. Download spaCy language models
+-----------------------------------
+python -m spacy download de_core_news_sm
+python -m spacy download fr_core_news_sm
+python -m spacy download es_core_news_sm
+python -m spacy download ja_core_news_sm
+python -m spacy download zh_core_web_sm
+
+3. Usage
+---------
+# Convert without lemmatization (no models needed):
+python3 convert.py campaign_A0101.tsv
+python3 convert.py --all
+
+# Convert with lemmatization (requires models above):
+python3 convert.py campaign_A0101.tsv --lemmatize
+python3 convert.py --all --lemmatize
+
+4. Test lemmatizer directly
+-----------------------------
+python3 lemmatize.py de "Er isst einen großen Apfel."
+python3 lemmatize.py fr "Elle mange des pommes."
+python3 lemmatize.py ja "食べました"
+python3 lemmatize.py zh "他在吃苹果"

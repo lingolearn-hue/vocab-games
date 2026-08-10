@@ -1,0 +1,674 @@
+{
+  "id": "zh-grammar",
+  "language": "zh",
+  "native": "en",
+  "patterns": [
+    {
+      "id": "zh-g-001",
+      "level": "HSK1",
+      "category": "measure-words",
+      "title": "Measure word 个 (gè) — general",
+      "explanation": "个 (gè) is the most common and versatile measure word, used for people and many objects when no specific measure word applies.",
+      "type": "fill-blank",
+      "template": "我有一___ {[朋友|学生|苹果|老师|人]}。",
+      "hint": "个 (gè) is used with people and general objects.",
+      "distractors": [
+        "个",
+        "只",
+        "本",
+        "张"
+      ]
+    },
+    {
+      "id": "zh-g-002",
+      "level": "HSK1",
+      "category": "measure-words",
+      "title": "Measure word 只 (zhī) — animals",
+      "explanation": "只 (zhī) is used for small animals like cats, dogs, birds, and also for some body parts in pairs.",
+      "type": "fill-blank",
+      "template": "我有一___ {[猫|狗|鸟|鱼]}。",
+      "hint": "只 (zhī) is the measure word for small animals.",
+      "distractors": [
+        "只",
+        "个",
+        "本",
+        "张"
+      ]
+    },
+    {
+      "id": "zh-g-003",
+      "level": "HSK1",
+      "category": "measure-words",
+      "title": "Measure word 本 (běn) — books",
+      "explanation": "本 (běn) is used for books, notebooks, and bound publications.",
+      "type": "fill-blank",
+      "template": "我买了一___ {[书|字典|杂志|本子]}。",
+      "hint": "本 (běn) is the measure word for books and notebooks.",
+      "distractors": [
+        "本",
+        "个",
+        "张",
+        "只"
+      ]
+    },
+    {
+      "id": "zh-g-004",
+      "level": "HSK1",
+      "category": "basic-sentences",
+      "title": "是 (shì) sentences — X is Y",
+      "explanation": "是 (shì) means 'is/am/are'. Basic structure: Subject + 是 + Noun. Unlike English, no 'a/an/the' is needed.",
+      "type": "fill-blank",
+      "template": "我 ___ {[学生|老师|医生|他的朋友]}。",
+      "hint": "是 connects the subject to a noun or identity.",
+      "distractors": [
+        "是",
+        "有",
+        "在",
+        "叫"
+      ]
+    },
+    {
+      "id": "zh-g-005",
+      "level": "HSK1",
+      "category": "basic-sentences",
+      "title": "有 (yǒu) — to have / there is",
+      "explanation": "有 means both 'to have' (possession) and 'there is/are' (existence). Negation: 没有 (méiyǒu).",
+      "type": "fill-blank",
+      "template": "我 ___ 一个好朋友。",
+      "hint": "有 expresses possession. Its negation is 没有, never 不有.",
+      "distractors": [
+        "有",
+        "是",
+        "在",
+        "要"
+      ]
+    },
+    {
+      "id": "zh-g-006",
+      "level": "HSK1",
+      "category": "word-order",
+      "title": "Basic sentence order — Subject-Verb-Object",
+      "explanation": "Chinese follows Subject-Verb-Object (SVO) order, similar to English. Time and place words usually come before the verb.",
+      "type": "tile-order",
+      "tiles": [
+        "我",
+        "喜欢",
+        "吃",
+        "苹果"
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "zh-g-007",
+      "level": "HSK1",
+      "category": "word-order",
+      "title": "Time before verb",
+      "explanation": "Time expressions come before the verb in Chinese, not after as in English.",
+      "type": "tile-order",
+      "tiles": [
+        "我",
+        "每天",
+        "学习",
+        "中文"
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "zh-g-008",
+      "level": "HSK2",
+      "category": "particles",
+      "title": "Aspect particle 了 (le) — completed action",
+      "explanation": "了 after a verb marks a completed action. It does not mean past tense — it marks completion. 我吃了 = I ate / I have eaten.",
+      "type": "fill-blank",
+      "template": "我昨天吃___ {[苹果|饭|很多东西|一个苹果]}。",
+      "hint": "了 after the verb marks the action as completed.",
+      "distractors": [
+        "了",
+        "过",
+        "着",
+        "的"
+      ]
+    },
+    {
+      "id": "zh-g-009",
+      "level": "HSK2",
+      "category": "particles",
+      "title": "Aspect particle 过 (guò) — past experience",
+      "explanation": "过 marks that something has been experienced at some point in the past. 我去过北京 = I have been to Beijing (at some point).",
+      "type": "fill-blank",
+      "template": "我 {[去过北京|吃过北京烤鸭|看过这本书|学过日语]}。",
+      "hint": "过 marks a past experience, not just completion.",
+      "distractors": [
+        "了",
+        "过",
+        "着",
+        "的"
+      ]
+    },
+    {
+      "id": "zh-g-010",
+      "level": "HSK2",
+      "category": "particles",
+      "title": "的/地/得 — structural particles",
+      "explanation": "的 links modifier to noun (红色的苹果). 地 links adverb to verb (慢慢地走). 得 links verb to result/complement (跑得很快).",
+      "type": "fill-blank",
+      "template": "她跑___ {[很快|很慢|不快|很好]}。",
+      "hint": "得 connects a verb to its degree complement.",
+      "distractors": [
+        "得",
+        "地",
+        "的",
+        "了"
+      ]
+    },
+    {
+      "id": "zh-g-011",
+      "level": "HSK2",
+      "category": "particles",
+      "title": "的 — modifying nouns",
+      "explanation": "的 links an adjective or possessive to the noun that follows. 我的书 (my book), 漂亮的花 (beautiful flower).",
+      "type": "fill-blank",
+      "template": "{[我|他|漂亮|聪明]} ___ 朋友很好。",
+      "hint": "的 connects a modifier (adjective or possessive) to the following noun.",
+      "distractors": [
+        "的",
+        "地",
+        "得",
+        "了"
+      ]
+    },
+    {
+      "id": "zh-g-012",
+      "level": "HSK2",
+      "category": "negation",
+      "title": "不 vs 没 — negation",
+      "explanation": "不 (bù) negates habitual actions, states, and future intent. 没 (méi) negates completed actions and 有. Never use 不 with 有.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "我没有钱。",
+          "correct": true
+        },
+        {
+          "text": "我不有钱。",
+          "correct": false,
+          "error": "有 is always negated with 没, never 不。"
+        },
+        {
+          "text": "我不喜欢吃苹果。",
+          "correct": true
+        },
+        {
+          "text": "我没喜欢吃苹果。",
+          "correct": false,
+          "error": "习惯性的喜好用不，不用没。"
+        }
+      ]
+    },
+    {
+      "id": "zh-g-013",
+      "level": "HSK2",
+      "category": "measure-words",
+      "title": "Measure word 杯 (bēi) — cups/glasses",
+      "explanation": "杯 is used for cups, glasses, and beverages served in a cup or glass.",
+      "type": "fill-blank",
+      "template": "我想喝一___ {[水|茶|咖啡|果汁]}。",
+      "hint": "杯 is the measure word for drinks in a cup or glass.",
+      "distractors": [
+        "杯",
+        "瓶",
+        "碗",
+        "个"
+      ]
+    },
+    {
+      "id": "zh-g-014",
+      "level": "HSK3",
+      "category": "particles",
+      "title": "Aspect particle 着 (zhe) — ongoing state",
+      "explanation": "着 after a verb indicates a continuing state or action as background. 他站着 (he is standing). Often used with another verb: 站着说话。",
+      "type": "fill-blank",
+      "template": "他 {[站着|坐着|穿着外套|拿着书]} 说话。",
+      "hint": "着 indicates a sustained state that accompanies another action.",
+      "distractors": [
+        "着",
+        "了",
+        "过",
+        "的"
+      ]
+    },
+    {
+      "id": "zh-g-015",
+      "level": "HSK3",
+      "category": "ba-construction",
+      "title": "把 (bǎ) construction — disposal",
+      "explanation": "把 moves the object before the verb to emphasize what is done to it. Structure: Subject + 把 + Object + Verb + Complement. The verb cannot stand alone after 把.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "我把书放在桌子上了。",
+          "correct": true
+        },
+        {
+          "text": "我把书放了。",
+          "correct": false,
+          "error": "After 把, the verb needs a complement — 放 alone is insufficient."
+        },
+        {
+          "text": "我把作业做完了。",
+          "correct": true
+        },
+        {
+          "text": "我把他看见了。",
+          "correct": false,
+          "error": "Perception verbs like 看见 don't work with 把。"
+        }
+      ]
+    },
+    {
+      "id": "zh-g-016",
+      "level": "HSK3",
+      "category": "resultative-complements",
+      "title": "Resultative complements",
+      "explanation": "A resultative complement directly follows the verb to show the result of the action. 写完 (finish writing), 听懂 (understand by listening), 吃完 (finish eating).",
+      "type": "fill-blank",
+      "template": "我已经把作业做___ {[完|好|完了|好了]}。",
+      "hint": "完 means 'finished', 好 means 'done properly' — both are valid resultative complements.",
+      "distractors": [
+        "完",
+        "好",
+        "了",
+        "过"
+      ]
+    },
+    {
+      "id": "zh-g-017",
+      "level": "HSK3",
+      "category": "word-order",
+      "title": "Topic-comment structure",
+      "explanation": "Chinese frequently places the topic first, then comments on it. The topic is what the sentence is about; the comment says something about it.",
+      "type": "tile-order",
+      "tiles": [
+        "这本书",
+        "我",
+        "已经",
+        "看完了"
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "note": null
+        },
+        {
+          "order": [
+            1,
+            2,
+            3,
+            0
+          ],
+          "note": "SVO order without topic fronting is also correct."
+        }
+      ]
+    },
+    {
+      "id": "zh-g-018",
+      "level": "HSK3",
+      "category": "comparison",
+      "title": "Comparison with 比 (bǐ)",
+      "explanation": "Structure: A + 比 + B + Adjective. The adjective comes at the end. Do not add 更 (gèng) after 比 in standard comparisons.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "他比我高。",
+          "correct": true
+        },
+        {
+          "text": "他比我更高。",
+          "correct": false,
+          "error": "更 is redundant after 比 — the comparison is already expressed by 比."
+        },
+        {
+          "text": "他比我高一点儿。",
+          "correct": true
+        },
+        {
+          "text": "他比我很高。",
+          "correct": false,
+          "error": "很 cannot be used with 比 comparisons. Use 高多了 or 高一点儿 instead."
+        }
+      ]
+    },
+    {
+      "id": "zh-g-019",
+      "level": "HSK4",
+      "category": "particles",
+      "title": "Sentence-final 吧 (ba) — suggestion or assumption",
+      "explanation": "吧 softens statements into assumptions (I assume...) or suggestions (let's...). It seeks confirmation or agreement.",
+      "type": "fill-blank",
+      "template": "你是学生{[吧|呢|啊|的]}？",
+      "hint": "吧 expresses an assumption seeking confirmation — like 'right?' or 'I suppose'.",
+      "distractors": [
+        "吧",
+        "呢",
+        "啊",
+        "了"
+      ]
+    },
+    {
+      "id": "zh-g-020",
+      "level": "HSK4",
+      "category": "potential-complements",
+      "title": "Potential complements — 得/不 between verb and result",
+      "explanation": "Insert 得 (possibility) or 不 (impossibility) between verb and complement. 做得完 (can finish), 做不完 (can't finish).",
+      "type": "fill-blank",
+      "template": "这本书太难了，我看___ {[不懂|得懂|不完|得完]}。",
+      "hint": "不 inserted between verb and complement expresses impossibility.",
+      "distractors": [
+        "不懂",
+        "得懂",
+        "了",
+        "过"
+      ]
+    },
+    {
+      "id": "zh-g-021",
+      "level": "HSK4",
+      "category": "bei-construction",
+      "title": "被 (bèi) — passive construction",
+      "explanation": "被 introduces the agent in a passive sentence, often with a negative or undesirable outcome. Structure: Subject + 被 + Agent + Verb + Complement.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "我的钱包被人偷了。",
+          "correct": true
+        },
+        {
+          "text": "我被他批评了。",
+          "correct": true
+        },
+        {
+          "text": "我被他爱了。",
+          "correct": false,
+          "error": "被 is typically used for undesirable or uncontrolled events — positive emotions like 爱 sound unnatural."
+        },
+        {
+          "text": "这个问题被我解决了。",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "zh-g-022",
+      "level": "HSK5",
+      "category": "complex-sentences",
+      "title": "尽管…还是 — concessive clause",
+      "explanation": "尽管 (jǐnguǎn) means 'although/even though', paired with 还是 or 仍然 in the main clause for contrast.",
+      "type": "fill-blank",
+      "template": "尽管很累，他___ {[还是坚持工作|仍然继续学习|还是去了|仍然没有放弃]}。",
+      "hint": "尽管 introduces a concession; 还是/仍然 in the main clause means 'still/nevertheless'.",
+      "distractors": [
+        "还是",
+        "但是",
+        "所以",
+        "因此"
+      ]
+    },
+    {
+      "id": "zh-g-023",
+      "level": "HSK5",
+      "category": "complex-sentences",
+      "title": "既然…就 — since/given that",
+      "explanation": "既然 (jìrán) means 'since' or 'given that' — a logical conclusion follows. Structure: 既然 + reason, Subject + 就 + conclusion.",
+      "type": "fill-blank",
+      "template": "既然你已经决定了，___ 去做吧。",
+      "hint": "就 in the main clause introduces the logical consequence.",
+      "distractors": [
+        "就",
+        "还",
+        "也",
+        "都"
+      ]
+    },
+    {
+      "id": "zh-g-024",
+      "level": "HSK4",
+      "category": "complex-sentences",
+      "title": "虽然…但是 — although…but",
+      "explanation": "虽然 introduces a concession; 但是 introduces the main point. They always work as a pair. 虽然天很冷，但是我还是去跑步了。",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "虽然他很累，但是他还是坚持工作。",
+          "correct": true
+        },
+        {
+          "text": "虽然他很累，所以他还是坚持工作。",
+          "correct": false,
+          "error": "虽然搭配但是，不搭配所以。所以表示结果，但是表示转折。"
+        },
+        {
+          "text": "他虽然很忙，但是从不忘记家人的生日。",
+          "correct": true
+        },
+        {
+          "text": "但是他很忙，虽然从不忘记家人的生日。",
+          "correct": false,
+          "error": "虽然要放在让步从句的开头，但是引导主句。语序不对。"
+        }
+      ]
+    },
+    {
+      "id": "zh-g-025",
+      "level": "HSK4",
+      "category": "word-order",
+      "title": "Topic-comment structure — 话题在前",
+      "explanation": "Chinese often fronts a topic that the sentence then comments on. 这道菜，我吃不惯。(As for this dish, I can't get used to it.)",
+      "type": "tile-order",
+      "tiles": [
+        "这本书",
+        "我",
+        "已经",
+        "看过了"
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "note": null
+        },
+        {
+          "order": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "note": "Subject-first order is also natural: 我已经看过这本书了。"
+        }
+      ]
+    },
+    {
+      "id": "zh-g-026",
+      "level": "HSK5",
+      "category": "complex-sentences",
+      "title": "既然…就 — since…then",
+      "explanation": "既然 accepts a premise as given; 就 draws a logical conclusion. 既然你不喜欢，就不用去了。Since you don't like it, you don't need to go.",
+      "type": "fill-blank",
+      "template": "既然你已经决定了，___ 好好去做吧。",
+      "hint": "既然…就 accepts a premise and draws a conclusion.",
+      "distractors": [
+        "就",
+        "但是",
+        "所以",
+        "虽然"
+      ]
+    },
+    {
+      "id": "zh-g-027",
+      "level": "HSK5",
+      "category": "complex-sentences",
+      "title": "宁可…也不 — would rather…than",
+      "explanation": "宁可 expresses a strong preference, even if unfavorable. 宁可吃苦，也不放弃。Would rather suffer hardship than give up.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "他宁可走路，也不坐公共汽车。",
+          "correct": true
+        },
+        {
+          "text": "他宁可走路，不也坐公共汽车。",
+          "correct": false,
+          "error": "正确结构是：宁可…也不…。'不也'语序错误。"
+        },
+        {
+          "text": "宁可没有钱，也不愿意失去自由。",
+          "correct": true
+        },
+        {
+          "text": "宁可没有钱，所以不愿意失去自由。",
+          "correct": false,
+          "error": "宁可搭配也不，不搭配所以。"
+        }
+      ]
+    },
+    {
+      "id": "zh-g-028",
+      "level": "HSK5",
+      "category": "particles",
+      "title": "被 passive with agent — 被+agent+VP",
+      "explanation": "The 被 construction marks the subject as receiver of an action. Agent is optional but usually named for specific events. 这本书被他借走了。",
+      "type": "tile-order",
+      "tiles": [
+        "这扇窗户",
+        "被风",
+        "吹开了"
+      ],
+      "answers": [
+        {
+          "order": [
+            0,
+            1,
+            2
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "zh-g-029",
+      "level": "HSK5",
+      "category": "complex-sentences",
+      "title": "不管…都 — no matter…still",
+      "explanation": "不管 introduces a concession of any condition; 都 shows the result holds regardless. 不管多难，都要坚持。No matter how hard, still must persist.",
+      "type": "fill-blank",
+      "template": "不管遇到什么困难，我们___ 不能放弃。",
+      "hint": "不管…都 = no matter…still.",
+      "distractors": [
+        "都",
+        "也",
+        "就",
+        "才"
+      ]
+    },
+    {
+      "id": "zh-g-030",
+      "level": "HSK6",
+      "category": "complex-sentences",
+      "title": "固然…但 — granted…but",
+      "explanation": "固然 concedes a point more formally than 虽然. Often used in written/argumentative contexts. 效率固然重要，质量更不可忽视。Efficiency is admittedly important, but quality must not be neglected.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "技术固然重要，制度设计同样不可或缺。",
+          "correct": true
+        },
+        {
+          "text": "技术虽然重要，制度设计同样不可或缺。",
+          "correct": true
+        },
+        {
+          "text": "技术固然重要，而且制度设计同样不可或缺。",
+          "correct": false,
+          "error": "固然引导让步，后面应用'但/却/然而'等转折词，而不是'而且'（表并列）。"
+        },
+        {
+          "text": "此举固然有利，却也存在潜在风险。",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "zh-g-031",
+      "level": "HSK6",
+      "category": "word-order",
+      "title": "Degree complement — 程度补语",
+      "explanation": "Degree complements after 得 describe HOW an action is done. 她唱得很好听。The complement comes after 得, not before the verb.",
+      "type": "pick-correct",
+      "sentences": [
+        {
+          "text": "他跑得很快。",
+          "correct": true
+        },
+        {
+          "text": "他很快跑得。",
+          "correct": false,
+          "error": "程度补语结构是：动词+得+补语。很快要放在得后面。"
+        },
+        {
+          "text": "她说得清清楚楚。",
+          "correct": true
+        },
+        {
+          "text": "她清清楚楚说得。",
+          "correct": false,
+          "error": "正确顺序：说得清清楚楚。补语在得后面。"
+        }
+      ]
+    },
+    {
+      "id": "zh-g-032",
+      "level": "HSK6",
+      "category": "particles",
+      "title": "就 for emphasis or immediacy",
+      "explanation": "就 has many uses: immediacy (马上就来 coming right away), restriction (就这一个 only this one), concession (再难就难了 let it be hard), and logical consequence (所以就 so then).",
+      "type": "fill-blank",
+      "template": "他一回家___ 开始工作，连饭都没吃。",
+      "hint": "一…就 = as soon as…immediately.",
+      "distractors": [
+        "就",
+        "才",
+        "都",
+        "便"
+      ]
+    }
+  ]
+}

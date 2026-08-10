@@ -1,0 +1,181 @@
+{
+  "language": "ja",
+  "native": "en",
+  "dialogues": [
+    {
+      "id": "ja-d1", "title": "いちばで", "titleTranslation": "At the Market",
+      "level": "N5", "type": "observe", "tags": ["shopping", "beginner", "observe"],
+      "speakers": ["けんた", "うりて"],
+      "turns": [
+        { "type": "line", "speaker": "けんた", "text": "すみません！りんごは いくらですか？", "translation": "Excuse me! How much are the apples?" },
+        { "type": "line", "speaker": "うりて", "text": "いらっしゃいませ！ひとつ ひゃくえんです。", "translation": "Welcome! They are one hundred yen each." },
+        { "type": "question", "prompt": "How much is one apple?", "options": [
+          { "text": "Fifty yen", "correct": false, "feedback": "いいえ。りんごは ひとつ ひゃくえんです。" },
+          { "text": "One hundred yen", "correct": true, "feedback": "そうです！ひとつ ひゃくえんです。" },
+          { "text": "Two hundred yen", "correct": false, "feedback": "いいえ。ひゃくえんです。にひゃくえんじゃ ありません。" }
+        ]},
+        { "type": "line", "speaker": "けんた", "text": "じゃあ、みっつ ください。", "translation": "Then, I'll take three, please." },
+        { "type": "line", "speaker": "うりて", "text": "ありがとうございます。さんびゃくえん です。", "translation": "Thank you. That is three hundred yen." },
+        { "type": "question", "prompt": "How much does Kenta pay in total?", "options": [
+          { "text": "One hundred yen", "correct": false, "feedback": "いいえ。みっつ かいましたから、さんびゃくえんです。" },
+          { "text": "Three hundred yen", "correct": true, "feedback": "そうです！ひゃくえん かける みっつ は さんびゃくえん。" },
+          { "text": "Five hundred yen", "correct": false, "feedback": "いいえ。さんびゃくえんです。" }
+        ]},
+        { "type": "line", "speaker": "けんた", "text": "はい、どうぞ。ありがとう！", "translation": "Here you are. Thank you!" },
+        { "type": "line", "speaker": "うりて", "text": "ありがとうございました！またどうぞ！", "translation": "Thank you very much! Please come again!" }
+      ]
+    },
+    {
+      "id": "ja-d2", "title": "ともだちにあう", "titleTranslation": "Meeting a Friend",
+      "level": "N4", "type": "observe", "tags": ["social", "beginner", "observe"],
+      "speakers": ["さくら", "たろう"],
+      "turns": [
+        { "type": "line", "speaker": "さくら", "text": "こんにちは！わたしは さくらです。あなたの なまえは なんですか？", "translation": "Hello! I'm Sakura. What is your name?" },
+        { "type": "line", "speaker": "たろう", "text": "こんにちは さくらさん！ぼくは たろうです。どこから きましたか？", "translation": "Hello Sakura! I'm Taro. Where did you come from?" },
+        { "type": "line", "speaker": "さくら", "text": "とうきょうから きました。たろうさんは？", "translation": "I came from Tokyo. How about you, Taro?" },
+        { "type": "question", "prompt": "Where is Sakura from?", "options": [
+          { "text": "Osaka", "correct": false, "feedback": "いいえ。さくらさんは とうきょうから きました。" },
+          { "text": "Tokyo", "correct": true, "feedback": "そうです！さくらさんは とうきょうから きました。" },
+          { "text": "Kyoto", "correct": false, "feedback": "いいえ。とうきょうです。きょうとじゃ ありません。" }
+        ]},
+        { "type": "line", "speaker": "たろう", "text": "ぼくは おおさかから きました。なにを べんきょうして いますか？", "translation": "I came from Osaka. What are you studying?" },
+        { "type": "line", "speaker": "さくら", "text": "にほんごと えいごを べんきょうして います。たろうさんは？", "translation": "I'm studying Japanese and English. How about you, Taro?" },
+        { "type": "question", "prompt": "How many languages is Sakura studying?", "options": [
+          { "text": "One", "correct": false, "feedback": "いいえ。ふたつです：にほんごと えいご。" },
+          { "text": "Two", "correct": true, "feedback": "そうです！にほんごと えいごの ふたつです。" },
+          { "text": "Three", "correct": false, "feedback": "いいえ。ふたつだけです。" }
+        ]},
+        { "type": "line", "speaker": "たろう", "text": "ぼくも えいごを べんきょうして います！いっしょに れんしゅうしましょう！", "translation": "I'm also studying English! Let's practise together!" },
+        { "type": "line", "speaker": "さくら", "text": "いいですね！よろしくおねがいします！", "translation": "That sounds great! Nice to meet you!" }
+      ]
+    },
+    {
+      "id": "ja-d3", "title": "カフェで ちゅうもん", "titleTranslation": "Ordering at a Café",
+      "level": "N4", "type": "choice", "tags": ["food", "cafe", "beginner", "choice"],
+      "speakers": ["てんいん", "あなた"],
+      "turns": [
+        { "type": "line", "speaker": "てんいん", "text": "いらっしゃいませ！ごちゅうもんは おきまりですか？", "translation": "Welcome! Have you decided on your order?" },
+        { "type": "choice", "prompt": "なにを たのみますか？", "promptTranslation": "What do you order?",
+          "options": [
+            { "text": "ホットコーヒーを ひとつ ください。", "translation": "One hot coffee, please.", "response": "かしこまりました。ミルクや さとうは いりますか？", "responseTranslation": "Certainly. Would you like milk or sugar?" },
+            { "text": "アイスティーと ケーキを おねがいします。", "translation": "An iced tea and a cake please.", "response": "ありがとうございます。ケーキは チョコレートと ストロベリーが あります。どちらに しますか？", "responseTranslation": "Thank you. For cake we have chocolate and strawberry. Which would you like?" },
+            { "text": "みずだけで いいです。", "translation": "Just water is fine.", "response": "わかりました。おみずは セルフサービスです。あそこの きかいで どうぞ。", "responseTranslation": "Understood. Water is self-service. Please use the machine over there." }
+          ]
+        },
+        { "type": "line", "speaker": "てんいん", "text": "しょうしょう おまちください。すぐ おもちします。", "translation": "Please wait a moment. I'll bring it right away." },
+        { "type": "question", "prompt": "What does the staff member say they will do?", "options": [
+          { "text": "Ask the manager", "correct": false, "feedback": "いいえ。すぐ もってくると いいました。" },
+          { "text": "Bring the order right away", "correct": true, "feedback": "そうです！すぐ おもちします と いいました。" },
+          { "text": "Close the café", "correct": false, "feedback": "いいえ。すぐ もってくると いいました。" }
+        ]}
+      ]
+    },
+    {
+      "id": "ja-d4", "title": "みちを きく", "titleTranslation": "Asking for Directions",
+      "level": "N3", "type": "choice", "tags": ["navigation", "city", "intermediate", "choice"],
+      "speakers": ["つうこうにん", "あなた"],
+      "turns": [
+        { "type": "line", "speaker": "つうこうにん", "text": "すみません、えきは どこですか？まよって しまいました。", "translation": "Excuse me, where is the station? I've got lost." },
+        { "type": "choice", "prompt": "どう こたえますか？", "promptTranslation": "How do you reply?",
+          "options": [
+            { "text": "まっすぐ いって、ふたつめの かどを みぎに まがると えきです。", "translation": "Go straight ahead and turn right at the second corner — that's the station.", "response": "ありがとうございます！あるいて どのくらい かかりますか？", "responseTranslation": "Thank you very much! About how long does it take to walk?" },
+            { "text": "すみません、わたしも この あたりは くわしくないんです。", "translation": "I'm sorry, I'm not very familiar with this area either.", "response": "そうですか。では ほかの ひとに きいてみます。ありがとう！", "responseTranslation": "I see. Then I'll try asking someone else. Thank you!" },
+            { "text": "えきは ちょっと とおいので、バスに のったほうが いいですよ。", "translation": "The station is a bit far, so you'd better take the bus.", "response": "そうですか。バスていは どこですか？", "responseTranslation": "I see. Where is the bus stop?" }
+          ]
+        },
+        { "type": "line", "speaker": "つうこうにん", "text": "みつかりました！ほんとうに ありがとう ございました！", "translation": "I found it! Thank you so very much!" },
+        { "type": "question", "prompt": "Why did the passer-by stop you?", "options": [
+          { "text": "To sell something", "correct": false, "feedback": "いいえ。えきへの みちを きいていました。" },
+          { "text": "They were lost and looking for the station", "correct": true, "feedback": "そうです！まよって しまって、えきを さがしていました。" },
+          { "text": "To have a chat", "correct": false, "feedback": "いいえ。えきへの いきかたを きいて いました。" }
+        ]}
+      ]
+    },
+    {
+      "id": "ja-d5", "title": "アパートの ないけん", "titleTranslation": "Viewing a Flat",
+      "level": "N3", "type": "observe", "tags": ["housing", "intermediate", "observe"],
+      "speakers": ["おおやさん", "にゅうきょしゃ"],
+      "turns": [
+        { "type": "line", "speaker": "おおやさん", "text": "この アパートは ワンルームで、かんりひ こみで まいつき ごまんえんです。", "translation": "This apartment is a studio flat — fifty thousand yen per month including management fees." },
+        { "type": "line", "speaker": "にゅうきょしゃ", "text": "すいどうだいや でんきだいも はいって いますか？", "translation": "Does that include water and electricity too?" },
+        { "type": "line", "speaker": "おおやさん", "text": "いいえ、でんきと ガスは べつです。すいどうだいは かんりひに はいって います。", "translation": "No, electricity and gas are separate. Water is included in the management fee." },
+        { "type": "question", "prompt": "What is separate from the rent?", "options": [
+          { "text": "Water only", "correct": false, "feedback": "いいえ。すいどうは かんりひに はいっています。でんきと ガスが べつです。" },
+          { "text": "Electricity and gas", "correct": true, "feedback": "そうです！でんきと ガスは べつばらいです。" },
+          { "text": "Everything is extra", "correct": false, "feedback": "いいえ。すいどうは はいっています。べつなのは でんきと ガスです。" }
+        ]},
+        { "type": "line", "speaker": "にゅうきょしゃ", "text": "ちかくに スーパーや びょういんは ありますか？", "translation": "Are there supermarkets or hospitals nearby?" },
+        { "type": "line", "speaker": "おおやさん", "text": "はい。あるいて ごふんの ところに スーパーが あります。びょういんは ちかてつで ふたえきです。", "translation": "Yes. There is a supermarket a five-minute walk away. The hospital is two stations by subway." },
+        { "type": "question", "prompt": "How far is the supermarket?", "options": [
+          { "text": "Two stations by subway", "correct": false, "feedback": "いいえ。それは びょういんです。スーパーは あるいて ごふんです。" },
+          { "text": "A five-minute walk", "correct": true, "feedback": "そうです！スーパーは あるいて ごふんの ところに あります。" },
+          { "text": "Ten minutes by bus", "correct": false, "feedback": "いいえ。あるいて ごふんです。" }
+        ]},
+        { "type": "line", "speaker": "にゅうきょしゃ", "text": "とても いいですね。ぜひ かりたいです！", "translation": "That's really good. I'd love to rent it!" }
+      ]
+    },
+    {
+      "id": "ja-d6", "title": "しゅうしょく めんせつ", "titleTranslation": "Job Interview",
+      "level": "N3", "type": "choice", "tags": ["work", "intermediate", "choice"],
+      "speakers": ["めんせつかん", "あなた"],
+      "turns": [
+        { "type": "line", "speaker": "めんせつかん", "text": "では、まず じこしょうかいを おねがいします。", "translation": "Right then, please introduce yourself first." },
+        { "type": "choice", "prompt": "どう じこしょうかいしますか？", "promptTranslation": "How do you introduce yourself?",
+          "options": [
+            { "text": "はい。わたしは えいごと スペインごが はなせます。かいがいの クライアントとの きょうりょくも けいけんが あります。", "translation": "Yes. I can speak English and Spanish. I also have experience collaborating with overseas clients.", "response": "なるほど。たいへん けいけん ゆたかですね。どのような プロジェクトが いちばん きにのこっていますか？", "responseTranslation": "I see. You have a wealth of experience. Which project has left the strongest impression on you?" },
+            { "text": "ことしの しゅうしょく よていです。まだ けいけんは すくないですが、まなぶ いよくは だれにも まけません。", "translation": "I'm graduating this year. I don't have much experience yet, but my willingness to learn is second to none.", "response": "がくせい じだいに とくに いっしょうけんめいに とりくんだ ことを おしえてください。", "responseTranslation": "Please tell me what you devoted yourself to most earnestly during your student days." },
+            { "text": "とくに おおきな じっせきは ありませんが、まじめに はたらきます。", "translation": "I don't have any particularly big achievements, but I will work diligently.", "response": "そうですか。では、あなたの ちょうしょを ひとつ おしえてください。", "responseTranslation": "I see. Then please tell me one of your strengths." }
+          ]
+        },
+        { "type": "line", "speaker": "めんせつかん", "text": "ありがとうございます。けっかは いしゅうかん いないに ごれんらくします。", "translation": "Thank you. We will contact you within a week with the results." },
+        { "type": "question", "prompt": "When will the candidate hear back?", "options": [
+          { "text": "Tomorrow", "correct": false, "feedback": "いいえ。いしゅうかん いない だそうです。" },
+          { "text": "Within a week", "correct": true, "feedback": "そうです！いしゅうかん いないに れんらくします と いいました。" },
+          { "text": "Next month", "correct": false, "feedback": "いいえ。いしゅうかん いないです。" }
+        ]}
+      ]
+    },
+    {
+      "id": "ja-d7", "title": "テクノロジーの かつよう", "titleTranslation": "Using Technology",
+      "level": "N2", "type": "observe", "tags": ["technology", "society", "advanced", "observe"],
+      "speakers": ["せんせい", "がくせい"],
+      "turns": [
+        { "type": "line", "speaker": "せんせい", "text": "じんこうちのうが いがくや きょういくの ぶんやで かつようされています。あなたは どのような えいきょうが あると おもいますか？", "translation": "AI is being used in the fields of medicine and education. What kind of impact do you think it has?" },
+        { "type": "line", "speaker": "がくせい", "text": "いがくでは びょうきの はやい はっけんや ちりょうほうの さいてきかに やくだって います。きょういくでは こせいに あわせた がくしゅうを じつげんできると おもいます。", "translation": "In medicine, it helps with early disease detection and optimising treatments. In education, I think it can realise learning tailored to each individual." },
+        { "type": "question", "prompt": "What benefit in education does the student mention?", "options": [
+          { "text": "Replacing teachers entirely", "correct": false, "feedback": "いいえ。こせいに あわせた がくしゅうの はなしです。" },
+          { "text": "Learning tailored to each individual", "correct": true, "feedback": "そうです！こせいに あわせた がくしゅうが できると いいました。" },
+          { "text": "Reducing the cost of textbooks", "correct": false, "feedback": "いいえ。こせいべつの がくしゅうに ついて はなして います。" }
+        ]},
+        { "type": "line", "speaker": "せんせい", "text": "いっぽう、プライバシーや こようへの えいきょうも しんぱい されています。この てんについては どう おもいますか？", "translation": "On the other hand, there are concerns about privacy and impact on employment. What do you think about this?" },
+        { "type": "line", "speaker": "がくせい", "text": "ぎじゅつの はったつが あたらしい しごとを うみだしてきた れきしが あります。きせいと きょういくを くみあわせて、えきょうを おさえながら めりっとを さいだいかする アプローチが ひつようだと おもいます。", "translation": "There is a history of technological development creating new jobs. I think an approach is needed that combines regulation and education to maximise the benefits while controlling the impact." },
+        { "type": "question", "prompt": "What two things does the student say should be combined?", "options": [
+          { "text": "Investment and marketing", "correct": false, "feedback": "いいえ。きせいと きょういくの くみあわせを ていあん しています。" },
+          { "text": "Regulation and education", "correct": true, "feedback": "そうです！きせいと きょういくを くみあわせる ことが ひつようだと いいました。" },
+          { "text": "Speed and efficiency", "correct": false, "feedback": "いいえ。きせいと きょういくです。" }
+        ]}
+      ]
+    },
+    {
+      "id": "ja-d8", "title": "けいやくこうしょう", "titleTranslation": "Contract Negotiation",
+      "level": "N1", "type": "choice", "tags": ["work", "negotiation", "advanced", "choice"],
+      "speakers": ["じょうし", "あなた"],
+      "turns": [
+        { "type": "line", "speaker": "じょうし", "text": "ことしの せいかは たいへん すばらしかった。ぜひ けいやくを こうしん してほしいが、きゅうよ こうじょうは かぎられる かも しれない。", "translation": "Your performance this year was truly outstanding. We'd very much like you to renew your contract, but the salary increase may be limited." },
+        { "type": "choice", "prompt": "どう こたえますか？", "promptTranslation": "How do you respond?",
+          "options": [
+            { "text": "ありがとうございます。ぜひ こうしんしたいですが、しじょう すいじゅんを ふまえた きゅうよの けんとうを おねがいしたいです。", "translation": "Thank you. I'd very much like to renew, but I'd like to request that salary be reconsidered in light of market levels.", "response": "わかった。たいたい どのくらいを きたいしているか きかせてもらえますか？", "responseTranslation": "I understand. Could you tell me roughly what you're expecting?" },
+            { "text": "きゅうよより も、しごとの やりがいや ちょうせんの きかいを じゅうしして います。", "translation": "I value the satisfaction of the work and opportunities for challenge more than salary.", "response": "それは たのもしい。では、あたらしい プロジェクトへの ハイアサインも かんがえましょう。", "responseTranslation": "That's reassuring. Then let us also consider assigning you to new projects." },
+            { "text": "こうじょうが すくないなら、ほかの きかいも みてみる かも しれません。", "translation": "If the increase is small, I might look at other opportunities.", "response": "わかりました。じょうきに かけあって、なるべくよい じょうけんを ひきだすよう どりょくします。", "responseTranslation": "I understand. I'll negotiate with management and do my best to get you the best possible terms." }
+          ]
+        },
+        { "type": "line", "speaker": "じょうし", "text": "あなたの じょうきょうは じょうきに つたえます。できるかぎり いい じょうけんを とりつけるよう がんばります。", "translation": "I will convey your situation to management. I will do my best to secure the best possible terms." },
+        { "type": "question", "prompt": "What does the manager promise to do?", "options": [
+          { "text": "Offer an immediate raise", "correct": false, "feedback": "いいえ。じょうきに かけあうと いいました。" },
+          { "text": "Report to management and try to get better terms", "correct": true, "feedback": "そうです！じょうきに つたえて、いい じょうけんを とりつけると いいました。" },
+          { "text": "End the contract", "correct": false, "feedback": "いいえ。けいやくを こうしん したがって います。" }
+        ]}
+      ]
+    }
+  ]
+}

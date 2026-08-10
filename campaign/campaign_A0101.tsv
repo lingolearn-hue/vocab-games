@@ -1,0 +1,254 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# adv0101 — The Crystal of Light · Chapter 01: Guild Initiation
+# ══════════════════════════════════════════════════════════════════════════════
+
+@columns	id	speaker	cmd	en	zh	ja	de	es
+
+@chapter	01	Guild Initiation	公会入团	ギルドへの入団	Gildeneintritt	Iniciación en el gremio	N5
+@artifact	🏅	Apprentice Badge	は・です・か・も
+
+@story_intro	The Crystal of Light has disappeared. Strange things are happening. The Adventurer Guild is looking for a new apprentice. That is you.	光之水晶消失了。奇怪的事情正在发生。冒险者公会在寻找新学徒。那就是你。	光のクリスタルが消えた。王国では不思議なことが起きている。冒険者ギルドが新しい見習いを探している。それが、あなただ。	Das Kristall des Lichts ist verschwunden. Seltsame Dinge geschehen. Die Abenteurergilde sucht einen neuen Lehrling. Das bist du.	El Cristal de Luz ha desaparecido. Cosas extrañas están sucediendo. El gremio de aventureros busca un nuevo aprendiz. Ese eres tú.
+@story_outro	You have become a guild apprentice. You still know nothing. But the journey has already begun.	你成为了公会的学徒。你还什么都不知道。但旅程已经开始了。	あなたはギルドの見習いになった。まだ何もわからない。でも、旅はもう始まっている。	Du bist ein Gildenlehrling geworden. Du weißt noch nichts. Aber die Reise hat bereits begonnen.	Te has convertido en aprendiz del gremio. Todavía no sabes nada. Pero el viaje ya ha comenzado.
+
+
+# ── Section 1: The Letter of Invitation ──────────────────────────────────────
+@section	01	The Letter of Invitation	邀请信	招待状	Der Einladungsbrief	La carta de invitación
+@vocab	こんにちは	ありがとう	はい	いいえ	わたし	なまえ	ひと	がくせい	せんせい	ともだち	にほん	どこ	なに	いくら	おはようございます	こんばんは	すみません	はじめまして
+
+@passage	01	Letter from the Guild Master	来自公会长的信	公会マスターからの手紙	Brief vom Gildenmeister	Carta del maestro del gremio
+
+@passage_line	Dear Adventurer,	亲爱的冒险者，	冒険者へ、	Lieber Abenteurer,	Querido aventurero,
+@passage_line	My name is Leon. I am the Guild Master of the Adventurer Guild.	我叫里昂。我是冒险者公会的公会长。	わたしの名前はレオンです。冒険者ギルドのギルドマスターです。	Mein Name ist Leon. Ich bin der Gildenmeister der Abenteurergilde.	Mi nombre es León. Soy el maestro del gremio de aventureros.
+@passage_line	The Adventurer Guild is a good place.	冒险者公会是个好地方。	冒険者ギルドはいい所です。	Die Abenteurergilde ist ein guter Ort.	El gremio de aventureros es un buen lugar.
+@passage_line	There are many adventurers here.	这里有很多冒险者。	ここには冒険者がたくさんいます。	Hier gibt es viele Abenteurer.	Aquí hay muchos aventureros.
+@passage_line	We help people every day.	我们每天帮助人们。	わたしたちは毎日人を助けます。	Wir helfen jeden Tag Menschen.	Ayudamos a la gente todos los días.
+@passage_line	I am looking for a new apprentice.	我在寻找新学徒。	わたしは新しい見習いを探しています。	Ich suche einen neuen Lehrling.	Estoy buscando un nuevo aprendiz.
+@passage_line	Are you an adventurer? Please come to our guild.	你是冒险者吗？请来我们公会。	あなたは冒険者ですか？ぜひ、ギルドへ来てください。	Bist du ein Abenteurer? Bitte komm zu unserer Gilde.	¿Eres un aventurero? Por favor, ven a nuestro gremio.
+@passage_line	Our guild is in the town of Stonehaven.	我们的公会在石港镇。	わたしたちのギルドはストーンヘイブンの町にあります。	Unsere Gilde befindet sich in der Stadt Stonehaven.	Nuestro gremio está en la ciudad de Stonehaven.
+@passage_line	The town is not big. But it is a nice town.	这个镇不大。但它是个好镇。	その町は大きくありません。でも、いい町です。	Die Stadt ist nicht groß. Aber sie ist eine schöne Stadt.	La ciudad no es grande. Pero es una ciudad bonita.
+@passage_line	I am waiting for you. Please come soon.	我在等你。请快来。	待っています。すぐ来てください。	Ich warte auf dich. Bitte komm bald.	Te estoy esperando. Por favor, ven pronto.
+@passage_line	From Leon, Guild Master	来自公会长里昂	公会マスター レオンより	Von Leon, Gildenmeister	De León, maestro del gremio
+
+
+# ── Section 2: The Guild Noticeboard ─────────────────────────────────────────
+@section	02	The Guild Noticeboard	公会公告栏	ギルドの掲示板	Das Gildenbrett	El tablón del gremio
+@vocab	ひかり	クリスタル	ここ	あります	いません	たいせつ	いっしょ	さがす	おおきい	まち	ひと	みんな	きてください	おねがい
+
+@passage	02	Notices on the Guild Board	公会公告栏上的通知	ギルドの掲示板の通知	Mitteilungen am Gildenbrett	Avisos en el tablón del gremio
+
+@passage_line	IMPORTANT NOTICE	重要通知	重要なお知らせ	WICHTIGE MITTEILUNG	AVISO IMPORTANTE
+@passage_line	The Crystal of Light is not here.	光之水晶不在这里。	光のクリスタルはここにありません。	Das Kristall des Lichts ist nicht hier.	El Cristal de Luz no está aquí.
+@passage_line	This is a big problem.	这是个大问题。	これは大きな問題です。	Das ist ein großes Problem.	Este es un gran problema.
+@passage_line	Please help us find it.	请帮助我们找到它。	一緒に探してください。	Bitte helft uns, es zu finden.	Por favor, ayúdanos a encontrarlo.
+@passage_line	Guild Master Leon	公会长里昂	ギルドマスター レオン	Gildenmeister Leon	Maestro del gremio León
+@passage_line	---	---	---	---	---
+@passage_line	WELCOME NEW APPRENTICES	欢迎新学徒	新しい見習いへようこそ	WILLKOMMEN NEUE LEHRLINGE	BIENVENIDOS NUEVOS APRENDICES
+@passage_line	My name is Emma. I am also a new apprentice.	我叫艾玛。我也是新学徒。	わたしの名前はエマです。わたしも新しい見習いです。	Mein Name ist Emma. Ich bin auch ein neuer Lehrling.	Me llamo Emma. Yo también soy una nueva aprendiz.
+@passage_line	Please come and say hello!	请来打招呼！	ぜひ、声をかけてください！	Bitte kommt und sagt Hallo!	¡Por favor, venid a saludar!
+@passage_line	---	---	---	---	---
+@passage_line	MISSION: River Village	任务：河边村	ミッション：川の村	MISSION: Flussdorf	MISIÓN: Pueblo del Río
+@passage_line	The village people need help.	村里的人需要帮助。	村の人たちが助けを必要としています。	Die Dorfbewohner brauchen Hilfe.	La gente del pueblo necesita ayuda.
+@passage_line	Please go to River Village.	请去河边村。	川の村に行ってください。	Bitte geht nach Flussdorf.	Por favor, id al Pueblo del Río.
+@passage_line	It is one day from here.	从这里走一天。	ここから一日かかります。	Es ist einen Tag von hier.	Está a un día de aquí.
+
+
+# ── Section 3: The Book of the Crystal ───────────────────────────────────────
+@section	03	The Book of the Crystal	水晶之书	クリスタルの本	Das Buch des Kristalls	El libro del cristal
+@vocab	ほん	よむ	むかし	おうこく	ひかり	まほう	まもる	おおきい	ちいさい	しろ	くろ	あかい	あおい	きれい
+
+@passage	03	From the Book of the Crystal	摘自水晶之书	クリスタルの本より	Aus dem Buch des Kristalls	Del libro del cristal
+
+@passage_line	This is an old book.	这是一本古老的书。	これは古い本です。	Das ist ein altes Buch.	Este es un libro antiguo.
+@passage_line	The name of the book is "The Crystal of Light."	这本书的名字是《光之水晶》。	この本の名前は「光のクリスタル」です。	Der Name des Buches ist „Das Kristall des Lichts".	El nombre del libro es «El Cristal de Luz».
+@passage_line	Long ago, there was a crystal.	很久以前，有一块水晶。	むかし、クリスタルがありました。	Vor langer Zeit gab es ein Kristall.	Hace mucho tiempo, había un cristal.
+@passage_line	The crystal was white and beautiful.	水晶是白色的，很漂亮。	クリスタルは白くて、きれいでした。	Das Kristall war weiß und schön.	El cristal era blanco y hermoso.
+@passage_line	It was in the middle of the kingdom.	它在王国的中心。	王国の真ん中にありました。	Es befand sich in der Mitte des Königreichs.	Estaba en el centro del reino.
+@passage_line	The crystal gave light to the people.	水晶给人们带来光明。	クリスタルは人々に光をあたえました。	Das Kristall gab den Menschen Licht.	El cristal daba luz a la gente.
+@passage_line	With the crystal, the kingdom was safe.	有了水晶，王国就安全了。	クリスタルがあれば、王国は安全でした。	Mit dem Kristall war das Königreich sicher.	Con el cristal, el reino estaba seguro.
+@passage_line	Without the crystal, strange things happen.	没有水晶，奇怪的事情就会发生。	クリスタルがなければ、不思議なことが起きます。	Ohne das Kristall passieren seltsame Dinge.	Sin el cristal, ocurren cosas extrañas.
+@passage_line	The crystal is not big. It is small.	水晶不大。它很小。	クリスタルは大きくありません。小さいです。	Das Kristall ist nicht groß. Es ist klein.	El cristal no es grande. Es pequeño.
+@passage_line	But it is very important.	但它非常重要。	でも、とても大切です。	Aber es ist sehr wichtig.	Pero es muy importante.
+@passage_line	The adventurers must find the crystal.	冒险者们必须找到水晶。	冒険者たちはクリスタルを見つけなければなりません。	Die Abenteurer müssen das Kristall finden.	Los aventureros deben encontrar el cristal.
+@passage_line	Please find it soon.	请快点找到它。	早く見つけてください。	Bitte findet es bald.	Por favor, encuéntralo pronto.
+
+
+# ── Section 4: Emma's Diary ───────────────────────────────────────────────────
+@section	04	Emma's Diary	艾玛的日记	エマの日記	Emmas Tagebuch	El diario de Emma
+@vocab	きょう	あした	きのう	まいにち	ともだち	うれしい	たのしい	こわい	しんぱい	おもう	はじめて	であう
+
+@passage	04	Emma's Diary — First Day	艾玛的日记——第一天	エマの日記　最初の日	Emmas Tagebuch — Erster Tag	El diario de Emma — Primer día
+
+@passage_line	Today is my first day at the guild.	今天是我在公会的第一天。	今日はギルドの最初の日です。	Heute ist mein erster Tag in der Gilde.	Hoy es mi primer día en el gremio.
+@passage_line	My name is Emma. I am a new apprentice.	我叫艾玛。我是新学徒。	わたしの名前はエマです。新しい見習いです。	Mein Name ist Emma. Ich bin ein neuer Lehrling.	Me llamo Emma. Soy una nueva aprendiz.
+@passage_line	The guild is big. There are many rooms.	公会很大。有很多房间。	ギルドは大きいです。部屋がたくさんあります。	Die Gilde ist groß. Es gibt viele Zimmer.	El gremio es grande. Hay muchas habitaciones.
+@passage_line	The Guild Master is Leon. He is a kind person.	公会长是里昂。他是个善良的人。	ギルドマスターはレオンです。やさしい人です。	Der Gildenmeister ist Leon. Er ist ein freundlicher Mensch.	El maestro del gremio es León. Es una persona amable.
+@passage_line	Today I met another new apprentice.	今天我遇到了另一个新学徒。	今日、もう一人の新しい見習いに会いました。	Heute habe ich einen anderen neuen Lehrling getroffen.	Hoy conocí a otro nuevo aprendiz.
+@passage_line	I do not know their name yet.	我还不知道他们的名字。	まだ名前を知りません。	Ich weiß ihren Namen noch nicht.	Todavía no sé su nombre.
+@passage_line	But they seem like a good person.	但他们看起来是个好人。	でも、いい人だと思います。	Aber sie scheinen ein guter Mensch zu sein.	Pero parecen una buena persona.
+@passage_line	Tomorrow we will go on a mission together.	明天我们将一起去执行任务。	明日、一緒にミッションに行きます。	Morgen werden wir gemeinsam auf Mission gehen.	Mañana iremos juntos a una misión.
+@passage_line	I am a little scared. But I am happy too.	我有点害怕。但我也很高兴。	少し怖いです。でも、うれしいです。	Ich habe ein bisschen Angst. Aber ich bin auch glücklich.	Tengo un poco de miedo. Pero también estoy contenta.
+@passage_line	I think every day will be interesting.	我想每天都会很有趣。	毎日、おもしろいと思います。	Ich denke, jeder Tag wird interessant sein.	Creo que cada día será interesante.
+@passage_line	Goodnight, diary.	晚安，日记。	おやすみなさい、日記。	Gute Nacht, Tagebuch.	Buenas noches, diario.
+
+
+# ── Section 5: The Guild Rules ────────────────────────────────────────────────
+@section	05	The Guild Rules	公会规则	ギルドの規則	Die Gildenregeln	Las reglas del gremio
+@vocab	きまり	まもる	たべる	のむ	ねる	おきる	ごご	ごぜん	じかん	まいにち	しごと	やすむ
+
+@passage	05	The Guild Rules	公会规则	ギルドの規則	Die Gildenregeln	Las reglas del gremio
+
+@passage_line	These are the rules of the Adventurer Guild.	以下是冒险者公会的规则。	これは冒険者ギルドのきまりです。	Das sind die Regeln der Abenteurergilde.	Estas son las reglas del gremio de aventureros.
+@passage_line	Rule one: Please say good morning every day.	第一条：请每天说早上好。	きまり一：毎日おはようございますと言ってください。	Regel eins: Bitte sagt jeden Tag guten Morgen.	Regla uno: Por favor, di buenos días cada día.
+@passage_line	Rule two: Please eat breakfast every morning.	第二条：请每天早上吃早饭。	きまり二：毎朝、朝ごはんを食べてください。	Regel zwei: Bitte esst jeden Morgen Frühstück.	Regla dos: Por favor, desayuna cada mañana.
+@passage_line	Rule three: Please come back before evening.	第三条：请在傍晚之前回来。	きまり三：夕方までに帰ってきてください。	Regel drei: Bitte kommt vor dem Abend zurück.	Regla tres: Por favor, volved antes del atardecer.
+@passage_line	Rule four: Please help your friends.	第四条：请帮助你的朋友们。	きまり四：友達を助けてください。	Regel vier: Bitte helft euren Freunden.	Regla cuatro: Por favor, ayuda a tus amigos.
+@passage_line	Rule five: Please be kind to the people in town.	第五条：请对镇上的人们友善。	きまり五：町の人にやさしくしてください。	Regel fünf: Bitte seid freundlich zu den Menschen in der Stadt.	Regla cinco: Por favor, sé amable con la gente del pueblo.
+@passage_line	Rule six: Please do not go to dangerous places alone.	第六条：请不要独自去危险的地方。	きまり六：一人で危ない所に行かないでください。	Regel sechs: Bitte geht nicht alleine an gefährliche Orte.	Regla seis: Por favor, no vayas solo a lugares peligrosos.
+@passage_line	Rule seven: Please ask the Guild Master when you have questions.	第七条：有问题请问公会长。	きまり七：わからないことはギルドマスターに聞いてください。	Regel sieben: Bitte fragt den Gildenmeister, wenn ihr Fragen habt.	Regla siete: Por favor, pregunta al maestro del gremio cuando tengas dudas.
+@passage_line	These rules are important.	这些规则很重要。	これらのきまりは大切です。	Diese Regeln sind wichtig.	Estas reglas son importantes.
+@passage_line	Please follow them every day.	请每天遵守它们。	毎日守ってください。	Bitte befolgt sie jeden Tag.	Por favor, síguelas cada día.
+@passage_line	Welcome to the Adventurer Guild!	欢迎来到冒险者公会！	冒険者ギルドへようこそ！	Willkommen in der Abenteurergilde!	¡Bienvenido al gremio de aventureros!
+
+
+# ── Dialogue 1: Arriving at the Guild ────────────────────────────────────────
+@section	06	Meeting the Guild Master	与公会长见面	ギルドマスターとの出会い	Treffen mit dem Gildenmeister	Conociendo al maestro del gremio
+@vocab	こんにちは	ありがとう	はい	いいえ	わたし	なまえ	ひと	がくせい	せんせい	ともだち	にほん	どこ	なに	おはようございます	こんばんは	すみません	はじめまして
+
+adv010601-01	narrator		You arrive at the guild. It is a big building.	你来到了公会。这是一栋大建筑。	ギルドに着きました。大きな建物です。	Du kommst bei der Gilde an. Es ist ein großes Gebäude.	Llegas al gremio. Es un edificio grande.
+adv010601-02	narrator		A man comes out. He is tall and has a kind face.	一个男人走了出来。他高大，面容和蔼。	男の人が出てきました。背が高くて、やさしい顔をしています。	Ein Mann kommt heraus. Er ist groß und hat ein freundliches Gesicht.	Un hombre sale. Es alto y tiene una cara amable.
+adv010601-03	leon		Hello! Welcome to the Adventurer Guild.	你好！欢迎来到冒险者公会。	こんにちは！冒険者ギルドへようこそ。	Hallo! Willkommen in der Abenteurergilde.	¡Hola! Bienvenido al gremio de aventureros.
+adv010601-04	leon		My name is Leon. I am the Guild Master.	我叫里昂。我是公会长。	わたしの名前はレオンです。ギルドマスターです。	Mein Name ist Leon. Ich bin der Gildenmeister.	Me llamo León. Soy el maestro del gremio.
+adv010601-05	leon		Are you the new apprentice?	你是新学徒吗？	あなたは新しい見習いですか？	Bist du der neue Lehrling?	¿Eres el nuevo aprendiz?
+adv010601-06a	player		Yes. My name is Alex.	是的。我叫阿历克斯。	はい。わたしの名前はアレックスです。	Ja. Mein Name ist Alex.	Sí. Me llamo Alex.
+adv010601-06b	player		Yes. Nice to meet you.	是的。很高兴认识你。	はい。はじめまして。	Ja. Schön, Sie kennenzulernen.	Sí. Encantado de conocerle.
+adv010601-07a	leon		Alex! That is a good name. Nice to meet you too.	阿历克斯！这是个好名字。我也很高兴认识你。	アレックス！いい名前です。こちらこそ、はじめまして。	Alex! Das ist ein guter Name. Schön, dich auch kennenzulernen.	¡Alex! Es un buen nombre. Encantado de conocerte también.
+adv010601-07b	leon		Nice to meet you too. Welcome.	我也很高兴认识你。欢迎。	こちらこそ、はじめまして。ようこそ。	Schön, dich auch kennenzulernen. Willkommen.	Encantado de conocerte también. Bienvenido.
+adv010601-08	leon		Please come inside. I will show you the guild.	请进来。我来带你参观公会。	どうぞ中に入ってください。ギルドを案内します。	Bitte komm herein. Ich zeige dir die Gilde.	Por favor, entra. Te mostraré el gremio.
+adv010601-09	narrator		You go inside. The guild is big. There are many people.	你走了进去。公会很大。里面有很多人。	中に入りました。ギルドは大きいです。人がたくさんいます。	Du gehst hinein. Die Gilde ist groß. Es gibt viele Menschen.	Entras. El gremio es grande. Hay mucha gente.
+adv010601-10	leon		This is the main hall. We eat here every morning.	这是大厅。我们每天早上在这里吃饭。	ここはホールです。毎朝ここで食事をします。	Das ist die Haupthalle. Wir essen hier jeden Morgen.	Esta es la sala principal. Aquí comemos cada mañana.
+adv010601-11	leon		This is the notice board. Please read it every day.	这是公告栏。请每天读它。	これは掲示板です。毎日読んでください。	Das ist das Schwarze Brett. Bitte lest es jeden Tag.	Este es el tablón de anuncios. Por favor, léelo cada día.
+adv010601-12	leon		And this is your room. It is small, but it is comfortable.	这是你的房间。它很小，但很舒适。	これがあなたの部屋です。小さいですが、きれいですよ。	Und das ist dein Zimmer. Es ist klein, aber gemütlich.	Y esta es tu habitación. Es pequeña, pero cómoda.
+adv010601-13	leon		Do you have any questions?	你有什么问题吗？	何か質問はありますか？	Hast du irgendwelche Fragen?	¿Tienes alguna pregunta?
+adv010601-14a	player		Where is the dining room?	餐厅在哪里？	食堂はどこですか？	Wo ist der Speisesaal?	¿Dónde está el comedor?
+adv010601-14b	player		No. Thank you very much.	没有。非常感谢。	いいえ。ありがとうございます。	Nein. Vielen Dank.	No. Muchas gracias.
+adv010601-15a	leon		The dining room is downstairs. Breakfast is at seven.	餐厅在楼下。早饭在七点。	食堂は下の階です。朝ごはんは七時です。	Der Speisesaal ist unten. Frühstück ist um sieben Uhr.	El comedor está abajo. El desayuno es a las siete.
+adv010601-15b	leon		Good. Please rest well tonight.	好。请今晚好好休息。	いいです。今夜はゆっくり休んでください。	Gut. Bitte ruh dich heute Nacht gut aus.	Bien. Por favor, descansa bien esta noche.
+
+adv010601-16q	question		What time is breakfast?	早饭是几点？	朝ごはんは何時ですか？	Um wie viel Uhr ist das Frühstück?	¿A qué hora es el desayuno?
+adv010601-17a	option	correct	At seven.	在七点。	七時です。	Um sieben Uhr.	A las siete.
+adv010601-17b	option		At eight.	在八点。	八時です。	Um acht Uhr.	A las ocho.
+adv010601-17c	option		At nine.	在九点。	九時です。	Um neun Uhr.	A las nueve.
+
+
+# ── Dialogue 2: Meeting Emma ─────────────────────────────────────────────────
+@section	07	Meeting Emma	认识艾玛	エマとの出会い	Emma kennenlernen	Conociendo a Emma
+@vocab	ともだち	いっしょ	うれしい	たのしい	はじめまして	よろしく	どこから	いつ	なんさい
+
+adv010701-01	narrator		You are in your room. There is a knock on the door.	你在你的房间里。有人敲门。	自分の部屋にいます。ドアをノックする音がします。	Du bist in deinem Zimmer. Es klopft an der Tür.	Estás en tu habitación. Alguien llama a la puerta.
+adv010701-02	emma		Hello! Are you the new apprentice?	你好！你是新学徒吗？	こんにちは！新しい見習いですか？	Hallo! Bist du der neue Lehrling?	¡Hola! ¿Eres el nuevo aprendiz?
+adv010701-03	emma		My name is Emma. I am also a new apprentice. Nice to meet you!	我叫艾玛。我也是新学徒。很高兴认识你！	わたしの名前はエマです。わたしも新しい見習いです。はじめまして！	Mein Name ist Emma. Ich bin auch ein neuer Lehrling. Schön, dich kennenzulernen!	Me llamo Emma. Yo también soy una nueva aprendiz. ¡Encantada de conocerte!
+adv010701-04	player		Nice to meet you, Emma. My name is Alex.	很高兴认识你，艾玛。我叫阿历克斯。	はじめまして、エマさん。わたしの名前はアレックスです。	Schön, dich kennenzulernen, Emma. Mein Name ist Alex.	Encantado de conocerte, Emma. Me llamo Alex.
+adv010701-05	emma		Alex! Nice name. Are you from far away?	阿历克斯！好名字。你是从远方来的吗？	アレックス！いい名前ですね。遠くから来たんですか？	Alex! Schöner Name. Bist du von weit weg?	¡Alex! Bonito nombre. ¿Vienes de lejos?
+adv010701-06a	player		Yes. I am from a small village.	是的。我来自一个小村庄。	はい。小さな村から来ました。	Ja. Ich komme aus einem kleinen Dorf.	Sí. Vengo de un pueblo pequeño.
+adv010701-06b	player		Not so far. I am from the next town.	不太远。我来自邻镇。	そんなに遠くありません。隣の町から来ました。	Nicht so weit. Ich komme aus der Nachbarstadt.	No tan lejos. Vengo de la ciudad de al lado.
+adv010701-07	emma		I see! I am from the northern village.	原来如此！我来自北边的村庄。	そうですか！わたしは北の村から来ました。	Verstehe! Ich komme aus dem nördlichen Dorf.	¡Ya veo! Yo vengo del pueblo del norte.
+adv010701-08	emma		It was a long journey. I was very tired.	那是一段漫长的旅程。我非常累。	長い旅でした。とても疲れました。	Es war eine lange Reise. Ich war sehr müde.	Fue un largo viaje. Estaba muy cansada.
+adv010701-09	emma		But I am happy now. This guild looks very interesting!	但我现在很高兴。这个公会看起来很有趣！	でも今はうれしいです。このギルドはとてもおもしろそうです！	Aber jetzt bin ich glücklich. Diese Gilde sieht sehr interessant aus!	¡Pero ahora estoy contenta. ¡Este gremio parece muy interesante!
+adv010701-10	player		Yes. I think so too. Leon is a good person.	是的。我也这么认为。里昂是个好人。	そうですね。わたしもそう思います。レオンさんはいい人ですね。	Ja. Das denke ich auch. Leon ist ein guter Mensch.	Sí. Yo también lo creo. León es una buena persona.
+adv010701-11	emma		Yes! He is very kind. And this building is big!	是的！他非常善良。而且这栋建筑很大！	そうです！とてもやさしいですね。それに、この建物は大きいですね！	Ja! Er ist sehr freundlich. Und dieses Gebäude ist groß!	¡Sí! Es muy amable. ¡Y este edificio es grande!
+adv010701-12	emma		Are you hungry? Let us go and eat dinner.	你饿了吗？我们去吃晚饭吧。	お腹がすきましたか？夕ごはんを食べに行きましょう。	Bist du hungrig? Lass uns Abendessen gehen.	¿Tienes hambre? Vamos a cenar.
+adv010701-13a	player		Yes! I am very hungry. Let us go.	是的！我很饿。我们走吧。	はい！とてもお腹がすいています。行きましょう。	Ja! Ich habe sehr großen Hunger. Lass uns gehen.	¡Sí! Tengo mucha hambre. Vamos.
+adv010701-13b	player		Just a moment. I will wash my hands first.	等一下。我先洗手。	少し待ってください。まず手を洗います。	Einen Moment. Ich wasche zuerst meine Hände.	Un momento. Primero me lavo las manos.
+adv010701-14	emma		Good. The dining room is downstairs. I know the way.	好。餐厅在楼下。我知道路。	いいですよ。食堂は下の階です。わたしは道がわかります。	Gut. Der Speisesaal ist unten. Ich kenne den Weg.	Bien. El comedor está abajo. Yo conozco el camino.
+adv010701-15	narrator		You go to dinner with Emma. It is a good start.	你和艾玛去吃晚饭。这是个好的开始。	エマと夕ごはんを食べに行きました。いいスタートです。	Du gehst mit Emma zum Abendessen. Das ist ein guter Anfang.	Vas a cenar con Emma. Es un buen comienzo.
+
+adv010701-16q	question		Where is Emma from?	艾玛来自哪里？	エマはどこから来ましたか？	Woher kommt Emma?	¿De dónde es Emma?
+adv010701-17a	option	correct	The northern village.	北边的村庄。	北の村です。	Das nördliche Dorf.	El pueblo del norte.
+adv010701-17b	option		The southern city.	南边的城市。	南の町です。	Die südliche Stadt.	La ciudad del sur.
+adv010701-17c	option		Stonehaven.	石港镇。	ストーンヘイブンです。	Stonehaven.	Stonehaven.
+
+
+# ── Dialogue 3: Dinner at the Guild ─────────────────────────────────────────
+@section	08	Dinner at the Guild	公会的晚餐	ギルドの夕食	Abendessen in der Gilde	Cena en el gremio
+@vocab	たべる	のむ	おいしい	からい	あまい	まずい	たくさん	すこし	もっと	おなか　いっぱい
+
+adv010801-01	narrator		The dining room is big. There are many adventurers here.	餐厅很大。这里有很多冒险者。	食堂は大きいです。冒険者がたくさんいます。	Der Speisesaal ist groß. Hier gibt es viele Abenteurer.	El comedor es grande. Aquí hay muchos aventureros.
+adv010801-02	narrator		You sit down at a table with Emma.	你和艾玛坐在一张桌子旁。	エマと一緒にテーブルに座りました。	Du setzt dich mit Emma an einen Tisch.	Te sientas en una mesa con Emma.
+adv010801-03	emma		The food here is very good! I eat here every day.	这里的食物非常好！我每天都在这里吃。	ここの食べ物はとてもおいしいです！毎日ここで食べます。	Das Essen hier ist sehr gut! Ich esse jeden Tag hier.	¡La comida aquí es muy buena! Como aquí cada día.
+adv010801-04	player		This is my first time here.	这是我第一次来这里。	ここに来たのは初めてです。	Das ist mein erstes Mal hier.	Esta es mi primera vez aquí.
+adv010801-05	emma		Please try the soup. It is very good.	请尝尝汤。它非常好喝。	スープを食べてみてください。とてもおいしいですよ。	Bitte probiere die Suppe. Sie ist sehr gut.	Por favor, prueba la sopa. Es muy buena.
+adv010801-06	adventurer_a		Hello, new person! My name is Marco. I am an adventurer.	你好，新来的！我叫马可。我是冒险者。	こんにちは、新しい人！わたしの名前はマルコです。冒険者です。	Hallo, neuer Mensch! Mein Name ist Marco. Ich bin ein Abenteurer.	¡Hola, nuevo! Me llamo Marco. Soy un aventurero.
+adv010801-07	player		Hello, Marco. My name is Alex. Nice to meet you.	你好，马可。我叫阿历克斯。很高兴认识你。	こんにちは、マルコさん。わたしの名前はアレックスです。はじめまして。	Hallo, Marco. Mein Name ist Alex. Schön, dich kennenzulernen.	Hola, Marco. Me llamo Alex. Encantado de conocerte.
+adv010801-08	adventurer_a		Alex and Emma. You are both new apprentices, yes?	阿历克斯和艾玛。你们都是新学徒，对吧？	アレックスとエマ。二人とも新しい見習いですね？	Alex und Emma. Ihr seid beide neue Lehrlinge, ja?	Alex y Emma. Sois nuevos aprendices, ¿verdad?
+adv010801-09	emma		Yes! This is our first day.	是的！这是我们的第一天。	はい！今日が最初の日です。	Ja! Das ist unser erster Tag.	¡Sí! Este es nuestro primer día.
+adv010801-10	adventurer_a		Good. This guild is a good place. Leon is a great Guild Master.	好。这个公会是个好地方。里昂是个很好的公会长。	いいですね。このギルドはいい所です。レオンさんはすごいギルドマスターです。	Gut. Diese Gilde ist ein guter Ort. Leon ist ein großartiger Gildenmeister.	Bien. Este gremio es un buen lugar. León es un gran maestro del gremio.
+adv010801-11	adventurer_a		But these days are strange. The crystal is gone.	但这些天很奇怪。水晶不见了。	でも、最近は変です。クリスタルがなくなりました。	Aber diese Tage sind seltsam. Das Kristall ist weg.	Pero estos días son extraños. El cristal ha desaparecido.
+adv010801-12	emma		Is that very bad?	那很糟糕吗？	それはとても悪いことですか？	Ist das sehr schlimm?	¿Es eso muy malo?
+adv010801-13	adventurer_a		Yes. Without the crystal, the kingdom is in danger. Leon is worried.	是的。没有水晶，王国就有危险。里昂很担心。	はい。クリスタルがなければ、王国は危ないです。レオンさんは心配しています。	Ja. Ohne das Kristall ist das Königreich in Gefahr. Leon macht sich Sorgen.	Sí. Sin el cristal, el reino está en peligro. León está preocupado.
+adv010801-14	player		We will help find it.	我们会帮助找到它的。	一緒に探します。	Wir werden helfen, es zu finden.	Nosotros le ayudaremos a encontrarlo.
+adv010801-15	adventurer_a		Good. I think you are good adventurers. Welcome!	好。我认为你们是好冒险者。欢迎！	いいですね。あなたたちはいい冒険者だと思います。ようこそ！	Gut. Ich denke, ihr seid gute Abenteurer. Willkommen!	Bien. Creo que sois buenos aventureros. ¡Bienvenidos!
+adv010801-16	narrator		You eat dinner and talk with the other adventurers. It is a warm evening.	你吃晚饭并与其他冒险者交谈。这是个温暖的夜晚。	夕ごはんを食べて、他の冒険者と話しました。あたたかい夜です。	Du isst Abendessen und sprichst mit den anderen Abenteurern. Es ist ein warmer Abend.	Cenas y hablas con los otros aventureros. Es una noche cálida.
+
+adv010801-17q	question		Who is worried about the missing crystal?	谁在担心失踪的水晶？	誰がなくなったクリスタルのことを心配していますか？	Wer macht sich Sorgen um das verschwundene Kristall?	¿Quién está preocupado por el cristal desaparecido?
+adv010801-18a	option	correct	Leon.	里昂。	レオンさんです。	Leon.	León.
+adv010801-18b	option		Marco.	马可。	マルコさんです。	Marco.	Marco.
+adv010801-18c	option		Emma.	艾玛。	エマさんです。	Emma.	Emma.
+
+
+# ── Dialogue 4: Leon Explains the Crystal ────────────────────────────────────
+@section	09	Leon Explains the Crystal	里昂解释水晶	レオンがクリスタルを説明する	Leon erklärt das Kristall	León explica el cristal
+@vocab	せつめいする	わかる	しる	たいせつ	きけん	まもる	さがす	なぜ	いつ	どこ
+
+adv010901-01	narrator		After dinner, Leon calls you and Emma.	晚饭后，里昂叫来了你和艾玛。	夕ごはんの後、レオンさんがあなたとエマを呼びました。	Nach dem Abendessen ruft Leon dich und Emma.	Después de cenar, León os llama a ti y a Emma.
+adv010901-02	leon		Thank you for coming. Please sit down.	谢谢你们来。请坐。	来てくれてありがとう。座ってください。	Danke fürs Kommen. Bitte setzt euch.	Gracias por venir. Por favor, sentaos.
+adv010901-03	leon		I want to tell you about the Crystal of Light.	我想告诉你们关于光之水晶的事。	光のクリスタルについて話したいです。	Ich möchte euch über das Kristall des Lichts erzählen.	Quiero hablaros sobre el Cristal de Luz.
+adv010901-04	leon		The Crystal of Light is very old. It has been in this kingdom for many years.	光之水晶非常古老。它已经在这个王国存在了很多年了。	光のクリスタルはとても古いです。王国に長い間ありました。	Das Kristall des Lichts ist sehr alt. Es war viele Jahre in diesem Königreich.	El Cristal de Luz es muy antiguo. Ha estado en este reino durante muchos años.
+adv010901-05	emma		Is it important?	它很重要吗？	大切ですか？	Ist es wichtig?	¿Es importante?
+adv010901-06	leon		Yes. It is very important. Without it, the kingdom is not safe.	是的。它非常重要。没有它，王国就不安全了。	はい。とても大切です。クリスタルがなければ、王国は安全ではありません。	Ja. Es ist sehr wichtig. Ohne es ist das Königreich nicht sicher.	Sí. Es muy importante. Sin él, el reino no está seguro.
+adv010901-07	leon		One week ago, the crystal was here. Now it is not here.	一周前，水晶还在这里。现在不在了。	一週間前、クリスタルはここにありました。今はありません。	Vor einer Woche war das Kristall hier. Jetzt ist es nicht mehr hier.	Hace una semana, el cristal estaba aquí. Ahora no está.
+adv010901-08	player		Where did it go?	它去哪了？	どこへ行きましたか？	Wohin ist es gegangen?	¿Adónde fue?
+adv010901-09	leon		I do not know. That is the problem. We must find it.	我不知道。这就是问题。我们必须找到它。	わかりません。それが問題です。見つけなければなりません。	Ich weiß es nicht. Das ist das Problem. Wir müssen es finden.	No lo sé. Ese es el problema. Debemos encontrarlo.
+adv010901-10	emma		How big is the crystal?	水晶有多大？	クリスタルはどのくらい大きいですか？	Wie groß ist das Kristall?	¿Qué tan grande es el cristal?
+adv010901-11	leon		It is small. It fits in your hand. But it is very bright.	它很小。可以放在手心里。但它非常明亮。	小さいです。手のひらに収まります。でも、とても明るいです。	Es ist klein. Es passt in deine Hand. Aber es ist sehr hell.	Es pequeño. Cabe en la palma de tu mano. Pero es muy brillante.
+adv010901-12	leon		If you see it, you will know. It shines like the sun.	如果你看到它，你会知道的。它像太阳一样闪耀。	見たらわかります。太陽のように輝きます。	Wenn du es siehst, wirst du es wissen. Es leuchtet wie die Sonne.	Si lo ves, lo sabrás. Brilla como el sol.
+adv010901-13	emma		That sounds beautiful.	听起来很漂亮。	きれいそうですね。	Das klingt schön.	Eso suena hermoso.
+adv010901-14	leon		Yes. But now I am worried. Strange things are happening in the villages nearby.	是的。但现在我很担心。附近村庄里发生了奇怪的事情。	はい。でも今は心配です。近くの村で変なことが起きています。	Ja. Aber jetzt mache ich mir Sorgen. In den nahen Dörfern passieren seltsame Dinge.	Sí. Pero ahora estoy preocupado. Están ocurriendo cosas extrañas en los pueblos cercanos.
+adv010901-15	leon		Tomorrow, I want you two to go to River Village.	明天，我想让你们两个去河边村。	明日、二人に川の村に行ってほしいです。	Morgen möchte ich, dass ihr beide nach Flussdorf geht.	Mañana, quiero que vosotros dos vayáis al Pueblo del Río.
+adv010901-16	leon		Talk to the people there. See what is happening.	和那里的人们交谈。看看发生了什么。	そこの人たちと話してください。何が起きているか見てください。	Sprecht mit den Menschen dort. Schaut, was passiert.	Habla con la gente de allí. Mira qué está pasando.
+adv010901-17a	player		Yes! We will go tomorrow.	好的！我们明天就去。	はい！明日行きます。	Ja! Wir werden morgen gehen.	¡Sí! Iremos mañana.
+adv010901-17b	player		Is it dangerous?	这危险吗？	危ないですか？	Ist es gefährlich?	¿Es peligroso?
+adv010901-18a	leon		Good. Please be careful. Come back safely.	好。请小心。平安回来。	いいです。気をつけてください。無事に帰ってきてください。	Gut. Bitte seid vorsichtig. Kommt sicher zurück.	Bien. Por favor, tened cuidado. Volved sanos y salvos.
+adv010901-18b	leon		I do not think so. But please be careful. You will not be alone. Emma will go with you.	我不这么认为。但请小心。你不会是一个人。艾玛会和你一起去。	そうは思いません。でも気をつけてください。一人ではありません。エマも一緒に行きます。	Das glaube ich nicht. Aber seid vorsichtig. Ihr seid nicht allein. Emma geht mit euch.	No lo creo. Pero tened cuidado. No estaréis solos. Emma irá con vosotros.
+
+adv010901-19q	question		How long ago did the crystal disappear?	水晶消失多久了？	クリスタルはどのくらい前になくなりましたか？	Vor wie langer Zeit verschwand das Kristall?	¿Hace cuánto tiempo desapareció el cristal?
+adv010901-20a	option	correct	One week ago.	一周前。	一週間前です。	Vor einer Woche.	Hace una semana.
+adv010901-20b	option		One month ago.	一个月前。	一ヶ月前です。	Vor einem Monat.	Hace un mes.
+adv010901-20c	option		One day ago.	一天前。	一日前です。	Vor einem Tag.	Hace un día.
+
+
+# ── Dialogue 5: Morning Before Departure ─────────────────────────────────────
+@section	10	Morning Before Departure	出发前的早晨	出発前の朝	Morgen vor dem Aufbruch	La mañana antes de la partida
+@vocab	おはようございます	あさ　ごはん	まだ　ねている	じゅんびする	もつ　もの　かばん　てぶくろ　くつ
+
+adv011001-01	narrator		The next morning. It is early. The sun is rising.	第二天早晨。时间很早。太阳正在升起。	翌朝。早いです。太陽が昇っています。	Der nächste Morgen. Es ist früh. Die Sonne geht auf.	La mañana siguiente. Es temprano. El sol está saliendo.
+adv011001-02	emma		Good morning! Did you sleep well?	早上好！你睡得好吗？	おはようございます！よく眠れましたか？	Guten Morgen! Hast du gut geschlafen?	¡Buenos días! ¿Has dormido bien?
+adv011001-03a	player		Yes, very well. And you?	是的，非常好。你呢？	はい、よく眠れました。あなたは？	Ja, sehr gut. Und du?	Sí, muy bien. ¿Y tú?
+adv011001-03b	player		A little. I was excited.	有一点。我很兴奋。	少し。わくわくしていました。	Ein bisschen. Ich war aufgeregt.	Un poco. Estaba emocionado.
+adv011001-04	emma		Me too! I was excited and a little nervous.	我也是！我既兴奋又有点紧张。	わたしもです！わくわくして、少し緊張しました。	Ich auch! Ich war aufgeregt und ein bisschen nervös.	¡Yo también! Estaba emocionada y un poco nerviosa.
+adv011001-05	narrator		You go to breakfast together. Leon is already there.	你们一起去吃早饭。里昂已经在那里了。	一緒に朝ごはんを食べに行きました。レオンさんはもういます。	Ihr geht gemeinsam zum Frühstück. Leon ist schon da.	Vais juntos al desayuno. León ya está allí.
+adv011001-06	leon		Good morning! Please eat well. Today is an important day.	早上好！请好好吃饭。今天是重要的一天。	おはようございます！よく食べてください。今日は大切な日です。	Guten Morgen! Bitte esst gut. Heute ist ein wichtiger Tag.	¡Buenos días! Por favor, comed bien. Hoy es un día importante.
+adv011001-07	emma		Yes! We are going to River Village today!	是的！我们今天要去河边村！	はい！今日は川の村に行きます！	Ja! Wir gehen heute nach Flussdorf!	¡Sí! ¡Hoy vamos al Pueblo del Río!
+adv011001-08	leon		Yes. Please be careful. The road is not long but watch your feet.	是的。请小心。路不长，但要注意脚下。	そうです。気をつけてください。道は長くありませんが、足元に注意してください。	Ja. Seid bitte vorsichtig. Der Weg ist nicht lang, aber achtet auf eure Füße.	Sí. Por favor, tened cuidado. El camino no es largo, pero tened cuidado con los pies.
+adv011001-09	adventurer_a		Good morning! Going on your first mission today?	早上好！今天要去执行第一个任务吗？	おはようございます！今日、初めてのミッションに行くんですか？	Guten Morgen! Geht ihr heute auf eure erste Mission?	¡Buenos días! ¿Vais hoy a vuestra primera misión?
+adv011001-10	emma		Yes! We are going to River Village.	是的！我们要去河边村。	はい！川の村に行きます。	Ja! Wir gehen nach Flussdorf.	¡Sí! Vamos al Pueblo del Río.
+adv011001-11	adventurer_a		River Village is good. The people there are kind.	河边村很好。那里的人很善良。	川の村はいい所です。あそこの人たちはやさしいです。	Flussdorf ist gut. Die Menschen dort sind freundlich.	El Pueblo del Río es bueno. La gente de allí es amable.
+adv011001-12	player		Do you know the village?	你认识那个村子吗？	その村を知っていますか？	Kennst du das Dorf?	¿Conoces el pueblo?
+adv011001-13	adventurer_a		Yes. I went there last month. It is about two hours on foot.	是的。我上个月去过那里。步行大约两个小时。	はい。先月そこに行きました。歩いて約二時間です。	Ja. Ich war letzten Monat dort. Es sind etwa zwei Stunden zu Fuß.	Sí. Fui allí el mes pasado. Son unas dos horas a pie.
+adv011001-14	emma		Two hours! Let us start soon.	两个小时！我们快点出发吧。	二時間！早く出発しましょう。	Zwei Stunden! Lass uns bald aufbrechen.	¡Dos horas! Partamos pronto.
+adv011001-15	leon		Yes, go soon. And come back before dark. Take care of each other.	是的，快去吧。天黑前回来。互相照顾。	そうです。早く行ってください。暗くなる前に帰ってきてください。お互いに気をつけてください。	Ja, geht bald. Und kommt vor der Dunkelheit zurück. Passt aufeinander auf.	Sí, id pronto. Y volved antes de que oscurezca. Cuidaos el uno al otro.
+adv011001-16	narrator		You finish breakfast. You pick up your bag. Today the adventure begins.	你吃完早饭。你拿起你的包。今天冒险开始了。	朝ごはんを食べ終わりました。バッグを持ちました。今日、冒険が始まります。	Du beendest das Frühstück. Du nimmst deinen Rucksack. Heute beginnt das Abenteuer.	Terminas el desayuno. Coges tu mochila. Hoy comienza la aventura.
+
+adv011001-17q	question		How long is the walk to River Village?	步行到河边村需要多久？	川の村まで歩いてどのくらいかかりますか？	Wie lange ist der Fußweg nach Flussdorf?	¿Cuánto tiempo se tarda a pie hasta el Pueblo del Río?
+adv011001-18a	option	correct	About two hours.	大约两个小时。	約二時間です。	Etwa zwei Stunden.	Unas dos horas.
+adv011001-18b	option		About one hour.	大约一个小时。	約一時間です。	Etwa eine Stunde.	Unas una hora.
+adv011001-18c	option		About four hours.	大约四个小时。	約四時間です。	Etwa vier Stunden.	Unas cuatro horas.

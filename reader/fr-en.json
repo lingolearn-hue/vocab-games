@@ -1,0 +1,682 @@
+{
+ "id": "fr-reader",
+ "language": "fr",
+ "native": "français",
+ "passages": [
+  {
+   "id": "fr-p1",
+   "title": "Mon ami",
+   "titleTranslation": "My Friend",
+   "level": "A1",
+   "series": "Mon ami",
+   "tags": [
+    "fiction",
+    "topic:friendship",
+    "beginner",
+    "series:Mon ami"
+   ],
+   "text": "J'ai un bon ami. Il est étudiant. Il aime manger des pommes et boire de l'eau. Il est très heureux. Nous étudions ensemble tous les jours.",
+   "translation": "I have a good friend. He is a student. He likes to eat apples and drink water. He is very happy. We study together every day."
+  },
+  {
+   "id": "fr-p1b",
+   "title": "Mon très bon ami Xiao Ming",
+   "titleTranslation": "My Good Friend Xiao Ming",
+   "level": "A2",
+   "series": "Mon ami",
+   "tags": [
+    "fiction",
+    "topic:friendship",
+    "beginner",
+    "series:Mon ami"
+   ],
+   "text": "J'ai un très bon ami qui s'appelle Xiao Ming. Xiao Ming est étudiant à l'université et il étudie très sérieusement. Chaque matin, il boit de l'eau, mange une pomme, puis va à la bibliothèque pour lire. Il aime apprendre de nouvelles choses et il aime aussi aider les autres. Je suis très heureux d'avoir un ami comme lui.",
+   "translation": "I have a very good friend called Xiao Ming. Xiao Ming is a university student and studies very hard. Every morning he drinks water, eats an apple, and then goes to the library to read. He likes learning new things and also likes helping others. I am very happy to have a friend like him."
+  },
+  {
+   "id": "fr-p1c",
+   "title": "Le pouvoir de l'amitié",
+   "titleTranslation": "The Power of Friendship",
+   "level": "B1",
+   "series": "Mon ami",
+   "tags": [
+    "fiction",
+    "topic:friendship",
+    "intermediate",
+    "series:Mon ami"
+   ],
+   "text": "Xiao Ming et moi nous connaissons déjà depuis cinq ans. Il est mon meilleur ami, même si nos personnalités sont très différentes. Il est prudent et patient dans tout ce qu'il fait, tandis que moi, je suis plus vif et j'aime prendre des risques. C'est précisément grâce à ces différences que nous apprenons l'un de l'autre et grandissons ensemble. Quand nous faisons face à des difficultés, nous nous soutenons toujours mutuellement. Je pense qu'une véritable amitié n'exige pas d'être ensemble tous les jours, mais plutôt d'être présent quand l'autre a besoin de vous.",
+   "translation": "Xiao Ming and I have known each other for five years already. He is my best friend, even though our personalities are very different. He is careful and patient in everything he does, while I am more lively and like taking risks. It is precisely because of these differences that we learn from each other and grow together. When we face difficulties, we always support each other. I think true friendship doesn't require being together every day, but rather being there when the other person needs you."
+  },
+  {
+   "id": "fr-p1d",
+   "title": "La distance et le manque",
+   "titleTranslation": "Distance and Longing",
+   "level": "B1",
+   "series": "Mon ami",
+   "tags": [
+    "fiction",
+    "topic:friendship",
+    "intermediate",
+    "series:Mon ami"
+   ],
+   "text": "Après l'obtention de son diplôme, Xiao Ming est parti travailler à Shanghai, tandis que je suis resté à Pékin. La distance a grandi, et les occasions de nous voir sont devenues de plus en plus rares, mais étrangement, notre amitié ne s'est pas affaiblie pour autant. De temps en temps, il m'envoyait un long message racontant ses observations et ses réflexions dans sa nouvelle ville ; je lui partageais aussi les petits détails de ma vie quotidienne. Parfois, nous faisions un appel vidéo et discutions jusque tard dans la nuit sans nous sentir fatigués. J'ai peu à peu compris qu'une véritable amitié est comme un arbre aux racines profondes — elle ne se flétrit pas avec le changement des saisons, mais ne fait que s'épaissir avec les années. Ce que nous avons vécu ensemble dans notre jeunesse fait déjà partie de nos souvenirs communs, et aucune distance ne peut nous les enlever.",
+   "translation": "After graduation, Xiao Ming went to Shanghai for work, while I stayed in Beijing. The distance grew, and opportunities to meet became fewer and fewer, but strangely, the friendship between us didn't fade because of it. Every so often he would send a long message recounting his observations and reflections in his new city; I would also share the small details of daily life with him. Sometimes we would video call and chat until late at night without feeling tired. I gradually came to understand that true friendship is like a deep-rooted tree — it won't wither with the changing of seasons, but only grows thicker with the years. The things we experienced together in our youth have already become part of our shared memories, and no distance can take them away."
+  },
+  {
+   "id": "fr-p1e",
+   "title": "L'amitié et l'identité personnelle",
+   "titleTranslation": "Friendship and Self-Identity",
+   "level": "B2",
+   "series": "Mon ami",
+   "tags": [
+    "fiction",
+    "topic:friendship",
+    "advanced",
+    "series:Mon ami"
+   ],
+   "text": "Les recherches en psychologie montrent que la manière dont nous choisissons nos amis reflète en grande partie la compréhension que nous avons de nous-mêmes et les attentes que nous plaçons en nous-mêmes. Les amitiés qui nous apportent une tranquillité d'esprit durable sont souvent celles qui allient à la fois une grande compatibilité et une tension suffisante — l'autre personne peut nous comprendre, tout en remettant continuellement en question nos idées figées à partir d'un point de vue différent. Mon amitié avec Xiao Ming est exactement ainsi. Sa stabilité m'a appris à marquer une pause avant d'agir sur une impulsion, tandis que ma nature émotive l'a aidé, à certains moments, à dépasser les limites qu'il s'était fixées. Les sociologues appellent ce type de relation une « amitié de développement » : les deux parties ne sont pas seulement des soutiens affectifs, mais aussi des catalyseurs de la croissance de l'autre. Cependant, la mobilité effrénée de la société moderne rend les amitiés profondes de plus en plus rares. Les gens accumulent des centaines de « contacts » sur les réseaux sociaux, mais peinent souvent à trouver une seule personne réellement disposée à les écouter. Cela me fait me demander : à cette époque de surcharge informationnelle, sommes-nous en train d'élargir nos relations, ou de les diluer ?",
+   "translation": "Psychological research shows that the way we choose friends largely reflects our understanding of and expectations for ourselves. The friendships that give us lasting peace of mind tend to be those that have both a high degree of compatibility and sufficient tension — the other person can understand us, yet continuously challenges our fixed ideas from a different perspective. My friendship with Xiao Ming is exactly like this. His steadiness taught me to pause for a moment before acting on impulse, while my emotional nature has at certain moments helped him break through the limits he had set for himself. Sociologists call this kind of relationship a 'developmental friendship': both parties are not just emotional supports, but catalysts for each other's growth. However, the high-speed mobility of modern society makes deep friendship increasingly scarce. People accumulate hundreds of 'contacts' on social media, yet often struggle to find one person who is truly willing to listen. This makes me wonder: in this age of information overload, are we expanding our relationships, or diluting them?"
+  },
+  {
+   "id": "fr-p1f",
+   "title": "De la nature de l'amitié",
+   "titleTranslation": "On the Nature of Friendship",
+   "level": "C1",
+   "series": "Mon ami",
+   "tags": [
+    "fiction",
+    "topic:friendship",
+    "advanced",
+    "series:Mon ami"
+   ],
+   "text": "Dans son Éthique à Nicomaque, Aristote distinguait trois formes d'amitié : l'amitié fondée sur l'utilité, l'amitié fondée sur le plaisir, et l'amitié fondée sur la vertu. Les deux premières se dissolvent lorsque les conditions dont elles dépendent disparaissent ; seule l'amitié fondée sur l'estime et le respect mutuel du caractère de l'autre peut résister à l'épreuve du temps. Plus de deux mille ans plus tard, cette idée résonne encore profondément. Les tendances atomisantes de la société contemporaine rendent les liens profonds entre les individus de plus en plus difficiles. Nous vivons au milieu d'une abondance matérielle sans précédent, tout en souffrant d'une solitude répandue et indicible. Le sociologue Robert Putnam a minutieusement documenté le déclin continu du capital social, et ce phénomène trouve son reflet correspondant à l'échelle mondiale. La véritable amitié exige du temps, de la vulnérabilité et des épreuves partagées — précisément ce que la vie moderne, obsédée par l'efficacité, est le moins capable d'offrir. Peut-être que, tout en recherchant davantage de connexions, ce dont nous avons encore plus besoin, c'est d'apprendre à investir plus profondément dans un nombre plus restreint de relations.",
+   "translation": "In his Nicomachean Ethics, Aristotle divided friendship into three kinds: friendship based on utility, friendship based on pleasure, and friendship based on virtue. The first two dissolve when the conditions they depend upon disappear; only friendship built on appreciation and respect for each other's character can withstand the test of time. More than two thousand years later, this insight remains profoundly resonant. The atomising tendencies of contemporary society make deep connections between people increasingly difficult. We live amid unprecedented material abundance, yet suffer from a widespread and ineffable loneliness. Sociologist Robert Putnam documented in detail the sustained decline of social capital, and this phenomenon has its corresponding mirror image globally. True friendship requires time, vulnerability, and shared trial — precisely the things that efficiency-driven modern life is least able to provide. Perhaps, while pursuing more connections, what we need even more is to learn how to invest more deeply in fewer relationships."
+  },
+  {
+   "id": "fr-p2",
+   "title": "Mon chat",
+   "titleTranslation": "My Cat",
+   "level": "A1",
+   "series": "Mon chat",
+   "tags": [
+    "fiction",
+    "topic:animals",
+    "beginner",
+    "series:Mon chat"
+   ],
+   "text": "J'ai un chat. Elle est très petite et très belle. Elle aime boire de l'eau mais elle n'aime pas manger des livres. Mon chien est aussi très gentil. Le chat et le chien sont de bons amis.",
+   "translation": "I have a cat. She is very small and very beautiful. She likes to drink water but does not like to eat books. My dog is also very good. The cat and the dog are good friends."
+  },
+  {
+   "id": "fr-p2b",
+   "title": "Xiao Hua et Da Huang",
+   "titleTranslation": "Xiao Hua and Da Huang",
+   "level": "A2",
+   "series": "Mon chat",
+   "tags": [
+    "fiction",
+    "topic:animals",
+    "beginner",
+    "series:Mon chat"
+   ],
+   "text": "Chez moi, il y a un chat et un chien. Le chat s'appelle Xiao Hua et le chien s'appelle Da Huang. Xiao Hua est très intelligente et aime courir dans la maison. Da Huang est très amical et aime jouer dans le jardin. Au début, ils ne s'aimaient pas et se disputaient souvent. Mais peu à peu, ils sont devenus de bons amis. Maintenant, chaque soir, ils dorment ensemble — très mignon.",
+   "translation": "My home has a cat and a dog. The cat is called Xiao Hua and the dog is called Da Huang. Xiao Hua is very smart and likes to run around the house. Da Huang is very friendly and likes to play in the yard. At first they didn't like each other and often quarrelled. But gradually they became good friends. Now every evening they sleep together — very adorable."
+  },
+  {
+   "id": "fr-p2c",
+   "title": "Les animaux ont aussi des sentiments",
+   "titleTranslation": "Animals Have Feelings Too",
+   "level": "B1",
+   "series": "Mon chat",
+   "tags": [
+    "fiction",
+    "topic:animals",
+    "intermediate",
+    "series:Mon chat"
+   ],
+   "text": "Quiconque a déjà eu un animal de compagnie sait que les animaux, comme les humains, ont aussi des émotions riches. Mon chat Xiao Hua et mon chien Da Huang en sont le meilleur exemple. Leur parcours, d'étrangers à compagnons familiers, de la dispute à la réconciliation, a traversé un véritable processus de développement émotionnel. Des recherches scientifiques montrent que les chats comme les chiens peuvent ressentir la joie, la peur, la jalousie, et même la tristesse. Quand leur maître part, ils se sentent seuls ; quand leur maître revient, ils montrent une joie sincère. Cela nous fait réfléchir : peut-être que la distance entre les humains et les animaux n'est pas aussi grande que nous l'imaginons.",
+   "translation": "Anyone who has kept a pet knows that animals, like humans, also have rich emotions. My cat Xiao Hua and dog Da Huang are the best example. Their journey from strangers to familiar companions, from quarrelling to reconciliation, went through a genuine process of emotional development. Scientific research shows that both cats and dogs can feel joy, fear, jealousy, and even sadness. When their owner leaves, they feel lonely; when their owner returns, they show genuine happiness. This makes us think: perhaps the distance between humans and animals is not as far as we imagine."
+  },
+  {
+   "id": "fr-p2d",
+   "title": "Les animaux de compagnie et la solitude moderne",
+   "titleTranslation": "Pets and Modern Loneliness",
+   "level": "B1",
+   "series": "Mon chat",
+   "tags": [
+    "fiction",
+    "topic:animals",
+    "intermediate",
+    "series:Mon chat"
+   ],
+   "text": "Ces dernières années, le nombre d'animaux de compagnie dans les villes chinoises a fortement augmenté. De plus en plus de jeunes choisissent d'avoir un chat ou un chien ; certains attribuent cela à la pression croissante de la vie, tandis que d'autres y voient le reflet de la tendance sociale vers une hausse des foyers d'une seule personne. La compagnie qu'offrent les animaux est inconditionnelle — ils ne jugent pas, n'exigent rien en retour, mais restent simplement tranquillement à vos côtés. Des recherches en psychologie ont montré qu'interagir avec des animaux peut efficacement abaisser le taux de cortisol et réduire l'anxiété. Cependant, ce type de relation soulève aussi des questions qui méritent réflexion : à mesure que les gens s'habituent de plus en plus à créer des liens profonds avec les animaux, cela signifie-t-il que les liens entre les personnes deviennent plus difficiles à former ? Xiao Hua et Da Huang me rendent heureux, mais ils ne peuvent pas remplacer une véritable amitié humaine. Peut-être que les animaux de compagnie sont un miroir, reflétant ce que nous désirons le plus mais avons le plus de mal à exprimer — être accepté sans condition.",
+   "translation": "In recent years, the number of pets in Chinese cities has grown sharply. More and more young people are choosing to keep cats or dogs; some attribute this to increasing life pressures, while others see it as reflecting the social trend of rising single-person households. The companionship that pets provide is unconditional — they do not judge, do not demand anything in return, but simply stay quietly by your side. Psychological research has found that interacting with pets can effectively lower cortisol levels and reduce anxiety. However, this kind of relationship also raises some questions worth pondering: as people become increasingly accustomed to forming deep bonds with animals, does this mean that connections between people are becoming more difficult to form? Xiao Hua and Da Huang make me happy, but they cannot replace genuine human friendship. Perhaps pets are a mirror, reflecting what we most desire yet find most difficult to express — to be accepted unconditionally."
+  },
+  {
+   "id": "fr-p2e",
+   "title": "Liens émotionnels entre les espèces",
+   "titleTranslation": "Emotional Bonds Across Species",
+   "level": "B2",
+   "series": "Mon chat",
+   "tags": [
+    "fiction",
+    "topic:animals",
+    "advanced",
+    "series:Mon chat"
+   ],
+   "text": "Les recherches transdisciplinaires à l'intersection de l'éthologie et des neurosciences bouleversent notre compréhension traditionnelle de la conscience animale. Pendant longtemps, la théorie de « l'animal-machine » de Descartes a fourni une base philosophique à la manière dont les humains traitent les autres espèces, considérant que les animaux ne sont que des machines biologiques complexes, dépourvues de véritable capacité à ressentir. Cependant, au cours des dernières décennies, un vaste corpus de recherches empiriques a révélé un tableau étonnamment différent. Des primatologues comme Frans de Waal ont documenté des comportements empathiques complexes chez les chimpanzés ; des recherches neurologiques ont également confirmé que les mammifères partagent des structures cérébrales associées au traitement des émotions. Le parcours de mon chat et de mon chien, de l'opposition à la réconciliation, n'est peut-être pas simplement le résultat d'un conditionnement comportemental, mais l'expression d'une expérience émotionnelle authentique. Cette compréhension ne change pas seulement notre manière de penser les animaux de compagnie, mais pose aussi un défi profond à l'ensemble du système de l'éthique animale, de l'élevage industriel et de l'anthropocentrisme.",
+   "translation": "Cross-disciplinary research at the intersection of ethology and neuroscience is overturning our traditional understanding of animal consciousness. For a long time, Descartes' 'animal-machine' theory provided a philosophical basis for how humans treat other species, holding that animals are nothing more than complex biological machines without genuine capacity for feeling. However, over the past few decades, a large body of empirical research has revealed a strikingly different picture. Primatologists such as Frans de Waal have documented complex empathic behaviours among chimpanzees; neurological research has also confirmed that mammals share brain structures associated with emotional processing. The journey of my cat and dog from opposition to reconciliation may not simply be the result of behavioural conditioning, but an expression of genuine emotional experience. This understanding not only changes how we think about pets, but also poses a profound challenge to the entire system of animal ethics, industrial farming, and anthropocentrism."
+  },
+  {
+   "id": "fr-p2f",
+   "title": "Pour une reconstruction éthique de la relation homme-animal",
+   "titleTranslation": "On the Ethical Reconstruction of the Human-Animal Relationship",
+   "level": "C1",
+   "series": "Mon chat",
+   "tags": [
+    "fiction",
+    "topic:animals",
+    "advanced",
+    "series:Mon chat"
+   ],
+   "text": "Le cadre utilitariste proposé par Peter Singer dans La Libération animale, et le système d'éthique animale fondé sur les droits de Tom Regan, représentent la réflexion la plus systématique sur la relation entre l'humain et l'animal dans la philosophie occidentale de la fin du vingtième siècle. Cependant, ces deux approches se heurtent à de profondes difficultés pratiques : la première est difficile à mettre en œuvre en raison de la complexité du calcul utilitariste ; la seconde crée des conflits fondamentaux avec de nombreuses institutions du monde réel en accordant aux animaux des droits inviolables. Dans le même temps, la philosophie chinoise traditionnelle contient également des réflexions profondes sur cette question. L'idée confucéenne selon laquelle « l'homme bienveillant aime les gens, et cet amour s'étend aux oiseaux et aux bêtes », ainsi que la vision taoïste selon laquelle « toutes choses et moi ne faisons qu'un », offrent toutes deux des dimensions de pensée différentes du discours occidental sur les droits. Face à une crise écologique de plus en plus grave, réexaminer la place de l'humanité au sein de la communauté du vivant n'est plus une spéculation luxueuse réservée aux cabinets des philosophes, mais une question urgente concernant la survie de notre espèce tout entière. Le chat lové contre mes pieds pour se réchauffer est peut-être le meilleur rappel : notre responsabilité envers un autre être vivant n'a jamais eu besoin d'attendre la permission de la philosophie.",
+   "translation": "The utilitarian framework proposed by Peter Singer in Animal Liberation, and the rights-based animal ethics system of Tom Regan, represent the most systematic reflection on the human-animal relationship in Western philosophy at the end of the twentieth century. However, both approaches face deep practical difficulties: the former is hard to operationalise due to the complexity of utilitarian calculation; the latter creates fundamental conflicts with many real-world institutions by granting animals inviolable rights. At the same time, traditional Chinese philosophy also contains profound discussions of this issue. The Confucian idea that 'the benevolent person loves people, extending to birds and beasts', and the Taoist realm of 'all things and I are one', both offer dimensions of thought different from the Western discourse of rights. In the face of an increasingly severe ecological crisis, re-examining humanity's place in the community of life is no longer a luxurious speculation confined to philosophers' studies, but an urgent question concerning the survival of our entire species. The cat curled up at my feet for warmth is perhaps the best reminder: our responsibility towards another living being has never needed to wait for philosophy's permission."
+  },
+  {
+   "id": "fr-p3",
+   "title": "Faire les courses au marché",
+   "titleTranslation": "Shopping at the Market",
+   "level": "A1",
+   "series": "Le marché",
+   "tags": [
+    "fiction",
+    "topic:shopping",
+    "beginner",
+    "series:Le marché"
+   ],
+   "text": "Aujourd'hui, je suis allé acheter des pommes. Les pommes étaient très bonnes et pas chères. J'ai aussi acheté de l'eau. J'étais très content.",
+   "translation": "Today I went to buy apples. The apples were very good and not expensive. I also bought water. I was very happy."
+  },
+  {
+   "id": "fr-p3b",
+   "title": "Aller au marché de légumes le week-end",
+   "titleTranslation": "Going to the Vegetable Market on the Weekend",
+   "level": "A2",
+   "series": "Le marché",
+   "tags": [
+    "fiction",
+    "topic:shopping",
+    "beginner",
+    "series:Le marché"
+   ],
+   "text": "Chaque week-end, j'aime aller faire mes courses au marché de légumes du quartier. Les légumes et les fruits y sont très frais, et les prix sont aussi moins chers qu'au supermarché. Aujourd'hui, j'ai acheté des pommes, des tomates et quelques légumes verts. La vieille dame qui vendait des pommes était très chaleureuse et m'a même donné deux pommes en plus. J'ai dépensé trente yuans et j'ai acheté beaucoup de choses — c'était vraiment avantageux. Sur le chemin du retour, j'étais de très bonne humeur.",
+   "translation": "Every weekend I like to go to the nearby vegetable market to shop. The vegetables and fruit there are very fresh, and the prices are cheaper than the supermarket too. Today I bought apples, tomatoes, and some green vegetables. The old woman selling apples was very warm and even gave me two extra apples. I spent thirty yuan and bought a lot of things — it felt very good value. On the way home, I was in a great mood."
+  },
+  {
+   "id": "fr-p3c",
+   "title": "Le marché de légumes qui disparaît",
+   "titleTranslation": "The Disappearing Vegetable Market",
+   "level": "B1",
+   "series": "Le marché",
+   "tags": [
+    "fiction",
+    "topic:shopping",
+    "intermediate",
+    "series:Le marché"
+   ],
+   "text": "Avec le développement rapide de l'urbanisation, les marchés de légumes traditionnels en plein air disparaissent peu à peu, remplacés par les supermarchés modernes et les plateformes d'achat en ligne. De nombreux citadins ont pris l'habitude de commander sur leur téléphone et de se faire livrer des légumes à domicile. Cependant, de plus en plus de gens commencent à regretter l'atmosphère de vie unique que l'on trouve au marché de légumes. Là-bas, on peut discuter avec le vieux vendeur, choisir les ingrédients les plus frais, et ressentir une chaleur humaine authentique. Le marché de légumes n'est pas seulement un lieu d'achat et de vente — c'est aussi un vecteur de culture communautaire. En le perdant, nous perdons bien plus qu'une simple façon de faire les courses.",
+   "translation": "With the rapid development of urbanisation, traditional open-air vegetable markets are gradually disappearing, being replaced by modern supermarkets and online shopping platforms. Many urban residents have become used to tapping their phone and having vegetables delivered to their door. However, more and more people are beginning to miss the unique atmosphere of life found in the vegetable market. There you can chat with the elderly vendor, select the freshest ingredients, and feel genuine human warmth. The vegetable market is not just a place to buy and sell — it is also a carrier of community culture. In losing it, we lose more than just a way of shopping."
+  },
+  {
+   "id": "fr-p3d",
+   "title": "L'affrontement entre l'économie numérique et le commerce traditionnel",
+   "titleTranslation": "The Contest Between the Digital Economy and Traditional Commerce",
+   "level": "B1",
+   "series": "Le marché",
+   "tags": [
+    "fiction",
+    "topic:shopping",
+    "intermediate",
+    "series:Le marché"
+   ],
+   "text": "Ces dernières années, les plateformes de commerce électronique de produits frais représentées par Pinduoduo et Meituan Maicai se sont développées rapidement, changeant profondément les habitudes d'achat des citadins chinois. Les données montrent qu'en 2023, la taille du marché chinois du commerce électronique de produits frais a dépassé 500 milliards de yuans, avec des taux de croissance annuels maintenus à deux chiffres. Cette tendance a porté un coup dur aux marchés de légumes traditionnels — la fréquentation a diminué, les revenus des vendeurs ont chuté, et certaines villes ont connu des fermetures à grande échelle. Cependant, l'évolution des marchés est loin d'être unidirectionnelle. De plus en plus de villes commencent à comprendre que les marchés de légumes ne remplissent pas seulement une fonction économique, mais servent aussi de lien spirituel pour la vie communautaire. Certains gouvernements locaux ont commencé à tenter de moderniser les marchés traditionnels, en introduisant des installations de chaîne du froid, le paiement mobile et des systèmes de réservation en ligne, dans l'espoir de préserver la chaleur humaine tout en améliorant la compétitivité du marché. La tension entre tradition et modernité ne doit pas nécessairement mener à une confrontation à somme nulle — il est peut-être possible de rechercher une coexistence par l'innovation.",
+   "translation": "In recent years, fresh produce e-commerce platforms represented by Pinduoduo and Meituan Maicai have risen rapidly, profoundly changing the shopping habits of Chinese urban residents. Data shows that in 2023, the scale of China's fresh produce e-commerce market exceeded 500 billion yuan, with annual growth rates maintained at double digits. This trend has dealt a heavy blow to traditional vegetable markets — foot traffic has decreased, vendors' income has fallen, and some cities have seen large-scale closures. However, the evolution of markets is far from one-directional. More and more cities are beginning to realise that vegetable markets carry not just an economic function, but also serve as a spiritual bond of community life. Some local governments have begun attempting to modernise traditional markets, introducing cold-chain facilities, mobile payment, and online reservation systems, hoping to preserve the human warmth while improving market competitiveness. The tension between tradition and modernity may not necessarily lead to zero-sum confrontation — it may be possible to seek coexistence through innovation."
+  },
+  {
+   "id": "fr-p3e",
+   "title": "Le marché comme forme de civilisation",
+   "titleTranslation": "The Market as a Form of Civilisation",
+   "level": "B2",
+   "series": "Le marché",
+   "tags": [
+    "fiction",
+    "topic:shopping",
+    "advanced",
+    "series:Le marché"
+   ],
+   "text": "Dans son étude classique des bazars marocains, l'anthropologue Clifford Geertz a souligné que les marchés n'ont jamais été de simples lieux d'échange de biens, mais des espaces complexes de circulation de l'information, de reproduction des relations sociales et de construction du sens culturel. Marchander au bazar n'est pas un simple jeu économique, mais une forme ritualisée d'interaction sociale, contenant des codes profonds relatifs à la confiance, à l'identité et à l'appartenance communautaire. La culture traditionnelle du marché en Chine présente également cette caractéristique. Des anciens marchés en plein air et des foires de temple aux marchés modernes de Tianqiao et du Temple du Dieu de la Ville, ces espaces ont toujours été d'importants vecteurs de l'auto-organisation de la société civile. L'impact actuel du commerce électronique de produits frais sur les marchés traditionnels est, en un certain sens, un processus de désocialisation : les transactions sont optimisées pour atteindre la mise en relation d'informations la plus efficace, mais dépouillées de la chaleur interpersonnelle et de la profondeur culturelle qui y étaient autrefois attachées. Cela ne signifie pas que le progrès technologique est nécessairement une régression civilisationnelle, mais cela exige de nous que, en concevant de nouvelles formes commerciales, nous prenions soigneusement en compte ces valeurs sociales qui ne peuvent être quantifiées par des algorithmes.",
+   "translation": "In his classic study of Moroccan bazaars, anthropologist Clifford Geertz pointed out that markets have never been merely places for the exchange of goods, but are complex spaces for the circulation of information, the reproduction of social relations, and the construction of cultural meaning. Bargaining in the bazaar is not simply economic game-playing, but a ritualised form of social interaction, containing deep codes about trust, identity, and community belonging. China's traditional market culture similarly has this characteristic. From the ancient grass markets and temple fairs to the modern Tianqiao and City God Temple markets, these spaces have always been important carriers of civil society's self-organisation. The current impact of fresh produce e-commerce on traditional markets is, in a certain sense, a process of de-socialisation: transactions are optimised into the most efficient information matching, yet stripped of the interpersonal warmth and cultural depth attached to them. This does not mean that technological progress is necessarily a civilisational regression, but it does require us, when designing new commercial forms, to carefully consider those social values that cannot be quantified by algorithms."
+  },
+  {
+   "id": "fr-p3f",
+   "title": "Le marché, le capital et le paradoxe du public",
+   "titleTranslation": "The Market, Capital, and the Paradox of the Public",
+   "level": "C1",
+   "series": "Le marché",
+   "tags": [
+    "fiction",
+    "topic:shopping",
+    "advanced",
+    "series:Le marché"
+   ],
+   "text": "Dans le discours économique, le « marché » est un mécanisme d'allocation des ressources ; du point de vue sociologique, il est une réfraction de la structure sociale ; et sur le plan de la philosophie politique, les débats entourant le marché sont perpétuellement enchevêtrés dans la tension fondamentale entre le bien public, le pouvoir de l'État et la liberté individuelle. Dans La Grande Transformation, Karl Polanyi a profondément mis au jour les contradictions internes de la société de marché : une fois que la terre, le travail et la monnaie sont marchandisés, le marché autorégulé érode systématiquement le tissu social même dont il dépend, générant ainsi des contre-mouvements de protection politique. La logique de ce « double mouvement » est en train de se rejouer sous une forme hautement condensée dans l'économie de plateforme contemporaine. La tarification algorithmique, les monopoles de données et l'expansion du pouvoir des plateformes ne redessinent pas seulement l'ordre concurrentiel au sens traditionnel, mais transforment profondément la configuration du pouvoir entre l'espace public et le capital privé. La disparition du marché de légumes est à la fois une transition commerciale à l'échelle micro et un microcosme du réajustement de la relation triangulaire entre l'État, le capital et la société à l'échelle macro. Trouver un équilibre dynamique entre l'efficacité du marché et les valeurs publiques est l'un des défis communs les plus pressants que cette époque a laissés aux décideurs politiques et à la société civile.",
+   "translation": "Within the discourse of economics, the 'market' is a mechanism for resource allocation; in the sociological perspective, it is a refraction of social structure; and at the level of political philosophy, debates surrounding the market are perpetually entangled with the fundamental tension between the public good, state power, and individual freedom. In The Great Transformation, Karl Polanyi profoundly revealed the internal contradictions of market society: once land, labour, and money are commodified, the self-regulating market systematically erodes the very social fabric upon which it depends, thereby generating counter-movements of political protection. The logic of this 'double movement' is being re-enacted in a highly compressed form in the contemporary platform economy. Algorithmic pricing, data monopolies, and the expansion of platform power not only reshape the competitive order in the traditional sense, but profoundly alter the power configuration between public space and private capital. The disappearance of the vegetable market is both a commercial transition at the micro level and a microcosm of the re-adjustment of the triangular relationship between state, capital, and society at the macro level. How to seek a dynamic balance between market efficiency and public values is one of the most pressing shared challenges that this era has left for policy makers and civil society."
+  },
+  {
+   "id": "fr-s1",
+   "title": "La première neige",
+   "titleTranslation": "The First Snow",
+   "level": "A2",
+   "series": null,
+   "tags": [
+    "fiction",
+    "topic:weather",
+    "beginner"
+   ],
+   "text": "Ce matin, je me suis levé et j'ai vu que tout était blanc dehors. Il avait neigé ! C'était la première neige de l'année. J'étais très content et j'ai immédiatement mis des vêtements chauds pour courir dehors. La neige était très douce et le bruit de mes pas dessus était charmant. J'ai fait un petit bonhomme de neige et j'ai fait une bataille de boules de neige avec les enfants des voisins. Même s'il faisait très froid, nous riions tous joyeusement. L'hiver est vraiment merveilleux.",
+   "translation": "This morning I got up and saw that everything outside was white. It had snowed! This was the year's first snow. I was very happy and immediately put on thick clothes and ran outside. The snow was very soft and the sound of stepping on it was lovely. I made a little snowman out of snow and played snowballs with the neighbour's children. Even though it was very cold, we were all laughing happily. Winter is really wonderful."
+  },
+  {
+   "id": "fr-s2",
+   "title": "Un après-midi perdu",
+   "titleTranslation": "A Lost Afternoon",
+   "level": "A2",
+   "series": null,
+   "tags": [
+    "fiction",
+    "topic:travel",
+    "beginner"
+   ],
+   "text": "Samedi dernier, je suis allé seul dans un nouvel endroit. Je pensais connaître le chemin, mais après avoir marché longtemps, je n'arrivais toujours pas à trouver l'endroit où je voulais aller. J'étais un peu nerveux parce que mon téléphone n'avait plus de batterie et je ne pouvais pas utiliser la carte. Je n'ai eu d'autre choix que de demander mon chemin à un vieil homme sur le bord de la route. Il a été extrêmement serviable — non seulement il m'a indiqué le chemin, mais il m'a aussi accompagné un moment. J'ai finalement trouvé ma destination, avec une heure de retard, mais le cœur rempli de chaleur.",
+   "translation": "Last Saturday, I went to a new place by myself. I thought I knew the way, but after walking for a long time I still couldn't find the place I wanted to go. I was a little nervous because my phone had run out of battery and I couldn't use the map. I had no choice but to ask an elderly man on the roadside for directions. He was extremely helpful — not only did he tell me the way, he also accompanied me for a stretch. In the end I found my destination, though an hour late, but feeling very warm inside."
+  },
+  {
+   "id": "fr-s3",
+   "title": "Le goût du marché de nuit",
+   "titleTranslation": "The Taste of the Night Market",
+   "level": "B1",
+   "series": null,
+   "tags": [
+    "fiction",
+    "topic:food",
+    "intermediate"
+   ],
+   "text": "Les marchés de nuit de Taïwan sont célèbres dans le monde entier. Dès que la nuit tombe, les étals des deux côtés de la rue s'illuminent, et l'air se remplit du parfum de toutes sortes de plats. Il y a du calmar grillé, du tofu puant, du thé au lait aux perles, et toutes sortes de collations dont je ne connais même pas le nom. Les gens se bousculent épaule contre épaule, et les éclats de voix et de rires montent et redescendent. Le marché de nuit n'est pas seulement un endroit pour manger — il représente un mode de vie et une identité culturelle. Pour de nombreux Taïwanais, le marché de nuit fait partie des souvenirs d'enfance, du goût du foyer. Même après de longues années passées loin, sentir ce parfum familier ramène immédiatement des souvenirs du passé.",
+   "translation": "Taiwan's night markets are world-famous. Whenever night falls, the stalls on both sides of the street light up, and the air is filled with the fragrance of all kinds of food. There is grilled squid, stinky tofu, bubble milk tea, and all sorts of snacks I can't name. People jostle shoulder to shoulder, and the sounds of talking and laughter rise and fall. The night market is not just a place to eat — it represents a way of life and cultural identity. For many Taiwanese people, the night market is part of childhood memories, the taste of home. Even after many years away, smelling that familiar fragrance immediately brings back memories of the past."
+  },
+  {
+   "id": "fr-s4",
+   "title": "Une lettre jamais envoyée",
+   "titleTranslation": "A Letter Never Sent",
+   "level": "B1",
+   "series": null,
+   "tags": [
+    "fiction",
+    "topic:memory",
+    "intermediate"
+   ],
+   "text": "En triant de vieilles affaires, j'ai trouvé une lettre écrite il y a dix ans. À cette époque, je venais de commencer l'université, et mon village natal et mes parents me manquaient beaucoup. La lettre était pleine de mots sincères — des espoirs pour l'avenir et de l'anxiété à l'idée de quitter la maison. Mais pour une raison ou une autre, cette lettre n'a jamais été envoyée et est simplement restée enfouie dans une vieille boîte. La relire aujourd'hui procure un sentiment à la fois étrange et familier. Ce moi de dix-huit ans avait tant de rêves et tant de craintes. Je pense que certains mots n'ont peut-être pas besoin d'être prononcés — les écrire suffit déjà.",
+   "translation": "While sorting through old belongings, I found a letter written ten years ago. At that time I had just started university, and missed my hometown and my parents very much. The letter was full of heartfelt words — hopes for the future and anxiety about leaving home. But for some reason, this letter was never sent and was simply buried in an old box. Reading it now feels both strange and familiar. That eighteen-year-old self had so many dreams and so many fears. I think perhaps some words don't need to be spoken — just writing them down is already enough."
+  },
+  {
+   "id": "fr-s5",
+   "title": "La cuisine de grand-mère",
+   "titleTranslation": "Grandmother's Kitchen",
+   "level": "B1",
+   "series": null,
+   "tags": [
+    "fiction",
+    "topic:family",
+    "intermediate"
+   ],
+   "text": "Dans mon souvenir, la cuisine de grand-mère était toujours chaleureuse. Peu importe le vent qui soufflait ou la pluie qui tombait dehors, dès que l'on franchissait cette petite porte, on était accueilli par l'arôme de la nourriture et la chaleur du fourneau. Grand-mère ne savait pas lire, mais elle avait une paire de mains magiques capables de transformer les ingrédients les plus ordinaires en saveurs impossibles à oublier. Elle n'utilisait jamais de recette — toutes les proportions se trouvaient dans le sens de ses mains. Chaque fois que je lui demandais comment préparer quelque chose, elle souriait et disait : « Il suffit d'en mettre à peu près comme ça. » Ce n'est que plus tard que j'ai compris que dans ce « à peu près comme ça » se cachaient des décennies d'expérience et un amour silencieux pour sa famille. Grand-mère est partie il y a trois ans, mais chaque fois que je sens le parfum du porc braisé au soja, cette porte de cuisine s'ouvre lentement dans ma mémoire.",
+   "translation": "In my memory, grandmother's kitchen was always warm. No matter how the wind blew or the rain fell outside, as soon as you stepped through that small door, you were greeted by the aroma of food and the warmth of the stove. Grandmother couldn't read, but she had a pair of magical hands that could transform the most ordinary ingredients into flavours impossible to forget. She never used a recipe — all the proportions were in the feel of her hands. Every time I asked her how to make something, she would smile and say: 'Just about right will do.' Only later did I understand that within that 'just about right' were hidden decades of experience and a wordless love for her family. Grandmother has been gone for three years, but whenever I smell the fragrance of red-braised pork, that kitchen door slowly opens in my memory."
+  },
+  {
+   "id": "fr-s6",
+   "title": "Le dernier métro",
+   "titleTranslation": "The Last Subway",
+   "level": "B1",
+   "series": null,
+   "tags": [
+    "fiction",
+    "topic:city-life",
+    "intermediate"
+   ],
+   "text": "Il était tard, un vendredi soir. J'avais fait des heures supplémentaires jusqu'à onze heures et demie et je venais tout juste d'attraper le dernier métro de cette ligne. La rame était presque vide, avec seulement quelques passagers dispersés assis dans leur coin respectif, le visage fatigué. En face de moi était assis un homme d'âge moyen en tenue de travail, la tête appuyée contre la vitre, déjà endormi. Il tenait encore un casque de chantier dans les mains, les coins de sa bouche légèrement relevés — qui sait de quoi il rêvait. J'ai soudain eu l'impression que cette rame de fin de soirée était comme un petit refuge, rassemblant temporairement tous les gens fatigués, roulant silencieusement sous la ville. Chacun a un endroit où rentrer ; chacun travaille dur pour quelque chose. Cette pensée m'a procuré un sentiment de chaleur inexplicable.",
+   "translation": "It was late on a Friday night. I had worked overtime until eleven-thirty and just caught the last subway on this line. The carriage was almost empty, with only a scattering of passengers sitting in their respective corners, faces weary. Opposite me sat a middle-aged man in work clothes, his head leaning against the window, already asleep. He was still holding a hard hat in his hands, the corners of his mouth slightly upturned — who knows what he was dreaming of. I suddenly felt that this late-night carriage was like a small shelter, temporarily gathering all the tired people together, running quietly beneath the city. Everyone has somewhere to return to; everyone is working hard for something. This thought gave me an inexplicable sense of warmth."
+  },
+  {
+   "id": "fr-s7",
+   "title": "Les limites du langage",
+   "titleTranslation": "The Limits of Language",
+   "level": "B2",
+   "series": null,
+   "tags": [
+    "fiction",
+    "topic:language",
+    "advanced"
+   ],
+   "text": "Wittgenstein a dit un jour : « Les limites de mon langage sont les limites de mon monde. » Apprendre une nouvelle langue n'est pas simplement une question de maîtriser un nouvel ensemble de vocabulaire et de règles grammaticales, mais de percevoir et d'organiser la réalité d'une manière entièrement nouvelle. Le mot japonais komorebi décrit le spectacle de la lumière du soleil filtrant à travers les feuilles — un mot sans équivalent précis en chinois ou en anglais. Le mot portugais saudade désigne un profond sentiment de nostalgie et de tristesse pour quelque chose d'absent, et il est tout aussi intraduisible. Chaque langue porte les structures cognitives déposées par la longue évolution d'une culture particulière ; l'apprendre, c'est, en un certain sens, habiter temporairement une autre manière d'être. Cela explique aussi pourquoi de nombreuses personnes bilingues disent avoir l'impression d'être des personnes différentes lorsqu'elles pensent dans des langues différentes. Le langage n'est pas seulement un outil pour exprimer la pensée — il est aussi le contenant qui façonne la pensée.",
+   "translation": "Wittgenstein once said: 'The limits of my language are the limits of my world.' Learning a new language is not simply a matter of mastering a new set of vocabulary and grammatical rules, but of perceiving and organising reality in an entirely new way. The Japanese word komorebi describes the sight of sunlight falling through the gaps between leaves — a word without a precise equivalent in Chinese or English. The Portuguese word saudade refers to a deep longing and sadness for something absent, and is equally untranslatable. Every language carries the cognitive structures deposited through the long evolution of a particular culture; to learn it is, in a certain sense, to temporarily dwell within another way of being. This also explains why many bilingual people report feeling like different people when thinking in different languages. Language is not merely a tool for expressing thought — it is also the container that shapes thought."
+  },
+  {
+   "id": "fr-s8",
+   "title": "L'intelligence artificielle et les limites de la créativité humaine",
+   "titleTranslation": "Artificial Intelligence and the Boundaries of Human Creativity",
+   "level": "C1",
+   "series": null,
+   "tags": [
+    "fiction",
+    "topic:technology",
+    "advanced"
+   ],
+   "text": "La prolifération rapide de l'intelligence artificielle générative remodèle, avec une profondeur sans précédent, la compréhension qu'a la société humaine du concept de « créativité ». Lorsqu'un modèle de langage peut générer, en quelques secondes, de la poésie, de la fiction, voire des articles académiques d'un accomplissement stylistique certain, le sens de la subjectivité humaine porté par l'acte de « création » se trouve fondamentalement remis en question. Les critiques soulignent que ce que l'intelligence artificielle appelle « création » n'est rien de plus qu'un résumé statistique et un réarrangement de textes existants, dépourvu de véritable intentionnalité et de fondement émotionnel, et ne peut donc être que l'apparence de la créativité, non son essence. Les défenseurs rétorquent cependant que la créativité humaine repose elle aussi sur l'imitation, l'absorption et la recombinaison des œuvres de nos prédécesseurs, et que les deux ne sont pas fondamentalement différents au niveau mécanique, ne différant que par l'échelle et la vitesse. Le cœur de ce débat ne réside peut-être pas dans la question de savoir si l'intelligence artificielle « possède ou non » la créativité, mais dans la raison pour laquelle nous valorisons la création humaine en premier lieu. Si la valeur d'une peinture réside uniquement dans son effet visuel, alors les images générées par une machine ne diffèrent en rien de celles peintes par une main humaine ; mais si la valeur de l'art réside dans l'expérience humaine, la vulnérabilité et la quête de sens cristallisées dans le processus créatif, alors il existe entre les deux un fossé qui ne peut être simplement comblé. Cette question est, en essence, un miroir qui nous oblige à examiner précisément où réside l'unicité de notre propre existence.",
+   "translation": "The rapid proliferation of generative artificial intelligence is reshaping human society's understanding of the concept of 'creativity' to an unprecedented depth. When a language model can generate stylistically accomplished poetry, fiction, and even academic papers within seconds, the meaning of human subjectivity carried by the act of 'creation' comes under fundamental questioning. Critics point out that what artificial intelligence calls 'creation' is nothing more than a statistical summary and rearrangement of existing texts, lacking genuine intentionality and emotional foundation, and can therefore only be the appearance of creativity rather than its essence. Supporters counter, however, that human creativity is similarly built upon the imitation, absorption, and recombination of predecessors' work, and that the two are not fundamentally different at the mechanistic level, differing only in scale and speed. The core of this debate may not lie in whether artificial intelligence 'does or does not' possess creativity, but in why we value human creation in the first place. If the value of a painting lies solely in its visual effect, then machine-generated images are no different from those painted by human hands; but if the value of art lies in the human experience, vulnerability, and search for meaning crystallised in the creative process, then there exists between the two a gulf that cannot simply be bridged. This question is, in essence, a mirror that forces us to examine where precisely the uniqueness of our own existence resides."
+  },
+  {
+   "id": "fr-nf1",
+   "title": "Les quatre grandes inventions de la Chine",
+   "titleTranslation": "China's Four Great Inventions",
+   "level": "A2",
+   "series": null,
+   "tags": [
+    "non-fiction",
+    "topic:history",
+    "beginner"
+   ],
+   "text": "La Chine antique comptait quatre grandes inventions : le papier, l'imprimerie, la poudre à canon et la boussole. Ces quatre inventions ont changé l'histoire du monde. Le papier a permis aux gens d'écrire et de conserver le savoir. L'imprimerie a permis de produire des livres en grande quantité, afin que davantage de personnes puissent lire. La poudre à canon a d'abord été utilisée pour les célébrations, puis plus tard dans la guerre. La boussole a aidé les gens à trouver leur direction en mer, rendant possibles les voyages océaniques. Ces inventions se sont répandues de la Chine vers toutes les régions du monde et ont grandement contribué au développement de la civilisation humaine.",
+   "translation": "Ancient China had four great inventions: papermaking, printing, gunpowder, and the compass. These four inventions changed the history of the world. Papermaking allowed people to write down and preserve knowledge. Printing allowed books to be produced in large quantities, so more people could read. Gunpowder was initially used for celebrations, and later used in warfare. The compass helped people find direction at sea, making ocean voyages possible. These inventions spread from China to all parts of the world and made great contributions to the development of human civilisation."
+  },
+  {
+   "id": "fr-nf2",
+   "title": "Pékin : une ville ancienne et moderne",
+   "titleTranslation": "Beijing: A City of the Ancient and the Modern",
+   "level": "A2",
+   "series": null,
+   "tags": [
+    "non-fiction",
+    "topic:travel",
+    "beginner"
+   ],
+   "text": "Pékin est la capitale de la Chine et aussi une ville ancienne de plus de trois mille ans d'histoire. On y trouve de nombreux sites historiques célèbres, comme la Cité interdite, la Grande Muraille et le Temple du Ciel. La Cité interdite était la résidence des empereurs des dynasties Ming et Qing, avec plus de neuf mille pièces à l'intérieur. La Grande Muraille s'étend sur plusieurs milliers de kilomètres d'est en ouest et est la construction la plus célèbre de Chine. Outre les sites historiques, Pékin est aussi une métropole moderne avec de nombreux gratte-ciel, métros et centres commerciaux. La cuisine de Pékin est également très célèbre — la plus connue est le canard laqué de Pékin. Si vous venez en Chine, vous devez absolument aller voir Pékin.",
+   "translation": "Beijing is the capital of China and also an ancient city with more than three thousand years of history. There are many famous historical sites here, such as the Forbidden City, the Great Wall, and the Temple of Heaven. The Forbidden City was the residence of emperors of the Ming and Qing dynasties, with more than nine thousand rooms inside. The Great Wall stretches several thousand kilometres from east to west and is China's most famous structure. Besides historical sites, Beijing is also a modern metropolis with many tall buildings, subways, and shopping centres. Beijing's food is also very famous — the most well-known is Peking roast duck. If you come to China, you must go and see Beijing."
+  },
+  {
+   "id": "fr-nf3",
+   "title": "Confucius : le penseur qui a changé la Chine",
+   "titleTranslation": "Confucius: The Thinker Who Changed China",
+   "level": "B1",
+   "series": null,
+   "tags": [
+    "non-fiction",
+    "topic:history",
+    "intermediate"
+   ],
+   "text": "Confucius est l'un des plus grands penseurs et éducateurs de l'histoire chinoise. Il vécut à l'époque des Printemps et Automnes, il y a deux mille cinq cents ans, et consacra sa vie à promouvoir des concepts moraux tels que la bienveillance, la droiture et la bienséance rituelle. Confucius pensait qu'une personne devait sans cesse étudier et cultiver son caractère afin de contribuer à la société. Sa philosophie éducative était très avancée — il préconisait d'enseigner à chaque élève selon ses caractéristiques propres. Ses enseignements furent plus tard compilés par ses disciples dans les Entretiens, qui devinrent l'un des classiques les plus importants de Chine pendant des millénaires. Les idées de Confucius influencèrent non seulement la Chine, mais eurent aussi un impact profond sur des pays asiatiques comme le Japon, la Corée et le Vietnam. Aujourd'hui encore, la pensée confucéenne demeure une clé pour comprendre la culture chinoise.",
+   "translation": "Confucius is one of the greatest thinkers and educators in Chinese history. He lived in the Spring and Autumn period two thousand five hundred years ago, and devoted his life to promoting moral concepts such as benevolence, righteousness, and ritual propriety. Confucius believed that a person should continuously study and cultivate their character in order to contribute to society. His educational philosophy was very advanced — he advocated teaching each student according to their particular characteristics. His teachings were later compiled by his followers into the Analects, which became one of the most important classics in China for thousands of years. Confucius's ideas influenced not only China but also had a profound impact on Asian countries such as Japan, Korea, and Vietnam. To this day, Confucian thought remains a key to understanding Chinese culture."
+  },
+  {
+   "id": "fr-nf4",
+   "title": "Le Nouvel An chinois",
+   "titleTranslation": "Chinese New Year",
+   "level": "A2",
+   "series": null,
+   "tags": [
+    "non-fiction",
+    "topic:culture",
+    "beginner"
+   ],
+   "text": "La Fête du Printemps est la fête traditionnelle la plus importante de Chine, aussi appelée le Nouvel An lunaire. Chaque année, en janvier ou en février, les Chinois célèbrent la Fête du Printemps. Avant la fête, les gens nettoient leur maison, achètent des vêtements neufs et préparent beaucoup de plats délicieux. La veille du Nouvel An, toute la famille prend ensemble le repas de retrouvailles et regarde le gala télévisé de la Fête du Printemps. Quand le Nouvel An arrive, les enfants reçoivent des enveloppes rouges contenant de l'argent porte-bonheur. Dans les rues, il y a des danses du dragon et du lion, ainsi que de nombreux feux d'artifice. La Fête du Printemps dure généralement quinze jours — le dernier jour s'appelle la Fête des Lanternes, où l'on mange des boules de riz gluant et regarde des expositions de lanternes. Pour les Chinois, la Fête du Printemps est un moment pour rentrer chez soi et se retrouver en famille, la période la plus chaleureuse de l'année.",
+   "translation": "The Spring Festival is the most important traditional holiday in China, also called the Lunar New Year. Every year in January or February, Chinese people celebrate the Spring Festival. Before the festival, people clean their houses, buy new clothes, and prepare lots of delicious food. On New Year's Eve, the whole family eats the reunion dinner together and watches the Spring Festival Gala programme. When the New Year arrives, children receive red envelopes containing lucky money. On the streets there are dragon and lion dances, and many fireworks. The Spring Festival is generally celebrated for fifteen days — the last day is called the Lantern Festival, when people eat glutinous rice balls and watch lantern displays. For Chinese people, the Spring Festival is a time to return home and reunite with family, the warmest time of the year."
+  },
+  {
+   "id": "fr-nf5",
+   "title": "Tu Youyou : sauver des vies grâce à l'artémisinine",
+   "titleTranslation": "Tu Youyou: Saving Lives with Artemisinin",
+   "level": "B1",
+   "series": null,
+   "tags": [
+    "non-fiction",
+    "topic:science",
+    "intermediate"
+   ],
+   "text": "Tu Youyou est une célèbre pharmacologue chinoise et la première scientifique chinoise à recevoir le prix Nobel de physiologie ou médecine. Née en 1930, elle développa très jeune un vif intérêt pour la médecine. Dans les années 1960 et 1970, le paludisme coûtait la vie à un très grand nombre de personnes à travers le monde, et les médicaments alors disponibles ne parvenaient plus à contrôler efficacement la maladie. Tu Youyou dirigea une équipe qui étudia en profondeur les anciens textes médicaux chinois, à la recherche d'indices parmi des centaines de plantes traditionnelles. Après d'innombrables échecs, elle parvint enfin à extraire de l'armoise annuelle le principe actif — l'artémisinine. Ce médicament a sauvé des millions de vies, en particulier parmi les enfants d'Afrique. En 2015, elle reçut le prix Nobel, prouvant au monde la valeur de la sagesse médicale traditionnelle chinoise. Son histoire nous enseigne que la persévérance et la patience sont les qualités les plus importantes dans l'exploration scientifique.",
+   "translation": "Tu Youyou is a famous Chinese pharmacologist and the first Chinese scientist to receive the Nobel Prize in Physiology or Medicine. Born in 1930, she developed a strong interest in medicine from a young age. In the 1960s and 70s, malaria was claiming vast numbers of lives around the world, and the drugs available at the time could no longer effectively control the disease. Tu Youyou led a team that studied ancient Chinese medical texts in depth, searching for clues among hundreds of traditional herbs. After countless failures, she finally extracted the active ingredient from sweet wormwood — artemisinin. This drug has saved millions of lives, particularly among children in Africa. In 2015 she received the Nobel Prize, proving to the world the value of traditional Chinese medical wisdom. Her story tells us that perseverance and patience are the most important qualities in scientific exploration."
+  },
+  {
+   "id": "fr-nf6",
+   "title": "La Grande Muraille : témoin de l'histoire",
+   "titleTranslation": "The Great Wall: Witness to History",
+   "level": "B1",
+   "series": null,
+   "tags": [
+    "non-fiction",
+    "topic:history",
+    "intermediate"
+   ],
+   "text": "La Grande Muraille est l'un des projets de construction les plus monumentaux de l'histoire humaine, s'étendant sur plus de vingt mille kilomètres à travers plusieurs provinces du nord de la Chine. La construction de la Grande Muraille commença durant les périodes des Printemps et Automnes et des Royaumes combattants, lorsque divers États féodaux construisirent des sections de mur séparées pour résister aux invasions des peuples nomades du nord. Après que le Premier Empereur Qin eut unifié les six royaumes, il relia ces sections de mur dispersées, formant la toute première version de la Grande Muraille au sens propre. Grâce aux réparations et aux extensions ultérieures sous les dynasties Han, Ming et d'autres encore, la Grande Muraille évolua peu à peu vers l'ampleur que nous lui connaissons aujourd'hui. Cependant, la signification de la Grande Muraille dépasse largement la seule défense militaire. Elle incarne la volonté de l'État chinois antique ; des millions de travailleurs ont construit, de leur sang et de leur sueur, ce miracle de la civilisation humaine presque impossible à reproduire. Aujourd'hui, la Grande Muraille est devenue l'un des symboles culturels les plus importants de la Chine, attirant des dizaines de millions de visiteurs chaque année. Cependant, avec le passage du temps et l'impact de l'activité humaine, le travail de préservation de la Muraille fait face à des défis de plus en plus sérieux.",
+   "translation": "The Great Wall is one of the most monumental construction projects in human history, stretching over twenty thousand kilometres across several provinces in northern China. The construction of the Great Wall began during the Spring and Autumn and Warring States periods, when various feudal states built separate sections of wall to resist the invasions of northern nomadic peoples. After the First Emperor of Qin unified the six states, he connected these scattered sections of wall, forming the earliest version of the Great Wall in the proper sense. Through subsequent repairs and expansions during the Han, Ming, and other dynasties, the Great Wall gradually evolved into the scale we see today. However, the significance of the Great Wall goes far beyond military defence. It is the embodiment of the ancient Chinese state's will; millions of labourers built with their blood and sweat this miracle of human civilisation that is nearly impossible to replicate. Today the Great Wall has become one of China's most important cultural symbols, attracting tens of millions of visitors each year. However, with the passage of time and the impact of human activity, the work of protecting the Wall faces increasingly serious challenges."
+  },
+  {
+   "id": "fr-nf7",
+   "title": "Li Bai : la vie légendaire du poète immortel",
+   "titleTranslation": "Li Bai: The Legendary Life of the Poet Immortal",
+   "level": "B1",
+   "series": null,
+   "tags": [
+    "non-fiction",
+    "topic:literature",
+    "intermediate"
+   ],
+   "text": "Li Bai (701-762) est l'un des plus grands poètes de l'histoire littéraire chinoise, vénéré par la postérité comme l'« Immortel de la Poésie ». Né à l'apogée de la dynastie Tang, il passa sa vie à errer à travers le monde, laissant ses traces sur plus de la moitié de la Chine. Comparée à celle de son contemporain Du Fu, la poésie de Li Bai est plus libre et débridée, empreinte d'amour pour la nature, d'aspiration à la liberté et d'un profond sentiment de l'impermanence de la vie. Ses œuvres représentatives, notamment Pensées d'une nuit tranquille, Buvons du vin et Contemplant la cascade du mont Lu, sont récitées depuis des centaines d'années et sont devenues des symboles emblématiques de la culture chinoise. La carrière officielle de Li Bai fut semée d'échecs ; bien qu'il ait brièvement servi à la cour de l'empereur Xuanzong des Tang, il fut marginalisé en raison de sa personnalité débridée et de son incapacité à flatter. Il choisit de retourner vivre parmi les montagnes et les rivières, prenant le vin pour compagnon et utilisant la poésie pour consigner la joie sauvage et la profonde tristesse de son monde intérieur. Selon la légende, il finit par tomber ivre dans une rivière, se noyant en essayant de saisir le reflet de la lune — une légende qui est elle-même la meilleure note de bas de page à sa vie légendaire.",
+   "translation": "Li Bai (701-762) is one of the greatest poets in Chinese literary history, revered by posterity as the 'Poet Immortal'. Born during the height of the Tang dynasty, he spent his life wandering the world, leaving his footprints across more than half of China. Compared to his contemporary Du Fu, Li Bai's poetry is more free-spirited and uninhibited, filled with a love of nature, a yearning for freedom, and a profound sense of life's impermanence. His representative works including Quiet Night Thoughts, Bring in the Wine, and Gazing at Lushan Waterfall have been recited for hundreds of years and become iconic symbols of Chinese culture. Li Bai's official career was filled with setbacks; though he briefly served in the court of Emperor Xuanzong of Tang, he was marginalised due to his uninhibited personality and inability to flatter. He chose to return to the mountains and rivers, taking wine as his companion and using poetry to record the wild joy and deep sorrow of his inner world. According to legend, he finally fell drunk into a river, drowned while trying to grasp the reflection of the moon — a legend that is itself the best footnote to his legendary life."
+  },
+  {
+   "id": "fr-nf8",
+   "title": "La culture du thé chinois",
+   "titleTranslation": "Chinese Tea Culture",
+   "level": "B2",
+   "series": null,
+   "tags": [
+    "non-fiction",
+    "topic:culture",
+    "advanced"
+   ],
+   "text": "Le thé, l'un des symboles culturels les plus importants de la Chine, a une histoire remontant à plus de quatre mille ans, à l'époque du Divin Laboureur. La légende raconte que lorsque le Divin Laboureur goûtait des centaines de plantes, il découvrit par hasard que les feuilles de thé avaient des propriétés détoxifiantes, marquant ainsi le début de la longue relation entre l'humanité et le thé. Cependant, le thé n'entra véritablement dans la vie quotidienne des gens du peuple qu'après la dynastie Tang. Le Classique du thé, écrit par Lu Yu, est la première monographie au monde consacrée au thé, exposant systématiquement l'art de le cultiver, de le transformer, de le préparer et de l'apprécier, élevant ainsi la dégustation du thé d'un acte purement utilitaire à un art culturel raffiné. La culture du thé atteignit son apogée sous la dynastie Song, lorsque les « concours de thé » apparurent comme une coutume sociale unique en son genre. Sous les dynasties Ming et Qing, les méthodes d'infusion du thé passèrent progressivement du thé compressé et en poudre au thé en feuilles, posant les fondations de la manière moderne de boire le thé en Chine. Aujourd'hui encore, la culture chinoise du thé englobe de multiples dimensions, dont la cérémonie du thé, l'art du thé, le commerce du thé et l'ancienne route du thé et des chevaux — elle fait à la fois partie de la vie quotidienne et constitue un important vecteur par lequel la Chine exporte sa puissance culturelle douce vers le monde.",
+   "translation": "Tea, as one of China's most important cultural symbols, has a history traceable to more than four thousand years ago during the era of the Divine Farmer. Legend has it that when the Divine Farmer was tasting hundreds of plants, he accidentally discovered that tea leaves had detoxifying properties, thereby beginning humanity's long affinity with tea. However, tea truly entered the daily life of ordinary people only after the Tang dynasty. The Classic of Tea written by Lu Yu is the world's first monograph on tea, systematically expounding the way of cultivating, processing, preparing, and appreciating tea, elevating tea-drinking from a purely utilitarian act to a refined cultural art. Tea culture reached its peak during the Song dynasty, when 'tea competitions' emerged as a unique social custom. During the Ming and Qing dynasties, methods of brewing tea gradually shifted from compressed and powdered tea to loose-leaf tea, laying the foundation for the modern Chinese way of drinking tea. To this day, Chinese tea culture encompasses multiple dimensions including tea ceremony, tea art, the tea trade, and the Ancient Tea Horse Road — it is both a part of daily life and an important vehicle through which China exports cultural soft power to the world."
+  },
+  {
+   "id": "fr-nf9",
+   "title": "La Réforme et l'Ouverture, et le miracle économique chinois",
+   "titleTranslation": "Reform and Opening Up and China's Economic Miracle",
+   "level": "B2",
+   "series": null,
+   "tags": [
+    "non-fiction",
+    "topic:economy",
+    "advanced"
+   ],
+   "text": "En 1978, la politique de Réforme et d'Ouverture promue par Deng Xiaoping initia la transformation socio-économique la plus profonde de l'histoire chinoise. Au cours des plus de quarante années qui suivirent, l'économie chinoise passa de moins de deux pour cent du PIB mondial à environ dix-huit pour cent, devenant la deuxième économie mondiale, tandis que des centaines de millions de personnes furent sorties de la pauvreté au cours de ce processus. Cette réussite n'a aucun précédent dans l'histoire humaine, et les économistes l'ont qualifiée de « miracle chinois ». La logique centrale de la Réforme et de l'Ouverture consistait à introduire de manière sélective des mécanismes de marché dans le cadre du système socialiste, en utilisant les zones économiques spéciales comme projets pilotes et le développement axé sur l'exportation comme moteur, intégrant progressivement la Chine dans les chaînes de valeur mondiales. Le développement de Shenzhen, passée d'un petit village de pêcheurs à une métropole internationale de plus de dix millions d'habitants, est le microcosme le plus représentatif de ce processus. Cependant, cette croissance à grande vitesse s'est aussi accompagnée d'une série de contradictions profondément enracinées, notamment le creusement des déséquilibres régionaux, la montée des pressions environnementales et l'élargissement des écarts de richesse. Comment parvenir à une croissance plus inclusive et plus durable tout en maintenant la dynamique de développement est l'un des principaux défis politiques auxquels la Chine est aujourd'hui confrontée.",
+   "translation": "In 1978, the Reform and Opening Up policy promoted by Deng Xiaoping initiated the most profound socioeconomic transformation in Chinese history. In the more than forty years since, China's economic scale grew from less than two percent of global GDP to approximately eighteen percent, becoming the world's second-largest economy, with hundreds of millions of people lifted out of poverty in the process. This achievement has no precedent in human history, and economists have called it the 'China Miracle'. The core logic of Reform and Opening Up was to selectively introduce market mechanisms within the framework of the socialist system, using special economic zones as pilot projects and export-oriented development as a driving force, gradually integrating China into global value chains. Shenzhen's development from a small fishing village into an international metropolis with a population of over ten million is the most representative microcosm of this process. However, this high-speed growth was also accompanied by a series of deep-rooted contradictions, including widening regional imbalances, rising environmental pressures, and an expanding wealth gap. How to achieve more inclusive and sustainable growth while maintaining development momentum is one of the core policy challenges China currently faces."
+  },
+  {
+   "id": "fr-nf10",
+   "title": "L'origine et l'évolution des caractères chinois",
+   "titleTranslation": "The Origin and Evolution of Chinese Characters",
+   "level": "C1",
+   "series": null,
+   "tags": [
+    "non-fiction",
+    "topic:language",
+    "advanced"
+   ],
+   "text": "Les caractères chinois constituent le seul système d'écriture ancien au monde à n'avoir jamais été interrompu, avec une lignée de développement s'étendant sur plus de trois mille ans, portant en elle toute la mémoire de l'évolution de la civilisation chinoise. Le plus ancien système mature de caractères chinois se trouve dans les inscriptions sur os oraculaires de la dynastie Shang — des textes divinatoires gravés sur des carapaces de tortue et des os d'animaux datant d'environ 3 300 ans. Ces caractères anciens présentaient déjà les formes rudimentaires des principes de formation des caractères que sont la pictographie, l'idéographie, l'idéographie composée et la composition phono-sémantique, posant les fondations de la théorie des « Six Écritures » appliquée par les générations suivantes. À travers l'évolution des inscriptions sur bronze, de la grande écriture sigillaire et de la petite écriture sigillaire, les caractères chinois parvinrent à l'unification de l'écriture sous la dynastie Qin, une mesure politique aux implications profondes pour la continuité de la civilisation chinoise. La nature logographique des caractères chinois crée une différence cognitive fondamentale avec l'écriture alphabétique : des recherches indiquent que la lecture du chinois repose davantage sur la reconnaissance globale de motifs par l'hémisphère droit, tandis que l'écriture alphabétique repose davantage sur le décodage linéaire de l'hémisphère gauche. La question de savoir si cette différence cognitive façonne des modes de pensée différents chez ceux qui les utilisent demeure un sujet brûlant à l'intersection de la linguistique et des sciences cognitives. Dans le double contexte de la mondialisation et de la numérisation, les caractères chinois connaissent une nouvelle évolution morphologique profonde — émojis, méthodes de saisie et transmission interlinguistique redessinent la vitalité de cet ancien système symbolique de manières que les anciens n'auraient pu anticiper.",
+   "translation": "Chinese characters constitute the world's only ancient writing system that has never been interrupted, with a developmental lineage spanning more than three thousand years, bearing the entire memory of the evolution of Chinese civilisation. The earliest mature system of Chinese characters is found in the oracle bone inscriptions of the Shang dynasty — divination texts carved on turtle shells and animal bones dating back approximately 3,300 years. These early characters already displayed the rudimentary forms of the character-formation principles of pictography, ideography, compound ideography, and phono-semantic composition, laying the foundation for the 'Six Scripts' theory applied by later generations. Through the evolution of bronze inscriptions, large seal script, and small seal script, Chinese characters achieved the unification of script under the Qin dynasty, a political measure that had far-reaching implications for the continuity of Chinese civilisation. The logographic nature of Chinese characters creates a fundamental cognitive difference from alphabetic writing: research indicates that reading Chinese relies more on the right brain's holistic pattern recognition, while alphabetic writing relies more on the left brain's linear decoding. Whether this cognitive difference shapes different ways of thinking in its users remains a hot topic at the intersection of linguistics and cognitive science. In the dual context of globalisation and digitalisation, Chinese characters are undergoing yet another profound morphological evolution — emoji, input methods, and cross-linguistic transmission are reshaping the vitality of this ancient symbol system in ways that ancient people could not have anticipated."
+  },
+  {
+   "id": "fr-p37",
+   "title": "La planche à voile",
+   "titleTranslation": "Windsurfing",
+   "level": "A1",
+   "series": "La planche à voile",
+   "tags": [
+    "non-fiction",
+    "topic:sports",
+    "beginner",
+    "series:La planche à voile"
+   ],
+   "text": "J'aime la planche à voile. La planche est sur l'eau. Je me tiens debout sur la planche. Le vent est fort. Je suis très content.\n\nMon ami aime aussi la planche à voile. Il va au bord de l'eau tous les jours. L'eau est très bleue. Le vent est bon. Nous jouons ensemble.\n\nLa planche à voile est très amusante. Aimes-tu la planche à voile ?",
+   "translation": "I like windsurfing. The windsurfing board is on the water. I stand on the board. The wind is strong. I am very happy.\n\nMy friend also likes windsurfing. He goes to the water every day. The water is very blue. The wind is good. We play together.\n\nWindsurfing is a lot of fun. Do you like windsurfing?"
+  },
+  {
+   "id": "fr-p38",
+   "title": "Apprendre la planche à voile",
+   "titleTranslation": "Learning to Windsurf",
+   "level": "A2",
+   "series": "La planche à voile",
+   "tags": [
+    "non-fiction",
+    "topic:sports",
+    "beginner",
+    "series:La planche à voile"
+   ],
+   "text": "J'ai commencé à apprendre la planche à voile. Le professeur a dit que la planche à voile n'est pas difficile, mais qu'il faut s'entraîner. Je vais à la mer tous les week-ends pour m'entraîner.\n\nLa première fois, je suis monté sur la planche et je suis tombé à l'eau tout de suite. Le professeur a dit : « Ce n'est pas grave, réessaie. » J'ai peu à peu appris à me tenir debout fermement. Quand le vent arrive, je tiens la voile avec mes mains. La voile est très grande et le vent est fort.\n\nMaintenant, je peux me déplacer un moment sur l'eau. Je suis très content. Le mois prochain, je veux participer à une compétition. Mon ami dit que je progresse vite. Je pense à la planche à voile tous les jours.",
+   "translation": "I started learning to windsurf. The teacher said windsurfing is not difficult, but you need to practice. I go to the seaside every weekend to practice.\n\nThe first time, I stepped on the board and fell into the water right away. The teacher said: 'It's okay, try again.' I slowly learned to stand steady. When the wind comes, I hold the sail with my hands. The sail is very big and the wind is strong.\n\nNow I can move on the water for a while. I am very happy. Next month, I want to join a competition. My friend says I am improving quickly. I think about windsurfing every day."
+  },
+  {
+   "id": "fr-p39",
+   "title": "Une compétition de planche à voile",
+   "titleTranslation": "A Windsurfing Competition",
+   "level": "B1",
+   "series": "La planche à voile",
+   "tags": [
+    "non-fiction",
+    "topic:sports",
+    "intermediate",
+    "series:La planche à voile"
+   ],
+   "text": "Samedi dernier, j'ai participé à une compétition de planche à voile. La compétition s'est déroulée au bord de la mer, et de nombreuses personnes y ont participé. J'étais un peu nerveux, mais aussi très excité.\n\nLa compétition a commencé. Le vent soufflait du nord et était très fort. J'ai fait de mon mieux pour contrôler la voile et laisser la planche suivre le vent. Les vagues n'étaient pas trop hautes, ce qui était plus facile pour moi. J'ai peu à peu dépassé plusieurs concurrents et je me sentais très bien.\n\nVers la fin de la course, une forte rafale de vent est soudainement arrivée. J'ai failli tomber à l'eau, mais j'ai tenu bon. Finalement, j'ai terminé troisième. L'entraîneur a dit que ma technique s'était beaucoup améliorée et m'a dit de continuer à travailler dur. Je prévois de participer à une autre compétition le mois prochain — cette fois, je veux finir premier.",
+   "translation": "Last Saturday, I took part in a windsurfing competition. The competition was held at the seaside, and many people participated. I was a little nervous, but also very excited.\n\nThe competition started. The wind blew from the north and was very fast. I worked hard to control the sail and let the board follow the wind. The waves were not too high, which was easier for me. I slowly overtook several competitors and felt great.\n\nNear the end of the race, a sudden strong gust of wind came. I almost fell into the water, but I held on. In the end, I came in third place. The coach said my technique had improved a lot and told me to keep working hard. I plan to enter another competition next month — this time I want to come in first."
+  },
+  {
+   "id": "fr-ft1",
+   "title": "Le Petit Chaperon Rouge",
+   "titleTranslation": "Little Red Riding Hood",
+   "level": "A1",
+   "series": "Le Petit Chaperon Rouge",
+   "tags": [
+    "fiction",
+    "genre:fairytale",
+    "origin:germany",
+    "topic:family",
+    "beginner",
+    "level:A1",
+    "series:Le Petit Chaperon Rouge"
+   ],
+   "text": "Une fille vit dans un petit village. Elle s'appelle le Petit Chaperon Rouge. Elle porte un chaperon rouge tous les jours. Elle aime beaucoup sa grand-mère. Sa grand-mère habite dans la forêt.\n\nUn matin, sa mère fait un gâteau. « Apporte ce gâteau à grand-mère », dit-elle. « Reste sur le chemin. Ne parle pas aux inconnus. » Le Petit Chaperon Rouge prend le gâteau. Elle marche vers la forêt.\n\nDans la forêt, elle rencontre un loup. Le loup est grand. Le loup est méchant. « Bonjour, petite fille », dit-il. « Où vas-tu ? » « Je vais chez ma grand-mère », dit-elle. Le loup sourit. Il a un plan.\n\nLe loup court à la maison de grand-mère. Il frappe à la porte. « Qui est là ? », demande grand-mère. « C'est moi ! », dit le loup. Il ouvre la porte. Il mange grand-mère ! Puis il met ses vêtements. Il se couche dans son lit.\n\nLe Petit Chaperon Rouge arrive à la maison. Elle voit grand-mère dans le lit. « Grand-mère, pourquoi as-tu de si grands yeux ? », demande-t-elle. « Pour mieux te voir », dit le loup. « Grand-mère, pourquoi as-tu de si grandes oreilles ? », demande-t-elle. « Pour mieux t'entendre », dit le loup. « Grand-mère, pourquoi as-tu de si grandes dents ? », demande-t-elle. « Pour mieux te manger ! », dit le loup.\n\nLe loup saute du lit. Un chasseur entend le bruit. Il court dans la maison. Il sauve le Petit Chaperon Rouge. Il sauve aussi grand-mère. Le loup s'enfuit. Le Petit Chaperon Rouge est heureuse. Elle ne parle plus jamais aux inconnus.",
+   "translation": "A girl lives in a small village. Her name is Little Red Riding Hood. She wears a red hood every day. She loves her grandmother very much. Her grandmother lives in the forest.\n\nOne morning, her mother makes a cake. \"Take this cake to Grandmother,\" she says. \"Stay on the path. Do not talk to strangers.\" Little Red Riding Hood takes the cake. She walks into the forest.\n\nIn the forest, she meets a wolf. The wolf is big. The wolf is bad. \"Hello, little girl,\" he says. \"Where do you go?\" \"I go to my grandmother's house,\" she says. The wolf smiles. He has a plan.\n\nThe wolf runs to Grandmother's house. He knocks on the door. \"Who is it?\" asks Grandmother. \"It's me!\" says the wolf. He opens the door. He eats Grandmother! Then he wears her clothes. He lies down in her bed.\n\nLittle Red Riding Hood arrives at the house. She sees Grandmother in the bed. \"Grandmother, why do you have such big eyes?\" she asks. \"To see you better,\" says the wolf. \"Grandmother, why do you have such big ears?\" she asks. \"To hear you better,\" says the wolf. \"Grandmother, why do you have such big teeth?\" she asks. \"To eat you better!\" says the wolf.\n\nThe wolf jumps out of the bed. A hunter hears the noise. He runs into the house. He saves Little Red Riding Hood. He saves Grandmother too. The wolf runs away. Little Red Riding Hood is happy. She never talks to strangers again."
+  },
+  {
+   "id": "fr-ft2",
+   "title": "Les musiciens de Brême",
+   "titleTranslation": "The Bremen Town Musicians",
+   "level": "A1",
+   "series": "Les musiciens de Brême",
+   "tags": [
+    "fiction",
+    "genre:fairytale",
+    "origin:germany",
+    "topic:adventure",
+    "beginner",
+    "level:A1",
+    "series:Les musiciens de Brême"
+   ],
+   "text": "Un âne vit dans une ferme. Il est vieux. Il ne peut plus travailler. Son maître veut se débarrasser de lui. L'âne est triste. Il s'enfuit. Il veut aller à Brême. Il veut devenir musicien là-bas.\n\nSur la route, il rencontre un chien. Le chien est vieux aussi. Il ne peut plus chasser. Son maître veut se débarrasser de lui. « Viens avec moi à Brême », dit l'âne. « Nous pouvons faire de la musique ensemble. » Le chien est content. Ils marchent ensemble.\n\nIls rencontrent une chatte. La chatte est vieille. Elle ne peut plus attraper de souris. Sa maîtresse veut se débarrasser d'elle. « Viens avec nous à Brême », dit l'âne. La chatte est contente. Maintenant trois animaux marchent ensemble.\n\nIls rencontrent un coq. Le coq a peur. « Ma maîtresse veut me cuisiner ! », dit-il. « Viens avec nous à Brême », dit l'âne. Le coq est content. Maintenant quatre animaux marchent ensemble.\n\nLa nuit tombe. Les animaux voient une petite maison. Il y a de la lumière à l'intérieur. Ils regardent par la fenêtre. Des voleurs sont assis à une table. La table a beaucoup de nourriture. Les animaux ont faim. Ils font un plan.\n\nL'âne se tient à la fenêtre. Le chien se tient sur l'âne. La chatte se tient sur le chien. Le coq se tient sur la chatte. Ils font beaucoup de bruit ensemble. Les voleurs ont peur. Ils s'enfuient. Les animaux mangent la nourriture. Ils vivent heureux dans la maison.",
+   "translation": "A donkey lives on a farm. He is old. He cannot work anymore. His owner wants to get rid of him. The donkey is sad. He runs away. He wants to go to Bremen. He wants to be a musician there.\n\nOn the road, he meets a dog. The dog is old too. He cannot hunt anymore. His owner wants to get rid of him. \"Come with me to Bremen,\" says the donkey. \"We can make music together.\" The dog is happy. They walk together.\n\nThey meet a cat. The cat is old. She cannot catch mice anymore. Her owner wants to get rid of her. \"Come with us to Bremen,\" says the donkey. The cat is happy. Now three animals walk together.\n\nThey meet a rooster. The rooster is scared. \"My owner wants to cook me!\" he says. \"Come with us to Bremen,\" says the donkey. The rooster is happy. Now four animals walk together.\n\nNight comes. The animals see a small house. There is light inside. They look through the window. Robbers sit at a table. The table has lots of food. The animals are hungry. They make a plan.\n\nThe donkey stands at the window. The dog stands on the donkey. The cat stands on the dog. The rooster stands on the cat. They make a big noise together. The robbers are scared. They run away. The animals eat the food. They live happily in the house."
+  },
+  {
+   "id": "fr-ft3",
+   "title": "Hansel et Gretel",
+   "titleTranslation": "Hansel and Gretel",
+   "level": "A1",
+   "series": "Hansel et Gretel",
+   "tags": [
+    "fiction",
+    "genre:fairytale",
+    "origin:germany",
+    "topic:family",
+    "beginner",
+    "level:A1",
+    "series:Hansel et Gretel"
+   ],
+   "text": "Un garçon et une fille vivent près d'une forêt. Le garçon s'appelle Hansel. La fille s'appelle Gretel. Leur famille est pauvre. Ils n'ont pas beaucoup à manger. Leur mère veut les laisser dans la forêt.\n\nHansel entend le plan. La nuit, il ramasse des pierres blanches. Le lendemain, les parents emmènent les enfants dans la forêt. Hansel laisse tomber les pierres sur le chemin. Les parents laissent les enfants seuls.\n\nLa nuit tombe. Les enfants suivent les pierres jusqu'à la maison. Leur mère est en colère. Elle veut les laisser dans la forêt encore une fois. Cette fois, Hansel ne peut pas ramasser de pierres. La porte est fermée à clé. Il utilise du pain à la place.\n\nLes parents les emmènent de nouveau dans la forêt. Hansel laisse tomber des petits morceaux de pain. Mais les oiseaux mangent le pain. Les enfants ne trouvent pas le chemin de la maison. Ils sont perdus dans la forêt.\n\nIls trouvent une maison. La maison est faite de bonbons ! Ils ont faim. Ils mangent les murs. Une vieille femme ouvre la porte. « Entrez, les enfants », dit-elle. Mais la femme est une sorcière. Elle veut les manger.\n\nLa sorcière enferme Hansel dans une cage. Elle fait travailler Gretel. Un jour, la sorcière veut cuisiner Hansel. Elle dit à Gretel de vérifier le four. Gretel pousse la sorcière dans le four à la place. Elle libère Hansel. Ils trouvent de l'or dans la maison. Ils prennent l'or. Ils rentrent chez eux. Ils vivent heureux avec leur père.",
+   "translation": "A boy and a girl live near a forest. The boy is Hansel. The girl is Gretel. Their family is poor. They do not have much food. Their mother wants to leave them in the forest.\n\nHansel hears the plan. At night, he collects white stones. The next day, the parents take the children into the forest. Hansel drops the stones on the path. The parents leave the children alone.\n\nNight comes. The children follow the stones home. Their mother is angry. She wants to leave them in the forest again. This time, Hansel cannot collect stones. The door is locked. He uses bread instead.\n\nThe parents take them into the forest again. Hansel drops small pieces of bread. But birds eat the bread. The children cannot find the way home. They are lost in the forest.\n\nThey find a house. The house is made of candy! They are hungry. They eat the walls. An old woman opens the door. \"Come inside, children,\" she says. But the woman is a witch. She wants to eat them.\n\nThe witch locks Hansel in a cage. She makes Gretel work. One day, the witch wants to cook Hansel. She tells Gretel to check the oven. Gretel pushes the witch into the oven instead. She frees Hansel. They find gold in the house. They take the gold. They go home. They live happily with their father."
+  },
+  {
+   "id": "fr-ft4",
+   "title": "Blanche-Neige",
+   "titleTranslation": "Snow White",
+   "level": "A2",
+   "series": "Blanche-Neige",
+   "tags": [
+    "fiction",
+    "genre:fairytale",
+    "origin:germany",
+    "topic:magic",
+    "intermediate",
+    "level:A2",
+    "series:Blanche-Neige"
+   ],
+   "text": "Il y a longtemps, une reine désirait avoir un enfant. Elle voulait une fille à la peau blanche comme la neige. Bientôt, elle eut une petite fille. Elle l'appela Blanche-Neige. Mais la reine mourut. Le roi épousa une nouvelle reine. La nouvelle reine était très vaniteuse. Elle avait un miroir magique.\n\nChaque jour, la reine posait une question au miroir. « Miroir, miroir, dis-moi qui est la plus belle du royaume ? » Pendant des années, le miroir répondait la reine. Mais un jour, le miroir répondit Blanche-Neige. La reine devint très furieuse. Elle appela un chasseur. « Emmène Blanche-Neige dans la forêt », dit-elle. « Tue-la là-bas. » Mais le chasseur eut pitié de Blanche-Neige. Il la laissa partir.\n\nBlanche-Neige marcha dans la forêt. Elle trouva une petite maison. Sept nains y vivaient. Ils dirent qu'elle pouvait rester. Chaque jour, les nains allaient travailler. Blanche-Neige cuisinait et nettoyait pour eux. Elle était heureuse dans la petite maison.\n\nLa reine demanda de nouveau à son miroir. « Miroir, miroir, dis-moi qui est la plus belle du royaume ? » Le miroir dit que Blanche-Neige était encore en vie. La reine était furieuse. Elle se déguisa en vieille femme. Elle prépara une pomme empoisonnée. Elle marcha jusqu'à la maison des nains. Elle donna la pomme à Blanche-Neige. Blanche-Neige y mordit. Elle tomba au sol.\n\nLes nains rentrèrent à la maison. Ils trouvèrent Blanche-Neige sur le sol. Ils pensèrent qu'elle était morte. Ils pleurèrent pendant plusieurs jours. Ils la placèrent dans un cercueil de verre. Un jour, un prince passa par là. Il vit Blanche-Neige dans le cercueil. Il tomba amoureux d'elle.\n\nLes serviteurs du prince portaient le cercueil. Un serviteur trébucha. Le morceau de pomme sortit de la bouche de Blanche-Neige. Elle se réveilla ! Le prince lui demanda de l'épouser. Blanche-Neige dit oui. Ils vécurent heureux ensemble. La méchante reine ne la dérangea plus jamais.",
+   "translation": "A long time ago, a queen wished for a child. She wanted a daughter with skin as white as snow. Soon, she had a baby girl. She named her Snow White. But the queen died. The king married a new queen. The new queen was very vain. She had a magic mirror.\n\nEvery day, the queen asked the mirror a question. \"Mirror, mirror, on the wall, who is the prettiest of them all?\" For years, the mirror said the queen. But one day, the mirror said Snow White. The queen became very angry. She called a huntsman. \"Take Snow White into the forest,\" she said. \"Kill her there.\" But the huntsman felt sorry for Snow White. He let her go.\n\nSnow White walked through the forest. She found a small house. Seven dwarfs lived there. They said she could stay. Every day, the dwarfs went to work. Snow White cooked and cleaned for them. She was happy in the little house.\n\nThe queen asked her mirror again. \"Mirror, mirror, on the wall, who is the prettiest of them all?\" The mirror said Snow White was still alive. The queen was furious. She dressed as an old woman. She made a poisoned apple. She walked to the dwarfs' house. She gave the apple to Snow White. Snow White took a bite. She fell to the ground.\n\nThe dwarfs came home. They found Snow White on the floor. They thought she was dead. They cried for many days. They put her in a glass coffin. One day, a prince rode by. He saw Snow White in the coffin. He fell in love with her.\n\nThe prince's servants carried the coffin. One servant stumbled. The piece of apple fell out of Snow White's mouth. She woke up! The prince asked her to marry him. Snow White said yes. They lived happily together. The evil queen never bothered her again."
+  },
+  {
+   "id": "fr-ft5",
+   "title": "Cendrillon",
+   "titleTranslation": "Cinderella",
+   "level": "A2",
+   "series": "Cendrillon",
+   "tags": [
+    "fiction",
+    "genre:fairytale",
+    "origin:germany",
+    "topic:magic",
+    "intermediate",
+    "level:A2",
+    "series:Cendrillon"
+   ],
+   "text": "Cendrillon vivait avec sa belle-mère et ses deux demi-sœurs. Sa mère était morte de nombreuses années auparavant. Cendrillon planta un petit arbre près de la tombe de sa mère. Elle pleurait sous l'arbre tous les jours. L'arbre grandit. Sa belle-mère ne l'aimait pas. Ses demi-sœurs étaient méchantes aussi. Elles faisaient faire tout le ménage à Cendrillon.\n\nUn jour, une invitation arriva. Le roi invita toutes les jeunes femmes à un bal royal. Les demi-sœurs se préparèrent pour le bal. Cendrillon voulait y aller aussi. Mais elle n'avait rien de beau à porter. Ses demi-sœurs se moquèrent d'elle. Elles partirent au bal sans elle.\n\nCendrillon pleura près de la tombe de sa mère. « Petit arbre, secoue-toi et tremble », dit-elle. « Donne-moi de l'argent et de l'or ». Soudain, deux oiseaux blancs descendirent en volant. Ils apportèrent une belle robe. Ils apportèrent aussi des chaussures en or. Cendrillon mit la robe et les chaussures.\n\nCendrillon arriva au bal. Le prince la vit immédiatement. Il lui demanda de danser. Ils dansèrent ensemble toute la nuit. Cendrillon oublia l'heure. Soudain, elle se souvint qu'elle devait partir. Elle descendit l'escalier en courant. Elle perdit une chaussure en or sur les marches.\n\nLe lendemain, le prince chercha dans tout le royaume. Il portait la chaussure en or avec lui. Chaque jeune femme essaya la chaussure. Mais elle n'allait à personne. Finalement, le prince arriva chez Cendrillon. Les deux demi-sœurs essayèrent la chaussure. Elle ne leur allait pas.\n\nAlors Cendrillon essaya la chaussure. Elle lui allait parfaitement ! Le prince la reconnut du bal. Il lui demanda de l'épouser. Cendrillon dit oui. Ils se marièrent au palais. Ils vécurent heureux pour toujours.",
+   "translation": "Cinderella lived with her stepmother and two stepsisters. Her mother had died many years ago. Cinderella planted a small tree by her mother's grave. She cried under the tree every day. The tree grew tall. Her stepmother did not like her. Her stepsisters were unkind too. They made Cinderella do all the housework.\n\nOne day, an invitation arrived. The king invited every young woman to a royal ball. The stepsisters got ready for the ball. Cinderella wanted to go too. But she had nothing nice to wear. Her stepsisters laughed at her. They left for the ball without her.\n\nCinderella cried by her mother's grave. \"Little tree, shake and shiver,\" she said. \"Give me something silver and golden.\" Suddenly, two white birds flew down. They brought a beautiful dress. They also brought gold slippers. Cinderella put on the dress and slippers.\n\nCinderella arrived at the ball. The prince saw her immediately. He asked her to dance. They danced all night together. Cinderella forgot the time. Suddenly, she remembered she must leave. She ran down the stairs. She lost one gold slipper on the steps.\n\nThe next day, the prince searched the kingdom. He carried the gold slipper with him. Every young woman tried on the slipper. But it did not fit anyone. Finally, the prince came to Cinderella's house. Both stepsisters tried the slipper. It did not fit them.\n\nThen Cinderella tried the slipper. It fit her perfectly! The prince recognized her from the ball. He asked her to marry him. Cinderella said yes. They got married in the palace. They lived happily ever after."
+  },
+  {
+   "id": "fr-ft6",
+   "title": "Le Nain Tracassin",
+   "titleTranslation": "Rumpelstiltskin",
+   "level": "A2",
+   "series": "Le Nain Tracassin",
+   "tags": [
+    "fiction",
+    "genre:fairytale",
+    "origin:germany",
+    "topic:magic",
+    "intermediate",
+    "level:A2",
+    "series:Le Nain Tracassin"
+   ],
+   "text": "Un pauvre meunier avait une belle fille. Un jour, il rencontra le roi. Il se vanta : « Ma fille peut filer la paille en or. » Le roi fut intéressé. Il amena la jeune fille au palais. Il l'enferma dans une pièce pleine de paille. « File-la en or avant le matin », dit-il. « Sinon, tu mourras. »\n\nLa jeune fille s'assit seule et pleura. Soudain, un étrange petit homme apparut. « Pourquoi pleures-tu ? », demanda-t-il. « Je dois filer cette paille en or », dit-elle. « Que me donneras-tu si je la file pour toi ? », demanda-t-il. Elle lui donna son collier. Le petit homme fila toute la paille en or.\n\nLe lendemain matin, le roi était ravi. Il enferma la jeune fille dans une pièce encore plus grande. De nouveau, le petit homme apparut. Cette fois, elle lui donna sa bague. Il fila de nouveau toute la paille en or. Le roi était très content.\n\nLa troisième nuit, le roi l'enferma dans la plus grande pièce. « Si tu réussis encore », dit-il, « je t'épouserai. » Le petit homme apparut une fois de plus. « Que me donneras-tu si je la file pour toi ? », demanda-t-il. Cette fois, elle n'avait rien à lui donner. « Promets-moi ton premier enfant », dit-il. Elle était désespérée, alors elle accepta. Il fila la paille en or.\n\nLe roi épousa la jeune fille. Elle devint reine. Un an plus tard, elle eut un bébé. Alors le petit homme revint. « Donne-moi l'enfant », dit-il. La reine le supplia de la laisser garder le bébé. Il eut pitié d'elle. « Tu as trois jours pour deviner mon nom », dit-il.\n\nLa reine envoya un messager dans la forêt. Par hasard, il entendit le petit homme chanter une chanson étrange. Il chanta : « Ah, comme il est bon que personne ne sache que je m'appelle Tracassin ! » Le messager courut prévenir la reine. Quand le petit homme revint, la reine dit son nom. Il fut furieux. Il tapa du pied et disparut pour toujours. La reine garda son enfant.",
+   "translation": "A poor miller had a beautiful daughter. One day, he met the king. He boasted, \"My daughter can spin straw into gold.\" The king was interested. He brought the girl to the palace. He locked her in a room full of straw. \"Spin this into gold by morning,\" he said. \"Or you will die.\"\n\nThe girl sat alone and cried. Suddenly, a strange little man appeared. \"Why are you crying?\" he asked. \"I must spin this straw into gold,\" she said. \"What will you give me if I spin it for you?\" he asked. She gave him her necklace. The little man spun all the straw into gold.\n\nThe next morning, the king was delighted. He locked the girl in an even bigger room. Again, the little man appeared. This time, she gave him her ring. He spun all the straw into gold again. The king was very pleased.\n\nOn the third night, the king locked her in the biggest room. \"If you succeed again,\" he said, \"I will marry you.\" The little man appeared once more. \"What will you give me if I spin it for you?\" he asked. This time, she had nothing to give him. \"Promise me your first child,\" he said. She was desperate, so she agreed. He spun the straw into gold.\n\nThe king married the girl. She became queen. A year later, she had a baby. Then the little man returned. \"Give me the child,\" he said. The queen begged him to let her keep the baby. He felt sorry for her. \"You have three days to guess my name,\" he said.\n\nThe queen sent a messenger into the forest. By chance, he heard the little man singing a strange song. He sang, \"Oh, how good that no one knows, that my name is Rumpelstiltskin!\" The messenger ran back and told the queen. When the little man returned, the queen said his name. He was furious. He stamped his foot and disappeared forever. The queen kept her child."
+  }
+ ]
+}
