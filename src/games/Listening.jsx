@@ -49,6 +49,10 @@ export default function Listening() {
   const sequenceRef = useRef(sequence)
   useEffect(() => { sequenceRef.current = sequence })
 
+  const speechRate = settings.listeningSpeechRate ?? 0.9
+  const speechRateRef = useRef(speechRate)
+  useEffect(() => { speechRateRef.current = speechRate })
+
   function updateSequence(next) {
     stopAndReset()
     updateSettings(s => ({ ...s, listeningSequence: next }))
@@ -56,6 +60,7 @@ export default function Listening() {
   function addStep(step) { updateSequence([...sequence, step]) }
   function removeStep(i) { updateSequence(sequence.filter((_, idx) => idx !== i)) }
   function resetSequence() { updateSequence(DEFAULT_SEQUENCE) }
+  function setSpeechRate(v) { updateSettings(s => ({ ...s, listeningSpeechRate: v })) }
 
   const { entries: poolEntries } = getEntriesForGame('listening')
   const poolKey = useMemo(() => poolEntries.map(e => e.id).join(','), [poolEntries])
@@ -117,13 +122,13 @@ export default function Listening() {
         if (step === 'sentence' && !ex) continue  // no sentence available for this word — skip silently, no gap
         if (step === 'word') {
           setPhase('word')
-          await speakAndWait(entry.entry, activeLanguage)
+          await speakAndWait(entry.entry, activeLanguage, { rate: speechRateRef.current })
         } else if (step === 'translation') {
           setPhase('translation')
-          await speakAndWait(entry.translation[0], 'en')
+          await speakAndWait(entry.translation[0], 'en', { rate: speechRateRef.current })
         } else if (step === 'sentence') {
           setPhase('sentence')
-          await speakAndWait(ex, activeLanguage)
+          await speakAndWait(ex, activeLanguage, { rate: speechRateRef.current })
         }
         if (tokenRef.current !== token) break
         await delay(GAP_SHORT, tokenRef, token)
@@ -293,6 +298,7 @@ export default function Listening() {
             { icon: 'All boxes / Box N', label: 'Box filter', desc: 'Cycle through every unmastered box top-down, or loop just one box on repeat' },
             { icon: '🔀', label: 'Reshuffle', desc: 'Re-randomize the order within each box' },
             { icon: '+ Word / + Translation / + Sentence', label: 'Play order', desc: 'Tap to append to the sequence; tap a chip in the sequence to remove it' },
+            { icon: 'Speed', label: 'Playback speed', desc: 'Slide from 0.5× to 1.5× — applies to every utterance in this session' },
           ]}
         />
       </div>
@@ -336,6 +342,20 @@ export default function Listening() {
             <button className="ls-seq-reset-btn" onClick={resetSequence}>Reset</button>
           )}
         </div>
+      </div>
+
+      <div className="ls-speed">
+        <span className="ls-speed-label">Speed</span>
+        <input
+          type="range"
+          min="0.5"
+          max="1.5"
+          step="0.1"
+          value={speechRate}
+          onChange={e => setSpeechRate(parseFloat(e.target.value))}
+          className="ls-speed-slider"
+        />
+        <span className="ls-speed-value">{speechRate.toFixed(1)}×</span>
       </div>
 
       {queue.length === 0 ? (

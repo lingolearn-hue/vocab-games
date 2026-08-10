@@ -2,4 +2,6 @@ node_modules/
 dist/
 .DS_Store
 vendor/
-tools/__pycache__/
+__pycache__/
+*.pyc
+.nopush

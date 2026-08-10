@@ -237,7 +237,7 @@
 [data-theme="light"] .dl-title  { color: #111; }
 [data-theme="light"] .dl-back   { color: #555; }
 [data-theme="light"] .dl-filter-bar { border-color: #f0f0f0; }
-[data-theme="light"] .dl-chip   { background: #f5f5f5; border-color: #e0e0e0; color: #aaa; }
+[data-theme="light"] .dl-chip   { background: #f5f5f5; border-color: #e0e0e0; color: var(--dt2); }
 [data-theme="light"] .dl-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
 [data-theme="light"] .dl-card   { background: #fff; border-color: #e8e8e8; }
 [data-theme="light"] .dl-card:hover { background: #f5f7ff; border-color: #4f7ef8; }

@@ -4,6 +4,7 @@ import { buildLookup } from '../engine/reader'
 import { loadChapterJSON } from '../engine/campaignLoader'
 import { TextWithLookup } from '../components/TextWithLookup'
 import SpeakButton from '../components/SpeakButton'
+import HelpButton from '../components/HelpButton'
 import GrammarDictionary from './GrammarDictionary'
 import './AdventureChapter.css'
 
@@ -44,7 +45,7 @@ function VocabPhase({ chapter, entries, language }) {
       <div className="advc-game-row">
         <span className="advc-game-label">Train with:</span>
         <div className="advc-game-btns">
-          <button className="advc-game-btn" onClick={() => launchGame('flashcard')} disabled={entries.length < 1}>🃏 Flashcard</button>
+          <button className="advc-game-btn" onClick={() => launchGame('flashcard')} disabled={entries.length < 1}>📇 Flashcard</button>
           <button className="advc-game-btn" onClick={() => launchGame('pairmatch')} disabled={entries.length < 2}>🔗 Match</button>
           <button className="advc-game-btn" onClick={() => launchGame('racecar')}   disabled={entries.length < 3}>🏎 Race Car</button>
         </div>
@@ -395,8 +396,7 @@ function PassagePhase({ passage, language, lookup, scores, showReading, surfaceF
 
 // ── Chapter Overview Hub ──────────────────────────────────────────────────────
 
-function ChapterHub({ chapter, storyIntro, storyIntroTranslation, wordEntries, contentItems, surfaceForms, language, lookup, scores, showReading, currentPhase, onPhaseAdvance, onComplete, activeView, setActiveView }) {
-  const [doneParts, setDoneParts]   = useState(new Set())       // 'vocab' / 'grammar' — single-item phases
+function ChapterHub({ chapter, storyIntro, storyIntroTranslation, wordEntries, contentItems, surfaceForms, language, lookup, scores, showReading, currentPhase, onPhaseAdvance, onComplete, activeView, setActiveView, doneParts }) {
   const [doneItems, setDoneItems]   = useState(new Set())       // individual content item indices (dialogue/passage)
   const [pendingItem, setPendingItem] = useState(null)  // item awaiting vocab-overlay dismissal before opening
 
@@ -657,11 +657,24 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
   //  - at the hub          → "← Map" goes to the campaign list (the real onBack)
   const [activeView, setActiveView] = useState(null)
   const atHub = activeView === null
+  // 'vocab'/'grammar' are single-item phases with no natural "completion"
+  // event of their own (unlike dialogue/passage, which complete when their
+  // content is read) — we mark them done when the user backs out of the
+  // sub-view having opened it at all.
+  const [doneParts, setDoneParts] = useState(new Set())
+
+  function handleBack() {
+    if (atHub) { onBack(); return }
+    if (activeView === 'vocab' || activeView === 'grammar') {
+      setDoneParts(prev => new Set([...prev, activeView]))
+    }
+    setActiveView(null)
+  }
 
   return (
     <div className="advc-screen">
       <div className="advc-header">
-        <button className="advc-back" onClick={atHub ? onBack : () => setActiveView(null)}>
+        <button className="advc-back" onClick={handleBack}>
           {atHub ? '← Map' : '← Chapter'}
         </button>
         <div className="advc-header-center">
@@ -669,6 +682,10 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
           <span className="advc-chapter-name">{chapterTitle}</span>
         </div>
         <span className="advc-level-tag">{chapterLevel}</span>
+        <HelpButton
+          title="Chapter"
+          description="Work through Vocab, Grammar, Dialogue, and Passage — the dots at the top track which phases are done. Vocab/Grammar are marked done as soon as you've opened and left them; Dialogue/Passage need you to actually finish reading through their content."
+        />
       </div>
 
       <div className="advc-phase-bar">
@@ -699,6 +716,7 @@ export default function AdventureChapter({ chapter, currentPhase, onPhaseAdvance
           onBack={onBack}
           activeView={activeView}
           setActiveView={setActiveView}
+          doneParts={doneParts}
         />
       </div>
     </div>

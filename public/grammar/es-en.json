@@ -42,10 +42,13 @@
       "title": "Present tense — ser (to be, permanent)",
       "explanation": "ser: yo soy, tú eres, él/ella es, nosotros somos, vosotros sois, ellos son. Used for identity, origin, profession, characteristics.",
       "type": "fill-blank",
-      "template": "{[Yo|Tú|Él|Ella|Nosotros|Ellos]} ___ estudiante.",
+      "template": "Ella ___ {[estudiante:estudiante|profesora:profesora|alta:alta|de España:de España]}.",
       "hint": "Conjugate ser to match the subject.",
       "distractors": [
-        "auto:ser-present"
+        "es",
+        "soy",
+        "eres",
+        "son"
       ]
     },
     {
@@ -55,10 +58,13 @@
       "title": "Present tense — estar (to be, temporary)",
       "explanation": "estar: yo estoy, tú estás, él está, nosotros estamos, vosotros estáis, ellos están. Used for states, locations, feelings.",
       "type": "fill-blank",
-      "template": "{[Yo|Tú|Él|Nosotros|Ellos]} ___ en casa.",
+      "template": "Nosotros ___ {[en casa:en casa|cansados:cansados|en la escuela:en la escuela]}.",
       "hint": "Conjugate estar to match the subject.",
       "distractors": [
-        "auto:estar-present"
+        "estamos",
+        "estoy",
+        "estás",
+        "están"
       ]
     },
     {

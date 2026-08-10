@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { useApp } from '../context/AppContext'
 import AdventureChapter from './AdventureChapter'
 import { loadCampaignIndex, loadChapterJSON } from '../engine/campaignLoader'
+import HelpButton from '../components/HelpButton'
 import './Adventure.css'
 
 function getProgress() {
@@ -202,6 +203,10 @@ export default function Adventure() {
       <div className="adv-header">
         <button className="adv-back" onClick={goBack}>← Back</button>
         <span className="adv-header-title">Adventure</span>
+        <HelpButton
+          title="Adventure"
+          description="Story-driven campaigns split into chapters. Each chapter has a Vocab primer, Grammar patterns, Dialogue scenes, and a reading Passage — work through all four to complete it and unlock the next. Locked chapters (🔒) need the previous one finished first."
+        />
       </div>
 
       <div className="adv-scroll">

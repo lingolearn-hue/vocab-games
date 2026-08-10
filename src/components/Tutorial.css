@@ -32,13 +32,13 @@
   background: none;
   border: none;
   font-size: 1.1rem;
-  color: #999;
+  color: var(--dt2);
   cursor: pointer;
   padding: 0.3rem 0.5rem;
   z-index: 2;
 }
 .tut-close:hover { color: #333; }
-[data-theme="dark"] .tut-close { color: #777; }
+[data-theme="dark"] .tut-close { color: var(--dt2); }
 [data-theme="dark"] .tut-close:hover { color: #eee; }
 
 /* Top section — scrollable content */
@@ -152,7 +152,7 @@
 }
 .tut-box-desc {
   font-size: 0.68rem;
-  color: #777;
+  color: var(--dt2);
   line-height: 1.25;
 }
 
@@ -197,7 +197,7 @@
 .tut-back-btn {
   background: none;
   border: none;
-  color: #999;
+  color: var(--dt2);
   font-size: 0.82rem;
   cursor: pointer;
   padding: 0.2rem;
@@ -227,7 +227,7 @@
 [data-theme="dark"] .tut-bottom { border-color: #2a2a2a; }
 [data-theme="dark"] .tut-title  { color: #f0f0f0; }
 [data-theme="dark"] .tut-warning-text,
-[data-theme="dark"] .tut-subtitle { color: #b0b0b0; }
-[data-theme="dark"] .tut-rhythm  { background: #222; color: #b0b0b0; }
-[data-theme="dark"] .tut-box-desc { color: #888; }
+[data-theme="dark"] .tut-subtitle { color: var(--dt2); }
+[data-theme="dark"] .tut-rhythm  { background: #222; color: var(--dt2); }
+[data-theme="dark"] .tut-box-desc { color: var(--dt2); }
 [data-theme="dark"] .tut-dot     { background: #444; }

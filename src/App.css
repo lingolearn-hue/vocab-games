@@ -61,6 +61,17 @@
 .fl-lang-btn:hover { border-color: #4f7ef8; background: #eef2ff; transform: scale(1.03); }
 .fl-lang-btn:active { transform: scale(0.97); }
 
+.fl-back-btn {
+  margin-top: 1rem;
+  border: none;
+  background: none;
+  color: #555;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.fl-back-btn:hover { color: #4f7ef8; }
+
 .fl-flag { font-size: 2rem; }
 .fl-lang-name { font-size: 0.85rem; font-weight: 600; color: #111; }
 
@@ -75,6 +86,7 @@
 
 
 [data-theme="dark"] .fl-panel { background: #1e1e1e; }
+[data-theme="dark"] .fl-back-btn { color: var(--dt2); }
 [data-theme="dark"] .fl-title  { color: #f0f0f0; }
 [data-theme="dark"] .fl-lang-btn { background: #252525; border-color: #333; }
 [data-theme="dark"] .fl-lang-btn:hover { background: #1a2340; border-color: #4f7ef8; }

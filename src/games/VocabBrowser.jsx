@@ -4,10 +4,12 @@ import { useApp } from '../context/AppContext'
 import { getAllScores } from '../engine/leitner'
 import { getAllMnemonics } from '../engine/mnemonics'
 import { displayEntry } from '../engine/vocab'
+import { buildLookup } from '../engine/reader'
 import { CATEGORY_TREE, resolveLabel } from '../engine/categories'
 import { LEVEL_ORDER } from '../engine/settings'
 import RubyText from '../components/RubyText'
 import HelpButton from '../components/HelpButton'
+import WordDetail from '../components/WordDetail'
 import './VocabBrowser.css'
 
 const GLOBAL_COLORS = {
@@ -68,6 +70,7 @@ export default function VocabBrowser() {
   const { vulgarFilteredEntries: activeEntries, activeLanguage, showReading, setScreen, goBack, scoreActions, scores } = useApp()
 
   const [search,       setSearch]       = useState('')
+  const searchInputRef = useRef(null)
   const [filterLevel,  setFilterLevel]  = useState('all')
   const [filterPos,    setFilterPos]    = useState('all')
   const [filterStatus, setFilterStatus] = useState('all')
@@ -75,9 +78,10 @@ export default function VocabBrowser() {
   const [filterLeaf,    setFilterLeaf]   = useState('all')
   const [showTrans,    setShowTrans]    = useState(true)
   const [showScores,   setShowScores]   = useState(true)
-  const [expandedId,   setExpandedId]   = useState(null)  // entry id with mnemonic expanded
   const leitnerScores = useMemo(() => getAllScores('flashcard'), [scores])
   const mnemonics     = useMemo(() => getAllMnemonics(), [scores])
+  const lookup         = useMemo(() => buildLookup(activeEntries), [activeEntries])
+  const [detailEntry, setDetailEntry] = useState(null)
   const [displayCount, setDisplayCount] = useState(100)
   const sentinelRef   = useRef(null)
 
@@ -211,7 +215,7 @@ export default function VocabBrowser() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
           <HelpButton
             title="Vocab Browser"
-            description="Browse every word in the current list, search by entry, reading, or translation, and see your progress at a glance."
+            description="Browse every word in the current list and search by entry, reading, or translation. Tap a word for its full detail — translations, example sentence, and an editable mnemonic. Filter by status, level, part of speech, or topic, and toggle Trans/Scores to control how much detail each row shows."
           />
         </div>
       </div>
@@ -219,6 +223,7 @@ export default function VocabBrowser() {
       {/* Search */}
       <div className="vb-search-wrap">
         <input
+          ref={searchInputRef}
           className="vb-search"
           type="text"
           placeholder="Search entry, reading, translation…"
@@ -228,7 +233,10 @@ export default function VocabBrowser() {
         {search && (
           <button
             className="vb-search-clear"
-            onClick={() => setSearch('')}
+            onClick={() => {
+              setSearch('')
+              searchInputRef.current?.focus()
+            }}
             aria-label="Clear search"
             title="Clear search"
           >
@@ -285,8 +293,11 @@ export default function VocabBrowser() {
           const lScore = leitnerScores[entry.id] ?? 0
           const status = lScore === 0 ? 'unseen' : lScore >= 5 ? 'mastered' : 'learning'
           return (
-            <>
-              <div key={entry.id} className="vb-row">
+            <div
+              key={entry.id}
+              className="vb-row vb-row-tappable"
+              onClick={() => setDetailEntry(entry)}
+            >
                 <span
                   className="vb-dot"
                   style={{ background: GLOBAL_COLORS[status] }}
@@ -318,26 +329,29 @@ export default function VocabBrowser() {
                     </div>
                   )}
                   {mnemonics[entry.id] && (
-                    <button
-                      className="vb-mnemonic-btn"
-                      onClick={() => setExpandedId(expandedId === entry.id ? null : entry.id)}
-                      title={expandedId === entry.id ? 'Hide mnemonic' : 'Show mnemonic'}
-                    >
+                    <span className="vb-mnemonic-indicator" title="Has a mnemonic — tap the row for details">
                       💡
-                    </button>
+                    </span>
                   )}
                   {status === 'mastered' && (
                     <button className="vb-reset" onClick={e => handleReset(e, entry.id)} title="Reset to learning">↩</button>
                   )}
                 </div>
-              </div>
-              {expandedId === entry.id && mnemonics[entry.id] && (
-                <div className="vb-mnemonic-expanded">{mnemonics[entry.id].mnemonic}</div>
-              )}
-            </>
+            </div>
           )
         })}
       </div>
+
+      {detailEntry && (
+        <WordDetail
+          entry={detailEntry}
+          language={activeLanguage}
+          lookup={lookup}
+          scores={scores}
+          showReading={showReading}
+          onClose={() => setDetailEntry(null)}
+        />
+      )}
     </div>
   )
 }

@@ -24,19 +24,27 @@ const CJK_LANGS = new Set(['zh', 'ja', 'ko'])
 export function TextWithLookup({ text, language, lookup, scores, showReading, className = '', noHighlight = false, surfaceForms = {} }) {
   const [tapped, setTapped] = useState(null)  // { entry, surface, conjugated }
 
-  // Build augmented lookup that resolves surface forms via surfaceForms dict
+  // Build augmented lookup that resolves surface forms via surfaceForms dict.
+  // `lookup` is a Map (from buildLookup(), lowercased keys) — has to be
+  // treated as one here, not a plain object. This was previously broken
+  // (bracket access + object-spread on a Map, both silent no-ops/garbage)
+  // but never triggered a visible bug because every surfaceForms dict
+  // passed in so far was empty (lemmatization was blocked until recently);
+  // caught now via a real-browser crash once real data flowed through.
   const augmentedLookup = useMemo(() => {
-    const base = lookup ?? {}
+    const base = lookup ?? new Map()
     if (!surfaceForms || !Object.keys(surfaceForms).length) return base
     const langForms = surfaceForms[language] ?? {}
     if (!Object.keys(langForms).length) return base
-    const extra = {}
+    const merged = new Map(base)
     for (const [surface, lemma] of Object.entries(langForms)) {
-      if (!base[surface] && base[lemma]) {
-        extra[surface] = { ...base[lemma], _surface: surface }
+      const surfaceKey = surface.toLowerCase()
+      const lemmaKey = lemma.toLowerCase()
+      if (!merged.has(surfaceKey) && base.has(lemmaKey)) {
+        merged.set(surfaceKey, { ...base.get(lemmaKey), _surface: surface })
       }
     }
-    return { ...base, ...extra }
+    return merged
   }, [lookup, surfaceForms, language])
 
   const spans = tokenise(text, augmentedLookup, language)

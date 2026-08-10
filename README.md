@@ -1,5 +1,7 @@
 # Vocab Games
 
+Version: 0.67 — 2026-08-10
+
 A React/Vite PWA for vocabulary learning across six languages (German,
 Spanish, French, English, Chinese, Japanese), built around a custom Leitner
 spaced-repetition engine.
@@ -34,14 +36,28 @@ workflow.
   Stats, Settings.
 - `src/components/` — shared UI: Setup (home screen), Tutorial, the chip
   filter system (`ChipRow`/`ChoiceChips`/`LevelChooser`/`CategoryChooser`),
-  Leitner box bar, help overlays, etc.
+  Leitner box bar, help overlays, `WordDetail.jsx` (the shared word-detail
+  overlay — translations/POS/example sentence/conjugation/editable
+  mnemonic — used by Vocab Browser and mirrored, not shared, by Flashcard's
+  own detail panel), `QuizOverlay.jsx` (the dynamic grammar mini-quiz
+  overlay — see Grammar system below), etc.
 - `src/engine/` — core logic, decoupled from UI:
-  - `vocab.js` — loads/normalizes `public/vocab/*.json` into entry objects
+  - `vocab.js` — loads/normalizes `public/vocab/*.json` into entry objects;
+    also owns `displayEntry()`, which prepends the correct article for
+    gendered languages by routing through that language's own article
+    engine (see Grammatical gender below)
   - `leitner.js` — the spaced-repetition box engine (see file header comment
     for the full box-selection design)
   - `categories.js` — topic category taxonomy (see below)
   - `settings.js` — persisted user settings, level/category filter helpers,
     dark mode
+  - `germanArticle.js` / `frenchArticle.js` / `spanishArticle.js` — article
+    computation for each gendered language (see Grammatical gender below)
+  - `conjugations.js` — lazy-loads `public/conjugations/de.json` (2,758
+    German verbs); feeds the "🔤 Conjugation" section in `WordDetail.jsx`
+    and Flashcard's detail panel
+  - `grammarQuiz.js` — registry of dynamic grammar mini-quiz generators
+    (see Grammar system below)
   - `examples.js`, `mnemonics.js`, `grammar.js`, `reader.js`,
     `dialogueTSV.js`, `campaignLoader.js`, `facets.js`, `srs.js` — supporting
     data loaders and logic for specific games
@@ -50,8 +66,11 @@ workflow.
 - `public/vocab/*.json` — the vocab lists themselves (source of truth, hand
   maintained/curated — see Data pipeline below)
 - `public/examples/`, `public/sentences/`, `public/dialogues/`,
-  `public/mnemonics/`, `public/grammar/`, `public/reader/` — supporting
-  per-language content, lazy-loaded by the relevant games
+  `public/mnemonics/`, `public/grammar/`, `public/reader/`,
+  `public/conjugations/` — supporting per-language content, lazy-loaded by
+  the relevant games. `public/reader/surface-forms.json` is generated (see
+  Lemmatizer below), not hand-authored — regenerate after any reader
+  passage or vocab-gender edit, don't hand-edit it.
 - `vendor/language-decks/` — gitignored raw source data used only to
   backfill example sentences; see its own `README.md` to re-fetch it. Not
   needed to build or run the app — only to regenerate example sentences.
@@ -59,6 +78,12 @@ workflow.
   `public/examples/*.json`
 - `tools/tag_categories.py` — reusable keyword-based category tagger (see
   Category system below); run against a vocab JSON + level to tag topics
+- `tools/generate_reader_surface_forms.py` — lemmatizes Graded Reader
+  passages (German via spaCy, Japanese via fugashi) into
+  `public/reader/surface-forms.json` (see Lemmatizer below)
+- `tools/check_reader_congruence.py` — flags Graded Reader passages whose
+  source/English sentence counts don't match per paragraph (breaks
+  sentence-level tap-to-translate for that passage/language, not a crash)
 
 ## Vocab data format
 
@@ -67,9 +92,9 @@ Each `public/vocab/<lang>-en.json` file is:
 ```json
 {
   "id": "de-en", "language": "de", "native": "en",
-  "keys": ["entry", "reading", "translation", "pos", "categories", "level", "gender", "measureWord"],
+  "keys": ["entry", "reading", "translation", "pos", "categories", "level", "gender", "measureWord", "pluraleTantum"],
   "entries": [
-    ["Hund", "", ["dog"], "noun", ["animals"], "A1", null, null]
+    ["Hund", "", ["dog"], "noun", ["animals"], "A1", "m", null, false]
   ]
 }
 ```
@@ -79,6 +104,13 @@ Entries are arrays (not objects) keyed positionally by the `keys` array —
 keeps the JSON files compact; anything reading raw vocab JSON directly
 (scripts, tools) needs to resolve fields via `keys.indexOf(...)`, not assume
 a fixed order.
+
+`pluraleTantum` (German/French/Spanish only, not Chinese/Japanese/English)
+marks words only used in the plural (German *Geschwister*, French
+*vacances*, Spanish *afueras*) — `gender` is `null` for these, since no
+notional singular gender is tracked; the correct plural-only article
+(*die*/*les*/*los*|*las*) is derived from `pluraleTantum` directly, not
+`gender`. See Grammatical gender below for how this actually gets used.
 
 **Curated vocab lists are the source of truth.** Vendor/third-party data is
 only ever used to backfill supplementary content (example sentences) — never
@@ -127,13 +159,15 @@ generate a flashcard set by topic instead of just by level.
 - `filterByCategory()` in `src/engine/settings.js` applies the filter;
   `AppContext.jsx` wires it in alongside the existing level/vulgar filters.
 
-**Tagging coverage** (as of this writing — check `TODO.md` for current
-status): German A1/A2/B1, Japanese N5/N4/N3, Chinese HSK1-3 are tagged, and
-have been through a manual accuracy audit on top of the automated pass (see
-"Tagging quality" below). Everything above that (German B2-C2, Chinese
-HSK4-7, Spanish, French, English) is either untagged or only partially
-reviewed by the newer LLM pipeline — untagged words are simply unaffected
-by category filters, so this is safe to leave partial and expand over time.
+**Tagging coverage** (check `TODO.md` for current status): all six vocab
+lists are now 100% category-tagged. Manual spot-check depth varies a lot
+by language — see `tools/review-status/{lang}-review.json` for exactly
+which words have been reviewed. Untagged-vs-reviewed is no longer the
+right framing; reviewed-vs-unreviewed is.
+
+Spot-checking category tags follows a fixed procedure — see
+[`REVIEW-VOCAB.md`](./REVIEW-VOCAB.md), which also covers the review-status
+tracking system, the resweep script, and known risky keyword patterns.
 
 There are **two different pipelines** for tagging/fixing category data,
 built at different points and suited to different jobs. Both write to the
@@ -228,6 +262,124 @@ in `tag_categories.py` (Pipeline 1) — that fixes English-side polysemy
 (the LLM-review pipeline above) was built specifically to address this —
 it reads the actual target word instead of pattern-matching its gloss.
 
+## Grammatical gender / article engines
+
+`displayEntry()` (`src/engine/vocab.js`) prepends the correct article to a
+noun's display string, e.g. `Auto` → `das Auto`. German, French, and
+Spanish each route through their own article engine (`germanArticle.js` /
+`frenchArticle.js` / `spanishArticle.js`) rather than a flat gender→article
+lookup, since a flat map can't handle plurale-tantum nouns (always take the
+plural article regardless of any notional singular gender) or epicene nouns
+(the article depends on the referent's sex, e.g. German *Freiwillige* or
+French *artiste* — since no vocab entry tracks "who this specific card
+refers to," these default to masculine for display, the standard
+dictionary convention when citing a headword out of context). French
+additionally needs vowel-sound elision (*le*/*la* → *l'*, with h-aspiré
+exceptions where elision does *not* apply, e.g. *le hall*).
+
+**Known data-quality issue**: ~1.1% of French nouns still have a corrupted
+`gender` field left over from a prior data import — instead of `'m'`/`'f'`/
+`'epicene'`, the elided article text itself got stored in the gender slot
+(e.g. `"l'enfant"` sitting where `"m"` should be). This was ~17.6% before a
+Lexique383-based resolution pass; `displayEntry()` treats anything other
+than a literal `'m'`/`'f'`/`'epicene'` as "no article," so these entries
+just show without one rather than showing something wrong. Spanish has no
+equivalent issue — its gender data was independently built to ~94.9%
+coverage via doozan/spanish_data.
+
+## Graded Reader
+
+- **Read-aloud**: a 🔊/⏸ button speaks the passage sentence-by-sentence
+  (not as one long utterance, so play/pause has a clean boundary and
+  progress can be shown), highlighting the active sentence and
+  auto-scrolling to keep it in view. Respects the per-language voice
+  picker and `settings.listeningSpeechRate`.
+- **Sentence-level tap-to-translate**: naive index-pairing between the
+  source and English sentence splits, since no per-sentence translation
+  data exists — only a single flat `translation` string per passage. Only
+  trusted when both sides split into the same number of sentences per
+  paragraph; `tools/check_reader_congruence.py` flags passages where they
+  don't (currently a handful, mostly Japanese — translators don't always
+  keep a 1:1 sentence count with the source). When it doesn't match, the
+  tap affordance is silently unavailable for that passage — the
+  full-passage EN toggle still works regardless, since it doesn't depend
+  on alignment.
+- **Paragraph handling**: passages use `\n\n` to mark real paragraph
+  breaks. Both sentence-splitting (`splitSentences()` in `reader.js`) and
+  translation-pairing split by paragraph *first*, then by sentence within
+  each — splitting the whole text at once instead silently discards
+  paragraph structure (this was a real regression once; watch for it if
+  touching this code again).
+- **Vocab Quiz**: a floating button on the reading screen resolves the
+  passage's matched vocab to full entries and launches a Flashcard session
+  scoped to just those words, via `setSessionEntries()` — the same
+  mechanism Adventure Mode's vocab-lesson phase uses. Note:
+  `sessionEntries` is never reset to `null` anywhere in the codebase once
+  set, by either consumer — a pre-existing, still-open issue.
+- **Finished tracking / Continue reading**: `localStorage`-backed, entirely
+  separate from Leitner scores — marking a passage "Finished" and the
+  "Continue reading" banner (resumes the last-opened passage at its exact
+  scroll position) are reading-progress features, not spaced-repetition
+  ones.
+
+### Lemmatizer (surface-form matching)
+
+`public/reader/surface-forms.json` is a generated `{ lang: { surface:
+lemma } }` map — German via spaCy (`de_core_news_sm`) and Japanese via
+fugashi — letting an inflected word in reading passages (*aßen*, *Kindern*)
+resolve back to its dictionary-form vocab entry for tap-to-lookup, instead
+of only matching exact dictionary forms. Regenerate with
+`python3 tools/generate_reader_surface_forms.py` after editing reader
+passages or vocab gender data. The same surface-forms mechanism also
+powers Adventure Mode's dialogue/passage word lookups (`TextWithLookup.jsx`
+consumes it directly) — `buildLookup()` returns a `Map`, not a plain
+object, and both consumers' merge logic has to treat it as one (a real,
+previously-live bug: bracket-access + object-spread on a Map is a silent
+no-op, not an error, so it doesn't fail loudly).
+
+spaCy's German model isn't installable via `pip install spacy` alone in a
+sandboxed environment with a restricted network egress allowlist — the
+model wheel is hosted on GitHub releases, so `release-assets.
+githubusercontent.com` needs to be reachable; `spacy download` itself
+doesn't work in that kind of environment either (it doesn't pass through
+`--break-system-packages`), so install directly from the release wheel URL
+instead, e.g.:
+```
+pip install --break-system-packages "https://github.com/explosion/spacy-models/releases/download/de_core_news_sm-3.8.0/de_core_news_sm-3.8.0-py3-none-any.whl"
+```
+
+## Grammar system
+
+Two independent systems live under Grammar Trainer / Grammar Dictionary,
+serving different purposes:
+
+- **Static exercises** (`public/grammar/<lang>-en.json`, rendered by
+  `GrammarTrainer.jsx`) — hand-authored `fill-blank` / `pick-correct` /
+  `tile-order` patterns, reviewed content with a fixed question pool.
+  `fill-blank`'s distractor resolution has two conventions: a plain
+  literal array (`distractors[0]` = correct, rest = wrong — for templates
+  where the blank's answer is fixed regardless of which random template
+  option got picked) and a colon-convention bracket
+  (`{[Katze:eine|Hund:ein]}`) for templates where the answer genuinely
+  varies with the random pick. Getting these two confused is an easy,
+  previously-real bug: trusting the wrong one either shows literal
+  placeholder text as an "answer," or marks a grammatically correct answer
+  as wrong. See `instantiateTemplate()`/`FillBlank`'s comments in
+  `engine/grammar.js`/`GrammarTrainer.jsx` for exactly how the two are
+  told apart (case-insensitive matching against the pattern's own
+  distractor list, not the `"auto:"` prefix alone).
+- **Dynamic mini-quizzes** (`engine/grammarQuiz.js` + `components/
+  QuizOverlay.jsx`) — a lightweight, infinite-variety supplement. A "🎯
+  Practise this" trigger appears on any static pattern tagged with a
+  `quizType` field, opening a short 5-round multiple-choice overlay whose
+  questions are generated fresh from real vocab data every time (a random
+  noun + its correct article, for example) rather than stored content.
+  Only grammar points fully deterministic from vocab data alone are good
+  fits — word order/subjunktiv-type points still need hand-authored
+  content. `QUIZ_GENERATORS` is a plain registry; adding a new
+  deterministic grammar point (plural forms, adjective-ending agreement...)
+  is adding one more entry, not restructuring.
+
 ## Data backup / storage discipline
 
 Settings → Data has Export/Import backup and Reset all scores, covering
@@ -254,18 +406,22 @@ whatever's installed on the visitor's device/browser.
   TTS support / in-app browser like WeChat / no voices installed for the
   language) instead of silently doing nothing. A vanished button reads as a
   bug report; a visibly-disabled one reads as an understood platform limit.
-- Deliberately **never sets `utterance.voice`** — always leaves voice choice
-  to the browser/OS default for the given language. A per-language voice
-  picker (Settings → Voice, `settings.voicePreferences`) was built and then
-  removed: there's no reliable way for a webpage to query "the OS's
-  configured system TTS voice" as a distinct concept, only a `.default`
-  flag per voice (a browser-engine guess, not necessarily what the user
-  actually configured at the OS level — notably unreliable on
-  Android/Chrome), so the picker added real complexity without a
-  dependable payoff. If this gets revisited, start from git history around
-  the removal rather than rebuilding from scratch — the async-voice-loading
-  and iOS-Safari-synchronous-call-stack issues it had to handle are still
-  real and will resurface.
+- **Per-language voice picker** (Settings → Voice) lets the person pick a
+  specific voice per language from whatever the browser reports via
+  `speechSynthesis.getVoices()` — stored by `voiceURI` (a stable per-voice
+  identifier), applied in `speech.js` whenever set, falling back to the
+  browser/OS default otherwise. This exists because there's no reliable way
+  for a webpage to query "the OS's configured system TTS voice" as a
+  distinct concept — only a `.default` flag per voice (a browser-engine
+  guess), which is why e.g. iOS's Safari-reported voice list doesn't
+  include the actual configured Siri voice, only the separate classic
+  AVSpeechSynthesis catalog (Samantha/Daniel/Karen/etc.) — picking one of
+  those is the closest a web page can get, not a limitation of this picker
+  specifically. An earlier version of this picker was built and removed at
+  one point for being unreliable to maintain; it was rebuilt properly later
+  once the async-voice-loading and iOS-Safari-call-stack issues were
+  understood — if this needs touching again, the voice list only populates
+  after the `voiceschanged` event fires, not synchronously on mount.
 - **Listening** (`src/games/Listening.jsx`) is a hands-free audio-review
   game: cycles through every unmastered word (box 0-4, box 5 excluded) in
   the current filter, box-ordered top-down or looped on a single box.
@@ -356,6 +512,61 @@ python3 tools/audit_vocab.py
 `Categories %`, specifically so a level where most words fell into the
 generic fallback bucket (the German B1 problem — see "Category system"
 above) is visible at a glance rather than needing an ad-hoc check.
+
+## Story content (Graded Reader fairy tales)
+
+A growing set of fairy tales in all 6 languages, separate from the
+original graded passages — see `AUTHORING-TEXTS.md` (writing/translation
+rules, CEFR/JLPT/HSK level mapping, why fairy tales cap at B2: a children's-
+story retelling stops being the right register above that) and
+`REVIEW-TEXTS.md` (content survey + sentence-congruence realignment log).
+Level-paired by trio (an A1 version and a B1 retelling of the same tale,
+etc.) and sequenced by origin country — Germany/Grimm first, five more
+countries queued so every supported language eventually gets a turn as
+source culture, not just translation target. `AUTHORING-TEXTS.md`'s status
+section can lag the actual data by a commit or two (it's a planning doc,
+not generated) — cross-check against `public/reader/<lang>-en.json`'s
+actual passage list if it matters which tales really exist yet.
+
+## Licensing
+
+The app code is MIT (see `LICENSE`). Vocab/content data sourced from
+third parties keeps *that specific data's* own license — CC BY-SA sources
+in particular need attribution and, for direct derivatives, must stay
+under CC BY-SA (or a compatible license) when redistributed; that
+obligation doesn't spread to the rest of the codebase, since data and code
+can carry different licenses within one repo. See `THIRD_PARTY_LICENSES.md`
+for the per-source breakdown — extend it, don't restructure it, when a new
+third-party source gets folded in.
+
+## Deployment (`vocab-games-dev`)
+
+GitHub Pages here runs through GitHub's own internal build-and-deploy
+pipeline (triggered automatically on any push to `gh-pages`, not a file in
+this repo's `.github/workflows/` — deleting workflow files doesn't stop
+it). Two real, non-obvious failure modes hit this repo's Pages deploys and
+are worth checking first if a push isn't showing up live:
+
+- **Repo-level `default_workflow_permissions` set to read-only** blocks
+  the internal deploy step specifically (build/package steps still
+  succeed, only the final "write the deployment" step fails) — this is a
+  repo Settings → Actions → General setting, not something visible from
+  the Pages config itself. Check via
+  `GET /repos/{owner}/{repo}/actions/permissions/workflow`.
+- **Competing deploy workflows**: `vocab-games-dev`'s `.github/workflows/`
+  once accidentally inherited `vocab-games` (prod)'s Actions-based deploy
+  workflows during a sync that blindly copied the whole `.github/` folder
+  across repos — including one written to run *from* prod *and push into*
+  dev as an external target, which doesn't make sense running inside dev
+  itself. These raced against manual `gh-pages` pushes with no reliable
+  winner. Removed; don't reintroduce `.github/` in a cross-repo sync
+  without checking what's actually inside it first.
+
+A push looking "successful" (`git push` returning cleanly) does **not**
+mean the site is actually live — always verify via the Actions API
+(`GET /repos/{owner}/{repo}/actions/runs`, check `conclusion: "success"`
+on the actual commit) or the Pages status endpoint (`GET /repos/{owner}/
+{repo}/pages`, check `status: "built"`) before treating a deploy as done.
 
 ## Testing
 

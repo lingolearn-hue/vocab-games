@@ -81,6 +81,28 @@
 .lang-picker-item:hover   { background: #f5f7ff; }
 .lang-picker-item.active  { background: #eef2ff; font-weight: 700; color: #4f7ef8; }
 
+.lang-picker-reverse-title {
+  padding: 0.6rem 1rem 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #999;
+}
+.lang-picker-reverse-cancel {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-top: 1px solid #f0f0f0;
+  background: none;
+  font-size: 0.85rem;
+  color: #555;
+  cursor: pointer;
+  text-align: left;
+}
+.lang-picker-reverse-cancel:hover { background: #f5f7ff; }
+
 /* ── Level filter ── */
 .level-filter {
   padding: 0.5rem 1.2rem 0.2rem;
@@ -274,6 +296,9 @@
 [data-theme="dark"] .lang-picker-item { border-color: #2a2a2a; color: #ccc; }
 [data-theme="dark"] .lang-picker-item:hover  { background: #1a2340; }
 [data-theme="dark"] .lang-picker-item.active { background: #1a2340; color: #4f7ef8; }
+[data-theme="dark"] .lang-picker-reverse-title  { color: var(--dt2); }
+[data-theme="dark"] .lang-picker-reverse-cancel { color: var(--dt2); border-color: #2a2a2a; }
+[data-theme="dark"] .lang-picker-reverse-cancel:hover { background: #1a2340; }
 [data-theme="dark"] .stats-bar        { background: #1e1e1e; color: #666; }
 [data-theme="dark"] .vocab-browser-btn { background: #0d1a3a; border-color: #4f7ef8; }
 [data-theme="dark"] .vocab-browser-btn:hover:not(.disabled) { background: #1a2340; }

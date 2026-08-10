@@ -50,7 +50,7 @@
 
 .ls-box-caption {
   font-size: 0.68rem;
-  color: #999;
+  color: var(--dt2);
   text-align: center;
   padding: 0.3rem 1rem 0;
   margin: 0;
@@ -72,7 +72,7 @@
 }
 .ls-sequence-empty {
   font-size: 0.72rem;
-  color: #999;
+  color: var(--dt2);
   font-style: italic;
 }
 .ls-seq-chip {
@@ -98,6 +98,30 @@
   flex-wrap: wrap;
   gap: 0.35rem;
 }
+
+.ls-speed {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.ls-speed-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #555;
+  flex-shrink: 0;
+}
+.ls-speed-slider { flex: 1 1 auto; accent-color: #4f7ef8; }
+.ls-speed-value {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #4f7ef8;
+  flex-shrink: 0;
+  width: 2.4rem;
+  text-align: right;
+}
 .ls-seq-add-btn, .ls-seq-reset-btn {
   padding: 0.3rem 0.6rem;
   border: 1.5px dashed #ccc;
@@ -110,25 +134,25 @@
   white-space: nowrap;
 }
 .ls-seq-add-btn:hover { border-color: #4f7ef8; color: #4f7ef8; }
-.ls-seq-reset-btn { border-style: solid; color: #999; }
+.ls-seq-reset-btn { border-style: solid; color: var(--dt2); }
 .ls-seq-reset-btn:hover { border-color: #e05252; color: #e05252; }
 
 .ls-ctrl-disabled-note {
   font-size: 0.75rem;
-  color: #999;
+  color: var(--dt2);
   font-style: italic;
 }
 
 .ls-progress {
   text-align: center;
   font-size: 0.78rem;
-  color: #888;
+  color: var(--dt2);
   padding: 0.7rem 1rem 0;
 }
 
 .ls-empty {
   text-align: center;
-  color: #888;
+  color: var(--dt2);
   padding: 3rem 1.5rem;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -198,7 +222,7 @@
 [data-theme="dark"] .ls-header h2 { color: #f0f0f0; }
 [data-theme="dark"] .ls-back { color: #f0f0f0; }
 [data-theme="dark"] .ls-box-row { border-color: #222; }
-[data-theme="dark"] .ls-box-chip { background: #1e1e1e; border-color: #333; color: #b0b0b0; }
+[data-theme="dark"] .ls-box-chip { background: #1e1e1e; border-color: #333; color: var(--dt2); }
 [data-theme="dark"] .ls-box-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
 [data-theme="dark"] .ls-word { color: #ffffff; }
 [data-theme="dark"] .ls-translation { color: #f0f0f0; }
@@ -206,12 +230,14 @@
 [data-theme="dark"] .ls-ctrl-btn { background: #1a2340; color: #7fa0ff; }
 [data-theme="dark"] .ls-play-btn { background: #4f7ef8; color: #fff; }
 [data-theme="dark"] .ls-unsupported { color: #ccc; }
-[data-theme="dark"] .ls-empty { color: #999; }
-[data-theme="dark"] .ls-progress { color: #999; }
+[data-theme="dark"] .ls-empty { color: var(--dt2); }
+[data-theme="dark"] .ls-progress { color: var(--dt2); }
 [data-theme="dark"] .ls-sequence { border-color: #222; }
-[data-theme="dark"] .ls-sequence-empty { color: #777; }
+[data-theme="dark"] .ls-speed { border-color: #222; }
+[data-theme="dark"] .ls-speed-label { color: var(--dt2); }
+[data-theme="dark"] .ls-sequence-empty { color: var(--dt2); }
 [data-theme="dark"] .ls-seq-chip--word        { background: #1a2340; }
 [data-theme="dark"] .ls-seq-chip--translation { background: #12291d; }
 [data-theme="dark"] .ls-seq-chip--sentence    { background: #26182e; }
-[data-theme="dark"] .ls-seq-add-btn, [data-theme="dark"] .ls-seq-reset-btn { border-color: #444; color: #999; }
-[data-theme="dark"] .ls-ctrl-disabled-note { color: #777; }
+[data-theme="dark"] .ls-seq-add-btn, [data-theme="dark"] .ls-seq-reset-btn { border-color: #444; color: var(--dt2); }
+[data-theme="dark"] .ls-ctrl-disabled-note { color: var(--dt2); }

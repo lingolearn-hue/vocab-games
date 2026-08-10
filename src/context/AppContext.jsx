@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState, useCallback, useMemo } from 'react'
-import { loadList, mergeLists, loadSentences } from '../engine/vocab'
+import { loadList, mergeLists, loadSentences, buildReverseList } from '../engine/vocab'
 import { getAllScores, setScore, recordCorrect, recordWrong, recordMaster, resetToLearning } from '../engine/srs'
 import { loadSettings, saveSettings, applyDarkMode, getGameLevels, filterByLevel, filterByCategory, LEVEL_ORDER } from '../engine/settings'
 import { seedMnemonics } from '../engine/mnemonics'
@@ -14,6 +14,8 @@ const AVAILABLE_LISTS = [
 ]
 
 const AppContext = createContext(null)
+
+const REVERSE_SOURCE_KEY = 'reverseSourceLanguage'
 
 export function AppProvider({ children }) {
   const [loadedLists,     setLoadedLists]     = useState({})
@@ -48,6 +50,12 @@ export function AppProvider({ children }) {
   const [activeLanguage,  setActiveLanguageState] = useState(
     () => localStorage.getItem('activeLanguage') || null
   )
+  // Which source language 'English' was reverse-built from, if any — see
+  // buildReverseList(). Persisted so a page reload restores the same
+  // reverse-built list rather than falling back to the static English stub.
+  const [reverseSourceLanguage, setReverseSourceLanguageState] = useState(
+    () => localStorage.getItem(REVERSE_SOURCE_KEY) || null
+  )
   const [settings,        setSettingsState]   = useState(() => {
     const s = loadSettings()
     applyDarkMode(s.darkMode)
@@ -55,9 +63,36 @@ export function AppProvider({ children }) {
   })
 
   // When language changes, auto-load and select all lists for that language
-  const setActiveLanguage = useCallback(async (lang) => {
+  const setActiveLanguage = useCallback(async (lang, sourceLang) => {
     setActiveLanguageState(lang)
     localStorage.setItem('activeLanguage', lang ?? '')
+
+    // 'English' has no vocab list of its own to learn from directly — it's
+    // reverse-built on the fly from another language's list (see
+    // buildReverseList). sourceLang comes from the "Learn English from…"
+    // picker; falling back to the last-used source lets a page reload
+    // restore the same reverse list without re-asking.
+    if (lang === 'en') {
+      const src = sourceLang || localStorage.getItem(REVERSE_SOURCE_KEY)
+      if (src && src !== 'en') {
+        localStorage.setItem(REVERSE_SOURCE_KEY, src)
+        setReverseSourceLanguageState(src)
+        setVocabLoading(true)
+        const srcDef = AVAILABLE_LISTS.find(l => l.language === src)
+        let srcList = loadedLists[srcDef.id]
+        if (!srcList) {
+          srcList = await loadList(srcDef.path)
+          setLoadedLists(prev => ({ ...prev, [srcDef.id]: srcList }))
+          seedMnemonics(srcDef.id, srcList.entries)
+        }
+        const reverseList = buildReverseList(srcList, src, srcDef.languageLabel)
+        setLoadedLists(prev => ({ ...prev, [reverseList.id]: reverseList }))
+        setSelectedIds([reverseList.id])
+        setVocabLoading(false)
+        return
+      }
+    }
+
     if (!lang) { setSelectedIds([]); setVocabLoading(false); return }
     const listsForLang = AVAILABLE_LISTS.filter(l => l.language === lang)
     setVocabLoading(true)
@@ -254,7 +289,7 @@ export function AppProvider({ children }) {
       screen, setScreen, goBack,
       scores, scoreActions,
       settings, updateSettings,
-      activeLanguage, setActiveLanguage,
+      activeLanguage, setActiveLanguage, reverseSourceLanguage,
       getEntriesForGame, availableLevels,
     }}>
       {children}

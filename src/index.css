@@ -53,7 +53,7 @@ button:focus:not(:focus-visible) { outline: none; }
 .level-chip:focus:not(:focus-visible) { outline: none; }
 .level-chip:hover:not(.active) { border-color: #4f7ef8; color: #4f7ef8; background: #f0f4ff; }
 
-[data-theme="dark"] .level-chip { background: #1e1e1e; border-color: #333; color: #b0b0b0; }
+[data-theme="dark"] .level-chip { background: #1e1e1e; border-color: #333; color: var(--dt2); }
 [data-theme="dark"] .level-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
 [data-theme="dark"] .level-chip:hover:not(.active) { border-color: #4f7ef8; color: #4f7ef8; }
 
@@ -63,13 +63,13 @@ button:focus:not(:focus-visible) { outline: none; }
 .category-clear-chip {
   background: transparent;
   border-style: dashed;
-  color: #999;
+  color: var(--dt2);
   font-weight: 900;
   padding: calc(0.2rem * var(--chip-row-scale, 1)) calc(0.5rem * var(--chip-row-scale, 1));
   font-size: calc(0.65rem * var(--chip-row-scale, 1));
 }
 .category-clear-chip:hover { border-color: #e05252; color: #e05252; background: #fff0f0; }
-[data-theme="dark"] .category-clear-chip { color: #777; }
+[data-theme="dark"] .category-clear-chip { color: var(--dt2); }
 [data-theme="dark"] .category-clear-chip:hover { border-color: #e05252; color: #e05252; background: #2a1414; }
 
 /* Shared level-filter warning banner */
@@ -100,15 +100,15 @@ button:focus:not(:focus-visible) { outline: none; }
      #555  — secondary / muted text
 
    Dark backgrounds (dark cards, adventure/racecar, dark mode):
-     #f0f0f0  — primary text
-     #b0b0b0  — secondary / muted text
+     #f7f7f7  — primary text
+     #dcdcdc  — secondary / muted text
 ──────────────────────────────────────────────────────────────────── */
 :root {
   --t1:  #111;      /* primary on light */
   --t2:  #555;      /* secondary on light */
-  --dt1: #f0f0f0;   /* primary on dark */
-  --dt2: #b0b0b0;   /* secondary on dark */
+  --dt1: #f7f7f7;   /* primary on dark */
+  --dt2: #dcdcdc;   /* secondary on dark */
 }
 
-[data-theme="dark"]  { --t1: #f0f0f0; --t2: #b0b0b0; }
+[data-theme="dark"]  { --t1: #f7f7f7; --t2: #dcdcdc; }
 [data-theme="light"] { --t1: #111;     --t2: #555; }

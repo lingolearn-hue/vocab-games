@@ -5,6 +5,7 @@
   max-width: 480px;
   margin: 0 auto;
   background: #fafafa;
+  position: relative;
 }
 
 /* Header */
@@ -67,6 +68,19 @@
 .gr-tab:first-child { border-left: none; }
 .gr-tab.active { background: #4f7ef8; color: #fff; font-weight: 600; }
 
+.gr-hide-finished-btn {
+  background: none;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 7px;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.gr-hide-finished-btn.active { border-color: #4f7ef8; background: #eef2ff; }
+
 .gr-trans-toggle {
   background: none;
   border: 1.5px solid #e0e0e0;
@@ -81,15 +95,77 @@
 }
 .gr-trans-toggle.active { border-color: #4f7ef8; color: #4f7ef8; background: #eef2ff; }
 
+.gr-play-btn {
+  background: none;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 7px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  -webkit-appearance: none;
+  transition: all 0.12s;
+}
+.gr-play-btn.is-playing { border-color: #4f7ef8; background: #eef2ff; }
+
+/* Read-aloud sentence highlight — a soft background wash rather than
+   overriding the SRS-status text colors TextWithLookup already applies. */
+.gr-sentence {
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.gr-sentence-active { background: rgba(79,126,248,0.14); }
+.gr-sentence-tappable { cursor: pointer; }
+
+.gr-sentence-translation {
+  display: block;
+  margin: 0.15rem 0 0.5rem;
+  padding: 0.35rem 0.6rem;
+  border-left: 3px solid #4f7ef8;
+  background: #f5f7ff;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #444;
+  cursor: text;
+}
+
 /* Body */
 .gr-body {
   flex: 1;
   overflow-y: auto;
-  padding: 1rem 1.2rem 2rem;
+  padding: 0.7rem 1.2rem 2rem;
 }
 
 /* Passage list */
 .gr-passage-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+/* Series grouping — a named group of level-variants of the same story
+   (e.g. "Mein Freund" at A1/A2/B1...). Was completely unstyled before,
+   rendering as bare unspaced divs with no visual separation from a plain
+   list — the header + gap here is what actually makes it read as a
+   distinct group instead of just more list items. */
+.gr-series {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.gr-series-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 0.1rem;
+}
+.gr-series-icon { font-size: 0.9rem; }
+.gr-series-name { font-size: 0.85rem; font-weight: 700; color: #333; }
+.gr-series-count { font-size: 0.72rem; color: #999; }
+
+.gr-series-cards {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -98,8 +174,10 @@
 .gr-passage-card {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  padding: 0.9rem 1rem;
+  gap: 0.2rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.7rem 1rem;
   border: 1.5px solid #e8e8e8;
   border-radius: 12px;
   background: #fff;
@@ -115,6 +193,36 @@
   justify-content: space-between;
   gap: 0.5rem;
 }
+
+.gr-passage-card-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.gr-finished-check {
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #22a06b;
+}
+
+.gr-finish-btn {
+  display: block;
+  margin: 1rem auto 0;
+  padding: 0.55rem 1.2rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 20px;
+  background: #fff;
+  color: #555;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.gr-finish-btn:hover { border-color: #22a06b; color: #22a06b; }
+.gr-finish-btn.is-finished { border-color: #22a06b; background: #e9f8f1; color: #22a06b; }
 
 .gr-passage-title {
   font-size: 1.1rem;
@@ -185,7 +293,7 @@
   -webkit-appearance: none;
   appearance: none;
   border-radius: 10px;
-  color: #555;
+  color: #fff;
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
@@ -196,8 +304,70 @@
 
 /* Reading body */
 .gr-reading-body {
-  padding: 1.2rem 1.2rem 3rem;
+  padding: 1.2rem 1.2rem 2rem;
+  position: relative;
 }
+
+/* Small square placeholder — reserved spot for future passage artwork.
+   Purely decorative for now: dashed border marks it clearly as a
+   placeholder rather than a broken image. */
+.gr-cover-placeholder {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  border: 1.5px dashed #d8d8d8;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  float: left;
+  margin: 0 0.8rem 0.4rem 0;
+  flex-shrink: 0;
+}
+
+/* Reveal-as-you-go progress bar */
+.gr-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+.gr-progress-bar {
+  height: 4px;
+  border-radius: 2px;
+  background: #ececec;
+  overflow: hidden;
+}
+.gr-progress-fill {
+  height: 100%;
+  background: #4f7ef8;
+  border-radius: 2px;
+  transition: width 0.2s ease;
+}
+.gr-progress-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.gr-continue-reveal-btn {
+  display: block;
+  width: 100%;
+  margin-bottom: 1.2rem;
+  padding: 0.75rem;
+  border: 1.5px dashed #c8d4fb;
+  border-radius: 12px;
+  background: #f4f7ff;
+  color: #4f7ef8;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+.gr-continue-reveal-btn:hover { background: #eef2ff; border-color: #4f7ef8; }
 
 /* Text */
 .gr-text {
@@ -206,6 +376,11 @@
   color: #111;
   margin-bottom: 1.2rem;
 }
+
+.gr-paragraph {
+  margin: 0 0 1.1em;
+}
+.gr-paragraph:last-child { margin-bottom: 0; }
 
 .gr-text-cjk {
   font-size: 1.3rem;
@@ -252,66 +427,108 @@
   line-height: 1.6;
 }
 
+/* Top banners row: finished-progress pill (left) + "Continue reading"
+   resume banner (right) — same pill shape/height so they read as one
+   paired unit instead of two differently-styled stacked blocks. Both
+   ~10% shorter than the original single-block versions. */
+.gr-top-banners {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+  margin: 0.5rem 1rem 0;
+}
+
+.gr-continue-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex: 1;
+  min-width: 0;
+  padding: 0.63rem 0.8rem;
+  border: none;
+  border-radius: 12px;
+  background: #eef2ff;
+  cursor: pointer;
+  text-align: left;
+  -webkit-appearance: none;
+}
+.gr-continue-icon { font-size: 1.15rem; flex-shrink: 0; }
+.gr-continue-text { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; flex: 1; }
+.gr-continue-label { font-size: 0.66rem; font-weight: 700; color: #4f7ef8; text-transform: uppercase; letter-spacing: 0.03em; }
+.gr-continue-title { font-size: 0.85rem; font-weight: 700; color: #111; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gr-continue-arrow { font-size: 1rem; color: #4f7ef8; flex-shrink: 0; }
+
+/* Reading progress summary — same pill shape/height as the continue
+   banner, sized to its content rather than flexing to fill space. */
+.gr-progress-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  padding: 0.63rem 0.75rem;
+  border-radius: 12px;
+  background: #eefaf3;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #22a06b;
+}
+.gr-progress-summary-icon { font-size: 0.85rem; }
+
 
 /* Dark mode */
 
 /* ── Filter system ─────────────────────────────────────────────── */
+/* Level chips, search, and the tag row all share the same 1rem horizontal
+   padding and vertical rhythm here, so they read as one aligned block
+   instead of separately-indented rows (previous bug: --border/--surface/
+   --text-secondary below were never defined anywhere in the codebase, so
+   this panel silently had no border or background at all). */
 .gr-filters {
-  border-bottom: 1px solid var(--border);
-  background: var(--surface);
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafafa;
+  padding-bottom: 0.3rem;
 }
 
-/* Level chips — auto-scaled to fit by ChipRow, styled by the shared .level-chip rules */
 .gr-filter-levels {
-  padding: 0.6rem 1rem 0.4rem;
+  padding: 0.5rem 1rem 0.35rem;
 }
 .gr-filter-levels .chip-row-inner {
   gap: calc(0.4rem * var(--chip-row-scale, 1));
 }
-
-/* Type + Topic rows — labeled, single-line horizontal scroll */
-.gr-filter-tags {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+/* ~10% shorter than the app-wide default level chip — scoped to the
+   reader's filter row only, not a global level-chip change. */
+.gr-filter-levels .level-chip {
+  padding-top: calc(0.27rem * var(--chip-row-scale, 1));
+  padding-bottom: calc(0.27rem * var(--chip-row-scale, 1));
+  font-size: calc(0.68rem * var(--chip-row-scale, 1));
 }
 
 .gr-tag-row {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.3rem 1rem;
-  overflow: hidden;
-}
-
-.gr-tag-row-label {
-  font-size: 0.62rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  flex-shrink: 0;
-  min-width: 2.8rem;
+  gap: 0.4rem;
+  padding: 0 1rem 0.25rem;
 }
 
 .gr-tag-scroll {
   display: flex;
-  gap: 0.35rem;
+  gap: 0.4rem;
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  padding-bottom: 1px;
+  flex: 1;
+  min-width: 0;
 }
 .gr-tag-scroll::-webkit-scrollbar { display: none; }
 
 .gr-tag-chip {
-  padding: 0.2rem 0.55rem;
+  padding: 0.28rem 0.65rem;
   border-radius: 20px;
-  border: 1.5px solid var(--border);
+  border: 1.5px solid #e0e0e0;
   background: none;
-  font-size: 0.68rem;
-  font-weight: 600;
-  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #555;
   cursor: pointer;
   white-space: nowrap;
   flex-shrink: 0;
@@ -322,18 +539,19 @@
 .gr-tag-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
 
 .gr-tag-clear {
-  display: block;
-  width: calc(100% - 2rem);
-  margin: 0.3rem 1rem 0.5rem;
-  padding: 0.25rem;
-  border-radius: 20px;
+  flex-shrink: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
   border: 1.5px solid #e5534b;
   background: none;
-  font-size: 0.68rem;
-  font-weight: 600;
+  font-size: 0.7rem;
+  font-weight: 700;
   color: #e5534b;
   cursor: pointer;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   -webkit-appearance: none;
 }
 .gr-tag-clear:hover { background: #e5534b22; }
@@ -364,28 +582,39 @@
 
 /* ── Dark mode ────────────────────────────────────────────────────────────── */
 
-
-[data-theme="dark"] .gr-screen         { background: #111; }
-[data-theme="dark"] .gr-header         { border-color: #222; }
-[data-theme="dark"] .gr-back           { color: #b0b0b0; }
-[data-theme="dark"] .gr-back:hover     { color: #f0f0f0; }
-[data-theme="dark"] .gr-title          { color: #f0f0f0; }
-[data-theme="dark"] .gr-filters        { background: #111; border-color: #222; }
-[data-theme="dark"] .gr-tag-chip       { border-color: #333; color: #b0b0b0; }
-[data-theme="dark"] .gr-tag-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
-[data-theme="dark"] .gr-passage-card   { background: #1a1a1a; border-color: #222; }
-[data-theme="dark"] .gr-passage-card:hover { background: #222; }
-[data-theme="dark"] .gr-passage-title  { color: #f0f0f0; }
-[data-theme="dark"] .gr-passage-tag    { background: #2a2a2a; color: #777; }
-[data-theme="dark"] .gr-text           { color: #f0f0f0; }
-[data-theme="dark"] .gr-translation    { background: #1a1a1a; border-color: #333; color: #888; }
-[data-theme="dark"] .gr-screen         { background: #111; }
-[data-theme="dark"] .gr-filters        { background: #111; border-color: #222; }
-[data-theme="dark"] .gr-tag-row-label  { color: #555; }
-[data-theme="dark"] .gr-tag-chip       { border-color: #333; color: #b0b0b0; }
-[data-theme="dark"] .gr-passage-card   { background: #1a1a1a; border-color: #222; }
-[data-theme="dark"] .gr-passage-title  { color: #f0f0f0; }
-[data-theme="dark"] .gr-passage-card:hover { background: #222; }
+[data-theme="dark"] .gr-screen              { background: #111; }
+[data-theme="dark"] .gr-header              { border-color: #222; }
+[data-theme="dark"] .gr-hide-finished-btn        { border-color: #333; }
+[data-theme="dark"] .gr-hide-finished-btn.active { border-color: #4f7ef8; background: #1a2340; }
+[data-theme="dark"] .gr-back                { color: var(--dt2); }
+[data-theme="dark"] .gr-back:hover          { color: #f0f0f0; }
+[data-theme="dark"] .gr-title               { color: #f0f0f0; }
+[data-theme="dark"] .gr-filters             { background: #111; border-color: #222; }
+[data-theme="dark"] .gr-tag-chip            { border-color: #333; color: var(--dt2); }
+[data-theme="dark"] .gr-tag-chip.active     { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
+[data-theme="dark"] .gr-passage-card        { background: #1a1a1a; border-color: #222; }
+[data-theme="dark"] .gr-series-name         { color: #e0e0e0; }
+[data-theme="dark"] .gr-series-count        { color: var(--dt2); }
+[data-theme="dark"] .gr-passage-card:hover  { background: #222; }
+[data-theme="dark"] .gr-passage-title       { color: #f0f0f0; }
+[data-theme="dark"] .gr-passage-tag         { background: #2a2a2a; color: var(--dt2); }
+[data-theme="dark"] .gr-text                { color: #f0f0f0; }
+[data-theme="dark"] .gr-progress-bar        { background: #2a2a2a; }
+[data-theme="dark"] .gr-progress-label      { color: var(--dt2); }
+[data-theme="dark"] .gr-continue-reveal-btn { background: #1a2340; border-color: #333; }
+[data-theme="dark"] .gr-translation         { background: #1a1a1a; border-color: #333; color: var(--dt2); }
+[data-theme="dark"] .gr-search              { background: #1a1a1a; border-color: #333; color: #f0f0f0; }
+[data-theme="dark"] .gr-cover-placeholder   { background: #1e1e1e; border-color: #333; }
+[data-theme="dark"] .gr-play-btn            { border-color: #333; color: var(--dt2); }
+[data-theme="dark"] .gr-play-btn.is-playing { border-color: #4f7ef8; background: #1a2340; }
+[data-theme="dark"] .gr-sentence-active     { background: rgba(79,126,248,0.22); }
+[data-theme="dark"] .gr-sentence-translation { background: #1a2340; color: var(--dt2); }
+[data-theme="dark"] .gr-continue-banner     { background: #1a2340; }
+[data-theme="dark"] .gr-continue-title      { color: #f0f0f0; }
+[data-theme="dark"] .gr-progress-summary    { background: #10281c; color: #3ecf8e; }
+[data-theme="dark"] .gr-finish-btn          { background: #1a1a1a; border-color: #333; color: var(--dt2); }
+[data-theme="dark"] .gr-finish-btn:hover    { border-color: #22a06b; color: #22a06b; }
+[data-theme="dark"] .gr-finish-btn.is-finished { background: #10281c; border-color: #22a06b; color: #3ecf8e; }
 
 /* Search bar */
 .gr-search-row {
@@ -398,7 +627,7 @@
 .gr-search {
   flex: 1;
   padding: 0.45rem 0.7rem;
-  border: 1.5px solid var(--border, #ddd);
+  border: 1.5px solid #ddd;
   border-radius: 8px;
   font-size: 0.85rem;
   background: #fff;
@@ -411,13 +640,10 @@
   background: none;
   border: none;
   font-size: 0.8rem;
-  color: #999;
+  color: var(--dt2);
   cursor: pointer;
   padding: 0.2rem 0.3rem;
   -webkit-appearance: none;
   flex-shrink: 0;
 }
 .gr-search-clear:hover { color: #555; }
-
-
-[data-theme="dark"] .gr-search { background: #1a1a1a; border-color: #333; color: #f0f0f0; }

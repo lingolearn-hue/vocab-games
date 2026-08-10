@@ -8,40 +8,84 @@
       "level": "A1",
       "category": "articles",
       "title": "Definite article — nominative",
-      "explanation": "The nominative case is used for the subject of a sentence. Definite articles: der (masc), die (fem/pl), das (neut).",
+      "explanation": "German nouns come in three grammatical genders — masculine, feminine, and neuter — and the article you use depends on which gender a noun has. In the nominative case (used for the subject of a sentence), the definite article is der (masc), die (fem), or das (neut); die also covers the plural, regardless of gender.",
       "type": "fill-blank",
       "template": "___ {[der Hund|die Katze|das Buch|die Frau|der Mann|das Kind|der Apfel|die Stadt]} ist hier.",
-      "hint": "Choose the correct definite article for the noun in brackets.",
+      "hint": "Der (masc), die (fem), das (neut) — the article depends on the noun's gender, not the sentence.",
+      "examples": [
+        "Der Hund ist hier. (masculine — \"the dog is here\")",
+        "Die Katze ist hier. (feminine — \"the cat is here\")"
+      ],
       "distractors": [
         "auto:nominative-article"
-      ]
+      ],
+      "quizType": "de-articles-nom-def"
     },
     {
       "id": "de-g-002",
       "level": "A1",
       "category": "articles",
       "title": "Indefinite article — nominative",
-      "explanation": "Indefinite articles in nominative: ein (masc/neut), eine (fem). There is no plural indefinite article.",
+      "explanation": "Indefinite articles work like \"a/an\" in English — they introduce a noun without pointing to a specific one. In the nominative case, German uses ein for masculine and neuter nouns, and eine for feminine nouns. There's no plural indefinite article — German just drops the article entirely for plural \"some\" (Ich habe Bücher — \"I have books\").",
       "type": "fill-blank",
       "template": "Das ist ___ {[Hund:ein|Katze:eine|Buch:ein|Frau:eine|Mann:ein|Kind:ein|Apfel:ein]}.",
+      "examples": [
+        "Das ist ein Hund. (masculine — \"that's a dog\")",
+        "Das ist eine Katze. (feminine — \"that's a cat\")"
+      ],
       "hint": "Choose ein or eine depending on the noun's gender.",
       "distractors": [
         "ein",
         "eine",
         "einen"
-      ]
+      ],
+      "quizType": "de-articles-nom-indef"
     },
     {
       "id": "de-g-003",
       "level": "A1",
       "category": "conjugation",
       "title": "Present tense — sein (to be)",
-      "explanation": "sein: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind.",
+      "explanation": "sein (\"to be\") is one of the most common and most irregular German verbs — its forms don't follow the normal conjugation pattern, so they need to be memorized directly: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind.",
+      "conjugationTable": [
+        {
+          "pronoun": "ich",
+          "form": "bin"
+        },
+        {
+          "pronoun": "du",
+          "form": "bist"
+        },
+        {
+          "pronoun": "er / sie / es",
+          "form": "ist"
+        },
+        {
+          "pronoun": "wir",
+          "form": "sind"
+        },
+        {
+          "pronoun": "ihr",
+          "form": "seid"
+        },
+        {
+          "pronoun": "sie / Sie",
+          "form": "sind"
+        }
+      ],
       "type": "fill-blank",
-      "template": "{[Ich|Du|Er|Sie|Es|Wir|Ihr|Sie]} ___ Student.",
+      "template": "Er ___ {[Student:Student|müde:müde|hier:hier|glücklich:glücklich]}.",
+      "quizType": "de-verb-sein",
+      "examples": [
+        "Ich bin müde. (\"I am tired\")",
+        "Wir sind hier. (\"we are here\")"
+      ],
       "hint": "Conjugate 'sein' to match the subject.",
       "distractors": [
-        "auto:sein-present"
+        "ist",
+        "bin",
+        "bist",
+        "sind"
       ]
     },
     {
@@ -49,12 +93,46 @@
       "level": "A1",
       "category": "conjugation",
       "title": "Present tense — haben (to have)",
-      "explanation": "haben: ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie/Sie haben.",
+      "explanation": "haben (\"to have\") is another core irregular verb, used both for possession and as the auxiliary for most Perfekt (past tense) forms later on: ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie/Sie haben.",
+      "conjugationTable": [
+        {
+          "pronoun": "ich",
+          "form": "habe"
+        },
+        {
+          "pronoun": "du",
+          "form": "hast"
+        },
+        {
+          "pronoun": "er / sie / es",
+          "form": "hat"
+        },
+        {
+          "pronoun": "wir",
+          "form": "haben"
+        },
+        {
+          "pronoun": "ihr",
+          "form": "habt"
+        },
+        {
+          "pronoun": "sie / Sie",
+          "form": "haben"
+        }
+      ],
       "type": "fill-blank",
-      "template": "{[Ich|Du|Er|Sie|Wir|Ihr]} ___ einen Hund.",
+      "template": "Wir ___ {[einen Hund:einen Hund|Zeit:Zeit|ein Auto:ein Auto|Hunger:Hunger]}.",
+      "quizType": "de-verb-haben",
+      "examples": [
+        "Ich habe einen Hund. (\"I have a dog\")",
+        "Wir haben Zeit. (\"we have time\")"
+      ],
       "hint": "Conjugate 'haben' to match the subject.",
       "distractors": [
-        "auto:haben-present"
+        "haben",
+        "habe",
+        "hast",
+        "hat"
       ]
     },
     {
@@ -62,9 +140,40 @@
       "level": "A1",
       "category": "conjugation",
       "title": "Present tense — regular -en verbs",
-      "explanation": "Regular verbs: stem + -e (ich), -st (du), -t (er/sie/es), -en (wir/sie), -t (ihr).",
+      "explanation": "Regular (\"weak\") German verbs conjugate predictably: take the stem (the infinitive minus -en) and add an ending for each person — -e (ich), -st (du), -t (er/sie/es), -en (wir/sie/Sie), -t (ihr). Most German verbs follow this pattern, shown below with machen (\"to do/make\"). A few regular verbs whose stem ends in -t/-d insert an extra -e- before the ending for pronounceability (e.g. arbeiten → du arbeitest) — still regular, just a small spelling adjustment.",
+      "conjugationTable": [
+        {
+          "pronoun": "ich",
+          "form": "mache"
+        },
+        {
+          "pronoun": "du",
+          "form": "machst"
+        },
+        {
+          "pronoun": "er / sie / es",
+          "form": "macht"
+        },
+        {
+          "pronoun": "wir",
+          "form": "machen"
+        },
+        {
+          "pronoun": "ihr",
+          "form": "macht"
+        },
+        {
+          "pronoun": "sie / Sie",
+          "form": "machen"
+        }
+      ],
       "type": "fill-blank",
       "template": "Ich ___ {[gern Äpfel:esse|viel:lerne|jeden Tag:arbeite|gern:trinke]}.",
+      "quizType": "de-verb-regular",
+      "examples": [
+        "Ich lerne Deutsch. (\"I learn German\")",
+        "Sie arbeitet viel. (\"she works a lot\")"
+      ],
       "hint": "Fill in the correct 'ich' form of the verb.",
       "distractors": [
         "auto:regular-ich"
@@ -77,6 +186,8 @@
       "title": "Verb-second rule (V2)",
       "explanation": "In German main clauses, the finite verb is always in second position. If something other than the subject comes first, subject and verb swap (inversion).",
       "type": "tile-order",
+      "quizTypeMc": "de-verb-second-mc",
+      "quizTypeTiles": "de-verb-second-tiles",
       "tiles": [
         "Ich",
         "jeden Tag",
@@ -111,6 +222,8 @@
       "title": "Verb-second — with place",
       "explanation": "The verb stays in second position even when a place adverb leads the sentence.",
       "type": "tile-order",
+      "quizTypeMc": "de-verb-second-mc",
+      "quizTypeTiles": "de-verb-second-tiles",
       "tiles": [
         "Er",
         "in Berlin",
@@ -152,37 +265,52 @@
       "level": "A2",
       "category": "articles",
       "title": "Accusative case — definite article",
-      "explanation": "In the accusative case (direct object), masculine changes: der → den. Feminine and neuter stay the same.",
+      "explanation": "The accusative case marks the direct object of a sentence — the thing directly receiving the action. Coming from the nominative, only the masculine definite article changes: der becomes den. Feminine (die) and neuter (das) stay the same as in the nominative.",
       "type": "fill-blank",
       "template": "Ich sehe ___ {[Hund:den|Katze:die|Buch:das|Mann:den|Frau:die|Apfel:den]}.",
+      "examples": [
+        "Ich sehe den Hund. (masculine — \"I see the dog\")",
+        "Ich sehe die Katze. (feminine, unchanged — \"I see the cat\")"
+      ],
       "hint": "Only masculine changes in the accusative: der → den.",
       "distractors": [
         "auto:accusative-article"
-      ]
+      ],
+      "quizType": "de-articles-acc-def"
     },
     {
       "id": "de-g-009",
       "level": "A2",
       "category": "articles",
       "title": "Accusative case — indefinite article",
-      "explanation": "Indefinite articles in accusative: einen (masc), eine (fem), ein (neut).",
+      "explanation": "Indefinite articles in the accusative follow the same masculine-only change as the definite article: ein becomes einen for masculine nouns. Feminine (eine) and neuter (ein) stay the same as in the nominative.",
       "type": "fill-blank",
       "template": "Ich kaufe ___ {[Hund:einen|Katze:eine|Buch:ein|Apfel:einen|Freund:einen]}.",
+      "examples": [
+        "Ich kaufe einen Hund. (masculine — \"I buy a dog\")",
+        "Ich kaufe eine Katze. (feminine, unchanged — \"I buy a cat\")"
+      ],
       "hint": "Masculine gets -en ending in accusative: ein → einen.",
       "distractors": [
         "ein",
         "eine",
         "einen"
-      ]
+      ],
+      "quizType": "de-articles-acc-indef"
     },
     {
       "id": "de-g-010",
       "level": "A2",
       "category": "prepositions",
       "title": "Accusative prepositions",
-      "explanation": "These prepositions always take the accusative: durch, für, gegen, ohne, um.",
+      "explanation": "A small fixed set of German prepositions always takes the accusative case, regardless of what they mean or how they're used: durch (through), für (for), gegen (against), ohne (without), um (around/at). Whatever noun follows one of these gets accusative articles.",
       "type": "fill-blank",
+      "quizType": "de-prep-accusative",
       "template": "Das Geschenk ist ___ {[meinen Vater:für|meine Mutter:für|das Kind:für]}.",
+      "examples": [
+        "Das ist für meinen Vater. (\"that's for my father\")",
+        "Wir laufen durch den Park. (\"we walk through the park\")"
+      ],
       "hint": "für always takes the accusative case.",
       "distractors": [
         "auto:accusative-article-masc"
@@ -193,9 +321,14 @@
       "level": "A2",
       "category": "prepositions",
       "title": "Dative prepositions",
-      "explanation": "These prepositions always take the dative: aus, bei, mit, nach, seit, von, zu, gegenüber.",
+      "explanation": "A different fixed set of prepositions always takes the dative case: aus (from/out of), bei (at/near), mit (with), nach (after/to), seit (since), von (from/of), zu (to), gegenüber (opposite). Whatever noun follows one of these gets dative articles (dem/der).",
       "type": "fill-blank",
+      "quizType": "de-prep-dative",
       "template": "Ich fahre ___ {[dem Bus:mit|der Bahn:mit|meinem Freund:mit]}.",
+      "examples": [
+        "Ich fahre mit dem Bus. (masculine — \"I travel by bus\")",
+        "Sie kommt aus der Stadt. (feminine — \"she comes from the city\")"
+      ],
       "hint": "mit always takes the dative. Masculine/neuter: dem. Feminine: der.",
       "distractors": [
         "auto:dative-article"
@@ -206,9 +339,40 @@
       "level": "A2",
       "category": "conjugation",
       "title": "Modal verb — können (can)",
-      "explanation": "können: ich kann, du kannst, er/sie/es kann, wir können, ihr könnt, sie können. Modal + infinitive at end.",
+      "explanation": "können (\"can/to be able to\") is a modal verb: ich kann, du kannst, er/sie/es kann, wir können, ihr könnt, sie/Sie können. Modal verbs pair with a second, unconjugated verb in its infinitive form, which is pushed to the very end of the sentence.",
+      "conjugationTable": [
+        {
+          "pronoun": "ich",
+          "form": "kann"
+        },
+        {
+          "pronoun": "du",
+          "form": "kannst"
+        },
+        {
+          "pronoun": "er / sie / es",
+          "form": "kann"
+        },
+        {
+          "pronoun": "wir",
+          "form": "können"
+        },
+        {
+          "pronoun": "ihr",
+          "form": "könnt"
+        },
+        {
+          "pronoun": "sie / Sie",
+          "form": "können"
+        }
+      ],
       "type": "fill-blank",
+      "quizType": "de-verb-koennen",
       "template": "Ich ___ gut {[Deutsch sprechen|Klavier spielen|schnell laufen|gut kochen]}.",
+      "examples": [
+        "Ich kann gut Deutsch sprechen. (\"I can speak German well\")",
+        "Er kann schnell laufen. (\"he can run fast\")"
+      ],
       "hint": "Fill in the correct form of 'können' for 'ich'.",
       "distractors": [
         "kann",
@@ -222,12 +386,46 @@
       "level": "A2",
       "category": "conjugation",
       "title": "Modal verb — müssen (must)",
-      "explanation": "müssen: ich muss, du musst, er muss, wir müssen, ihr müsst, sie müssen.",
+      "explanation": "müssen (\"must/to have to\") is another modal verb, expressing necessity or obligation: ich muss, du musst, er/sie/es muss, wir müssen, ihr müsst, sie/Sie müssen. Like other modals, it pushes the main verb's infinitive to the end of the sentence.",
+      "conjugationTable": [
+        {
+          "pronoun": "ich",
+          "form": "muss"
+        },
+        {
+          "pronoun": "du",
+          "form": "musst"
+        },
+        {
+          "pronoun": "er / sie / es",
+          "form": "muss"
+        },
+        {
+          "pronoun": "wir",
+          "form": "müssen"
+        },
+        {
+          "pronoun": "ihr",
+          "form": "müsst"
+        },
+        {
+          "pronoun": "sie / Sie",
+          "form": "müssen"
+        }
+      ],
       "type": "fill-blank",
-      "template": "{[Ich|Du|Er|Wir|Ihr|Sie]} ___ morgen arbeiten.",
+      "quizType": "de-verb-muessen",
+      "template": "Sie ___ {[morgen arbeiten:morgen arbeiten|früh aufstehen:früh aufstehen|das Buch lesen:das Buch lesen]}.",
+      "examples": [
+        "Sie muss morgen arbeiten. (\"she has to work tomorrow\")",
+        "Ich muss früh aufstehen. (\"I have to get up early\")"
+      ],
       "hint": "Conjugate 'müssen' to match the subject.",
       "distractors": [
-        "auto:müssen-present"
+        "muss",
+        "musst",
+        "müssen",
+        "müsst"
       ]
     },
     {
@@ -235,8 +433,10 @@
       "level": "A2",
       "category": "word-order",
       "title": "Modal verb sentence structure",
-      "explanation": "With modal verbs, the modal is in position 2 and the infinitive goes to the end.",
+      "explanation": "Sentences with a modal verb (können, müssen, ...) still follow the normal German V2 rule — the modal itself sits in position 2 — but the main verb doesn't conjugate at all: it stays in its plain infinitive form and gets pushed all the way to the end of the sentence, with everything else (objects, time expressions) sandwiched in between.",
       "type": "tile-order",
+      "quizTypeMc": "de-modal-order-mc",
+      "quizTypeTiles": "de-modal-order-tiles",
       "tiles": [
         "Ich",
         "heute",
@@ -272,9 +472,14 @@
       "level": "B1",
       "category": "tense",
       "title": "Perfekt — regular verbs",
-      "explanation": "The Perfekt uses haben/sein + past participle. Regular verbs: ge- + stem + -t. E.g. machen → gemacht.",
+      "explanation": "The Perfekt is the standard spoken past tense in German, built from a conjugated auxiliary (haben or sein) plus a past participle at the end of the sentence. Regular (\"weak\") verbs form their participle as ge- + stem + -t — for example machen (\"to do\") becomes gemacht.",
       "type": "fill-blank",
+      "quizType": "de-perfekt-participle",
       "template": "Ich habe gestern ___ {[das Buch gelesen:gelesen|Deutsch gelernt:gelernt|Pizza gegessen:gegessen|Musik gehört:gehört]}.",
+      "examples": [
+        "Ich habe gestern Deutsch gelernt. (\"I learned German yesterday\")",
+        "Er hat Pizza gegessen. (\"he ate pizza\")"
+      ],
       "hint": "The past participle of regular verbs ends in -t, irregular in -en.",
       "distractors": [
         "auto:participle-confusion"
@@ -285,9 +490,14 @@
       "level": "B1",
       "category": "tense",
       "title": "Perfekt — sein vs haben",
-      "explanation": "Verbs of motion and change of state use 'sein' in Perfekt. All others use 'haben'.",
+      "explanation": "Choosing haben vs. sein for the Perfekt depends on the main verb: verbs of motion (fahren, gehen) or change of state use sein, while most other verbs — including actions like essen (to eat) and arbeiten (to work) — use haben.",
       "type": "fill-blank",
+      "quizType": "de-perfekt-aux",
       "template": "Er ___ nach Berlin {[gefahren:ist|gegangen:ist|gegessen:hat|gearbeitet:hat]}.",
+      "examples": [
+        "Er ist nach Berlin gefahren. (motion — \"he traveled to Berlin\")",
+        "Er hat Pizza gegessen. (action — \"he ate pizza\")"
+      ],
       "hint": "Motion verbs (fahren, gehen) use sein. Action verbs (essen, arbeiten) use haben.",
       "distractors": [
         "ist",
@@ -303,6 +513,8 @@
       "title": "Subordinate clause word order",
       "explanation": "In subordinate clauses (after weil, dass, ob, wenn...), the verb moves to the end.",
       "type": "tile-order",
+      "quizTypeMc": "de-subordinate-mc",
+      "quizTypeTiles": "de-subordinate-tiles",
       "tiles": [
         "Ich",
         "lerne",
@@ -332,22 +544,31 @@
       "level": "B1",
       "category": "articles",
       "title": "Dative case — definite article",
-      "explanation": "Dative articles: dem (masc/neut), der (fem), den+n (pl). Used with indirect objects and dative prepositions.",
+      "explanation": "The dative case marks the indirect object — typically the recipient of something — and is also required after certain prepositions (see \"Dative prepositions\"). Its definite articles are dem (masculine/neuter), der (feminine), and den (+ -n on the noun) for plural.",
       "type": "fill-blank",
       "template": "Ich gebe ___ {[Hund:dem|Katze:der|Kind:dem|Frau:der|Mann:dem]} das Buch.",
+      "examples": [
+        "Ich gebe dem Hund das Buch. (masculine — \"I give the dog the book\")",
+        "Ich gebe der Frau das Buch. (feminine — \"I give the woman the book\")"
+      ],
       "hint": "Masculine and neuter become dem. Feminine becomes der in dative.",
       "distractors": [
         "auto:dative-article"
-      ]
+      ],
+      "quizType": "de-articles-dat-def"
     },
     {
       "id": "de-g-019",
       "level": "B1",
       "category": "adjectives",
       "title": "Adjective endings — after definite article",
-      "explanation": "After der/die/das, adjective endings: -e (nom masc/fem/neut), -en (acc masc and all dative/genitive).",
+      "explanation": "When an adjective follows a definite article (der/die/das) and comes before a noun, it takes an ending that reflects the noun's case and gender. In the nominative, this ending is -e for all three genders; other cases mostly take -en instead.",
       "type": "fill-blank",
       "template": "Der {[alt:alte|groß:große|klein:kleine|schön:schöne]} Hund schläft.",
+      "examples": [
+        "Der alte Hund schläft. (\"the old dog is sleeping\")",
+        "Die kleine Katze schläft. (\"the small cat is sleeping\")"
+      ],
       "hint": "After der/die/das in nominative, the adjective ends in -e.",
       "distractors": [
         "auto:adj-ending-nom"
@@ -360,6 +581,7 @@
       "title": "Coordinating vs subordinating conjunctions",
       "explanation": "Coordinating conjunctions (und, aber, oder, denn) don't change word order. Subordinating (weil, dass, wenn, obwohl) send the verb to end.",
       "type": "pick-correct",
+      "quizType": "de-causal-conj",
       "sentences": [
         {
           "text": "Ich lerne Deutsch, weil es interessant ist.",
@@ -380,12 +602,16 @@
     {
       "id": "de-g-021",
       "level": "B2",
-      "category": "tense",
+      "category": "konjunktiv",
       "title": "Konjunktiv II — würden + infinitive",
-      "explanation": "Konjunktiv II expresses hypothetical situations. Most commonly formed with würden + infinitive.",
+      "explanation": "Konjunktiv II expresses hypothetical, unreal, or polite situations — the German equivalent of English \"would\". The regular pattern is würde (conjugated) + the main verb's infinitive at the end of the sentence; a handful of very common verbs use their own \"strong\" Konjunktiv II forms instead (hätte, wäre, käme, gäbe), especially in the \"wenn\" (if) clause of a conditional sentence.",
       "type": "fill-blank",
       "template": "Wenn ich Zeit hätte, ___ ich mehr {[lesen:würde|reisen:würde|lernen:würde|schlafen:würde]}.",
-      "hint": "Konjunktiv II: würde + infinitive at end.",
+      "examples": [
+        "Wenn ich mehr Zeit hätte, würde ich mehr reisen. (\"if I had more time, I would travel more\")",
+        "Wenn er reicher wäre, würde er ein Haus kaufen. (\"if he were richer, he'd buy a house\")"
+      ],
+      "hint": "würde + infinitive is the regular pattern; hätte/wäre are the strong forms of haben/sein used in the \"wenn\" clause.",
       "distractors": [
         "würde",
         "werde",
@@ -420,22 +646,6 @@
           ],
           "note": null
         }
-      ]
-    },
-    {
-      "id": "de-g-023",
-      "level": "B2",
-      "category": "konjunktiv",
-      "title": "Konjunktiv II — Irrealis (würde + Infinitiv)",
-      "explanation": "Konjunktiv II drückt Irreales, Hypothetisches oder höfliche Bitten aus. Muster: würde + Infinitiv, oder starke Formen (käme, gäbe, wäre).",
-      "type": "fill-blank",
-      "template": "Wenn ich mehr Zeit _____, würde ich mehr reisen.",
-      "hint": "Konjunktiv II von 'haben': hätte.",
-      "distractors": [
-        "hätte",
-        "habe",
-        "hatte",
-        "haben würde"
       ]
     },
     {
@@ -474,6 +684,10 @@
       "explanation": "Das Vorgangspassiv betont den Vorgang, nicht den Handelnden. Bildung: werden (konjugiert) + Partizip II. Agens optional mit 'von'.",
       "type": "fill-blank",
       "template": "Das Buch _____ von Millionen Menschen gelesen.",
+      "examples": [
+        "Das Buch wird von Millionen Menschen gelesen. (\"the book is read by millions of people\")",
+        "Der Brief wird morgen geschickt. (\"the letter will be sent tomorrow\")"
+      ],
       "hint": "Vorgangspassiv Präsens: wird + Partizip II.",
       "distractors": [
         "wird",
@@ -517,6 +731,10 @@
       "explanation": "Nach vielen Verben, Adjektiven und Nomen steht ein Infinitiv mit 'zu'. Bei trennbaren Verben: aufzumachen. Kein 'zu' nach Modalverben.",
       "type": "fill-blank",
       "template": "Es ist wichtig, gesund _____ ernähren.",
+      "examples": [
+        "Es ist wichtig, sich gesund zu ernähren. (\"it's important to eat healthily\")",
+        "Er hat vergessen, das Fenster zu schließen. (\"he forgot to close the window\")"
+      ],
       "hint": "Infinitiv mit zu: sich zu ernähren.",
       "distractors": [
         "sich zu",
@@ -612,6 +830,8 @@
       "title": "Inversion after adverb — Verbzweitstellung",
       "explanation": "In German main clauses, the verb always comes second. If something other than the subject starts the sentence (adverb, object), subject and verb invert.",
       "type": "tile-order",
+      "quizTypeMc": "de-verb-second-mc",
+      "quizTypeTiles": "de-verb-second-tiles",
       "tiles": [
         "Gestern",
         "habe",
@@ -666,6 +886,7 @@
       "title": "Kausale Konjunktionen — weil vs denn",
       "explanation": "weil: subordinate clause, verb-last. denn: coordinating conjunction, main clause order (verb second). Both mean 'because' but have different word order consequences.",
       "type": "pick-correct",
+      "quizType": "de-causal-conj",
       "sentences": [
         {
           "text": "Ich bleibe zuhause, weil ich krank bin.",
@@ -722,6 +943,10 @@
       "explanation": "Konjunktiv I is used for reported speech in formal/journalistic German, to signal that the statement comes from someone else. Er sagte, er sei krank (he said he was ill).",
       "type": "fill-blank",
       "template": "Der Zeuge sagte, er ___ den Täter nicht erkannt.",
+      "examples": [
+        "Der Zeuge sagte, er habe den Täter nicht erkannt. (\"the witness said he hadn't recognized the culprit\")",
+        "Sie sagte, sie sei krank. (\"she said she was ill\")"
+      ],
       "hint": "Konjunktiv I von 'haben': er habe.",
       "distractors": [
         "habe",

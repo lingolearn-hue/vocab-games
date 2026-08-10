@@ -34,12 +34,12 @@
 .rc-back {
   background: none;
   border: none;
-  color: #b0b0b0;
+  color: var(--dt2);
   font-size: 0.9rem;
   cursor: pointer;
   padding: 0.3rem 0;
 }
-.rc-back:hover { color: #b0b0b0; }
+.rc-back:hover { color: var(--dt2); }
 
 .rc-stats-inline {
   display: flex;
@@ -48,11 +48,11 @@
 }
 
 .rc-score-big { font-size: 0.9rem; font-weight: 700; }
-.rc-seen      { font-size: 0.65rem; color: #b0b0b0; }
+.rc-seen      { font-size: 0.65rem; color: var(--dt2); }
 
 .rc-header-center {
   font-size: 0.8rem;
-  color: #b0b0b0;
+  color: var(--dt2);
   justify-self: center;
   text-align: center;
 }
@@ -73,12 +73,12 @@
 .rc-gear {
   background: none;
   border: none;
-  color: #b0b0b0;
+  color: var(--dt2);
   font-size: 0.9rem;
   cursor: pointer;
   padding: 0;
 }
-.rc-gear:hover { color: #b0b0b0; }
+.rc-gear:hover { color: var(--dt2); }
 
 /* ── Prompt ──────────────────────────────────────────────────────────────── */
 .rc-prompt-area {
@@ -96,7 +96,7 @@
 
 .rc-prompt-reading {
   font-size: 0.85rem;
-  color: #b0b0b0;
+  color: var(--dt2);
   margin-top: 2px;
 }
 

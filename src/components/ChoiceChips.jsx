@@ -27,8 +27,13 @@ import './ChipRow.css'
  * inside the same ChipRow — so it scales together with the chips instead
  * of sitting outside the row's auto-fit measurement. Used by
  * CategoryChooser for its leaf-level "clear filter" button.
+ *
+ * `single`: when true, behaves as a single-select filter instead of
+ * multi-select — clicking a chip selects only that one (`[opt]`), and
+ * clicking the already-active chip clears the filter back to `null`
+ * ("everything"). Same `null`-means-all contract as multi-select.
  */
-export default function ChoiceChips({ options, value, onChange, getLabel = String, chipClassName = 'level-chip', className = 'level-filter', prefixChip = null }) {
+export default function ChoiceChips({ options, value, onChange, getLabel = String, chipClassName = 'level-chip', className = 'level-filter', prefixChip = null, single = false }) {
   if (!options?.length) return null
 
   const allActive = !value || value.length === options.length
@@ -38,6 +43,11 @@ export default function ChoiceChips({ options, value, onChange, getLabel = Strin
   }
 
   function toggle(opt) {
+    if (single) {
+      const isOnly = !allActive && value.length === 1 && value[0] === opt
+      onChange(isOnly ? null : [opt])
+      return
+    }
     if (allActive) {
       onChange([opt])
       return

@@ -208,5 +208,5 @@
 .twl-popup-dict    { font-weight: 600; color: var(--blue, #4f7ef8); }
 
 
-[data-theme="dark"] .twl-popup-conjugated { color: #888; border-color: #222; }
+[data-theme="dark"] .twl-popup-conjugated { color: var(--dt2); border-color: #222; }
 [data-theme="dark"] .twl-popup-surface    { color: #f0f0f0; }

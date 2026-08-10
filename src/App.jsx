@@ -21,6 +21,7 @@ import Tutorial from './components/Tutorial'
 import './App.css'
 
 const LANGUAGE_FLAGS = { zh: '🇨🇳', es: '🇪🇸', de: '🇩🇪', ja: '🇯🇵', en: '🇬🇧', fr: '🇫🇷' }
+const LANGUAGE_NAMES = { zh: 'Chinese', es: 'Spanish', de: 'German', ja: 'Japanese', fr: 'French' }
 const LANGUAGES = [
   { language: 'zh', label: 'Chinese 🇨🇳' },
   { language: 'es', label: 'Spanish 🇪🇸' },
@@ -32,7 +33,33 @@ const LANGUAGES = [
 
 function FirstLaunchOverlay() {
   const { activeLanguage, setActiveLanguage } = useApp()
+  const [reverseMenuOpen, setReverseMenuOpen] = useState(false)
   if (activeLanguage) return null
+
+  if (reverseMenuOpen) {
+    return (
+      <div className="fl-overlay">
+        <div className="fl-panel">
+          <h2 className="fl-title">Learn English from…</h2>
+          <p className="fl-subtitle">Pick the language you already know</p>
+          <div className="fl-lang-grid">
+            {LANGUAGES.filter(l => l.language !== 'en').map(l => (
+              <button
+                key={l.language}
+                className="fl-lang-btn"
+                onClick={() => setActiveLanguage('en', l.language)}
+              >
+                <span className="fl-flag">{LANGUAGE_FLAGS[l.language]}</span>
+                <span className="fl-lang-name">{LANGUAGE_NAMES[l.language]}</span>
+              </button>
+            ))}
+          </div>
+          <button className="fl-back-btn" onClick={() => setReverseMenuOpen(false)}>← Back</button>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="fl-overlay">
       <div className="fl-panel">
@@ -43,7 +70,7 @@ function FirstLaunchOverlay() {
             <button
               key={l.language}
               className="fl-lang-btn"
-              onClick={() => setActiveLanguage(l.language)}
+              onClick={() => l.language === 'en' ? setReverseMenuOpen(true) : setActiveLanguage(l.language)}
             >
               <span className="fl-flag">{LANGUAGE_FLAGS[l.language]}</span>
               <span className="fl-lang-name">{l.label.split(' ')[0]}</span>

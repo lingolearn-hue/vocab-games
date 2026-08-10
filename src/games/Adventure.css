@@ -24,7 +24,7 @@
   border: none;
   -webkit-appearance: none;
   appearance: none;
-  color: #b0b0b0;
+  color: var(--dt2);
   font-size: 0.88rem;
   cursor: pointer;
   padding: 0.3rem 0.2rem;
@@ -54,7 +54,7 @@
 
 .adv-empty {
   text-align: center;
-  color: #b0b0b0;
+  color: var(--dt2);
   margin-top: 3rem;
   font-size: 0.88rem;
 }
@@ -101,7 +101,7 @@
 .adv-campaign-sub {
   display: block;
   font-size: 0.72rem;
-  color: #b0b0b0;
+  color: var(--dt2);
   margin-top: 0.1rem;
 }
 
@@ -111,12 +111,12 @@
   gap: 0.4rem;
   flex-shrink: 0;
 }
-.adv-campaign-pct  { font-size: 0.72rem; color: #b0b0b0; font-weight: 600; }
-.adv-campaign-arrow { font-size: 1rem; color: #b0b0b0; }
+.adv-campaign-pct  { font-size: 0.72rem; color: var(--dt2); font-weight: 600; }
+.adv-campaign-arrow { font-size: 1rem; color: var(--dt2); }
 .adv-coming-soon {
   font-size: 0.65rem;
   font-weight: 700;
-  color: #b0b0b0;
+  color: var(--dt2);
   background: #1e1e2e;
   border-radius: 20px;
   padding: 0.15rem 0.5rem;
@@ -170,7 +170,7 @@
 .adv-row-num {
   font-size: 0.68rem;
   font-weight: 700;
-  color: #b0b0b0;
+  color: var(--dt2);
   min-width: 2.2rem;
   flex-shrink: 0;
 }

@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { useApp } from '../context/AppContext'
 import LevelChips from '../components/LevelChips'
 import { getAllScores } from '../engine/leitner'
+import HelpButton from '../components/HelpButton'
 import './Stats.css'
 
 // Score → display config
@@ -67,6 +68,10 @@ export default function Stats() {
       <div className="stats-header">
         <button className="stats-back" onClick={goBack}>← Back</button>
         <span className="stats-title">Progress</span>
+        <HelpButton
+          title="Progress"
+          description="Shows your score distribution (0-5, Leitner box) for the current level selection, separately for each game that tracks its own scores: Flashcard, Matching, and Stroke Order."
+        />
       </div>
 
       <div className="stats-body">

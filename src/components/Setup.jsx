@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { useApp } from '../context/AppContext'
 import { filterByLevel } from '../engine/settings'
 import LevelChips from './LevelChips'
@@ -8,9 +8,10 @@ import './Setup.css'
 import './ReadingToggle.css'
 
 const LANGUAGE_FLAGS = { zh: '🇨🇳', es: '🇪🇸', de: '🇩🇪', ja: '🇯🇵', en: '🇬🇧', fr: '🇫🇷' }
+const LANGUAGE_NAMES = { zh: 'Chinese', es: 'Spanish', de: 'German', ja: 'Japanese', fr: 'French' }
 
 const DRILL_GAMES = [
-  { id: 'flashcard', label: '🃏 Flashcard',  desc: 'Swipe to learn' },
+  { id: 'flashcard', label: '📇 Flashcard',  desc: 'Swipe to learn' },
   { id: 'racecar',   label: '🏎 Race Car',   desc: 'Steer into the answer' },
   { id: 'pairmatch', label: '🔗 Pair Match', desc: 'Connect word pairs' },
   { id: 'typing',    label: '⌨️ Typing',     desc: 'Type from memory' },
@@ -80,12 +81,21 @@ function GroupCard({ title, subtitle, icon, games, canStart, setScreen, isOpen, 
 export default function Setup() {
   const {
     availableLists, scores, activeEntries, visibleEntries, vulgarFilteredEntries, setScreen,
-    activeLanguage, setActiveLanguage, settings,
+    activeLanguage, setActiveLanguage, reverseSourceLanguage, settings,
   } = useApp()
 
-  const [langPickerOpen, setLangPickerOpen] = useState(false)
+  const [langPickerOpen,    setLangPickerOpen]    = useState(false)
+  const [reverseMenuOpen,   setReverseMenuOpen]   = useState(false)
   const [openGroup,      setOpenGroup]      = useState('drills')
   const [tutorialOpen,   setTutorialOpen]   = useState(false)
+  const [appVersion, setAppVersion] = useState(null)
+
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}version.json`)
+      .then(r => r.ok ? r.json() : null)
+      .then(v => v && setAppVersion(v.version))
+      .catch(() => {})
+  }, [])
 
   // Filtered by the same global level selection LevelChips drives, so the
   // stats-bar count matches what's actually shown/playable, not the full list.
@@ -107,7 +117,9 @@ export default function Setup() {
   const languages   = getLanguages(availableLists)
   const canStart    = activeEntries.length >= 3
   const currentFlag = activeLanguage ? LANGUAGE_FLAGS[activeLanguage] ?? '🌐' : '🌐'
-  const currentLangLabel = languages.find(l => l.language === activeLanguage)?.label ?? 'Choose language'
+  const currentLangLabel = activeLanguage === 'en' && reverseSourceLanguage
+    ? `English (from ${LANGUAGE_NAMES[reverseSourceLanguage] ?? reverseSourceLanguage})`
+    : languages.find(l => l.language === activeLanguage)?.label ?? 'Choose language'
 
   function avgScore() {
     if (filteredEntries.length === 0) return 0
@@ -142,16 +154,61 @@ export default function Setup() {
       {/* Language picker dropdown */}
       {langPickerOpen && (
         <div className="lang-picker">
-          {languages.map(lang => (
+          {languages.map(lang => {
+            if (lang.language === 'en') {
+              return (
+                <button
+                  key="en"
+                  className={`lang-picker-item ${activeLanguage === 'en' ? 'active' : ''}`}
+                  onClick={() => {
+                    if (activeLanguage === 'en') {
+                      setActiveLanguage(null)
+                      setLangPickerOpen(false)
+                    } else {
+                      setReverseMenuOpen(true)
+                    }
+                  }}
+                >
+                  <span>{LANGUAGE_FLAGS.en}</span>
+                  <span>{lang.label}</span>
+                </button>
+              )
+            }
+            return (
+              <button
+                key={lang.language}
+                className={`lang-picker-item ${activeLanguage === lang.language ? 'active' : ''}`}
+                onClick={() => { setActiveLanguage(activeLanguage === lang.language ? null : lang.language); setLangPickerOpen(false) }}
+              >
+                <span>{LANGUAGE_FLAGS[lang.language] ?? '🌐'}</span>
+                <span>{lang.label}</span>
+              </button>
+            )
+          })}
+        </div>
+      )}
+
+      {/* "Learn English from…" — reverse-build source picker */}
+      {reverseMenuOpen && (
+        <div className="lang-picker lang-picker--reverse">
+          <div className="lang-picker-reverse-title">Learn English from…</div>
+          {languages.filter(l => l.language !== 'en').map(lang => (
             <button
               key={lang.language}
-              className={`lang-picker-item ${activeLanguage === lang.language ? 'active' : ''}`}
-              onClick={() => { setActiveLanguage(activeLanguage === lang.language ? null : lang.language); setLangPickerOpen(false) }}
+              className={`lang-picker-item ${activeLanguage === 'en' && reverseSourceLanguage === lang.language ? 'active' : ''}`}
+              onClick={() => {
+                setActiveLanguage('en', lang.language)
+                setReverseMenuOpen(false)
+                setLangPickerOpen(false)
+              }}
             >
               <span>{LANGUAGE_FLAGS[lang.language] ?? '🌐'}</span>
               <span>{lang.label}</span>
             </button>
           ))}
+          <button className="lang-picker-reverse-cancel" onClick={() => setReverseMenuOpen(false)}>
+            ← Back
+          </button>
         </div>
       )}
 
@@ -217,7 +274,7 @@ export default function Setup() {
         <p className="hint">{activeLanguage ? 'Loading vocabulary…' : 'Tap the flag above to choose a language.'}</p>
       )}
 
-      <div className="setup-version">v0.66</div>
+      <div className="setup-version">{appVersion ? `v${appVersion}` : ''}</div>
 
       {tutorialOpen && <Tutorial onDone={() => setTutorialOpen(false)} />}
     </div>

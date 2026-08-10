@@ -31,6 +31,7 @@
 .stats-title {
   font-size: 1rem;
   font-weight: 600;
+  flex: 1;
 }
 
 .stats-body {
@@ -380,7 +381,7 @@
 
 .stats-score-pct {
   font-size: 0.55rem;
-  color: #888;
+  color: var(--dt2);
 }
 
 .stats-score-label-row {
@@ -403,7 +404,7 @@
 .stats-total {
   text-align: center;
   font-size: 0.75rem;
-  color: #999;
+  color: var(--dt2);
   padding: 0 1rem 1rem;
 }
 
@@ -415,7 +416,7 @@
 .stats-game-label {
   font-size: 0.72rem;
   font-weight: 700;
-  color: #999;
+  color: var(--dt2);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   padding: 0.6rem 1rem 0;

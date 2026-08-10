@@ -1,8 +1,9 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
 import { useApp } from '../context/AppContext'
 import LevelChooser from '../components/LevelChooser'
-import ChoiceChips from '../components/ChoiceChips'
 import HelpButton from '../components/HelpButton'
+import QuizOverlay from '../components/QuizOverlay'
+import { hasQuiz } from '../engine/grammarQuiz'
 import './GrammarDictionary.css'
 
 async function loadGrammar(language) {
@@ -21,28 +22,86 @@ const LEVEL_ORDER = {
   en: ['A1','A2','B1','B2','C1'],
 }
 
-function PatternCard({ pattern, initialOpen }) {
-  const [open, setOpen] = useState(initialOpen ?? false)
+const GD_LEVEL_KEY = 'vocabGrammarDictLevel' // per-language: selected level
+
+function loadGdLevel(language) {
+  try {
+    const all = JSON.parse(localStorage.getItem(GD_LEVEL_KEY) || '{}')
+    return all[language] || null
+  } catch {
+    return null
+  }
+}
+
+function saveGdLevel(language, level) {
+  try {
+    const all = JSON.parse(localStorage.getItem(GD_LEVEL_KEY) || '{}')
+    all[language] = level
+    localStorage.setItem(GD_LEVEL_KEY, JSON.stringify(all))
+  } catch { /* storage unavailable — selection just won't persist */ }
+}
+
+function PatternCard({ pattern, isOpen, onToggle, vocabEntries }) {
+  const [activeQuizType, setActiveQuizType] = useState(null)
 
   return (
-    <div className={`gd-card ${open ? 'open' : ''}`}>
-      <button className="gd-card-header" onClick={() => setOpen(o => !o)}>
+    <div className={`gd-card ${isOpen ? 'open' : ''}`}>
+      <button className="gd-card-header" onClick={onToggle}>
         <div className="gd-card-left">
           <span className="gd-level-badge">{pattern.level}</span>
           <span className="gd-title">{pattern.title}</span>
         </div>
-        <span className="gd-arrow">{open ? '▾' : '›'}</span>
+        <span className="gd-arrow">{isOpen ? '▾' : '›'}</span>
       </button>
 
-      {open && (
+      {isOpen && (
         <div className="gd-card-body">
           <p className="gd-explanation">{pattern.explanation}</p>
 
+          {pattern.conjugationTable && (
+            <table className="gd-conj-table">
+              <tbody>
+                {pattern.conjugationTable.map((row, i) => (
+                  <tr key={i}>
+                    <td className="gd-conj-pronoun">{row.pronoun}</td>
+                    <td className="gd-conj-form">{row.form}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+
+          {hasQuiz(pattern.quizType) && (
+            <button className="gd-quiz-btn" onClick={() => setActiveQuizType(pattern.quizType)}>
+              🎯 Practise this
+            </button>
+          )}
+
+          {(hasQuiz(pattern.quizTypeMc) || hasQuiz(pattern.quizTypeTiles)) && (
+            <div className="gd-quiz-btn-row">
+              {hasQuiz(pattern.quizTypeMc) && (
+                <button className="gd-quiz-btn" onClick={() => setActiveQuizType(pattern.quizTypeMc)}>
+                  🎯 Multiple choice
+                </button>
+              )}
+              {hasQuiz(pattern.quizTypeTiles) && (
+                <button className="gd-quiz-btn" onClick={() => setActiveQuizType(pattern.quizTypeTiles)}>
+                  🔀 Arrange the words
+                </button>
+              )}
+            </div>
+          )}
+
           {pattern.type === 'fill-blank' && (
             <div className="gd-example">
-              <div className="gd-example-label">Example</div>
-              <div className="gd-template">{pattern.template}</div>
-              <div className="gd-hint">{pattern.hint}</div>
+              <div className="gd-example-label">Example{pattern.examples?.length > 1 ? 's' : ''}</div>
+              {pattern.examples?.length ? (
+                pattern.examples.map((ex, i) => (
+                  <div key={i} className="gd-template">{ex}</div>
+                ))
+              ) : (
+                <div className="gd-template">{pattern.template}</div>
+              )}
             </div>
           )}
 
@@ -73,19 +132,37 @@ function PatternCard({ pattern, initialOpen }) {
           )}
         </div>
       )}
+
+      {activeQuizType && (
+        <QuizOverlay
+          quizType={activeQuizType}
+          title={pattern.title}
+          level={pattern.level}
+          vocabEntries={vocabEntries}
+          onClose={() => setActiveQuizType(null)}
+        />
+      )}
     </div>
   )
 }
 
 export default function GrammarDictionary({ patterns: chapterPatterns, onBack }) {
-  const { activeLanguage, goBack } = useApp()
+  const { activeLanguage, goBack, vulgarFilteredEntries } = useApp()
   const handleBack = onBack ?? goBack
   const [allPatterns, setAllPatterns] = useState([])
   const [loading, setLoading] = useState(false)
   const [search, setSearch] = useState('')
-  const [activeLevels, setActiveLevels] = useState(null)  // multi-select, null = all
-  const [activeCategories, setActiveCategories] = useState(null)  // multi-select, null = all
+  // Level filter — single-select, persistent per language. Defaults to A1
+  // (or the lowest available level for languages without an A1) rather
+  // than "all levels", since a learner realistically stays at one level
+  // for a long stretch and starting unfiltered just adds noise.
+  const [activeLevels, setActiveLevelsRaw] = useState(null)
+  const levelPrefLoadedFor = useRef(null)
   const [showChapterOnly, setShowChapterOnly] = useState(!!chapterPatterns?.length)
+  // Accordion: only one pattern's content open at a time — opening another
+  // collapses whichever was open, rather than stacking several expanded
+  // cards' worth of explanation/examples/quiz buttons on screen at once.
+  const [openId, setOpenId] = useState(null)
 
   // Load global grammar file
   useEffect(() => {
@@ -115,22 +192,37 @@ export default function GrammarDictionary({ patterns: chapterPatterns, onBack })
     let p = mergedPatterns
     if (showChapterOnly && chapterPatterns?.length) p = p.filter(x => x.isChapter)
     if (activeLevels) p = p.filter(x => activeLevels.includes(x.level))
-    if (activeCategories) p = p.filter(x => activeCategories.includes(x.category))
     if (search.trim()) {
       const q = search.toLowerCase()
       p = p.filter(x => x.title.toLowerCase().includes(q) || x.explanation.toLowerCase().includes(q))
     }
     return p
-  }, [mergedPatterns, showChapterOnly, activeLevels, activeCategories, search, chapterPatterns])
+  }, [mergedPatterns, showChapterOnly, activeLevels, search, chapterPatterns])
 
   const levels = useMemo(() => {
     const s = new Set(mergedPatterns.map(p => p.level))
     return levelOrder.filter(l => s.has(l))
   }, [mergedPatterns, levelOrder])
 
-  const categories = useMemo(() => {
-    return [...new Set(mergedPatterns.map(p => p.category).filter(Boolean))].sort()
-  }, [mergedPatterns])
+  // Load the persisted level once per language, once we actually know
+  // which levels this language has (so we can fall back sensibly if a
+  // saved level no longer exists, or default to A1 the first time).
+  useEffect(() => {
+    if (!activeLanguage || levelPrefLoadedFor.current === activeLanguage || levels.length === 0) return
+    levelPrefLoadedFor.current = activeLanguage
+    const saved = loadGdLevel(activeLanguage)
+    const fallback = levels.includes('A1') ? 'A1' : levels[0]
+    setActiveLevelsRaw([levels.includes(saved) ? saved : fallback])
+  }, [activeLanguage, levels])
+
+  // Single-select: never allow clearing back to "no level selected" (i.e.
+  // "all levels") — always keep exactly one level active.
+  function setActiveLevels(next) {
+    const level = next?.[0]
+    if (!level) return
+    setActiveLevelsRaw([level])
+    saveGdLevel(activeLanguage, level)
+  }
 
   return (
     <div className="gd-screen">
@@ -168,21 +260,8 @@ export default function GrammarDictionary({ patterns: chapterPatterns, onBack })
         )}
         <div className="gd-filter-row">
           <span className="gd-filter-label">Level</span>
-          <LevelChooser levels={levels} value={activeLevels} onChange={setActiveLevels} className="gd-level-filter" />
+          <LevelChooser levels={levels} value={activeLevels} onChange={setActiveLevels} className="gd-level-filter" single />
         </div>
-        {categories.length > 0 && (
-          <div className="gd-filter-row gd-filter-row--cats">
-            <span className="gd-filter-label">Category</span>
-            <ChoiceChips
-              options={categories}
-              value={activeCategories}
-              onChange={setActiveCategories}
-              getLabel={c => c.replace(/-/g, ' ')}
-              chipClassName="gd-chip gd-chip--sm"
-              className="gd-category-filter"
-            />
-          </div>
-        )}
       </div>
 
       {/* Results */}
@@ -195,7 +274,12 @@ export default function GrammarDictionary({ patterns: chapterPatterns, onBack })
           filtered.map(p => (
             <div key={p.id} className={`gd-item ${p.isChapter ? 'chapter-pattern' : ''}`}>
               {p.isChapter && <span className="gd-chapter-star" title="Current chapter">★</span>}
-              <PatternCard pattern={p} />
+              <PatternCard
+                pattern={p}
+                isOpen={openId === p.id}
+                onToggle={() => setOpenId(id => (id === p.id ? null : p.id))}
+                vocabEntries={vulgarFilteredEntries}
+              />
             </div>
           ))
         )}

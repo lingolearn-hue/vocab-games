@@ -71,7 +71,7 @@
 [data-theme="dark"] .lb-box            { border-color: #333; }
 [data-theme="dark"] .lb-box.active     { background: #1a1a30; border-color: #4f7ef8; }
 [data-theme="dark"] .lb-box.box-mastered { background: #182d24; border-color: #22a06b; }
-[data-theme="dark"] .lb-label          { color: #b0b0b0; }
+[data-theme="dark"] .lb-label          { color: var(--dt2); }
 [data-theme="dark"] .lb-count          { color: #f0f0f0; }
 [data-theme="dark"] .lb-progress       { background: #333; }
 

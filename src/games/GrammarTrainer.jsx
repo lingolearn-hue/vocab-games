@@ -3,12 +3,14 @@ import { useApp } from '../context/AppContext'
 import {
   loadGrammarPatterns, sortPatternsByPriority, filterPatternsByLevel,
   getLevelsFromPatterns, getCategoriesFromPatterns,
-  instantiateTemplate, buildPickCorrectOptions,
-  checkTileOrder, getAlternatives,
+  instantiateTemplate, buildPickCorrectOptions, buildOptions,
   recordGrammarCorrect, recordGrammarWrong, getAllGrammarScores,
 } from '../engine/grammar'
 import LevelChooser from '../components/LevelChooser'
 import HelpButton from '../components/HelpButton'
+import QuizOverlay from '../components/QuizOverlay'
+import TileOrderExercise from '../components/TileOrderExercise'
+import { hasQuiz } from '../engine/grammarQuiz'
 import './GrammarTrainer.css'
 
 const TYPE_META = {
@@ -32,17 +34,54 @@ const CATEGORY_LABELS = {
 // ── Exercise components ────────────────────────────────────────────────────────
 
 function FillBlank({ pattern, onResult }) {
-  const { text } = useMemo(
+  // Both text and the correct answer come from the same instantiateTemplate()
+  // call — has to be a single memo, not two separate ones each re-rolling
+  // the random pick, or text and options could end up describing different
+  // random choices.
+  const { text, correctAnswer } = useMemo(
     () => instantiateTemplate(pattern.template), [pattern.id]
   )
 
-  // Correct answer is distractors[0]; rest are wrong. Shuffle once on mount.
+  // Two distractor conventions coexist in the data: a plain literal array
+  // (distractors[0] = correct, rest = wrong — used when the template's
+  // blank has one fixed correct answer regardless of which random option
+  // got picked, e.g. modal-verb patterns with a fixed subject), and
+  // "auto:xxx" pool references that need resolving against the actual
+  // correctAnswer instantiateTemplate produced (used when the blank's
+  // right answer depends on which random option got picked, e.g. "which
+  // article goes with this randomly-chosen noun"). Mixing these up was a
+  // real bug: every auto:-based pattern rendered a single button showing
+  // the literal string "auto:xxx" instead of real distractor words, since
+  // it never touched correctAnswer or resolved the pool at all.
+  const usesAutoPool = pattern.distractors.some(d => typeof d === 'string' && d.startsWith('auto:'))
+
   const options = useMemo(() => {
-    const correct = pattern.distractors[0]
-    const wrong   = pattern.distractors.slice(1)
+    if (usesAutoPool) return buildOptions(pattern, correctAnswer)
+    // Two colon-bracket usages coexist in the data: genuinely-varying
+    // ("Hund:ein|Katze:eine|..." — the right answer changes depending on
+    // which option got picked) and self-mapping/flavor-only ("Student:
+    // Student|müde:müde|..." — every option secretly agrees, used just to
+    // vary the surrounding sentence, not the blank). Trust correctAnswer
+    // when it resolves to one of our known distractors (case-insensitive
+    // — some patterns capitalize the bracket option, e.g. "El"/"La", but
+    // list lowercase 'el'/'la' as the actual distractors); otherwise fall
+    // back to the fixed first distractor, which is correct for the
+    // self-mapping/no-bracket case. This was a real, live bug: several
+    // patterns (de-g-002, de-g-009, de-g-016, and more in other
+    // languages) have genuinely-varying brackets but were always showing
+    // distractors[0] as "correct" regardless of which noun/verb the
+    // bracket actually picked — verified live (e.g. "(Katze)" showing
+    // "ein" marked correct instead of "eine").
+    const matched = correctAnswer
+      ? pattern.distractors.find(d => d.toLowerCase() === correctAnswer.toLowerCase())
+      : null
+    const correct = matched ?? pattern.distractors[0]
+    const wrong = pattern.distractors.filter(d => d !== correct)
     return [{ text: correct, correct: true }, ...wrong.map(d => ({ text: d, correct: false }))]
       .sort(() => Math.random() - 0.5)
-  }, [pattern.id])
+  }, [pattern.id, correctAnswer])
+
+  const correctText = options.find(o => o.correct)?.text ?? pattern.distractors[0]
 
   const [chosen,   setChosen]   = useState(null)
   const [feedback, setFeedback] = useState(null)
@@ -67,7 +106,7 @@ function FillBlank({ pattern, onResult }) {
       {/* Feedback banner above sentence — no layout shift */}
       <div className={`gt-feedback-banner ${feedback || 'hidden'}`}>
         {feedback === 'correct' && <span className="gt-fb-correct">✓ Correct!</span>}
-        {feedback === 'wrong'   && <span className="gt-fb-wrong">✗ Correct answer: <strong>{pattern.distractors[0]}</strong></span>}
+        {feedback === 'wrong'   && <span className="gt-fb-wrong">✗ Correct answer: <strong>{correctText}</strong></span>}
       </div>
       <div className={`gt-sentence ${feedback || ''}`}>
         {displayText.split(/(\([^)]+\))/).map((part, i) =>
@@ -162,111 +201,19 @@ function PickCorrect({ pattern, onResult }) {
 }
 
 function TileOrder({ pattern, onResult }) {
-  const [placed,    setPlaced]    = useState([])
-  const [remaining, setRemaining] = useState(() => pattern.tiles.map((_, i) => i))
-  const [feedback,  setFeedback]  = useState(null)
-  const [alternatives, setAlternatives] = useState([])
-  const [wrongMsg,  setWrongMsg]  = useState('')
-
-  function placeTile(idx) {
-    if (feedback) return
-    setPlaced(p => [...p, idx])
-    setRemaining(r => r.filter(i => i !== idx))
-  }
-
-  function removeTile(pos) {
-    if (feedback) return
-    const idx = placed[pos]
-    setPlaced(p => p.filter((_, i) => i !== pos))
-    setRemaining(r => [...r, idx].sort((a, b) => a - b))
-  }
-
-  function submit() {
-    if (placed.length !== pattern.tiles.length) return
-    const { correct, matchedAnswer } = checkTileOrder(pattern.tiles, placed, pattern.answers)
-    if (correct) {
-      setAlternatives(getAlternatives(pattern.tiles, pattern.answers, matchedAnswer))
-      setFeedback('correct')
-      recordGrammarCorrect(pattern.id)
-    } else {
-      setWrongMsg(pattern.answers[0].order.map(i => pattern.tiles[i]).join(' '))
-      setFeedback('wrong')
-      recordGrammarWrong(pattern.id)
-    }
-  }
-
-  function reset() {
-    setPlaced([])
-    setRemaining(pattern.tiles.map((_, i) => i))
-    setFeedback(null)
-    setAlternatives([])
-    setWrongMsg('')
+  function handleCheck(isCorrect) {
+    if (isCorrect) recordGrammarCorrect(pattern.id)
+    else recordGrammarWrong(pattern.id)
   }
 
   return (
     <div className="gt-exercise">
-      <p className="gt-tile-prompt">Arrange the tiles into the correct sentence order.</p>
-      <div className={`gt-answer-zone ${feedback || ''}`}>
-        {placed.length === 0
-          ? <span className="gt-answer-placeholder">Tap tiles below to build the sentence…</span>
-          : placed.map((idx, pos) => (
-            <button
-              key={pos}
-              className="gt-tile gt-tile--placed"
-              onClick={() => removeTile(pos)}
-              disabled={!!feedback}
-            >
-              {pattern.tiles[idx]}
-            </button>
-          ))
-        }
-      </div>
-      <div className="gt-tile-bank">
-        {remaining.map(idx => (
-          <button
-            key={idx}
-            className="gt-tile gt-tile--bank"
-            onClick={() => placeTile(idx)}
-            disabled={!!feedback}
-          >
-            {pattern.tiles[idx]}
-          </button>
-        ))}
-      </div>
-      {!feedback && (
-        <div className="gt-tile-controls">
-          <button className="gt-reset-btn" onClick={reset}>↺ Reset</button>
-          <button
-            className="gt-submit-btn"
-            onClick={submit}
-            disabled={placed.length !== pattern.tiles.length}
-          >
-            Check
-          </button>
-        </div>
-      )}
-      {feedback === 'correct' && (
-        <div className="gt-correct-feedback">
-          <span>✓ Correct!</span>
-          {alternatives.map((alt, i) => (
-            <div key={i} className="gt-alternative">
-              Also correct: <strong>{alt.sentence}</strong>
-              {alt.note && <span className="gt-alt-note"> — {alt.note}</span>}
-            </div>
-          ))}
-        </div>
-      )}
-      {feedback === 'wrong' && (
-        <div className="gt-wrong-feedback">
-          <span className="gt-wrong-label">✗ Not quite.</span>
-          One correct order: <strong>{wrongMsg}</strong>
-        </div>
-      )}
-      {feedback && (
-        <button className="gt-next-btn" onClick={() => onResult(feedback === 'correct')}>
-          Next →
-        </button>
-      )}
+      <TileOrderExercise
+        tiles={pattern.tiles}
+        answers={pattern.answers}
+        onCheck={handleCheck}
+        onNext={onResult}
+      />
     </div>
   )
 }
@@ -312,7 +259,7 @@ function TypeSelector({ patterns, onSelect, scores }) {
 // ── Main component ─────────────────────────────────────────────────────────────
 
 export default function GrammarTrainer() {
-  const { goBack, activeLanguage } = useApp()
+  const { goBack, activeLanguage, vulgarFilteredEntries } = useApp()
 
   const [allPatterns,       setAllPatterns]       = useState([])
   const [activeLevels,      setActiveLevels]       = useState(null)
@@ -323,6 +270,7 @@ export default function GrammarTrainer() {
   const [scores,            setScores]             = useState({})
   const [sessionCorrect,    setSessionCorrect]     = useState(0)
   const [sessionTotal,      setSessionTotal]       = useState(0)
+  const [quizOpen,          setQuizOpen]           = useState(false)
 
   useEffect(() => {
     if (!activeLanguage) return
@@ -456,6 +404,11 @@ export default function GrammarTrainer() {
               </div>
               <h2 className="gt-pattern-title">{currentPattern.title}</h2>
               <p className="gt-explanation">{currentPattern.explanation}</p>
+              {hasQuiz(currentPattern.quizType) && (
+                <button className="gt-quiz-btn" onClick={() => setQuizOpen(true)}>
+                  🎯 Quick practice
+                </button>
+              )}
             </div>
 
             {(() => {
@@ -485,6 +438,15 @@ export default function GrammarTrainer() {
           </>
         )}
       </div>
+
+      {quizOpen && currentPattern && (
+        <QuizOverlay
+          quizType={currentPattern.quizType}
+          title={currentPattern.title}
+          vocabEntries={vulgarFilteredEntries}
+          onClose={() => setQuizOpen(false)}
+        />
+      )}
     </div>
   )
 }

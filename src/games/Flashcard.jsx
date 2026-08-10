@@ -4,6 +4,7 @@ import { initSession, getBoxCounts, getPassState, recordCorrect as leitnerCorrec
 import { displayEntry } from '../engine/vocab'
 import { getMnemonic, setMnemonic, getAllMnemonics } from '../engine/mnemonics'
 import { getExampleSentence } from '../engine/examples'
+import { getConjugation } from '../engine/conjugations'
 import { resolveFacet } from '../engine/facets'
 import { buildLookup } from '../engine/reader'
 import { TextWithLookup } from '../components/TextWithLookup'
@@ -181,6 +182,21 @@ export default function Flashcard() {
     })
     return () => { cancelled = true }
   }, [detailOpen, previewingDetail, currentEntry?.listId, currentEntry?.entry, currentEntry?.pos])
+
+  // Conjugation data currently only exists for German verbs (see
+  // conjugations.js) — resolves to null everywhere else, so the section
+  // simply doesn't render for other languages/parts of speech.
+  const [conjugation, setConjugation] = useState(null)
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- clears stale conjugation when detail panel closes or entry changes
+    if ((!detailOpen && !previewingDetail) || !currentEntry || currentEntry.pos !== 'verb') { setConjugation(null); return }
+    let cancelled = false
+    setConjugation(null)
+    getConjugation(language, currentEntry.entry, currentEntry.pos).then(c => {
+      if (!cancelled) setConjugation(c)
+    })
+    return () => { cancelled = true }
+  }, [detailOpen, previewingDetail, language, currentEntry?.entry, currentEntry?.pos])
 
 
   // Focus mnemonic input when edit mode opens
@@ -389,7 +405,7 @@ export default function Flashcard() {
           <AutoExampleToggle />
           <HelpButton
             title="Flashcard"
-            description="Swipe through cards to learn vocabulary. Swipe right for Known, left for Unknown, up to Master a word instantly, or down to see word details, a mnemonic, and an example sentence."
+            description="Swipe through cards to learn vocabulary. Swipe right for Known, left for Unknown, up to Master a word instantly, or down to see word details, a mnemonic, and an example sentence. Toggle 🔊 Auto to have each word spoken automatically as it comes up."
             buttons={[
               { icon: '⇵',  label: 'Reading only', desc: '(zh/ja) Show reading instead of hanzi/kanji' },
               { icon: '⇄',  label: 'Direction',    desc: 'Swap which side is the prompt — word or translation' },
@@ -536,6 +552,19 @@ export default function Flashcard() {
               <div className="fc-detail-section fc-detail-meta">
                 {currentEntry.pos   && <span className="fc-detail-pos">{currentEntry.pos}</span>}
                 {currentEntry.level && <span className="fc-detail-level">{currentEntry.level}</span>}
+              </div>
+            )}
+
+            {/* Conjugation (German verbs only, for now) */}
+            {conjugation && (
+              <div className="fc-detail-section">
+                <span className="fc-detail-label">🔤 Conjugation</span>
+                <div className="fc-detail-conjugation">
+                  <div className="fc-conj-row"><span className="fc-conj-key">er/sie/es</span><span className="fc-conj-val">{conjugation.presentTense}</span></div>
+                  <div className="fc-conj-row"><span className="fc-conj-key">Präteritum</span><span className="fc-conj-val">{conjugation.pastTense}</span></div>
+                  <div className="fc-conj-row"><span className="fc-conj-key">Partizip II</span><span className="fc-conj-val">{conjugation.pastParticiple}</span></div>
+                  <div className="fc-conj-row"><span className="fc-conj-key">Perfekt mit</span><span className="fc-conj-val">{conjugation.auxiliary}</span></div>
+                </div>
               </div>
             )}
 

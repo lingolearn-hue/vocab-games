@@ -332,12 +332,12 @@
 [data-theme="dark"] .fc-card { background: #1e1e1e; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
 [data-theme="dark"] .fc-main { color: #111; }
 [data-theme="dark"] .fc-answer { color: #f0f0f0; }
-[data-theme="dark"] .fc-reading { color: #b0b0b0; }
+[data-theme="dark"] .fc-reading { color: var(--dt2); }
 [data-theme="dark"] .fc-divider { background: #333; }
-[data-theme="dark"] .fc-tap-hint { color: #b0b0b0; }
+[data-theme="dark"] .fc-tap-hint { color: var(--dt2); }
 [data-theme="dark"] .fc-dot { background: #333; }
 [data-theme="dark"] .fc-dot.filled { background: #4f7ef8; }
-[data-theme="dark"] .fc-back { color: #b0b0b0; }
+[data-theme="dark"] .fc-back { color: var(--dt2); }
 [data-theme="dark"] .fc-back:hover { color: #f0f0f0; }
 [data-theme="dark"] .fc-btn-unknown { background: #2d1a19; border-color: #5c2522; }
 [data-theme="dark"] .fc-btn-known   { background: #182d24; border-color: #244d38; }
@@ -443,13 +443,31 @@
 }
 
 
-[data-theme="dark"] .fc-detail-example { color: #b0b0b0; }
+[data-theme="dark"] .fc-detail-example { color: var(--dt2); }
+[data-theme="dark"] .fc-conj-key       { color: var(--dt2); }
+[data-theme="dark"] .fc-conj-val       { color: #f0f0f0; }
 
 .fc-detail-example-empty {
   font-size: 0.85rem;
-  color: #999;
+  color: var(--dt2);
   font-style: italic;
 }
+
+.fc-detail-conjugation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.fc-conj-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  padding: 0.15rem 0;
+}
+
+.fc-conj-key { color: #555; }
+.fc-conj-val { font-weight: 600; color: #111; }
 
 .fc-mnemonic-seeded-badge {
   font-size: 0.62rem;
@@ -596,7 +614,7 @@
 [data-theme="dark"] .fc-detail-close:hover { color: #f0f0f0; }
 [data-theme="dark"] .fc-detail-trans-item { background: #2a2a2a; color: #ddd; }
 [data-theme="dark"] .fc-detail-level    { background: #2a2a2a; color: #666; }
-[data-theme="dark"] .fc-mnemonic-text   { color: #b0b0b0; }
+[data-theme="dark"] .fc-mnemonic-text   { color: var(--dt2); }
 [data-theme="dark"] .fc-mnemonic-input  { background: #111; border-color: #4f7ef8; color: #eee; }
 [data-theme="dark"] .fc-mnemonic-cancel { background: #2a2a2a; color: #666; }
 [data-theme="dark"] .fc-mnemonic-cancel:hover { background: #333; }

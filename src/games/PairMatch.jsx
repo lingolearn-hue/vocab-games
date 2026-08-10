@@ -245,7 +245,7 @@ export default function PairMatch() {
           )}
           <HelpButton
             title="Pair Match"
-            description="Tap a word on the left, then its matching translation on the right, to connect pairs. Wrong pairs briefly flash before resetting."
+            description="Tap a word on the left, then its matching translation on the right, to connect pairs. Wrong pairs briefly flash before resetting. Toggle 'Same word type' to draw each round from a single part of speech (e.g. all nouns) for a harder, more focused round."
             buttons={[
               { icon: '⇵', label: 'Reading only',  desc: '(zh/ja) Show reading instead of hanzi/kanji' },
               { icon: '⇄', label: 'Direction',     desc: 'Swap which side is the word — left or right' },

@@ -1,15 +1,37 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useApp } from '../context/AppContext'
 import { leitnerStorageKeys } from '../engine/leitner'
+import { getVoicesForLanguage, isSupported as speechSupported } from '../engine/speech'
+import HelpButton from '../components/HelpButton'
 import './Settings.css'
+
+const VOICE_LANGUAGES = [
+  { id: 'zh', label: 'Chinese 🇨🇳' },
+  { id: 'ja', label: 'Japanese 🇯🇵' },
+  { id: 'de', label: 'German 🇩🇪' },
+  { id: 'es', label: 'Spanish 🇪🇸' },
+  { id: 'fr', label: 'French 🇫🇷' },
+  { id: 'en', label: 'English 🇬🇧' },
+]
 
 export default function Settings() {
   const { setScreen, goBack, settings, updateSettings } = useApp()
+  const [voicesLoaded, setVoicesLoaded] = useState(false)
 
   useEffect(() => {
     function onKey(e) { if (e.key === 'Escape') setScreen('setup') }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
+  }, [])
+
+  // Voices load asynchronously in most browsers — getVoices() can return an
+  // empty list on first render until 'voiceschanged' fires.
+  useEffect(() => {
+    if (!speechSupported()) return
+    const check = () => setVoicesLoaded(window.speechSynthesis.getVoices().length > 0)
+    check()
+    window.speechSynthesis.addEventListener('voiceschanged', check)
+    return () => window.speechSynthesis.removeEventListener('voiceschanged', check)
   }, [])
 
   const cfg = settings
@@ -71,6 +93,10 @@ export default function Settings() {
       <div className="st-header">
         <button className="st-back" onClick={goBack}>← Back</button>
         <span className="st-title">Settings</span>
+        <HelpButton
+          title="Settings"
+          description="Light/dark appearance, a per-language voice override for text-to-speech (useful when the browser default doesn't match your device's preferred voice), and data export/import/reset."
+        />
       </div>
 
       <div className="st-body">
@@ -87,6 +113,41 @@ export default function Settings() {
             ))}
           </div>
         </div>
+
+        {/* ── Voice ── */}
+        {speechSupported() && (
+          <>
+            <div className="st-section-label">Voice</div>
+            <div className="st-row--padded">
+              {!voicesLoaded && (
+                <p className="st-hint">Loading available voices…</p>
+              )}
+              {voicesLoaded && VOICE_LANGUAGES.map(({ id, label }) => {
+                const voices = getVoicesForLanguage(id)
+                if (voices.length === 0) return null
+                return (
+                  <div key={id} className="st-voice-row">
+                    <span className="st-voice-label">{label}</span>
+                    <select
+                      className="st-voice-select"
+                      value={cfg.voices?.[id] ?? ''}
+                      onChange={e => set(`voices.${id}`, e.target.value || null)}
+                    >
+                      <option value="">Default</option>
+                      {voices.map(v => (
+                        <option key={v.voiceURI} value={v.voiceURI}>{v.name}</option>
+                      ))}
+                    </select>
+                  </div>
+                )
+              })}
+              <p className="st-hint">
+                Pick a specific voice per language — e.g. to match your device's
+                configured system voice. "Default" leaves it up to the browser.
+              </p>
+            </div>
+          </>
+        )}
 
         {/* ── Data ── */}
         <div className="st-section-label">Data</div>

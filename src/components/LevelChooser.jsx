@@ -17,7 +17,7 @@ function formatLevelLabel(level) {
  * Graded Reader, Grammar Trainer, Grammar Dictionary). See ChoiceChips for
  * the toggle behavior contract.
  */
-export default function LevelChooser({ levels, value, onChange, className = 'level-filter' }) {
+export default function LevelChooser({ levels, value, onChange, className = 'level-filter', single = false }) {
   return (
     <ChoiceChips
       options={levels}
@@ -26,6 +26,7 @@ export default function LevelChooser({ levels, value, onChange, className = 'lev
       getLabel={formatLevelLabel}
       chipClassName="level-chip"
       className={className}
+      single={single}
     />
   )
 }
