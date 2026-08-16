@@ -121,7 +121,13 @@ export default function QuizOverlay({ quizType, title, level, vocabEntries, onCl
                   const cls = isCorrectPick ? 'correct' : isWrongPick ? 'wrong' : ''
                   return (
                     <button
-                      key={opt.id}
+                      // Some generators (article quizzes especially) reuse the
+                      // same option ids every round (always m/f/n) — keying on
+                      // `round` too forces a fresh DOM node each question, so
+                      // no residual hover/focus state from the previous
+                      // question's button can carry over onto whatever new
+                      // option lands in that same screen position.
+                      key={`${round}-${opt.id}`}
                       className={`qo-option ${cls}`}
                       onClick={e => choose(opt, e)}
                       disabled={feedback === 'correct' || isWrongPick}

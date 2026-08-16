@@ -16,9 +16,12 @@ import './ChipRow.css'
  *
  * Parent row is single-select: tapping a parent selects its full leaf set,
  * replacing whatever was active before; tapping the already-active parent
- * again clears back to no filter. Only one parent can be drilled into at a
- * time, so there's no "clear filter" button needed at this level — the
- * toggle-off IS the clear action.
+ * again clears back to no filter. A "✕" chip is also always shown in this
+ * row whenever a filter is active, regardless of which parent — mainly so
+ * there's still a visible way to clear the filter if entries change (e.g.
+ * after switching level) such that the active category no longer has any
+ * matching leaves and the parent row would otherwise have nothing left to
+ * show, silently stranding the filter active with no way to undo it.
  *
  * Leaf row (shown once a parent is active) stays multi-select — narrowing
  * within a topic (e.g. Animals + Plants within Nature) is still useful —
@@ -38,7 +41,16 @@ export default function CategoryChooser({ entries, value, onChange, lang = 'en',
     [presentLeaves]
   )
 
-  if (parents.length === 0) return null
+  const hasActiveFilter = !!value && value.length > 0
+
+  // Normally nothing to show if this level/entry set has no categories at
+  // all. But if a filter is still active (e.g. selected at a different
+  // level that had matches, then the level was switched to one where the
+  // active category has zero entries), the parent row below would
+  // otherwise vanish entirely along with any way to clear it — leaving
+  // the list silently stuck at "no words match" with no visible fix. Keep
+  // rendering just the clear button in that case.
+  if (parents.length === 0 && !hasActiveFilter) return null
 
   const activeParent = parents.find(p => p.leaves.some(l => value?.includes(l.id))) ?? null
 
@@ -53,6 +65,15 @@ export default function CategoryChooser({ entries, value, onChange, lang = 'en',
   return (
     <div className={className}>
       <ChipRow className={`${className}-parents`}>
+        {hasActiveFilter && (
+          <button
+            className="level-chip category-clear-chip"
+            onClick={() => onChange(null)}
+            aria-label="Clear topic filter"
+          >
+            ✕
+          </button>
+        )}
         {parents.map(p => (
           <button
             key={p.id}

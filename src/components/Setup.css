@@ -247,8 +247,20 @@
 .sub-game-btn:hover:not(.disabled) { border-color: #4f7ef8; background: #f0f4ff; }
 .sub-game-btn.disabled { opacity: 0.4; cursor: default; }
 
-.sub-game-label { font-size: 0.88rem; font-weight: 600; color: #111; }
+.sub-game-label { font-size: 0.88rem; font-weight: 600; color: #111; display: inline-flex; align-items: center; gap: 0.4rem; }
 .sub-game-desc  { font-size: 0.72rem; color: #555; }
+
+.sub-game-unfinished {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #b8860b;
+  background: #fff6e0;
+  border: 1px solid #f0d78c;
+  border-radius: 6px;
+  padding: 0.05rem 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
 
 /* ── Hint ── */
 .hint {
@@ -313,6 +325,7 @@
 [data-theme="dark"] .sub-game-btn     { background: #1e1e1e; }
 [data-theme="dark"] .sub-game-btn:hover:not(.disabled) { border-color: #4f7ef8; background: #1a2340; }
 [data-theme="dark"] .sub-game-label   { color: #f0f0f0; }
+[data-theme="dark"] .sub-game-unfinished { color: #f0c96b; background: #3a2e0d; border-color: #6b5620; }
 
 /* Adventure mode button — subtle gold tint */
 .setup-nav-btn--adventure {

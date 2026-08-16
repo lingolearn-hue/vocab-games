@@ -236,16 +236,34 @@ export default function GradedReader() {
   const [hideFinished, setHideFinished]  = useState(false)
   const prefsLoadedForLanguage = useRef(null)
 
-  // Load persisted prefs once per language (availableLevels needs passages
-  // to be loaded first to pick a sensible default if nothing was saved yet).
+  // Tag/hide-finished prefs: load once per language (no "always valid"
+  // invariant here — null tag and hideFinished=false are both perfectly
+  // valid states, so a one-time load is enough).
   useEffect(() => {
-    if (!language || prefsLoadedForLanguage.current === language || availableLevels.length === 0) return
+    if (!language || prefsLoadedForLanguage.current === language) return
     prefsLoadedForLanguage.current = language
     const saved = loadReaderPrefs(language)
-    setActiveLevelRaw(saved?.level && availableLevels.includes(saved.level) ? saved.level : availableLevels[0])
     setActiveTagRaw(saved?.tag ?? null)
     setHideFinished(!!saved?.hideFinished)
-  }, [language, availableLevels])
+  }, [language])
+
+  // Level: self-correcting rather than "load once per language" — the
+  // once-only version could miss its correction window on a fast language
+  // switch (old language's level lingering in state while availableLevels
+  // hadn't repopulated for the new language yet), leaving no chip matching
+  // at all. This instead checks "is the current level actually valid for
+  // what's loaded right now" on every render, so it can't get stuck with
+  // no level selected.
+  useEffect(() => {
+    if (!language || availableLevels.length === 0) return
+    if (activeLevel && availableLevels.includes(activeLevel)) return
+    const saved = loadReaderPrefs(language)?.level
+    // Syncing from an external system (localStorage) and self-correcting
+    // against freshly-computed `availableLevels`; see the same note in
+    // GrammarDictionary.jsx for the identical pattern.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setActiveLevelRaw(availableLevels.includes(saved) ? saved : availableLevels[0])
+  }, [language, availableLevels, activeLevel])
 
   function persistPrefs(patch) {
     saveReaderPrefs(language, {

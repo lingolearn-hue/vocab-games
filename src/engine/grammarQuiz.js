@@ -332,7 +332,12 @@ const DE_DAT_PREP_SENTENCES = {
   zu: 'Ich gehe ___ der Schule.',
 }
 
-function generateGermanPrepositionQuestion(sentenceMap) {
+// Generic, language-agnostic: any closed set of words each paired with one
+// example sentence where that word is the unique correct fit. Originally
+// written for German prepositions, but the mechanism has nothing German
+// about it — reused as-is for German conjunctions and (below) several
+// Japanese particle/connector pairs.
+function generateClosedSetQuestion(sentenceMap) {
   const preps = Object.keys(sentenceMap)
   const correct = pickRandom(preps)
   const wrong = preps.filter(p => p !== correct).sort(() => Math.random() - 0.5).slice(0, 2)
@@ -550,6 +555,62 @@ const DE_CAUSAL_CONJ_SENTENCES = {
   denn: 'Ich bleibe zu Hause, ___ ich bin krank.',
 }
 
+// ── Japanese particles/connectors (closed-set + fixed-answer shapes) ────
+//
+// Two shapes cover almost all of Japanese N5–N1's particle/connector
+// patterns, and neither needed new engine code:
+//   - generateClosedSetQuestion (above, already generic): for genuine
+//     "which of these 2 words fits this sentence" pairs, where each word
+//     is correct in its own distinct sentence — に/で, ために/ように,
+//     としては/にしては.
+//   - generateFixedAnswerQuestion (below, new): for patterns testing one
+//     specific word/particle, where the interesting variation is *which
+//     example sentence* comes up, not which word is correct — は/が/を,
+//     も, にもかかわらず, etc. A pool of sentences all sharing the same
+//     correct answer, with a fixed curated distractor pool (reused from
+//     the existing static patterns' own `distractors` arrays where
+//     available, for consistency with Grammar Trainer).
+
+function generateFixedAnswerQuestion(sentences, correct, distractorPool) {
+  const sentence = pickRandom(sentences)
+  const wrong = distractorPool.filter(d => d !== correct).sort(() => Math.random() - 0.5).slice(0, 2)
+  const options = [correct, ...wrong]
+    .sort(() => Math.random() - 0.5)
+    .map(w => ({ id: w, label: w }))
+  return {
+    prompt: sentence,
+    correctAnswer: correct,
+    options,
+  }
+}
+
+const JA_LOC_NI_DE_SENTENCES = {
+  に: 'へやに ねこが います。',
+  で: 'がっこうで べんきょうします。',
+}
+
+const JA_TAMENI_YOUNI_SENTENCES = {
+  ために: '日本語を話すために練習しています。',
+  ように: '日本語を話せるように練習しています。',
+}
+
+const JA_TOSHITE_NISHITE_SENTENCES = {
+  としては: '医者としては、健康が一番大切だと思います。',
+  にしては: '彼女は外国人にしては、日本語が上手だ。',
+}
+
+const JA_WA_SENTENCES = ['わたし___ がくせいです。', 'これ___ ほんです。', 'きょう___ あついです。']
+const JA_GA_SENTENCES = ['あそこに ねこ___ います。', 'にほんご___ わかります。', 'サッカー___ すきです。']
+const JA_WO_SENTENCES = ['りんご___ たべます。', 'ほん___ よみます。', 'みず___ のみます。']
+const JA_MO_SENTENCES = ['わたし___ にほんごが すきです。', 'ねこ___ すきです。', 'かれ___ がくせいです。']
+const JA_NIMOKAKAWARAZU_SENTENCES = ['たくさん べんきょうした___、しけんに おちてしまった。', '努力した___、失敗してしまった。']
+const JA_SAEBA_SENTENCES = ['お金さえ___、旅行できるのに。', 'じかんさえ___、いっしょに いきたいのに。']
+const JA_NIHANSHITE_SENTENCES = ['予想___、試験は簡単だった。', '期待___、結果は悪かった。']
+const JA_NARADE_SENTENCES = ['これは日本___の職人技だ。', 'これは京都___の景色だ。']
+const JA_NIITATTE_SENTENCES = ['他の部署も大変だが、営業部___休日も出勤している。', 'みんな忙しいが、田中さん___毎日残業している。']
+const JA_BAKARIKA_SENTENCES = ['彼女は歌ばかりか、ダンス___ とても上手だ。', '彼は英語ばかりか、中国語___ 話せる。']
+const JA_NAIMADEMO_SENTENCES = ['完璧で___までも、ある程度の品質は保つべきだ。', '毎日___までも、週に一度は運動すべきだ。']
+
 // ── Registry ─────────────────────────────────────────────────────────────
 
 export const QUIZ_GENERATORS = {
@@ -565,15 +626,29 @@ export const QUIZ_GENERATORS = {
   'de-verb-second-tiles':  () => generateGermanV2TilesQuestion(),
   'de-verb-koennen':       () => generateGermanModalQuestion('können'),
   'de-verb-muessen':       () => generateGermanModalQuestion('müssen'),
-  'de-prep-accusative':    () => generateGermanPrepositionQuestion(DE_ACC_PREP_SENTENCES),
-  'de-prep-dative':        () => generateGermanPrepositionQuestion(DE_DAT_PREP_SENTENCES),
+  'de-prep-accusative':    () => generateClosedSetQuestion(DE_ACC_PREP_SENTENCES),
+  'de-prep-dative':        () => generateClosedSetQuestion(DE_DAT_PREP_SENTENCES),
   'de-modal-order-mc':     () => generateGermanModalMcQuestion(),
   'de-modal-order-tiles':  () => generateGermanModalTilesQuestion(),
   'de-perfekt-participle': () => generateGermanPerfektParticipleQuestion(),
   'de-perfekt-aux':        () => generateGermanPerfektAuxQuestion(),
   'de-subordinate-mc':     () => generateGermanSubordinateMcQuestion(),
   'de-subordinate-tiles':  () => generateGermanSubordinateTilesQuestion(),
-  'de-causal-conj':        () => generateGermanPrepositionQuestion(DE_CAUSAL_CONJ_SENTENCES),
+  'de-causal-conj':        () => generateClosedSetQuestion(DE_CAUSAL_CONJ_SENTENCES),
+  'ja-loc-ni-de':          () => generateClosedSetQuestion(JA_LOC_NI_DE_SENTENCES),
+  'ja-tameni-youni':       () => generateClosedSetQuestion(JA_TAMENI_YOUNI_SENTENCES),
+  'ja-toshite-nishite':    () => generateClosedSetQuestion(JA_TOSHITE_NISHITE_SENTENCES),
+  'ja-wa':                 () => generateFixedAnswerQuestion(JA_WA_SENTENCES, 'は', ['は', 'が', 'を', 'に']),
+  'ja-ga':                 () => generateFixedAnswerQuestion(JA_GA_SENTENCES, 'が', ['が', 'は', 'を', 'に']),
+  'ja-wo':                 () => generateFixedAnswerQuestion(JA_WO_SENTENCES, 'を', ['を', 'は', 'が', 'に']),
+  'ja-mo':                 () => generateFixedAnswerQuestion(JA_MO_SENTENCES, 'も', ['も', 'は', 'が', 'を']),
+  'ja-nimokakawarazu':     () => generateFixedAnswerQuestion(JA_NIMOKAKAWARAZU_SENTENCES, 'にもかかわらず', ['にもかかわらず', 'ので', 'から']),
+  'ja-saeba':              () => generateFixedAnswerQuestion(JA_SAEBA_SENTENCES, 'あれば', ['あれば', 'あったら', 'あるなら', 'あっても']),
+  'ja-nihanshite':         () => generateFixedAnswerQuestion(JA_NIHANSHITE_SENTENCES, 'に反して', ['に反して', 'に対して', 'に関して', 'に沿って']),
+  'ja-narade':             () => generateFixedAnswerQuestion(JA_NARADE_SENTENCES, 'ならでは', ['ならでは', 'だけ', 'のみ', 'こそ']),
+  'ja-niitatte':           () => generateFixedAnswerQuestion(JA_NIITATTE_SENTENCES, 'に至っては', ['に至っては', 'においては', 'に関しては', 'については']),
+  'ja-bakarika':           () => generateFixedAnswerQuestion(JA_BAKARIKA_SENTENCES, 'も', ['も', 'が', 'は', 'で']),
+  'ja-naimademo':          () => generateFixedAnswerQuestion(JA_NAIMADEMO_SENTENCES, 'ない', ['ない', 'ある', 'いる', 'する']),
 }
 
 export function hasQuiz(quizType) {

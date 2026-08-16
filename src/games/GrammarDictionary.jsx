@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useRef } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { useApp } from '../context/AppContext'
 import LevelChooser from '../components/LevelChooser'
 import HelpButton from '../components/HelpButton'
@@ -157,7 +157,6 @@ export default function GrammarDictionary({ patterns: chapterPatterns, onBack })
   // than "all levels", since a learner realistically stays at one level
   // for a long stretch and starting unfiltered just adds noise.
   const [activeLevels, setActiveLevelsRaw] = useState(null)
-  const levelPrefLoadedFor = useRef(null)
   const [showChapterOnly, setShowChapterOnly] = useState(!!chapterPatterns?.length)
   // Accordion: only one pattern's content open at a time — opening another
   // collapses whichever was open, rather than stacking several expanded
@@ -204,16 +203,25 @@ export default function GrammarDictionary({ patterns: chapterPatterns, onBack })
     return levelOrder.filter(l => s.has(l))
   }, [mergedPatterns, levelOrder])
 
-  // Load the persisted level once per language, once we actually know
-  // which levels this language has (so we can fall back sensibly if a
-  // saved level no longer exists, or default to A1 the first time).
+  // Keep exactly one valid level active at all times, self-correcting
+  // rather than "load once per language" — the ref-latch version of this
+  // could miss the correction window on a fast language switch (old
+  // language's level lingering in state while `levels` hadn't repopulated
+  // for the new language yet), which could leave no chip matching at all.
+  // This instead just checks "is the current level actually valid for
+  // what's loaded right now" on every render, so it can't get stuck.
   useEffect(() => {
-    if (!activeLanguage || levelPrefLoadedFor.current === activeLanguage || levels.length === 0) return
-    levelPrefLoadedFor.current = activeLanguage
+    if (!activeLanguage || levels.length === 0) return
+    if (activeLevels?.[0] && levels.includes(activeLevels[0])) return
     const saved = loadGdLevel(activeLanguage)
     const fallback = levels.includes('A1') ? 'A1' : levels[0]
+    // Syncing from an external system (localStorage) and self-correcting
+    // against freshly-computed `levels` — the sanctioned case per this
+    // rule's own guidance ("update ... with the latest state" / "subscribe
+    // for updates from an external system").
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setActiveLevelsRaw([levels.includes(saved) ? saved : fallback])
-  }, [activeLanguage, levels])
+  }, [activeLanguage, levels, activeLevels])
 
   // Single-select: never allow clearing back to "no level selected" (i.e.
   // "all levels") — always keep exactly one level active.

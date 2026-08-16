@@ -140,6 +140,158 @@ use before adding it standalone — prefer a specific phrase (`turn right`
 rather than bare `turn`) when the literal word is prone to idiomatic
 reuse.
 
+## Vocabulary completeness (coverage gaps)
+
+Separate from category-tagging accuracy: whether the word list itself is
+missing common words at a given CEFR level. Found via reverse cross-
+reference — take a proper CEFR-graded English lemma list (not a raw
+subtitle-frequency list, which is dominated by inflected forms and
+interjections) and check whether each English concept appears anywhere
+in the `translation` field of the target language's vocab.
+
+**Reference used for German (DE):**
+`openlanguageprofiles/olp-en-cefrj` — CEFR-J Vocabulary Profile (A1–B1,
+`cefrj-vocabulary-profile-1.5.csv`) + Octanove Vocabulary Profile
+(C1/C2, `octanove-vocabulary-profile-c1c2-1.0.csv`). Lemma + POS +
+CEFR level per row, filtered to content POS (noun/verb/adjective/
+adverb) to skip determiners/pronouns/conjunctions.
+
+**Method:** word-boundary match (not substring — see gotcha below) of
+the CEFR-J headword against the lowercased `translation` array
+(stripping a leading "to " for verbs). Substring matching produces
+false gaps AND false coverage in both directions (`"cd"` matching
+inside "anecdote", `"bra"` matching inside "brand"); always use
+`\bword\b` regex, never `in` on raw strings.
+
+Even with word-boundary matching, expect a real false-positive rate
+(~25% in spot samples) from:
+1. The concept exists but under a **different English gloss**
+   (`Kühlschrank` → "refrigerator" doesn't match "fridge").
+2. The concept exists only as part of a **compound or idiom**
+   (`Langlauf` → "cross-country skiing" doesn't match plain "skiing";
+   `schlimmstenfalls` → "in the worst case" doesn't match plain
+   "worst"). These count as *partial* gaps — the compound is covered,
+   the base word isn't — and need a judgment call on whether the plain
+   form is worth adding separately.
+
+Every automated hit must be manually verified against the source JSON
+before action — do not bulk-apply the raw diff. Also manually check a
+handful of near-universal words (yes/no pairs, basic greetings, etc.)
+by hand even if the automated list doesn't surface them — the source
+list won't catch every gap (`ja` was missing while `nein` existed;
+never flagged by CEFR-J diffing since "yes" wasn't a clean word-
+boundary miss).
+
+**Filter out list-source noise before treating anything as a gap:**
+proper nouns/names that ride along in frequency-style word lists
+(person names, place names), region-specific items with low transfer
+value (e.g. UK-currency terms), and words that only occur in a fixed
+idiom in the source list (grammar metalanguage like "superlative").
+
+### Two kinds of fixes, not one
+
+- **Synonym gap** — the concept is already in the list, just under a
+  narrower or different English word. Fix: add the missing gloss to
+  the existing entry's `translation` array. No new entry, no new SRS
+  card.
+  - Example: `Kühlschrank` currently `["refrigerator"]` → add
+    `"fridge"` to the array.
+- **True lexical gap** — the German word itself doesn't exist in the
+  list under any entry. Fix: create a new entry.
+  - Example: `wollen` (to want) — confirmed absent under any entry,
+    despite being a core modal verb.
+  - Example: `Eltern` (parents) — confirmed absent; `Elternteil`
+    ("parent, one of two") and compounds exist but not the plain
+    plural.
+
+**Multi-sense words get the classical dictionary treatment**: if one
+English word covers two distinct German words (or vice versa), add
+the gloss to *both* existing entries rather than picking one — e.g.
+"racket" added to both `Schläger` (sports) and `Krach`/`Lärm` (noise);
+"roughly" added to both `grob` (manner) and `ungefähr` (approximation).
+Don't force a single winner when the language genuinely has two words.
+
+**Capitalization gotcha specific to German**: lemma matching must be
+case-sensitive when checking whether a word already exists, not just
+when writing it. `Klettern` (noun, "the climbing") and `klettern`
+(verb, "to climb") are different words sharing a spelling; a case-
+insensitive existence check will wrongly treat the noun sense as
+already covered by the verb entry (or vice versa). Same trap applies
+to any German verb/deverbal-noun pair. Same trap also applies more
+generally to two words differing only by case, like `morgen`
+(tomorrow) vs `Morgen` (morning) — never assume a case-insensitive
+match is the same word in German.
+
+Sample sentences for any new entries are deferred to a later pass —
+this section covers identifying and classifying the gap only.
+
+### Status
+
+German (DE): A1/A2 and B1 coverage passes complete (synonym-gap
+additions + new entries applied directly to `de-en.json`, not yet
+pushed). B2/C1/C2 still pending — raw candidate counts from the
+CEFR-J diff: B2 647, C1 498, C2 673. Follow up later; expect the same
+mix of synonym-gaps, new entries, and noise (proper nouns, mismatched
+POS in source data, overly fine-grained comparative/regional forms)
+seen in the A1/A2 and B1 passes.
+
+Japanese (JA): separately, found and fixed 149 translation-formatting
+bugs unrelated to coverage — parenthetical asides had been split
+across `translation` array elements at a comma inside the
+parentheses (e.g. `['origin (coordinates', 'starting point)']`
+instead of one string), most likely from a naive comma-split during
+import. Repaired via a paren-balance rejoin algorithm for the
+mechanical cases (139) plus manual fixes for entries with a
+genuinely missing closing paren (11, including one shared across two
+homograph entries).
+
+Swept all six vocab files for the same bug: confirmed present in DE
+(207), ES (182), FR (214); absent in EN (too small a file to be
+affected) and already-fixed JA. All 603 were mechanically repairable
+with the same paren-balance algorithm — zero genuinely-truncated
+stragglers this time, unlike the JA pass. ZH had one false-positive
+hit (a `:)` emoticon miscounted as an unmatched paren) — left as-is,
+not a real bug. All fixed directly in the vocab JSON files, not yet
+pushed.
+
+Spanish (ES): A1/A2 coverage pass complete. Smaller raw gap count
+than DE/JA (152 vs 363 for JA) — consistent with ES/FR already being
+more complete (they were used as the German cross-language reference
+earlier). Still turned up striking basics missing outright: hola
+(hello), adiós (goodbye), por qué (why), pero (but), mayo/julio
+(2 of 12 months). Same lesson as DE/JA: don't assume a language's
+coverage is solid at any level just because its category-tagging
+stats look clean — tagging completeness and vocabulary completeness
+are different things. One imprecision caught and fixed: `niebla`
+(fog, noun) had initially gotten "foggy" added as a loose
+adjective-sense synonym instead of a proper separate adjective entry
+— corrected by removing "foggy" from `niebla` and creating
+`neblinoso` (adj) → `["foggy"]`.
+
+French (FR): A1/A2 coverage pass complete, 150 raw candidates. Worst
+basic-word gap seen across any language so far — oui (yes), bonjour
+(hello), au revoir (goodbye), quand (when), grand-père/grand-mère,
+petit-déjeuner (breakfast), week-end were all completely absent.
+Homograph handled: `imperméable` already existed as the adjective
+"waterproof"; added a separate noun entry for "raincoat" rather than
+merging senses, same pattern as the DE/ES `impermeable`-type cases.
+Caught and fixed two of my own placeholder-typo entries mid-pass
+(wrote a literal English string instead of the French headword for
+"angrily" and "raincoat") before they were left in the file — worth
+double-checking output after any large batch apply, self included.
+ZH not yet attempted.
+
+A1/A2 coverage pass complete for Japanese (CEFR-J diff against
+`translation` glosses, same method as German). Notably higher
+false-gap rate than German from JLPT gloss phrasing (e.g. "fall"
+vs "autumn", "ski" vs "skiing") — always verify against the actual
+JSON, not just the raw diff. Also found genuine basics missing
+outright (りんご/apple, 週末/weekend, サッカー/soccer,
+インターネット/internet) that a JLPT N5 list would normally be
+expected to cover — worth keeping in mind that this vocab file's
+coverage assumptions shouldn't be taken for granted at any level.
+B1–C2 not yet attempted for Japanese.
+
 ## Known data-source limitations
 
 - **Japanese JLPT level distribution** (N5:736, N4:679, N3:2112, N2:1736,

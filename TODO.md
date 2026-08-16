@@ -1,11 +1,78 @@
 # TODO / Future Improvements
 
 ## Repo state (as of this writing — check git log for current truth)
-- `vocab-games-dev` (`main` branch): **v0.66aw** — this working copy's
-  actual current state; dev is where this session's work has been pushed
-  throughout (Grammar Dictionary practice overhaul, Graded Reader overhaul,
-  lemmatizer fix, article engines, Vocab Browser word-detail overlay, etc.
-  — see the rest of this file).
+- `vocab-games` (production, `main` branch): **v0.68** — full resync
+  from `vocab-games-dev` at dev v0.66bc. Carries: Japanese Grammar
+  Dictionary dynamic quiz expansion, Daily Challenge feature (new,
+  never shipped to prod before this push — see its own gap note below),
+  Listening game reverse-English TTS fix, Graded Reader France + Japan
+  fairy-tale trios (12 new passages total, all 6 languages), vocab
+  quality pass (752 translation-formatting fixes, ß/ss dedup, CEFR
+  A1/A2 coverage, niebla/neblinoso fix), and various UI refinements.
+  Below this line, references to "vocab-games-dev" / dev version
+  numbers describe the state at the time each entry was written on the
+  dev side — kept as historical log, not re-labeled per resync.
+- **Known gap shipping to prod for the first time with this resync**:
+  Daily Challenge has no schema-version guard on its localStorage —
+  if this ever matters on prod (unlikely on a first ship, no prior
+  prod data in that shape to collide with), old-shaped state would
+  silently render a blank task instead of regenerating. Low risk here
+  specifically because prod never had a pre-refactor version of this
+  feature, but noting it since the gap itself is still unfixed upstream.
+- **v0.66bc**: Vocab — fixed one imprecise synonym-gap fix from the prior
+  pass: `niebla` (ES, fog/noun) had "foggy" wrongly added as an
+  adjective-sense synonym; removed, and a proper `neblinoso` (adj)
+  entry created instead. Graded Reader — two new `origin:japan`
+  fairy-tale trios: Momotarō, Urashima Tarō, The Grateful Crane, at A2
+  (`ft13`–`ft15`) and B2 (`ft16`–`ft18`), all 6 languages, full kanji
+  in Japanese. Content fidelity checked against multiple web sources
+  before translation (see `AUTHORING-TEXTS.md` for a genuine fork found
+  in Grateful Crane's source material — the same tale title covers two
+  substantially different tellings). The A2 English draft was audited
+  for sentence length and connector vocabulary *before* translation
+  this time, a direct process improvement from the France B1
+  miscalibration. Japanese B2 translation needed a real multi-paragraph
+  fix after first pass — long colon/em-dash-joined English sentences
+  had been split into multiple Japanese sentences during translation
+  across all three stories; corrected against actual
+  `tools/check_reader_congruence.py` output paragraph-by-paragraph, not
+  by assumption. Full details in `AUTHORING-TEXTS.md` and
+  `REVIEW-TEXTS.md`.
+- **v0.66bb**: Graded Reader — new `origin:france` (Perrault) fairy-tale
+  trio: Bluebeard, Puss in Boots, Tom Thumb, at both A1 and B1
+  (`ft7`–`ft12`), written English-first and translated sentence-by-
+  sentence into DE/ES/FR/JA/ZH, verified via
+  `tools/check_reader_congruence.py`. Japanese uses full kanji at both
+  levels — a deliberate deviation from the existing `ft1`–`ft6`
+  (German-origin) kana-only convention; a toggleable furigana reading
+  aid was requested but does not exist as an engine feature yet, flagged
+  as a follow-up for the engine/UI thread. Full methodology, the B1
+  English draft's overshoot-to-B2 correction (sentence-length and
+  CEFR-J vocabulary re-verification), and the known congruence-checker
+  artifact classes (Latin quote-before-period on the English side,
+  JA/ZH closing-quote merge-chaining on back-to-back quoted
+  exclamations) are documented in `AUTHORING-TEXTS.md` and
+  `REVIEW-TEXTS.md`.
+- **v0.66ba**: vocab quality pass from a parallel session — ß/ss dedup,
+  CEFR A1/A2 coverage fixes for DE/JA/ES/FR, 752 translation-formatting
+  bugs fixed (paren-split import artifact) across DE/ES/FR/JA. Full
+  methodology and per-language status in `REVIEW-VOCAB.md`. Note: that
+  session's commit message called itself v0.66ba but never actually
+  bumped `public/version.json` (still read 0.66az) — corrected here as
+  part of this push.
+- **v0.66az**: Daily Challenge — replaced the horizontal tab-label legend
+  with a single vertical rail (icon-only for inactive tabs, active tab's
+  button also shows its label so the sub-menu title only appears for the
+  open section). Listening game — fixed a real bug: when learning English
+  (which reverse-builds its list from another language, e.g. German),
+  the translation-step utterance was hardcoded to the 'en' voice even
+  though `entry.translation` holds the *source*-language word in that mode,
+  so it was mispronouncing German/French/etc. words with an English voice.
+  Now uses `reverseSourceLanguage` from context when active. Verified live
+  via Playwright with a patched speechSynthesis capturing utterance
+  text+lang: reverse-English case now correctly speaks the source word
+  with the source-language voice (e.g. "prüfen" / de-DE); normal direction
+  (e.g. learning German) unaffected, translation step still en-US.
 - `vocab-games` (production, `main` branch): **v0.66** — several commits
   behind dev (not yet synced forward). Next production push should carry
   all of this session's work forward.
@@ -24,6 +91,45 @@
   push rather than shipped unreviewed. Saved at `/tmp/zh-en-pending.diff`
   in the working container for review; apply with `git apply` if it turns
   out to be wanted, otherwise redo the merge decision from scratch.
+
+## Japanese Grammar Dictionary: dynamic quiz expansion + Daily Challenge feature (v0.66ax)
+- [x] Japanese Grammar Dictionary: 14 new quiz generators covering 15 static
+      patterns (は/が/を/も, なければならない-family particles, ように/ために,
+      としては/にしては, に/で, and others). Renamed
+      `generateGermanPrepositionQuestion` → `generateClosedSetQuestion` in
+      `grammarQuiz.js` (confirmed language-agnostic, all German call sites
+      updated) and added a new generic `generateFixedAnswerQuestion` helper
+      for single-fixed-answer patterns tested across varied example
+      sentences. `quizType` wired into `ja-en.json` for all 15 patterns.
+      Caught and fixed a few real grammar/naturalness bugs in example
+      sentences during curation (blank placement, awkward word choice).
+      See `grammar-dictionary-logic.md` for full generator documentation.
+- [x] New feature: **Daily Challenge** ("Thiede function") — a real-world,
+      phone-free daily micro-exercise, deliberately separate from the
+      in-app games. No correctness checking, no time limit; entirely
+      user-attested. New 🎯 button in the top nav row next to Adventure.
+      - `src/engine/dailyChallenge.js`: weekday → fixed "core idea" mapping
+        (Monday=naming, Tuesday=colour/category constraint, Wednesday=
+        narrating actions, Thursday="previously in my workday" recap,
+        Friday=signs/notices, Saturday=post-it labeling, Sunday=describe
+        your day), each with several rotating "flavor" variants.
+        localStorage-backed state per language: today's pick (date-scoped),
+        open/accepted challenges, cumulative completion counts, favorites.
+      - `src/components/DailyChallenge.jsx` + `.css`: overlay with a
+        4-item left rail (Task of the day / Open challenges / Browse all
+        grid / Favorite tasks), accept + mark-done flow, star favoriting
+        with gold-border treatment in the grid, "change task"/"change
+        flavor" controls (flavor change has a glowing-orb animation).
+      - `src/engine/dailyChallengeExamples.js`: two example sentences per
+        flavor, per language (all 6 languages, 29 flavors — 348 sentences
+        total), shown inline under the flavor text and in the open-
+        challenges list.
+      - Full design discussion captured in
+        `daily-challenge-function-design.md` (see chat history / outputs).
+      - Verified via Playwright in a real browser: today's task (weekday-
+        correct), accept/finish/cancel flow, grid browser, favoriting,
+        flavor-change animation, mark-done counter, examples rendering
+        correctly for German and Japanese. No console errors.
 
 ## Graded Reader: small polish (v0.66aw)
 - [x] Passage cards in the library list shortened (padding/gap trimmed).

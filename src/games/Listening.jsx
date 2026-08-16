@@ -36,7 +36,7 @@ function shuffle(arr) {
 }
 
 export default function Listening() {
-  const { getEntriesForGame, activeLanguage, goBack, settings, updateSettings } = useApp()
+  const { getEntriesForGame, activeLanguage, reverseSourceLanguage, goBack, settings, updateSettings } = useApp()
 
   const [boxMode,   setBoxMode]   = useState('all')     // 'all' | 0 | 1 | 2 | 3 | 4
   const [reshuffle, setReshuffle] = useState(0)
@@ -125,7 +125,15 @@ export default function Listening() {
           await speakAndWait(entry.entry, activeLanguage, { rate: speechRateRef.current })
         } else if (step === 'translation') {
           setPhase('translation')
-          await speakAndWait(entry.translation[0], 'en', { rate: speechRateRef.current })
+          // Normally entry.translation is always English. Exception: when
+          // activeLanguage is 'en', the list is reverse-built (see
+          // buildReverseList in vocab.js) and entry.translation actually
+          // holds the *source*-language word(s), not English — speaking
+          // those with a hardcoded 'en' voice mispronounces them.
+          const translationLang = (activeLanguage === 'en' && reverseSourceLanguage)
+            ? reverseSourceLanguage
+            : 'en'
+          await speakAndWait(entry.translation[0], translationLang, { rate: speechRateRef.current })
         } else if (step === 'sentence') {
           setPhase('sentence')
           await speakAndWait(ex, activeLanguage, { rate: speechRateRef.current })
@@ -138,7 +146,7 @@ export default function Listening() {
       await delay(GAP_LONG, tokenRef, token)
       idx = (idx + 1) % queueRef.current.length
     }
-  }, [activeLanguage])
+  }, [activeLanguage, reverseSourceLanguage])
 
   function handlePlay() {
     if (queue.length === 0 || sequence.length === 0) return

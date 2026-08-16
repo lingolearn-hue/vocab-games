@@ -51,11 +51,15 @@ button:focus:not(:focus-visible) { outline: none; }
   color: #fff;
 }
 .level-chip:focus:not(:focus-visible) { outline: none; }
-.level-chip:hover:not(.active) { border-color: #4f7ef8; color: #4f7ef8; background: #f0f4ff; }
+@media (hover: hover) {
+  .level-chip:hover:not(.active) { border-color: #4f7ef8; color: #4f7ef8; background: #f0f4ff; }
+}
 
 [data-theme="dark"] .level-chip { background: #1e1e1e; border-color: #333; color: var(--dt2); }
 [data-theme="dark"] .level-chip.active { background: #4f7ef8; border-color: #4f7ef8; color: #fff; }
-[data-theme="dark"] .level-chip:hover:not(.active) { border-color: #4f7ef8; color: #4f7ef8; }
+@media (hover: hover) {
+  [data-theme="dark"] .level-chip:hover:not(.active) { border-color: #4f7ef8; color: #4f7ef8; }
+}
 
 /* Clear-filter chip (category topic filter) — visually distinct from topic
    chips (dashed border, no fill, smaller) so it doesn't read as just
@@ -68,9 +72,13 @@ button:focus:not(:focus-visible) { outline: none; }
   padding: calc(0.2rem * var(--chip-row-scale, 1)) calc(0.5rem * var(--chip-row-scale, 1));
   font-size: calc(0.65rem * var(--chip-row-scale, 1));
 }
-.category-clear-chip:hover { border-color: #e05252; color: #e05252; background: #fff0f0; }
+@media (hover: hover) {
+  .category-clear-chip:hover { border-color: #e05252; color: #e05252; background: #fff0f0; }
+}
 [data-theme="dark"] .category-clear-chip { color: var(--dt2); }
-[data-theme="dark"] .category-clear-chip:hover { border-color: #e05252; color: #e05252; background: #2a1414; }
+@media (hover: hover) {
+  [data-theme="dark"] .category-clear-chip:hover { border-color: #e05252; color: #e05252; background: #2a1414; }
+}
 
 /* Shared level-filter warning banner */
 .level-warning {

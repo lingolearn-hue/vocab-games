@@ -4,6 +4,7 @@ import { filterByLevel } from '../engine/settings'
 import LevelChips from './LevelChips'
 import CategoryChips from './CategoryChips'
 import Tutorial from './Tutorial'
+import DailyChallenge from './DailyChallenge'
 import './Setup.css'
 import './ReadingToggle.css'
 
@@ -17,15 +18,14 @@ const DRILL_GAMES = [
   { id: 'typing',    label: '⌨️ Typing',     desc: 'Type from memory' },
 ]
 const CONTEXT_GAMES = [
-  { id: 'gapfill',  label: '✏️ Gap Fill',       desc: 'Complete the sentence' },
+  { id: 'gapfill',  label: '✏️ Gap Fill',       desc: 'Complete the sentence', unfinished: true },
   { id: 'reader',   label: '📖 Graded Reader',   desc: 'Tap words to look up' },
-  { id: 'dialogue', label: '💬 Dialogue',         desc: 'Comprehension questions' },
+  { id: 'dialogue', label: '💬 Dialogue',         desc: 'Comprehension questions', unfinished: true },
 ]
 const LISTENING_GAMES = [
   { id: 'listening', label: '🎧 Listening', desc: 'Hands-free audio review, box by box' },
 ]
-const GRAMMAR_GAMES = [
-  { id: 'grammar',  label: '📐 Grammar Patterns', desc: 'Fill blanks, word order, pick correct' },
+const MATCHING_GAMES = [
   { id: 'matching', label: '🎯 Matching Drills',   desc: 'Gender, tones, measure words' },
 ]
 const STATS_BAR_SCORE_GAME = 'flashcard'
@@ -58,7 +58,10 @@ function GroupCard({ title, subtitle, icon, games, canStart, setScreen, isOpen, 
               disabled={!canStart}
               onClick={() => setScreen(g.id)}
             >
-              <span className="sub-game-label">{g.label}</span>
+              <span className="sub-game-label">
+                {g.label}
+                {g.unfinished && <span className="sub-game-unfinished" title="Still rough around the edges">🚧 unfinished</span>}
+              </span>
               <span className="sub-game-desc">{g.desc}</span>
             </button>
           ))}
@@ -85,9 +88,14 @@ export default function Setup() {
   } = useApp()
 
   const [langPickerOpen,    setLangPickerOpen]    = useState(false)
-  const [reverseMenuOpen,   setReverseMenuOpen]   = useState(false)
+  // Which panel shows while the picker is open — a single view at a time
+  // rather than two independently-toggled booleans, so there's no way for
+  // the "Learn English from…" panel to end up stacked with (or orphaned
+  // from) the main list.
+  const [langPickerView,    setLangPickerView]    = useState('main') // 'main' | 'reverse'
   const [openGroup,      setOpenGroup]      = useState('drills')
   const [tutorialOpen,   setTutorialOpen]   = useState(false)
+  const [dailyChallengeOpen, setDailyChallengeOpen] = useState(false)
   const [appVersion, setAppVersion] = useState(null)
 
   useEffect(() => {
@@ -138,21 +146,34 @@ export default function Setup() {
     <div className="setup">
       {/* Header */}
       <div className="setup-header">
-        <button className="lang-flag-btn" onClick={() => setLangPickerOpen(o => !o)} title="Change language">
+        <button
+          className="lang-flag-btn"
+          onClick={() => {
+            setLangPickerOpen(o => !o)
+            setLangPickerView('main') // always reopen at the top level, never mid-flow
+          }}
+          title="Change language"
+        >
           <span className="lang-flag-icon">{currentFlag}</span>
           <span className="lang-flag-label">{currentLangLabel}</span>
           <span className="lang-flag-arrow">{langPickerOpen ? '▾' : '›'}</span>
         </button>
         <div className="setup-nav">
           <button className="setup-nav-btn setup-nav-btn--adventure" onClick={() => setScreen('adventure')} title="Adventure Mode">⚔️</button>
+          <button className="setup-nav-btn" onClick={() => setDailyChallengeOpen(true)} title="Daily Challenge">🎯</button>
           <button className="setup-nav-btn" onClick={() => setScreen('stats')}    title="Stats">📊</button>
           <button className="setup-nav-btn" onClick={() => setScreen('settings')} title="Settings">⚙️</button>
           <button className="reading-toggle" onClick={() => setTutorialOpen(true)} title="Help">?</button>
         </div>
       </div>
 
-      {/* Language picker dropdown */}
-      {langPickerOpen && (
+      {/* Language picker — one panel at a time: the top-level list, or (once
+          English is tapped) the "Learn English from…" source picker, never
+          both stacked and never left orphaned if the picker closes some
+          other way, since both live under the same langPickerOpen gate and
+          langPickerView always resets to 'main' whenever the picker (re)opens
+          or a selection completes. */}
+      {langPickerOpen && langPickerView === 'main' && (
         <div className="lang-picker">
           {languages.map(lang => {
             if (lang.language === 'en') {
@@ -165,7 +186,7 @@ export default function Setup() {
                       setActiveLanguage(null)
                       setLangPickerOpen(false)
                     } else {
-                      setReverseMenuOpen(true)
+                      setLangPickerView('reverse')
                     }
                   }}
                 >
@@ -189,7 +210,7 @@ export default function Setup() {
       )}
 
       {/* "Learn English from…" — reverse-build source picker */}
-      {reverseMenuOpen && (
+      {langPickerOpen && langPickerView === 'reverse' && (
         <div className="lang-picker lang-picker--reverse">
           <div className="lang-picker-reverse-title">Learn English from…</div>
           {languages.filter(l => l.language !== 'en').map(lang => (
@@ -198,7 +219,6 @@ export default function Setup() {
               className={`lang-picker-item ${activeLanguage === 'en' && reverseSourceLanguage === lang.language ? 'active' : ''}`}
               onClick={() => {
                 setActiveLanguage('en', lang.language)
-                setReverseMenuOpen(false)
                 setLangPickerOpen(false)
               }}
             >
@@ -206,7 +226,7 @@ export default function Setup() {
               <span>{lang.label}</span>
             </button>
           ))}
-          <button className="lang-picker-reverse-cancel" onClick={() => setReverseMenuOpen(false)}>
+          <button className="lang-picker-reverse-cancel" onClick={() => setLangPickerView('main')}>
             ← Back
           </button>
         </div>
@@ -265,9 +285,9 @@ export default function Setup() {
         <GroupCard title="Language in Context" subtitle="Gap Fill · Reader · Dialogue"
           icon="📚" games={CONTEXT_GAMES} canStart={canStart} setScreen={setScreen}
           isOpen={openGroup === 'context'} onOpen={() => toggleGroup('context')} />
-        <GroupCard title="Grammar Drills" subtitle="Patterns · Gender · Tones · Measure Words"
-          icon="📐" games={GRAMMAR_GAMES} canStart={canStart} setScreen={setScreen}
-          isOpen={openGroup === 'grammar'} onOpen={() => toggleGroup('grammar')} />
+        <GroupCard title="Matching Drills" subtitle="Gender · Tones · Measure Words"
+          icon="🎯" games={MATCHING_GAMES} canStart={canStart} setScreen={setScreen}
+          isOpen={openGroup === 'matching'} onOpen={() => toggleGroup('matching')} />
       </div>
 
       {!canStart && (
@@ -277,6 +297,9 @@ export default function Setup() {
       <div className="setup-version">{appVersion ? `v${appVersion}` : ''}</div>
 
       {tutorialOpen && <Tutorial onDone={() => setTutorialOpen(false)} />}
+      {dailyChallengeOpen && (
+        <DailyChallenge lang={activeLanguage || 'en'} onClose={() => setDailyChallengeOpen(false)} />
+      )}
     </div>
   )
 }

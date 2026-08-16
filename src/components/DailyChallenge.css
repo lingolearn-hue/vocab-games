@@ -1,0 +1,278 @@
+/* ── Daily Challenge ("Thiede function") overlay ──────────────────────────── */
+
+.dc-screen {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.dc-panel {
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  max-width: 640px;
+  width: 100%;
+  /* Fixed footprint so switching tabs/buttons never reflows the overlay. */
+  height: 640px;
+  max-height: 94dvh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  padding: 1.5rem 1.5rem 1.2rem;
+  overflow: hidden;
+}
+[data-theme="dark"] .dc-panel { background: #1c1c1e; }
+
+.dc-close {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.8rem;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--dt2);
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  z-index: 2;
+}
+.dc-close:hover { color: #333; }
+[data-theme="dark"] .dc-close:hover { color: #eee; }
+
+.dc-title { margin: 0 0 0.2rem; font-size: 1.3rem; flex-shrink: 0; }
+.dc-subtitle {
+  margin: 0 0 0.7rem;
+  font-size: 0.85rem;
+  color: var(--dt2);
+  flex-shrink: 0;
+}
+
+.dc-body { display: flex; gap: 1rem; flex: 1; min-height: 0; }
+
+/* Vertical icon rail on the left. Icon-only for inactive tabs; the active
+   tab's button also shows its label, so the sub-menu title is only visible
+   for whichever section is currently open. Rail width is fixed (sized for
+   the longest label, "Open challenges") so the active button's label never
+   needs to overflow into — and get painted over by — the content pane. */
+.dc-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  width: 168px;
+}
+.dc-rail-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: none;
+  border: 1px solid var(--border, #ddd);
+  border-radius: 12px;
+  padding: 0.6rem 0;
+  cursor: pointer;
+  color: inherit;
+  width: 100%;
+  height: 48px;
+  white-space: nowrap;
+}
+.dc-rail-btn.active {
+  background: var(--accent-soft, #eef4ff);
+  border-color: var(--accent, #4a7cff);
+  justify-content: flex-start;
+  padding: 0.6rem 0.9rem;
+}
+.dc-rail-label { font-size: 0.8rem; font-weight: 700; }
+.dc-rail-icon { font-size: 1.25rem; line-height: 1; flex-shrink: 0; }
+[data-theme="dark"] .dc-rail-btn { border-color: #444; }
+[data-theme="dark"] .dc-rail-btn.active { background: #2a3348; border-color: #6a9bff; }
+
+.dc-content { flex: 1; min-width: 0; overflow-y: auto; }
+
+/* Today's task */
+.dc-today { display: flex; flex-direction: column; gap: 0.8rem; }
+.dc-today-type { font-size: 1.05rem; font-weight: 600; }
+.dc-today-flavor {
+  min-height: 3.2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  background: var(--panel-alt, #f6f7fa);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+}
+[data-theme="dark"] .dc-today-flavor { background: #2a2a2e; }
+
+/* Reserved-height slots so accepting/favoriting/examples appearing or
+   disappearing never shifts the layout below them. */
+.dc-examples-slot { min-height: 3.4rem; }
+.dc-done-count-slot { min-height: 1.1rem; }
+
+.dc-today-actions, .dc-today-main-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.dc-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.dc-btn-primary { background: var(--accent, #4a7cff); color: #fff; }
+.dc-btn-ghost { background: var(--panel-alt, #f0f1f4); color: inherit; }
+[data-theme="dark"] .dc-btn-ghost { background: #333336; }
+.dc-btn-small { padding: 0.35rem 0.6rem; font-size: 0.75rem; }
+.dc-btn:disabled { opacity: 0.6; cursor: default; }
+
+.dc-star {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #c8c8c8;
+  line-height: 1;
+}
+.dc-star.on { color: #f0b400; }
+.dc-star-inline { font-size: 1.1rem; flex-shrink: 0; }
+.dc-star-grid {
+  position: absolute;
+  top: 0.15rem;
+  right: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.dc-done-count { font-size: 0.75rem; color: var(--dt2); }
+
+.dc-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-left: 0.2rem;
+  border-left: 3px solid var(--accent-soft, #dce6ff);
+}
+.dc-example-line {
+  font-size: 0.85rem;
+  color: var(--dt2);
+  padding-left: 0.6rem;
+}
+.dc-example-line-small { font-size: 0.72rem; }
+[data-theme="dark"] .dc-examples { border-left-color: #3a4258; }
+
+/* "AI generation" orb animation — yellow for task change, blue for flavor change */
+.dc-orb-active { justify-content: center; }
+.dc-orb {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dc-orb-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  animation: dc-orb-pulse 0.55s ease-in-out;
+}
+.dc-orb-flavor .dc-orb-glow {
+  background: radial-gradient(circle, #8ab4ff 0%, #4a7cff 45%, rgba(74,124,255,0) 75%);
+}
+.dc-orb-task .dc-orb-glow {
+  background: radial-gradient(circle, #ffe28a 0%, #f0b400 45%, rgba(240,180,0,0) 75%);
+}
+@keyframes dc-orb-pulse {
+  0%   { transform: scale(0.4); opacity: 0.3; }
+  50%  { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* Open challenges / favorites list */
+.dc-list { display: flex; flex-direction: column; gap: 0.6rem; }
+.dc-list-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--panel-alt, #f6f7fa);
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+}
+[data-theme="dark"] .dc-list-row { background: #2a2a2e; }
+.dc-list-row-type { font-size: 0.8rem; font-weight: 600; }
+.dc-list-row-flavor { font-size: 0.8rem; color: var(--dt2); }
+.dc-list-row-actions { display: flex; gap: 0.4rem; flex-shrink: 0; }
+.dc-empty { font-size: 0.85rem; color: var(--dt2); }
+
+/* Grid browser — every column header and every cell share fixed,
+   identical dimensions; columns with fewer flavors simply run shorter
+   (ragged at the bottom) rather than stretching to match. */
+.dc-grid-wrap { overflow-x: auto; height: 100%; }
+.dc-grid { display: flex; gap: 0.6rem; min-width: max-content; }
+.dc-grid-col { display: flex; flex-direction: column; gap: 0.4rem; width: 150px; }
+.dc-grid-col-header {
+  height: 2.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--border, #ddd);
+}
+.dc-grid-col-header span { font-weight: 400; color: var(--dt2); }
+[data-theme="dark"] .dc-grid-col-header { border-color: #444; }
+
+.dc-grid-cell {
+  position: relative;
+  background: var(--panel-alt, #f6f7fa);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  height: 4.4rem;
+  overflow: hidden;
+}
+[data-theme="dark"] .dc-grid-cell { background: #2a2a2e; }
+.dc-grid-cell-fav { border-color: #f0b400; }
+.dc-grid-cell-main {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0.4rem 1.4rem 0.4rem 0.5rem;
+  font-size: 0.7rem;
+  cursor: pointer;
+  color: inherit;
+}
+.dc-grid-cell-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.dc-grid-cell-count {
+  position: absolute;
+  bottom: 0.25rem;
+  right: 0.4rem;
+  font-size: 0.65rem;
+  color: var(--dt2);
+  background: inherit;
+}
+
+@media (max-width: 520px) {
+  .dc-panel { height: 680px; }
+  .dc-body { flex-direction: column; }
+  .dc-rail { flex-direction: row; width: 100%; overflow-x: auto; height: 48px; }
+  .dc-rail-btn { width: auto; flex-shrink: 0; padding: 0.6rem 0.8rem; }
+}
