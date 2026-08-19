@@ -279,7 +279,75 @@ Caught and fixed two of my own placeholder-typo entries mid-pass
 (wrote a literal English string instead of the French headword for
 "angrily" and "raincoat") before they were left in the file — worth
 double-checking output after any large batch apply, self included.
+
+**Follow-up (flagged by user, much later session)**: the CEFR-J
+A1/A2 pass above missed something the content-word-frequency method
+was never going to catch — French had essentially **zero prepositions
+and zero conjunctions** in the entire 17,625-entry file before this
+fix (`dans`, `avec`, `pour`, `à`, `de`, `en`, `et`, `mais`, `que`, `qui`
+— all completely absent). Confirmed at the source: pulled
+`vbvss199/Language-Learning-decks/french/french.json` directly and
+verified all of the above are absent there too — the upstream
+dataset's own POS breakdown is 10,607 nouns / 3,911 adjectives / 2,348
+verbs and **0 prepositions / 0 conjunctions**, out of 17,580 entries.
+Same `wordfreq`-style content-word-extraction root cause identified
+earlier for DE/ES/JA (see the top of this doc), but far more severe
+here — an entire grammatical category excluded wholesale rather than
+scattered individual words. The CEFR-J word list used for the A1/A2
+pass is itself overwhelmingly content words (nouns/verbs/adjectives),
+so cross-referencing against it was never going to surface a
+category-wide function-word gap — this needed a direct, deliberate
+check of the closed class of prepositions/conjunctions, not a
+frequency-list diff. **Worth checking DE/ES/JA/ZH for the same
+category-wide gap before assuming the earlier CEFR-J passes caught
+everything** — those passes had the identical blind spot.
+
+Fixed: added 30 prepositions, 16 conjunctions, and 7 relative/
+demonstrative pronouns (`qui`, `que`, `dont`, `lequel`, `quoi`, `ce`,
+`cela`, `ceci`), plus a few adverbial connectors (`pourtant`,
+`cependant`, `néanmoins`). 17,625 → 17,679 entries. One self-caught
+error: briefly appended a French synonym note ("durant (formal)")
+into `pendant`'s English translation array by mistake — not a valid
+English gloss, removed immediately.
+
 ZH not yet attempted.
+
+**Follow-up confirms this was systemic, not French-specific.** Checked
+DE and ES the same way: both had the identical near-total gap before
+this fix. German had **2 prepositions, 5 conjunctions** in 20,352
+entries — `und` (and), `oder` (or), `aber` (but), `dass` (that),
+`weil` (because), `wenn` (if/when) were all completely absent, the
+same category-wide absence pattern as French. Spanish had **1
+preposition, 3 conjunctions** in 16,081 entries — `y` (and, the single
+most basic Spanish conjunction), `si` (if), `porque` (because) were
+all completely absent, arguably even more severe than the earlier
+`hola`/`pero` finds since these are more fundamental words.
+
+Method used to find these without redoing a full CEFR-J pass: cross-
+referenced Chinese's conjunction set (`zh-en.json` has 81 conjunction
+entries, a genuinely good native reference — Chinese vocab wasn't
+built from the same source pipeline as DE/ES/FR) via English glosses
+into DE/ES/JA, which surfaced the conjunction-side gaps quickly. No
+vocab file had good native preposition coverage to use the same way —
+Japanese also shows 0 (Japanese postpositional particles aren't
+tagged `prep` in this schema) — so prepositions were checked against a
+standard reference list directly instead, same approach as the French
+fix.
+
+Fixed: German +52 entries (36 prepositions, 21 conjunctions after the
+fix, from 2/5 before). Spanish +33 entries (22 prepositions, 14
+conjunctions after, from 1/3 before). Two Spanish homographs handled
+correctly rather than merged: `sobre` (noun "envelope" *and* prep
+"on/about") and `bajo` (adj "low/short" *and* prep "under") — same
+separate-entry pattern as the `impermeable`/`imperméable` raincoat
+cases. German: 20,352 → 20,404. Spanish: 16,081 → 16,114.
+
+**Still open**: Japanese conjunctions (8 gaps found: `unless`,
+`whereas`, `nor`, `in case`, `so that`, `as long as`, `whether`,
+`despite the fact that` — much smaller gap than DE/ES since JA already
+had 46 conjunctions natively) and Japanese/Chinese prepositions (no
+native reference available, would need the standard-list approach).
+Not yet attempted.
 
 A1/A2 coverage pass complete for Japanese (CEFR-J diff against
 `translation` glosses, same method as German). Notably higher

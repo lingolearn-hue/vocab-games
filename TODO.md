@@ -1,6 +1,16 @@
 # TODO / Future Improvements
 
 ## Repo state (as of this writing — check git log for current truth)
+- `vocab-games` (production, `main` branch): **v0.69** — vocab-only sync
+  from `vocab-games-dev` at dev v0.66bd: grammar-word coverage pass
+  (French/German/Spanish had almost no native prepositions/conjunctions
+  — fixed; Japanese core particles は/が/を/に/で/へ/から/まで/の etc.
+  were nearly entirely missing — added 21 particle entries + 8
+  conjunction gaps; Chinese 以/离 given proper everyday-sense homograph
+  entries) plus content cleanup (a slur reference removed from a
+  Chinese wheel entry, two German political-propaganda terms removed,
+  profanity removed from ES/FR, one French/Spanish mislabel fixed).
+  Full detail in REVIEW-VOCAB.md. No code/feature changes this push.
 - `vocab-games` (production, `main` branch): **v0.68** — full resync
   from `vocab-games-dev` at dev v0.66bc. Carries: Japanese Grammar
   Dictionary dynamic quiz expansion, Daily Challenge feature (new,
